@@ -1,0 +1,7 @@
+require('options.autocmd')
+require('options.neosolarized')
+require('options.fundamentals')
+require('options.buffer')
+require('options.prettier')
+-- require('options.coc')
+require('options.airline')
