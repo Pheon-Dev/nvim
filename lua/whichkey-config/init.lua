@@ -38,10 +38,9 @@ local mappings = {
   },
   t = {
     name = "Terminal",
-    t = {":ToggleTerm<cr>", "Split Below"},
-    f = {toggle_float, "Floating Terminal"},
+    f = {":ToggleTerm<cr>", "Split Below"},
+    t = {toggle_float, "Floating Terminal"},
     b = {":TagbarToggle<cr>", "Tagbar"},
-    l = {toggle_lazygit, "LazyGit"},
   },
   p = {
     name = "Prettier",
