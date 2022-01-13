@@ -1,3 +1,4 @@
+vim.o.guifont = ('Courier\\ New:h10')
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.encoding = 'utf-8'
@@ -45,5 +46,5 @@ vim.o.ignorecase = true
 
 vim.cmd('set completeopt-=preview')
 vim.cmd('let g:deoplete#enable_at_startup=1')
-
+vim.g.python3_host_prog = '/usr/bin/python'
 vim.o.exrc = true

@@ -1,6 +1,9 @@
 local actions = require('telescope.actions')
+local builtin = require('telescope.builtin')
+
 require('telescope').setup {
   defaults = {
+    hidden = false,
     layout_config = {
       width = 0.75,
       prompt_position = "bottom",
@@ -46,5 +49,11 @@ require('telescope').setup {
         ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
       }
     }
-  }
+  },
+  -- pickers = {
+  --   find_files = {
+  --     -- theme = "dropdown",
+  --     hidden = false
+  --   }
+  -- }
 }

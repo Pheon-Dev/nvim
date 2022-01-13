@@ -13,7 +13,7 @@ vim.cmd([[
 ]])
 
 -- Visual highlight 
-vim.cmd('highlight Visual cterm=reverse ctermfg=10 ctermbg=8 gui=nocombine guibg=#50202e guifg=#10f0f0 ')
+vim.cmd('highlight Visual cterm=reverse ctermfg=10 ctermbg=8 gui=nocombine guibg=#2b506e guifg=#10f080 ')
 vim.cmd('highlight LineNr cterm=NONE ctermfg=8 guifg=#2b506e guibg=NONE')
 
 -- Pmenu

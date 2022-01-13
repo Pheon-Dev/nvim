@@ -91,5 +91,9 @@ return require('packer').startup(function()
   -- use 'jpraise/vim-graphql'
   use {'liuchengxu/vim-clap',  run =  'Clap install-binary' }
   use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
+  use 'wfxr/minimap.vim'
+  use 'justinmk/vim-sneak'
+  use 'flazz/vim-colorschemes'
+  -- use {'neoclide/coc.nvim', branch = 'release'}
   -- use '/'
 end)

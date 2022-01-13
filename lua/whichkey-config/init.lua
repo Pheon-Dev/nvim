@@ -15,10 +15,10 @@ wk.setup {
   }
 }
 
-local gitsigns = require('gitsigns').blame_line{full = true}
+local gitsigns = require("gitsigns").blame_line{full = true}
 
 local Terminal = require('toggleterm.terminal').Terminal
-local toggle_terminal = function()
+local toggle_float = function()
   local float = Terminal:new({direction = "float"})
   return float:toggle()
 end
@@ -28,57 +28,53 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 
--- Mappings ✗➤●ﰟ
 local mappings = {
-  d = {":Dashboard<cr>", " Home"},
-  f = {":Telescope find_files<cr>", " Find Files"},
-  r = {":Telescope live_grep<cr>", " Search Text"},
+  d = {":Dashboard<cr>", "Home"},
+  f = {
+    name = "Telescope",
+    f = {":Telescope find_files<cr>", "Telescope Find Files"},
+    r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
+    b = {":Telescope buffers<cr>", "Buffers"}   
+  },
   t = {
     name = "Terminal",
-    f = {":ToggleTerm<cr>", "Terminal Below"},
-    t = {toggle_terminal, "Terminal Float"},
-    b = {":TagbarToggle<cr>", "Tagbar"}
+    t = {":ToggleTerm<cr>", "Split Below"},
+    f = {toggle_float, "Floating Terminal"},
+    b = {":TagbarToggle<cr>", "Tagbar"},
+    l = {toggle_lazygit, "LazyGit"},
   },
   p = {
     name = "Prettier",
     p = {":Prettier<cr>", "Prettier"},
-    a = {":PrettierAsync<cr>", "Prettier Async"},
+    a = {":PrettierAsync", "Prettier Async"}
   },
   s = {
     name = "Split",
     v = {":vsplit<cr>", "Vertical Split"},
     h = {":split<cr>", "Horizontal Split"},
-    j = {"<C-w>t<C-w>H", "Switch Panes to Vertical"},
-    k = {"<C-w>t<C-w>K", "Switch Panes to Horizontal"},
+    j = {"<C-w>t<C-w>H", "Horiz > Vert Alignment"},
+    k = {"<C-w>t<C-w>K", "Vert > Horiz Alignment"}
   },
   h = {
-    name = "Git",
-    g = {toggle_lazygit, "Lazygit"},
+    name = "Git VC",
+    g = {toggle_lazygit, "LazyGit"},
+    b = {gitsigns, "Blame Line"},
     s = {"Gitsigns stage_hunk<cr>", "Stage Hunk"},
-    u = {"Gitsigns undo_stage_hunk<cr>", "undo Stage Hunk"},
+    u = {"Gitsigns undo_stage_hunk<cr>", "Undo Stage Hunk"},
     r = {"Gitsigns reset_hunk<cr>", "Reset Hunk"},
     R = {"Gitsigns reset_buffer<cr>", "Reset Buffer"},
-    p = {"Gitsigns preview_hunk<cr>", "Preview Hunk"},
-    b = {gitsigns, "Blame Line"},
+    P = {"Gitsigns preview_hunk<cr>", "Preview Hunk"},
     S = {"Gitsigns stage_buffer<cr>", "Stage Buffer"},
     U = {"Gitsigns reset_buffer_index<cr>", "Reset Buffer Index"},
   },
   b = {
-    name = "Buffer",
+    name = "Buffers",
     q = {":BufferLineGoToBuffer 1<cr>", "Buffer 1"},
-    w = {":BufferLineGoToBuffer 2<cr>", "Buffer 2"},
-    e = {":BufferLineGoToBuffer 3<cr>", "Buffer 3"},
-    r = {":BufferLineGoToBuffer 4<cr>", "Buffer 4"},
-    t = {":BufferLineGoToBuffer 5<cr>", "Buffer 5"},
-    y = {":BufferLineGoToBuffer 6<cr>", "Buffer 6"},
-    u = {":BufferLineGoToBuffer 7<cr>", "Buffer 7"},
-    i = {":BufferLineGoToBuffer 8<cr>", "Buffer 7"},
-    o = {":BufferLineGoToBuffer 9<cr>", "Buffer 9"},
   },
   c = {
     name = "Source",
-    s = {":!source %<cr>", "Source Current File"},
-    S = {":!tmux source %<cr>", "Source Current Tmux File"},
+    s = {":!source %,cr>", "Source Current File"},
+    S = {":!tmux source %,cr>", "Source Current Tmux File"},
   },
   l = {
     name = "LSP",

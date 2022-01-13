@@ -56,3 +56,7 @@ map("o", "ih", "<C-U>Gitsigns select_hunk<CR>", {noremap = true, silent = true})
 map("x", "ih", "<C-U>Gitsigns select_hunk<CR>", {noremap = true, silent = true})
 map("n", "[c", "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<cr>'", {expr = true, noremap = true, silent = true})
 map("n", "]c", "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", {expr = true, noremap = true, silent = true})
+
+-- Telescope
+map("i", "<C-h>", "<cmd>Telescope find_files hidden=true<cr>", {noremap = true, silent = true})
+map("i", "<C-n>", "<cmd>Telescope buffers<cr>", {noremap = true, silent = true})

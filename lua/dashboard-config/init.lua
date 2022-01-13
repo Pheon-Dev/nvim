@@ -38,16 +38,16 @@ end
 
 -- Custom Section ﰟ                               
 vim.g.dashboard_custom_section = {
-  a = {description = {'  1 ---⠄⣼⡟⣿⠏⢀⣿⣇⣿⣏⣿⣿⣿⣿⣿⣿⣿⢸⡇⣿⣿⣿⣟⣿⣿⣿⣿⣏--- Find File        '}, command = 'Telescope find_files'},
-  b = {description = {'  2 ---⣸⡟⣼⣯⠏⣾⣿⢸⣿⢸⣿⣿⣿⣿⣿⣿⡟⠸⠁⢹⡿⣿⣿⢻⣿⣿⣿⣿--- Search Text      '}, command = 'Telescope live_grep'},
-  c = {description = {'  3 ---⡟⣸⢟⣫⡅⣶⢆⡶⡆⣿⣿⣿⣿⣿⢿⣛⠃⠰⠆⠈⠁⠈⠙⠈⠻⣿⢹⡏--- Recent Files     '}, command = 'Telescope oldfiles'},
-  d = {description = {'  4 ---⣱⡷⣱⠿⠟⠛⠼⣇⠇⣿⣿⣿⣿⣿⣿⠃⣰⣿⣿⡆⠄⠄⠄⠄⠄⠉⠈⠄--- New File         '}, command = 'DashboardNewFile'},
-  e = {description = {'  5 ---⡟⢑⠃⡠⠂⠄⠄⠈⣾⢻⣿⣿⡿⡹⡳⠋⠉⠁⠉⠙⠄⢀⠄⠄⠄⠄⠄⠂--- Menu             '}, command = 'NvimTreeToggle'},
-  f = {description = {'  6 ---⠁⢈⢰⡇⠄⠄⡙⠂⣿⣿⣿⣿⣱⣿⡗⠄⠄⠄⢀⡀⠄⠈⢰⠄⠄⠄⠐⠄--- Terminal         '}, command = toggle_terminal},
-  g = {description = {'  7 ---⠄⠘⣿⣧⠴⣄⣡⢄⣿⣿⣿⣷⣿⣿⡇⢀⠄⠤⠈⠁⣠⣠⣸⢠⠄⠄⠄⠄--- Git              '}, command = toggle_lazygit},
-  h = {description = {'  8 ---⠄⠄⣿⣿⣷⣬⣵⣿⣿⣿⣿⣿⣿⣿⣷⣟⢷⡶⢗⡰⣿⣿⠇⠘⠄⠄⠄⠄--- Colour Scheme    '}, command = 'DashboardChangeColorscheme'},
-  i = {description = {'  9 ---⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⡟⢀⠃⠄⢸⡄⠁--- Jump Mark        '}, command = 'DashboardJumpMarks'},
-  j = {description = {' ✗ 0 ---⠄⠄⠘⢿⣿⣿⣿⣿⣿⣿⢛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⢄⡆⠄⢀⣪⡆⠄--- Exit             '}, command = 'q!'},
+  a = {description = {'  0 ---⠄⣼⡟⣿⠏⢀⣿⣇⣿⣏⣿⣿⣿⣿⣿⣿⣿⢸⡇⣿⣿⣿⣟⣿⣿⣿⣿⣏--- Find File        '}, command = 'Telescope find_files'},
+  b = {description = {'  1 ---⣸⡟⣼⣯⠏⣾⣿⢸⣿⢸⣿⣿⣿⣿⣿⣿⡟⠸⠁⢹⡿⣿⣿⢻⣿⣿⣿⣿--- Search Text      '}, command = 'Telescope live_grep'},
+  c = {description = {'  2 ---⡟⣸⢟⣫⡅⣶⢆⡶⡆⣿⣿⣿⣿⣿⢿⣛⠃⠰⠆⠈⠁⠈⠙⠈⠻⣿⢹⡏--- Recent Files     '}, command = 'Telescope oldfiles'},
+  d = {description = {'  3 ---⣱⡷⣱⠿⠟⠛⠼⣇⠇⣿⣿⣿⣿⣿⣿⠃⣰⣿⣿⡆⠄⠄⠄⠄⠄⠉⠈⠄--- New File         '}, command = 'DashboardNewFile'},
+  e = {description = {'  4 ---⡟⢑⠃⡠⠂⠄⠄⠈⣾⢻⣿⣿⡿⡹⡳⠋⠉⠁⠉⠙⠄⢀⠄⠄⠄⠄⠄⠂--- Menu             '}, command = 'NvimTreeToggle'},
+  f = {description = {'  5 ---⠁⢈⢰⡇⠄⠄⡙⠂⣿⣿⣿⣿⣱⣿⡗⠄⠄⠄⢀⡀⠄⠈⢰⠄⠄⠄⠐⠄--- Terminal         '}, command = toggle_terminal},
+  g = {description = {'  6 ---⠄⠘⣿⣧⠴⣄⣡⢄⣿⣿⣿⣷⣿⣿⡇⢀⠄⠤⠈⠁⣠⣠⣸⢠⠄⠄⠄⠄--- Git              '}, command = toggle_lazygit},
+  h = {description = {'  7 ---⠄⠄⣿⣿⣷⣬⣵⣿⣿⣿⣿⣿⣿⣿⣷⣟⢷⡶⢗⡰⣿⣿⠇⠘⠄⠄⠄⠄--- Colour Scheme    '}, command = 'DashboardChangeColorscheme'},
+  i = {description = {'  8 ---⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⡟⢀⠃⠄⢸⡄⠁--- Jump Mark        '}, command = 'DashboardJumpMarks'},
+  j = {description = {' ✗ 9 ---⠄⠄⠘⢿⣿⣿⣿⣿⣿⣿⢛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⢄⡆⠄⢀⣪⡆⠄--- Exit             '}, command = 'q!'},
 }
 vim.g.dashboard_custom_footer = {'If in doubt, flat out - Collin McRae'}
 
