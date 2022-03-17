@@ -13,9 +13,13 @@ null_ls.setup({
       }
     }), formatting.isort, formatting.codespell.with({filetypes = {'markdown'}})
   },
-  on_attach = function(client)
-    if client.resolved_capabilities.document_formatting then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-    end
+  -- on_attach = function(client)
+  --   if client.resolved_capabilities.document_formatting then
+  --     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  --   end
+  -- end
+  on_attach = function (client)
+    client.resolved_capabilities.document_formatting = false
+    client.resolved_capabilities.document_range_formatting = false
   end
 })

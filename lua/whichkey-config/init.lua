@@ -30,17 +30,13 @@ end
 
 local mappings = {
   d = {":Dashboard<cr>", "Home"},
-  f = {
-    name = "Telescope",
-    f = {":Telescope find_files<cr>", "Telescope Find Files"},
-    r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
-    b = {":Telescope buffers<cr>", "Buffers"}   
-  },
-  t = {
-    name = "Terminal",
-    f = {":ToggleTerm<cr>", "Split Below"},
-    t = {toggle_float, "Floating Terminal"},
-    b = {":TagbarToggle<cr>", "Tagbar"},
+  f = {":Telescope find_files<cr>", "Telescope Find Files"},
+  r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
+  t = {toggle_float, "Floating Terminal"},
+  o = {
+    name = "Other Commands",
+    b = {":Telescope buffers<cr>", "Buffers"},
+    t = {":ToggleTerm<cr>", "Split Below"},
   },
   p = {
     name = "Prettier",
@@ -54,7 +50,7 @@ local mappings = {
     j = {"<C-w>t<C-w>H", "Horiz > Vert Alignment"},
     k = {"<C-w>t<C-w>K", "Vert > Horiz Alignment"}
   },
-  h = {
+  g = {
     name = "Git VC",
     g = {toggle_lazygit, "LazyGit"},
     b = {gitsigns, "Blame Line"},
@@ -72,8 +68,8 @@ local mappings = {
   },
   c = {
     name = "Source",
-    s = {":!source %,cr>", "Source Current File"},
-    S = {":!tmux source %,cr>", "Source Current Tmux File"},
+    s = {":!source %<cr>", "Source Current File"},
+    S = {":!tmux source %<cr>", "Source Current Tmux File"},
   },
   l = {
     name = "LSP",

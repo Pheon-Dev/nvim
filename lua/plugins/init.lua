@@ -1,7 +1,12 @@
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use 'overcache/NeoSolarized'
+  -- use 'overcache/NeoSolarized'
+  use 'folke/tokyonight.nvim'
+  use {
+    'karb94/neoscroll.nvim',
+    config = "require('neoscroll-config')"
+  }
   use {
     'nvim-treesitter/nvim-treesitter', 
     run = ":TSUpdate",
@@ -10,6 +15,12 @@ return require('packer').startup(function()
   }
   use {'windwp/nvim-ts-autotag'}
   use {'p00f/nvim-ts-rainbow'}
+  use 'junegunn/rainbow_parentheses.vim'
+  use 'folke/lsp-colors.nvim'
+  use 'nvim-lua/completion-nvim'
+  use {
+    'nvim-lua/popup.nvim',
+  }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {'kyazdani42/nvim-web-devicons'}, 
@@ -17,7 +28,12 @@ return require('packer').startup(function()
     config = "require('nvim-tree-config')"
   }
   use 'kyazdani42/nvim-web-devicons'
-  use {'vim-airline/vim-airline'}
+  -- use {'vim-airline/vim-airline'}
+  use {
+  'nvim-lualine/lualine.nvim',
+    config = "require('lualine-config')",
+      requires = { "kyazdani42/nvim-web-devicons", opt = true },
+  }
   use {
     'akinsho/bufferline.nvim', 
     requires = 'kyazdani42/nvim-web-devicons', 
@@ -56,14 +72,32 @@ return require('packer').startup(function()
     event = "BufWinEnter",
     config = "require('whichkey-config')"
   }
-  use 'nvim-lua/completion-nvim'
+  use 'easymotion/vim-easymotion'
+  use {
+    'sunjon/Shade.nvim',
+    config = "require('shade-config')"
+  }
   use {'neovim/nvim-lspconfig', config = "require('lsp')"}
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/nvim-compe'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
+    use {
+      "hrsh7th/nvim-cmp",
+      requires = {
+        { "hrsh7th/cmp-buffer" },
+        { "hrsh7th/cmp-nvim-lsp" },
+        { "hrsh7th/cmp-path" },
+        { "hrsh7th/cmp-nvim-lua" },
+        { "ray-x/cmp-treesitter" },
+        { "hrsh7th/nvim-cmp" },
+        { "hrsh7th/cmp-vsnip" },
+        { "hrsh7th/vim-vsnip" },
+        { "Saecki/crates.nvim" },
+        { "f3fora/cmp-spell" },
+        { "hrsh7th/cmp-cmdline" },
+        { "tamago324/cmp-zsh" },
+      },
+      -- config = function()
+      --   require "joel.completion"
+      -- end,
+    }
   use 'onsails/lspkind-nvim'
   use 'williamboman/nvim-lsp-installer'
   use 'tpope/vim-commentary' -- For Commenting gcc & gc
@@ -78,22 +112,19 @@ return require('packer').startup(function()
     'jose-elias-alvarez/null-ls.nvim', 
     config = "require('null-ls-config')"
   }
-  use {'folke/zen-mode.nvim', config = "require('zen-mode-config')"}
-  use {'folke/twilight.nvim', config = "require('twilight-config')"}
+  -- use {'folke/zen-mode.nvim', config = "require('zen-mode-config')"}
+  -- use {'folke/twilight.nvim', config = "require('twilight-config')"}
   -- use 'tpope/vim-surround'
-  use 'preservim/tagbar'
+  -- use 'preservim/tagbar'
   use 'terryma/vim-multiple-cursors' -- C-N 
   -- use 'neoclide/coc.vim'
-  use 'maxmellon/vim-jsx-pretty'
-  use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
-  use 'styled-components/vim-styled-components'
-  use 'mlaursen/vim-react-snippets'
+  -- use 'maxmellon/vim-jsx-pretty'
+  -- use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
+  -- use 'styled-components/vim-styled-components'
+  -- use 'mlaursen/vim-react-snippets'
   -- use 'jpraise/vim-graphql'
-  use {'liuchengxu/vim-clap',  run =  'Clap install-binary' }
-  use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
-  use 'wfxr/minimap.vim'
-  use 'justinmk/vim-sneak'
-  use 'flazz/vim-colorschemes'
+  -- use {'liuchengxu/vim-clap',  run =  'Clap install-binary' }
+  -- use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
   -- use {'neoclide/coc.nvim', branch = 'release'}
   -- use '/'
 end)

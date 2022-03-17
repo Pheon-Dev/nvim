@@ -1,3 +1,5 @@
+-- dark minimalist simple 
+vim.cmd("let g:airline_theme='minimalist'")
 vim.cmd([[
 	if !exists("g:airline_symbols")
 		let g:airline_symbols = {}

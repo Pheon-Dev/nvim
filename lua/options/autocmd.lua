@@ -23,4 +23,3 @@ vim.cmd([[
   		autocmd VinLeave * silent! exe '!echo -n "\ek[`hostname`;`basenane $PWD`]\e\\"'
 	endif
 ]])
-

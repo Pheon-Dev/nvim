@@ -2,15 +2,16 @@ vim.g.mapleader = ' '
 local map = vim.api.nvim_set_keymap
 
 -- NvimTree
-map("n", "<C-f>", "<cmd>NvimTreeToggle<cr>", {noremap = true, silent = true})
+map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", {noremap = true, silent = true})
 
 -- Tabs
 map("n", "<C-m>", "<cmd>tabnew<cr>", {noremap = true, silent = true})
 
 -- Saving and Quitting
-map("n", "<C-s>", "<cmd>w<cr>", {noremap = true, silent = true})
-map("n", "<C-q>", "<cmd>bdelete<cr>", {noremap = true, silent = true})
-map("n", "<C-e>", "<cmd>q!<cr>", {noremap = true, silent = true})
+map("n", "<C-s>", "<cmd>w!<cr>", {noremap = true, silent = true})
+map("n", "<C-q>", "<cmd>w! | bp | sp | bn | bd<cr>", {noremap = true, silent = true})
+map("n", "<C-e>", "<cmd>bp | sp | bn | bd<cr>", {noremap = true, silent = true})
+map("n", "<C-x>", "<cmd>qa!<cr>", {noremap = true, silent = true})
 
 -- Window Splitting
 map("n", "<F1>", "<cmd>vsplit<cr>", {noremap = true, silent = true})
@@ -60,3 +61,9 @@ map("n", "]c", "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", {expr = true, nor
 -- Telescope
 map("i", "<C-h>", "<cmd>Telescope find_files hidden=true<cr>", {noremap = true, silent = true})
 map("i", "<C-n>", "<cmd>Telescope buffers<cr>", {noremap = true, silent = true})
+
+-- Easy Motion 
+map("n", "sd", "<Plug>(easymotion-repeat)<CR>", {noremap = true, silent = true})
+map("n", "S", ":lua require'shade'.toggle()<cr>", {noremap = true, silent = false})
+
+map("i", "C-Return", "<cr><cr><C-o>k<TAB>", {noremap = true, silent = false})
