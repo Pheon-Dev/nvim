@@ -6,7 +6,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] =
   })
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = {"html", "javascript", "lua"},
+  ensure_installed = {"html", "javascript", "lua", "typescript", "tsx", "vue"},
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   -- sync_install = false,
@@ -30,7 +30,7 @@ require'nvim-treesitter.configs'.setup {
   autotag = {enable = true},
   rainbow = {
     enable = true,
-    extended_mode = true,
+    extended_mode = false,
     max_file_lines = nil
   },
   autopairs = {enable = true}

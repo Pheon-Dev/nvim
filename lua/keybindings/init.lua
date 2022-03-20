@@ -12,6 +12,7 @@ map("n", "<C-s>", "<cmd>w!<cr>", {noremap = true, silent = true})
 map("n", "<C-q>", "<cmd>w! | bp | sp | bn | bd<cr>", {noremap = true, silent = true})
 map("n", "<C-e>", "<cmd>bp | sp | bn | bd<cr>", {noremap = true, silent = true})
 map("n", "<C-x>", "<cmd>qa!<cr>", {noremap = true, silent = true})
+map("n", "<leader>c", "<cmd>bdelete! %d<cr>", {noremap = true, silent = true})
 
 -- Window Splitting
 map("n", "<F1>", "<cmd>vsplit<cr>", {noremap = true, silent = true})
@@ -36,7 +37,7 @@ map("n", "<S-u>", "<cmd>redo<cr>", {noremap = true, silent = true})
 
 -- COC Actions
 -- map("n", "<Leader>l", "<cmd>call CocActionSync('jumpDefinition')<cr>", {noremap = true, silent = true})
-map("n", "<silent>K", "<cmd>call CocAction('doHover')<cr>", {noremap = true, silent = true})
+-- map("n", "<silent>K", "<cmd>call CocAction('doHover')<cr>", {noremap = true, silent = true})
 
 -- ESC on insert Mode
 map("i", "jk", "<ESC>", {noremap = true, silent = true})

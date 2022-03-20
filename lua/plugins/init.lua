@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup({function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   -- use 'overcache/NeoSolarized'
@@ -8,7 +8,7 @@ return require('packer').startup(function()
     config = "require('neoscroll-config')"
   }
   use {
-    'nvim-treesitter/nvim-treesitter', 
+    'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate",
     -- event = "BufWinEnter",
     config = "require('treesitter-config')"
@@ -23,7 +23,7 @@ return require('packer').startup(function()
   }
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = {'kyazdani42/nvim-web-devicons'}, 
+    requires = {'kyazdani42/nvim-web-devicons'},
     cmd = "NvimTreeToggle",
     config = "require('nvim-tree-config')"
   }
@@ -35,8 +35,8 @@ return require('packer').startup(function()
       requires = { "kyazdani42/nvim-web-devicons", opt = true },
   }
   use {
-    'akinsho/bufferline.nvim', 
-    requires = 'kyazdani42/nvim-web-devicons', 
+    'akinsho/bufferline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
     event = "BufWinEnter",
     config = "require('bufferline-config')"
   }
@@ -109,7 +109,7 @@ return require('packer').startup(function()
   }
   use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
   use {
-    'jose-elias-alvarez/null-ls.nvim', 
+    'jose-elias-alvarez/null-ls.nvim',
     config = "require('null-ls-config')"
   }
   -- use {'folke/zen-mode.nvim', config = "require('zen-mode-config')"}
@@ -119,12 +119,20 @@ return require('packer').startup(function()
   use 'terryma/vim-multiple-cursors' -- C-N 
   -- use 'neoclide/coc.vim'
   -- use 'maxmellon/vim-jsx-pretty'
-  -- use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
-  -- use 'styled-components/vim-styled-components'
+  use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
+  use 'styled-components/vim-styled-components'
   -- use 'mlaursen/vim-react-snippets'
   -- use 'jpraise/vim-graphql'
   -- use {'liuchengxu/vim-clap',  run =  'Clap install-binary' }
   -- use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
   -- use {'neoclide/coc.nvim', branch = 'release'}
   -- use '/'
-end)
+end,
+config = {
+  display = {
+    open_fn = function ()
+      return  require('packer.util').float({border = 'single'})
+    end
+  }
+}}
+)

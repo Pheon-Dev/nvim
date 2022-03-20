@@ -1,10 +1,11 @@
 require("indent_blankline").setup {
   buftype_exclude = {"terminal"},
   filetype_exclude = {
-    "dashboard", 
-    "NvimTree", 
-    "packer", 
-    "lsp-installer"
+    "dashboard",
+    "NvimTree",
+    "packer",
+    "lsp-installer",
+    "lspsaga"
   },
   show_current_context = true,
   context_patterns = {
