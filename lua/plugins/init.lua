@@ -63,6 +63,10 @@ return require('packer').startup({function()
     config = "require('telescope-config')"
   }
   use {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make",
+  }
+  use {
     'windwp/nvim-autopairs',
     after = "nvim-cmp",
     config = "require('autopairs-config')"
@@ -80,6 +84,7 @@ return require('packer').startup({function()
   use {'neovim/nvim-lspconfig', config = "require('lsp')"}
     use {
       "hrsh7th/nvim-cmp",
+    -- config = "require('cmp-config')",
       requires = {
         { "hrsh7th/cmp-buffer" },
         { "hrsh7th/cmp-nvim-lsp" },
@@ -93,14 +98,40 @@ return require('packer').startup({function()
         { "f3fora/cmp-spell" },
         { "hrsh7th/cmp-cmdline" },
         { "tamago324/cmp-zsh" },
+        { "L3MON4D3/LuaSnip" },
+        { "rafamadriz/friendly-snippets" },
       },
-      -- config = function()
-      --   require "joel.completion"
-      -- end,
     }
+  use {
+    "rafamadriz/friendly-snippets",
+  }
+  use {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("luasnip/loaders/from_vscode").lazy_load()
+    end,
+  }
+  use {
+    "saadparwaiz1/cmp_luasnip",
+  }
   use 'onsails/lspkind-nvim'
   use 'williamboman/nvim-lsp-installer'
-  use 'tpope/vim-commentary' -- For Commenting gcc & gc
+  use {
+"JoosepAlviste/nvim-ts-context-commentstring",
+event = "BufWinEnter"
+  }
+  use {
+    "numToStr/Comment.nvim",
+    event = "BufRead",
+    config = "require('comment-config')"
+  }
+  use { "tamago324/nlsp-settings.nvim"}
+  use { "antoinemadec/FixCursorHold.nvim"} -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
+  use {
+    "rcarriga/nvim-notify",
+    config = "require('notify-config')",
+    event = "BufRead",
+  }
   use {'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')"}
   use {
     'lukas-reineke/indent-blankline.nvim',
@@ -119,8 +150,12 @@ return require('packer').startup({function()
   use 'terryma/vim-multiple-cursors' -- C-N 
   -- use 'neoclide/coc.vim'
   -- use 'maxmellon/vim-jsx-pretty'
-  use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
-  use 'styled-components/vim-styled-components'
+  use {
+    'MunifTanjim/prettier.nvim',
+    config = "require('prettier-config')"
+  }
+  -- use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
+  -- use 'styled-components/vim-styled-components'
   -- use 'mlaursen/vim-react-snippets'
   -- use 'jpraise/vim-graphql'
   -- use {'liuchengxu/vim-clap',  run =  'Clap install-binary' }

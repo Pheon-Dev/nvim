@@ -9,10 +9,11 @@ map("n", "<C-m>", "<cmd>tabnew<cr>", {noremap = true, silent = true})
 
 -- Saving and Quitting
 map("n", "<C-s>", "<cmd>w!<cr>", {noremap = true, silent = true})
-map("n", "<C-q>", "<cmd>w! | bp | sp | bn | bd<cr>", {noremap = true, silent = true})
-map("n", "<C-e>", "<cmd>bp | sp | bn | bd<cr>", {noremap = true, silent = true})
+map("n", "<C-a>", "<cmd>Prettier<cr>", {noremap = true, silent = true})
+map("n", "<C-q>", "<cmd>w! | bp | sp | bn | bd!<cr>", {noremap = true, silent = true})
+map("n", "<C-e>", "<cmd>bp | sp | bn | bd!<cr>", {noremap = true, silent = true})
 map("n", "<C-x>", "<cmd>qa!<cr>", {noremap = true, silent = true})
-map("n", "<leader>c", "<cmd>bdelete! %d<cr>", {noremap = true, silent = true})
+map("n", "<leader>c", "<cmd>bdelete! %d | bd!<cr>", {noremap = true, silent = true})
 
 -- Window Splitting
 map("n", "<F1>", "<cmd>vsplit<cr>", {noremap = true, silent = true})
