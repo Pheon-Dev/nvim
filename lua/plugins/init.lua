@@ -114,6 +114,10 @@ return require('packer').startup({function()
   use {
     "saadparwaiz1/cmp_luasnip",
   }
+  use {
+"Tastyep/structlog.nvim",
+    -- config = "require('logger-config')"
+  }
   use 'onsails/lspkind-nvim'
   use 'williamboman/nvim-lsp-installer'
   use {
@@ -143,6 +147,11 @@ event = "BufWinEnter"
     'jose-elias-alvarez/null-ls.nvim',
     config = "require('null-ls-config')"
   }
+  use 
+  {
+    "folke/lua-dev.nvim",
+    module = "lua-dev",
+  }
   -- use {'folke/zen-mode.nvim', config = "require('zen-mode-config')"}
   -- use {'folke/twilight.nvim', config = "require('twilight-config')"}
   -- use 'tpope/vim-surround'
@@ -150,11 +159,11 @@ event = "BufWinEnter"
   use 'terryma/vim-multiple-cursors' -- C-N 
   -- use 'neoclide/coc.vim'
   -- use 'maxmellon/vim-jsx-pretty'
-  use {
-    'MunifTanjim/prettier.nvim',
-    config = "require('prettier-config')"
-  }
-  -- use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
+  -- use {
+  --   'MunifTanjim/prettier.nvim',
+  --   config = "require('prettier-config')"
+  -- }
+  use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
   -- use 'styled-components/vim-styled-components'
   -- use 'mlaursen/vim-react-snippets'
   -- use 'jpraise/vim-graphql'
