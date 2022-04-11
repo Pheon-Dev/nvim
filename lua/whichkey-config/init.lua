@@ -32,6 +32,11 @@ local mappings = {
   d = {":Dashboard<cr>", "Home"},
   f = {":Telescope find_files<cr>", "Telescope Find Files"},
   r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
+  v = {":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal"},
+  c = {":BufferClose!<cr>", "Close Buffer"},
+  q = {":q!<cr>", "Quit"},
+  -- ["/"] = {":lua require('Comment.api').toggle_current_linewise()<cr>", "Comment"},
+  -- ["/"] = {":<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>", "Comment"},
   t = {toggle_float, "Floating Terminal"},
   o = {
     name = "Other Commands",
@@ -66,11 +71,11 @@ local mappings = {
     name = "Buffers",
     q = {":BufferLineGoToBuffer 1<cr>", "Buffer 1"},
   },
-  c = {
-    name = "Source",
-    s = {":!source %<cr>", "Source Current File"},
-    S = {":!tmux source %<cr>", "Source Current Tmux File"},
-  },
+  -- c = {
+  --   name = "Source",
+  --   s = {":!source %<cr>", "Source Current File"},
+  --   S = {":!tmux source %<cr>", "Source Current Tmux File"},
+  -- },
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},

@@ -18,9 +18,9 @@ vim.cmd([[
     syntax on
   endif
 ]])
-vim.o.foldmethod = "syntax"
--- vim.o.foldmethod = "expr"
--- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.o.foldmethod = "syntax"
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 vim.o.hidden = true
 vim.o.pumheight = 10
 vim.o.showmode = false
