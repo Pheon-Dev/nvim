@@ -153,7 +153,7 @@ event = "BufWinEnter"
     module = "lua-dev",
   }
   -- use {'folke/zen-mode.nvim', config = "require('zen-mode-config')"}
-  -- use {'folke/twilight.nvim', config = "require('twilight-config')"}
+  use {'folke/twilight.nvim', config = "require('twilight-config')"}
   -- use 'tpope/vim-surround'
   -- use 'preservim/tagbar'
   use 'terryma/vim-multiple-cursors' -- C-N 
