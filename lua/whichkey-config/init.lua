@@ -34,6 +34,7 @@ local mappings = {
   r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
   v = {":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal"},
   c = {":BufferClose!<cr>", "Close Buffer"},
+  h = {":Twilight<cr>", "Twilight"},
   q = {":q!<cr>", "Quit"},
   -- ["/"] = {":lua require('Comment.api').toggle_current_linewise()<cr>", "Comment"},
   -- ["/"] = {":<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>", "Comment"},

@@ -7,6 +7,8 @@ vim.cmd([[
 ]])
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
+-- vim.opt.shortmess:append "c"
+vim.opt.whichwrap:append "<,>,[,],h,l"
 vim.o.encoding = 'utf-8'
 vim.o.splitbelow = true
 vim.o.splitright = true
