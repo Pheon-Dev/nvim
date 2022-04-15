@@ -12,7 +12,7 @@ end
 local time = function()
   return os.date("%a │ %H:%M %x")
 end
-local my_colors = {n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V="#966bfe"}
+local my_colors = {n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V="#966bfe", R="#f62bfe"}
 staline.setup {
   sections = {
     left = {
@@ -29,26 +29,26 @@ staline.setup {
     mod_symbol = "  " -- Change the modified symbol
   },
   mode_icons = {
-    ['n'] = 'NORMAL',
-    ['no'] = 'NORMAL',
-    ['nov'] = 'NORMAL',
-    ['noV'] = 'NORMAL',
-    ['niI'] = 'NORMAL',
-    ['niR'] = 'NORMAL',
-    ['niV'] = 'NORMAL',
-    ['i'] = 'INSERT',
-    ['ic'] = 'INSERT',
-    ['ix'] = 'INSERT',
-    ['s'] = 'INSERT',
-    ['S'] = 'INSERT',
-    ['v'] = 'VISUAL',
-    ['V'] = 'VISUAL',
-    [''] = 'VISUAL',
-    ['r'] = 'REPLACE',
-    ['r?'] = 'REPLACE',
-    ['R'] = 'REPLACE',
-    ['c'] = 'COMMAND',
-    ['t'] = 'TERMINAL'
+    ['n'] = ' NORMAL',
+    ['no'] = ' NORMAL',
+    ['nov'] = ' NORMAL',
+    ['noV'] = ' NORMAL',
+    ['niI'] = ' NORMAL',
+    ['niR'] = ' NORMAL',
+    ['niV'] = ' NORMAL',
+    ['i'] = ' INSERT',
+    ['ic'] = ' INSERT',
+    ['ix'] = ' INSERT',
+    ['s'] = ' INSERT',
+    ['S'] = ' INSERT',
+    ['v'] = ' VISUAL',
+    ['V'] = ' VISUAL',
+    [''] = ' VISUAL',
+    ['r'] = ' REPLACE',
+    ['r?'] = ' REPLACE',
+    ['R'] = ' REPLACE',
+    ['c'] = ' COMMAND',
+    ['t'] = ' TERMINAL'
   },
   mode_colors = my_colors, -- Change mode colors
   special_table = {
