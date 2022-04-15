@@ -30,10 +30,16 @@ return require('packer').startup({function()
   use 'kyazdani42/nvim-web-devicons'
   -- use {'vim-airline/vim-airline'}
   use {
-  'nvim-lualine/lualine.nvim',
-    config = "require('lualine-config')",
-      requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    'tamton-aquib/staline.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    event = "BufRead",
+    config = "require('staline-config')"
   }
+  -- use {
+  -- 'nvim-lualine/lualine.nvim',
+  --   config = "require('lualine-config')",
+  --     requires = { "kyazdani42/nvim-web-devicons", opt = true },
+  -- }
   use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -114,10 +120,10 @@ return require('packer').startup({function()
   use {
     "saadparwaiz1/cmp_luasnip",
   }
-  use {
-"Tastyep/structlog.nvim",
-    -- config = "require('logger-config')"
-  }
+--   use {
+-- "Tastyep/structlog.nvim",
+--     -- config = "require('logger-config')"
+--   }
   use 'onsails/lspkind-nvim'
   use 'williamboman/nvim-lsp-installer'
   use {
