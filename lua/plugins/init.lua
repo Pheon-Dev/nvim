@@ -92,7 +92,7 @@ return require('packer').startup({function()
         { "hrsh7th/vim-vsnip" },
         { "Saecki/crates.nvim" },
         { "f3fora/cmp-spell" },
-        { "hrsh7th/cmp-cmdline" },
+        -- { "hrsh7th/cmp-cmdline" },
         { "tamago324/cmp-zsh" },
         { "L3MON4D3/LuaSnip" },
         { "rafamadriz/friendly-snippets" },
@@ -101,11 +101,20 @@ return require('packer').startup({function()
   use {
     "rafamadriz/friendly-snippets",
   }
+  use {
+    "L3MON4D3/LuaSnip",
+    config = function()
+      require("luasnip/loaders/from_vscode").lazy_load()
+    end,
+  }
+  use {
+    "saadparwaiz1/cmp_luasnip",
+  }
   use 'onsails/lspkind-nvim'
   use 'williamboman/nvim-lsp-installer'
   use {
-"JoosepAlviste/nvim-ts-context-commentstring",
-event = "BufWinEnter"
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    event = "BufWinEnter"
   }
   use {
     "numToStr/Comment.nvim",
@@ -113,6 +122,7 @@ event = "BufWinEnter"
     config = "require('comment-config')"
   }
   use { "tamago324/nlsp-settings.nvim"}
+  use { "antoinemadec/FixCursorHold.nvim"} -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
   use {'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')"}
   use {
     'lukas-reineke/indent-blankline.nvim',
@@ -123,6 +133,11 @@ event = "BufWinEnter"
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = "require('null-ls-config')"
+  }
+  use 
+  {
+    "folke/lua-dev.nvim",
+    module = "lua-dev",
   }
   use {'folke/twilight.nvim', config = "require('twilight-config')"}
   use 'terryma/vim-multiple-cursors' -- C-N 

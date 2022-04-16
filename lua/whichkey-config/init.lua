@@ -26,19 +26,25 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 
+local toggle_btop = function()
+  local lazygit = Terminal:new({cmd = 'btop', direction = "float"})
+  return lazygit:toggle()
+end
+
 local mappings = {
   d = {":Dashboard<cr>", "Home"},
   f = {":Telescope find_files<cr>", "Telescope Find Files"},
   r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
   v = {":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal"},
-  c = {":BufferClose!<cr>", "Close Buffer"},
+  -- c = {":BufferClose!<cr>", "Close Buffer"},
   h = {":Twilight<cr>", "Twilight"},
   q = {":q!<cr>", "Quit"},
-  t = {toggle_float, "Floating Terminal"},
   g = {toggle_lazygit, "LazyGit"},
-  b = {":Telescope buffers<cr>", "Buffers"},
-  o = {
+  b = {toggle_btop, "System Performance"},
+  -- b = {":Telescope buffers<cr>", "Buffers"},
+  t = {
     name = "Telescope Git",
+    t = {toggle_float, "Floating Terminal"},
     s = {":Telescope git_status<cr>", "Git Status"},
     c = {":Telescope git_commits<cr>", "Git Commits"},
     b = {":Telescope git_branches<cr>", "Git Branches"},
@@ -79,9 +85,11 @@ local mappings = {
     N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"}
   },
   z = {
-    name = "Focus",
-    z = {":ZenMode<cr>", "Toggle Zen Mode"},
-    t = {":Twilight<cr>", "Toggle Twilight"}
+    name = "Folds",
+    z = {"zR", "Open Folds Recursively"},
+    a = {"zA", "Toggle Open|Close Folds Recursively"},
+    c = {"zC", "Close All Folds Under Cursor"},
+    o = {"zO", "Open All Folds Under Cursor"},
   }
 }
 
