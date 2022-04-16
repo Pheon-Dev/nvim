@@ -44,15 +44,15 @@ staline.setup {
     ['v'] = ' VISUAL',
     ['V'] = ' VISUAL',
     [''] = ' VISUAL',
-    ['r'] = ' REPLACE',
-    ['r?'] = ' REPLACE',
-    ['R'] = ' REPLACE',
+    ['r'] = '🧹 REPLACE',
+    ['r?'] = '🧹 REPLACE',
+    ['R'] = '🧹 REPLACE',
     ['c'] = ' COMMAND',
     ['t'] = ' TERMINAL'
   },
   mode_colors = my_colors, -- Change mode colors
   special_table = {
-    NvimTree = {'File Explorer', ' '},
+    NvimTree = {'File Explorer', '🌲 '},
     packer = {'Packer', ' '},
     TelescopePrompt = {'Telescope', ' '}
   },
