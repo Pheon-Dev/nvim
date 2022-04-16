@@ -15,8 +15,6 @@ wk.setup {
   }
 }
 
-local gitsigns = require("gitsigns").blame_line{full = true}
-
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_float = function()
   local float = Terminal:new({direction = "float"})
@@ -36,13 +34,16 @@ local mappings = {
   c = {":BufferClose!<cr>", "Close Buffer"},
   h = {":Twilight<cr>", "Twilight"},
   q = {":q!<cr>", "Quit"},
-  -- ["/"] = {":lua require('Comment.api').toggle_current_linewise()<cr>", "Comment"},
-  -- ["/"] = {":<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>", "Comment"},
   t = {toggle_float, "Floating Terminal"},
+  g = {toggle_lazygit, "LazyGit"},
+  b = {":Telescope buffers<cr>", "Buffers"},
   o = {
-    name = "Other Commands",
-    b = {":Telescope buffers<cr>", "Buffers"},
-    t = {":ToggleTerm<cr>", "Split Below"},
+    name = "Telescope Git",
+    s = {":Telescope git_status<cr>", "Git Status"},
+    c = {":Telescope git_commits<cr>", "Git Commits"},
+    b = {":Telescope git_branches<cr>", "Git Branches"},
+    p = {":Telescope command_history<cr>", "Command History"},
+    h = {":Telescope help_tags<cr>", "Help Tags"},
   },
   p = {
     name = "Prettier",
@@ -56,27 +57,6 @@ local mappings = {
     j = {"<C-w>t<C-w>H", "Horiz > Vert Alignment"},
     k = {"<C-w>t<C-w>K", "Vert > Horiz Alignment"}
   },
-  g = {
-    name = "Git VC",
-    g = {toggle_lazygit, "LazyGit"},
-    b = {gitsigns, "Blame Line"},
-    s = {"Gitsigns stage_hunk<cr>", "Stage Hunk"},
-    u = {"Gitsigns undo_stage_hunk<cr>", "Undo Stage Hunk"},
-    r = {"Gitsigns reset_hunk<cr>", "Reset Hunk"},
-    R = {"Gitsigns reset_buffer<cr>", "Reset Buffer"},
-    P = {"Gitsigns preview_hunk<cr>", "Preview Hunk"},
-    S = {"Gitsigns stage_buffer<cr>", "Stage Buffer"},
-    U = {"Gitsigns reset_buffer_index<cr>", "Reset Buffer Index"},
-  },
-  b = {
-    name = "Buffers",
-    q = {":BufferLineGoToBuffer 1<cr>", "Buffer 1"},
-  },
-  -- c = {
-  --   name = "Source",
-  --   s = {":!source %<cr>", "Source Current File"},
-  --   S = {":!tmux source %<cr>", "Source Current Tmux File"},
-  -- },
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},
