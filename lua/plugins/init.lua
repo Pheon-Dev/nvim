@@ -139,6 +139,7 @@ return require('packer').startup({function()
     "folke/lua-dev.nvim",
     module = "lua-dev",
   }
+  use 'dense-analysis/ale'
   use {'folke/twilight.nvim', config = "require('twilight-config')"}
   use 'terryma/vim-multiple-cursors' -- C-N 
   use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
