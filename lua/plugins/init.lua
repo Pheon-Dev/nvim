@@ -92,7 +92,7 @@ return require('packer').startup({function()
         { "hrsh7th/vim-vsnip" },
         { "Saecki/crates.nvim" },
         { "f3fora/cmp-spell" },
-        -- { "hrsh7th/cmp-cmdline" },
+        { "hrsh7th/cmp-cmdline" },
         { "tamago324/cmp-zsh" },
         { "L3MON4D3/LuaSnip" },
         { "rafamadriz/friendly-snippets" },

@@ -4,15 +4,14 @@ vim.cmd([[
   map s. <Plug>(easymotion-repeat)
   map sl <Plug>(easymotion-fl)
   map sw <Plug>(easymotion-overwin-w)
+  map / <Plug>(easymotion-sn)
+  map / <Plug>(easymotion-tn)
+  map n <Plug>(easymotion-next)
+  map N <Plug>(easymotion-prev)
 ]])
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 -- vim.opt.shortmess:append "c"
--- vim.opt.shortmess = "" -- try to prevent echom from cutting messages off or prompting
--- vim.opt.more = false -- don't pause listing when screen is filled
--- vim.opt.cmdheight = 9999 -- helps avoiding |hit-enter| prompts.
--- vim.opt.columns = 9999 -- set the widest screen possible
--- vim.opt.swapfile = false -- don't use a swap file
 vim.opt.whichwrap:append "<,>,[,],h,l"
 vim.o.encoding = 'utf-8'
 vim.o.splitbelow = true
