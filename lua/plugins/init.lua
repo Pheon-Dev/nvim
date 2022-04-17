@@ -27,10 +27,10 @@ return require('packer').startup({function()
   }
   use 'kyazdani42/nvim-web-devicons'
   use {
-    'tamton-aquib/staline.nvim',
+    'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
     event = "BufRead",
-    config = "require('staline-config')"
+    config = "require('lualine-config')"
   }
   use {
     'akinsho/bufferline.nvim',
@@ -119,7 +119,8 @@ return require('packer').startup({function()
   use {
     "numToStr/Comment.nvim",
     event = "BufRead",
-    config = "require('comment-config')"
+    config = "require('comment-config')",
+    commit = "026ec9530b6691db8c68a3ae4fc44c56aa281f52"
   }
   use { "tamago324/nlsp-settings.nvim"}
   use { "antoinemadec/FixCursorHold.nvim"} -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
@@ -140,6 +141,10 @@ return require('packer').startup({function()
     module = "lua-dev",
   }
   use 'dense-analysis/ale'
+  use 'tpope/vim-surround'
+  -- use 'tpope/vim-fugitive'
+  -- use 'tpope/vim-commentary'
+  use 'preservim/tagbar'
   use {'folke/twilight.nvim', config = "require('twilight-config')"}
   use 'terryma/vim-multiple-cursors' -- C-N 
   use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}

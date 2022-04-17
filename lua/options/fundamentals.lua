@@ -30,7 +30,7 @@ vim.cmd([[
     syntax on
   endif
 ]])
-vim.o.foldmethod = "indent"
+-- vim.o.foldmethod = "indent"
 -- vim.o.foldmethod = "syntax"
 -- vim.o.foldmethod = "expr"
 -- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
