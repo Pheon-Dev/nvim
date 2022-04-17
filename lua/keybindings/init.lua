@@ -68,8 +68,6 @@ map("i", "<C-n>", "<cmd>Telescope buffers<cr>", {noremap = true, silent = true})
 map("n", "<C-t>", "<cmd>TagbarToggle<cr>", {noremap = true, silent = true})
 
 -- Fold
-map("n", "z-a", "zfa}", {noremap = true, silent = true})
-map("n", "z-i", "zfi}", {noremap = true, silent = true})
 vim.cmd([[ 
   nnoremap f zfi)
   nnoremap F zfi}

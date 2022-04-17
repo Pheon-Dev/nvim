@@ -79,19 +79,46 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
+local my_colors = {n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V="#966bfe", R="#f62bfe"}
+
 ins_left {
   function()
     return '▊'
   end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
+  color = function()
+    -- auto change color according to neovims mode
+    local mode_color = {
+      n = my_colors.n,
+      i = my_colors.i,
+      v = my_colors.v,
+      [''] = colors.magenta,
+      V = my_colors.V,
+      c = my_colors.c,
+      no = my_colors.n,
+      s = colors.violet,
+      S = colors.violet,
+      [''] = colors.violet,
+      ic = colors.blue,
+      R = my_colors.R,
+      Rv = my_colors.R,
+      cv = colors.green,
+      ce = colors.green,
+      r = colors.magenta,
+      rm = colors.magenta,
+      ['r?'] = colors.magenta,
+      ['!'] = colors.green,
+      t = colors.green,
+    }
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
   padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
-local my_colors = {n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V="#966bfe", R="#f62bfe"}
 ins_left {
   -- mode component
+  -- 'mode',
   function()
-    return 'DE'
+    return ' 🎲'
   end,
   color = function()
     -- auto change color according to neovims mode
@@ -123,83 +150,12 @@ ins_left {
 }
 
 ins_left {
-  -- filesize component
-  'filesize',
-  cond = conditions.buffer_not_empty,
-}
-
-ins_left {
-  'filename',
-  cond = conditions.buffer_not_empty,
-  color = { fg = colors.magenta, gui = 'bold' },
-}
-
-ins_left { 'location' }
-
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
-
-ins_left {
-  'diagnostics',
-  sources = { 'nvim_diagnostic' },
-  symbols = { error = ' ', warn = ' ', info = ' ' },
-  diagnostics_color = {
-    color_error = { fg = colors.red },
-    color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
-  },
-}
-
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left {
-  function()
-    return '%='
-  end,
-}
-
-ins_left {
-  -- Lsp server name .
-  function()
-    local msg = 'No Active Lsp'
-    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then
-      return msg
-    end
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
-      end
-    end
-    return msg
-  end,
-  icon = ' LSP:',
-  color = { fg = '#8d7cd8', gui = 'bold' },
-}
-
--- Add components to right sections
-ins_right {
-  'o:encoding', -- option component same as &encoding in viml
-  fmt = string.upper, -- I'm not sure why it's upper case either ;)
-  cond = conditions.hide_in_width,
-  color = { fg = colors.purple, gui = 'bold' },
-}
-
-ins_right {
-  'fileformat',
-  fmt = string.upper,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = { fg = colors.purple, gui = 'bold' },
-}
-
-ins_right {
   'branch',
-  icon = '',
+  icon = '',
   color = { fg = colors.violet, gui = 'bold' },
 }
 
-ins_right {
+ins_left {
   'diff',
   -- Is it me or the symbol for modified us really weird
   symbols = { added = ' ', modified = '柳 ', removed = ' ' },
@@ -211,11 +167,152 @@ ins_right {
   cond = conditions.hide_in_width,
 }
 
+ins_left {
+  function()
+    return '%='
+  end,
+}
+
+ins_left {
+  'filename',
+  cond = conditions.buffer_not_empty,
+  color = { fg = my_colors.v, gui = 'bold' },
+}
+
+ins_right {
+  'diagnostics',
+  sources = { 'nvim_diagnostic' },
+  symbols = { error = ' ', warn = ' ', info = ' ' },
+  diagnostics_color = {
+    color_error = { fg = colors.red },
+    color_warn = { fg = colors.yellow },
+    color_info = { fg = colors.cyan },
+  },
+}
+
+ins_right {
+  -- filesize component
+  'filesize',
+  cond = conditions.buffer_not_empty,
+  color = function()
+    -- auto change color according to neovims mode
+    local mode_color = {
+      n = my_colors.n,
+      i = my_colors.i,
+      v = my_colors.v,
+      [''] = colors.magenta,
+      V = my_colors.V,
+      c = my_colors.c,
+      no = my_colors.n,
+      s = colors.violet,
+      S = colors.violet,
+      [''] = colors.violet,
+      ic = colors.blue,
+      R = my_colors.R,
+      Rv = my_colors.R,
+      cv = colors.green,
+      ce = colors.green,
+      r = colors.magenta,
+      rm = colors.magenta,
+      ['r?'] = colors.magenta,
+      ['!'] = colors.green,
+      t = colors.green,
+gui = 'bold',
+    }
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
+
+ins_right { 'location',
+  color = function()
+    -- auto change color according to neovims mode
+    local mode_color = {
+      n = my_colors.n,
+      i = my_colors.i,
+      v = my_colors.v,
+      [''] = colors.magenta,
+      V = my_colors.V,
+      c = my_colors.c,
+      no = my_colors.n,
+      s = colors.violet,
+      S = colors.violet,
+      [''] = colors.violet,
+      ic = colors.blue,
+      R = my_colors.R,
+      Rv = my_colors.R,
+      cv = colors.green,
+      ce = colors.green,
+      r = colors.magenta,
+      rm = colors.magenta,
+      ['r?'] = colors.magenta,
+      ['!'] = colors.green,
+      t = colors.green,
+gui = 'bold',
+    }
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
+
+ins_right { 'progress',
+  color = function()
+    -- auto change color according to neovims mode
+    local mode_color = {
+      n = my_colors.n,
+      i = my_colors.i,
+      v = my_colors.v,
+      [''] = colors.magenta,
+      V = my_colors.V,
+      c = my_colors.c,
+      no = my_colors.n,
+      s = colors.violet,
+      S = colors.violet,
+      [''] = colors.violet,
+      ic = colors.blue,
+      R = my_colors.R,
+      Rv = my_colors.R,
+      cv = colors.green,
+      ce = colors.green,
+      r = colors.magenta,
+      rm = colors.magenta,
+      ['r?'] = colors.magenta,
+      ['!'] = colors.green,
+      t = colors.green,
+gui = 'bold',
+    }
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
+
 ins_right {
   function()
     return '▊'
   end,
-  color = { fg = colors.blue },
+  color = function()
+    -- auto change color according to neovims mode
+    local mode_color = {
+      n = my_colors.n,
+      i = my_colors.i,
+      v = my_colors.v,
+      [''] = colors.magenta,
+      V = my_colors.V,
+      c = my_colors.c,
+      no = my_colors.n,
+      s = colors.violet,
+      S = colors.violet,
+      [''] = colors.violet,
+      ic = colors.blue,
+      R = my_colors.R,
+      Rv = my_colors.R,
+      cv = colors.green,
+      ce = colors.green,
+      r = colors.magenta,
+      rm = colors.magenta,
+      ['r?'] = colors.magenta,
+      ['!'] = colors.green,
+      t = colors.green,
+    }
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
   padding = { left = 1 },
 }
 
