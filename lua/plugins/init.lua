@@ -140,10 +140,9 @@ return require('packer').startup({function()
     "folke/lua-dev.nvim",
     module = "lua-dev",
   }
-  use 'dense-analysis/ale'
   use 'tpope/vim-surround'
+  use 'pechorin/any-jump.vim'
   -- use 'tpope/vim-fugitive'
-  -- use 'tpope/vim-commentary'
   use 'preservim/tagbar'
   use {'folke/twilight.nvim', config = "require('twilight-config')"}
   use 'terryma/vim-multiple-cursors' -- C-N 

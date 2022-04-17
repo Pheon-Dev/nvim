@@ -64,6 +64,9 @@ map("n", "]c", "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", {expr = true, nor
 map("i", "<C-h>", "<cmd>Telescope find_files hidden=true<cr>", {noremap = true, silent = true})
 map("i", "<C-n>", "<cmd>Telescope buffers<cr>", {noremap = true, silent = true})
 
+-- Tagbar
+map("n", "<C-t>", "<cmd>TagbarToggle<cr>", {noremap = true, silent = true})
+
 -- Shade Toggle
 map("n", "S", ":lua require'shade'.toggle()<cr>", {noremap = true, silent = false})
 

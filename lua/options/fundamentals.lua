@@ -9,15 +9,8 @@ vim.cmd([[
   map n <Plug>(easymotion-next)
   map N <Plug>(easymotion-prev)
 ]])
-vim.cmd([[ 
-let b:ale_fixers = ['prettier', 'eslint']
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
-let b:ale_fixers = {'javascriptreact': ['prettier', 'eslint']}
-let g:ale_fix_on_save = 1
-]])
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
--- vim.opt.shortmess:append "c"
 vim.opt.whichwrap:append "<,>,[,],h,l"
 vim.o.encoding = 'utf-8'
 vim.o.splitbelow = true
