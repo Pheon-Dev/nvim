@@ -5,7 +5,7 @@ local map = vim.api.nvim_set_keymap
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", {noremap = true, silent = true})
 
 -- Tabs
-map("n", "<C-m>", "<cmd>tabnew<cr>", {noremap = true, silent = true})
+-- map("n", "<C-m>", "<cmd>tabnew<cr>", {noremap = true, silent = true})
 
 -- Saving and Quitting
 map("n", "<C-s>", "<cmd>w! | noh<cr>", {noremap = true, silent = true})
@@ -67,6 +67,27 @@ map("i", "<C-n>", "<cmd>Telescope buffers<cr>", {noremap = true, silent = true})
 -- Tagbar
 map("n", "<C-t>", "<cmd>TagbarToggle<cr>", {noremap = true, silent = true})
 
+-- Fold
+map("n", "z-a", "zfa}", {noremap = true, silent = true})
+map("n", "z-i", "zfi}", {noremap = true, silent = true})
+vim.cmd([[ 
+  nnoremap f zfi)
+  nnoremap F zfi}
+  nnoremap ; za
+  nnoremap m zR
+  nnoremap <C-m> zM
+]])
+-- Easymotion
+vim.cmd([[ 
+  map s <Plug>(easymotion-prefix)
+  map s. <Plug>(easymotion-repeat)
+  map sl <Plug>(easymotion-fl)
+  map sw <Plug>(easymotion-overwin-w)
+  map / <Plug>(easymotion-sn)
+  map / <Plug>(easymotion-tn)
+  map n <Plug>(easymotion-next)
+  map N <Plug>(easymotion-prev)
+]])
 -- Shade Toggle
 map("n", "S", ":lua require'shade'.toggle()<cr>", {noremap = true, silent = false})
 

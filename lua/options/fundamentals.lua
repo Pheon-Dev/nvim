@@ -1,14 +1,4 @@
 vim.o.guifont = ('Courier\\ New:h10')
-vim.cmd([[ 
-  map s <Plug>(easymotion-prefix)
-  map s. <Plug>(easymotion-repeat)
-  map sl <Plug>(easymotion-fl)
-  map sw <Plug>(easymotion-overwin-w)
-  map / <Plug>(easymotion-sn)
-  map / <Plug>(easymotion-tn)
-  map n <Plug>(easymotion-next)
-  map N <Plug>(easymotion-prev)
-]])
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.opt.whichwrap:append "<,>,[,],h,l"
@@ -23,10 +13,7 @@ vim.cmd([[
     syntax on
   endif
 ]])
--- vim.o.foldmethod = "indent"
--- vim.o.foldmethod = "syntax"
--- vim.o.foldmethod = "expr"
--- vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldmethod = "manual"
 vim.o.hidden = true
 vim.o.pumheight = 10
 vim.o.showmode = false

@@ -84,13 +84,6 @@ local mappings = {
     n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
     N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"}
   },
-  z = {
-    name = "Folds",
-    z = {"zR", "Open Folds Recursively"},
-    a = {"zA", "Toggle Open|Close Folds Recursively"},
-    c = {"zC", "Close All Folds Under Cursor"},
-    o = {"zO", "Open All Folds Under Cursor"},
-  }
 }
 
 local opts = {prefix = '<leader>'}
