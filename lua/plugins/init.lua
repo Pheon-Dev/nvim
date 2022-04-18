@@ -163,8 +163,10 @@ return require('packer').startup({function()
     module = "lua-dev",
   }
   use 'tpope/vim-surround'
-  use 'pechorin/any-jump.vim'
-  -- use 'tpope/vim-fugitive'
+  use {
+    'pechorin/any-jump.vim',
+  }
+  use 'tpope/vim-fugitive'
   use 'preservim/tagbar'
   use {'folke/twilight.nvim', config = "require('twilight-config')"}
   use 'terryma/vim-multiple-cursors' -- C-N 
