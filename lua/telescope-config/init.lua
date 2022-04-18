@@ -94,7 +94,6 @@ require('telescope').load_extension "bookmarks"
 require('telescope').load_extension "repo"
 require('telescope').load_extension "frecency"
 require('telescope').load_extension "gh"
--- require'telescope'.extensions.repo.list{search_dirs = {"~/.config", "~/Documents"}}
 
 local z_utils = require("telescope._extensions.zoxide.utils")
 
