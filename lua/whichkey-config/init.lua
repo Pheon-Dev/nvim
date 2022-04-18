@@ -26,10 +26,10 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 
-local toggle_btop = function()
-  local lazygit = Terminal:new({cmd = 'btop', direction = "float"})
-  return lazygit:toggle()
-end
+-- local toggle_btop = function()
+--   local lazygit = Terminal:new({cmd = 'btop', direction = "float"})
+--   return lazygit:toggle()
+-- end
 
 local mappings = {
   d = {":Dashboard<cr>", "Home"},
@@ -40,8 +40,22 @@ local mappings = {
   h = {":Twilight<cr>", "Twilight"},
   q = {":q!<cr>", "Quit"},
   g = {toggle_lazygit, "LazyGit"},
-  b = {toggle_btop, "System Performance"},
-  -- b = {":Telescope buffers<cr>", "Buffers"},
+  -- b = {toggle_btop, "System Performance"},
+  z = {":Telescope zoxide list<cr>", "Zoxide"},
+  n = {":Telescope neoclip<cr>", "Neoclip"},
+  w = {":Telescope bookmarks<cr>", "Bookmarks"},
+  c = {":Telescope repo list<cr>", "Repos"},
+  b = {":Telescope frecency<cr>", "Frecency"},
+  p = {
+    name = "Packer",
+    s = {":PackerSync<cr>", "Sync"},
+    c = {":PackerCompile<cr>", "Compile"},
+  },
+  -- e = {
+  --   name = "External",
+  --   e = {":lua <Plug>(external-editor)<cr>", "Editor"},
+  --   b = {":lua <Plug>(external-browser)<cr>", "Browser"},
+  -- },
   t = {
     name = "Telescope Git",
     t = {toggle_float, "Floating Terminal"},
@@ -50,11 +64,6 @@ local mappings = {
     b = {":Telescope git_branches<cr>", "Git Branches"},
     p = {":Telescope command_history<cr>", "Command History"},
     h = {":Telescope help_tags<cr>", "Help Tags"},
-  },
-  p = {
-    name = "Prettier",
-    p = {":Prettier<cr>", "Prettier"},
-    a = {":PrettierAsync", "Prettier Async"}
   },
   s = {
     name = "Split",

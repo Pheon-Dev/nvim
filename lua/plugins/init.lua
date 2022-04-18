@@ -59,10 +59,32 @@ return require('packer').startup({function()
     cmd = "Telescope",
     config = "require('telescope-config')"
   }
+  use 'nvim-lua/plenary.nvim'
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   }
+  use {
+    "nvim-telescope/telescope-frecency.nvim",
+    requires = {"tami5/sqlite.lua"}
+  }
+  use {
+    'dhruvmanila/telescope-bookmarks.nvim',
+    requires = {
+      'tami5/sqlite.lua',
+    },
+  }
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      {'tami5/sqlite.lua', module = 'sqlite'},
+      {'nvim-telescope/telescope.nvim'},
+    },
+    config = "require('neoclip-config')"
+  }
+  use 'jvgrootveld/telescope-zoxide'
+  use 'airblade/vim-rooter'
+  use 'cljoly/telescope-repo.nvim'
   use {
     'windwp/nvim-autopairs',
     after = "nvim-cmp",
