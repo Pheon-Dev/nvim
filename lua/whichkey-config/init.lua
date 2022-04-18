@@ -27,21 +27,21 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
-  f = {":Telescope find_files<cr>", "Telescope Find Files"},
-  r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
-  v = {":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal"},
+  f = {":Telescope find_files<cr>", "Find Files"},
+  r = {":Telescope live_grep<cr>", "Live Grep"},
   h = {":Twilight<cr>", "Twilight"},
   z = {":Telescope zoxide list<cr>", "Zoxide"},
   n = {":Telescope neoclip<cr>", "Neoclip"},
   w = {":Telescope bookmarks<cr>", "Bookmarks"},
   b = {":Telescope frecency<cr>", "Frecency"},
-  p = {":PackerSync<cr>", "Sync"},
-  l = {toggle_lazygit, "LazyGit"},
+  p = {":PackerSync<cr>", "Packer Sync"},
+  v = {":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal"},
   t = {toggle_float, "Floating Terminal"},
+  l = {toggle_lazygit, "LazyGit"},
   g = {
     name = "Telescope Git",
     g = {toggle_lazygit, "LazyGit"},
-    p = {":Telescope repo list<cr>", "Repos"},
+    p = {":Telescope repo list<cr>", "Git Repos"},
     i = {":Telescope gh list issues<cr>", "Git Issues"},
     t = {":Telescope gh list gist<cr>", "Git Gist"},
     r = {":Telescope gh list run<cr>", "Git Run"},

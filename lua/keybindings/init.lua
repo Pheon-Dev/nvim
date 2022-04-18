@@ -69,11 +69,11 @@ map("n", "<C-t>", "<cmd>TagbarToggle<cr>", {noremap = true, silent = true})
 
 -- Fold
 vim.cmd([[ 
-  nnoremap f zfi)
-  nnoremap F zfi}
+  nnoremap 9 zfi)
+  nnoremap 0 zfi}
   nnoremap ; za
-  nnoremap m zR
-  nnoremap <C-m> zM
+  nnoremap [ zR
+  nnoremap ] zM
 ]])
 -- Easymotion
 vim.cmd([[ 
