@@ -55,7 +55,10 @@ return require('packer').startup({function()
   }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/plenary.nvim'}},
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      {"nvim-telescope/telescope-github.nvim"},
+    },
     cmd = "Telescope",
     config = "require('telescope-config')"
   }
