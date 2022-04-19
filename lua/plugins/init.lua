@@ -85,6 +85,15 @@ return require('packer').startup({function()
     },
     config = "require('neoclip-config')"
   }
+  use {
+    'pwntester/octo.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = "require('octo-config')"
+  }
   use 'jvgrootveld/telescope-zoxide'
   use 'airblade/vim-rooter'
   use 'cljoly/telescope-repo.nvim'
