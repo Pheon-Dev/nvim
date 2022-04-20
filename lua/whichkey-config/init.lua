@@ -29,13 +29,14 @@ end
 local mappings = {
   f = {":Telescope find_files<cr>", "Find Files"},
   r = {":Telescope live_grep<cr>", "Live Grep"},
-  h = {":Twilight<cr>", "Twilight"},
+  s = {":Telescope frecency<cr>", "Frecency"},
   z = {":Telescope zoxide list<cr>", "Zoxide"},
   n = {":Telescope neoclip<cr>", "Neoclip"},
   w = {":Telescope bookmarks<cr>", "Bookmarks"},
-  b = {":Telescope frecency<cr>", "Frecency"},
   p = {":PackerSync<cr>", "Packer Sync"},
-  v = {":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal"},
+  h = {":Twilight<cr>", "Twilight"},
+  -- q = {":bdelete!<cr>", "Twilight"},
+  b = {":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal"},
   t = {toggle_float, "Floating Terminal"},
   l = {toggle_lazygit, "LazyGit"},
   g = {
@@ -51,12 +52,12 @@ local mappings = {
     b = {":Telescope git_branches<cr>", "Git Branches"},
   },
   c = {
-    name = "Telescope Git",
+    name = "Others",
     p = {":Telescope command_history<cr>", "Command History"},
     h = {":Telescope help_tags<cr>", "Help Tags"},
     d = {":Dashboard<cr>", "Home"},
   },
-  s = {
+  v = {
     name = "Split",
     v = {":vsplit<cr>", "Vertical Split"},
     h = {":split<cr>", "Horizontal Split"},

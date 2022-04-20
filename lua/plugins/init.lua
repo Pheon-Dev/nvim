@@ -96,6 +96,7 @@ return require('packer').startup({function()
   }
   use 'jvgrootveld/telescope-zoxide'
   use 'airblade/vim-rooter'
+  use 'airblade/vim-gitgutter'
   use 'cljoly/telescope-repo.nvim'
   use {
     'windwp/nvim-autopairs',
