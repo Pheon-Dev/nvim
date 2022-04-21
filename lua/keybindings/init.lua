@@ -75,17 +75,22 @@ vim.cmd([[
   nnoremap [ zR
   nnoremap ] zM
 ]])
+
 -- Easymotion
 vim.cmd([[ 
   map s <Plug>(easymotion-prefix)
   map s. <Plug>(easymotion-repeat)
   map sl <Plug>(easymotion-fl)
   map sw <Plug>(easymotion-overwin-w)
+]])
+
+vim.cmd([[
   map / <Plug>(easymotion-sn)
   map / <Plug>(easymotion-tn)
   map n <Plug>(easymotion-next)
   map N <Plug>(easymotion-prev)
 ]])
+
 -- Shade Toggle
 map("n", "S", ":lua require'shade'.toggle()<cr>", {noremap = true, silent = false})
 

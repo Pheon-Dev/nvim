@@ -1,11 +1,14 @@
 return require('packer').startup({function()
+  -- Essentials
   use 'wbthomason/packer.nvim'
   use 'christoomey/vim-tmux-navigator'
+  -- Theme
   use 'folke/tokyonight.nvim'
   use {
     'karb94/neoscroll.nvim',
     config = "require('neoscroll-config')"
   }
+  -- Treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate",
@@ -19,12 +22,15 @@ return require('packer').startup({function()
   use {
     'nvim-lua/popup.nvim',
   }
+  -- Nvim Tree
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {'kyazdani42/nvim-web-devicons'},
     cmd = "NvimTreeToggle",
     config = "require('nvim-tree-config')"
   }
+
+  -- Utils
   use 'kyazdani42/nvim-web-devicons'
   use {
     'nvim-lualine/lualine.nvim',
@@ -46,6 +52,8 @@ return require('packer').startup({function()
     'glepnir/dashboard-nvim',
     config = "require('dashboard-config')"
   }
+
+  -- Git
   use {
     'lewis6991/gitsigns.nvim',
     requires = {{'nvim-lua/plenary.nvim'}},
@@ -53,6 +61,8 @@ return require('packer').startup({function()
       require('gitsigns').setup {current_line_blame = true}
     end
   }
+
+  -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
@@ -98,21 +108,26 @@ return require('packer').startup({function()
   use 'airblade/vim-rooter'
   use 'airblade/vim-gitgutter'
   use 'cljoly/telescope-repo.nvim'
+  -- Formatting
   use {
     'windwp/nvim-autopairs',
     after = "nvim-cmp",
     config = "require('autopairs-config')"
   }
+  -- Keybindings
   use {
     'folke/which-key.nvim',
     event = "BufWinEnter",
     config = "require('whichkey-config')"
   }
+  -- Motion
   use 'easymotion/vim-easymotion'
   use {
     'sunjon/Shade.nvim',
     config = "require('shade-config')"
   }
+
+  -- LSP
   use {'neovim/nvim-lspconfig', config = "require('lsp')"}
     use {
       "hrsh7th/nvim-cmp",
@@ -151,6 +166,7 @@ return require('packer').startup({function()
     "JoosepAlviste/nvim-ts-context-commentstring",
     event = "BufWinEnter"
   }
+  -- Commentary
   use {
     "numToStr/Comment.nvim",
     event = "BufRead",
@@ -181,6 +197,7 @@ return require('packer').startup({function()
   }
   use 'tpope/vim-fugitive'
   use 'preservim/tagbar'
+  -- Decors
   use {'folke/twilight.nvim', config = "require('twilight-config')"}
   use 'terryma/vim-multiple-cursors' -- C-N 
   use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
