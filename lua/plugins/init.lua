@@ -38,6 +38,7 @@ return require('packer').startup({function()
     event = "BufRead",
     config = "require('lualine-config')"
   }
+  use 'matze/vim-move'
   use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
