@@ -1,14 +1,19 @@
 return require('packer').startup({function()
-  -- Essentials
+  -- Packer
   use 'wbthomason/packer.nvim'
-  use 'christoomey/vim-tmux-navigator'
+
+  -- Essentials
+  use {
+    'nvim-lua/popup.nvim',
+  }
+  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-lua/plenary.nvim'
+  use 'junegunn/fzf.vim'
+
   -- Theme
   use 'folke/tokyonight.nvim'
-  use {
-    'karb94/neoscroll.nvim',
-    config = "require('neoscroll-config')"
-  }
-  -- Treesitter
+
+  -- Highlighting
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ":TSUpdate",
@@ -17,11 +22,10 @@ return require('packer').startup({function()
   use {'windwp/nvim-ts-autotag'}
   use {'p00f/nvim-ts-rainbow'}
   use 'junegunn/rainbow_parentheses.vim'
-  use 'folke/lsp-colors.nvim'
+
+  -- Completions
   use 'nvim-lua/completion-nvim'
-  use {
-    'nvim-lua/popup.nvim',
-  }
+
   -- Nvim Tree
   use {
     'kyazdani42/nvim-tree.lua',
@@ -30,31 +34,28 @@ return require('packer').startup({function()
     config = "require('nvim-tree-config')"
   }
 
-  -- Utils
-  use 'kyazdani42/nvim-web-devicons'
+  -- Status Bars
   use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
     event = "BufRead",
     config = "require('lualine-config')"
   }
-  use 'matze/vim-move'
   use {
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     event = "BufWinEnter",
     config = "require('bufferline-config')"
   }
+
+  -- Terminal
   use {
     'akinsho/toggleterm.nvim',
     config = "require('toggleterm-config')"
   }
-  use {
-    'glepnir/dashboard-nvim',
-    config = "require('dashboard-config')"
-  }
 
   -- Git
+  use 'tpope/vim-fugitive'
   use {
     'lewis6991/gitsigns.nvim',
     requires = {{'nvim-lua/plenary.nvim'}},
@@ -62,6 +63,7 @@ return require('packer').startup({function()
       require('gitsigns').setup {current_line_blame = true}
     end
   }
+  use 'airblade/vim-gitgutter'
 
   -- Telescope
   use {
@@ -73,7 +75,6 @@ return require('packer').startup({function()
     cmd = "Telescope",
     config = "require('telescope-config')"
   }
-  use 'nvim-lua/plenary.nvim'
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
@@ -96,25 +97,30 @@ return require('packer').startup({function()
     },
     config = "require('neoclip-config')"
   }
-  use {
-    'pwntester/octo.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      'kyazdani42/nvim-web-devicons',
-    },
-    config = "require('octo-config')"
-  }
   use 'jvgrootveld/telescope-zoxide'
-  use 'airblade/vim-rooter'
-  use 'airblade/vim-gitgutter'
   use 'cljoly/telescope-repo.nvim'
+
+  -- Utils
+  use 'terryma/vim-multiple-cursors' -- C-N 
+  use 'airblade/vim-rooter'
+  use 'preservim/tagbar'
+  use { "antoinemadec/FixCursorHold.nvim"} -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
+  use {'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')"}
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    event = "BufRead",
+    config = "require('blankline-config')"
+  }
+
   -- Formatting
+  use 'tpope/vim-surround'
+  use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
   use {
     'windwp/nvim-autopairs',
     after = "nvim-cmp",
     config = "require('autopairs-config')"
   }
+
   -- Keybindings
   use {
     'folke/which-key.nvim',
@@ -122,13 +128,18 @@ return require('packer').startup({function()
     config = "require('whichkey-config')"
   }
   -- Motion
-  use 'easymotion/vim-easymotion'
   use {
-    'sunjon/Shade.nvim',
-    config = "require('shade-config')"
+    'pechorin/any-jump.vim',
   }
+  use 'matze/vim-move'
+  use {
+    'karb94/neoscroll.nvim',
+    config = "require('neoscroll-config')"
+  }
+  use 'easymotion/vim-easymotion'
+  use 'christoomey/vim-tmux-navigator'
 
-  -- LSP
+  -- LSP & Completions
   use {'neovim/nvim-lspconfig', config = "require('lsp')"}
     use {
       "hrsh7th/nvim-cmp",
@@ -149,9 +160,22 @@ return require('packer').startup({function()
         { "rafamadriz/friendly-snippets" },
       },
     }
+  use 'folke/lsp-colors.nvim'
+  use 'onsails/lspkind-nvim'
+  use 'williamboman/nvim-lsp-installer'
+  use { "tamago324/nlsp-settings.nvim"}
+  use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = "require('null-ls-config')"
+  }
+
+  -- Snippets
   use {
     "rafamadriz/friendly-snippets",
   }
+
+  -- Lua
   use {
     "L3MON4D3/LuaSnip",
     config = function()
@@ -161,47 +185,34 @@ return require('packer').startup({function()
   use {
     "saadparwaiz1/cmp_luasnip",
   }
-  use 'onsails/lspkind-nvim'
-  use 'williamboman/nvim-lsp-installer'
+  use
+  {
+    "folke/lua-dev.nvim",
+    module = "lua-dev",
+  }
+
+  -- Commentary
   use {
     "JoosepAlviste/nvim-ts-context-commentstring",
     event = "BufWinEnter"
   }
-  -- Commentary
   use {
     "numToStr/Comment.nvim",
     event = "BufRead",
     config = "require('comment-config')",
     commit = "026ec9530b6691db8c68a3ae4fc44c56aa281f52"
   }
-  use { "tamago324/nlsp-settings.nvim"}
-  use { "antoinemadec/FixCursorHold.nvim"} -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
-  use {'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')"}
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    event = "BufRead",
-    config = "require('blankline-config')"
-  }
-  use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
-  use {
-    'jose-elias-alvarez/null-ls.nvim',
-    config = "require('null-ls-config')"
-  }
-  use 
-  {
-    "folke/lua-dev.nvim",
-    module = "lua-dev",
-  }
-  use 'tpope/vim-surround'
-  use {
-    'pechorin/any-jump.vim',
-  }
-  use 'tpope/vim-fugitive'
-  use 'preservim/tagbar'
+
   -- Decors
+  use {
+    'glepnir/dashboard-nvim',
+    config = "require('dashboard-config')"
+  }
+  use {
+    'sunjon/Shade.nvim',
+    config = "require('shade-config')"
+  }
   use {'folke/twilight.nvim', config = "require('twilight-config')"}
-  use 'terryma/vim-multiple-cursors' -- C-N 
-  use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
 end,
 config = {
   display = {
