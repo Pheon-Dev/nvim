@@ -171,6 +171,7 @@ return require('packer').startup({function()
   }
 
   -- Snippets
+  use 'mattn/emmet-vim'
   use {
     "rafamadriz/friendly-snippets",
   }
