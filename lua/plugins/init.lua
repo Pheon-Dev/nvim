@@ -1,6 +1,6 @@
 return require('packer').startup({function()
   -- Packer
-  use 'wbthomason/packer.nvim'
+      use 'wbthomason/packer.nvim'
 
   -- Essentials
   use {
@@ -214,6 +214,7 @@ return require('packer').startup({function()
     config = "require('shade-config')"
   }
   use {'folke/twilight.nvim', config = "require('twilight-config')"}
+  use {'andweeb/presence.nvim', config = "require('presence-config')"}
 end,
 config = {
   display = {
