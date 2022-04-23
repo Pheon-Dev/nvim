@@ -26,6 +26,21 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 
+local toggle_ranger = function()
+  local ranger = Terminal:new({cmd = 'ranger', direction = "float"})
+  return ranger:toggle()
+end
+
+local toggle_btop = function()
+  local btop = Terminal:new({cmd = 'btop', direction = "float"})
+  return btop:toggle()
+end
+
+local toggle_mc = function()
+  local mc = Terminal:new({cmd = 'mc', direction = "float"})
+  return mc:toggle()
+end
+
 local mappings = {
   f = {":Telescope find_files<cr>", "Find Files"},
   r = {":Telescope live_grep<cr>", "Live Grep"},
@@ -35,10 +50,15 @@ local mappings = {
   w = {":Telescope bookmarks<cr>", "Bookmarks"},
   p = {":PackerSync<cr>", "Packer Sync"},
   h = {":Twilight<cr>", "Twilight"},
-  -- q = {":bdelete!<cr>", "Twilight"},
   b = {":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal"},
-  t = {toggle_float, "Floating Terminal"},
   l = {toggle_lazygit, "LazyGit"},
+  t = {
+    name = "Toggle",
+    t = {toggle_float, "Terminal"},
+    r = {toggle_ranger, "Ranger"},
+    b = {toggle_btop, "Btop"},
+    m = {toggle_mc, "mc"},
+  },
   g = {
     name = "Telescope Git",
     g = {toggle_lazygit, "LazyGit"},
