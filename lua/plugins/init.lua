@@ -9,6 +9,7 @@ return require('packer').startup({function()
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
   use 'junegunn/fzf.vim'
+  use 'azadkuh/vim-cmus'
 
   -- Theme
   use 'folke/tokyonight.nvim'
@@ -114,6 +115,7 @@ return require('packer').startup({function()
 
   -- Formatting
   use 'tpope/vim-surround'
+  use 'dense-analysis/ale'
   use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
   use {
     'windwp/nvim-autopairs',
