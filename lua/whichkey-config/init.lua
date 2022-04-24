@@ -36,6 +36,11 @@ local toggle_btop = function()
   return btop:toggle()
 end
 
+local toggle_cmus = function()
+  local cmus = Terminal:new({cmd = 'cmus', direction = "float"})
+  return cmus:toggle()
+end
+
 local toggle_mc = function()
   local mc = Terminal:new({cmd = 'mc', direction = "float"})
   return mc:toggle()
@@ -58,6 +63,17 @@ local mappings = {
     r = {toggle_ranger, "Ranger"},
     b = {toggle_btop, "Btop"},
     m = {toggle_mc, "mc"},
+    c = {toggle_cmus, "cmus"},
+  },
+  m = {
+    name = "Music",
+    m = {toggle_cmus, "cmus"},
+    s = {":CmusPlay<cr>", "Start"},
+    p = {":CmusCurrent<cr>", "Current"},
+    c = {":Cmus<cr>", "Info"},
+    n = {":CmusNext<cr>", "Next"},
+    b = {":CmusPrevious<cr>", "Previous"},
+    v = {":CmusStop<cr>", "Stop"},
   },
   g = {
     name = "Telescope Git",
