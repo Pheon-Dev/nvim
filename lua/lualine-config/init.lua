@@ -17,7 +17,7 @@ local colors = {
   magenta  = '#c678dd',
   blue     = '#51afef',
   red      = '#ec5f67',
-  purple   ='#6272a4',
+  purple   = '#6272a4',
 }
 
 local conditions = {

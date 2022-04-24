@@ -36,10 +36,6 @@ map("i", "<C-z>", "<cmd>redo<cr>", {noremap = true, silent = true})
 map("i", "<C-u>", "<cmd>undo<cr>", {noremap = true, silent = true})
 map("n", "<S-u>", "<cmd>redo<cr>", {noremap = true, silent = true})
 
--- COC Actions
--- map("n", "<Leader>l", "<cmd>call CocActionSync('jumpDefinition')<cr>", {noremap = true, silent = true})
--- map("n", "<silent>K", "<cmd>call CocAction('doHover')<cr>", {noremap = true, silent = true})
-
 -- ESC on insert Mode
 map("i", "jk", "<ESC>", {noremap = true, silent = true})
 map("i", "kj", "<ESC>", {noremap = true, silent = true})

@@ -34,10 +34,10 @@ require"toggleterm".setup {
   -- { exec, keymap, name}
   -- lvim.builtin.terminal.execs = {{}} to overwrite
   -- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs+1] = {"gdb", "tg", "GNU Debugger"}
-  -- execs = {
-  --   { "lazygit", "<leader>gg", "LazyGit", "float" },
-  --   { "lazygit", "<c-\\><c-g>", "LazyGit", "float" },
-  -- },
+  execs = {
+    { "x", "<esc>", "Exit", "float" },
+    -- { "lazygit", "<c-\\><c-g>", "LazyGit", "float" },
+  },
 }
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
