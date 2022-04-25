@@ -157,13 +157,7 @@ ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
   color = { fg = my_colors.v, gui = 'bold' },
-  file_status = true,
   path = 1,
-  symbols = {
-    modified = '[+]',
-    readonly = '[-]',
-    unnamed = '[No Name]',
-  },
 }
 
 ins_right {

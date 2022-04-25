@@ -1,6 +1,5 @@
 require('options.autocmd')
 require('options.buffer')
 require('options.fundamentals')
-require('options.prettier')
 require('options.rainbow')
 require('options.theme')
