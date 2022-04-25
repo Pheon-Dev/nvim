@@ -174,8 +174,9 @@ ins_left {
 }
 
 ins_left {
-  'filename',
-  cond = conditions.buffer_not_empty,
+  function()
+    return "%f"
+  end,
   color = { fg = my_colors.v, gui = 'bold' },
 }
 
@@ -188,6 +189,12 @@ ins_right {
     color_warn = { fg = colors.yellow },
     color_info = { fg = colors.cyan },
   },
+}
+
+ins_right {
+  'filetype',
+  cond = conditions.buffer_not_empty,
+  color = { fg = my_colors.v, gui = 'bold' },
 }
 
 ins_right {

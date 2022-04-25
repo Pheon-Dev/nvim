@@ -71,6 +71,21 @@ vim.cmd('let g:deoplete#enable_at_startup=1')
 vim.g.python3_host_prog = '/usr/bin/python'
 vim.o.exrc = true
 
+-- Statusline
+-- vim.cmd([[
+--   set statusline=
+--   set statusline+=%#NonText#
+--   set statusline+=%=
+--   set statusline+=\ %f
+--   set statusline+=\ 
+--   set statusline+=%#CursorLineNr#
+--   set statusline+=\ %y
+--   set statusline+=\ %r
+--   set statusline+=%#IncSearch#
+--   set statusline+=\ %l/%L
+--   set statusline+=\ [%c]
+-- ]])
+
 vim.cmd([[
     let &l:cc = join(range(getpos("'<")[2], getpos("'>")[2]),',')
   ]])
