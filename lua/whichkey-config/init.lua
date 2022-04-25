@@ -47,10 +47,12 @@ local toggle_mc = function()
 end
 
 local mappings = {
-  f = { ":Telescope find_files<cr>", "Find Files" },
   k = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
+  s = { ":w! | noh<cr>", "Write" },
+  q = { ":q!<cr>", "Quit" },
+  f = { ":Telescope find_files<cr>", "Find Files" },
   r = { ":Telescope live_grep<cr>", "Live Grep" },
-  s = { ":Telescope frecency<cr>", "Frecency" },
+  a = { ":Telescope frecency<cr>", "Frecency" },
   z = { ":Telescope zoxide list<cr>", "Zoxide" },
   n = { ":Telescope neoclip<cr>", "Neoclip" },
   w = { ":Telescope bookmarks<cr>", "Bookmarks" },
