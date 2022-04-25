@@ -59,6 +59,7 @@ local mappings = {
   p = { ":PackerSync<cr>", "Packer Sync" },
   h = { ":Twilight<cr>", "Twilight" },
   b = { ":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal" },
+  d = { ":Dashboard<cr>", "Dashboard" },
   l = { toggle_lazygit, "LazyGit" },
   t = {
     name = "Toggle",

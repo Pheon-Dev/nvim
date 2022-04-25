@@ -1,6 +1,6 @@
-return require('packer').startup({function()
+return require('packer').startup({ function()
   -- Packer
-      use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim'
 
   -- Essentials
   use {
@@ -19,8 +19,8 @@ return require('packer').startup({function()
     run = ":TSUpdate",
     config = "require('treesitter-config')"
   }
-  use {'windwp/nvim-ts-autotag'}
-  use {'p00f/nvim-ts-rainbow'}
+  use { 'windwp/nvim-ts-autotag' }
+  use { 'p00f/nvim-ts-rainbow' }
   use 'junegunn/rainbow_parentheses.vim'
 
   -- Completions
@@ -29,7 +29,7 @@ return require('packer').startup({function()
   -- Nvim Tree
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = {'kyazdani42/nvim-web-devicons'},
+    requires = { 'kyazdani42/nvim-web-devicons' },
     cmd = "NvimTreeToggle",
     config = "require('nvim-tree-config')"
   }
@@ -37,7 +37,7 @@ return require('packer').startup({function()
   -- Status Bars
   use {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     event = "BufRead",
     config = "require('lualine-config')"
   }
@@ -57,9 +57,9 @@ return require('packer').startup({function()
   -- Git
   use {
     'lewis6991/gitsigns.nvim',
-    requires = {{'nvim-lua/plenary.nvim'}},
+    requires = { { 'nvim-lua/plenary.nvim' } },
     config = function()
-      require('gitsigns').setup {current_line_blame = true}
+      require('gitsigns').setup { current_line_blame = true }
     end
   }
   use 'airblade/vim-gitgutter'
@@ -68,8 +68,8 @@ return require('packer').startup({function()
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
-      {'nvim-lua/plenary.nvim'},
-      {"nvim-telescope/telescope-github.nvim"},
+      { 'nvim-lua/plenary.nvim' },
+      { "nvim-telescope/telescope-github.nvim" },
     },
     cmd = "Telescope",
     config = "require('telescope-config')"
@@ -80,7 +80,7 @@ return require('packer').startup({function()
   }
   use {
     "nvim-telescope/telescope-frecency.nvim",
-    requires = {"tami5/sqlite.lua"}
+    requires = { "tami5/sqlite.lua" }
   }
   use {
     'dhruvmanila/telescope-bookmarks.nvim',
@@ -91,8 +91,8 @@ return require('packer').startup({function()
   use {
     "AckslD/nvim-neoclip.lua",
     requires = {
-      {'tami5/sqlite.lua', module = 'sqlite'},
-      {'nvim-telescope/telescope.nvim'},
+      { 'tami5/sqlite.lua', module = 'sqlite' },
+      { 'nvim-telescope/telescope.nvim' },
     },
     config = "require('neoclip-config')"
   }
@@ -103,8 +103,8 @@ return require('packer').startup({function()
   use 'terryma/vim-multiple-cursors' -- C-N 
   use 'airblade/vim-rooter'
   use 'preservim/tagbar'
-  use { "antoinemadec/FixCursorHold.nvim"} -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
-  use {'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')"}
+  use { "antoinemadec/FixCursorHold.nvim" } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
+  use { 'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')" }
   use {
     'lukas-reineke/indent-blankline.nvim',
     event = "BufRead",
@@ -113,7 +113,7 @@ return require('packer').startup({function()
 
   -- Formatting
   use 'tpope/vim-surround'
-  use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
+  use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
   use {
     'windwp/nvim-autopairs',
     after = "nvim-cmp",
@@ -139,31 +139,31 @@ return require('packer').startup({function()
   use 'christoomey/vim-tmux-navigator'
 
   -- LSP & Completions
-  use {'neovim/nvim-lspconfig', config = "require('lsp')"}
-    use {
-      "hrsh7th/nvim-cmp",
-      requires = {
-        { "hrsh7th/cmp-buffer" },
-        { "hrsh7th/cmp-nvim-lsp" },
-        { "hrsh7th/cmp-path" },
-        { "hrsh7th/cmp-nvim-lua" },
-        { "ray-x/cmp-treesitter" },
-        { "hrsh7th/nvim-cmp" },
-        { "hrsh7th/cmp-vsnip" },
-        { "hrsh7th/vim-vsnip" },
-        { "Saecki/crates.nvim" },
-        { "f3fora/cmp-spell" },
-        { "hrsh7th/cmp-cmdline" },
-        { "tamago324/cmp-zsh" },
-        { "L3MON4D3/LuaSnip" },
-        { "rafamadriz/friendly-snippets" },
-      },
-    }
+  use { 'neovim/nvim-lspconfig', config = "require('lsp')" }
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      { "hrsh7th/cmp-buffer" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "hrsh7th/cmp-path" },
+      { "hrsh7th/cmp-nvim-lua" },
+      { "ray-x/cmp-treesitter" },
+      { "hrsh7th/nvim-cmp" },
+      { "hrsh7th/cmp-vsnip" },
+      { "hrsh7th/vim-vsnip" },
+      { "Saecki/crates.nvim" },
+      { "f3fora/cmp-spell" },
+      { "hrsh7th/cmp-cmdline" },
+      { "tamago324/cmp-zsh" },
+      { "L3MON4D3/LuaSnip" },
+      { "rafamadriz/friendly-snippets" },
+    },
+  }
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
   use 'williamboman/nvim-lsp-installer'
-  use { "tamago324/nlsp-settings.nvim"}
-  use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
+  use { "tamago324/nlsp-settings.nvim" }
+  use { 'tami5/lspsaga.nvim', config = "require('lspsaga-config')" }
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = "require('null-ls-config')"
@@ -186,10 +186,10 @@ return require('packer').startup({function()
     "saadparwaiz1/cmp_luasnip",
   }
   use
-  {
-    "folke/lua-dev.nvim",
-    module = "lua-dev",
-  }
+      {
+        "folke/lua-dev.nvim",
+        module = "lua-dev",
+      }
 
   -- Commentary
   use {
@@ -212,13 +212,13 @@ return require('packer').startup({function()
     'sunjon/Shade.nvim',
     config = "require('shade-config')"
   }
-  use {'folke/twilight.nvim', config = "require('twilight-config')"}
+  use { 'folke/twilight.nvim', config = "require('twilight-config')" }
 end,
 config = {
   display = {
-    open_fn = function ()
-      return  require('packer.util').float({border = 'single'})
+    open_fn = function()
+      return require('packer.util').float({ border = 'single' })
     end
   }
-}}
+} }
 )
