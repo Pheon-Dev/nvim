@@ -8,7 +8,6 @@ return require('packer').startup({function()
   }
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
-  use 'junegunn/fzf.vim'
   use 'azadkuh/vim-cmus'
 
   -- Theme
@@ -56,7 +55,6 @@ return require('packer').startup({function()
   }
 
   -- Git
-  use 'tpope/vim-fugitive'
   use {
     'lewis6991/gitsigns.nvim',
     requires = {{'nvim-lua/plenary.nvim'}},
@@ -115,7 +113,6 @@ return require('packer').startup({function()
 
   -- Formatting
   use 'tpope/vim-surround'
-  use 'dense-analysis/ale'
   use {'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production'}
   use {
     'windwp/nvim-autopairs',
@@ -216,7 +213,6 @@ return require('packer').startup({function()
     config = "require('shade-config')"
   }
   use {'folke/twilight.nvim', config = "require('twilight-config')"}
-  use {'andweeb/presence.nvim', config = "require('presence-config')"}
 end,
 config = {
   display = {
