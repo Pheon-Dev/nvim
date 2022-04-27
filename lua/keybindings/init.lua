@@ -6,6 +6,8 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { noremap = true, silent = true
 
 -- Saving and Quitting
 map("n", "<C-s>", "<cmd>w! | noh<cr>", { noremap = true, silent = true })
+map("n", "<C-y>", "<cmd>lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
+map("n", "<C-p>", "<cmd>Prettier<cr>", { noremap = true, silent = true })
 map("n", "<C-q>", "<cmd>w! | bp | sp | bn | bd!<cr>", { noremap = true, silent = true })
 map("n", "<C-x>", "<cmd>qa!<cr>", { noremap = true, silent = true })
 

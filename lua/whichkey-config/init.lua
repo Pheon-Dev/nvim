@@ -48,8 +48,10 @@ end
 
 local mappings = {
   k = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
+  o = { ":Prettier<cr>", "Format" },
   s = { ":w! | noh<cr>", "Write" },
-  q = { ":q!<cr>", "Quit" },
+  q = { ":wq!<cr>", "Write & Quit" },
+  x = { ":qa!<cr>", "Quit All!" },
   f = { ":Telescope find_files<cr>", "Find Files" },
   r = { ":Telescope live_grep<cr>", "Live Grep" },
   a = { ":Telescope frecency<cr>", "Frecency" },
