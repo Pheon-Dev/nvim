@@ -61,8 +61,8 @@ map("n", "<C-t>", "<cmd>TagbarToggle<cr>", { noremap = true, silent = true })
 
 -- Fold
 vim.cmd([[ 
-  nnoremap [ zfi)
-  nnoremap ] zfi}
+  nnoremap ] zfi)
+  nnoremap [ zfi}
   nnoremap ; za
   nnoremap { zR
   nnoremap } zM
