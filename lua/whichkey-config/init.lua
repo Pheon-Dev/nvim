@@ -47,7 +47,7 @@ local toggle_mc = function()
 end
 
 local mappings = {
-  k = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
+  d = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
   o = { ":Prettier<cr>", "Format" },
   s = { ":w! | noh<cr>", "Write" },
   q = { ":wq!<cr>", "Write & Quit" },
@@ -61,7 +61,7 @@ local mappings = {
   p = { ":PackerSync<cr>", "Packer Sync" },
   h = { ":Twilight<cr>", "Twilight" },
   b = { ":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal" },
-  d = { ":Dashboard<cr>", "Dashboard" },
+  k = { ":Dashboard<cr>", "Dashboard" },
   l = { toggle_lazygit, "LazyGit" },
   t = {
     name = "Toggle",
