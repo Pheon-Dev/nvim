@@ -33,7 +33,7 @@ map("i", "<C-u>", "<cmd>undo<cr>", { noremap = true, silent = true })
 map("n", "<S-u>", "<cmd>redo<cr>", { noremap = true, silent = true })
 
 -- ESC on insert Mode
-map("i", "jj", "<ESC>", { noremap = true, silent = true })
+map("i", "jj", "<cmd>w! | noh<cr><ESC>", { noremap = true, silent = true })
 map("i", "kk", "<ESC>", { noremap = true, silent = true })
 
 -- Indenting on Visual Mode
