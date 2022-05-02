@@ -72,9 +72,14 @@ vim.cmd([[
 -- Easymotion
 vim.cmd([[ 
   map s <Plug>(easymotion-prefix)
-  map s. <Plug>(easymotion-repeat)
+  map f <Plug>(easymotion-f)
+  map F <Plug>(easymotion-F)
+  map sh <Plug>(easymotion-Fl)
+  map sj <Plug>(easymotion-j)
+  map sk <Plug>(easymotion-k)
   map sl <Plug>(easymotion-fl)
-  map sw <Plug>(easymotion-overwin-w)
+  map sf <Plug>(easymotion-overwin-w)
+  map s. <Plug>(easymotion-repeat)
 ]])
 
 -- vim.cmd([[
