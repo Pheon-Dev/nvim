@@ -5,9 +5,9 @@ local map = vim.api.nvim_set_keymap
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { noremap = true, silent = true })
 
 -- Saving and  ESC on insert Mode
-map("i", "jj", "<cmd>w! | noh<cr><ESC>", { noremap = true, silent = true })
+map("i", "kk", "<cmd>w! | noh<cr><ESC>", { noremap = true, silent = true })
 map("n", ",", "<cmd>w! | noh<cr>", { noremap = true, silent = true })
-map("i", "kk", "<cmd>lua vim.lsp.buf.formatting()<cr><ESC>", { noremap = true, silent = true })
+map("i", "jj", "<cmd>lua vim.lsp.buf.formatting()<cr><ESC>", { noremap = true, silent = true })
 
 -- Saving and Quitting
 map("n", "<C-s>", "<cmd>lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
@@ -66,7 +66,7 @@ vim.cmd([[
   nnoremap zk zfi]
   nnoremap zl za
   nnoremap z; zR
-  nnoremap zz zM
+  nnoremap zg zM
 ]])
 
 -- Easymotion
