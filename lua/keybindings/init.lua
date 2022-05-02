@@ -33,8 +33,8 @@ map("i", "<C-u>", "<cmd>undo<cr>", { noremap = true, silent = true })
 map("n", "<S-u>", "<cmd>redo<cr>", { noremap = true, silent = true })
 
 -- ESC on insert Mode
-map("i", "jk", "<ESC>", { noremap = true, silent = true })
-map("i", "kj", "<ESC>", { noremap = true, silent = true })
+map("i", "jj", "<ESC>", { noremap = true, silent = true })
+map("i", "kk", "<ESC>", { noremap = true, silent = true })
 
 -- Indenting on Visual Mode
 map("v", "<", "<gv", { noremap = true, silent = true })
@@ -61,11 +61,12 @@ map("n", "<C-t>", "<cmd>TagbarToggle<cr>", { noremap = true, silent = true })
 
 -- Fold
 vim.cmd([[ 
-  nnoremap ] zfi)
-  nnoremap [ zfi}
-  nnoremap ; za
-  nnoremap { zR
-  nnoremap } zM
+  nnoremap zh zfi)
+  nnoremap zj zfi}
+  nnoremap zk zfi]
+  nnoremap zl za
+  nnoremap z; zR
+  nnoremap zz zM
 ]])
 
 -- Easymotion
