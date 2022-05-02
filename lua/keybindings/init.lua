@@ -4,9 +4,13 @@ local map = vim.api.nvim_set_keymap
 -- NvimTree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { noremap = true, silent = true })
 
+-- Saving and  ESC on insert Mode
+map("i", "jj", "<cmd>w! | noh<cr><ESC>", { noremap = true, silent = true })
+map("n", ",", "<cmd>w! | noh<cr>", { noremap = true, silent = true })
+map("i", "kk", "<cmd>lua vim.lsp.buf.formatting()<cr><ESC>", { noremap = true, silent = true })
+
 -- Saving and Quitting
-map("n", "<C-s>", "<cmd>w! | noh<cr>", { noremap = true, silent = true })
-map("n", "<C-y>", "<cmd>lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
+map("n", "<C-s>", "<cmd>lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
 map("n", "<C-p>", "<cmd>Prettier<cr>", { noremap = true, silent = true })
 map("n", "<C-q>", "<cmd>w! | bp | sp | bn | bd!<cr>", { noremap = true, silent = true })
 map("n", "<C-x>", "<cmd>qa!<cr>", { noremap = true, silent = true })
@@ -31,10 +35,6 @@ map("n", "<C-l>", "<C-w>l", { noremap = true, silent = false })
 map("i", "<C-z>", "<cmd>redo<cr>", { noremap = true, silent = true })
 map("i", "<C-u>", "<cmd>undo<cr>", { noremap = true, silent = true })
 map("n", "<S-u>", "<cmd>redo<cr>", { noremap = true, silent = true })
-
--- ESC on insert Mode
-map("i", "jj", "<cmd>w! | noh<cr><ESC>", { noremap = true, silent = true })
-map("i", "kk", "<ESC>", { noremap = true, silent = true })
 
 -- Indenting on Visual Mode
 map("v", "<", "<gv", { noremap = true, silent = true })
@@ -72,8 +72,6 @@ vim.cmd([[
 -- Easymotion
 vim.cmd([[ 
   map s <Plug>(easymotion-prefix)
-  map f <Plug>(easymotion-f)
-  map F <Plug>(easymotion-F)
   map sh <Plug>(easymotion-Fl)
   map sj <Plug>(easymotion-j)
   map sk <Plug>(easymotion-k)
