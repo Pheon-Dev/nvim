@@ -7,8 +7,8 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { noremap = true, silent = true
 -- Saving and  ESC on insert Mode
 map("i", "kk", "<cmd>w! | noh<cr><ESC>", { noremap = true, silent = true })
 map("i", "jj", "<ESC>", { noremap = true, silent = true })
-map("n", "m", "<cmd>w! | noh<cr>", { noremap = true, silent = true })
-map("n", ",", "<cmd>lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
+map("n", ",", "<cmd>w! | noh<cr>", { noremap = true, silent = true })
+map("n", "m", "<cmd>lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
 
 -- Saving and Quitting
 map("n", "<C-s>", "<cmd>lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
