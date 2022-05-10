@@ -25,7 +25,6 @@ return require('packer').startup({ function()
 
   -- Completions
   use 'nvim-lua/completion-nvim'
-  use "ray-x/lsp_signature.nvim"
 
   -- Nvim Tree
   use {
