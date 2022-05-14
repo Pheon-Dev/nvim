@@ -8,6 +8,12 @@ return require('packer').startup({ function()
   }
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
+  use {
+    'hoschi/yode-nvim',
+    config = function()
+      require('yode-nvim').setup({})
+    end
+  }
   use 'azadkuh/vim-cmus'
 
   -- Theme
