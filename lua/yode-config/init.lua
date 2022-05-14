@@ -1,0 +1,1 @@
+require('yode-nvim').setup({})

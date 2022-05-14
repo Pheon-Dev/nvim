@@ -106,6 +106,11 @@ local mappings = {
     j = { "<C-w>t<C-w>H", "Horiz > Vert Alignment" },
     k = { "<C-w>t<C-w>K", "Vert > Horiz Alignment" }
   },
+  y = {
+    name = "Yode",
+    c = { ":YodeCreateSeditorFloating<cr>", "Floating" },
+    r = { ":YodeCreateSeditorReplace<cr>", "Replace" },
+  },
 }
 
 local opts = { prefix = '<leader>' }

@@ -60,6 +60,18 @@ map("i", "<C-n>", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true 
 -- Tagbar
 map("n", "<C-t>", "<cmd>TagbarToggle<cr>", { noremap = true, silent = true })
 
+-- Yode
+map("n", "<C-W>r", "<cmd>YodeLayoutShiftWinDown<cr>", { noremap = true, silent = true })
+map("n", "<C-W>R", "<cmd>YodeLayoutShiftWinUp<cr>", { noremap = true, silent = true })
+map("n", "<C-W>J", "<cmd>YodeLayoutShiftWinBottom<cr>", { noremap = true, silent = true })
+map("n", "<C-W>K", "<cmd>YodeLayoutShiftWinTop<cr>", { noremap = true, silent = true })
+
+vim.cmd([[
+  nmap <Leader>bd :YodeBufferDelete<cr>
+  imap <Leader>bd <esc>:YodeBufferDelete<cr>
+  set showtabline=2
+]])
+
 -- Fold
 vim.cmd([[ 
   nnoremap zh zfi)
