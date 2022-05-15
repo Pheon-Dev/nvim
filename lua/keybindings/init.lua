@@ -65,33 +65,79 @@ map("n", "<C-W>r", "<cmd>YodeLayoutShiftWinDown<cr>", { noremap = true, silent =
 map("n", "<C-W>R", "<cmd>YodeLayoutShiftWinUp<cr>", { noremap = true, silent = true })
 map("n", "<C-W>J", "<cmd>YodeLayoutShiftWinBottom<cr>", { noremap = true, silent = true })
 map("n", "<C-W>K", "<cmd>YodeLayoutShiftWinTop<cr>", { noremap = true, silent = true })
+map("n", "<Leader>bd", ":YodeBufferDelete<cr>", { noremap = true, silent = true })
+map("i", "<Leader>bd<esc>", ":YodeBufferDelete<cr>", { noremap = true, silent = true })
 
-vim.cmd([[
-  nmap <Leader>bd :YodeBufferDelete<cr>
-  imap <Leader>bd <esc>:YodeBufferDelete<cr>
-  set showtabline=2
-]])
+-- Edit (change)
+map("n", "c1", "ci'", { noremap = true, silent = true })
+map("n", "c2", 'ci"', { noremap = true, silent = true })
+map("n", "c3", 'ci`', { noremap = true, silent = true })
+map("n", "c5", "ci>", { noremap = true, silent = true })
+map("n", "c6", "ca>", { noremap = true, silent = true })
+map("n", "c7", "ci}", { noremap = true, silent = true })
+map("n", "c8", "ca}", { noremap = true, silent = true })
+map("n", "c9", "ci)", { noremap = true, silent = true })
+map("n", "c0", "ca)", { noremap = true, silent = true })
+map("n", "c[", "ci]", { noremap = true, silent = true })
+map("n", "c]", "ca]", { noremap = true, silent = true })
+
+-- Edit (delete)
+map("n", "d1", "di'", { noremap = true, silent = true })
+map("n", "d2", 'di"', { noremap = true, silent = true })
+map("n", "d3", 'di`', { noremap = true, silent = true })
+map("n", "d5", "di>", { noremap = true, silent = true })
+map("n", "d6", "da>", { noremap = true, silent = true })
+map("n", "d7", "di}", { noremap = true, silent = true })
+map("n", "d8", "da}", { noremap = true, silent = true })
+map("n", "d9", "di)", { noremap = true, silent = true })
+map("n", "d0", "da)", { noremap = true, silent = true })
+map("n", "d[", "di]", { noremap = true, silent = true })
+map("n", "d]", "da]", { noremap = true, silent = true })
+
+-- Edit (visual)
+map("n", "v1", "vi'", { noremap = true, silent = true })
+map("n", "v2", 'vi"', { noremap = true, silent = true })
+map("n", "v3", 'vi`', { noremap = true, silent = true })
+map("n", "v5", "vi>", { noremap = true, silent = true })
+map("n", "v6", "va>", { noremap = true, silent = true })
+map("n", "v7", "vi}", { noremap = true, silent = true })
+map("n", "v8", "va}", { noremap = true, silent = true })
+map("n", "v9", "vi)", { noremap = true, silent = true })
+map("n", "v0", "va)", { noremap = true, silent = true })
+map("n", "v[", "vi]", { noremap = true, silent = true })
+map("n", "v]", "va]", { noremap = true, silent = true })
+
+-- Edit (yank)
+map("n", "y1", "yi'", { noremap = true, silent = true })
+map("n", "y2", 'yi"', { noremap = true, silent = true })
+map("n", "y3", 'yi`', { noremap = true, silent = true })
+map("n", "y5", "yi>", { noremap = true, silent = true })
+map("n", "y6", "ya>", { noremap = true, silent = true })
+map("n", "y7", "yi}", { noremap = true, silent = true })
+map("n", "y8", "ya}", { noremap = true, silent = true })
+map("n", "y9", "yi)", { noremap = true, silent = true })
+map("n", "y0", "ya)", { noremap = true, silent = true })
+map("n", "y[", "yi]", { noremap = true, silent = true })
+map("n", "y]", "ya]", { noremap = true, silent = true })
+
+map("n", "X", "c0", { noremap = true, silent = true })
 
 -- Fold
-vim.cmd([[ 
-  nnoremap zh zfi)
-  nnoremap zj zfi}
-  nnoremap zk zfi]
-  nnoremap zl za
-  nnoremap z; zR
-  nnoremap zg zM
-]])
+map("n", "zh", "zfi)", { noremap = true, silent = true })
+map("n", "zj", "zfi}", { noremap = true, silent = true })
+map("n", "zk", "zfi]", { noremap = true, silent = true })
+map("n", "zl", "za", { noremap = true, silent = true })
+map("n", "z;", "zR", { noremap = true, silent = true })
+map("n", "zg", "zM", { noremap = true, silent = true })
 
 -- Easymotion
-vim.cmd([[ 
-  map s <Plug>(easymotion-prefix)
-  map sh <Plug>(easymotion-Fl)
-  map sj <Plug>(easymotion-j)
-  map sk <Plug>(easymotion-k)
-  map sl <Plug>(easymotion-fl)
-  map sf <Plug>(easymotion-overwin-w)
-  map s. <Plug>(easymotion-repeat)
-]])
+map("n", "s", "<Plug>(easymotion-prefix)", { noremap = true, silent = true })
+map("n", "sh", "<Plug>(easymotion-Fl)", { noremap = true, silent = true })
+map("n", "sj", "<Plug>(easymotion-j)", { noremap = true, silent = true })
+map("n", "sk", "<Plug>(easymotion-k)", { noremap = true, silent = true })
+map("n", "sl", "<Plug>(easymotion-fl)", { noremap = true, silent = true })
+map("n", "sf", "<Plug>(easymotion-overwin-w)", { noremap = true, silent = true })
+map("n", "s", "<Plug>(easymotion-repeat)", { noremap = true, silent = true })
 
 -- vim.cmd([[
 --   map / <Plug>(easymotion-sn)
