@@ -13,6 +13,7 @@ return require('packer').startup({ function()
     config = "require('yode-config')"
   }
   use 'azadkuh/vim-cmus'
+  use 'vimwiki/vimwiki'
 
   -- Theme
   use 'folke/tokyonight.nvim'

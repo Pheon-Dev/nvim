@@ -57,7 +57,7 @@ local mappings = {
   a = { ":Telescope frecency<cr>", "Frecency" },
   z = { ":Telescope zoxide list<cr>", "Zoxide" },
   n = { ":Telescope neoclip<cr>", "Neoclip" },
-  w = { ":Telescope bookmarks<cr>", "Bookmarks" },
+  i = { ":Telescope bookmarks<cr>", "Bookmarks" },
   p = { ":PackerSync<cr>", "Packer Sync" },
   h = { ":Twilight<cr>", "Twilight" },
   b = { ":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal" },
