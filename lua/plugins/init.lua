@@ -78,7 +78,7 @@ return require('packer').startup({ function()
     },
     cmd = "Telescope",
     config = "require('telescope-config')",
-   commit = "57bd8a500213c274558f253478a11fd77e4c9fcb"
+   -- commit = "57bd8a500213c274558f253478a11fd77e4c9fcb"
   }
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
