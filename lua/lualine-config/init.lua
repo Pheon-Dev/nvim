@@ -93,7 +93,7 @@ ins_left {
 
 ins_left {
   function()
-    return ' 🎲'
+    return 'DE'
   end,
   color = function()
     local mode_color = {
