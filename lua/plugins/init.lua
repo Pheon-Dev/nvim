@@ -8,12 +8,12 @@ return require('packer').startup({ function()
   }
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
-  use {
-    'hoschi/yode-nvim',
-    config = "require('yode-config')"
-  }
-  use 'azadkuh/vim-cmus'
-  use 'vimwiki/vimwiki'
+  -- use {
+  --   'hoschi/yode-nvim',
+  --   config = "require('yode-config')"
+  -- }
+  -- use 'azadkuh/vim-cmus'
+  -- use 'vimwiki/vimwiki'
 
   -- Theme
   use 'folke/tokyonight.nvim'
@@ -88,27 +88,27 @@ return require('packer').startup({ function()
     "nvim-telescope/telescope-frecency.nvim",
     requires = { "tami5/sqlite.lua" }
   }
-  use {
-    'dhruvmanila/telescope-bookmarks.nvim',
-    requires = {
-      'tami5/sqlite.lua',
-    },
-  }
-  use {
-    "AckslD/nvim-neoclip.lua",
-    requires = {
-      { 'tami5/sqlite.lua', module = 'sqlite' },
-      { 'nvim-telescope/telescope.nvim' },
-    },
-    config = "require('neoclip-config')"
-  }
+  -- use {
+  --   'dhruvmanila/telescope-bookmarks.nvim',
+  --   requires = {
+  --     'tami5/sqlite.lua',
+  --   },
+  -- }
+  -- use {
+  --   "AckslD/nvim-neoclip.lua",
+  --   requires = {
+  --     { 'tami5/sqlite.lua', module = 'sqlite' },
+  --     { 'nvim-telescope/telescope.nvim' },
+  --   },
+  --   config = "require('neoclip-config')"
+  -- }
   use 'jvgrootveld/telescope-zoxide'
-  use 'cljoly/telescope-repo.nvim'
+  -- use 'cljoly/telescope-repo.nvim'
 
   -- Utils
   use 'terryma/vim-multiple-cursors' -- C-N 
-  use 'airblade/vim-rooter'
-  use 'preservim/tagbar'
+  -- use 'airblade/vim-rooter'
+  -- use 'preservim/tagbar'
   use { "antoinemadec/FixCursorHold.nvim" } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
   use { 'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')" }
   use {
@@ -118,7 +118,7 @@ return require('packer').startup({ function()
   }
 
   -- Formatting
-  use 'tpope/vim-surround'
+  -- use 'tpope/vim-surround'
   use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
   use {
     'windwp/nvim-autopairs',
@@ -133,9 +133,9 @@ return require('packer').startup({ function()
     config = "require('whichkey-config')"
   }
   -- Motion
-  use {
-    'pechorin/any-jump.vim',
-  }
+  -- use {
+  --   'pechorin/any-jump.vim',
+  -- }
   use 'matze/vim-move'
   use {
     'karb94/neoscroll.nvim',
