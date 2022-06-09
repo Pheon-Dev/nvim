@@ -177,7 +177,7 @@ map("n", "sj", "<Plug>(easymotion-j)", { noremap = true, silent = true })
 map("n", "sk", "<Plug>(easymotion-k)", { noremap = true, silent = true })
 map("n", "sl", "<Plug>(easymotion-fl)", { noremap = true, silent = true })
 map("n", "sf", "<Plug>(easymotion-overwin-w)", { noremap = true, silent = true })
-map("n", "s", "<Plug>(easymotion-repeat)", { noremap = true, silent = true })
+map("n", "s.", "<Plug>(easymotion-repeat)", { noremap = true, silent = true })
 
 -- vim.cmd([[
 --   map / <Plug>(easymotion-sn)
