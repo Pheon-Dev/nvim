@@ -35,15 +35,15 @@ require"toggleterm".setup {
   -- { exec, keymap, name}
   -- lvim.builtin.terminal.execs = {{}} to overwrite
   -- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs+1] = {"gdb", "tg", "GNU Debugger"}
-  execs = {
-    { "x", "<esc>", "Exit", "float" },
-    -- { "lazygit", "<c-\\><c-g>", "LazyGit", "float" },
-  },
+  -- execs = {
+  --   { "x", "<esc>", "Exit", "float" },
+  --   { "lazygit", "<c-\\><c-g>", "LazyGit", "float" },
+  -- },
 }
 function _G.set_terminal_keymaps()
   local opts = {noremap = true}
-  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  -- vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  -- vim.api.nvim_buf_set_keymap(0, 't', 'jj', [[<C-\><C-n>]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>h]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>k]], opts)
