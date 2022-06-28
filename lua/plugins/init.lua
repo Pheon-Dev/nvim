@@ -210,7 +210,7 @@ return require('packer').startup({ function()
     "numToStr/Comment.nvim",
     event = "BufRead",
     config = "require('comment-config')",
-    commit = "026ec9530b6691db8c68a3ae4fc44c56aa281f52"
+    -- commit = "026ec9530b6691db8c68a3ae4fc44c56aa281f52"
   }
 
   -- Decors
