@@ -173,10 +173,6 @@ map("n", "zg", "zM", { noremap = true, silent = true })
 map("n", "H", "0", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
 
--- Move to Top/Bottom of Buffer
-map("n", "J", "L", { noremap = true, silent = true })
-map("n", "K", "H", { noremap = true, silent = true })
-
 -- Easymotion
 map("n", "s", "<Plug>(easymotion-prefix)", { noremap = true, silent = true })
 map("n", "sh", "<Plug>(easymotion-Fl)", { noremap = true, silent = true })
