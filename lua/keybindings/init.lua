@@ -170,7 +170,7 @@ map("n", "z;", "zR", { noremap = true, silent = true })
 map("n", "zg", "zM", { noremap = true, silent = true })
 
 -- Move to Start/End of Line
-map("n", "H", "0eb", { noremap = true, silent = true })
+map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
 
 -- Easymotion
