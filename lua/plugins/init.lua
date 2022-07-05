@@ -153,8 +153,6 @@ return require('packer').startup({ function()
       { "hrsh7th/cmp-buffer" },
       { "hrsh7th/cmp-nvim-lsp" },
       { "hrsh7th/cmp-path" },
-      { "hrsh7th/nvim-compe" },
-      {'tzachar/compe-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-compe'},
       { "hrsh7th/cmp-nvim-lua" },
       { "ray-x/cmp-treesitter" },
       { "hrsh7th/nvim-cmp" },
@@ -168,6 +166,13 @@ return require('packer').startup({ function()
       { "rafamadriz/friendly-snippets" },
     },
   }
+  use {
+    'tzachar/cmp-tabnine',
+    run='./install.sh',
+    requires = 'hrsh7th/nvim-cmp',
+    config = "require('tabnine-config)"
+  }
+
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
   use {
