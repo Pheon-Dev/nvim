@@ -166,12 +166,6 @@ return require('packer').startup({ function()
       { "rafamadriz/friendly-snippets" },
     },
   }
-  use {
-    'tzachar/cmp-tabnine',
-    run='./install.sh',
-    requires = 'hrsh7th/nvim-cmp',
-    config = "require('tabnine-config)"
-  }
 
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
