@@ -166,12 +166,14 @@ return require('packer').startup({ function()
       { "rafamadriz/friendly-snippets" },
     },
   }
-
+  use {
+    "ray-x/lsp_signature.nvim",
+  }
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
   use {
     'williamboman/nvim-lsp-installer',
-    -- commit = "d7e233566543d4c83199f5644f90bb116d7070f2"
+    commit = "d7e233566543d4c83199f5644f90bb116d7070f2"
   }
   use { "tamago324/nlsp-settings.nvim" }
   use { 'tami5/lspsaga.nvim', config = "require('lspsaga-config')" }
@@ -217,7 +219,7 @@ return require('packer').startup({ function()
   -- Decors
   use {
     'glepnir/dashboard-nvim',
-    config = "require('dashboard-config')"
+    config = "require('dashboard-config')",
   }
   use {
     'sunjon/Shade.nvim',

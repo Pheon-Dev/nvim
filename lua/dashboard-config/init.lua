@@ -1,5 +1,8 @@
 vim.g.dashboard_default_executive = 'telescope'
-vim.g.dashboard_custom_header = {
+local db = require('dashboard')
+db.custom_header = {
+    [[                                                             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]],
+    [[                                                             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]],
     [[                                     ⣳⣤⠴⠖⠄ ⠖⣶⣤⡀⠀                                        ]],
     [[                         ⡴⠖⣶⣤⡀⡴⠞⠉⢉⣭⣿⣿⠿⣳⣤⠴⠖⠛⣛⣿⣿⡷⠖⣶⣤⡀⠀                                    ]],
     [[ ███████╗  ██╗   ██╗ ███████╗  ██████╗  ███╗   ██╗⢡⠘⢦⡀⠀⠀⠀⠀ ███████╗  ███████╗ ██╗   ██╗ ]],
@@ -23,7 +26,9 @@ vim.g.dashboard_custom_header = {
     [[                ⢣⣽        ⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁ ⡀⠤⠚⠁ ⡀⠤⠚⣟⡻⠋⢀⡴⠁⠀                         ]],
     [[                 ⠃ ⣠⣴⣮⣥⣒     ⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁ ⣠⣴⣮⣥⣒  ⡀⠺⣿⣙⣛⠭⠝⠋⠀⠀⠀                      ⠀⠀⠀]],
     [[                ⣠⣴⣧⡴⠄⠄⠟⠋⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃  ⣠⣴⣳⣤⠴⠖⠄⣠⣶⣤⡀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀             ⠀⠀⠀⠀⠀]],
-    [[             ⣠⣴⣿⠟⠲⠶⠦⢤⣤⣤⣄⣀⣀⣼⠁⣶⢻⡟⠿⠋⣴⠿⢻⣧⡴⠄⠄⠟⠋⠿⠛⡗⠾⢛⣵⣠⣶⠿⣶⣦⣶⣮⣥⣒⠲⠄⠄⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]]
+    [[             ⣠⣴⣿⠟⠲⠶⠦⢤⣤⣤⣄⣀⣀⣼⠁⣶⢻⡟⠿⠋⣴⠿⢻⣧⡴⠄⠄⠟⠋⠿⠛⡗⠾⢛⣵⣠⣶⠿⣶⣦⣶⣮⣥⣒⠲⠄⠄⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]],
+    [[                                                             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]],
+    [[                                                             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]]
 }
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_terminal = function()
@@ -37,17 +42,17 @@ local toggle_lazygit = function()
 end
 
 -- Custom Section ﰟ                               
-vim.g.dashboard_custom_section = {
-  a = {description = {'  0 ---⠄⣼⡟⣿⠏⢀⣿⣇⣿⣏⣿⣿⣿⣿⣿⣿⣿⢸⡇⣿⣿⣿⣟⣿⣿⣿⣿⣏--- Find File        '}, command = 'Telescope find_files'},
-  b = {description = {'  1 ---⣸⡟⣼⣯⠏⣾⣿⢸⣿⢸⣿⣿⣿⣿⣿⣿⡟⠸⠁⢹⡿⣿⣿⢻⣿⣿⣿⣿--- Search Text      '}, command = 'Telescope live_grep'},
-  c = {description = {'  2 ---⡟⣸⢟⣫⡅⣶⢆⡶⡆⣿⣿⣿⣿⣿⢿⣛⠃⠰⠆⠈⠁⠈⠙⠈⠻⣿⢹⡏--- Recent Files     '}, command = 'Telescope oldfiles'},
-  d = {description = {'  3 ---⣱⡷⣱⠿⠟⠛⠼⣇⠇⣿⣿⣿⣿⣿⣿⠃⣰⣿⣿⡆⠄⠄⠄⠄⠄⠉⠈⠄--- New File         '}, command = 'DashboardNewFile'},
-  e = {description = {'  4 ---⡟⢑⠃⡠⠂⠄⠄⠈⣾⢻⣿⣿⡿⡹⡳⠋⠉⠁⠉⠙⠄⢀⠄⠄⠄⠄⠄⠂--- Menu             '}, command = 'NvimTreeToggle'},
-  f = {description = {'  5 ---⠁⢈⢰⡇⠄⠄⡙⠂⣿⣿⣿⣿⣱⣿⡗⠄⠄⠄⢀⡀⠄⠈⢰⠄⠄⠄⠐⠄--- Terminal         '}, command = toggle_terminal},
-  g = {description = {'  6 ---⠄⠘⣿⣧⠴⣄⣡⢄⣿⣿⣿⣷⣿⣿⡇⢀⠄⠤⠈⠁⣠⣠⣸⢠⠄⠄⠄⠄--- Git              '}, command = toggle_lazygit},
-  h = {description = {'  7 ---⠄⠄⣿⣿⣷⣬⣵⣿⣿⣿⣿⣿⣿⣿⣷⣟⢷⡶⢗⡰⣿⣿⠇⠘⠄⠄⠄⠄--- Colour Scheme    '}, command = 'DashboardChangeColorscheme'},
-  i = {description = {'  8 ---⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⡟⢀⠃⠄⢸⡄⠁--- Jump Mark        '}, command = 'DashboardJumpMarks'},
-  j = {description = {' ✗ 9 ---⠄⠄⠘⢿⣿⣿⣿⣿⣿⣿⢛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⢄⡆⠄⢀⣪⡆⠄--- Exit             '}, command = 'q!'},
+db.custom_center = {
+  { icon = ' ', desc = '0 ---⠄⣼⡟⣿⠏⢀⣿⣇⣿⣏⣿⣿⣿⣿⣿⣿⣿⢸⡇⣿⣿⣿⣟⣿⣿⣿⣿⣏--- Find File        ', action = 'Telescope find_files' },
+  { icon = ' ', desc = '1 ---⣸⡟⣼⣯⠏⣾⣿⢸⣿⢸⣿⣿⣿⣿⣿⣿⡟⠸⠁⢹⡿⣿⣿⢻⣿⣿⣿⣿--- Search Text      ', action = 'Telescope live_grep' },
+  { icon = ' ', desc = '2 ---⡟⣸⢟⣫⡅⣶⢆⡶⡆⣿⣿⣿⣿⣿⢿⣛⠃⠰⠆⠈⠁⠈⠙⠈⠻⣿⢹⡏--- Recent Files     ', action = 'Telescope oldfiles'},
+  { icon = ' ', desc = '3 ---⣱⡷⣱⠿⠟⠛⠼⣇⠇⣿⣿⣿⣿⣿⣿⠃⣰⣿⣿⡆⠄⠄⠄⠄⠄⠉⠈⠄--- New File         ', action = 'DashboardNewFile'},
+  { icon = ' ', desc = '4 ---⡟⢑⠃⡠⠂⠄⠄⠈⣾⢻⣿⣿⡿⡹⡳⠋⠉⠁⠉⠙⠄⢀⠄⠄⠄⠄⠄⠂--- Menu             ', action = 'NvimTreeToggle'},
+  { icon = ' ', desc = '5 ---⠁⢈⢰⡇⠄⠄⡙⠂⣿⣿⣿⣿⣱⣿⡗⠄⠄⠄⢀⡀⠄⠈⢰⠄⠄⠄⠐⠄--- Terminal         ', action = toggle_terminal},
+  { icon = ' ', desc = '6 ---⠄⠘⣿⣧⠴⣄⣡⢄⣿⣿⣿⣷⣿⣿⡇⢀⠄⠤⠈⠁⣠⣠⣸⢠⠄⠄⠄⠄--- Git              ', action = toggle_lazygit},
+  { icon = ' ', desc = '7 ---⠄⠄⣿⣿⣷⣬⣵⣿⣿⣿⣿⣿⣿⣿⣷⣟⢷⡶⢗⡰⣿⣿⠇⠘⠄⠄⠄⠄--- Colour Scheme    ', action = 'DashboardChangeColorscheme'},
+  { icon = ' ', desc = '8 ---⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⡟⢀⠃⠄⢸⡄⠁--- Jump Mark        ', action = 'DashboardJumpMarks'},
+  { icon = '✗ ', desc = '9 ---⠄⠄⠘⢿⣿⣿⣿⣿⣿⣿⢛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⢄⡆⠄⢀⣪⡆⠄--- Exit             ', action = 'q!'},
 }
-vim.g.dashboard_custom_footer = {'If in doubt, flat out - Collin McRae'}
+db.custom_footer = {'If in doubt, flat out - Collin McRae'}
 
