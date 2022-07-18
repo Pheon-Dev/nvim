@@ -14,6 +14,10 @@ return require('packer').startup({ function()
   }
   use 'azadkuh/vim-cmus'
   use 'vimwiki/vimwiki'
+  use {
+    "kevinhwang91/rnvimr",
+    run = "make sync",
+  }
 
   -- Theme
   use 'folke/tokyonight.nvim'
@@ -88,22 +92,7 @@ return require('packer').startup({ function()
     "nvim-telescope/telescope-frecency.nvim",
     requires = { "tami5/sqlite.lua" }
   }
-  use {
-    'dhruvmanila/telescope-bookmarks.nvim',
-    requires = {
-      'tami5/sqlite.lua',
-    },
-  }
-  use {
-    "AckslD/nvim-neoclip.lua",
-    requires = {
-      { 'tami5/sqlite.lua', module = 'sqlite' },
-      { 'nvim-telescope/telescope.nvim' },
-    },
-    config = "require('neoclip-config')"
-  }
   use 'jvgrootveld/telescope-zoxide'
-  use 'cljoly/telescope-repo.nvim'
 
   -- Utils
   use 'terryma/vim-multiple-cursors' -- C-N 
