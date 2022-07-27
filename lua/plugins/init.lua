@@ -8,12 +8,12 @@ return require('packer').startup({ function()
   }
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
-  use {
-    'hoschi/yode-nvim',
-    config = "require('yode-config')"
-  }
-  use 'azadkuh/vim-cmus'
-  use 'vimwiki/vimwiki'
+  -- use {
+  --   'hoschi/yode-nvim',
+  --   config = "require('yode-config')"
+  -- }
+  -- use 'azadkuh/vim-cmus'
+  -- use 'vimwiki/vimwiki'
   use {
     "kevinhwang91/rnvimr",
     run = "make sync",
@@ -78,26 +78,26 @@ return require('packer').startup({ function()
     'nvim-telescope/telescope.nvim',
     requires = {
       { 'nvim-lua/plenary.nvim' },
-      { "nvim-telescope/telescope-github.nvim" },
+      -- { "nvim-telescope/telescope-github.nvim" },
     },
     cmd = "Telescope",
     config = "require('telescope-config')",
-   commit = "d88b44ddf14670cffa9fdb1eaca7a0429a973653"
+   -- commit = "d88b44ddf14670cffa9fdb1eaca7a0429a973653"
   }
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   }
-  use {
-    "nvim-telescope/telescope-frecency.nvim",
-    requires = { "tami5/sqlite.lua" }
-  }
-  use 'jvgrootveld/telescope-zoxide'
+  -- use {
+  --   "nvim-telescope/telescope-frecency.nvim",
+  --   requires = { "tami5/sqlite.lua" }
+  -- }
+  -- use 'jvgrootveld/telescope-zoxide'
 
   -- Utils
   use 'terryma/vim-multiple-cursors' -- C-N 
-  use 'airblade/vim-rooter'
-  use 'preservim/tagbar'
+  -- use 'airblade/vim-rooter'
+  -- use 'preservim/tagbar'
   use { "antoinemadec/FixCursorHold.nvim" } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
   use { 'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')" }
   use {
@@ -123,9 +123,9 @@ return require('packer').startup({ function()
   }
 
   -- Motion
-  use {
-    'pechorin/any-jump.vim',
-  }
+  -- use {
+  --   'pechorin/any-jump.vim',
+  -- }
   use 'matze/vim-move'
   use {
     'karb94/neoscroll.nvim',
@@ -214,7 +214,7 @@ return require('packer').startup({ function()
     'sunjon/Shade.nvim',
     config = "require('shade-config')"
   }
-  use { 'folke/twilight.nvim', config = "require('twilight-config')" }
+  -- use { 'folke/twilight.nvim', config = "require('twilight-config')" }
 end,
 config = {
   display = {
