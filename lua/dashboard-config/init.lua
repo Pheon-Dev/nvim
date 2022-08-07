@@ -54,5 +54,5 @@ db.custom_center = {
   { icon = ' ', desc = '8 ---⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣾⣿⣿⡟⢀⠃⠄⢸⡄⠁--- Jump Mark        ', action = 'DashboardJumpMarks'},
   { icon = '✗ ', desc = '9 ---⠄⠄⠘⢿⣿⣿⣿⣿⣿⣿⢛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⢄⡆⠄⢀⣪⡆⠄--- Exit             ', action = 'q!'},
 }
-db.custom_footer = {'If in doubt, flat out - Collin McRae'}
+db.custom_footer = {'LET IT RIP! (KBL) - MIKEY'}
 
