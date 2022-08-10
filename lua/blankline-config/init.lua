@@ -4,7 +4,7 @@ require("indent_blankline").setup {
     "dashboard",
     "NvimTree",
     "packer",
-    "lsp-installer",
+    "mason-lspconfig",
     "lspsaga"
   },
   show_current_context = true,

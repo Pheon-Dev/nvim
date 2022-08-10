@@ -160,9 +160,10 @@ return require('packer').startup({ function()
   }
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use {
-    'williamboman/nvim-lsp-installer',
-    commit = "d7e233566543d4c83199f5644f90bb116d7070f2"
+    'williamboman/mason.nvim',
+    config = "require('mason-config')"
   }
   use { "tamago324/nlsp-settings.nvim" }
   use { 'tami5/lspsaga.nvim', config = "require('lspsaga-config')" }
@@ -176,8 +177,6 @@ return require('packer').startup({ function()
   use {
     "rafamadriz/friendly-snippets",
   }
-
-  -- Lua
   use {
     "L3MON4D3/LuaSnip",
     config = function()
