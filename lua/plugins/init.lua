@@ -141,6 +141,7 @@ return require('packer').startup({ function()
   }
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
+  use 'pantharshit00/vim-prisma'
   use 'williamboman/mason-lspconfig.nvim'
   use {
     'williamboman/mason.nvim',
