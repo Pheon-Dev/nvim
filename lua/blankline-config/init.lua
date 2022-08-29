@@ -5,6 +5,7 @@ require("indent_blankline").setup {
     "NvimTree",
     "packer",
     "mason-lspconfig",
+    "mason",
     "lspsaga"
   },
   show_current_context = true,
