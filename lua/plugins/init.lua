@@ -88,7 +88,8 @@ return require('packer').startup({ function()
   use {
     'lukas-reineke/indent-blankline.nvim',
     event = "BufRead",
-    config = "require('blankline-config')"
+    config = "require('blankline-config')",
+    commit = "3f58778f31523921a0b744d6382d507dec2c81bb"
   }
 
   -- Formatting
