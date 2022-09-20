@@ -175,6 +175,8 @@ map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
 
 map("n", "cd", "cc<esc>", { noremap = true, silent = true })
+map("n", "co", "cc<esc>ddO<esc>", { noremap = true, silent = true })
+map("n", "ci", "ddO", { noremap = true, silent = true })
 
 -- Easymotion
 map("n", "s", "<Plug>(easymotion-prefix)", { noremap = true, silent = true })
