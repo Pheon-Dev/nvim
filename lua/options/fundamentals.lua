@@ -1,3 +1,6 @@
+vim.cmd('colorscheme tokyonight')
+vim.o.termguicolors = true
+
 vim.o.guifont = ('Courier\\ New:h10')
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'

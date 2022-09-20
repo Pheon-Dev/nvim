@@ -14,7 +14,10 @@ return require('packer').startup({ function()
   }
 
   -- Theme
-  use 'folke/tokyonight.nvim'
+  use {
+    'folke/tokyonight.nvim',
+    config = "require('tokyonight-config')"
+  }
 
   -- Highlighting
   use {
