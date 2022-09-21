@@ -51,6 +51,7 @@ return require('packer').startup({ function()
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     event = "BufWinEnter",
+    commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4",
     config = "require('bufferline-config')"
   }
 
