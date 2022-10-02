@@ -5,9 +5,9 @@ local map = vim.api.nvim_set_keymap
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { noremap = true, silent = true })
 
 -- Saving and  ESC on insert Mode
-map("i", "kk", "<cmd>w! | noh<cr><ESC>", { noremap = true, silent = true })
-map("i", "jj", "<ESC>", { noremap = true, silent = true })
-map("n", ",", "<cmd>w! | noh<cr>", { noremap = true, silent = true })
+map("i", "kk", "<esc><cmd>w! | noh<cr><esc>", { noremap = true, silent = true })
+map("i", "jj", "<esc>", { noremap = true, silent = true })
+map("n", ",", "<esc><cmd>lua vim.lsp.buf.format()<cr><esc><cmd>w! | noh<cr>", { noremap = true, silent = true })
 map("n", "'", ",", { noremap = true, silent = true })
 
 -- Saving and Quitting
@@ -57,8 +57,9 @@ map("n", "]c", "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", { expr = true, no
 map("i", "<C-h>", "<cmd>Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
 map("i", "<C-n>", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })
 
--- Tagbar
-map("n", "<C-t>", "<cmd>TagbarToggle<cr>", { noremap = true, silent = true })
+-- Zen
+map("n", "W", "<cmd>set winbar=%f<cr><esc><cmd>lua vim.o.ls = 0<cr><esc><cmd>lua vim.o.ch = 0<cr><esc>", { noremap = true, silent = true })
+map("n", "Q", "<cmd>lua vim.o.ls = 2<cr><esc><cmd>lua vim.o.ch = 1<cr><esc><cmd>set winbar=<cr><esc>", { noremap = true, silent = true })
 
 -- Edit (change)
 map("n", "c1", "ciw", { noremap = true, silent = true })

@@ -45,7 +45,7 @@ return require('packer').startup({ function()
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     event = "BufRead",
-    config = "require('lualine-config')"
+    config = "require('lualine-config')",
   }
   use {
     'akinsho/bufferline.nvim',
