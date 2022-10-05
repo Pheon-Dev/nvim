@@ -149,7 +149,8 @@ return require('packer').startup({ function()
   use 'williamboman/mason-lspconfig.nvim'
   use {
     'williamboman/mason.nvim',
-    config = "require('mason-config')"
+    config = "require('mason-config')",
+    commit = "d1c860da4b89fd29a45decfb490c79748d954493"
   }
   use { "tamago324/nlsp-settings.nvim" }
   use { 'tami5/lspsaga.nvim', config = "require('lspsaga-config')" }

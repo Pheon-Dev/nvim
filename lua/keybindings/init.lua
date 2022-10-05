@@ -12,7 +12,7 @@ map("n", "'", ",", { noremap = true, silent = true })
 
 -- Saving and Quitting
 map("n", "<C-s>", "<cmd>lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
-map("n", "<C-p>", "<cmd>Prettier<cr>", { noremap = true, silent = true })
+map("n", "<C-p>", "<cmd>Prettier<cr><esc><cmd>w! | noh<cr>", { noremap = true, silent = true })
 map("n", "<C-q>", "<cmd>w! | bp | sp | bn | bd!<cr>", { noremap = true, silent = true })
 map("n", "<C-x>", "<cmd>qa!<cr>", { noremap = true, silent = true })
 
@@ -157,7 +157,8 @@ map("n", "y'", "yt'", { noremap = true, silent = true })
 map("n", 'y"', 'yt"', { noremap = true, silent = true })
 map("n", 'yp', 'yip', { noremap = true, silent = true })
 
-map("n", "X", "c0", { noremap = true, silent = true })
+map("n", "X", "c0<esc>", { noremap = true, silent = true })
+map("n", "gb", "vipgc", { noremap = true, silent = true })
 
 -- Fold
 map("n", "zh", "zfi)", { noremap = true, silent = true })
