@@ -30,7 +30,7 @@ return require('packer').startup({ function()
       }
     end
   }
-  --
+
   -- Theme
   use {
     'folke/tokyonight.nvim',

@@ -18,6 +18,7 @@ require"toggleterm".setup {
     highlights = {
       border = "Normal",
       background = "Normal",
+      cursor = "Normal",
     },
   },
 }
