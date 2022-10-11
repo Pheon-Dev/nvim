@@ -1,7 +1,52 @@
 local capability = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+local navic = require("nvim-navic")
+
+local on_attach = function(client, bufnr)
+  require 'lsp_signature'.on_attach()
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
+end
+
+navic.setup {
+    icons = {
+        File          = " ",
+        Module        = " ",
+        Namespace     = " ",
+        Package       = " ",
+        Class         = " ",
+        Method        = " ",
+        Property      = " ",
+        Field         = " ",
+        Constructor   = " ",
+        Enum          = "練",
+        Interface     = "練",
+        Function      = " ",
+        Variable      = " ",
+        Constant      = " ",
+        String        = " ",
+        Number        = " ",
+        Boolean       = "◩ ",
+        Array         = " ",
+        Object        = " ",
+        Key           = " ",
+        Null          = "ﳠ ",
+        EnumMember    = " ",
+        Struct        = " ",
+        Event         = " ",
+        Operator      = " ",
+        TypeParameter = " ",
+    },
+    highlight = false,
+    separator = " > ",
+    depth_limit = 0,
+    depth_limit_indicator = "..",
+}
+
 require 'lspconfig'.tsserver.setup {
   capabilities = capability,
+  on_attach = on_attach,
   cmd = { "typescript-language-server", "--stdio" },
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   init_options = {
@@ -10,15 +55,10 @@ require 'lspconfig'.tsserver.setup {
   root_dir = function(fname)
     return vim.loop.cwd()
   end,
-  on_attach = function(client)
-    require 'lsp_signature'.on_attach()
-  end
 }
 
 require 'lspconfig'.sumneko_lua.setup {
-  on_attach = function(client)
-    require 'lsp_signature'.on_attach()
-  end,
+  on_attach = on_attach,
   capabilities = capability,
 
   settings = {

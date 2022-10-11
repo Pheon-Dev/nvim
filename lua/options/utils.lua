@@ -1,6 +1,6 @@
 vim.cmd('colorscheme tokyonight')
 vim.o.termguicolors = true
-
+vim.o.winbar = "%f%m%=%{%v:lua.require'nvim-navic'.get_location()%}"
 vim.o.guifont = ('Courier\\ New:h10')
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
@@ -11,6 +11,12 @@ vim.o.splitright = true
 vim.cmd('if !1 | finish | endif')
 vim.cmd('set nocompatible')
 vim.cmd('syntax enable')
+vim.cmd([[
+lua vim.o.ch = 0
+]])
+vim.cmd([[
+lua vim.o.ls = 0
+]])
 vim.cmd([[
   if has("syntax")
     syntax on

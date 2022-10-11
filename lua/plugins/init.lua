@@ -3,6 +3,7 @@ return packer.startup({ function(use)
   -- Packer
   use 'wbthomason/packer.nvim'
   -- Essentials
+
   use {
     'nvim-lua/popup.nvim',
   }
@@ -51,7 +52,7 @@ return packer.startup({ function(use)
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     event = "BufWinEnter",
-    commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4",
+    --[[ commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4", ]]
     config = "require('config.bufferline')"
   }
 
@@ -142,6 +143,10 @@ return packer.startup({ function(use)
   }
   use {
     "ray-x/lsp_signature.nvim",
+  }
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig",
   }
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'

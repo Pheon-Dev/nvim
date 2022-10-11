@@ -57,35 +57,37 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
-local my_colors = {n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V="#966bfe", R="#f62bfe"}
+local my_colors = { n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V = "#966bfe", R = "#f62bfe" }
+
+local mode_color = {
+  n = my_colors.n,
+  i = my_colors.i,
+  v = my_colors.v,
+  [''] = colors.magenta,
+  V = my_colors.V,
+  c = my_colors.c,
+  no = my_colors.n,
+  s = colors.violet,
+  S = colors.violet,
+  [''] = colors.violet,
+  ic = colors.blue,
+  R = my_colors.R,
+  Rv = my_colors.R,
+  cv = colors.green,
+  ce = colors.green,
+  r = colors.magenta,
+  rm = colors.magenta,
+  ['r?'] = colors.magenta,
+  ['!'] = colors.green,
+  t = colors.green,
+  gui = 'bold',
+}
 
 ins_left {
   function()
     return '▊'
   end,
   color = function()
-    local mode_color = {
-      n = my_colors.n,
-      i = my_colors.i,
-      v = my_colors.v,
-      [''] = colors.magenta,
-      V = my_colors.V,
-      c = my_colors.c,
-      no = my_colors.n,
-      s = colors.violet,
-      S = colors.violet,
-      [''] = colors.violet,
-      ic = colors.blue,
-      R = my_colors.R,
-      Rv = my_colors.R,
-      cv = colors.green,
-      ce = colors.green,
-      r = colors.magenta,
-      rm = colors.magenta,
-      ['r?'] = colors.magenta,
-      ['!'] = colors.green,
-      t = colors.green,
-    }
     return { fg = mode_color[vim.fn.mode()] }
   end,
   padding = { left = 0, right = 1 },
@@ -96,28 +98,6 @@ ins_left {
     return 'DE'
   end,
   color = function()
-    local mode_color = {
-      n = my_colors.n,
-      i = my_colors.i,
-      v = my_colors.v,
-      [''] = colors.magenta,
-      V = my_colors.V,
-      c = my_colors.c,
-      no = my_colors.n,
-      s = colors.violet,
-      S = colors.violet,
-      [''] = colors.violet,
-      ic = colors.blue,
-      R = my_colors.R,
-      Rv = my_colors.R,
-      cv = colors.green,
-      ce = colors.green,
-      r = colors.magenta,
-      rm = colors.magenta,
-      ['r?'] = colors.magenta,
-      ['!'] = colors.green,
-      t = colors.green,
-    }
     return { fg = mode_color[vim.fn.mode()] }
   end,
   padding = { left = 1, right = 1 },
@@ -175,87 +155,18 @@ ins_right {
   'filesize',
   cond = conditions.buffer_not_empty,
   color = function()
-    local mode_color = {
-      n = my_colors.n,
-      i = my_colors.i,
-      v = my_colors.v,
-      [''] = colors.magenta,
-      V = my_colors.V,
-      c = my_colors.c,
-      no = my_colors.n,
-      s = colors.violet,
-      S = colors.violet,
-      [''] = colors.violet,
-      ic = colors.blue,
-      R = my_colors.R,
-      Rv = my_colors.R,
-      cv = colors.green,
-      ce = colors.green,
-      r = colors.magenta,
-      rm = colors.magenta,
-      ['r?'] = colors.magenta,
-      ['!'] = colors.green,
-      t = colors.green,
-gui = 'bold',
-    }
     return { fg = mode_color[vim.fn.mode()] }
   end,
 }
 
 ins_right { 'location',
   color = function()
-    local mode_color = {
-      n = my_colors.n,
-      i = my_colors.i,
-      v = my_colors.v,
-      [''] = colors.magenta,
-      V = my_colors.V,
-      c = my_colors.c,
-      no = my_colors.n,
-      s = colors.violet,
-      S = colors.violet,
-      [''] = colors.violet,
-      ic = colors.blue,
-      R = my_colors.R,
-      Rv = my_colors.R,
-      cv = colors.green,
-      ce = colors.green,
-      r = colors.magenta,
-      rm = colors.magenta,
-      ['r?'] = colors.magenta,
-      ['!'] = colors.green,
-      t = colors.green,
-gui = 'bold',
-    }
     return { fg = mode_color[vim.fn.mode()] }
   end,
 }
 
 ins_right { 'progress',
   color = function()
-    local mode_color = {
-      n = my_colors.n,
-      i = my_colors.i,
-      v = my_colors.v,
-      [''] = colors.magenta,
-      V = my_colors.V,
-      c = my_colors.c,
-      no = my_colors.n,
-      s = colors.violet,
-      S = colors.violet,
-      [''] = colors.violet,
-      ic = colors.blue,
-      R = my_colors.R,
-      Rv = my_colors.R,
-      cv = colors.green,
-      ce = colors.green,
-      r = colors.magenta,
-      rm = colors.magenta,
-      ['r?'] = colors.magenta,
-      ['!'] = colors.green,
-      t = colors.green,
-gui = 'bold',
-    }
     return { fg = mode_color[vim.fn.mode()] }
   end,
 }
@@ -263,28 +174,6 @@ gui = 'bold',
 ins_right {
   'mode',
   color = function()
-    local mode_color = {
-      n = my_colors.n,
-      i = my_colors.i,
-      v = my_colors.v,
-      [''] = colors.magenta,
-      V = my_colors.V,
-      c = my_colors.c,
-      no = my_colors.n,
-      s = colors.violet,
-      S = colors.violet,
-      [''] = colors.violet,
-      ic = colors.blue,
-      R = my_colors.R,
-      Rv = my_colors.R,
-      cv = colors.green,
-      ce = colors.green,
-      r = colors.magenta,
-      rm = colors.magenta,
-      ['r?'] = colors.magenta,
-      ['!'] = colors.green,
-      t = colors.green,
-    }
     return { fg = mode_color[vim.fn.mode()] }
   end,
   padding = { left = 1, right = 1 },
@@ -295,28 +184,6 @@ ins_right {
     return '▊'
   end,
   color = function()
-    local mode_color = {
-      n = my_colors.n,
-      i = my_colors.i,
-      v = my_colors.v,
-      [''] = colors.magenta,
-      V = my_colors.V,
-      c = my_colors.c,
-      no = my_colors.n,
-      s = colors.violet,
-      S = colors.violet,
-      [''] = colors.violet,
-      ic = colors.blue,
-      R = my_colors.R,
-      Rv = my_colors.R,
-      cv = colors.green,
-      ce = colors.green,
-      r = colors.magenta,
-      rm = colors.magenta,
-      ['r?'] = colors.magenta,
-      ['!'] = colors.green,
-      t = colors.green,
-    }
     return { fg = mode_color[vim.fn.mode()] }
   end,
   padding = { left = 1 },
