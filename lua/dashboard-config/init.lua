@@ -3,6 +3,9 @@ vim.cmd('highlight DashboardHeader guifg=#1080f0 ')
 vim.cmd('highlight DashboardCenter guifg=#10a0f0 ')
 vim.cmd('highlight DashboardFooter guifg=#10f0f0 ')
 vim.cmd('highlight DashboardShortCut guifg=#10f030 ')
+vim.cmd('lua vim.o.ls = 0')
+vim.cmd('lua vim.o.ch = 0')
+vim.cmd('set winbar=%f%m')
 
 local db = require('dashboard')
 db.custom_header = {

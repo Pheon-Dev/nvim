@@ -11,10 +11,33 @@ end
 local cmp = require 'cmp'
 local lspkind = require('lspkind')
 
+local function border(hl_name)
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
+
 cmp.setup({
+  window = {
+    completion = {
+      border = border "CmpBorder",
+      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = border "CmpDocBorder",
+    },
+  },
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      --[[ vim.fn["vsnip#anonymous"](args.body) ]]
+      require("luasnip").lsp_expand(args.body)
     end,
   },
   mapping = {
@@ -49,10 +72,11 @@ cmp.setup({
     ),
   },
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' },
-  }, {
-    { name = 'buffer' },
+    { name = "luasnip" },
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
   }),
   formatting = {format = lspkind.cmp_format({with_text = true, maxwidth = 50})}
 })

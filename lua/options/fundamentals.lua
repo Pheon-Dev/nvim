@@ -16,8 +16,7 @@ vim.cmd([[
     syntax on
   endif
 ]])
--- vim.o.g['rooter_cd_cmd'] = 'lcd'
-vim.o.ch = 0
+
 vim.o.foldmethod = "manual"
 vim.o.hidden = true
 vim.o.pumheight = 10

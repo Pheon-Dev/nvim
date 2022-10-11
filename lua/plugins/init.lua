@@ -12,25 +12,6 @@ return require('packer').startup({ function()
     run = "make sync",
   }
 
-  --[[ Cursor Line ]]
-  use {
-    'yamatsum/nvim-cursorline',
-    config = function()
-      require('nvim-cursorline').setup {
-        cursorline = {
-          enable = true,
-          timeout = 1000,
-          number = true,
-        },
-        cursorword = {
-          enable = true,
-          min_length = 3,
-          hl = { underline = true },
-        }
-      }
-    end
-  }
-
   -- Theme
   use {
     'folke/tokyonight.nvim',
