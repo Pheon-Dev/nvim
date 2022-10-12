@@ -128,18 +128,25 @@ ins_left {
 }
 
 ins_left {
-  'buffers',
+  'filename',
+  file_status = true,
+  newfile_status = false,
+  path = 0, -- 0: Just the filename
+
+  shorting_target = 40, -- Shortens path to leave 40 spaces in the window
+  -- for other components. (terrible name, any suggestions?)
+  symbols = {
+    modified = '[+]', -- Text to show when the file is modified.
+    readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
+    unnamed = '', -- Text to show for unnamed buffers.
+    newfile = '[New]',
+  },
   filetype_names = {
     TelescopePrompt = 'Telescope',
     dashboard = 'Dashboard',
     packer = 'Packer',
     fzf = 'FZF',
     alpha = 'Alpha'
-  },
-  symbols = {
-    modified = ' ●',
-    alternate_file = '#',
-    directory = '',
   },
 }
 

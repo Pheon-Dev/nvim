@@ -11,7 +11,7 @@ function M.eval()
   --[[ local status = "  " .. count.added .. " 柳" .. count.modified .. "  " .. count.removed ]]
   local status = " "
 
-  return string.format('%s %s %s', modified, file_path, status)
+  return string.format(' %s %s %s', modified, file_path, status)
 
 
 end
