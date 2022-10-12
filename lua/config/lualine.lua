@@ -128,17 +128,19 @@ ins_left {
 }
 
 ins_left {
-  'filetype',
-  cond = conditions.buffer_not_empty,
-  icon_only = true,
-  color = { fg = my_colors.v, gui = 'bold' },
-}
-
-ins_left {
-  'filename',
-  cond = conditions.buffer_not_empty,
-  color = { fg = my_colors.v, gui = 'bold' },
-  path = 1,
+  'buffers',
+  filetype_names = {
+    TelescopePrompt = 'Telescope',
+    dashboard = 'Dashboard',
+    packer = 'Packer',
+    fzf = 'FZF',
+    alpha = 'Alpha'
+  },
+  symbols = {
+    modified = ' ●',
+    alternate_file = '#',
+    directory = '',
+  },
 }
 
 ins_right {
