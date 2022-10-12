@@ -2,8 +2,8 @@ local packer = require("packer")
 return packer.startup({ function(use)
   -- Packer
   use 'wbthomason/packer.nvim'
-  -- Essentials
 
+  -- Essentials
   use {
     'nvim-lua/popup.nvim',
   }
@@ -52,7 +52,6 @@ return packer.startup({ function(use)
     'akinsho/bufferline.nvim',
     requires = 'kyazdani42/nvim-web-devicons',
     event = "BufWinEnter",
-    --[[ commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4", ]]
     config = "require('config.bufferline')"
   }
 
@@ -121,7 +120,7 @@ return packer.startup({ function(use)
   use 'christoomey/vim-tmux-navigator'
 
   -- LSP & Completions
-  use { 'neovim/nvim-lspconfig', config = "require('lsp')" }
+  use { 'neovim/nvim-lspconfig', config = "require('config.lsp')" }
   use {
     "hrsh7th/nvim-cmp",
     requires = {

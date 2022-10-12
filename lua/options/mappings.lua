@@ -57,13 +57,6 @@ map("n", "]c", "&diff ? ']c' : '<cmd>Gitsigns next_hunk<cr>'", { expr = true, no
 map("i", "<C-h>", "<cmd>Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
 map("i", "<C-n>", "<cmd>Telescope buffers<cr>", { noremap = true, silent = true })
 
--- Zen
-map("n", "W",
-  "<cmd>set winbar=%f%m%=%{%v:lua.require'nvim-navic'.get_location()%}<cr><esc><cmd>lua vim.o.ls = 0<cr><esc><cmd>lua vim.o.ch = 0<cr><esc>"
-  , { noremap = true, silent = true })
-map("n", "Q", "<cmd>lua vim.o.ls = 2<cr><esc><cmd>lua vim.o.ch = 1<cr><esc><cmd>set winbar=<cr><esc>",
-  { noremap = true, silent = true })
-
 -- Edit (change)
 map("n", "c1", "ciw", { noremap = true, silent = true })
 map("n", "c2", 'ci"', { noremap = true, silent = true })

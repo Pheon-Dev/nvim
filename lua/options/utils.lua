@@ -1,6 +1,7 @@
 vim.cmd('colorscheme tokyonight')
 vim.o.termguicolors = true
-vim.o.winbar = "%f%m%=%{%v:lua.require'nvim-navic'.get_location()%}"
+vim.g.rainbow_active = 1
+
 vim.o.guifont = ('Courier\\ New:h10')
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
@@ -11,12 +12,6 @@ vim.o.splitright = true
 vim.cmd('if !1 | finish | endif')
 vim.cmd('set nocompatible')
 vim.cmd('syntax enable')
-vim.cmd([[
-lua vim.o.ch = 0
-]])
-vim.cmd([[
-lua vim.o.ls = 0
-]])
 vim.cmd([[
   if has("syntax")
     syntax on
@@ -87,3 +82,39 @@ vim.cmd([[
 vim.cmd([[
     vnoremap <F5> <ESC>:let &l:cc = join(range(getpos("'<")[2], getpos("'>")[2]),',')<CR>
   ]])
+vim.cmd('autocmd!')
+vim.cmd('autocmd Insertleave * set nopaste')
+vim.cmd('autocmd VimEnter * :silent exec "!kill -s SIGNWINCH $PPID"')
+
+vim.cmd('autocmd FileType coffee setlocal shiftwidth=2 tabstop=2')
+vim.cmd('autocmd FileType ruby setlocal shiftwidth=2 tabstop=2')
+vim.cmd('autocmd FileType yaml setlocal shiftwidth=2 tabstop=2')
+
+vim.cmd('autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart')
+vim.cmd('autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear')
+
+vim.cmd([[
+	augroup BgHighlight
+		autocmd!
+		autocmd WinEnter * set cul
+		autocmd WinLeave * set nocul
+	augroup END
+]])
+
+vim.cmd([[
+	if &term =~ "screen"
+  		autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
+  		autocmd VinLeave * silent! exe '!echo -n "\ek[`hostname`;`basenane $PWD`]\e\\"'
+	endif
+]])
+
+vim.cmd('au BufnewFile,BufRead *.lua setf lua')
+vim.cmd('au BufnewFile,BufRead *.js setf javascript')
+vim.cmd('au BufnewFile,BufRead *.jsx setf javascript')
+vim.cmd('au BufnewFile,BufRead *.es6 setf javascript')
+vim.cmd('au BufnewFile,BufRead *.tsx setf typescriptreact')
+vim.cmd('au BufnewFile,BufRead *.md set filetype=markdown')
+vim.cmd('au BufnewFile,BufRead *.mdx set filetype=markdown')
+vim.cmd('au BufnewFile,BufRead *.flow set filetype=javascript')
+vim.cmd('au BufnewFile,BufRead *.fish set filetype=fish')
+vim.cmd('au BufnewFile,BufRead *.zsh set filetype=zsh')

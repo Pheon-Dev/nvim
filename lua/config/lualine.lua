@@ -85,7 +85,8 @@ local mode_color = {
 
 ins_left {
   function()
-    return '▊'
+    --[[ return '▊' ]]
+    return '|'
   end,
   color = function()
     return { fg = mode_color[vim.fn.mode()] }
@@ -93,15 +94,15 @@ ins_left {
   padding = { left = 0, right = 1 },
 }
 
-ins_left {
-  function()
-    return 'DE'
-  end,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  padding = { left = 1, right = 1 },
-}
+--[[ ins_left { ]]
+--[[   function() ]]
+--[[     return 'DE' ]]
+--[[   end, ]]
+--[[   color = function() ]]
+--[[     return { fg = mode_color[vim.fn.mode()] } ]]
+--[[   end, ]]
+--[[   padding = { left = 1, right = 1 }, ]]
+--[[ } ]]
 
 ins_left {
   'branch',
@@ -181,7 +182,8 @@ ins_right {
 
 ins_right {
   function()
-    return '▊'
+    --[[ return '▊' ]]
+    return '|'
   end,
   color = function()
     return { fg = mode_color[vim.fn.mode()] }
@@ -190,3 +192,5 @@ ins_right {
 }
 
 lualine.setup(config)
+
+vim.o.winbar = "%{%v:lua.require('config.winbar').eval()%}%=%{%v:lua.require'nvim-navic'.get_location()%}"
