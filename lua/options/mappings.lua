@@ -179,13 +179,6 @@ map("n", "sl", "<Plug>(easymotion-fl)", { noremap = true, silent = true })
 map("n", "sf", "<Plug>(easymotion-overwin-w)", { noremap = true, silent = true })
 map("n", "s.", "<Plug>(easymotion-repeat)", { noremap = true, silent = true })
 
--- vim.cmd([[
---   map / <Plug>(easymotion-sn)
---   map / <Plug>(easymotion-tn)
---   map n <Plug>(easymotion-next)
---   map N <Plug>(easymotion-prev)
--- ]])
-
 -- Shade Toggle
 map("n", "S", ":lua require'shade'.toggle()<cr>", { noremap = true, silent = false })
 

@@ -85,7 +85,6 @@ local mode_color = {
 
 ins_left {
   function()
-    --[[ return '▊' ]]
     return '|'
   end,
   color = function()
@@ -106,8 +105,14 @@ ins_left {
 
 ins_left {
   'branch',
-  icon = '',
+  icon = '',
   color = { fg = colors.violet, gui = 'bold' },
+}
+
+ins_left {
+  function()
+    return '%='
+  end,
 }
 
 ins_left {
@@ -122,35 +127,6 @@ ins_left {
 }
 
 ins_left {
-  function()
-    return '%='
-  end,
-}
-
-ins_left {
-  'filename',
-  file_status = true,
-  newfile_status = false,
-  path = 0, -- 0: Just the filename
-
-  shorting_target = 40, -- Shortens path to leave 40 spaces in the window
-  -- for other components. (terrible name, any suggestions?)
-  symbols = {
-    modified = '[+]', -- Text to show when the file is modified.
-    readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
-    unnamed = '', -- Text to show for unnamed buffers.
-    newfile = '[New]',
-  },
-  filetype_names = {
-    TelescopePrompt = 'Telescope',
-    dashboard = 'Dashboard',
-    packer = 'Packer',
-    fzf = 'FZF',
-    alpha = 'Alpha'
-  },
-}
-
-ins_right {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
@@ -187,6 +163,13 @@ ins_right {
     return { fg = mode_color[vim.fn.mode()] }
   end,
   padding = { left = 1, right = 1 },
+  icons_enabled = true,
+  icon = nil,
+
+  type = nil,
+
+  fmt = nil,
+  on_click = nil,
 }
 
 ins_right {
