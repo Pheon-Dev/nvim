@@ -10,6 +10,15 @@ end
 
 local cmp = require 'cmp'
 local lspkind = require('lspkind')
+local compare = require('cmp.config.compare')
+
+local source_mapping = {
+  buffer = " buff",
+  nvim_lsp = " lsp",
+  nvim_lua = " lua",
+  path = " path",
+  luasnip = " snip",
+}
 
 local function border(hl_name)
   return {
@@ -36,9 +45,22 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      --[[ vim.fn["vsnip#anonymous"](args.body) ]]
       require("luasnip").lsp_expand(args.body)
+      vim.fn["vsnip#anonymous"](args.body)
     end,
+  },
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      compare.offset,
+      compare.exact,
+      compare.score,
+      compare.recently_used,
+      compare.kind,
+      compare.sort_text,
+      compare.length,
+      compare.order,
+    },
   },
   mapping = {
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -72,27 +94,45 @@ cmp.setup({
     ),
   },
   sources = cmp.config.sources({
+    { name = "vsnip" },
     { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "nvim_lua" },
     { name = "path" },
   }),
-  formatting = { format = lspkind.cmp_format({ with_text = true, maxwidth = 50 }) }
+  formatting = { format = function(entry, vim_item)
+    lspkind.cmp_format({ with_text = true, maxwidth = 50 })
+    -- if you have lspkind installed, you can use it like
+    -- in the following line:
+    vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
+    vim_item.menu = source_mapping[entry.source.name]
+    local maxwidth = 80
+    vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
+    return vim_item
+  end }
 })
 
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
+    { name = "vsnip" },
+    { name = "luasnip" },
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
   }
 })
 
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
+    { name = "vsnip" },
+    { name = "luasnip" },
+    { name = "nvim_lsp" },
+    { name = "buffer" },
+    { name = "nvim_lua" },
+    { name = "path" },
   }),
 })

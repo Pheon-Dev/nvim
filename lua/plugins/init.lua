@@ -1,4 +1,5 @@
 local packer = require("packer")
+
 return packer.startup({ function(use)
   -- Packer
   use 'wbthomason/packer.nvim'
@@ -86,7 +87,7 @@ return packer.startup({ function(use)
   }
 
   -- Utils
-  use 'terryma/vim-multiple-cursors' -- C-N 
+  use 'terryma/vim-multiple-cursors' -- C-N
   use { "antoinemadec/FixCursorHold.nvim" } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
   use { 'norcalli/nvim-colorizer.lua', config = "require('config.colorizer')" }
   use {
@@ -132,6 +133,7 @@ return packer.startup({ function(use)
       { "hrsh7th/nvim-cmp" },
       { "hrsh7th/cmp-vsnip" },
       { "hrsh7th/vim-vsnip" },
+      { "hrsh7th/vim-vsnip-integ" },
       { "Saecki/crates.nvim" },
       { "f3fora/cmp-spell" },
       { "hrsh7th/cmp-cmdline" },
@@ -162,6 +164,7 @@ return packer.startup({ function(use)
     'jose-elias-alvarez/null-ls.nvim',
     config = "require('config.null-ls')"
   }
+
 
   -- Snippets
   use 'mattn/emmet-vim'
