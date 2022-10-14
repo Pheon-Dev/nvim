@@ -16,6 +16,7 @@ local source_mapping = {
   buffer = " buff",
   nvim_lsp = " lsp",
   nvim_lua = " lua",
+  vsnip = " snip",
   path = " path",
   luasnip = " snip",
 }
@@ -46,7 +47,7 @@ cmp.setup({
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
-      vim.fn["vsnip#anonymous"](args.body)
+      --[[ vim.fn["vsnip#anonymous"](args.body) ]]
     end,
   },
   sorting = {

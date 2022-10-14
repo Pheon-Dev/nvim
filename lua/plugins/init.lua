@@ -27,6 +27,7 @@ return packer.startup({ function(use)
     run = ":TSUpdate",
     config = "require('config.treesitter')"
   }
+  use { 'nvim-treesitter/nvim-treesitter-refactor' }
   use { 'windwp/nvim-ts-autotag' }
   use { 'p00f/nvim-ts-rainbow' }
   use 'junegunn/rainbow_parentheses.vim'
