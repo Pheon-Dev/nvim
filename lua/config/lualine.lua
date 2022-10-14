@@ -112,23 +112,24 @@ local mode_color = {
 }
 
 -- winbar
-
 wins_left {
   'filetype',
-  cond = conditions.buffer_not_empty,
-  icon_only = true,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
+  colored = true, -- Displays filetype icon in color if set to true
+  icon_only = false, -- Display only an icon for filetype
+  icon = { align = 'left' }, -- Display filetype icon on the right hand side
+  -- icon =    {'X', align='right'}
+  -- Icon string ^ in table is ignored in filetype component
 }
 
 wins_left {
-  'filename',
-  cond = conditions.buffer_not_empty,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  path = 1,
+  'diff',
+  symbols = { added = ' ', modified = '柳', removed = ' ' },
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.orange },
+    removed = { fg = colors.red },
+  },
+  --[[ cond = conditions.hide_in_width, ]]
 }
 
 wins_left {
@@ -138,59 +139,6 @@ wins_left {
 }
 
 wins_right {
-  navic.get_location,
-  cond = navic.is_available,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  padding = { right = 1 },
-}
-
--- statusline
-ins_left {
-  function()
-    return '⋮'
-  end,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  padding = { left = 0, right = 1 },
-}
-
-ins_left {
-  'branch',
-  icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
-}
-
-ins_left {
-  'diff',
-  symbols = { added = ' ', modified = '柳', removed = ' ' },
-  diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
-  },
-  cond = conditions.hide_in_width,
-}
-
-ins_left {
-  function()
-    return '%='
-  end,
-}
-
-ins_left {
-  'filetype',
-  symbols = { lua = ' ', toggleterm = '柳', TelescopePrompt = ' ' },
-  colored = true, -- Displays filetype icon in color if set to true
-  icon_only = false, -- Display only an icon for filetype
-  icon = { align = 'left' }, -- Display filetype icon on the right hand side
-  -- icon =    {'X', align='right'}
-  -- Icon string ^ in table is ignored in filetype component
-}
-
-ins_right {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
@@ -201,12 +149,52 @@ ins_right {
   },
 }
 
-ins_right {
+wins_right {
   'filesize',
   cond = conditions.buffer_not_empty,
   color = function()
     return { fg = mode_color[vim.fn.mode()] }
   end,
+}
+
+-- statusline
+ins_left {
+  'branch',
+  icon = '',
+  color = { fg = colors.violet, gui = 'bold' },
+}
+
+ins_left {
+  'filetype',
+  cond = conditions.buffer_not_empty,
+  icon_only = true,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
+
+ins_left {
+  'filename',
+  cond = conditions.buffer_not_empty,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  path = 1,
+}
+
+ins_left {
+  function()
+    return '%='
+  end,
+}
+
+ins_right {
+  navic.get_location,
+  cond = navic.is_available,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  padding = { right = 1 },
 }
 
 ins_right { 'location',
@@ -221,21 +209,6 @@ ins_right { 'progress',
   end,
 }
 
---[[ ins_right { ]]
---[[   'mode', ]]
---[[   color = function() ]]
---[[     return { fg = mode_color[vim.fn.mode()] } ]]
---[[   end, ]]
---[[   padding = { left = 1, right = 1 }, ]]
---[[   icons_enabled = true, ]]
---[[   icon = nil, ]]
---[[]]
---[[   type = nil, ]]
---[[]]
---[[   fmt = nil, ]]
---[[   on_click = nil, ]]
---[[ } ]]
-
 ins_right {
   function()
     return '⋮'
@@ -247,5 +220,3 @@ ins_right {
 }
 
 lualine.setup(config)
-
---[[ vim.o.winbar = "%{%v:lua.require('config.winbar').eval()%}%=%{%v:lua.require'nvim-navic'.get_location()%}" ]]

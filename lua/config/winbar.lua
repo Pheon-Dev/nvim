@@ -12,4 +12,5 @@ function M.eval()
 
 end
 
+--[[ vim.o.winbar = "%{%v:lua.require('config.winbar').eval()%}%=%{%v:lua.require'nvim-navic'.get_location()%}" ]]
 return M
