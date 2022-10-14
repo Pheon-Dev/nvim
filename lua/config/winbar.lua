@@ -7,11 +7,7 @@ function M.eval()
 
   file_path = file_path:gsub('/', ' » ')
 
-  local count = require('lualine.components.diff.git_diff').get_sign_count()
-  --[[ local status = "  " .. count.added .. " 柳" .. count.modified .. "  " .. count.removed ]]
-  local status = " "
-
-  return string.format(' %s %s %s', modified, file_path, status)
+  return string.format(' %s %s', modified, file_path)
 
 
 end

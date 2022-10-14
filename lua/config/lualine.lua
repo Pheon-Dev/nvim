@@ -1,4 +1,5 @@
 local lualine = require('lualine')
+local navic = require("nvim-navic")
 
 local colors = {
   bg       = '#2e2e2e',
@@ -39,6 +40,23 @@ local config = {
       normal = { c = { fg = colors.fg, bg = colors.bg } },
     },
   },
+  statusline = {},
+  winbar = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_y = {},
+    lualine_z = {},
+    lualine_c = {},
+    lualine_x = {},
+  },
+  inactive_winbar = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_y = {},
+    lualine_z = {},
+    lualine_c = {},
+    lualine_x = {},
+  },
   sections = {
     lualine_a = {},
     lualine_b = {},
@@ -48,6 +66,16 @@ local config = {
     lualine_x = {},
   },
 }
+
+local function wins_left(component)
+  table.insert(config.winbar.lualine_c, component)
+  table.insert(config.inactive_winbar.lualine_c, component)
+end
+
+local function wins_right(component)
+  table.insert(config.winbar.lualine_x, component)
+  table.insert(config.inactive_winbar.lualine_x, component)
+end
 
 local function ins_left(component)
   table.insert(config.sections.lualine_c, component)
@@ -83,9 +111,45 @@ local mode_color = {
   gui = 'bold',
 }
 
+-- winbar
+
+wins_left {
+  'filetype',
+  cond = conditions.buffer_not_empty,
+  icon_only = true,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
+
+wins_left {
+  'filename',
+  cond = conditions.buffer_not_empty,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  path = 1,
+}
+
+wins_left {
+  function()
+    return '%='
+  end,
+}
+
+wins_right {
+  navic.get_location,
+  cond = navic.is_available,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  padding = { right = 1 },
+}
+
+-- statusline
 ins_left {
   function()
-    return '|'
+    return '⋮'
   end,
   color = function()
     return { fg = mode_color[vim.fn.mode()] }
@@ -93,26 +157,10 @@ ins_left {
   padding = { left = 0, right = 1 },
 }
 
---[[ ins_left { ]]
---[[   function() ]]
---[[     return 'DE' ]]
---[[   end, ]]
---[[   color = function() ]]
---[[     return { fg = mode_color[vim.fn.mode()] } ]]
---[[   end, ]]
---[[   padding = { left = 1, right = 1 }, ]]
---[[ } ]]
-
 ins_left {
   'branch',
   icon = '',
   color = { fg = colors.violet, gui = 'bold' },
-}
-
-ins_left {
-  function()
-    return '%='
-  end,
 }
 
 ins_left {
@@ -127,6 +175,22 @@ ins_left {
 }
 
 ins_left {
+  function()
+    return '%='
+  end,
+}
+
+ins_left {
+  'filetype',
+  symbols = { lua = ' ', toggleterm = '柳', TelescopePrompt = ' ' },
+  colored = true, -- Displays filetype icon in color if set to true
+  icon_only = false, -- Display only an icon for filetype
+  icon = { align = 'left' }, -- Display filetype icon on the right hand side
+  -- icon =    {'X', align='right'}
+  -- Icon string ^ in table is ignored in filetype component
+}
+
+ins_right {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
   symbols = { error = ' ', warn = ' ', info = ' ' },
@@ -157,25 +221,24 @@ ins_right { 'progress',
   end,
 }
 
-ins_right {
-  'mode',
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  padding = { left = 1, right = 1 },
-  icons_enabled = true,
-  icon = nil,
-
-  type = nil,
-
-  fmt = nil,
-  on_click = nil,
-}
+--[[ ins_right { ]]
+--[[   'mode', ]]
+--[[   color = function() ]]
+--[[     return { fg = mode_color[vim.fn.mode()] } ]]
+--[[   end, ]]
+--[[   padding = { left = 1, right = 1 }, ]]
+--[[   icons_enabled = true, ]]
+--[[   icon = nil, ]]
+--[[]]
+--[[   type = nil, ]]
+--[[]]
+--[[   fmt = nil, ]]
+--[[   on_click = nil, ]]
+--[[ } ]]
 
 ins_right {
   function()
-    --[[ return '▊' ]]
-    return '|'
+    return '⋮'
   end,
   color = function()
     return { fg = mode_color[vim.fn.mode()] }
@@ -185,4 +248,4 @@ ins_right {
 
 lualine.setup(config)
 
-vim.o.winbar = "%{%v:lua.require('config.winbar').eval()%}%=%{%v:lua.require'nvim-navic'.get_location()%}"
+--[[ vim.o.winbar = "%{%v:lua.require('config.winbar').eval()%}%=%{%v:lua.require'nvim-navic'.get_location()%}" ]]

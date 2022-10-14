@@ -32,9 +32,6 @@ return packer.startup({ function(use)
   use { 'p00f/nvim-ts-rainbow' }
   use 'junegunn/rainbow_parentheses.vim'
 
-  -- Completions
-  use 'nvim-lua/completion-nvim'
-
   -- Nvim Tree
   use {
     'kyazdani42/nvim-tree.lua',
@@ -131,7 +128,6 @@ return packer.startup({ function(use)
       { "hrsh7th/cmp-path" },
       { "hrsh7th/cmp-nvim-lua" },
       { "ray-x/cmp-treesitter" },
-      { "hrsh7th/nvim-cmp" },
       { "hrsh7th/cmp-vsnip" },
       { "hrsh7th/vim-vsnip" },
       { "hrsh7th/vim-vsnip-integ" },
@@ -152,7 +148,6 @@ return packer.startup({ function(use)
   }
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
-  use 'pantharshit00/vim-prisma'
   use 'williamboman/mason-lspconfig.nvim'
   use {
     'williamboman/mason.nvim',
