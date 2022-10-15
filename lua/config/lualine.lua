@@ -87,6 +87,30 @@ end
 
 local my_colors = { n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V = "#966bfe", R = "#f62bfe" }
 
+local mode = {
+  n = "👑",
+  i = "📝",
+  ic = "📝",
+  v = "🔬",
+  V = "🔬",
+  [''] = "🔬",
+  s = "📺",
+  S = "📺",
+  [''] = "📺",
+  r = "🧻",
+  R = "🧻",
+  Rv = "🧻",
+  rm = "🧻",
+  ['r?'] = "🎨",
+  c = "🎨",
+  cv = "🎨",
+  ce = "🎨",
+  t = "",
+  ['!'] = "",
+  no = "🧹",
+  gui = "",
+}
+
 local mode_color = {
   n = my_colors.n,
   i = my_colors.i,
@@ -113,15 +137,36 @@ local mode_color = {
 
 -- winbar
 wins_left {
-  'filetype',
-  colored = true, -- Displays filetype icon in color if set to true
-  icon_only = false, -- Display only an icon for filetype
-  icon = { align = 'left' }, -- Display filetype icon on the right hand side
-  -- icon =    {'X', align='right'}
-  -- Icon string ^ in table is ignored in filetype component
+  'branch',
+  icon = '',
+  color = { fg = colors.violet, gui = 'bold' },
 }
 
 wins_left {
+  'filetype',
+  cond = conditions.buffer_not_empty,
+  icon_only = true,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
+
+wins_left {
+  'filename',
+  cond = conditions.buffer_not_empty,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  path = 1,
+}
+
+wins_left {
+  function()
+    return '%='
+  end,
+}
+
+wins_right {
   'diff',
   symbols = { added = ' ', modified = '柳', removed = ' ' },
   diff_color = {
@@ -129,13 +174,7 @@ wins_left {
     modified = { fg = colors.orange },
     removed = { fg = colors.red },
   },
-  --[[ cond = conditions.hide_in_width, ]]
-}
-
-wins_left {
-  function()
-    return '%='
-  end,
+  cond = conditions.hide_in_width,
 }
 
 wins_right {
@@ -157,35 +196,35 @@ wins_right {
   end,
 }
 
+wins_right {
+  function()
+    return '|'
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  padding = { left = 1 },
+}
+
 -- statusline
 ins_left {
-  'branch',
-  icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
+  function()
+    return mode[vim.fn.mode()]
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  padding = { right = 1, left = 1 },
 }
 
 ins_left {
   'filetype',
-  cond = conditions.buffer_not_empty,
-  icon_only = true,
   color = function()
     return { fg = mode_color[vim.fn.mode()] }
   end,
-}
-
-ins_left {
-  'filename',
-  cond = conditions.buffer_not_empty,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  path = 1,
-}
-
-ins_left {
-  function()
-    return '%='
-  end,
+  icon_only = false, -- Display only an icon for filetype
+  icon = { align = 'left' }, -- Display filetype icon on the right hand side
+  padding = { right = 1, left = 1 },
 }
 
 ins_right {

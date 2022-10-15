@@ -16,7 +16,7 @@ local source_mapping = {
   buffer = " buff",
   nvim_lsp = " lsp",
   nvim_lua = " lua",
-  vsnip = " snip",
+  vsnip = "✀ snip",
   path = " path",
   luasnip = " snip",
 }

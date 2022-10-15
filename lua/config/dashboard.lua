@@ -72,8 +72,8 @@ db.custom_center = {
     action = 'q!' },
 }
 db.custom_footer = { 'LET IT RIP! (KBL) - MIKEY' }
+--[[ https://www.vertex42.com/ExcelTips/unicode-symbols.html ]]
 local icons = {
-
   ["class-name"] = ' ',
   ["function-name"] = ' ',
   ["method-name"] = ' ',
