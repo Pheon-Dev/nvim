@@ -13,7 +13,8 @@ local lspkind = require('lspkind')
 local compare = require('cmp.config.compare')
 
 local source_mapping = {
-  buffer = " buff",
+  snippy = "🗡 snippy",
+  buffer = " buffer",
   nvim_lsp = " lsp",
   nvim_lua = " lua",
   vsnip = "✀ snip",
@@ -46,6 +47,7 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
+      require("snippy").expand_snippet(args.body)
       require("luasnip").lsp_expand(args.body)
       --[[ vim.fn["vsnip#anonymous"](args.body) ]]
     end,
@@ -95,6 +97,7 @@ cmp.setup({
     ),
   },
   sources = cmp.config.sources({
+    { name = "snippy" },
     { name = "vsnip" },
     { name = "luasnip" },
     { name = "nvim_lsp" },
@@ -117,6 +120,7 @@ cmp.setup({
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
+    { name = "snippy" },
     { name = "vsnip" },
     { name = "luasnip" },
     { name = "nvim_lsp" },
@@ -129,6 +133,7 @@ cmp.setup.cmdline('/', {
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
+    { name = "snippy" },
     { name = "vsnip" },
     { name = "luasnip" },
     { name = "nvim_lsp" },

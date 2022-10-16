@@ -21,6 +21,11 @@ local toggle_float = function()
   return float:toggle()
 end
 
+local toggle_turbo_build = function()
+  local lazygit = Terminal:new({ cmd = 'yarn turbo run build && lazygit', direction = "float" })
+  return lazygit:toggle()
+end
+
 local toggle_lazygit = function()
   local lazygit = Terminal:new({ cmd = 'lazygit', direction = "float" })
   return lazygit:toggle()
@@ -31,23 +36,9 @@ local toggle_ranger = function()
   return ranger:toggle()
 end
 
-local toggle_btop = function()
-  local btop = Terminal:new({ cmd = 'btop', direction = "float" })
-  return btop:toggle()
-end
-
-local toggle_cmus = function()
-  local cmus = Terminal:new({ cmd = 'cmus', direction = "float" })
-  return cmus:toggle()
-end
-
-local toggle_mc = function()
-  local mc = Terminal:new({ cmd = 'mc', direction = "float" })
-  return mc:toggle()
-end
-
 local mappings = {
-  b = { ":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal" },
+  --[[ a = { ":Telescope frecency<cr>", "Frecency" }, ]]
+  b = { ":Telescope buffers<cr>", "Buffers" },
   c = {
     name = "Others",
     p = { ":Telescope command_history<cr>", "Command History" },
@@ -58,6 +49,7 @@ local mappings = {
   f = { ":Telescope find_files<cr>", "Find Files" },
   k = { ":Dashboard<cr>", "Dashboard" },
   l = { toggle_lazygit, "LazyGit" },
+  j = { toggle_turbo_build, "Build Trubo Repo" },
   m = { ":Mason<cr>", "Mason" },
   n = { ":RnvimrToggle<cr>", "Ranger" },
   o = { ":Prettier<cr>", "Format" },
@@ -69,8 +61,7 @@ local mappings = {
     name = "Toggle",
     t = { toggle_float, "Terminal" },
     r = { toggle_ranger, "Ranger" },
-    b = { toggle_btop, "Btop" },
-    m = { toggle_mc, "mc" },
+    b = { ":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal" },
   },
   v = {
     name = "Split",

@@ -10,6 +10,7 @@ return packer.startup({ function(use)
   }
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
+  use 'ThePrimeagen/harpoon'
   use { "kevinhwang91/rnvimr", run = "make sync", }
 
   -- Theme
@@ -145,6 +146,7 @@ return packer.startup({ function(use)
   }
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
+  use 'dcampos/nvim-snippy'
   use 'williamboman/mason-lspconfig.nvim'
   use {
     'williamboman/mason.nvim',

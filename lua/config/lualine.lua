@@ -167,6 +167,16 @@ wins_left {
 }
 
 wins_right {
+  function()
+    return ''
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  padding = { right = 1 },
+}
+
+wins_right {
   'diff',
   symbols = { added = ' ', modified = '柳', removed = ' ' },
   diff_color = {
@@ -175,6 +185,16 @@ wins_right {
     removed = { fg = colors.red },
   },
   cond = conditions.hide_in_width,
+}
+
+wins_right {
+  function()
+    return '| 🧹'
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  padding = { left = 1, right = 1 },
 }
 
 wins_right {
@@ -207,6 +227,16 @@ wins_right {
 }
 
 -- statusline
+ins_left {
+  function()
+    return '⋮'
+  end,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  padding = { right = 1 },
+}
+
 ins_left {
   function()
     return mode[vim.fn.mode()]
