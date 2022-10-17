@@ -1,3 +1,15 @@
+_G.__luacache_config = {
+  chunks = {
+    enable = true,
+    path = vim.fn.stdpath('cache') .. '/luacache_chunks',
+  },
+  modpaths = {
+    enable = true,
+    path = vim.fn.stdpath('cache') .. '/luacache_modpaths',
+  }
+}
+require('impatient')
+
 local packer = require("packer")
 
 return packer.startup({ function(use)
@@ -5,9 +17,9 @@ return packer.startup({ function(use)
   use 'wbthomason/packer.nvim'
 
   -- Essentials
-  use {
-    'nvim-lua/popup.nvim',
-  }
+  use 'rcarriga/nvim-notify'
+  use 'lewis6991/impatient.nvim'
+  use 'nvim-lua/popup.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
   use 'ThePrimeagen/harpoon'

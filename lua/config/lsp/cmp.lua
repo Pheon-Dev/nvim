@@ -10,6 +10,7 @@ end
 
 local cmp = require 'cmp'
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
 local compare = require('cmp.config.compare')
 
 local source_mapping = {
@@ -77,6 +78,8 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
       elseif vim.fn["vsnip#available"]() == 1 then
         feedkey("<Plug>(vsnip-expand-or-jump)", "")
       elseif has_words_before() then
@@ -96,9 +99,9 @@ cmp.setup({
     ),
   },
   sources = cmp.config.sources({
+    { name = "luasnip" },
     { name = "snippy" },
     { name = "vsnip" },
-    { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "nvim_lua" },
@@ -106,8 +109,6 @@ cmp.setup({
   }),
   formatting = { format = function(entry, vim_item)
     lspkind.cmp_format({ with_text = true, maxwidth = 50 })
-    -- if you have lspkind installed, you can use it like
-    -- in the following line:
     vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
     vim_item.menu = source_mapping[entry.source.name]
     local maxwidth = 80
@@ -119,9 +120,9 @@ cmp.setup({
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
+    { name = "luasnip" },
     { name = "snippy" },
     { name = "vsnip" },
-    { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "nvim_lua" },

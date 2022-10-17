@@ -43,13 +43,11 @@ require 'lir'.setup {
       local width = math.floor(vim.o.columns * 0.8)
       local height = math.floor(vim.o.lines * 0.8)
       return {
-        border = {
-          "╭", "─", "╮", "│", "╯", "─", "╰", "│",
-        },
+        border = "rounded",
         width = width,
         height = height,
-        row = 1,
-        col = math.floor((vim.o.columns - width) / 2),
+        --[[ row = 1, ]]
+        --[[ col = math.floor((vim.o.columns - width) / 2), ]]
       }
     end,
   },
