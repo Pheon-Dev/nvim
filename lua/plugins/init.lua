@@ -16,8 +16,25 @@ return packer.startup({ function(use)
   -- Packer
   use 'wbthomason/packer.nvim'
 
-  -- Essentials
   use 'rcarriga/nvim-notify'
+  use {
+    'kevinhwang91/nvim-bqf',
+    config = "require('config.bqf')"
+  }
+
+  use {
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" },
+    config = "require('config.dap')"
+  }
+
+  -- Projects
+  use {
+    "ahmedkhalf/project.nvim",
+    config = "require('config.project')"
+  }
+
+  -- Essentials
   use 'lewis6991/impatient.nvim'
   use 'nvim-lua/popup.nvim'
   use 'kyazdani42/nvim-web-devicons'
@@ -166,6 +183,12 @@ return packer.startup({ function(use)
   use 'christoomey/vim-tmux-navigator'
 
   -- LSP & Completions
+  use {
+    'folke/neodev.nvim',
+    config = function()
+      require('neodev').setup {}
+    end
+  }
   use { 'neovim/nvim-lspconfig', config = "require('config.lsp')" }
   use {
     "hrsh7th/nvim-cmp",
@@ -218,7 +241,11 @@ return packer.startup({ function(use)
   use {
     "L3MON4D3/LuaSnip",
     config = function()
-      require("luasnip/loaders/from_vscode").lazy_load()
+      require("luasnip.loaders.from_lua").lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load {
+        paths = {},
+      }
+      require("luasnip.loaders.from_snipmate").lazy_load()
     end,
   }
   use {

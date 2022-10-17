@@ -54,7 +54,7 @@ require('telescope').setup {
       n = {
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
-        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
+        ["<C-e>"] = actions.smart_send_to_qflist + actions.open_qflist
       }
     },
   },
@@ -137,6 +137,7 @@ require('telescope').load_extension "bookmarks"
 require('telescope').load_extension "repo"
 require('telescope').load_extension "frecency"
 require('telescope').load_extension "gh"
+require('telescope').load_extension "projects"
 
 local z_utils = require("telescope._extensions.zoxide.utils")
 

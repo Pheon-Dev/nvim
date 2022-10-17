@@ -4,6 +4,7 @@ vim.cmd('if !1 | finish | endif')
 vim.cmd('set nocompatible')
 vim.cmd('syntax enable')
 
+vim.notify = require("notify")
 vim.o.termguicolors = true
 vim.o.splitbelow = true
 vim.o.splitright = true
