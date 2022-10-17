@@ -7,7 +7,7 @@ require('telescope').setup {
     find_command = {
       'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
     },
-    prompt_prefix = " 🔍 ",
+    prompt_prefix = "⋮ 🔍 ",
     selection_caret = "  ",
     entry_prefix = "  ",
     initial_mode = "insert",
@@ -33,7 +33,7 @@ require('telescope').setup {
     file_ignore_patterns = { "./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*" },
     generic_sorter = require 'telescope.sorters'.get_generic_fuzzy_sorter,
     --[[ path_display = {}, ]]
-    path_display = { "truncate" },
+    path_display = { "smart" },
     winblend = 0,
     border = {},
     borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
@@ -58,115 +58,119 @@ require('telescope').setup {
         ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
       }
     },
-    --[[ extensions = { ]]
-    --[[   bookmarks = { ]]
-    --[[     -- Available: 'brave', 'buku', 'chrome', 'chrome_beta', 'edge', 'safari', 'firefox', 'vivaldi' ]]
-    --[[     selected_browser = 'brave', ]]
-    --[[]]
-    --[[     -- Either provide a shell command to open the URL ]]
-    --[[     url_open_command = 'open', ]]
-    --[[]]
-    --[[     -- Or provide the plugin name which is already installed ]]
-    --[[     -- Available: 'vim_external', 'open_browser' ]]
-    --[[ url_open_plugin = 'vim_external', ]]
-    --[[]]
-    --[[     -- Show the full path to the bookmark instead of just the bookmark name ]]
-    --[[     full_path = true, ]]
-    --[[   }, ]]
+  },
+  extensions = {
+    bookmarks = {
+      -- Available: 'brave', 'buku', 'chrome', 'chrome_beta', 'edge', 'safari', 'firefox', 'vivaldi'
+      selected_browser = 'brave',
+
+      -- Either provide a shell command to open the URL
+      url_open_command = 'open',
+
+      -- Or provide the plugin name which is already installed
+      -- Available: 'vim_external', 'open_browser'
+      --[[ url_open_plugin = 'vim_external', ]]
+
+      -- Show the full path to the bookmark instead of just the bookmark name
+      full_path = true,
+    },
+  },
+  frecency = {
+    -- db_root = "home/pheon/path/to/db_root",
+    show_scores = false,
+    show_unindexed = true,
+    ignore_patterns = { "*.git/*", "*/tmp/*" },
+    disable_devicons = false,
+    workspaces = {
+      ["conf"]    = "/home/pheon/.config",
+      ["data"]    = "/home/pheon/.local/share",
+      ["project"] = "/home/pheon/projects",
+      ["wiki"]    = "/home/pheon/wiki"
+    }
+  },
+  pickers = {
+    --[[ find_files = { ]]
+    --[[   theme = "dropdown", ]]
+    --[[   initial_mode = "insert", ]]
+    --[[   previewer = true, ]]
     --[[ }, ]]
-    --[[ frecency = { ]]
-    --[[   -- db_root = "home/pheon/path/to/db_root", ]]
-    --[[   show_scores = false, ]]
-    --[[   show_unindexed = true, ]]
-    --[[   ignore_patterns = { "*.git/*", "*/tmp/*" }, ]]
-    --[[   disable_devicons = false, ]]
-    --[[   workspaces = { ]]
-    --[[     ["conf"]    = "/home/pheon/.config", ]]
-    --[[     ["data"]    = "/home/pheon/.local/share", ]]
-    --[[     ["project"] = "/home/pheon/projects", ]]
-    --[[     ["wiki"]    = "/home/pheon/wiki" ]]
-    --[[   } ]]
+    --[[ live_grep = { ]]
+    --[[   theme = "dropdown", ]]
+    --[[   initial_mode = "insert", ]]
+    --[[   previewer = true, ]]
     --[[ }, ]]
-    --[[ pickers = { ]]
-    --[[   find_files = { ]]
-    --[[     theme = "dropdown", ]]
-    --[[     initial_mode = "insert", ]]
-    --[[     previewer = true, ]]
-    --[[   }, ]]
-    --[[   live_grep = { ]]
-    --[[     theme = "dropdown", ]]
-    --[[     initial_mode = "insert", ]]
-    --[[     previewer = true, ]]
-    --[[   }, ]]
-    --[[   grep_string = { ]]
-    --[[     theme = "dropdown", ]]
-    --[[     initial_mode = "insert", ]]
-    --[[     previewer = true, ]]
-    --[[   }, ]]
-    --[[   buffers = { ]]
-    --[[     theme = "ivy", ]]
-    --[[     initial_mode = "normal", ]]
-    --[[   }, ]]
-    --[[   lsp_references = { ]]
-    --[[     theme = "ivy", ]]
-    --[[     initial_mode = "normal", ]]
-    --[[   }, ]]
-    --[[   lsp_definitions = { ]]
-    --[[     theme = "ivy", ]]
-    --[[     initial_mode = "normal", ]]
-    --[[   }, ]]
-    --[[   lsp_declarations = { ]]
-    --[[     theme = "ivy", ]]
-    --[[     initial_mode = "normal", ]]
-    --[[   }, ]]
-    --[[   lsp_implementations = { ]]
-    --[[     theme = "ivy", ]]
-    --[[     initial_mode = "normal", ]]
-    --[[   }, ]]
+    --[[ grep_string = { ]]
+    --[[   theme = "dropdown", ]]
+    --[[   initial_mode = "insert", ]]
+    --[[   previewer = true, ]]
     --[[ }, ]]
+    buffers = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
+    lsp_references = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
+    neoclip = {
+      theme = "cursor",
+      initial_mode = "normal",
+    },
+    lsp_definitions = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
+    lsp_declarations = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
+    lsp_implementations = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
   },
 }
 
 require('telescope').load_extension "fzf"
---[[ require('telescope').load_extension "zoxide" ]]
--- require('telescope').load_extension "neoclip"
--- require('telescope').load_extension "bookmarks"
--- require('telescope').load_extension "repo"
---[[ require('telescope').load_extension "frecency" ]]
--- require('telescope').load_extension "gh"
+require('telescope').load_extension "zoxide"
+require('telescope').load_extension "neoclip"
+require('telescope').load_extension "bookmarks"
+require('telescope').load_extension "repo"
+require('telescope').load_extension "frecency"
+require('telescope').load_extension "gh"
 
---[[ local z_utils = require("telescope._extensions.zoxide.utils") ]]
+local z_utils = require("telescope._extensions.zoxide.utils")
 
---[[ require("telescope._extensions.zoxide.config").setup({ ]]
---[[ { ]]
---[[   prompt_title = "[ Zoxide List ]", ]]
---[[]]
---[[   -- Zoxide list command with score ]]
---[[   list_command = "zoxide query -ls", ]]
---[[   mappings = { ]]
---[[     default = { ]]
---[[       action = function(selection) ]]
---[[         vim.cmd("cd " .. selection.path) ]]
---[[       end, ]]
---[[       after_action = function(selection) ]]
---[[         print("Directory changed to " .. selection.path) ]]
---[[       end ]]
---[[     }, ]]
---[[     ["<C-s>"] = { action = z_utils.create_basic_command("split") }, ]]
---[[     ["<C-v>"] = { action = z_utils.create_basic_command("vsplit") }, ]]
---[[     ["<C-e>"] = { action = z_utils.create_basic_command("edit") }, ]]
---[[     ["<C-b>"] = { ]]
---[[       keepinsert = true, ]]
---[[       action = function(selection) ]]
---[[         builtin.file_browser({ cwd = selection.path }) ]]
---[[       end ]]
---[[     }, ]]
---[[     ["<C-f>"] = { ]]
---[[       keepinsert = true, ]]
---[[       action = function(selection) ]]
---[[         builtin.find_files({ cwd = selection.path }) ]]
---[[       end ]]
---[[     } ]]
---[[   } ]]
---[[ } ]]
---[[ }) ]]
+require("telescope._extensions.zoxide.config").setup({
+  {
+    prompt_title = "[ Zoxide List ]",
+
+    -- Zoxide list command with score
+    list_command = "zoxide query -ls",
+    mappings = {
+      default = {
+        action = function(selection)
+          vim.cmd("cd " .. selection.path)
+        end,
+        after_action = function(selection)
+          print("Directory changed to " .. selection.path)
+        end
+      },
+      ["<C-s>"] = { action = z_utils.create_basic_command("split") },
+      ["<C-v>"] = { action = z_utils.create_basic_command("vsplit") },
+      ["<C-e>"] = { action = z_utils.create_basic_command("edit") },
+      ["<C-b>"] = {
+        keepinsert = true,
+        action = function(selection)
+          builtin.file_browser({ cwd = selection.path })
+        end
+      },
+      ["<C-f>"] = {
+        keepinsert = true,
+        action = function(selection)
+          builtin.find_files({ cwd = selection.path })
+        end
+      }
+    }
+  }
+})

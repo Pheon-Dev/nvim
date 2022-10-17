@@ -47,7 +47,6 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      require("snippy").expand_snippet(args.body)
       require("luasnip").lsp_expand(args.body)
       --[[ vim.fn["vsnip#anonymous"](args.body) ]]
     end,

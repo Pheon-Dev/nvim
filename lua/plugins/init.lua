@@ -12,6 +12,12 @@ return packer.startup({ function(use)
   use 'nvim-lua/plenary.nvim'
   use 'ThePrimeagen/harpoon'
   use { "kevinhwang91/rnvimr", run = "make sync", }
+  use {
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup {}
+    end
+  }
 
   -- Theme
   use {
@@ -73,6 +79,7 @@ return packer.startup({ function(use)
     'nvim-telescope/telescope.nvim',
     requires = {
       { 'nvim-lua/plenary.nvim' },
+      { "nvim-telescope/telescope-github.nvim" },
     },
     cmd = "Telescope",
     config = "require('config.telescope')",
@@ -80,6 +87,31 @@ return packer.startup({ function(use)
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
+  }
+  use {
+    'nvim-telescope/telescope-github.nvim',
+  }
+  use {
+    "nvim-telescope/telescope-frecency.nvim",
+    requires = { "tami5/sqlite.lua" }
+  }
+  use 'jvgrootveld/telescope-zoxide'
+  use 'airblade/vim-rooter'
+  use 'cljoly/telescope-repo.nvim'
+
+  use {
+    'dhruvmanila/telescope-bookmarks.nvim',
+    requires = {
+      'tami5/sqlite.lua',
+    },
+  }
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      { 'tami5/sqlite.lua', module = 'sqlite' },
+      { 'nvim-telescope/telescope.nvim' },
+    },
+    config = "require('config.neoclip')"
   }
 
   -- Utils
@@ -90,6 +122,11 @@ return packer.startup({ function(use)
     'lukas-reineke/indent-blankline.nvim',
     event = "BufRead",
     config = "require('config.blankline')"
+  }
+  use {
+    'tamago324/lir.nvim',
+    commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396",
+    config = "require('config.lir')"
   }
 
   -- Formatting

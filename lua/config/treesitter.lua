@@ -14,7 +14,7 @@ require 'nvim-treesitter.configs'.setup {
         smart_rename = "grr",
       },
     },
-    highlight_current_scope = { enable = true },
+    highlight_current_scope = { enable = false },
     highlight_definitions = {
       enable = true,
       -- Set to false if you have an `updatetime` of ~100.

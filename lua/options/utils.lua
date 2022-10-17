@@ -34,6 +34,7 @@ vim.o.backup = false
 vim.o.ch = 0
 vim.o.conceallevel = 0
 vim.g.rainbow_active = 1
+vim.g.loaded_netrwPlugin = 1
 vim.o.cmdheight = 1
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
