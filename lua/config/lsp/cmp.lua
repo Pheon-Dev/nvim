@@ -14,7 +14,6 @@ local luasnip = require('luasnip')
 local compare = require('cmp.config.compare')
 
 local source_mapping = {
-  snippy = "🗡 snippy",
   buffer = " buffer",
   nvim_lsp = " lsp",
   nvim_lua = " lua",
@@ -99,7 +98,6 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = "luasnip" },
-    { name = "snippy" },
     { name = "vsnip" },
     { name = "nvim_lsp" },
     { name = "buffer" },
@@ -125,7 +123,6 @@ cmp.setup.cmdline('/', {
   sources = {
     { name = "buffer" },
     { name = "luasnip" },
-    { name = "snippy" },
     { name = "vsnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
@@ -139,7 +136,6 @@ cmp.setup.cmdline(':', {
     { name = "path" },
     { name = "buffer" },
     { name = "luasnip" },
-    { name = "snippy" },
     { name = "vsnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },

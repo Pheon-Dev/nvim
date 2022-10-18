@@ -64,7 +64,6 @@ return packer.startup({ function(use)
   }
   use {
     'tamago324/lir.nvim',
-    --[[ commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396", ]]
     config = "require('config.lir')"
   }
   use {
@@ -103,7 +102,7 @@ return packer.startup({ function(use)
       { "hrsh7th/cmp-vsnip" },
       { "hrsh7th/vim-vsnip" },
       { "hrsh7th/vim-vsnip-integ" },
-      { "Saecki/crates.nvim" },
+      --[[ { "Saecki/crates.nvim" }, ]]
       { "f3fora/cmp-spell" },
       { "hrsh7th/cmp-cmdline" },
       { "tamago324/cmp-zsh" },
@@ -237,25 +236,31 @@ return packer.startup({ function(use)
     },
     config = "require('config.neoclip')"
   }
-
+  -- Packer
+  use({
+    "folke/noice.nvim",
+    event = "VimEnter",
+    config = "require('config.noice')",
+    requires = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  })
   -- Snippets
-  use {
-    'dcampos/nvim-snippy',
-  }
-  use {
-    'mattn/emmet-vim',
-  }
+  --[[ use { ]]
+  --[[   'dcampos/nvim-snippy', ]]
+  --[[ } ]]
+  --[[ use { ]]
+  --[[   'mattn/emmet-vim', ]]
+  --[[ } ]]
   use {
     "rafamadriz/friendly-snippets",
   }
   use {
     "L3MON4D3/LuaSnip",
     config = function()
-      require("luasnip.loaders.from_lua").lazy_load()
-      require("luasnip.loaders.from_vscode").lazy_load {
-        paths = {},
-      }
-      require("luasnip.loaders.from_snipmate").lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load()
     end,
   }
   use {

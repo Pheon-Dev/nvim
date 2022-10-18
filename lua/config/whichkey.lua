@@ -37,7 +37,7 @@ local toggle_ranger = function()
 end
 
 local mappings = {
-  a = { ":Telescope frecency<cr>", "Frecency" },
+  a = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   b = { ":Telescope buffers<cr>", "Buffers" },
   c = {
     name = "Others",
@@ -59,7 +59,6 @@ local mappings = {
   f = { ":Telescope find_files<cr>", "Find Files" },
   g = {
     name = "Telescope Git",
-    g = { toggle_lazygit, "LazyGit" },
     p = { ":Telescope repo list<cr>", "Git Repos" },
     i = { ":Telescope gh list issues<cr>", "Git Issues" },
     t = { ":Telescope gh list gist<cr>", "Git Gist" },
@@ -71,13 +70,12 @@ local mappings = {
   },
   h = {
     name = "Harpoon",
-    m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
     h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu" },
+    m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
     n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
     p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
     t = { ":lua require('harpoon.tmux').gotoTerminal(1)<cr>", "New Tmux Window" },
   },
-  i = { ":lua require('lir.float').toggle()<cr>", "Nvim-Tree" },
   j = { toggle_turbo_build, "Build Trubo Repo" },
   k = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
   l = { toggle_lazygit, "LazyGit" },
