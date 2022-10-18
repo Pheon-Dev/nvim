@@ -5,8 +5,7 @@ vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
   update_in_insert = true
 })
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "html", "javascript", "lua", "typescript", "tsx", "vue", "json", "css", "prisma", "typescript",
-    "bash" },
+  ensure_installed = { "html", "javascript", "lua", "typescript", "tsx", "vue", "json", "css", "prisma", "bash" },
   refactor = {
     smart_rename = {
       enable = true,

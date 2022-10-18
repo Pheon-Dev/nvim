@@ -38,28 +38,33 @@ return packer.startup({ function(use)
     event = "BufWinEnter",
     config = "require('config.whichkey')"
   }
+
   -- Essentials
-  use 'nvim-lua/popup.nvim'
-  use 'kyazdani42/nvim-web-devicons'
-  use 'nvim-lua/plenary.nvim'
-  use 'ThePrimeagen/harpoon'
+  use {
+    'nvim-lua/popup.nvim',
+  }
+  use {
+    'kyazdani42/nvim-web-devicons',
+  }
+  use {
+    'nvim-lua/plenary.nvim',
+  }
+  use {
+    'ThePrimeagen/harpoon',
+  }
   use {
     'j-hui/fidget.nvim',
     config = "require('config.fidget')"
   }
-
-  -- Nvim Tree
   use {
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons' },
     cmd = "NvimTreeToggle",
     config = "require('config.nvim-tree')"
   }
-
-  -- Status Bars
   use {
     'tamago324/lir.nvim',
-    commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396",
+    --[[ commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396", ]]
     config = "require('config.lir')"
   }
   use {
@@ -83,7 +88,10 @@ return packer.startup({ function(use)
       require('neodev').setup {}
     end
   }
-  use { 'neovim/nvim-lspconfig', config = "require('config.lsp')" }
+  use {
+    'neovim/nvim-lspconfig',
+    config = "require('config.lsp')"
+  }
   use {
     "hrsh7th/nvim-cmp",
     requires = {
@@ -110,28 +118,45 @@ return packer.startup({ function(use)
     "SmiteshP/nvim-navic",
     requires = "neovim/nvim-lspconfig",
   }
-  use 'folke/lsp-colors.nvim'
-  use 'onsails/lspkind-nvim'
-  use 'williamboman/mason-lspconfig.nvim'
+  use {
+    'folke/lsp-colors.nvim',
+  }
+  use {
+    'onsails/lspkind-nvim',
+  }
+  use {
+    'williamboman/mason-lspconfig.nvim',
+  }
+  use {
+    'tamago324/nlsp-settings.nvim',
+  }
   use {
     'williamboman/mason.nvim',
     config = "require('config.mason')",
     commit = "d1c860da4b89fd29a45decfb490c79748d954493"
   }
-  use { "tamago324/nlsp-settings.nvim" }
-  use { 'tami5/lspsaga.nvim', config = "require('config.lspsaga')" }
+  use {
+    'tami5/lspsaga.nvim',
+    config = "require('config.lspsaga')"
+  }
   use {
     'jose-elias-alvarez/null-ls.nvim',
     config = "require('config.null-ls')"
   }
   -- Motion
-  use 'matze/vim-move'
+  use {
+    'matze/vim-move',
+  }
   use {
     'karb94/neoscroll.nvim',
     config = "require('config.neoscroll')"
   }
-  use 'easymotion/vim-easymotion'
-  use 'christoomey/vim-tmux-navigator'
+  use {
+    'easymotion/vim-easymotion',
+  }
+  use {
+    'christoomey/vim-tmux-navigator',
+  }
 
   -- Highlighting
   use {
@@ -139,22 +164,37 @@ return packer.startup({ function(use)
     run = ":TSUpdate",
     config = "require('config.treesitter')"
   }
-  use { 'nvim-treesitter/nvim-treesitter-refactor' }
-  use { 'windwp/nvim-ts-autotag' }
-  use { 'p00f/nvim-ts-rainbow' }
-  use 'junegunn/rainbow_parentheses.vim'
+  use {
+    'nvim-treesitter/nvim-treesitter-refactor',
+  }
+  use {
+    'windwp/nvim-ts-autotag',
+  }
+  use {
+    'p00f/nvim-ts-rainbow',
+  }
+  use {
+    'junegunn/rainbow_parentheses.vim',
+  }
 
   -- Utils
-  use 'terryma/vim-multiple-cursors' -- C-N
-  use { "antoinemadec/FixCursorHold.nvim" } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
-  use { 'norcalli/nvim-colorizer.lua', config = "require('config.colorizer')" }
+  use {
+    'terryma/vim-multiple-cursors',
+  }
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = "require('config.colorizer')",
+  }
   use {
     'lukas-reineke/indent-blankline.nvim',
     event = "BufRead",
     config = "require('config.blankline')"
   }
   -- Formatting
-  use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
+  use {
+    'prettier/vim-prettier',
+    run = 'yarn install --frozen-lockfile --production'
+  }
   use {
     'windwp/nvim-autopairs',
     after = "nvim-cmp",
@@ -170,19 +210,25 @@ return packer.startup({ function(use)
   -- Git
   use {
     'lewis6991/gitsigns.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } },
+    requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('gitsigns').setup { current_line_blame = true }
     end
   }
-  use 'airblade/vim-gitgutter'
+  use {
+    'airblade/vim-gitgutter',
+  }
 
   use {
     'nvim-telescope/telescope-github.nvim',
   }
-  use 'jvgrootveld/telescope-zoxide'
+  use {
+    'jvgrootveld/telescope-zoxide',
+  }
+  use {
+    'airblade/vim-rooter',
+  }
   --[[ use 'cljoly/telescope-repo.nvim' ]]
-  use 'airblade/vim-rooter'
   use {
     "AckslD/nvim-neoclip.lua",
     requires = {
@@ -193,8 +239,12 @@ return packer.startup({ function(use)
   }
 
   -- Snippets
-  use 'dcampos/nvim-snippy'
-  use 'mattn/emmet-vim'
+  use {
+    'dcampos/nvim-snippy',
+  }
+  use {
+    'mattn/emmet-vim',
+  }
   use {
     "rafamadriz/friendly-snippets",
   }
@@ -214,7 +264,6 @@ return packer.startup({ function(use)
   use
   {
     "folke/lua-dev.nvim",
-    module = "lua-dev",
   }
 
   -- Commentary
