@@ -189,7 +189,7 @@ wins_right {
 
 wins_right {
   function()
-    return '| 🧹'
+    return ' 🧹'
   end,
   color = function()
     return { fg = mode_color[vim.fn.mode()] }

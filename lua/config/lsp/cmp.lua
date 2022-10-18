@@ -49,7 +49,6 @@ cmp.setup({
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
-      --[[ vim.fn["vsnip#anonymous"](args.body) ]]
     end,
   },
   sorting = {
@@ -114,7 +113,11 @@ cmp.setup({
     local maxwidth = 80
     vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
     return vim_item
-  end }
+  end },
+    experimental = {
+      ghost_text = true,
+      native_menu = false,
+    },
 })
 
 cmp.setup.cmdline('/', {

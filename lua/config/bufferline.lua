@@ -11,7 +11,10 @@ require('bufferline').setup {
     -- -- NOTE: this plugin is designed with this icon in mind,
     -- -- and so changing this is NOT recommended, this is intended
     -- -- as an escape hatch for people who cannot bear it for whatever reason
-    indicator = '▎',
+    indicator = {
+      icon = "⋮",
+      style = "icon"
+    },
     buffer_close_icon = '',
     modified_icon = '●',
     close_icon = '',
@@ -34,7 +37,7 @@ require('bufferline').setup {
     diagnostics_update_in_insert = false,
     -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
     diagnostics_indicator = function(count)
-      return "("..count..")"
+      return "(" .. count .. ")"
     end,
     -- -- NOTE: this will be called a lot so don't do any heavy processing here
     -- custom_filter = function(buf_number, buf_numbers)
@@ -56,7 +59,7 @@ require('bufferline').setup {
     --     return true
     --   end
     -- end,
-    offsets = {{filetype = "NvimTree", text = "File Explorer"}},
+    offsets = { { filetype = "NvimTree", text = "File Explorer" } },
     show_buffer_icons = true, -- disable filetype icons for buffers
     show_buffer_close_icons = true,
     show_close_icon = true,
@@ -74,4 +77,3 @@ require('bufferline').setup {
     -- -- end
   }
 }
-

@@ -13,29 +13,17 @@ require('impatient')
 local packer = require("packer")
 
 return packer.startup({ function(use)
-  -- Packer
   use 'wbthomason/packer.nvim'
 
-  use 'rcarriga/nvim-notify'
-  use {
-    'kevinhwang91/nvim-bqf',
-    config = "require('config.bqf')"
-  }
+  use 'lewis6991/impatient.nvim'
 
+  -- Theme
   use {
-    "rcarriga/nvim-dap-ui",
-    requires = { "mfussenegger/nvim-dap" },
-    config = "require('config.dap')"
-  }
-
-  -- Projects
-  use {
-    "ahmedkhalf/project.nvim",
-    config = "require('config.project')"
+    'folke/tokyonight.nvim',
+    config = "require('config.tokyonight')"
   }
 
   -- Essentials
-  use 'lewis6991/impatient.nvim'
   use 'nvim-lua/popup.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
@@ -48,23 +36,6 @@ return packer.startup({ function(use)
     end
   }
 
-  -- Theme
-  use {
-    'folke/tokyonight.nvim',
-    config = "require('config.tokyonight')"
-  }
-
-  -- Highlighting
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ":TSUpdate",
-    config = "require('config.treesitter')"
-  }
-  use { 'nvim-treesitter/nvim-treesitter-refactor' }
-  use { 'windwp/nvim-ts-autotag' }
-  use { 'p00f/nvim-ts-rainbow' }
-  use 'junegunn/rainbow_parentheses.vim'
-
   -- Nvim Tree
   use {
     'kyazdani42/nvim-tree.lua',
@@ -74,6 +45,11 @@ return packer.startup({ function(use)
   }
 
   -- Status Bars
+  use {
+    'tamago324/lir.nvim',
+    commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396",
+    config = "require('config.lir')"
+  }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -86,22 +62,6 @@ return packer.startup({ function(use)
     event = "BufWinEnter",
     config = "require('config.bufferline')"
   }
-
-  -- Terminal
-  use {
-    'akinsho/toggleterm.nvim',
-    config = "require('config.toggleterm')"
-  }
-
-  -- Git
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = { { 'nvim-lua/plenary.nvim' } },
-    config = function()
-      require('gitsigns').setup { current_line_blame = true }
-    end
-  }
-  use 'airblade/vim-gitgutter'
 
   -- Telescope
   use {
@@ -117,70 +77,12 @@ return packer.startup({ function(use)
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make",
   }
-  use {
-    'nvim-telescope/telescope-github.nvim',
-  }
-  use {
-    "nvim-telescope/telescope-frecency.nvim",
-    requires = { "tami5/sqlite.lua" }
-  }
-  use 'jvgrootveld/telescope-zoxide'
-  use 'airblade/vim-rooter'
-  use 'cljoly/telescope-repo.nvim'
-
-  use {
-    'dhruvmanila/telescope-bookmarks.nvim',
-    requires = {
-      'tami5/sqlite.lua',
-    },
-  }
-  use {
-    "AckslD/nvim-neoclip.lua",
-    requires = {
-      { 'tami5/sqlite.lua', module = 'sqlite' },
-      { 'nvim-telescope/telescope.nvim' },
-    },
-    config = "require('config.neoclip')"
-  }
-
-  -- Utils
-  use 'terryma/vim-multiple-cursors' -- C-N
-  use { "antoinemadec/FixCursorHold.nvim" } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
-  use { 'norcalli/nvim-colorizer.lua', config = "require('config.colorizer')" }
-  use {
-    'lukas-reineke/indent-blankline.nvim',
-    event = "BufRead",
-    config = "require('config.blankline')"
-  }
-  use {
-    'tamago324/lir.nvim',
-    commit = "c1aeb96fae55bb6cac3d01ce5123a843d7235396",
-    config = "require('config.lir')"
-  }
-
-  -- Formatting
-  use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
-  use {
-    'windwp/nvim-autopairs',
-    after = "nvim-cmp",
-    config = "require('config.autopairs')"
-  }
-
   -- Keybindings
   use {
     'folke/which-key.nvim',
     event = "BufWinEnter",
     config = "require('config.whichkey')"
   }
-
-  -- Motion
-  use 'matze/vim-move'
-  use {
-    'karb94/neoscroll.nvim',
-    config = "require('config.neoscroll')"
-  }
-  use 'easymotion/vim-easymotion'
-  use 'christoomey/vim-tmux-navigator'
 
   -- LSP & Completions
   use {
@@ -218,7 +120,6 @@ return packer.startup({ function(use)
   }
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
-  use 'dcampos/nvim-snippy'
   use 'williamboman/mason-lspconfig.nvim'
   use {
     'williamboman/mason.nvim',
@@ -231,9 +132,76 @@ return packer.startup({ function(use)
     'jose-elias-alvarez/null-ls.nvim',
     config = "require('config.null-ls')"
   }
+  -- Motion
+  use 'matze/vim-move'
+  use {
+    'karb94/neoscroll.nvim',
+    config = "require('config.neoscroll')"
+  }
+  use 'easymotion/vim-easymotion'
+  use 'christoomey/vim-tmux-navigator'
 
+  -- Highlighting
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ":TSUpdate",
+    config = "require('config.treesitter')"
+  }
+  use { 'nvim-treesitter/nvim-treesitter-refactor' }
+  use { 'windwp/nvim-ts-autotag' }
+  use { 'p00f/nvim-ts-rainbow' }
+  use 'junegunn/rainbow_parentheses.vim'
+
+  -- Utils
+  use 'terryma/vim-multiple-cursors' -- C-N
+  use { "antoinemadec/FixCursorHold.nvim" } -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
+  use { 'norcalli/nvim-colorizer.lua', config = "require('config.colorizer')" }
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    event = "BufRead",
+    config = "require('config.blankline')"
+  }
+  -- Formatting
+  use { 'prettier/vim-prettier', run = 'yarn install --frozen-lockfile --production' }
+  use {
+    'windwp/nvim-autopairs',
+    after = "nvim-cmp",
+    config = "require('config.autopairs')"
+  }
+
+  -- Terminal
+  use {
+    'akinsho/toggleterm.nvim',
+    config = "require('config.toggleterm')"
+  }
+
+  -- Git
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = { { 'nvim-lua/plenary.nvim' } },
+    config = function()
+      require('gitsigns').setup { current_line_blame = true }
+    end
+  }
+  use 'airblade/vim-gitgutter'
+
+  use {
+    'nvim-telescope/telescope-github.nvim',
+  }
+  use 'jvgrootveld/telescope-zoxide'
+  --[[ use 'cljoly/telescope-repo.nvim' ]]
+  use 'airblade/vim-rooter'
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      { 'tami5/sqlite.lua', module = 'sqlite' },
+      { 'nvim-telescope/telescope.nvim' },
+    },
+    config = "require('config.neoclip')"
+  }
 
   -- Snippets
+  use 'dcampos/nvim-snippy'
   use 'mattn/emmet-vim'
   use {
     "rafamadriz/friendly-snippets",
@@ -277,6 +245,16 @@ return packer.startup({ function(use)
     'sunjon/Shade.nvim',
     config = "require('config.shade')"
   }
+  use 'rcarriga/nvim-notify'
+  use {
+    'kevinhwang91/nvim-bqf',
+    config = "require('config.bqf')"
+  }
+  --[[ use { ]]
+  --[[   "ahmedkhalf/project.nvim", ]]
+  --[[   config = "require('config.project')" ]]
+  --[[ } ]]
+
 end,
   config = {
     display = {

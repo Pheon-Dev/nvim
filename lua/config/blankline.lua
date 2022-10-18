@@ -1,5 +1,5 @@
 require("indent_blankline").setup {
-  buftype_exclude = {"terminal"},
+  buftype_exclude = { "terminal" },
   filetype_exclude = {
     "dashboard",
     "NvimTree",
@@ -9,6 +9,7 @@ require("indent_blankline").setup {
     "lspsaga"
   },
   show_current_context = true,
+  show_current_context_start = false,
   context_patterns = {
     "class", "return", "function", "method", "^if", "^while", "jsx_element", "^for", "^object",
     "^table", "block", "arguments", "if_statement", "else_clause", "jsx_element",
