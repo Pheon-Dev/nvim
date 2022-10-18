@@ -1,4 +1,10 @@
-require("harpoon").setup({
+local ok, harpoon = pcall(require, "harpoon")
+
+if not ok then
+  vim.notify("Harpoon Loading Error!", "error")
+end
+
+harpoon.setup({
   global_settings = {
     -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
     save_on_toggle = false,

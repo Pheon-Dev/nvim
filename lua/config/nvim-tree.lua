@@ -33,7 +33,7 @@ _.setup {
   update_focused_file = {
     enable = true,
     update_cwd = true,
-    update_root = true,
+    --[[ update_root = true, ]]
     ignore_list = {},
   },
   system_open = {

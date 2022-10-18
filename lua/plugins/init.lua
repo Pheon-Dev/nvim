@@ -7,6 +7,27 @@ return packer.startup({ function(use)
   use 'lewis6991/impatient.nvim'
   use 'rcarriga/nvim-notify'
 
+  -- Essentials
+  use {
+    'tamago324/lir.nvim',
+    config = "require('config.lir')"
+  }
+  use {
+    'nvim-lua/popup.nvim',
+  }
+  use {
+    'kyazdani42/nvim-web-devicons',
+  }
+  use {
+    'nvim-lua/plenary.nvim',
+  }
+  use {
+    'ThePrimeagen/harpoon',
+  }
+  use {
+    'j-hui/fidget.nvim',
+    config = "require('config.fidget')"
+  }
   -- Theme
   use {
     'folke/tokyonight.nvim',
@@ -39,32 +60,11 @@ return packer.startup({ function(use)
     config = "require('config.whichkey')"
   }
 
-  -- Essentials
-  use {
-    'nvim-lua/popup.nvim',
-  }
-  use {
-    'kyazdani42/nvim-web-devicons',
-  }
-  use {
-    'nvim-lua/plenary.nvim',
-  }
-  use {
-    'ThePrimeagen/harpoon',
-  }
-  use {
-    'j-hui/fidget.nvim',
-    config = "require('config.fidget')"
-  }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons' },
     cmd = "NvimTreeToggle",
     config = "require('config.nvim-tree')"
-  }
-  use {
-    'tamago324/lir.nvim',
-    config = "require('config.lir')"
   }
   use {
     'nvim-lualine/lualine.nvim',
@@ -242,18 +242,12 @@ return packer.startup({ function(use)
     event = "VimEnter",
     config = "require('config.noice')",
     requires = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
   })
+
   -- Snippets
-  --[[ use { ]]
-  --[[   'dcampos/nvim-snippy', ]]
-  --[[ } ]]
-  --[[ use { ]]
-  --[[   'mattn/emmet-vim', ]]
-  --[[ } ]]
   use {
     "rafamadriz/friendly-snippets",
   }

@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 local map = vim.api.nvim_set_keymap
 
+map("n", "K", "<cmd>lua require('harpoon.ui').select_menu_item()<cr>", { noremap = true, silent = true })
+
 -- NvimTree
 map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { noremap = true, silent = true })
 

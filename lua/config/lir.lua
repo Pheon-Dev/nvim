@@ -1,8 +1,26 @@
-local actions = require 'lir.actions'
-local mark_actions = require 'lir.mark.actions'
-local clipboard_actions = require 'lir.clipboard.actions'
+local actions_ok, actions = pcall(require, "lir.actions")
+local mark_actions_ok, mark_actions = pcall(require, "lir.mark.actions")
+local clip_actions_ok, clipboard_actions = pcall(require, "lir.clipboard.actions")
 
-require 'lir'.setup {
+local lir_ok, lir = pcall(require, "lir")
+
+if not actions_ok then
+  vim.notify("Lir Actions Not Properly Loaded!", "error")
+end
+
+if not mark_actions_ok then
+  vim.notify("Lir Mark Actions Not Properly Loaded!", "error")
+end
+
+if not clip_actions_ok then
+  vim.notify("Lir Clipboard Mark Actions Not Properly Loaded!", "error")
+end
+
+if not lir_ok then
+  vim.notify("Lir Not Properly Loaded!", "error")
+end
+
+lir.setup {
   show_hidden_files = false,
   devicons_enable = true,
   mappings = {
