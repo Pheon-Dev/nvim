@@ -1,6 +1,14 @@
-local tree_cb = require 'nvim-tree.config'.nvim_tree_callback
+local ok, _ = pcall(require, 'nvim-tree')
+if not ok then
+  vim.notify("Nvim-Tree didn't load properly!", "error")
+end
+if ok then
+  vim.notify("Nvim-Tree loaded successfully!", "info")
+end
 
-require 'nvim-tree'.setup {
+local tree_cb = require('nvim-tree.config').nvim_tree_callback
+
+_.setup {
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
   disable_netrw = true,

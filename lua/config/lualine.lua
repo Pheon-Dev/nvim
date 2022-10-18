@@ -1,5 +1,13 @@
-local lualine = require('lualine')
-local navic = require("nvim-navic")
+local ok, lualine = pcall(require, 'lualine')
+if not ok then
+  vim.notify("Lualine didn't load properly!", "error")
+end
+
+local oc, navic = pcall(require, 'nvim-navic')
+
+if not oc then
+  vim.notify("Navic didn't load properly!", "error")
+end
 
 local colors = {
   bg       = '#2e2e2e',

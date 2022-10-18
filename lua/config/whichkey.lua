@@ -66,8 +66,8 @@ local mappings = {
     r = { ":Telescope gh list run<cr>", "Git Run" },
     q = { ":Telescope gh list pull_request<cr>", "Git Pull Request" },
     s = { ":Telescope git_status<cr>", "Git Status" },
-    c = { ":Telescope git_commits<cr>", "Git Commits" },
-    b = { ":Telescope git_branches<cr>", "Git Branches" },
+    m = { ":Telescope git_commits<cr>", "Git Commits" },
+    h = { ":Telescope git_branches<cr>", "Git Branches" },
   },
   h = {
     name = "Harpoon",
@@ -87,16 +87,16 @@ local mappings = {
     n = { ":Telescope neoclip<cr>", "Neoclip" },
     r = { ":RnvimrToggle<cr>", "Ranger" },
   },
-  p = {
+  s = {
     name = "Projects & Packer",
     c = { ":PackerCompile<cr>", "Packer Compile" },
     r = { ":Prettier<cr>", "Format" },
     p = { ":Telescope projects<cr>", "Projects" },
     s = { ":PackerSync<cr>", "Packer Sync" },
+    w = { ":w! | noh<cr>", "Write" },
   },
   q = { ":bd<cr>", "Write & Quit" },
   r = { ":Telescope live_grep<cr>", "Live Grep" },
-  s = { ":w! | noh<cr>", "Write" },
   t = {
     name = "Toggle",
     t = { toggle_float, "Terminal" },

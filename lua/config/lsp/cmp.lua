@@ -114,20 +114,20 @@ cmp.setup({
     vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
     return vim_item
   end },
-    experimental = {
-      ghost_text = true,
-      native_menu = false,
-    },
+  experimental = {
+    ghost_text = true,
+    native_menu = false,
+  },
 })
 
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
+    { name = "buffer" },
     { name = "luasnip" },
     { name = "snippy" },
     { name = "vsnip" },
     { name = "nvim_lsp" },
-    { name = "buffer" },
     { name = "nvim_lua" },
     { name = "path" },
   }
@@ -136,12 +136,12 @@ cmp.setup.cmdline('/', {
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
+    { name = "path" },
+    { name = "buffer" },
+    { name = "luasnip" },
     { name = "snippy" },
     { name = "vsnip" },
-    { name = "luasnip" },
     { name = "nvim_lsp" },
-    { name = "buffer" },
     { name = "nvim_lua" },
-    { name = "path" },
   }),
 })

@@ -8,7 +8,7 @@ require('telescope').setup {
       'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'
     },
     prompt_prefix = "⋮ 🔍 ",
-    selection_caret = "  ",
+    selection_caret = " ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
@@ -17,17 +17,6 @@ require('telescope').setup {
     layout_config = {
       horizontal = { mirror = false },
       vertical = { mirror = false },
-      --[[ horizontal = { ]]
-      --[[   prompt_position = "bottom", ]]
-      --[[   preview_width = 0.55, ]]
-      --[[   results_width = 0.8, ]]
-      --[[ }, ]]
-      --[[ vertical = { ]]
-      --[[   mirror = false, ]]
-      --[[ }, ]]
-      --[[ width = 0.87, ]]
-      --[[ height = 0.80, ]]
-      --[[ preview_cutoff = 120, ]]
     },
     file_sorter = require 'telescope.sorters'.get_fuzzy_file,
     file_ignore_patterns = { "./node_modules/*", "node_modules", "^node_modules/*", "node_modules/*" },
@@ -52,6 +41,9 @@ require('telescope').setup {
         ["<CR>"] = actions.select_default + actions.center
       },
       n = {
+        ["l"] = actions.select_default + actions.center,
+        ["j"] = actions.move_selection_next,
+        ["k"] = actions.move_selection_previous,
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-e>"] = actions.smart_send_to_qflist + actions.open_qflist

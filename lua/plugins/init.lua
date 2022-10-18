@@ -1,39 +1,51 @@
-_G.__luacache_config = {
-  chunks = {
-    enable = true,
-    path = vim.fn.stdpath('cache') .. '/luacache_chunks',
-  },
-  modpaths = {
-    enable = true,
-    path = vim.fn.stdpath('cache') .. '/luacache_modpaths',
-  }
-}
-require('impatient')
-
+require("core.impatient")
 local packer = require("packer")
 
 return packer.startup({ function(use)
   use 'wbthomason/packer.nvim'
 
   use 'lewis6991/impatient.nvim'
+  use 'rcarriga/nvim-notify'
 
   -- Theme
   use {
     'folke/tokyonight.nvim',
     config = "require('config.tokyonight')"
   }
+  use {
+    'glepnir/dashboard-nvim',
+    config = "require('config.dashboard')",
+  }
 
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      { 'nvim-lua/plenary.nvim' },
+      { "nvim-telescope/telescope-github.nvim" },
+    },
+    cmd = "Telescope",
+    config = "require('config.telescope')",
+  }
+  use {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make",
+  }
+
+  -- Keybindings
+  use {
+    'folke/which-key.nvim',
+    event = "BufWinEnter",
+    config = "require('config.whichkey')"
+  }
   -- Essentials
   use 'nvim-lua/popup.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lua/plenary.nvim'
   use 'ThePrimeagen/harpoon'
-  use { "kevinhwang91/rnvimr", run = "make sync", }
   use {
     'j-hui/fidget.nvim',
-    config = function()
-      require('fidget').setup {}
-    end
+    config = "require('config.fidget')"
   }
 
   -- Nvim Tree
@@ -63,26 +75,6 @@ return packer.startup({ function(use)
     config = "require('config.bufferline')"
   }
 
-  -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = {
-      { 'nvim-lua/plenary.nvim' },
-      { "nvim-telescope/telescope-github.nvim" },
-    },
-    cmd = "Telescope",
-    config = "require('config.telescope')",
-  }
-  use {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make",
-  }
-  -- Keybindings
-  use {
-    'folke/which-key.nvim',
-    event = "BufWinEnter",
-    config = "require('config.whichkey')"
-  }
 
   -- LSP & Completions
   use {
@@ -238,14 +230,9 @@ return packer.startup({ function(use)
 
   -- Decors
   use {
-    'glepnir/dashboard-nvim',
-    config = "require('config.dashboard')",
-  }
-  use {
     'sunjon/Shade.nvim',
     config = "require('config.shade')"
   }
-  use 'rcarriga/nvim-notify'
   use {
     'kevinhwang91/nvim-bqf',
     config = "require('config.bqf')"

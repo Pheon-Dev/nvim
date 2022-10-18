@@ -4,7 +4,6 @@ vim.cmd('if !1 | finish | endif')
 vim.cmd('set nocompatible')
 vim.cmd('syntax enable')
 
-vim.notify = require("notify")
 vim.o.termguicolors = true
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -46,6 +45,8 @@ vim.o.softtabstop = 4
 vim.o.pumheight = 10
 vim.o.scrolloff = 10
 vim.o.updatetime = 300
+
+vim.notify = require("notify")
 
 vim.o.encoding = 'utf-8'
 vim.o.foldmethod = "manual"
