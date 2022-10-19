@@ -21,11 +21,6 @@ local toggle_float = function()
   return float:toggle()
 end
 
-local toggle_turbo_build = function()
-  local lazygit = Terminal:new({ cmd = 'yarn turbo run build && lazygit', direction = "float" })
-  return lazygit:toggle()
-end
-
 local toggle_lazygit = function()
   local lazygit = Terminal:new({ cmd = 'lazygit', direction = "float" })
   return lazygit:toggle()
@@ -36,21 +31,20 @@ local toggle_ranger = function()
   return ranger:toggle()
 end
 
+--[[ e: Nvim-Tree ]]
+--[[ p: Prettier ]]
+
 local mappings = {
-  a = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+  a = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
   b = { ":Telescope buffers<cr>", "Buffers" },
   c = {
     name = "Others",
     p = { ":Telescope command_history<cr>", "Command History" },
     h = { ":Telescope help_tags<cr>", "Help Tags" },
   },
-  --[[ e = { ":lua require('lir.float').toggle()<cr>", "Nvim-Tree" }, ]]
   d = {
-    name = "Telescope & Dap",
-    b = { ":lua require('dap').toggle_breakpoint()<cr>", "Toggle DAP Breakpoint" },
-    c = { ":lua require('dap').continue()<cr>", "DAP Continue" },
-    d = { ":lua require('dapui').toggle()<cr>", "Toggle DAP UI" },
-    h = { ":Dashboard<cr>", "Dashboard" },
+    name = "Diagnostics",
+    d = { ":Dashboard<cr>", "Dashboard" },
     r = { ":Telescope lsp_references<cr>", "References" },
     f = { ":Telescope lsp_definitions<cr>", "Definitions" },
     l = { ":Telescope lsp_declarations<cr>", "Declarations" },
@@ -75,9 +69,10 @@ local mappings = {
     n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
     p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
     t = { ":lua require('harpoon.tmux').gotoTerminal(1)<cr>", "New Tmux Window" },
+    o = { ":lua require('harpoon.ui').select_menu_item()<cr>", "Select Item" },
   },
-  j = { toggle_turbo_build, "Build Trubo Repo" },
-  k = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
+  j = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
+  k = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   l = { toggle_lazygit, "LazyGit" },
   m = { ":Mason<cr>", "Mason" },
   n = {
@@ -85,6 +80,7 @@ local mappings = {
     n = { ":Telescope neoclip<cr>", "Neoclip" },
     r = { ":RnvimrToggle<cr>", "Ranger" },
   },
+  o = { ":lua require('harpoon.ui').select_menu_item()<cr>", "Select Item" },
   s = {
     name = "Projects & Packer",
     c = { ":PackerCompile<cr>", "Packer Compile" },

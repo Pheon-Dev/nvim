@@ -38,7 +38,8 @@ require('telescope').setup {
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
         ["<esc>"] = actions.close,
-        ["<CR>"] = actions.select_default + actions.center
+        ["<CR>"] = actions.select_default + actions.center,
+        ["<C-l>"] = actions.select_default + actions.center
       },
       n = {
         ["l"] = actions.select_default + actions.center,
@@ -79,9 +80,10 @@ require('telescope').load_extension "neoclip"
 require('telescope').load_extension "gh"
 require('telescope').load_extension "zoxide"
 require('telescope').load_extension "harpoon"
+require('telescope').load_extension "projects"
+require("telescope").load_extension "noice"
 
 --[[ require('telescope').load_extension "repo" ]]
---[[ require('telescope').load_extension "projects" ]]
 
 
 local z_utils = require("telescope._extensions.zoxide.utils")

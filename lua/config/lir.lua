@@ -41,7 +41,7 @@ lir.setup {
     ['.'] = actions.toggle_show_hidden,
     ['d'] = actions.delete,
 
-    ['J'] = function()
+    ['M'] = function()
       mark_actions.toggle_mark()
       vim.cmd('normal! j')
     end,

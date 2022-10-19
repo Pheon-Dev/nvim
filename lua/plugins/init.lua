@@ -1,4 +1,3 @@
-require("core.impatient")
 local packer = require("packer")
 
 return packer.startup({ function(use)
@@ -53,6 +52,25 @@ return packer.startup({ function(use)
     run = "make",
   }
 
+  -- Highlighting
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ":TSUpdate",
+    config = "require('config.treesitter')"
+  }
+  use {
+    'nvim-treesitter/nvim-treesitter-refactor',
+  }
+  use {
+    'windwp/nvim-ts-autotag',
+  }
+  use {
+    'p00f/nvim-ts-rainbow',
+  }
+  use {
+    'junegunn/rainbow_parentheses.vim',
+  }
+
   -- Keybindings
   use {
     'folke/which-key.nvim',
@@ -64,7 +82,7 @@ return packer.startup({ function(use)
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons' },
     cmd = "NvimTreeToggle",
-    config = "require('config.nvim-tree')"
+    --[[ config = "require('config.nvim-tree')" ]]
   }
   use {
     'nvim-lualine/lualine.nvim',
@@ -140,6 +158,7 @@ return packer.startup({ function(use)
   }
   use {
     'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
     config = "require('config.null-ls')"
   }
   -- Motion
@@ -155,25 +174,6 @@ return packer.startup({ function(use)
   }
   use {
     'christoomey/vim-tmux-navigator',
-  }
-
-  -- Highlighting
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ":TSUpdate",
-    config = "require('config.treesitter')"
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter-refactor',
-  }
-  use {
-    'windwp/nvim-ts-autotag',
-  }
-  use {
-    'p00f/nvim-ts-rainbow',
-  }
-  use {
-    'junegunn/rainbow_parentheses.vim',
   }
 
   -- Utils
@@ -237,15 +237,15 @@ return packer.startup({ function(use)
     config = "require('config.neoclip')"
   }
   -- Packer
-  use({
+  use {
     "folke/noice.nvim",
     event = "VimEnter",
-    config = "require('config.noice')",
+    --[[ config = "require('config.noice')", ]]
     requires = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
-  })
+  }
 
   -- Snippets
   use {
@@ -283,12 +283,13 @@ return packer.startup({ function(use)
   }
   use {
     'kevinhwang91/nvim-bqf',
+    ft = "qf",
     config = "require('config.bqf')"
   }
-  --[[ use { ]]
-  --[[   "ahmedkhalf/project.nvim", ]]
-  --[[   config = "require('config.project')" ]]
-  --[[ } ]]
+  use {
+    "ahmedkhalf/project.nvim",
+    config = "require('config.project')"
+  }
 
 end,
   config = {
@@ -297,5 +298,5 @@ end,
         return require('packer.util').float({ border = 'single' })
       end
     }
-  } }
-)
+  }
+})
