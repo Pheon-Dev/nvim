@@ -1,11 +1,8 @@
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 
 -- Harpoon
 map("n", "K", "<cmd>lua require('harpoon.ui').select_menu_item()<cr>", { noremap = true, silent = true })
-
--- NvimTree
-map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { noremap = true, silent = true })
 
 -- Saving and  ESC on insert Mode
 map("i", "kk", "<esc><cmd>w! | noh<cr><esc>", { noremap = true, silent = true })
@@ -82,7 +79,7 @@ map("n", "c,", "ct,", { noremap = true, silent = true })
 map("n", "c.", "ct.", { noremap = true, silent = true })
 map("n", "c'", "ct'", { noremap = true, silent = true })
 map("n", 'c"', 'ct"', { noremap = true, silent = true })
-map("n", 'cp', 'cip"', { noremap = true, silent = true })
+map("n", "cp", 'cip"', { noremap = true, silent = true })
 
 -- Edit (delete)
 map("n", "d1", "diw", { noremap = true, silent = true })
@@ -106,7 +103,7 @@ map("n", "d,", "dt,", { noremap = true, silent = true })
 map("n", "d.", "dt.", { noremap = true, silent = true })
 map("n", "d'", "dt'", { noremap = true, silent = true })
 map("n", 'd"', 'dt"', { noremap = true, silent = true })
-map("n", 'dp', 'dipdd', { noremap = true, silent = true })
+map("n", "dp", "dipdd", { noremap = true, silent = true })
 
 -- Edit (visual)
 map("n", "v1", "viw", { noremap = true, silent = true })
@@ -153,7 +150,7 @@ map("n", "y,", "yt,", { noremap = true, silent = true })
 map("n", "y.", "yt.", { noremap = true, silent = true })
 map("n", "y'", "yt'", { noremap = true, silent = true })
 map("n", 'y"', 'yt"', { noremap = true, silent = true })
-map("n", 'yp', 'yip', { noremap = true, silent = true })
+map("n", "yp", "yip", { noremap = true, silent = true })
 
 -- Fold
 map("n", "zh", "zfi)", { noremap = true, silent = true })

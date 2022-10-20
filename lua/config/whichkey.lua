@@ -1,5 +1,5 @@
 local wk = require("which-key")
-wk.setup {
+wk.setup({
   plugins = {
     marks = false,
     registers = false,
@@ -10,29 +10,26 @@ wk.setup {
       text_objects = false,
       nav = false,
       z = false,
-      g = false
-    }
-  }
-}
+      g = false,
+    },
+  },
+})
 
-local Terminal = require('toggleterm.terminal').Terminal
+local Terminal = require("toggleterm.terminal").Terminal
 local toggle_float = function()
   local float = Terminal:new({ direction = "float" })
   return float:toggle()
 end
 
 local toggle_lazygit = function()
-  local lazygit = Terminal:new({ cmd = 'lazygit', direction = "float" })
+  local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
   return lazygit:toggle()
 end
 
 local toggle_ranger = function()
-  local ranger = Terminal:new({ cmd = 'ranger', direction = "float" })
+  local ranger = Terminal:new({ cmd = "ranger", direction = "float" })
   return ranger:toggle()
 end
-
---[[ e: Nvim-Tree ]]
---[[ p: Prettier ]]
 
 local mappings = {
   a = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
@@ -71,8 +68,8 @@ local mappings = {
     t = { ":lua require('harpoon.tmux').gotoTerminal(1)<cr>", "New Tmux Window" },
     o = { ":lua require('harpoon.ui').select_menu_item()<cr>", "Select Item" },
   },
-  j = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
-  k = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+  j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+  k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
   m = { ":Mason<cr>", "Mason" },
   n = {
@@ -102,12 +99,12 @@ local mappings = {
     v = { ":vsplit<cr>", "Vertical Split" },
     h = { ":split<cr>", "Horizontal Split" },
     j = { "<C-w>t<C-w>H", "Horiz > Vert Alignment" },
-    k = { "<C-w>t<C-w>K", "Vert > Horiz Alignment" }
+    k = { "<C-w>t<C-w>K", "Vert > Horiz Alignment" },
   },
   w = { ":Telescope bookmarks<cr>", "Bookmarks" },
   x = { ":qa!<cr>", "Quit All!" },
   z = { ":Telescope zoxide list<cr>", "Zoxide" },
 }
 
-local opts = { prefix = '<leader>' }
+local opts = { prefix = "<leader>" }
 wk.register(mappings, opts)
