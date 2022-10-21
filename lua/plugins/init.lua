@@ -5,7 +5,6 @@ return packer.startup({
     use("wbthomason/packer.nvim")
 
     use("lewis6991/impatient.nvim")
-    use("rcarriga/nvim-notify")
 
     -- Essentials
     use({
@@ -122,7 +121,6 @@ return packer.startup({
         { "f3fora/cmp-spell" },
         { "hrsh7th/cmp-cmdline" },
         { "tamago324/cmp-zsh" },
-        { "L3MON4D3/LuaSnip" },
         { "rafamadriz/friendly-snippets" },
       },
     })
@@ -157,6 +155,9 @@ return packer.startup({
     use({
       "ckipp01/stylua-nvim",
       run = "cargo install stylua",
+    })
+    use({
+      "jose-elias-alvarez/typescript.nvim",
     })
     use({
       "jose-elias-alvarez/null-ls.nvim",
@@ -238,7 +239,6 @@ return packer.startup({
       },
       config = "require('config.neoclip')",
     })
-    -- Packer
     use({
       "folke/noice.nvim",
       event = "VimEnter",
@@ -250,9 +250,6 @@ return packer.startup({
     })
 
     -- Snippets
-    use({
-      "rafamadriz/friendly-snippets",
-    })
     use({
       "L3MON4D3/LuaSnip",
       config = function()

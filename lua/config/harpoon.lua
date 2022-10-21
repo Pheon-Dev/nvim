@@ -1,4 +1,9 @@
 local ok, harpoon = pcall(require, "harpoon")
+local status_ok, telescope = pcall(require, "telescope")
+
+if not status_ok then
+  return
+end
 
 if not ok then
   vim.notify("Harpoon Loading Error!", "error")
@@ -23,5 +28,6 @@ harpoon.setup({
 
     -- set marks specific to each git branch inside git repository
     mark_branch = false,
-  }
+  },
 })
+telescope.load_extension("harpoon")

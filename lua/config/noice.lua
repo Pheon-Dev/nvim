@@ -1,5 +1,4 @@
-require("noice").setup
-{
+require("noice").setup({
   cmdline = {
     enabled = true, -- enables the Noice cmdline UI
     view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
@@ -8,13 +7,16 @@ require("noice").setup
     icons = {
       ["/"] = { icon = " ", hl_group = "NoiceCmdlineIconSearch" },
       ["?"] = { icon = " ", hl_group = "NoiceCmdlineIconSearch" },
-      [":"] = { icon = " ", hl_group = "NoiceCmdlineIcon", firstc = false },
+      [":"] = { icon = "⋮ ", hl_group = "NoiceCmdlineIcon", firstc = false },
     },
   },
   messages = {
     -- NOTE: If you enable messages, then the cmdline is enabled automatically.
     -- This is a current Neovim limitation.
     enabled = true, -- enables the Noice messages UI
+  },
+  check_health = {
+    enable = false, -- enables health check but causes jitters
   },
   popupmenu = {
     enabled = true, -- enables the Noice popupmenu UI
@@ -53,6 +55,7 @@ require("noice").setup
   routes = {}, --- @see section on routes
   ---@type table<string, NoiceFilter>
   status = {}, --- @see section on statusline components
+
   ---@type NoiceFormatOptions
   format = {}, --- @see section on formatting
   hacks = {
@@ -63,4 +66,4 @@ require("noice").setup
     -- Enable this option to simply skip duplicate messages instead.
     skip_duplicate_messages = false,
   },
-}
+})

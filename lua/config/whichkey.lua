@@ -16,19 +16,10 @@ wk.setup({
 })
 
 local Terminal = require("toggleterm.terminal").Terminal
-local toggle_float = function()
-  local float = Terminal:new({ direction = "float" })
-  return float:toggle()
-end
 
 local toggle_lazygit = function()
   local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
   return lazygit:toggle()
-end
-
-local toggle_ranger = function()
-  local ranger = Terminal:new({ cmd = "ranger", direction = "float" })
-  return ranger:toggle()
 end
 
 local mappings = {
@@ -47,7 +38,7 @@ local mappings = {
     l = { ":Telescope lsp_declarations<cr>", "Declarations" },
     i = { ":Telescope lsp_implementations<cr>", "Implementations" },
   },
-  f = { ":Telescope find_files<cr>", "Find Files" },
+  f = { ":Telescope find_files theme=dropdown previewer=false<cr>", "Find Files" },
   g = {
     name = "Telescope Git",
     p = { ":Telescope repo list<cr>", "Git Repos" },
@@ -61,15 +52,14 @@ local mappings = {
   },
   h = {
     name = "Harpoon",
-    h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Quick Menu" },
-    m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+    h = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
     n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
     p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
     t = { ":lua require('harpoon.tmux').gotoTerminal(1)<cr>", "New Tmux Window" },
     o = { ":lua require('harpoon.ui').select_menu_item()<cr>", "Select Item" },
   },
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
-  k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
+  k = { ":Telescope harpoon marks theme=dropdown previewer=false initial_mode=normal<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
   m = { ":Mason<cr>", "Mason" },
   n = {
@@ -87,12 +77,13 @@ local mappings = {
     w = { ":w! | noh<cr>", "Write" },
   },
   q = { ":bd<cr>", "Write & Quit" },
-  r = { ":Telescope live_grep<cr>", "Live Grep" },
+  r = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
-    name = "Toggle",
-    t = { toggle_float, "Terminal" },
-    r = { toggle_ranger, "Ranger" },
-    b = { ":ToggleTerm size=20 dir=. direction=horizontal<cr>", "Bottom Terminal" },
+    name = "TypeScript",
+    a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
+    o = { ":TypescriptOrganizeImports<cr>", "Organise Imports" },
+    r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
+    f = { ":TypescriptFixAll<cr>", "Fix All" },
   },
   v = {
     name = "Split",

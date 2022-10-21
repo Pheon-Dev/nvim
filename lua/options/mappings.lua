@@ -1,9 +1,6 @@
 vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 
--- Harpoon
-map("n", "K", "<cmd>lua require('harpoon.ui').select_menu_item()<cr>", { noremap = true, silent = true })
-
 -- Saving and  ESC on insert Mode
 map("i", "kk", "<esc><cmd>w! | noh<cr><esc>", { noremap = true, silent = true })
 map("i", "jj", "<esc>", { noremap = true, silent = true })
