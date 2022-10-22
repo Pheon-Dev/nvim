@@ -57,21 +57,21 @@ require("bufferline").setup({
 			italic = true,
 		},
 		diagnostic = {
-			--[[ fg = "#bb9af7", ]]
+			fg = "#3b4261",
 			bg = "#2e2e2e",
 		},
 		diagnostic_visible = {
-			--[[ fg = "#3b4261", ]]
+			--[[ fg = "#eb9af7", ]]
 			bg = "#2e2e2e",
 		},
 		diagnostic_selected = {
-			--[[ fg = "#3b4261", ]]
+			--[[ fg = "#eb9af7", ]]
 			bg = "#2e2e2e",
 			bold = true,
 			italic = true,
 		},
 		hint = {
-			--[[ fg = "#9ece6a", ]]
+			fg = "#3b4261",
 			sp = "#2e2e2e",
 			bg = "#2e2e2e",
 		},
@@ -87,7 +87,7 @@ require("bufferline").setup({
 			italic = true,
 		},
 		hint_diagnostic = {
-			--[[ fg = "#9d7cd8", ]]
+			fg = "#3b4261",
 			sp = "#2e2e2e",
 			bg = "#2e2e2e",
 		},
@@ -103,7 +103,7 @@ require("bufferline").setup({
 			italic = true,
 		},
 		info = {
-			--[[ fg = "#9ece6a", ]]
+			fg = "#3b4261",
 			sp = "#2e2e2e",
 			bg = "#2e2e2e",
 		},
@@ -119,7 +119,7 @@ require("bufferline").setup({
 			italic = true,
 		},
 		info_diagnostic = {
-			--[[ fg = "#9ece6a", ]]
+			fg = "#3b4261",
 			sp = "#2e2e2e",
 			bg = "#2e2e2e",
 		},
@@ -135,7 +135,7 @@ require("bufferline").setup({
 			italic = true,
 		},
 		warning = {
-			--[[ fg = "#e0af68", ]]
+			fg = "#3b4261",
 			sp = "#2e2e2e",
 			bg = "#2e2e2e",
 		},
@@ -151,7 +151,7 @@ require("bufferline").setup({
 			italic = true,
 		},
 		warning_diagnostic = {
-			--[[ fg = "#e0af68", ]]
+			fg = "#3b4261",
 			sp = "#2e2e2e",
 			bg = "#2e2e2e",
 		},
@@ -167,7 +167,7 @@ require("bufferline").setup({
 			italic = true,
 		},
 		error = {
-			--[[ fg = "#b2555b", ]]
+			fg = "#3b4261",
 			bg = "#2e2e2e",
 			sp = "#2e2e2e",
 		},
@@ -183,7 +183,7 @@ require("bufferline").setup({
 			italic = true,
 		},
 		error_diagnostic = {
-			--[[ fg = "#b2555b", ]]
+			fg = "#3b4261",
 			bg = "#2e2e2e",
 			sp = "#2e2e2e",
 		},
@@ -282,7 +282,7 @@ require("bufferline").setup({
 		-- -- as an escape hatch for people who cannot bear it for whatever reason
 		indicator = {
 			icon = "⋮ ",
-			style = "icon",
+			style = "none",
 		},
 		buffer_close_icon = "",
 		modified_icon = "●",
