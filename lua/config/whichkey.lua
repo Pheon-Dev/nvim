@@ -28,7 +28,7 @@ local mappings = {
 	c = {
 		name = "Others",
 		p = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
-		h = { ":Telescope help_tags theme=ivy previewer=true initial_mode=insert<cr>", "Help Tags" },
+		h = { ":Telescope help_tags theme=ivy initial_mode=insert<cr>", "Help Tags" },
 	},
 	d = {
 		name = "Diagnostics",
