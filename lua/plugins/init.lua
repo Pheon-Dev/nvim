@@ -1,5 +1,4 @@
 local packer = require("packer")
-local pack = require("packer")
 
 return packer.startup({
 	function(use)
@@ -279,11 +278,6 @@ return packer.startup({
 		use({
 			"sunjon/Shade.nvim",
 			config = "require('config.shade')",
-		})
-		use({
-			"kevinhwang91/nvim-bqf",
-			ft = "qf",
-			config = "require('config.bqf')",
 		})
 		use({
 			"ahmedkhalf/project.nvim",
