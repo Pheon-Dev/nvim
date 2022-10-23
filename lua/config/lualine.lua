@@ -11,6 +11,7 @@ end
 
 local colors = {
 	bg = "#2e2e2e",
+	grey = "#7f7f7f",
 	fg = "#8aa2f7",
 	yellow = "#ECBE7B",
 	cyan = "#008080",
@@ -202,7 +203,7 @@ wins_right({
 		return " 🧹"
 	end,
 	color = function()
-		return { fg = mode_color[vim.fn.mode()] }
+		return { fg = colors.grey }
 	end,
 	padding = { left = 1, right = 1 },
 })

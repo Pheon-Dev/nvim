@@ -17,7 +17,7 @@ vim.o.cursorline = true
 vim.o.autoindent = true
 vim.o.ai = true
 vim.o.si = true
-vim.o.smarttab = false
+vim.o.smarttab = true
 vim.o.smartindent = true
 vim.o.title = true
 vim.o.hlsearch = true
@@ -30,6 +30,7 @@ vim.o.exrc = true
 vim.o.showmode = false
 vim.o.writebackup = false
 vim.o.backup = false
+vim.o.showtabline = false
 
 --[[ vim.o.ch = 0 ]]
 vim.o.conceallevel = 0
@@ -40,7 +41,6 @@ vim.o.cmdheight = 1
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.laststatus = 2
-vim.o.showtabline = 2
 vim.o.softtabstop = 4
 vim.o.pumheight = 10
 vim.o.scrolloff = 10
@@ -64,6 +64,7 @@ vim.o.guifont = "Courier\\ New:h10"
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 
+vim.cmd("set cul!")
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")
 vim.cmd("set nu rnu")
@@ -94,7 +95,7 @@ vim.cmd("au BufnewFile,BufRead *.md set filetype=markdown")
 vim.cmd("au BufnewFile,BufRead *.mdx set filetype=markdown")
 vim.cmd("au BufnewFile,BufRead *.flow set filetype=javascript")
 vim.cmd("au BufnewFile,BufRead *.fish set filetype=fish")
-vim.cmd("au BufnewFile,BufRead *.sh set filetype=bash")
+--[[ vim.cmd("au BufnewFile,BufRead *.sh set filetype=bash") ]]
 vim.cmd("au BufnewFile,BufRead *.zsh set filetype=bash")
 
 vim.cmd([[
