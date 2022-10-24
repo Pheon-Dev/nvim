@@ -4,6 +4,8 @@ vim.cmd("if !1 | finish | endif")
 vim.cmd("set nocompatible")
 vim.cmd("syntax enable")
 
+vim.notify = require("notify")
+
 vim.o.termguicolors = true
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -46,8 +48,6 @@ vim.o.pumheight = 10
 vim.o.scrolloff = 10
 vim.o.updatetime = 300
 
-vim.notify = require("notify")
-
 vim.o.encoding = "utf-8"
 vim.o.foldmethod = "manual"
 vim.o.signcolumn = "yes"
@@ -64,7 +64,6 @@ vim.o.guifont = "Courier\\ New:h10"
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 
-vim.cmd("set cul!")
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")
 vim.cmd("set nu rnu")
@@ -82,6 +81,14 @@ vim.cmd("autocmd FileType ruby setlocal shiftwidth=2 tabstop=2")
 vim.cmd("autocmd FileType yaml setlocal shiftwidth=2 tabstop=2")
 vim.cmd("autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart")
 vim.cmd("autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear")
+--[[ vim.cmd("autocmd BufLeave ~/.config/nvim/lua/plugins/init.lua :silent PackerSync") ]]
+
+vim.cmd([[
+    augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost ~/.config/nvim/lua/plugins/init.lua source <afile> | PackerSync
+    augroup END
+]])
 
 vim.cmd("au BufnewFile,BufRead *.lua setf lua")
 vim.cmd("au BufnewFile,BufRead *.js setf javascript")

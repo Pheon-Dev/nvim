@@ -47,9 +47,10 @@ require("telescope").setup({
 				["<C-l>"] = actions.select_default + actions.center,
 			},
 			n = {
-				["l"] = actions.select_default + actions.center,
+				["h"] = actions.close,
 				["j"] = actions.move_selection_next,
 				["k"] = actions.move_selection_previous,
+				["l"] = actions.select_default + actions.center,
 				["<C-j>"] = actions.move_selection_next,
 				["<C-k>"] = actions.move_selection_previous,
 				["<C-e>"] = actions.smart_send_to_qflist + actions.open_qflist,
@@ -87,7 +88,7 @@ require("telescope").load_extension("gh")
 require("telescope").load_extension("zoxide")
 require("telescope").load_extension("harpoon")
 require("telescope").load_extension("projects")
-require("telescope").load_extension("noice")
+--[[ require("telescope").load_extension("noice") ]]
 
 --[[ require('telescope').load_extension "repo" ]]
 
