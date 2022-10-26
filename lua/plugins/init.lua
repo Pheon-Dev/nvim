@@ -22,6 +22,17 @@ return packer.startup({
       config = "require('config.lir')",
     })
     use({
+      "tamago324/lir-git-status.nvim",
+      config = function()
+        require("lir.git_status").setup({
+          show_ignored = false,
+        })
+      end,
+    })
+    use({
+      "nvim-lua/popup.nvim",
+    })
+    use({
       "folke/noice.nvim",
       event = "VimEnter",
       requires = {
@@ -248,17 +259,6 @@ return packer.startup({
     --[[ use({ ]]
     --[[ 	"nvim-telescope/telescope-fzf-native.nvim", ]]
     --[[ 	run = "make", ]]
-    --[[ }) ]]
-    --[[ use({ ]]
-    --[[ 	"tamago324/lir-git-status.nvim", ]]
-    --[[ 	config = function() ]]
-    --[[ 		require("lir.git_status").setup({ ]]
-    --[[ 			show_ignored = false, ]]
-    --[[ 		}) ]]
-    --[[ 	end, ]]
-    --[[ }) ]]
-    --[[ use({ ]]
-    --[[ 	"nvim-lua/popup.nvim", ]]
     --[[ }) ]]
     --[[ use({ ]]
     --[[ 	"j-hui/fidget.nvim", ]]
