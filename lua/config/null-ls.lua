@@ -5,11 +5,11 @@ null_ls.setup({
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.diagnostics.eslint,
     null_ls.builtins.completion.spell,
-    null_ls.builtins.formatting.prettier,
+    --[[ null_ls.builtins.formatting.prettier, ]]
   },
   --[[ debug = true, ]]
   on_attach = function(client)
-    client.server_capabilities.document_formatting = true
+    client.server_capabilities.document_formatting = false
   end,
   cmd = { "nvim" },
   debounce = 250,

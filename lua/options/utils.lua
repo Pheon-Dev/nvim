@@ -25,7 +25,7 @@ vim.o.title = true
 vim.o.hlsearch = true
 vim.o.showcmd = true
 vim.o.expandtab = true
-vim.o.lazyredraw = true
+vim.o.lazyredraw = false
 vim.o.ignorecase = true
 vim.o.exrc = true
 
@@ -34,7 +34,6 @@ vim.o.writebackup = false
 vim.o.backup = false
 vim.o.showtabline = false
 
---[[ vim.o.ch = 0 ]]
 vim.o.conceallevel = 0
 vim.g.rainbow_active = 1
 vim.g.loaded_netrw = 1

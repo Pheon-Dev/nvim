@@ -67,7 +67,7 @@ local mappings = {
     n = { ":Telescope neoclip theme=cursor previewer=false initial_mode=normal<cr>", "Neoclip" },
     r = { ":RnvimrToggle<cr>", "Ranger" },
   },
-  o = { ":lua require('harpoon.ui').select_menu_item()<cr>", "Select Item" },
+  o = { ":lua require('pheon')<cr>", "Select Item" },
   s = {
     name = "Projects & Packer",
     c = { ":PackerCompile<cr>", "Packer Compile" },

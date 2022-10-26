@@ -10,14 +10,11 @@ local packer = require("packer")
 return packer.startup({
 	function(use)
 		use("wbthomason/packer.nvim")
-
 		use("lewis6991/impatient.nvim")
-
-		-- Essentials
 		use({
 			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons", opt = true },
-			--[[ event = "BufRead", ]]
+			event = "BufRead",
 			config = "require('config.lualine')",
 		})
 		use({
@@ -25,15 +22,13 @@ return packer.startup({
 			config = "require('config.lir')",
 		})
 		use({
-			"tamago324/lir-git-status.nvim",
-			config = function()
-				require("lir.git_status").setup({
-					show_ignored = false,
-				})
-			end,
-		})
-		use({
-			"nvim-lua/popup.nvim",
+			"folke/noice.nvim",
+			event = "VimEnter",
+			requires = {
+				"rcarriga/nvim-notify",
+				"MunifTanjim/nui.nvim",
+			},
+			config = "require('config.noice')",
 		})
 		use({
 			"kyazdani42/nvim-web-devicons",
@@ -45,31 +40,17 @@ return packer.startup({
 			"ThePrimeagen/harpoon",
 		})
 		use({
-			"j-hui/fidget.nvim",
-			config = "require('config.fidget')",
-		})
-		-- Theme
-		use({
 			"folke/tokyonight.nvim",
 			config = "require('config.tokyonight')",
 		})
-
-		-- Telescope
 		use({
 			"nvim-telescope/telescope.nvim",
 			requires = {
 				{ "nvim-lua/plenary.nvim" },
-				{ "nvim-telescope/telescope-github.nvim" },
 			},
 			cmd = "Telescope",
 			config = "require('config.telescope')",
 		})
-		use({
-			"nvim-telescope/telescope-fzf-native.nvim",
-			run = "make",
-		})
-
-		-- Highlighting
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
@@ -88,30 +69,22 @@ return packer.startup({
 			"folke/persistence.nvim",
 		})
 		use({
-			"nathom/filetype.nvim",
-		})
-		use({
 			"tpope/vim-surround",
 		})
 		use({
 			"junegunn/rainbow_parentheses.vim",
 		})
-
-		-- Keybindings
 		use({
 			"folke/which-key.nvim",
 			event = "BufWinEnter",
 			config = "require('config.whichkey')",
 		})
-
 		use({
 			"akinsho/bufferline.nvim",
 			requires = "kyazdani42/nvim-web-devicons",
 			event = "BufWinEnter",
 			config = "require('config.bufferline')",
 		})
-
-		-- LSP & Completions
 		use({
 			"folke/neodev.nvim",
 			config = function()
@@ -157,9 +130,6 @@ return packer.startup({
 			"williamboman/mason-lspconfig.nvim",
 		})
 		use({
-			"tamago324/nlsp-settings.nvim",
-		})
-		use({
 			"williamboman/mason.nvim",
 			config = "require('config.mason')",
 			commit = "d1c860da4b89fd29a45decfb490c79748d954493",
@@ -180,22 +150,12 @@ return packer.startup({
 			requires = { "nvim-lua/plenary.nvim" },
 			config = "require('config.null-ls')",
 		})
-		-- Motion
 		use({
 			"matze/vim-move",
 		})
 		use({
-			"karb94/neoscroll.nvim",
-			config = "require('config.neoscroll')",
-		})
-		use({
-			"easymotion/vim-easymotion",
-		})
-		use({
 			"christoomey/vim-tmux-navigator",
 		})
-
-		-- Utils
 		use({
 			"terryma/vim-multiple-cursors",
 		})
@@ -208,24 +168,15 @@ return packer.startup({
 			event = "BufRead",
 			config = "require('config.blankline')",
 		})
-		-- Formatting
-		use({
-			"prettier/vim-prettier",
-			run = "yarn install --frozen-lockfile --production",
-		})
 		use({
 			"windwp/nvim-autopairs",
 			after = "nvim-cmp",
 			config = "require('config.autopairs')",
 		})
-
-		-- Terminal
 		use({
 			"akinsho/toggleterm.nvim",
 			config = "require('config.toggleterm')",
 		})
-
-		-- Git
 		use({
 			"lewis6991/gitsigns.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
@@ -233,42 +184,6 @@ return packer.startup({
 				require("gitsigns").setup({ current_line_blame = true })
 			end,
 		})
-		use({
-			"airblade/vim-gitgutter",
-		})
-
-		use({
-			"nvim-telescope/telescope-github.nvim",
-		})
-		use({
-			"jvgrootveld/telescope-zoxide",
-		})
-		use({
-			"airblade/vim-rooter",
-		})
-		--[[ use 'cljoly/telescope-repo.nvim' ]]
-		use({
-			"AckslD/nvim-neoclip.lua",
-			requires = {
-				{ "tami5/sqlite.lua", module = "sqlite" },
-				{ "nvim-telescope/telescope.nvim" },
-			},
-			config = "require('config.neoclip')",
-		})
-		use({
-		    "rcarriga/nvim-notify",
-		})
-		--[[ use({ ]]
-		--[[   "folke/noice.nvim", ]]
-		--[[   event = "VimEnter", ]]
-		--[[   config = "require('config.noice')", ]]
-		--[[   requires = { ]]
-		--[[     "MunifTanjim/nui.nvim", ]]
-		--[[     "rcarriga/nvim-notify", ]]
-		--[[   }, ]]
-		--[[ }) ]]
-
-		-- Snippets
 		use({
 			"L3MON4D3/LuaSnip",
 			config = function()
@@ -279,11 +194,6 @@ return packer.startup({
 			"saadparwaiz1/cmp_luasnip",
 		})
 		use({
-			"folke/lua-dev.nvim",
-		})
-
-		-- Commentary
-		use({
 			"JoosepAlviste/nvim-ts-context-commentstring",
 			event = "BufWinEnter",
 		})
@@ -293,15 +203,77 @@ return packer.startup({
 			config = "require('config.comment')",
 		})
 
+		--[[ use({ ]]
+		--[[ 	"karb94/neoscroll.nvim", ]]
+		--[[ 	config = "require('config.neoscroll')", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"easymotion/vim-easymotion", ]]
+		--[[ }) ]]
+		--[[ -- Formatting ]]
+		--[[ use({ ]]
+		--[[ 	"prettier/vim-prettier", ]]
+		--[[ 	run = "yarn install --frozen-lockfile --production", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"airblade/vim-gitgutter", ]]
+		--[[ }) ]]
 		-- Decors
-		use({
-			"sunjon/Shade.nvim",
-			config = "require('config.shade')",
-		})
-		use({
-			"ahmedkhalf/project.nvim",
-			config = "require('config.project')",
-		})
+		--[[ use({ ]]
+		--[[ 	"sunjon/Shade.nvim", ]]
+		--[[ 	config = "require('config.shade')", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"nvim-telescope/telescope-github.nvim", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"jvgrootveld/telescope-zoxide", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"airblade/vim-rooter", ]]
+		--[[ }) ]]
+		--[[ use 'cljoly/telescope-repo.nvim' ]]
+		--[[ use({ ]]
+		--[[ 	"AckslD/nvim-neoclip.lua", ]]
+		--[[ 	requires = { ]]
+		--[[ 		{ "tami5/sqlite.lua", module = "sqlite" }, ]]
+		--[[ 		{ "nvim-telescope/telescope.nvim" }, ]]
+		--[[ 	}, ]]
+		--[[ 	config = "require('config.neoclip')", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"nvim-telescope/telescope-fzf-native.nvim", ]]
+		--[[ 	run = "make", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"tamago324/lir-git-status.nvim", ]]
+		--[[ 	config = function() ]]
+		--[[ 		require("lir.git_status").setup({ ]]
+		--[[ 			show_ignored = false, ]]
+		--[[ 		}) ]]
+		--[[ 	end, ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"nvim-lua/popup.nvim", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"j-hui/fidget.nvim", ]]
+		--[[ 	config = "require('config.fidget')", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"ahmedkhalf/project.nvim", ]]
+		--[[ 	config = "require('config.project')", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"nathom/filetype.nvim", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"tamago324/nlsp-settings.nvim", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"Pheon-Dev/pheon.nvim", ]]
+		--[[ 	config = "require('config.pheon')", ]]
+		--[[ }) ]]
 	end,
 	config = {
 		display = {
