@@ -31,3 +31,13 @@ harpoon.setup({
   },
 })
 telescope.load_extension("harpoon")
+
+local i = {
+  name = "Harpoon",
+  h = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+  n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
+  p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
+  t = { ":lua require('harpoon.tmux').gotoTerminal(1)<cr>", "New Tmux Window" },
+  m = { ":Telescope harpoon marks theme=dropdown previewer=false initial_mode=normal<cr>", "New Tmux Window" },
+  o = { ":lua require('harpoon.ui').select_menu_item()<cr>", "Select Item" },
+}
