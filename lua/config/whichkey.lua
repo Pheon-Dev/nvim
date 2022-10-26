@@ -28,7 +28,7 @@ local mappings = {
   c = {
     name = "Others",
     p = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
-    h = { ":Telescope help_tags theme=ivy initial_mode=normal<cr>", "Help Tags" },
+    h = { ":Telescope help_tags theme=ivy initial_mode=insert<cr>", "Help Tags" },
   },
   d = {
     name = "Diagnostics",
@@ -38,46 +38,25 @@ local mappings = {
     l = { ":Telescope lsp_declarations<cr>", "Declarations" },
     i = { ":Telescope lsp_implementations<cr>", "Implementations" },
   },
-  f = { ":Telescope find_files theme=dropdown initial_mode=normal previewer=false<cr>", "Find Files" },
-  g = {
-    name = "Telescope Git",
-    p = { ":Telescope repo list<cr>", "Git Repos" },
-    i = { ":Telescope gh list issues<cr>", "Git Issues" },
-    t = { ":Telescope gh list gist<cr>", "Git Gist" },
-    r = { ":Telescope gh list run<cr>", "Git Run" },
-    q = { ":Telescope gh list pull_request<cr>", "Git Pull Request" },
-    s = { ":Telescope git_status<cr>", "Git Status" },
-    m = { ":Telescope git_commits<cr>", "Git Commits" },
-    h = { ":Telescope git_branches<cr>", "Git Branches" },
-  },
-  h = {
+  f = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
+  g = { toggle_lazygit, "LazyGit" },
+  i = {
     name = "Harpoon",
     h = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
     n = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
     p = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
     t = { ":lua require('harpoon.tmux').gotoTerminal(1)<cr>", "New Tmux Window" },
+    m = { ":Telescope harpoon marks theme=dropdown previewer=false initial_mode=normal<cr>", "New Tmux Window" },
     o = { ":lua require('harpoon.ui').select_menu_item()<cr>", "Select Item" },
   },
-  j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
-  k = { ":Telescope harpoon marks theme=dropdown previewer=false initial_mode=normal<cr>", "Harpoon" },
-  l = { toggle_lazygit, "LazyGit" },
+  k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
+  l = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   m = { ":Mason<cr>", "Mason" },
-  n = {
-    name = "Utils",
-    n = { ":Telescope neoclip theme=cursor previewer=false initial_mode=normal<cr>", "Neoclip" },
-    r = { ":RnvimrToggle<cr>", "Ranger" },
-  },
   o = { ":lua require('pheon')<cr>", "Select Item" },
-  s = {
-    name = "Projects & Packer",
-    c = { ":PackerCompile<cr>", "Packer Compile" },
-    r = { ":Prettier<cr>", "Format" },
-    p = { ":Telescope projects theme=dropdown previewer=false initial_mode=normal<cr>", "Projects" },
-    s = { ":PackerSync<cr>", "Packer Sync" },
-    w = { ":w! | noh<cr>", "Write" },
-  },
+  p = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
   q = { ":bd<cr>", "Close Buffer" },
   r = { ":Telescope live_grep theme=ivy<cr>", "Live Grep" },
+  s = { ":w! | noh<cr>", "Save File" },
   t = {
     name = "TypeScript",
     a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
@@ -92,9 +71,7 @@ local mappings = {
     j = { "<C-w>t<C-w>H", "Horiz > Vert Alignment" },
     k = { "<C-w>t<C-w>K", "Vert > Horiz Alignment" },
   },
-  w = { ":Telescope bookmarks<cr>", "Bookmarks" },
   x = { ":qa!<cr>", "Quit All!" },
-  z = { ":Telescope zoxide list theme=dropdown previewer=false initial_mode=normal<cr>", "Zoxide" },
 }
 
 local opts = { prefix = "<leader>" }
