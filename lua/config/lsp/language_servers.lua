@@ -3,7 +3,7 @@ local capability = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol
 local navic = require("nvim-navic")
 
 local on_attach = function(client, bufnr)
-  require("lsp_signature").on_attach()
+  --[[ require("lsp_signature").on_attach() ]]
   if client.server_capabilities.documentSymbolProvider then
     navic.attach(client, bufnr)
   end
@@ -78,13 +78,13 @@ require("lspconfig").tsserver.setup({
   end,
 })
 
---[[ require("typescript").setup({ ]]
---[[ 	disable_commands = false, -- prevent the plugin from creating Vim commands ]]
---[[ 	debug = false, -- enable debug logging for commands ]]
---[[ 	go_to_source_definition = { ]]
---[[ 		fallback = true, -- fall back to standard LSP definition on failure ]]
---[[ 	}, ]]
---[[ 	server = { -- pass options to lspconfig's setup method ]]
---[[ 		on_attach = on_attach, ]]
---[[ 	}, ]]
---[[ }) ]]
+require("typescript").setup({
+	disable_commands = false, -- prevent the plugin from creating Vim commands
+	debug = false, -- enable debug logging for commands
+	go_to_source_definition = {
+		fallback = true, -- fall back to standard LSP definition on failure
+	},
+	server = { -- pass options to lspconfig's setup method
+		on_attach = on_attach,
+	},
+})
