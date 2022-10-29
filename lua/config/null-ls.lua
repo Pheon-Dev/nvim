@@ -6,7 +6,6 @@ function M.setup(options)
     debounce = 150,
     save_after_format = false,
     sources = {
-		--[[ nls.builtins.formatting.stylua, ]]
 		--[[ nls.builtins.diagnostics.eslint, ]]
 		--[[ nls.builtins.completion.spell, ]]
 		--[[ nls.builtins.formatting.prettier, ]]

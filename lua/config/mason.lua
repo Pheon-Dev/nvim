@@ -5,7 +5,7 @@ if not present then
 end
 
 require("mason-lspconfig").setup({
-    ensure_installed = { "sumneko_lua", "tsserver" }
+  ensure_installed = { "sumneko_lua", "tsserver" }
 })
 
 vim.api.nvim_create_augroup("_mason", { clear = true })
@@ -18,9 +18,9 @@ vim.api.nvim_create_augroup("_mason", { clear = true })
 --[[ }) ]]
 
 local options = {
-  ensure_installed = { "lua-language-server" }, -- not an option from mason.nvim
+  ensure_installed = { "lua-language-server", "typescript-language-server", "prisma-language-server" },
 
-  PATH = "skip",
+  PATH = "prepend", -- append | skip
 
   ui = {
     icons = {
@@ -30,7 +30,7 @@ local options = {
     },
 
     keymaps = {
-      toggle_server_expand = "<CR>",
+      toggle_server_expand = "l",
       install_server = "i",
       update_server = "u",
       check_server_version = "c",
