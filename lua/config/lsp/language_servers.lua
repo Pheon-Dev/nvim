@@ -44,26 +44,26 @@ navic.setup({
 	depth_limit_indicator = "..",
 })
 
-require("lspconfig").sumneko_lua.setup({
-	on_attach = on_attach,
-	capabilities = capability,
-
-	settings = {
-		Lua = {
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-				},
-				maxPreload = 100000,
-				preloadFileSize = 10000,
-			},
-		},
-	},
-})
+--[[ require("lspconfig").sumneko_lua.setup({ ]]
+--[[ 	on_attach = on_attach, ]]
+--[[ 	capabilities = capability, ]]
+--[[]]
+--[[ 	settings = { ]]
+--[[ 		Lua = { ]]
+--[[ 			diagnostics = { ]]
+--[[ 				globals = { "vim" }, ]]
+--[[ 			}, ]]
+--[[ 			workspace = { ]]
+--[[ 				library = { ]]
+--[[ 					[vim.fn.expand("$VIMRUNTIME/lua")] = true, ]]
+--[[ 					[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true, ]]
+--[[ 				}, ]]
+--[[ 				maxPreload = 100000, ]]
+--[[ 				preloadFileSize = 10000, ]]
+--[[ 			}, ]]
+--[[ 		}, ]]
+--[[ 	}, ]]
+--[[ }) ]]
 
 require("lspconfig").tsserver.setup({
 	capabilities = capability,
@@ -73,9 +73,9 @@ require("lspconfig").tsserver.setup({
 	init_options = {
 		hostInfo = "neovim",
 	},
-	root_dir = function(fname)
-		return vim.loop.cwd()
-	end,
+root_dir = function(fname)
+  return vim.loop.cwd()
+end,
 })
 
 --[[ require("typescript").setup({ ]]

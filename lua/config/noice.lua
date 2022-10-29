@@ -9,7 +9,7 @@ require("noice").setup({
 			-- view: (default is cmdline view)
 			-- opts: any options passed to the view
 			-- icon_hl_group: optional hl_group for the icon
-			cmdline = { pattern = "^:", icon = "", lang = "vim" },
+			cmdline = { pattern = "^:", icon = "»", lang = "vim" },
 			search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
 			search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
 			filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
@@ -43,6 +43,11 @@ require("noice").setup({
 		opts = { enter = true, format = "details" },
 		filter = { event = { "msg_show", "notify" }, ["not"] = { kind = { "search_count", "echo" } } },
 	},
+  config = {
+  signature = {
+    enabled = false
+  },
+  },
 	notify = {
 		-- Noice can be used as `vim.notify` so you can route any notification like other messages
 		-- Notification messages have their level and other properties set.

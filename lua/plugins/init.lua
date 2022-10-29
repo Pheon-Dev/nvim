@@ -12,6 +12,10 @@ return packer.startup({
 		use("wbthomason/packer.nvim")
 		use("lewis6991/impatient.nvim")
 		use({
+			"Pheon-Dev/dashboard-nvim",
+			config = "require('config.dashboard')",
+		})
+		use({
 			"nvim-lualine/lualine.nvim",
 			requires = { "kyazdani42/nvim-web-devicons", opt = true },
 			event = "BufRead",
@@ -94,6 +98,13 @@ return packer.startup({
 			config = "require('config.bufferline')",
 		})
 		use({
+			"williamboman/mason.nvim",
+			config = "require('config.mason')",
+		})
+		use({
+			"williamboman/mason-lspconfig.nvim",
+		})
+		use({
 			"folke/neodev.nvim",
 			config = function()
 				require("neodev").setup({})
@@ -101,13 +112,6 @@ return packer.startup({
 		})
 		use({
 			"onsails/lspkind-nvim",
-		})
-		use({
-			"williamboman/mason.nvim",
-			config = "require('config.mason')",
-		})
-		use({
-			"williamboman/mason-lspconfig.nvim",
 		})
 		use({
 			"neovim/nvim-lspconfig",
@@ -163,9 +167,9 @@ return packer.startup({
 		use({
 			"christoomey/vim-tmux-navigator",
 		})
-		--[[ use({ ]]
-		--[[ 	"terryma/vim-multiple-cursors", ]]
-		--[[ }) ]]
+		use({
+			"terryma/vim-multiple-cursors",
+		})
 		use({
 			"norcalli/nvim-colorizer.lua",
 			config = "require('config.colorizer')",
@@ -223,25 +227,25 @@ return packer.startup({
 			"prettier/vim-prettier",
 			run = "yarn install --frozen-lockfile --production",
 		})
-		--[[ use({ ]]
-		--[[ 	"nathom/filetype.nvim", ]]
-		--[[ }) ]]
+		use({
+			"nathom/filetype.nvim",
+		})
+		use({
+			"cljoly/telescope-repo.nvim",
+			requires = "airblade/vim-rooter",
+		})
+		use({
+			"j-hui/fidget.nvim",
+			config = "require('config.fidget')",
+		})
+		use({
+			"folke/persistence.nvim",
+		})
+
 		--[[ use({ ]]
 		--[[ 	"Pheon-Dev/pheon.nvim", ]]
 		--[[ 	config = "require('config.pheon')", ]]
 		--[[ }) ]]
-		--[[ use({ ]]
-		--[[ 	"cljoly/telescope-repo.nvim", ]]
-		--[[ 	requires = "airblade/vim-rooter", ]]
-		--[[ }) ]]
-		--[[ use({ ]]
-		--[[ 	"j-hui/fidget.nvim", ]]
-		--[[ 	config = "require('config.fidget')", ]]
-		--[[ }) ]]
-		--[[ use({ ]]
-		--[[ 	"folke/persistence.nvim", ]]
-		--[[ }) ]]
-
 		--[[ use({ ]]
 		--[[ 	"sunjon/Shade.nvim", ]]
 		--[[ 	config = "require('config.shade')", ]]

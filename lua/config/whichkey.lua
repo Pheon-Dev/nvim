@@ -24,12 +24,13 @@ end
 
 local mappings = {
 	a = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
-	b = { ":Telescope buffers<cr>", "Buffers" },
+	b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
 	c = {
 		name = "Others",
 		p = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
 		h = { ":Telescope help_tags theme=ivy initial_mode=insert<cr>", "Help Tags" },
 	},
+	d = { ":Dashboard<cr>", "Buffers" },
 	e = { ":Telescope repo list theme=dropdown initial_mode=normal previewer=false<cr>", "Git Repos" },
 	f = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
 	g = {

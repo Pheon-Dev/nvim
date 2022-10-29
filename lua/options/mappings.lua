@@ -20,8 +20,8 @@ map("n", "v.", "<C-w>t<C-w>H", { noremap = true, silent = true })
 map("n", "v,", "<C-w>t<C-w>K", { noremap = true, silent = true })
 
 -- Window Resizing
-map("n", "<C-Left>", ":vertical resize +3<cr>", { noremap = true, silent = true })
-map("n", "<C-Right>", ":vertical resize -3<cr>", { noremap = true, silent = true })
+map("n", "<C-Right>", ":vertical resize +3<cr>", { noremap = true, silent = true })
+map("n", "<C-Left>", ":vertical resize -3<cr>", { noremap = true, silent = true })
 map("n", "<C-Up>", ":resize +3<cr>", { noremap = true, silent = true })
 map("n", "<C-Down>", ":resize -3<cr>", { noremap = true, silent = true })
 
