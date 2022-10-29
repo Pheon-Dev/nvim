@@ -44,19 +44,6 @@ navic.setup({
 	depth_limit_indicator = "..",
 })
 
-require("lspconfig").tsserver.setup({
-	capabilities = capability,
-	on_attach = on_attach,
-	cmd = { "typescript-language-server", "--stdio" },
-	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-	init_options = {
-		hostInfo = "neovim",
-	},
-	root_dir = function(fname)
-		return vim.loop.cwd()
-	end,
-})
-
 require("lspconfig").sumneko_lua.setup({
 	on_attach = on_attach,
 	capabilities = capability,
@@ -78,13 +65,26 @@ require("lspconfig").sumneko_lua.setup({
 	},
 })
 
-require("typescript").setup({
-	disable_commands = false, -- prevent the plugin from creating Vim commands
-	debug = false, -- enable debug logging for commands
-	go_to_source_definition = {
-		fallback = true, -- fall back to standard LSP definition on failure
+require("lspconfig").tsserver.setup({
+	capabilities = capability,
+	on_attach = on_attach,
+	cmd = { "typescript-language-server", "--stdio" },
+	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+	init_options = {
+		hostInfo = "neovim",
 	},
-	server = { -- pass options to lspconfig's setup method
-		on_attach = on_attach,
-	},
+	root_dir = function(fname)
+		return vim.loop.cwd()
+	end,
 })
+
+--[[ require("typescript").setup({ ]]
+--[[ 	disable_commands = false, -- prevent the plugin from creating Vim commands ]]
+--[[ 	debug = false, -- enable debug logging for commands ]]
+--[[ 	go_to_source_definition = { ]]
+--[[ 		fallback = true, -- fall back to standard LSP definition on failure ]]
+--[[ 	}, ]]
+--[[ 	server = { -- pass options to lspconfig's setup method ]]
+--[[ 		on_attach = on_attach, ]]
+--[[ 	}, ]]
+--[[ }) ]]

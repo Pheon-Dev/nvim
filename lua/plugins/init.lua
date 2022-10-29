@@ -58,7 +58,6 @@ return packer.startup({
 			"nvim-telescope/telescope.nvim",
 			requires = {
 				{ "nvim-lua/plenary.nvim" },
-				{ "nvim-telescope/telescope-github.nvim" },
 			},
 			cmd = "Telescope",
 			config = "require('config.telescope')",
@@ -76,9 +75,6 @@ return packer.startup({
 		})
 		use({
 			"p00f/nvim-ts-rainbow",
-		})
-		use({
-			"folke/persistence.nvim",
 		})
 		use({
 			"tpope/vim-surround",
@@ -102,6 +98,16 @@ return packer.startup({
 			config = function()
 				require("neodev").setup({})
 			end,
+		})
+		use({
+			"onsails/lspkind-nvim",
+		})
+		use({
+			"williamboman/mason.nvim",
+			config = "require('config.mason')",
+		})
+		use({
+			"williamboman/mason-lspconfig.nvim",
 		})
 		use({
 			"neovim/nvim-lspconfig",
@@ -136,16 +142,6 @@ return packer.startup({
 			"folke/lsp-colors.nvim",
 		})
 		use({
-			"onsails/lspkind-nvim",
-		})
-		use({
-			"williamboman/mason-lspconfig.nvim",
-		})
-		use({
-			"williamboman/mason.nvim",
-			config = "require('config.mason')",
-		})
-		use({
 			"tami5/lspsaga.nvim",
 			config = "require('config.lspsaga')",
 		})
@@ -167,9 +163,9 @@ return packer.startup({
 		use({
 			"christoomey/vim-tmux-navigator",
 		})
-		use({
-			"terryma/vim-multiple-cursors",
-		})
+		--[[ use({ ]]
+		--[[ 	"terryma/vim-multiple-cursors", ]]
+		--[[ }) ]]
 		use({
 			"norcalli/nvim-colorizer.lua",
 			config = "require('config.colorizer')",
@@ -227,21 +223,29 @@ return packer.startup({
 			"prettier/vim-prettier",
 			run = "yarn install --frozen-lockfile --production",
 		})
-		use({
-			"nathom/filetype.nvim",
-		})
-		use({
-			"Pheon-Dev/pheon.nvim",
-			config = "require('config.pheon')",
-		})
-		use({
-			"cljoly/telescope-repo.nvim",
-			requires = "airblade/vim-rooter",
-		})
-		use({
-			"sunjon/Shade.nvim",
-			config = "require('config.shade')",
-		})
+		--[[ use({ ]]
+		--[[ 	"nathom/filetype.nvim", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"Pheon-Dev/pheon.nvim", ]]
+		--[[ 	config = "require('config.pheon')", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"cljoly/telescope-repo.nvim", ]]
+		--[[ 	requires = "airblade/vim-rooter", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"j-hui/fidget.nvim", ]]
+		--[[ 	config = "require('config.fidget')", ]]
+		--[[ }) ]]
+		--[[ use({ ]]
+		--[[ 	"folke/persistence.nvim", ]]
+		--[[ }) ]]
+
+		--[[ use({ ]]
+		--[[ 	"sunjon/Shade.nvim", ]]
+		--[[ 	config = "require('config.shade')", ]]
+		--[[ }) ]]
 		--[[ use({ ]]
 		--[[ 	"jvgrootveld/telescope-zoxide", ]]
 		--[[ }) ]]
@@ -256,10 +260,6 @@ return packer.startup({
 		--[[ use({ ]]
 		--[[ 	"nvim-telescope/telescope-fzf-native.nvim", ]]
 		--[[ 	run = "make", ]]
-		--[[ }) ]]
-		--[[ use({ ]]
-		--[[ 	"j-hui/fidget.nvim", ]]
-		--[[ 	config = "require('config.fidget')", ]]
 		--[[ }) ]]
 		--[[ use({ ]]
 		--[[ 	"ahmedkhalf/project.nvim", ]]

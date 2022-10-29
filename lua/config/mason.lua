@@ -4,6 +4,10 @@ if not present then
   return
 end
 
+require("mason-lspconfig").setup({
+    ensure_installed = { "sumneko_lua", "tsserver" }
+})
+
 vim.api.nvim_create_augroup("_mason", { clear = true })
 --[[ vim.api.nvim_create_autocmd("Filetype", { ]]
 --[[   pattern = "mason", ]]
