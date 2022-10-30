@@ -168,6 +168,8 @@ map("n", "zg", "zM", { noremap = true, silent = true })
 -- Move to Start/End of Line
 map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
+map("n", "e", "w", { noremap = true, silent = true })
+map("n", "vv", "v", { noremap = true, silent = true })
 
 map("n", "cd", "cc<esc>", { noremap = true, silent = true })
 map("n", "co", "cc<esc>ddO<esc>", { noremap = true, silent = true })

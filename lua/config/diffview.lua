@@ -71,7 +71,7 @@ require("diffview").setup({
     },
     win_config = { -- See ':h diffview-config-win_config'
       position = "left",
-      width = 35,
+      width = 16,
       win_opts = {}
     },
   },
@@ -140,6 +140,7 @@ require("diffview").setup({
       ["k"]             = actions.prev_entry, -- Bring the cursor to the previous file entry.
       ["<up>"]          = actions.prev_entry,
       ["<cr>"]          = actions.select_entry, -- Open the diff for the selected entry.
+      ["l"]             = actions.select_entry,
       ["o"]             = actions.select_entry,
       ["<2-LeftMouse>"] = actions.select_entry,
       ["-"]             = actions.toggle_stage_entry, -- Stage / unstage the selected entry.
@@ -175,6 +176,7 @@ require("diffview").setup({
       ["k"]             = actions.prev_entry,
       ["<up>"]          = actions.prev_entry,
       ["<cr>"]          = actions.select_entry,
+      ["l"]             = actions.select_entry,
       ["o"]             = actions.select_entry,
       ["<2-LeftMouse>"] = actions.select_entry,
       ["<c-b>"]         = actions.scroll_view(-0.25),
@@ -190,6 +192,7 @@ require("diffview").setup({
     },
     option_panel = {
       ["<tab>"] = actions.select_entry,
+      ["l"]     = actions.select_entry,
       ["q"]     = actions.close,
     },
   },
