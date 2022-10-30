@@ -14,10 +14,10 @@ map("n", "<C-q>", ":w! | bp | sp | bn | bd!<cr>", { noremap = true, silent = tru
 --[[ map("n", "<C-x>", ":qa!<cr>", { noremap = true, silent = true }) ]]
 
 -- Windows
-map("n", "vh", "<C-w>t<C-w>K", { noremap = true, silent = true })
 map("n", "vj", ":vsplit<cr>", { noremap = true, silent = true })
 map("n", "vk", ":split<cr>", { noremap = true, silent = true })
-map("n", "vl", "<C-w>t<C-w>H", { noremap = true, silent = true })
+map("n", "vJ", "<C-w>t<C-w>K", { noremap = true, silent = true })
+map("n", "vK", "<C-w>t<C-w>H", { noremap = true, silent = true })
 
 map("n", "wh", ":WindowsEqualize<cr>", { noremap = true, silent = true })
 map("n", "wj", ":WindowsMaximize<cr>", { noremap = true, silent = true })
@@ -84,6 +84,7 @@ map("n", "c.", "ct.", { noremap = true, silent = true })
 map("n", "c'", "ct'", { noremap = true, silent = true })
 map("n", 'c"', 'ct"', { noremap = true, silent = true })
 map("n", "cp", 'cip"', { noremap = true, silent = true })
+map("n", "B", "c^", { noremap = true, silent = true })
 
 -- Edit (delete)
 map("n", "d1", "diw", { noremap = true, silent = true })
@@ -108,6 +109,7 @@ map("n", "d.", "dt.", { noremap = true, silent = true })
 map("n", "d'", "dt'", { noremap = true, silent = true })
 map("n", 'd"', 'dt"', { noremap = true, silent = true })
 map("n", "dp", "dipdd", { noremap = true, silent = true })
+map("n", "X", "d^", { noremap = true, silent = true })
 
 -- Edit (visual)
 map("n", "v1", "viw", { noremap = true, silent = true })
@@ -132,6 +134,7 @@ map("n", "v.", "vt.", { noremap = true, silent = true })
 map("n", "v'", "vt'", { noremap = true, silent = true })
 map("n", 'v"', 'vt"', { noremap = true, silent = true })
 map("n", "vb", "vip", { noremap = true, silent = true })
+map("n", "vL", "v$", { noremap = true, silent = true })
 
 -- Edit (yank)
 map("n", "y1", "yiw", { noremap = true, silent = true })
