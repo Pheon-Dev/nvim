@@ -83,8 +83,41 @@ return packer.startup({
     use({
       "tpope/vim-surround",
     })
+    --[[ use({ ]]
+    --[[   "kylechui/nvim-surround", ]]
+    --[[   event = "BufReadPre", ]]
+    --[[   config = function() ]]
+    --[[     require("nvim-surround").setup({}) ]]
+    --[[   end, ]]
+    --[[ }) ]]
+    --[[   use({ ]]
+    --[[   "simrat39/symbols-outline.nvim", ]]
+    --[[   cmd = { "SymbolsOutline" }, ]]
+    --[[   config = function() ]]
+    --[[     require("symbols-outline").setup() ]]
+    --[[   end, ]]
+    --[[   setup = function() ]]
+    --[[     vim.keymap.set("n", "<leader>cs", "<cmd>SymbolsOutline<cr>", { desc = "Symbols Outline" }) ]]
+    --[[   end, ]]
+    --[[ }) ]]
     use({
       "junegunn/rainbow_parentheses.vim",
+    })
+    --[[ use { 'echasnovski/mini.nvim' } ]]
+    use({
+      "edluffy/specs.nvim",
+      config = "require('config.specs')",
+    })
+    use({
+      "m-demare/hlargs.nvim",
+      --[[ event = "User PackerDefered", ]]
+      config = "require('config.hlargs')",
+    })
+    use({
+      "danymat/neogen",
+      module = "neogen",
+      requires = "nvim-treesitter/nvim-treesitter",
+      config = "require('config.neogen')",
     })
     use({
       "folke/which-key.nvim",
@@ -106,6 +139,7 @@ return packer.startup({
     })
     use({
       "folke/neodev.nvim",
+      module = "neodev",
       config = function()
         require("neodev").setup({})
       end,
@@ -142,6 +176,44 @@ return packer.startup({
       "SmiteshP/nvim-navic",
       requires = "neovim/nvim-lspconfig",
     })
+    --[[ use({ ]]
+    --[[   "lsp-inlayhints.nvim", ]]
+    --[[ }) ]]
+    use({
+      "b0o/schemastore.nvim",
+    })
+    use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = "require('config.todo')"
+    }
+    use({
+      "theHamsta/nvim-semantic-tokens",
+    })
+    use({ "stevearc/dressing.nvim",
+      --[[ event = "User PackerDefered", ]]
+      config = "require('config.dressing')"
+    })
+    --[[ use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }) ]]
+    use {
+      "b0o/incline.nvim",
+      config = "require('config.incline')"
+    }
+    use {
+      "smjonas/inc-rename.nvim",
+      config = "require('config.inc_rename')"
+    }
+    use({
+      "andymass/vim-matchup",
+      event = "BufReadPost",
+      config = function()
+        vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
+      end,
+    })
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = "require('config.diffview')" }
+    use { "nvim-telescope/telescope-file-browser.nvim", requires = "nvim-telescope/telescope.nvim" }
+    use { "nvim-telescope/telescope-live-grep-args.nvim", requires = "nvim-telescope/telescope.nvim" }
+    use { "nvim-telescope/telescope-dap.nvim", requires = "nvim-telescope/telescope.nvim" }
     use({
       "folke/lsp-colors.nvim",
     })
@@ -153,13 +225,34 @@ return packer.startup({
       "ckipp01/stylua-nvim",
       run = "cargo install stylua",
     })
+
+    use({ "b0o/SchemaStore.nvim", module = "schemastore" })
+    use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
+
+    use { "anuvyklack/windows.nvim",
+      requires = {
+        "anuvyklack/middleclass",
+        "anuvyklack/animation.nvim"
+      },
+      config = "require('config.windows')",
+    }
+
     use({
-      "jose-elias-alvarez/typescript.nvim",
+      "monaqa/dial.nvim",
+      config = "require('config.dial')",
     })
+    use({
+      "ThePrimeagen/refactoring.nvim",
+      config = "require('config.refactoring')",
+    })
+
     use({
       "jose-elias-alvarez/null-ls.nvim",
       requires = { "nvim-lua/plenary.nvim" },
       config = "require('config.null-ls')",
+    })
+    use({
+      "jayp0521/mason-null-ls.nvim",
     })
     use({
       "matze/vim-move",
@@ -218,6 +311,14 @@ return packer.startup({
       config = "require('config.neoscroll')",
     })
     use({
+      "petertriho/nvim-scrollbar",
+      config = "require('config.scrollbar')",
+    })
+    use({
+      "kevinhwang91/nvim-hlslens",
+      config = "require('config.hlslens')",
+    })
+    use({
       "easymotion/vim-easymotion",
     })
     use({
@@ -240,7 +341,45 @@ return packer.startup({
     })
     use({
       "folke/persistence.nvim",
+      event = "BufReadPre",
+      module = "persistence",
+      config = function()
+        require("persistence").setup()
+      end,
     })
+    use({
+      "dstein64/vim-startuptime",
+      cmd = "StartupTime",
+      config = function()
+        vim.g.startuptime_tries = 10
+      end,
+    })
+    use({
+      "folke/trouble.nvim",
+      event = "BufReadPre",
+      module = "trouble",
+      cmd = { "TroubleToggle", "Trouble" },
+      config = function()
+        require("trouble").setup({
+          auto_open = false,
+          use_diagnostic_signs = true, -- en
+        })
+      end,
+    })
+
+    --[[ use { "mfussenegger/nvim-dap" } ]]
+    --[[    use { "rcarriga/nvim-dap-ui", requires = "mfussenegger/nvim-dap" } ]]
+    --[[    use { "rcarriga/cmp-dap", requires = "mfussenegger/nvim-dap" } ]]
+    --[[    use { "Weissle/persistent-breakpoints.nvim", requires = "mfussenegger/nvim-dap" } ]]
+    --[[ use { ]]
+    --[[   "jayp0521/mason-nvim-dap.nvim", ]]
+    --[[   requires = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" }, ]]
+    --[[ } ]]
+    --[[ use({ ]]
+    --[[   "folke/neoconf.nvim", ]]
+    --[[   module = "neoconf", ]]
+    --[[   cmd = "Neoconf", ]]
+    --[[ }) ]]
 
     --[[ use({ ]]
     --[[ 	"Pheon-Dev/pheon.nvim", ]]

@@ -6,6 +6,12 @@ vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 })
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = { "html", "javascript", "lua", "typescript", "tsx", "vue", "json", "css", "prisma", "bash" },
+  matchup = {
+    enable = true, -- mandatory, false will disable the whole extension
+    disable = { "c", "ruby" }, -- optional, list of language that will be disabled
+    -- [options]
+    --:MatchupWhereAmI?
+  },
   refactor = {
     smart_rename = {
       enable = true,

@@ -12,6 +12,7 @@ local cmp = require("cmp")
 local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 local compare = require("cmp.config.compare")
+local neogen = require('neogen')
 
 local source_mapping = {
   buffer = " buffer",
@@ -80,6 +81,8 @@ cmp.setup({
         --[[   luasnip.expand_or_jump() ]]
         --[[ elseif vim.fn["vsnip#available"]() == 1 then ]]
         --[[   feedkey("<Plug>(vsnip-expand-or-jump)", "") ]]
+      elseif require('neogen').jumpable() then
+        require('neogen').jump_next()
       elseif has_words_before() then
         cmp.complete()
       else
@@ -89,6 +92,8 @@ cmp.setup({
     ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif require('neogen').jumpable(true) then
+        require('neogen').jump_prev()
         --[[ elseif vim.fn["vsnip#jumpable"](-1) == 1 then ]]
         --[[   feedkey("<Plug>(vsnip-jump-prev)", "") ]]
       end

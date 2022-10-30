@@ -2,31 +2,47 @@ local M = { module = "null-ls" }
 
 function M.setup(options)
   local nls = require("null-ls")
-  nls.setup({
-    debounce = 150,
-    save_after_format = false,
-    sources = {
-		--[[ nls.builtins.diagnostics.eslint, ]]
-		--[[ nls.builtins.completion.spell, ]]
-		--[[ nls.builtins.formatting.prettier, ]]
+  require('mason-null-ls').setup({
+    ensure_installed = { 'stylua' }
+  })
+
+  require 'mason-null-ls'.setup_handlers {
+    function(source_name)
+      --[[ nls.builtins.diagnostics.eslint, ]]
+      --[[ nls.builtins.completion.spell, ]]
+      --[[ nls.builtins.formatting.prettier, ]]
       -- nls.builtins.formatting.prettierd,
-      nls.builtins.formatting.stylua,
-      nls.builtins.formatting.fish_indent,
+      nls.register(nls.builtins.completion.spell)
+      nls.register(nls.builtins.formatting.fish_indent)
       -- nls.builtins.formatting.fixjson.with({ filetypes = { "jsonc" } }),
       -- nls.builtins.formatting.eslint_d,
       -- nls.builtins.diagnostics.shellcheck,
-      nls.builtins.formatting.shfmt,
-      nls.builtins.diagnostics.markdownlint,
+      nls.register(nls.builtins.formatting.shfmt)
+      nls.register(nls.builtins.formatting.markdownlint)
       -- nls.builtins.diagnostics.luacheck,
-      nls.builtins.formatting.prettierd.with({
-        filetypes = { "markdown" }, -- only runs `deno fmt` for markdown
-      }),
       -- nls.builtins.diagnostics.selene,
       -- nls.builtins.code_actions.gitsigns,
-    },
+    end,
+    eslint = function(source_name, methods)
+      nls.register(nls.builtins.diagnostics.eslint)
+    end,
+    eslint_d = function(source_name, methods)
+      nls.register(nls.builtins.formatting.eslint_d)
+    end,
+    stylua = function(source_name, methods)
+      nls.register(nls.builtins.formatting.stylua)
+    end,
+    prettierd = function(source_name, methods)
+      nls.builtins.formatting.prettierd.with({
+        filetypes = { "markdown" }, -- only runs `deno fmt` for markdown
+      })
+    end,
+    debounce = 150,
+    save_after_format = false,
     on_attach = options.on_attach,
     root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", ".git"),
-  })
+  }
+  nls.setup()
 end
 
 function M.has_formatter(ft)

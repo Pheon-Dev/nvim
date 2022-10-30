@@ -84,6 +84,7 @@ require("telescope").setup({
 
 require("telescope").load_extension("harpoon")
 require("telescope").load_extension("noice")
+require("telescope").load_extension("refactoring")
 --[[ require('telescope').load_extension("repo") ]]
 --[[ require("telescope").load_extension("gh") ]]
 --[[ require("telescope").load_extension("fzf") ]]
