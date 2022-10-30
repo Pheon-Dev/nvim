@@ -13,11 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +181 ~/.config/nvim/lua/plugins/init.lua
-badd +24 lua/config/lsp/language_servers.lua
+badd +223 ~/.config/nvim/lua/plugins/init.lua
+badd +6 lua/config/treesitter.lua
+badd +49 lua/config/dial.lua
+badd +87 lua/options/utils.lua
+badd +33 lua/options/mappings.lua
+badd +64 ~/.config/nvim/lua/config/whichkey.lua
 argglobal
 %argdel
-edit ~/.config/nvim/lua/plugins/init.lua
+edit lua/options/mappings.lua
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -26,13 +30,13 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt lua/config/lsp/language_servers.lua
-let s:l = 181 - ((39 * winheight(0) + 39) / 79)
+balt ~/.config/nvim/lua/config/whichkey.lua
+let s:l = 33 - ((32 * winheight(0) + 39) / 79)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 181
-normal! 06|
+keepjumps 33
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

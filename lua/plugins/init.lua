@@ -190,19 +190,15 @@ return packer.startup({
     use({
       "theHamsta/nvim-semantic-tokens",
     })
-    use({ "stevearc/dressing.nvim",
-      --[[ event = "User PackerDefered", ]]
-      config = "require('config.dressing')"
-    })
     --[[ use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }) ]]
     use {
       "b0o/incline.nvim",
       config = "require('config.incline')"
     }
-    use {
-      "smjonas/inc-rename.nvim",
-      config = "require('config.inc_rename')"
-    }
+    --[[ use { ]]
+    --[[   "smjonas/inc-rename.nvim", ]]
+    --[[   config = "require('config.inc_rename')" ]]
+    --[[ } ]]
     use({
       "andymass/vim-matchup",
       event = "BufReadPost",
@@ -240,10 +236,6 @@ return packer.startup({
     use({
       "monaqa/dial.nvim",
       config = "require('config.dial')",
-    })
-    use({
-      "ThePrimeagen/refactoring.nvim",
-      config = "require('config.refactoring')",
     })
 
     use({

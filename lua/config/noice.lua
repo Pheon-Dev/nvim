@@ -43,7 +43,6 @@ require("noice").setup({
     opts = { enter = true, format = "details" },
     filter = { event = { "msg_show", "notify" }, ["not"] = { kind = { "search_count", "echo" } } },
   },
-  presets = { inc_rename = true },
   notify = {
     -- Noice can be used as `vim.notify` so you can route any notification like other messages
     -- Notification messages have their level and other properties set.

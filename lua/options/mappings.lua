@@ -11,15 +11,20 @@ map("n", "'", ",", { noremap = true, silent = true })
 map("n", "<C-s>", ":lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
 map("n", "<C-p>", ":Prettier<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 map("n", "<C-q>", ":w! | bp | sp | bn | bd!<cr>", { noremap = true, silent = true })
-map("n", "<C-x>", ":qa!<cr>", { noremap = true, silent = true })
+--[[ map("n", "<C-x>", ":qa!<cr>", { noremap = true, silent = true }) ]]
 
--- Window Splitting
-map("n", "v/", ":vsplit<cr>", { noremap = true, silent = true })
-map("n", "v-", ":split<cr>", { noremap = true, silent = true })
-map("n", "v.", "<C-w>t<C-w>H", { noremap = true, silent = true })
-map("n", "v,", "<C-w>t<C-w>K", { noremap = true, silent = true })
+-- Windows
+map("n", "vh", "<C-w>t<C-w>K", { noremap = true, silent = true })
+map("n", "vj", ":vsplit<cr>", { noremap = true, silent = true })
+map("n", "vk", ":split<cr>", { noremap = true, silent = true })
+map("n", "vl", "<C-w>t<C-w>H", { noremap = true, silent = true })
 
--- Window Resizing
+map("n", "wh", ":WindowsEqualize<cr>", { noremap = true, silent = true })
+map("n", "wj", ":WindowsMaximize<cr>", { noremap = true, silent = true })
+map("n", "wk", ":WindowsMaximizeVertically<cr>", { noremap = true, silent = true })
+map("n", "wl", ":WindowsMaximizeHorizontally<cr>", { noremap = true, silent = true })
+map("n", "ww", ":WindowsToggleAutowidth<cr>", { noremap = true, silent = true })
+
 map("n", "<C-Right>", ":vertical resize +3<cr>", { noremap = true, silent = true })
 map("n", "<C-Left>", ":vertical resize -3<cr>", { noremap = true, silent = true })
 map("n", "<C-Up>", ":resize +3<cr>", { noremap = true, silent = true })
@@ -187,47 +192,12 @@ map("n", "S", ":lua require'shade'.toggle()<cr>", { noremap = true, silent = fal
 map("i", "C-Return", "<cr><cr><C-o>k<TAB>", { noremap = true, silent = false })
 
 -- Dial
-map("n", "<C-a>", require("dial.map").inc_normal(), { noremap = true })
-map("n", "<C-x>", require("dial.map").dec_normal(), { noremap = true })
-map("v", "<C-a>", require("dial.map").inc_visual(), { noremap = true })
-map("v", "<C-x>", require("dial.map").dec_visual(), { noremap = true })
-map("v", "g<C-a>", require("dial.map").inc_gvisual(), { noremap = true })
-map("v", "g<C-x>", require("dial.map").dec_gvisual(), { noremap = true })
-
--- Windows
-map("n", "<C-w>z", ":WindowsMaximize<cr>", { noremap = true, silent = true })
-map("n", "<C-w>_", ":WindowsMaximizeVertically<cr>", { noremap = true, silent = true })
-map("n", "<C-w>|", ":WindowsMaximizeHorizontally<cr>", { noremap = true, silent = true })
-map("n", "<C-w>=", ":WindowsEqualize<cr>", { noremap = true, silent = true })
-
--- Refactoring
-map("v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
-  { noremap = true, silent = true, expr = false })
-map("v", "<leader>rf", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
-  { noremap = true, silent = true, expr = false })
-map("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
-  { noremap = true, silent = true, expr = false })
-map("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-  { noremap = true, silent = true, expr = false })
-map("n", "<leader>rb", [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]],
-  { noremap = true, silent = true, expr = false })
-map("n", "<leader>rbf", [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]],
-  { noremap = true, silent = true, expr = false })
-map("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-  { noremap = true, silent = true, expr = false })
-map("v", "<leader>rr", "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-  { noremap = true })
--- You can also use below = true here to to change the position of the printf
--- statement (or set two remaps for either one). This remap must be made in normal mode.
-map("n", "<leader>rp", ":lua require('refactoring').debug.printf({below = false})<CR>",
-  { noremap = true })
--- Remap in normal mode and passing { normal = true } will automatically find the variable under the cursor and print it
-map("n", "<leader>rv", ":lua require('refactoring').debug.print_var({ normal = true })<CR>", { noremap = true })
--- Remap in visual mode will print whatever is in the visual selection
---[[ map("v", "<leader>rv", ":lua require('refactoring').debug.print_var({})<CR>", { noremap = true }) ]]
-
--- Cleanup function: this remap should be made in normal mode
-map("n", "<leader>rx", ":lua require('refactoring').debug.cleanup({})<CR>", { noremap = true })
+map("n", "<C-x>", require("dial.map").inc_normal(), { noremap = true })
+map("n", "X", require("dial.map").dec_normal(), { noremap = true })
+map("v", "<C-x>", require("dial.map").inc_visual(), { noremap = true })
+map("v", "X", require("dial.map").dec_visual(), { noremap = true })
+map("v", "g<C-x>", require("dial.map").inc_gvisual(), { noremap = true })
+map("v", "gX", require("dial.map").dec_gvisual(), { noremap = true })
 
 -- hlslens
 local kopts = { noremap = true, silent = true }
@@ -257,7 +227,7 @@ map("n", "<Leader>nt", ":lua require('neogen').generate({ type = 'type' })<CR>",
 
 -- Specs
 -- Press <C-b> to call specs!
-map('n', '<C-b>', ':lua require("specs").show_specs()', { noremap = true, silent = true })
+--[[ map('n', '<C-b>', ':lua require("specs").show_specs()', { noremap = true, silent = true }) ]]
 -- You can even bind it to search jumping and more, example:
 map('n', 'n', 'n:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
 map('n', 'N', 'N:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
@@ -265,3 +235,4 @@ map('n', 'N', 'N:lua require("specs").show_specs()<CR>', { noremap = true, silen
 map('n', '<leader>v', ':lua require("specs").show_specs({width = 97, winhl = "Search", delay_ms = 610, inc_ms = 21})<CR>'
   , { noremap = true, silent = true })
 --[[ :lua require('specs').toggle() ]]
+-- Inc_rename

@@ -29,7 +29,6 @@ local mappings = {
     name = "Others",
     p = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
     h = { ":Telescope help_tags theme=ivy initial_mode=insert<cr>", "Help Tags" },
-    r = { ":require('refactoring').select_refactor()<cr>", "Refactor" },
   },
   d = { ":Dashboard<cr>", "Buffers" },
   e = { ":Telescope repo list theme=dropdown initial_mode=normal previewer=false<cr>", "Git Repos" },
@@ -61,13 +60,6 @@ local mappings = {
     o = { ":TypescriptOrganizeImports<cr>", "Organise Imports" },
     r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
     f = { ":TypescriptFixAll<cr>", "Fix All" },
-  },
-  v = {
-    name = "Split",
-    v = { ":vsplit<cr>", "Vertical Split" },
-    h = { ":split<cr>", "Horizontal Split" },
-    j = { "<C-w>t<C-w>H", "Horiz > Vert Alignment" },
-    k = { "<C-w>t<C-w>K", "Vert > Horiz Alignment" },
   },
   x = { ":qa!<cr>", "Quit All!" },
 }

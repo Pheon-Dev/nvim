@@ -46,6 +46,7 @@ require("dial.config").augends:register_group {
     augend.integer.alias.decimal,
     augend.integer.alias.hex,
     augend.constant.new { elements = { "let", "const" } },
+    augend.constant.new { elements = { "true", "false" } },
   },
   visual = {
     augend.integer.alias.decimal,
@@ -62,4 +63,3 @@ require("dial.config").augends:register_group {
   }
 }
 --[[ enable only for specific FileType ]]
---[[ autocmd FileType typescript lua vim.api.nvim_buf_set_keymap(0, "n", "<C-a>", require("dial.map").inc_normal("typescript"), {noremap = true}) ]]
