@@ -58,6 +58,11 @@ require("telescope").setup({
     },
   },
   pickers = {
+    file_browser = {
+      theme = "dropdown", -- cursor , dropdown, ivy
+      initial_mode = "normal",
+      previewer = true,
+    },
     buffers = {
       theme = "dropdown", -- cursor , dropdown, ivy
       initial_mode = "normal",

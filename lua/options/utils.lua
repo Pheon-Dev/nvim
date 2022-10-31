@@ -86,6 +86,7 @@ vim.cmd('autocmd FileType typescript lua vim.api.nvim_buf_set_keymap(0, "n", "<C
 vim.cmd('autocmd FileType typescriptreact lua vim.api.nvim_buf_set_keymap(0, "n", "<C-x>", require("dial.map").inc_normal("typescript"), {noremap = true})')
 vim.cmd('autocmd FileType javascript lua vim.api.nvim_buf_set_keymap(0, "n", "<C-x>", require("dial.map").inc_normal("typescript"), {noremap = true})')
 vim.cmd('autocmd FileType javascriptreact lua vim.api.nvim_buf_set_keymap(0, "n", "<C-x>", require("dial.map").inc_normal("typescript"), {noremap = true})')
+
 vim.cmd([[
     augroup packer_user_config
         autocmd!
