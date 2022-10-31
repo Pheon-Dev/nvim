@@ -23,7 +23,7 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
-  s = { ":Telescope live_grep_args theme=ivy<cr>", "Live Grep" },
+  a = { ":Telescope live_grep_args theme=ivy<cr>", "Live Grep" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   c = {
     name = "Others",
@@ -83,8 +83,7 @@ local mappings = {
   },
   q = { ":bd<cr>", "Close Buffer" },
   r = { ":Telescope repo list theme=dropdown initial_mode=normal previewer=false<cr>", "Git Repos" },
-  a = { ":Telescope live_grep theme=ivy<cr>", "Live Grep" },
-  --[[ s = { ":w! | noh<cr>", "Save File" }, ]]
+  s = { ":Telescope live_grep theme=ivy<cr>", "Live Grep" },
   t = {
     name = "TypeScript",
     a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
