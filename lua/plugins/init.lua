@@ -45,6 +45,12 @@ return packer.startup({
       },
       config = "require('config.noice')",
     })
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = { 'kyazdani42/nvim-web-devicons' },
+      cmd = "NvimTreeToggle",
+      config = "require('config.nvim-tree')"
+    }
     use({
       "kyazdani42/nvim-web-devicons",
     })

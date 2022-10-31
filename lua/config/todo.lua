@@ -63,6 +63,9 @@ require("todo-comments").setup {
   },
 }
 
+--[[ vim.keymap.set("n", "l", function() ]]
+--[[   require("todo-comments").select() ]]
+--[[ end, { desc = "Next todo comment" }) ]]
 vim.keymap.set("n", "]t", function()
   require("todo-comments").jump_next()
 end, { desc = "Next todo comment" })
@@ -76,10 +79,3 @@ end, { desc = "Previous todo comment" })
 vim.keymap.set("n", "]t", function()
   require("todo-comments").jump_next({ keywords = { "ERROR", "WARNING" } })
 end, { desc = "Next error/warning todo comment" })
-
---[[ :TodoTrouble cwd=~/projects/foobar ]]
---[[ :TodoTelescope keywords=TODO,FIX ]]
---[[ :TodoQuickFix ]]
---[[ :TodoLocList ]]
---[[ :TodoTrouble ]]
---[[ :TodoTelescope ]]

@@ -31,8 +31,8 @@ local mappings = {
     h = { ":Telescope help_tags theme=ivy initial_mode=insert<cr>", "Help Tags" },
   },
   d = { ":Dashboard<cr>", "Buffers" },
-  e = { ":Telescope repo list theme=dropdown initial_mode=normal previewer=false<cr>", "Git Repos" },
-  f = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
+  e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
+  f = { ":Telescope find_files initial_mode=insert previewer=false<cr>", "Find Files" },
   g = {
     name = "Diff View",
     g = { ":DiffviewClose<cr>", "Close" },
@@ -47,6 +47,14 @@ local mappings = {
     s = { ":Telescope git_status theme=dropdown initial_mode=normal<cr>", "Git Status" },
   },
   h = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+  i = {
+    name = "TODO",
+    h = { ":TodoTrouble cwd=.<cr>", "Trouble" },
+    j = { ":TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE<cr>",
+      "Telescope" },
+    k = { ":TodoQuickFix<cr>", "Quick Fix" },
+    l = { ":TodoLocList<cr>", "Loclist" },
+  },
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
@@ -59,6 +67,7 @@ local mappings = {
     c = { ":PackerCompile<cr>", "Packer Compile" },
   },
   q = { ":bd<cr>", "Close Buffer" },
+  r = { ":Telescope repo list theme=dropdown initial_mode=normal previewer=false<cr>", "Git Repos" },
   s = { ":Telescope live_grep theme=ivy<cr>", "Live Grep" },
   --[[ s = { ":w! | noh<cr>", "Save File" }, ]]
   t = {

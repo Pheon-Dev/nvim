@@ -11,3 +11,4 @@ _G.__luacache_config = {
 vim.defer_fn(function()
   pcall(require, "impatient")
 end, 0)
+

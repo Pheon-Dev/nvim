@@ -2,6 +2,9 @@ local actions_ok, actions = pcall(require, "lir.actions")
 local mark_actions_ok, mark_actions = pcall(require, "lir.mark.actions")
 local clip_actions_ok, clipboard_actions = pcall(require, "lir.clipboard.actions")
 
+require("lir.git_status").setup({
+  show_ignored = false,
+})
 local lir_ok, lir = pcall(require, "lir")
 
 if not actions_ok then

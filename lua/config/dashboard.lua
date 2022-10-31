@@ -55,6 +55,11 @@ db.custom_center = {
     action = "Telescope find_files theme=dropdown initial_mode=insert previewer=false",
   },
   {
+    icon = " ",
+    desc = "⇕ ------------------------------------------------- TODO             ",
+    action = "TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE",
+  },
+  {
     icon = " ",
     desc = "⇕ ------------------------------------------------- Search Word      ",
     action = "Telescope live_grep theme=ivy",

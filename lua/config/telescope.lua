@@ -15,7 +15,7 @@ require("telescope").setup({
     prompt_prefix = "⋮ 🔍 ",
     selection_caret = "⋮ ",
     entry_prefix = "  ",
-    initial_mode = "insert",
+    --[[ initial_mode = "insert", ]]
     selection_strategy = "reset",
     sorting_strategy = "descending",
     layout_strategy = "vertical",
@@ -83,6 +83,7 @@ require("telescope").setup({
 })
 
 require("telescope").load_extension("harpoon")
+require("telescope").load_extension("file_browser")
 require("telescope").load_extension("noice")
 require('telescope').load_extension("repo")
 --[[ require("telescope").load_extension("gh") ]]
