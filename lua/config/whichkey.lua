@@ -23,14 +23,30 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
-  a = { ":lua vim.lsp.buf.formatting()<cr>", "Format" },
+  s = { ":Telescope live_grep_args theme=ivy<cr>", "Live Grep" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   c = {
     name = "Others",
     p = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
     h = { ":Telescope help_tags theme=ivy initial_mode=insert<cr>", "Help Tags" },
   },
-  d = { ":Dashboard<cr>", "Buffers" },
+  d = {
+    name = "DAP & Dashboard",
+    d = { ":Dashboard<cr>", "Dashboard" },
+    p = { ":Telescope dap commands theme=dropdown previewer=false initial_mode=normal<cr>", "Commands" },
+    h = { ":Telescope dap configurations theme=ivy initial_mode=insert<cr>", "Configurations" },
+    b = { ":Telescope dap list_breakpoints theme=ivy initial_mode=insert<cr>", "List Breakpoints" },
+    v = { ":Telescope dap variables theme=ivy initial_mode=insert<cr>", "Variables" },
+    f = { ":Telescope dap frames theme=ivy initial_mode=insert<cr>", "Framse" },
+    g = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+    r = { ":lua require'dap'.repl.open()<cr>", "Open Repl" },
+    o = { ":lua require'dap'.step_over()<cr>", "Step Over" },
+    i = { ":lua require'dap'.step_into()<cr>", "Step Into" },
+    c = { ":lua require'dap'.continue()<cr>", "Continue" },
+    j = { ":lua require'dapui'.open()<cr>", "Open" },
+    k = { ":lua require'dapui'.close()<cr>", "Close" },
+    l = { ":lua require'dapui'.toggle()<cr>", "Toggle" },
+  },
   e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
   f = { ":Telescope find_files initial_mode=insert previewer=false<cr>", "Find Files" },
   g = {
@@ -59,7 +75,6 @@ local mappings = {
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
   m = { ":Mason<cr>", "Mason" },
-  o = { ":lua require('pheon')<cr>", "Select Item" },
   p = {
     name = "Packer & Prettier",
     p = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
@@ -68,7 +83,7 @@ local mappings = {
   },
   q = { ":bd<cr>", "Close Buffer" },
   r = { ":Telescope repo list theme=dropdown initial_mode=normal previewer=false<cr>", "Git Repos" },
-  s = { ":Telescope live_grep theme=ivy<cr>", "Live Grep" },
+  a = { ":Telescope live_grep theme=ivy<cr>", "Live Grep" },
   --[[ s = { ":w! | noh<cr>", "Save File" }, ]]
   t = {
     name = "TypeScript",
