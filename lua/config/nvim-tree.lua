@@ -2,9 +2,6 @@ local ok, _ = pcall(require, 'nvim-tree')
 if not ok then
   vim.notify("Nvim-Tree didn't load properly!", "error")
 end
-if ok then
-  vim.notify("Nvim-Tree loaded successfully!", "info")
-end
 
 local tree_cb = require('nvim-tree.config').nvim_tree_callback
 
@@ -94,7 +91,7 @@ _.setup {
         file = true,
         folder = true,
         folder_arrow = true,
-        git = false,
+        git = true,
       },
 
       glyphs = {
@@ -111,7 +108,7 @@ _.setup {
           arrow_closed = "→",
         },
         git = {
-          unstaged = "✗",
+          unstaged = "±",
           staged = "✓",
           unmerged = "",
           renamed = "➜",

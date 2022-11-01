@@ -3,28 +3,11 @@ local capability = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol
 local navic = require("nvim-navic")
 
 local on_attach = function(client, bufnr)
-  --[[ require("lsp_signature").on_attach() ]]
+  --[[ require("lsp_signature").on_attach() ]] -- Noice overriden
   if client.server_capabilities.documentSymbolProvider then
     navic.attach(client, bufnr)
   end
 end
-
---[[ vim.api.nvim_create_augroup("LspAttach_inlayhints", {}) ]]
---[[ vim.api.nvim_create_autocmd("LspAttach", { ]]
---[[   group = "LspAttach_inlayhints", ]]
---[[   callback = function(args) ]]
---[[     if not (args.data and args.data.client_id) then ]]
---[[       return ]]
---[[     end ]]
---[[]]
---[[     local bufnr = args.buf ]]
---[[     local client = vim.lsp.get_client_by_id(args.data.client_id) ]]
---[[     require("lsp-inlayhints").on_attach(client, bufnr) ]]
---[[   end, ]]
---[[ }) ]]
-
---[[ require('lsp-inlayhints').toggle() ]]
---[[ require('lsp-inlayhints').reset() ]]
 
 navic.setup({
   icons = {
@@ -93,30 +76,6 @@ require("lspconfig").tsserver.setup({
   root_dir = function(fname)
     return vim.loop.cwd()
   end,
-  settings = {
-    typescript = {
-      inlayHints = {
-        includeInlayParameterNameHints = 'all',
-        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayVariableTypeHints = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayEnumMemberValueHints = true,
-      }
-    },
-    javascript = {
-      inlayHints = {
-        includeInlayParameterNameHints = 'all',
-        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayVariableTypeHints = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayEnumMemberValueHints = true,
-      }
-    }
-  }
 })
 
 require("typescript").setup({

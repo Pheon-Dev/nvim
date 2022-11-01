@@ -93,15 +93,6 @@ return packer.startup({
 
     --[[ UTILS ]]
     use({
-      "folke/noice.nvim",
-      event = "VimEnter",
-      requires = {
-        "rcarriga/nvim-notify",
-        "MunifTanjim/nui.nvim",
-      },
-      config = "require('config.noice')",
-    })
-    use({
       "matze/vim-move",
     })
     use({
@@ -156,6 +147,15 @@ return packer.startup({
       "b0o/incline.nvim",
       config = "require('config.incline')"
     }
+    use({
+      "folke/noice.nvim",
+      event = "VimEnter",
+      requires = {
+        "rcarriga/nvim-notify",
+        "MunifTanjim/nui.nvim",
+      },
+      config = "require('config.noice')",
+    })
 
     --[[ TREESITTER ]]
     use({
@@ -224,6 +224,9 @@ return packer.startup({
       "tami5/lspsaga.nvim",
       config = "require('config.lspsaga')",
     })
+    --[[ use({ ]]
+    --[[   "ray-x/lsp_signature.nvim", ]] -- Noice's Signature
+    --[[ }) ]]
     use({
       "jose-elias-alvarez/null-ls.nvim",
       requires = { "nvim-lua/plenary.nvim" },
@@ -373,12 +376,6 @@ return packer.startup({
     --[[   "folke/neoconf.nvim", ]]
     --[[   module = "neoconf", ]]
     --[[   cmd = "Neoconf", ]]
-    --[[ }) ]]
-    --[[ use({ ]]
-    --[[ 	"ray-x/lsp_signature.nvim", ]]
-    --[[ }) ]]
-    --[[ use({ ]]
-    --[[   "lsp-inlayhints.nvim", ]]
     --[[ }) ]]
     --[[ use({ ]]
     --[[ 	"Pheon-Dev/pheon.nvim", ]]

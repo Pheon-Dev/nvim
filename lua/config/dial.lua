@@ -42,6 +42,11 @@ require("dial.config").augends:register_group {
     --[[   end ]]
     --[[ }, ]]
   },
+  lua = {
+    augend.integer.alias.decimal,
+    augend.integer.alias.hex,
+    augend.constant.new { elements = { "true", "false" } },
+  },
   typescript = {
     augend.integer.alias.decimal,
     augend.integer.alias.hex,

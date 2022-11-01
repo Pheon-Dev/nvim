@@ -50,12 +50,12 @@ db.custom_center = {
     action = "lua require('lir.float').toggle()",
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- Find File        ",
     action = "Telescope find_files theme=dropdown initial_mode=insert previewer=false",
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- TODO             ",
     action = "TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE",
   },
@@ -70,14 +70,19 @@ db.custom_center = {
     action = "Mason",
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- Terminal         ",
     action = toggle_terminal,
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- Git              ",
     action = toggle_lazygit,
+  },
+  {
+    icon = " ",
+    desc = "⇕ ------------------------------------------------- Nvim Tree        ",
+    action = "NvimTreeToggle",
   },
   {
     icon = "炙",
@@ -85,20 +90,20 @@ db.custom_center = {
     action = "Telescope help_tags theme=ivy initial_mode=insert",
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- Repos            ",
     action = "Telescope repo list theme=dropdown initial_mode=normal previewer=false",
   },
-  { icon = "練", desc = "⇕ ------------------------------------------------- Sync             ",
+  { icon = "↻ ", desc = "⇕ ------------------------------------------------- Sync             ",
     action = "PackerSync" },
-  { icon = "◩ ", desc = "⇕ ------------------------------------------------- Compile          ",
+  { icon = " ", desc = "⇕ ------------------------------------------------- Compile          ",
     action = "PackerCompile" },
   { icon = "✗ ", desc = "⇑ ------------------------------------------------- Exit             ", action = "q!" },
 }
 db.custom_footer = { "LET IT RIP! (KBL) - MIKEY" }
 --[[ https://www.vertex42.com/ExcelTips/unicode-symbols.html ]]
 local icons = {
-  File = " ",
+  File = "  ",
   Module = " ",
   Namespace = " ",
   Package = " ",
