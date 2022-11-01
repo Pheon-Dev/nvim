@@ -108,7 +108,7 @@ _.setup {
           arrow_closed = "→",
         },
         git = {
-          unstaged = "±",
+          unstaged = "∗",
           staged = "✓",
           unmerged = "",
           renamed = "➜",

@@ -23,7 +23,6 @@ db.custom_header = {
   [[                                                              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]],
   [[                                                              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]],
   [[                                                              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]],
-  [[                           [PHEON-DEV NEOVIM v3.0.2]         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀       ⠀⠀⠀⠀⠀⠀⠀]],
 
 }
 local Terminal = require("toggleterm.terminal").Terminal
@@ -100,7 +99,7 @@ db.custom_center = {
     action = "PackerCompile" },
   { icon = "✗ ", desc = "⇑ ------------------------------------------------- Exit             ", action = "q!" },
 }
-db.custom_footer = { "LET IT RIP! (KBL) - MIKEY" }
+db.custom_footer = {}
 --[[ https://www.vertex42.com/ExcelTips/unicode-symbols.html ]]
 local icons = {
   File = "  ",

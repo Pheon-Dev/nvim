@@ -48,7 +48,7 @@ local mappings = {
     l = { ":lua require'dapui'.toggle()<cr>", "Toggle" },
   },
   e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
-  f = { ":Telescope find_files initial_mode=insert previewer=false<cr>", "Find Files" },
+  f = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
   g = {
     name = "Diff View",
     g = { ":DiffviewClose<cr>", "Close" },
