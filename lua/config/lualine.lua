@@ -99,27 +99,27 @@ end
 local my_colors = { n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V = "#966bfe", R = "#f62bfe" }
 
 local mode = {
-  n = "👑",
-  i = "📝",
-  ic = "📝",
-  v = "🔬",
-  V = "🔬",
-  [""] = "🔬",
-  s = "📺",
-  S = "📺",
-  [""] = "📺",
-  r = "🧻",
-  R = "🧻",
-  Rv = "🧻",
-  rm = "🧻",
-  ["r?"] = "🎨",
-  c = "🎨",
-  cv = "🎨",
-  ce = "🎨",
-  t = "",
-  ["!"] = "",
-  no = "🧹",
-  gui = "",
+  n = "",
+  i = "●",
+  ic = "●",
+  v = "",
+  V = "",
+  [""] = "",
+  s = "✪",
+  S = "✪",
+  [""] = "✪",
+  r = "◌",
+  R = "◌",
+  Rv = "◌",
+  rm = "◌",
+  ["r?"] = "◌",
+  c = "○",
+  cv = "○",
+  ce = "○",
+  t = "○",
+  ["!"] = "○",
+  no = "⨀",
+  gui = "⨀",
 }
 
 local mode_color = {
@@ -149,13 +149,14 @@ local mode_color = {
 -- winbar
 wins_left({
   function()
-    return "|"
+    return mode[vim.fn.mode()]
   end,
   color = function()
-    return { fg = mode_color[vim.fn.mode()] }
+    return { fg = colors.orange1 }
   end,
-  padding = { left = 1 },
+  padding = { right = 1, left = 1 },
 })
+
 
 wins_left({
   "filetype",
@@ -179,22 +180,6 @@ wins_left({
   function()
     return "%="
   end,
-})
-
-wins_left({
-  "branch",
-  icon = "",
-  color = { fg = colors.violet, gui = "bold" },
-})
-
-wins_left({
-  function()
-    return ""
-  end,
-  color = function()
-    return { fg = colors.orange1 }
-  end,
-  padding = { right = 1 },
 })
 
 wins_left({
@@ -249,23 +234,9 @@ wins_right({
 
 -- statusline
 ins_left({
-  function()
-    return "⋮"
-  end,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  padding = { right = 1 },
-})
-
-ins_left({
-  function()
-    return mode[vim.fn.mode()]
-  end,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  padding = { right = 1, left = 1 },
+  "branch",
+  icon = "",
+  color = { fg = colors.violet, gui = "bold" },
 })
 
 ins_left({
