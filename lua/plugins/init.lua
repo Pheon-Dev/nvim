@@ -146,10 +146,6 @@ return packer.startup({
       requires = "neovim/nvim-lspconfig",
     })
     use({
-      "edluffy/specs.nvim",
-      config = "require('config.specs')",
-    })
-    use({
       "petertriho/nvim-scrollbar",
       config = "require('config.scrollbar')",
     })

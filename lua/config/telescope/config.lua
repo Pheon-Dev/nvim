@@ -105,12 +105,6 @@ require('telescope').load_extension("dap")
 require('telescope').load_extension("live_grep_args")
 require('telescope').load_extension("frecency")
 
---[[ require'telescope'.extensions.dap.commands{} ]]
---[[ require'telescope'.extensions.dap.configurations{} ]]
---[[ require'telescope'.extensions.dap.list_breakpoints{} ]]
---[[ require'telescope'.extensions.dap.variables{} ]]
---[[ require'telescope'.extensions.dap.frames{} ]]
-
 local z_utils = require("telescope._extensions.zoxide.utils")
 require("telescope._extensions.zoxide.config").setup({
   {

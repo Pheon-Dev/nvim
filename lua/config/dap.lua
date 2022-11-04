@@ -89,3 +89,9 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
+
+--[[ require'telescope'.extensions.dap.commands{} ]]
+--[[ require'telescope'.extensions.dap.configurations{} ]]
+--[[ require'telescope'.extensions.dap.list_breakpoints{} ]]
+--[[ require'telescope'.extensions.dap.variables{} ]]
+--[[ require'telescope'.extensions.dap.frames{} ]]

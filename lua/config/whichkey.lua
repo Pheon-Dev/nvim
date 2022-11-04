@@ -50,8 +50,8 @@ local mappings = {
   e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
   f = {
     name = "Frecency",
-    f = { ":Telescope frecency<cr>", "Frecency" },
-    w = { ":Telescope frecency workspace=CWD<cr>", "Frecency" },
+    f = { ":Telescope frecency theme=dropdown initial_mode=normal previewer=false<cr>", "Frecency" },
+    w = { ":Telescope frecency workspace=CWD theme=dropdown initial_mode=normal previewer=false<cr>", "Frecency" },
   },
   g = {
     name = "Diff View",
@@ -100,7 +100,7 @@ local mappings = {
     f = { ":TypescriptFixAll<cr>", "Fix All" },
   },
   x = { ":qa!<cr>", "Quit All!" },
-  z = { ":Telescope zoxide list<cr>", "Zoxide" },
+  z = { ":Telescope zoxide list theme=dropdown initial_mode=normal previewer=false<cr>", "Zoxide" },
 }
 
 local opts = { prefix = "<leader>" }
