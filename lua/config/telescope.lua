@@ -37,6 +37,22 @@ require("telescope").setup({
     grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
     qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
     buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+    extensions = {
+      frecency = {
+        db_root = "~/.local/share/nvim",
+        --[[ show_filter_column = { "LSP", "CWD", "FOO" }, ]]
+        show_scores = false,
+        show_unindexed = true,
+        ignore_patterns = { "*.git/*", "*/tmp/*" },
+        disable_devicons = true,
+        workspaces = {
+          ["conf"]    = "~/.config",
+          ["data"]    = "~/.local/share",
+          ["project"] = "~/projects",
+          ["wiki"]    = "~/wiki"
+        }
+      }
+    },
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
@@ -87,9 +103,44 @@ require("telescope").load_extension("noice")
 require('telescope').load_extension("repo")
 require('telescope').load_extension("dap")
 require('telescope').load_extension("live_grep_args")
+require('telescope').load_extension("frecency")
 
 --[[ require'telescope'.extensions.dap.commands{} ]]
 --[[ require'telescope'.extensions.dap.configurations{} ]]
 --[[ require'telescope'.extensions.dap.list_breakpoints{} ]]
 --[[ require'telescope'.extensions.dap.variables{} ]]
 --[[ require'telescope'.extensions.dap.frames{} ]]
+
+local z_utils = require("telescope._extensions.zoxide.utils")
+require("telescope._extensions.zoxide.config").setup({
+  {
+    prompt_title = "[ Zoxide List ]",
+    -- Zoxide list command with score
+    list_command = "zoxide query -ls",
+    mappings = {
+      default = {
+        action = function(selection)
+          vim.cmd("cd " .. selection.path)
+        end,
+        after_action = function(selection)
+          print("Directory changed to " .. selection.path)
+        end
+      },
+      ["<C-s>"] = { action = z_utils.create_basic_command("split") },
+      ["<C-v>"] = { action = z_utils.create_basic_command("vsplit") },
+      ["<C-e>"] = { action = z_utils.create_basic_command("edit") },
+      ["<C-b>"] = {
+        keepinsert = true,
+        action = function(selection)
+          builtin.file_browser({ cwd = selection.path })
+        end
+      },
+      ["<C-f>"] = {
+        keepinsert = true,
+        action = function(selection)
+          builtin.find_files({ cwd = selection.path })
+        end
+      }
+    }
+  }
+})

@@ -79,6 +79,11 @@ return packer.startup({
       cmd = "Telescope",
       config = "require('config.telescope')",
     })
+    use 'jvgrootveld/telescope-zoxide'
+    use {
+      "nvim-telescope/telescope-frecency.nvim",
+      requires = { "kkharji/sqlite.lua" }
+    }
     use {
       'kyazdani42/nvim-tree.lua',
       requires = { 'kyazdani42/nvim-web-devicons' },

@@ -13,7 +13,7 @@ local colors = {
   bg = "#2e2e2e",
   grey = "#7f7f7f",
   fg = "#8aa2f7",
-  yellow = "#ECBE7B",
+  yellow = '#ffff0f',
   cyan = "#008080",
   darkblue = "#081633",
   green = "#82cf00",
@@ -147,16 +147,6 @@ local mode_color = {
 }
 
 -- winbar
-wins_left({
-  function()
-    return mode[vim.fn.mode()]
-  end,
-  color = function()
-    return { fg = colors.orange1 }
-  end,
-  padding = { right = 1, left = 1 },
-})
-
 
 wins_left({
   "filetype",
@@ -236,7 +226,7 @@ wins_right({
 ins_left({
   "branch",
   icon = "",
-  color = { fg = colors.violet, gui = "bold" },
+  color = { fg = colors.yellow, gui = "bold" },
 })
 
 ins_left({
@@ -281,12 +271,13 @@ ins_right({
 
 ins_right({
   function()
-    return "⋮"
+    return mode[vim.fn.mode()]
   end,
   color = function()
-    return { fg = mode_color[vim.fn.mode()] }
+    return { fg = colors.orange1 }
   end,
-  padding = { left = 1 },
+  padding = { right = 1, left = 1 },
 })
+
 
 lualine.setup(config)

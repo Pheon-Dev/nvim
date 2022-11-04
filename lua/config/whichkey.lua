@@ -91,7 +91,10 @@ local mappings = {
     r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
     f = { ":TypescriptFixAll<cr>", "Fix All" },
   },
+  w = { ":Telescope frecency<cr>", "Frecency" },
   x = { ":qa!<cr>", "Quit All!" },
+  y = { ":Telescope frecency workspace=CWD<cr>", "Frecency" },
+  z = { ":Telescope zoxide list<cr>", "Zoxide" },
 }
 
 local opts = { prefix = "<leader>" }
