@@ -15,6 +15,15 @@ return packer.startup({
     --[[ ESSENTIALS ]]
     use("lewis6991/impatient.nvim")
     use({
+      "folke/noice.nvim",
+      event = "VimEnter",
+      requires = {
+        "rcarriga/nvim-notify",
+        "MunifTanjim/nui.nvim",
+      },
+      config = "require('config.noice')",
+    })
+    use({
       "kyazdani42/nvim-web-devicons",
     })
     use({
@@ -152,15 +161,6 @@ return packer.startup({
       "b0o/incline.nvim",
       config = "require('config.incline')"
     }
-    use({
-      "folke/noice.nvim",
-      event = "VimEnter",
-      requires = {
-        "rcarriga/nvim-notify",
-        "MunifTanjim/nui.nvim",
-      },
-      config = "require('config.noice')",
-    })
 
     --[[ TREESITTER ]]
     use({

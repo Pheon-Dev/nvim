@@ -48,7 +48,11 @@ local mappings = {
     l = { ":lua require'dapui'.toggle()<cr>", "Toggle" },
   },
   e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
-  f = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
+  f = {
+    name = "Frecency",
+    f = { ":Telescope frecency<cr>", "Frecency" },
+    w = { ":Telescope frecency workspace=CWD<cr>", "Frecency" },
+  },
   g = {
     name = "Diff View",
     g = { ":DiffviewClose<cr>", "Close" },
@@ -62,7 +66,7 @@ local mappings = {
     c = { ":Telescope git_commits theme=dropdown initial_mode=normal<cr>", "Git Commits" },
     s = { ":Telescope git_status theme=dropdown initial_mode=normal<cr>", "Git Status" },
   },
-  h = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+  h = { toggle_lazygit, "LazyGit" },
   i = {
     name = "TODO",
     h = { ":TodoTrouble cwd=.<cr>", "Trouble" },
@@ -71,10 +75,14 @@ local mappings = {
     k = { ":TodoQuickFix<cr>", "Quick Fix" },
     l = { ":TodoLocList<cr>", "Loclist" },
   },
-  j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+  j = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
-  l = { toggle_lazygit, "LazyGit" },
-  m = { ":Mason<cr>", "Mason" },
+  l = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+  m = {
+    name = "Mason & Marks",
+    m = { ":Mason<cr>", "Mason" },
+    h = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+  },
   p = {
     name = "Packer & Prettier",
     p = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
@@ -91,9 +99,7 @@ local mappings = {
     r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
     f = { ":TypescriptFixAll<cr>", "Fix All" },
   },
-  w = { ":Telescope frecency<cr>", "Frecency" },
   x = { ":qa!<cr>", "Quit All!" },
-  y = { ":Telescope frecency workspace=CWD<cr>", "Frecency" },
   z = { ":Telescope zoxide list<cr>", "Zoxide" },
 }
 

@@ -1,12 +1,15 @@
 local normal_hl = vim.api.nvim_get_hl_by_name('Normal', true)
 
+local purple = "#c66bfe"
 local purple2 = '#464646'
 local purple1 = '#363636'
 local purple3 = '#363636'
+local bg = '#2e2e2e'
 local red1 = '#ec5f67'
 local green1 = '#2ccf00'
 local blue1 = '#6272a4'
 local blue2 = '#51afef'
+local magenta = "#c678dd"
 
 ----------------------------------------------------------------------
 --                              Prompt                              --
@@ -17,22 +20,22 @@ vim.api.nvim_set_hl(0, 'TelescopePromptBorder', {
 })
 
 vim.api.nvim_set_hl(0, 'TelescopePromptNormal', {
-  fg = normal_hl.foreground,
+  fg = red1,
   bg = purple3,
 })
 
 vim.api.nvim_set_hl(0, 'TelescopePromptTitle', {
-  fg = normal_hl.foreground,
-  bg = red1,
+  fg = bg,
+  bg = purple,
 })
 
 vim.api.nvim_set_hl(0, 'TelescopePromptCounter', {
-  fg = red1,
+  fg = magenta,
   bg = purple3,
 })
 
 vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', {
-  fg = red1,
+  fg = magenta,
   bg = purple3,
 })
 
@@ -55,7 +58,8 @@ vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', {
 })
 
 vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', {
-  fg = blue1,
+  --[[ fg = green1, ]]
+  fg = vim.api.nvim_get_hl_by_name('TelescopeSelection', true).background,
   bg = vim.api.nvim_get_hl_by_name('TelescopeSelection', true).background,
 })
 
@@ -77,3 +81,81 @@ vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', {
   fg = purple3,
   bg = green1,
 })
+--[[ TelescopeSelection ]]
+--[[ TelescopeSelectionCaret ]]
+--[[ TelescopeMultiSelection ]]
+--[[ TelescopeMultiIcon ]]
+--[[]]
+--[[ -- "Normal" in the floating windows created by telescope. ]]
+--[[ TelescopeNormal ]]
+--[[ TelescopePreviewNormal ]]
+--[[ TelescopePromptNormal ]]
+--[[ TelescopeResultsNormal ]]
+--[[]]
+--[[ -- Border highlight groups. ]]
+--[[ --   Use TelescopeBorder to override the default. ]]
+--[[ --   Otherwise set them specifically ]]
+--[[ TelescopeBorder ]]
+--[[ TelescopePromptBorder ]]
+--[[ TelescopeResultsBorder ]]
+--[[ TelescopePreviewBorder ]]
+--[[]]
+--[[ -- Title highlight groups. ]]
+--[[ --   Use TelescopeTitle to override the default. ]]
+--[[ --   Otherwise set them specifically ]]
+--[[ TelescopeTitle ]]
+--[[ TelescopePromptTitle ]]
+--[[ TelescopeResultsTitle ]]
+--[[ TelescopePreviewTitle ]]
+--[[]]
+--[[ TelescopePromptCounter ]]
+--[[]]
+--[[ -- Used for highlighting characters that you match. ]]
+--[[ TelescopeMatching ]]
+--[[]]
+--[[ -- Used for the prompt prefix ]]
+--[[ TelescopePromptPrefix ]]
+--[[]]
+--[[ -- Used for highlighting the matched line inside Previewer. Works only for (vim_buffer_ previewer) ]]
+--[[ TelescopePreviewLine ]]
+--[[ TelescopePreviewMatch ]]
+--[[]]
+--[[ TelescopePreviewPipe ]]
+--[[ TelescopePreviewCharDev ]]
+--[[ TelescopePreviewDirectory ]]
+--[[ TelescopePreviewBlock ]]
+--[[ TelescopePreviewLink ]]
+--[[ TelescopePreviewSocket ]]
+--[[ TelescopePreviewRead ]]
+--[[ TelescopePreviewWrite ]]
+--[[ TelescopePreviewExecute ]]
+--[[ TelescopePreviewHyphen ]]
+--[[ TelescopePreviewSticky ]]
+--[[ TelescopePreviewSize ]]
+--[[ TelescopePreviewUser ]]
+--[[ TelescopePreviewGroup ]]
+--[[ TelescopePreviewDate ]]
+--[[ TelescopePreviewMessage ]]
+--[[ TelescopePreviewMessageFillchar ]]
+--[[]]
+--[[ -- Used for Picker specific Results highlighting ]]
+--[[ TelescopeResultsClass ]]
+--[[ TelescopeResultsConstant ]]
+--[[ TelescopeResultsField ]]
+--[[ TelescopeResultsFunction ]]
+--[[ TelescopeResultsMethod ]]
+--[[ TelescopeResultsOperator ]]
+--[[ TelescopeResultsStruct ]]
+--[[ TelescopeResultsVariable ]]
+--[[]]
+--[[ TelescopeResultsLineNr ]]
+--[[ TelescopeResultsIdentifier ]]
+--[[ TelescopeResultsNumber ]]
+--[[ TelescopeResultsComment ]]
+--[[ TelescopeResultsSpecialComment ]]
+--[[]]
+--[[ -- Used for git status Results highlighting ]]
+--[[ TelescopeResultsDiffChange ]]
+--[[ TelescopeResultsDiffAdd ]]
+--[[ TelescopeResultsDiffDelete ]]
+--[[ TelescopeResultsDiffUntracked ]]
