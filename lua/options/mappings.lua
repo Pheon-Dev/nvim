@@ -228,16 +228,3 @@ map("i", "<C-h>", ":lua require('neogen').jump_prev<CR>", opts)
 map("n", "<Leader>nc", ":lua require('neogen').generate({ type = 'class' })<CR>", opts)
 map("n", "<Leader>nf", ":lua require('neogen').generate({ type = 'func' })<CR>", opts)
 map("n", "<Leader>nt", ":lua require('neogen').generate({ type = 'type' })<CR>", opts)
-
-
--- Specs
--- Press <C-b> to call specs!
---[[ map('n', '<C-b>', ':lua require("specs").show_specs()', { noremap = true, silent = true }) ]]
--- You can even bind it to search jumping and more, example:
-map('n', 'n', 'n:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
-map('n', 'N', 'N:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
--- Or maybe you do a lot of screen-casts and want to call attention to a specific line of code:
-map('n', '<leader>v', ':lua require("specs").show_specs({width = 97, winhl = "Search", delay_ms = 610, inc_ms = 21})<CR>'
-  , { noremap = true, silent = true })
---[[ :lua require('specs').toggle() ]]
--- Inc_rename
