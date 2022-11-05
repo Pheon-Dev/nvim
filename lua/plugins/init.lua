@@ -89,6 +89,7 @@ return packer.startup({
       config = "require('config.telescope')",
     })
     use 'jvgrootveld/telescope-zoxide'
+    use { "nvim-telescope/telescope-file-browser.nvim" }
     use {
       "nvim-telescope/telescope-frecency.nvim",
       requires = { "kkharji/sqlite.lua" }

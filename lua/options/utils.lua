@@ -1,4 +1,3 @@
-vim.cmd("colorscheme tokyonight")
 vim.cmd("filetype plugin indent on")
 vim.cmd("if !1 | finish | endif")
 vim.cmd("set nocompatible")

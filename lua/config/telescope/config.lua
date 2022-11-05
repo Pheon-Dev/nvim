@@ -131,6 +131,10 @@ require("telescope").setup({
       initial_mode = "normal",
       previewer = false,
     },
+    file_browser = {
+      theme = "ivy",
+      initial_mode = "normal",
+    },
     lsp_references = {
       theme = "ivy",
       initial_mode = "normal",
@@ -156,3 +160,4 @@ require('telescope').load_extension("repo")
 require('telescope').load_extension("dap")
 require('telescope').load_extension("live_grep_args")
 require('telescope').load_extension("frecency")
+require('telescope').load_extension("file_browser")
