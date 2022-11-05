@@ -54,6 +54,8 @@ db.custom_center = {
     desc = "⇕ ------------------------------------------------- Find File        ",
     action = "Telescope find_files theme=dropdown initial_mode=insert previewer=false",
   },
+  { icon = " ", desc = "⇕ ------------------------------------------------- File Browser     ",
+    action = "Telescope file_browser theme=ivy initial_mode=normal" },
   { icon = "ℤ ", desc = "⇕ ------------------------------------------------- Zoxide           ",
     action = "Telescope zoxide list theme=dropdown initial_mode=normal previewer=false" },
   { icon = " ", desc = "⇕ ------------------------------------------------- Frecency         ",

@@ -15,6 +15,14 @@ return packer.startup({
     --[[ ESSENTIALS ]]
     use("lewis6991/impatient.nvim")
     use({
+      "nvim-telescope/telescope.nvim",
+      requires = {
+        { "nvim-lua/plenary.nvim" },
+      },
+      cmd = "Telescope",
+      config = "require('config.telescope')",
+    })
+    use({
       "folke/noice.nvim",
       event = "VimEnter",
       requires = {
@@ -80,14 +88,6 @@ return packer.startup({
     use({
       "Pheon-Dev/harpoon",
     })
-    use({
-      "nvim-telescope/telescope.nvim",
-      requires = {
-        { "nvim-lua/plenary.nvim" },
-      },
-      cmd = "Telescope",
-      config = "require('config.telescope')",
-    })
     use 'jvgrootveld/telescope-zoxide'
     use { "nvim-telescope/telescope-file-browser.nvim" }
     use {
@@ -98,7 +98,7 @@ return packer.startup({
       'kyazdani42/nvim-tree.lua',
       requires = { 'kyazdani42/nvim-web-devicons' },
       cmd = "NvimTreeToggle",
-      config = "require('config.nvim-tree')"
+      --[[ config = "require('config.nvim-tree')" ]]
     }
     use({
       "akinsho/toggleterm.nvim",

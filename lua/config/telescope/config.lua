@@ -1,5 +1,6 @@
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
+local fb_actions = require "telescope".extensions.file_browser.actions
 
 local z_utils = require("telescope._extensions.zoxide.utils")
 require("telescope._extensions.zoxide.config").setup({
@@ -64,7 +65,7 @@ require("telescope").setup({
     path_display = { "truncate" }, -- "smart"
     winblend = 0,
     border = {},
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    --[[ borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, ]]
     color_devicons = true,
     use_less = true,
     set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
@@ -105,6 +106,44 @@ require("telescope").setup({
         ["<C-q>"] = { action = z_utils.create_basic_command("split") },
       },
     },
+    file_browser = {
+      theme = "ivy",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          ["<A-c>"] = fb_actions.create,
+          ["<S-CR>"] = fb_actions.create_from_prompt,
+          ["<A-r>"] = fb_actions.rename,
+          ["<A-m>"] = fb_actions.move,
+          ["<A-y>"] = fb_actions.copy,
+          ["<A-d>"] = fb_actions.remove,
+          ["<C-o>"] = fb_actions.open,
+          ["<C-g>"] = fb_actions.goto_parent_dir,
+          ["<C-e>"] = fb_actions.goto_home_dir,
+          ["<C-w>"] = fb_actions.goto_cwd,
+          ["<C-t>"] = fb_actions.change_cwd,
+          ["<C-f>"] = fb_actions.toggle_browser,
+          ["<C-h>"] = fb_actions.toggle_hidden,
+          ["<C-s>"] = fb_actions.toggle_all,
+        },
+        ["n"] = {
+          ["c"] = fb_actions.create,
+          ["r"] = fb_actions.rename,
+          ["m"] = fb_actions.move,
+          ["y"] = fb_actions.copy,
+          ["d"] = fb_actions.remove,
+          ["o"] = fb_actions.open,
+          ["g"] = fb_actions.goto_parent_dir,
+          ["e"] = fb_actions.goto_home_dir,
+          ["w"] = fb_actions.goto_cwd,
+          ["t"] = fb_actions.change_cwd,
+          ["f"] = fb_actions.toggle_browser,
+          ["."] = fb_actions.toggle_hidden,
+          ["s"] = fb_actions.toggle_all,
+        },
+      },
+    },
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
@@ -130,10 +169,6 @@ require("telescope").setup({
       theme = "dropdown", -- cursor , dropdown, ivy
       initial_mode = "normal",
       previewer = false,
-    },
-    file_browser = {
-      theme = "ivy",
-      initial_mode = "normal",
     },
     lsp_references = {
       theme = "ivy",

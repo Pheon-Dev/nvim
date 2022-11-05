@@ -79,11 +79,9 @@ local mappings = {
   k = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
   --[[ k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" }, ]]
   l = { ":lua require('lir.float').toggle()<cr>", "Lir" },
-  m = {
-    name = "Mason & Marks",
-    m = { ":Mason<cr>", "Mason" },
-    h = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
-  },
+  m = { ":Mason<cr>", "Mason" },
+  n = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+  o = { ":Telescope file_browser theme=ivy initial_mode=normal<cr>", "File Browser" },
   p = {
     name = "Packer & Prettier",
     p = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
