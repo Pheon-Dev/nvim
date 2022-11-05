@@ -20,7 +20,7 @@ vim.api.nvim_set_hl(0, 'TelescopePromptBorder', {
 })
 
 vim.api.nvim_set_hl(0, 'TelescopePromptNormal', {
-  fg = red1,
+  fg = blue2,
   bg = purple3,
 })
 
@@ -43,8 +43,8 @@ vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', {
 --                              Result                              --
 ----------------------------------------------------------------------
 vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', {
-  fg = purple2,
-  bg = purple2,
+  fg = purple3,
+  bg = purple3,
 })
 
 vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', {
@@ -57,10 +57,14 @@ vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', {
   bg = blue1,
 })
 
+vim.api.nvim_set_hl(0, 'TelescopeSelection', {
+  fg = vim.api.nvim_get_hl_by_name('TelescopeSelection', true).foreground,
+  bg = purple3,
+})
+
 vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', {
-  --[[ fg = green1, ]]
-  fg = vim.api.nvim_get_hl_by_name('TelescopeSelection', true).background,
-  bg = vim.api.nvim_get_hl_by_name('TelescopeSelection', true).background,
+  fg = purple2,
+  bg = purple3,
 })
 
 ----------------------------------------------------------------------
