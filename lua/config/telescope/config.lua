@@ -1,6 +1,42 @@
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
+local z_utils = require("telescope._extensions.zoxide.utils")
+require("telescope._extensions.zoxide.config").setup({
+  {
+    prompt_title = "[ Zoxide List ]",
+    -- Zoxide list command with score
+    -- yay -S zoxide z
+    -- zoxide import --from z ~/.z
+    list_command = "zoxide query -ls",
+    mappings = {
+      default = {
+        action = function(selection)
+          vim.cmd("cd " .. selection.path)
+        end,
+        after_action = function(selection)
+          print("Directory changed to " .. selection.path)
+        end
+      },
+      ["<C-s>"] = { action = z_utils.create_basic_command("split") },
+      ["<C-v>"] = { action = z_utils.create_basic_command("vsplit") },
+      ["<C-e>"] = { action = z_utils.create_basic_command("edit") },
+      ["<C-b>"] = {
+        keepinsert = true,
+        action = function(selection)
+          builtin.file_browser({ cwd = selection.path })
+        end
+      },
+      ["<C-f>"] = {
+        keepinsert = true,
+        action = function(selection)
+          builtin.find_files({ cwd = selection.path })
+        end
+      }
+    }
+  }
+})
+
 require("telescope").setup({
   defaults = {
     hidden = false,
@@ -51,6 +87,23 @@ require("telescope").setup({
           ["wiki"]    = "~/wiki"
         }
       }
+    },
+    zoxide = {
+      prompt_title = "[ Walking on the shoulders of TJ ]",
+      mappings = {
+        default = {
+          after_action = function(selection)
+            print("Update to (" .. selection.z_score .. ") " .. selection.path)
+          end
+        },
+        ["<C-s>"] = {
+          before_action = function(selection) print("before C-s") end,
+          action = function(selection)
+            vim.cmd("edit " .. selection.path)
+          end
+        },
+        ["<C-q>"] = { action = z_utils.create_basic_command("split") },
+      },
     },
     mappings = {
       i = {
@@ -103,37 +156,3 @@ require('telescope').load_extension("repo")
 require('telescope').load_extension("dap")
 require('telescope').load_extension("live_grep_args")
 require('telescope').load_extension("frecency")
-
-local z_utils = require("telescope._extensions.zoxide.utils")
-require("telescope._extensions.zoxide.config").setup({
-  {
-    prompt_title = "[ Zoxide List ]",
-    -- Zoxide list command with score
-    list_command = "zoxide query -ls",
-    mappings = {
-      default = {
-        action = function(selection)
-          vim.cmd("cd " .. selection.path)
-        end,
-        after_action = function(selection)
-          print("Directory changed to " .. selection.path)
-        end
-      },
-      ["<C-s>"] = { action = z_utils.create_basic_command("split") },
-      ["<C-v>"] = { action = z_utils.create_basic_command("vsplit") },
-      ["<C-e>"] = { action = z_utils.create_basic_command("edit") },
-      ["<C-b>"] = {
-        keepinsert = true,
-        action = function(selection)
-          builtin.file_browser({ cwd = selection.path })
-        end
-      },
-      ["<C-f>"] = {
-        keepinsert = true,
-        action = function(selection)
-          builtin.find_files({ cwd = selection.path })
-        end
-      }
-    }
-  }
-})

@@ -41,7 +41,8 @@ db.custom_center = {
   {
     icon = "ﯠ ",
     desc = "⇓ ------------------------------------------------- Harpoon          ",
-    action = "lua require('harpoon.ui').toggle_quick_menu()",
+    --[[ action = "lua require('harpoon.ui').toggle_quick_menu()", ]]
+    action = "Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false",
   },
   {
     icon = " ",
@@ -53,6 +54,10 @@ db.custom_center = {
     desc = "⇕ ------------------------------------------------- Find File        ",
     action = "Telescope find_files theme=dropdown initial_mode=insert previewer=false",
   },
+  { icon = "ℤ ", desc = "⇕ ------------------------------------------------- Zoxide           ",
+    action = "Telescope zoxide list theme=dropdown initial_mode=normal previewer=false" },
+  { icon = " ", desc = "⇕ ------------------------------------------------- Frecency         ",
+    action = "Telescope frecency theme=dropdown initial_mode=normal previewer=false" },
   {
     icon = " ",
     desc = "⇕ ------------------------------------------------- TODO             ",
@@ -61,7 +66,7 @@ db.custom_center = {
   {
     icon = " ",
     desc = "⇕ ------------------------------------------------- Search Word      ",
-    action = "Telescope live_grep theme=ivy",
+    action = "Telescope live_grep theme=dropdown",
   },
   {
     icon = " ",
@@ -86,17 +91,13 @@ db.custom_center = {
   {
     icon = "炙",
     desc = "⇕ ------------------------------------------------- Help Tags        ",
-    action = "Telescope help_tags theme=ivy initial_mode=insert",
+    action = "Telescope help_tags theme=dropdown initial_mode=insert",
   },
   {
     icon = " ",
     desc = "⇕ ------------------------------------------------- Repos            ",
     action = "Telescope repo list theme=dropdown initial_mode=normal previewer=false",
   },
-  { icon = "ℤ ", desc = "⇕ ------------------------------------------------- Zoxide           ",
-    action = "Telescope zoxide list theme=dropdown initial_mode=normal previewer=false" },
-  { icon = " ", desc = "⇕ ------------------------------------------------- Frecency         ",
-    action = "Telescope frecency theme=dropdown initial_mode=normal previewer=false" },
   { icon = "↻ ", desc = "⇕ ------------------------------------------------- Sync             ",
     action = "PackerSync" },
   { icon = " ", desc = "⇕ ------------------------------------------------- Compile          ",

@@ -23,12 +23,12 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
-  a = { ":Telescope live_grep_args theme=ivy<cr>", "Live Grep" },
+  a = { ":Telescope live_grep_args theme=dropdown<cr>", "Live Grep" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   c = {
     name = "Others",
     p = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
-    h = { ":Telescope help_tags theme=ivy initial_mode=insert<cr>", "Help Tags" },
+    h = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
   },
   d = {
     name = "DAP & Dashboard",
@@ -76,7 +76,8 @@ local mappings = {
     l = { ":TodoLocList<cr>", "Loclist" },
   },
   j = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
-  k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
+  k = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
+  --[[ k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" }, ]]
   l = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   m = {
     name = "Mason & Marks",
@@ -91,7 +92,7 @@ local mappings = {
   },
   q = { ":bd<cr>", "Close Buffer" },
   r = { ":Telescope repo list theme=dropdown initial_mode=normal previewer=false<cr>", "Git Repos" },
-  s = { ":Telescope live_grep theme=ivy<cr>", "Live Grep" },
+  s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TypeScript",
     a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
