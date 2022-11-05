@@ -6,6 +6,7 @@ require("dial.config").augends:register_group {
     augend.integer.alias.decimal, -- nonnegative decimal number (0, 1, 2, 3, ...)
     augend.integer.alias.hex, -- nonnegative hex number  (0x01, 0x1a1f, etc.)
     augend.date.alias["%Y/%m/%d"], -- date (2022/02/19, etc.)
+    augend.integer.alias.bool,
     --[[ augend.integer.new { ]]
     --[[   radix = 16, ]]
     --[[   prefix = "0x", ]]
@@ -42,16 +43,10 @@ require("dial.config").augends:register_group {
     --[[   end ]]
     --[[ }, ]]
   },
-  lua = {
-    augend.integer.alias.decimal,
-    augend.integer.alias.hex,
-    augend.constant.new { elements = { "true", "false" } },
-  },
   typescript = {
     augend.integer.alias.decimal,
     augend.integer.alias.hex,
     augend.constant.new { elements = { "let", "const" } },
-    augend.constant.new { elements = { "true", "false" } },
   },
   visual = {
     augend.integer.alias.decimal,

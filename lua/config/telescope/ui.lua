@@ -1,14 +1,18 @@
 local normal_hl = vim.api.nvim_get_hl_by_name('Normal', true)
 
 local purple = "#c66bfe"
-local purple2 = '#464646'
-local purple1 = '#363636'
+local purple0 = '#777777'
+local purple1 = '#464646'
+local purple2 = '#363636'
 local purple3 = '#363636'
 local bg = '#2e2e2e'
-local red1 = '#ec5f67'
-local green1 = '#2ccf00'
+local red1 = '#f7768e'
+local red2 = '#ec5f67'
+local green1 = '#9ece6a'
+local green2 = '#2ccf00'
 local blue1 = '#6272a4'
-local blue2 = '#51afef'
+local blue2 = '#6790eb'
+local blue3 = '#51afef'
 local magenta = "#c678dd"
 
 ----------------------------------------------------------------------
@@ -26,16 +30,16 @@ vim.api.nvim_set_hl(0, 'TelescopePromptNormal', {
 
 vim.api.nvim_set_hl(0, 'TelescopePromptTitle', {
   fg = bg,
-  bg = purple,
+  bg = blue2,
 })
 
 vim.api.nvim_set_hl(0, 'TelescopePromptCounter', {
-  fg = magenta,
+  fg = blue2,
   bg = purple3,
 })
 
 vim.api.nvim_set_hl(0, 'TelescopePromptPrefix', {
-  fg = magenta,
+  fg = blue2,
   bg = purple3,
 })
 
@@ -53,18 +57,19 @@ vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', {
 })
 
 vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', {
-  fg = normal_hl.foreground,
-  bg = blue1,
+  --[[ fg = normal_hl.foreground, ]]
+  fg = bg,
+  bg = green1,
 })
 
 vim.api.nvim_set_hl(0, 'TelescopeSelection', {
   fg = vim.api.nvim_get_hl_by_name('TelescopeSelection', true).foreground,
-  bg = purple3,
+  bg = purple1,
 })
 
 vim.api.nvim_set_hl(0, 'TelescopeSelectionCaret', {
-  fg = purple2,
-  bg = purple3,
+  fg = purple0,
+  bg = purple1,
 })
 
 ----------------------------------------------------------------------
@@ -82,8 +87,8 @@ vim.api.nvim_set_hl(0, 'TelescopePreviewNormal', {
 })
 
 vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', {
-  fg = purple3,
-  bg = green1,
+  fg = bg,
+  bg = red1,
 })
 --[[ TelescopeSelection ]]
 --[[ TelescopeSelectionCaret ]]
