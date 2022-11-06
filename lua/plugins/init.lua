@@ -376,11 +376,10 @@ return packer.startup({
       requires = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
     }
 
-    --[[ use({ ]]
-    --[[   "folke/neoconf.nvim", ]]
-    --[[   module = "neoconf", ]]
-    --[[   cmd = "Neoconf", ]]
-    --[[ }) ]]
+    use({
+      "ahmedkhalf/project.nvim",
+      config = "require('config.projects')",
+    })
     --[[ use({ ]]
     --[[ 	"Pheon-Dev/pheon.nvim", ]]
     --[[ 	config = "require('config.pheon')", ]]

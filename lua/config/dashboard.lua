@@ -36,7 +36,7 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 
--- Custom Section ﰟ
+-- Custom Section ﰟ↻
 db.custom_center = {
   {
     icon = "ﯠ ",
@@ -54,6 +54,8 @@ db.custom_center = {
     desc = "⇕ ------------------------------------------------- Find File        ",
     action = "Telescope find_files theme=dropdown initial_mode=insert previewer=false",
   },
+  { icon = " ", desc = "⇕ ------------------------------------------------- Projects         ",
+    action = "Telescope projects theme=dropdown initial_mode=normal" },
   { icon = " ", desc = "⇕ ------------------------------------------------- File Browser     ",
     action = "Telescope file_browser theme=ivy initial_mode=normal" },
   { icon = "ℤ ", desc = "⇕ ------------------------------------------------- Zoxide           ",
@@ -66,9 +68,14 @@ db.custom_center = {
     action = "TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE",
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- Search Word      ",
     action = "Telescope live_grep theme=dropdown",
+  },
+  {
+    icon = " ",
+    desc = "⇕ ------------------------------------------------- Repos            ",
+    action = "Telescope repo list theme=dropdown initial_mode=normal previewer=false",
   },
   {
     icon = " ",
@@ -85,22 +92,17 @@ db.custom_center = {
     desc = "⇕ ------------------------------------------------- Git              ",
     action = toggle_lazygit,
   },
-  {
-    icon = " ",
-    desc = "⇕ ------------------------------------------------- Nvim Tree        ",
-    action = "NvimTreeToggle",
-  },
+  --[[ { ]]
+  --[[   icon = " ", ]]
+  --[[   desc = "⇕ ------------------------------------------------- Nvim Tree        ", ]]
+  --[[   action = "NvimTreeToggle", ]]
+  --[[ }, ]]
   {
     icon = "炙",
     desc = "⇕ ------------------------------------------------- Help Tags        ",
     action = "Telescope help_tags theme=dropdown initial_mode=insert",
   },
-  {
-    icon = " ",
-    desc = "⇕ ------------------------------------------------- Repos            ",
-    action = "Telescope repo list theme=dropdown initial_mode=normal previewer=false",
-  },
-  { icon = "↻ ", desc = "⇕ ------------------------------------------------- Sync             ",
+  { icon = " ", desc = "⇕ ------------------------------------------------- Sync             ",
     action = "PackerSync" },
   { icon = " ", desc = "⇕ ------------------------------------------------- Compile          ",
     action = "PackerCompile" },

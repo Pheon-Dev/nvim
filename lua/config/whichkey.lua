@@ -83,8 +83,9 @@ local mappings = {
   n = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
   o = { ":Telescope file_browser theme=ivy initial_mode=normal<cr>", "File Browser" },
   p = {
-    name = "Packer & Prettier",
-    p = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
+    name = "Projects | Packer | Prettier",
+    p = { ":Telescope projects theme=dropdown initial_mode=normal previewer=false<cr>", "Projects" },
+    f = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
     s = { ":PackerSync<cr>", "Packer Sync" },
     c = { ":PackerCompile<cr>", "Packer Compile" },
   },

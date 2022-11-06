@@ -11,6 +11,7 @@ end
 
 local colors = {
   bg = "#2e2e2e",
+  bg1 = "#363636",
   grey = "#7f7f7f",
   fg = "#8aa2f7",
   yellow = '#ffff0f',
@@ -99,7 +100,7 @@ end
 local my_colors = { n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V = "#966bfe", R = "#f62bfe" }
 
 local mode = {
-  n = "",
+  n = "◌",
   i = "●",
   ic = "●",
   v = "",
@@ -108,18 +109,18 @@ local mode = {
   s = "✪",
   S = "✪",
   [""] = "✪",
-  r = "◌",
-  R = "◌",
-  Rv = "◌",
-  rm = "◌",
-  ["r?"] = "◌",
+  r = "∅",
+  R = "∅",
+  Rv = "∅",
+  rm = "∅",
+  ["r?"] = "∅",
   c = "○",
   cv = "○",
   ce = "○",
   t = "○",
   ["!"] = "○",
-  no = "⨀",
-  gui = "⨀",
+  no = "",
+  gui = "",
 }
 
 local mode_color = {
@@ -167,12 +168,6 @@ wins_left({
 })
 
 wins_left({
-  function()
-    return "%="
-  end,
-})
-
-wins_left({
   "diff",
   symbols = { added = " ", modified = "柳", removed = " " },
   diff_color = {
@@ -181,6 +176,22 @@ wins_left({
     removed = { fg = colors.red },
   },
   cond = conditions.hide_in_width,
+})
+
+wins_left({
+  function()
+    return "%="
+  end,
+})
+
+wins_left({
+  function()
+    return mode[vim.fn.mode()]
+  end,
+  color = function()
+    return { fg = colors.orange1 }
+  end,
+  padding = { right = 1, left = 1 },
 })
 
 wins_right({
@@ -207,26 +218,15 @@ wins_right({
 wins_right({
   "filesize",
   cond = conditions.buffer_not_empty,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-})
-
-wins_right({
-  function()
-    return "|"
-  end,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  padding = { left = 1 },
+  color = { fg = "#9f9f9f" },
 })
 
 -- statusline
+
 ins_left({
   "branch",
   icon = "",
-  color = { fg = colors.yellow, gui = "bold" },
+  color = { fg = "#7f7f7f", gui = "bold" },
 })
 
 ins_left({
@@ -249,9 +249,7 @@ ins_left({
 ins_right({
   navic.get_location,
   cond = navic.is_available,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
+  color = { fg = "#5e5e5e" },
   padding = { right = 1 },
 })
 
@@ -268,16 +266,5 @@ ins_right({
     return { fg = mode_color[vim.fn.mode()] }
   end,
 })
-
-ins_right({
-  function()
-    return mode[vim.fn.mode()]
-  end,
-  color = function()
-    return { fg = colors.orange1 }
-  end,
-  padding = { right = 1, left = 1 },
-})
-
 
 lualine.setup(config)

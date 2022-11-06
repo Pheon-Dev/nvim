@@ -63,8 +63,8 @@ lir.setup({
     -- You can define a function that returns a table to be passed as the third
     -- argument of nvim_open_win().
     win_opts = function()
-      local width = math.floor(vim.o.columns * 0.3)
-      local height = math.floor(vim.o.lines * 0.8)
+      local width = math.floor(vim.o.columns * 0.2)
+      local height = math.floor(vim.o.lines * 0.6)
       return {
         border = "rounded",
         width = width,
@@ -98,3 +98,7 @@ require("nvim-web-devicons").set_icon({
     name = "LirFolderNode",
   },
 })
+
+vim.cmd("highlight LirFloatNormal guibg='#2e2e2e'")
+vim.cmd("highlight LirFloatCursorLine guibg='#363636'")
+vim.cmd("highlight LirFloatBorder guibg='#2e2e2e' guifg='#363636'")
