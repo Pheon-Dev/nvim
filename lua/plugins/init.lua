@@ -15,23 +15,6 @@ return packer.startup({
     --[[ ESSENTIALS ]]
     use("lewis6991/impatient.nvim")
     use({
-      "nvim-telescope/telescope.nvim",
-      requires = {
-        { "nvim-lua/plenary.nvim" },
-      },
-      cmd = "Telescope",
-      config = "require('config.telescope')",
-    })
-    use({
-      "folke/noice.nvim",
-      event = "VimEnter",
-      requires = {
-        "rcarriga/nvim-notify",
-        "MunifTanjim/nui.nvim",
-      },
-      config = "require('config.noice')",
-    })
-    use({
       "kyazdani42/nvim-web-devicons",
     })
     use({
@@ -69,6 +52,27 @@ return packer.startup({
       config = "require('config.dashboard')",
     })
     use({
+      "nvim-telescope/telescope.nvim",
+      requires = {
+        { "nvim-lua/plenary.nvim" },
+      },
+      cmd = "Telescope",
+      config = "require('config.telescope')",
+    })
+    use({
+      "akinsho/toggleterm.nvim",
+      config = "require('config.toggleterm')",
+    })
+    use({
+      "folke/noice.nvim",
+      event = "VimEnter",
+      requires = {
+        "rcarriga/nvim-notify",
+        "MunifTanjim/nui.nvim",
+      },
+      config = "require('config.noice')",
+    })
+    use({
       "folke/which-key.nvim",
       event = "BufWinEnter",
       config = "require('config.whichkey')",
@@ -100,10 +104,6 @@ return packer.startup({
       cmd = "NvimTreeToggle",
       --[[ config = "require('config.nvim-tree')" ]]
     }
-    use({
-      "akinsho/toggleterm.nvim",
-      config = "require('config.toggleterm')",
-    })
     use { "nvim-telescope/telescope-live-grep-args.nvim", requires = "nvim-telescope/telescope.nvim" }
 
     --[[ UTILS ]]
