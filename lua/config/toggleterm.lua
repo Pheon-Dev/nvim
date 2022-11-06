@@ -35,7 +35,7 @@ require("toggleterm").setup({
       link = 'Normal'
     },
     FloatBorder = {
-      guifg = "#363636",
+      guifg = "#5e5e5e",
       guibg = "#2e2e2e",
     },
   },

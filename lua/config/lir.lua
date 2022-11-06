@@ -98,7 +98,3 @@ require("nvim-web-devicons").set_icon({
     name = "LirFolderNode",
   },
 })
-
-vim.cmd("highlight LirFloatNormal guibg='#2e2e2e'")
-vim.cmd("highlight LirFloatCursorLine guibg='#363636'")
-vim.cmd("highlight LirFloatBorder guibg='#2e2e2e' guifg='#363636'")

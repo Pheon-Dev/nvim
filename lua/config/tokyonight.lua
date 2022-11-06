@@ -52,3 +52,14 @@ require("tokyonight.colors").default = {
 
 }
 vim.cmd("colorscheme tokyonight")
+
+vim.cmd("highlight DashboardHeader guifg=#1080f0 ")
+vim.cmd("highlight DashboardCenter guifg=#10a0f0 ")
+vim.cmd("highlight DashboardFooter guifg=#10f0f0 ")
+vim.cmd("highlight DashboardShortCut guifg=#10f030 ")
+--[[ vim.cmd("highlight WinBar guifg=#8aa2f7 guibg=#2e2e2e ") ]]
+--[[ vim.cmd("highlight WinBarNC guifg=#808080 guibg=#2e2e2e ") ]]
+
+vim.cmd("highlight LirFloatNormal guibg='#2e2e2e'")
+vim.cmd("highlight LirFloatCursorLine guibg='#363636'")
+vim.cmd("highlight LirFloatBorder guibg='#2e2e2e' guifg='#363636'")
