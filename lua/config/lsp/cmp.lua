@@ -23,9 +23,6 @@ local source_mapping = {
   luasnip = " snip",
 }
 
-vim.cmd("highlight CmpBorder guifg='#363636'")
-vim.cmd("highlight CmpDocBorder guifg='#363636'")
-
 local function border(hl_name)
   return {
     { "╭", hl_name },

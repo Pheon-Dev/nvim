@@ -1,5 +1,9 @@
-local lspsaga = require 'lspsaga'
-lspsaga.setup {
+local saga = require 'lspsaga'
+
+saga.init_lsp_saga({
+
+})
+saga.setup {
   debug = false,
   use_saga_diagnostic_sign = true,
   -- diagnostic sign

@@ -66,7 +66,7 @@ local mappings = {
     c = { ":Telescope git_commits theme=dropdown initial_mode=normal<cr>", "Git Commits" },
     s = { ":Telescope git_status theme=dropdown initial_mode=normal<cr>", "Git Status" },
   },
-  h = { toggle_lazygit, "LazyGit" },
+  h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
   i = {
     name = "TODO",
     h = { ":TodoTrouble cwd=.<cr>", "Trouble" },
@@ -76,9 +76,9 @@ local mappings = {
     l = { ":TodoLocList<cr>", "Loclist" },
   },
   j = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
-  k = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
   --[[ k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" }, ]]
-  l = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+  k = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+  l = { toggle_lazygit, "LazyGit" },
   m = { ":Mason<cr>", "Mason" },
   n = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
   o = { ":Telescope file_browser theme=ivy initial_mode=normal<cr>", "File Browser" },

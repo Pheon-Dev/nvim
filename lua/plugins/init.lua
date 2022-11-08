@@ -105,6 +105,10 @@ return packer.startup({
       --[[ config = "require('config.nvim-tree')" ]]
     }
     use { "nvim-telescope/telescope-live-grep-args.nvim", requires = "nvim-telescope/telescope.nvim" }
+    use({
+      "ahmedkhalf/project.nvim",
+      config = "require('config.projects')",
+    })
 
     --[[ UTILS ]]
     use({
@@ -197,47 +201,6 @@ return packer.startup({
       "windwp/nvim-autopairs",
       after = "nvim-cmp",
       config = "require('config.autopairs')",
-    })
-
-    --[[ LSP ]]
-    use({
-      "folke/neodev.nvim",
-      module = "neodev",
-      config = function()
-        require("neodev").setup({})
-      end,
-    })
-    use({
-      "williamboman/mason.nvim",
-      config = "require('config.mason')",
-    })
-    use({
-      "williamboman/mason-lspconfig.nvim",
-    })
-    use({
-      "onsails/lspkind-nvim",
-    })
-    use({
-      "neovim/nvim-lspconfig",
-      config = "require('config.lsp')",
-    })
-    use({
-      "folke/lsp-colors.nvim",
-    })
-    use({
-      "tami5/lspsaga.nvim",
-      config = "require('config.lspsaga')",
-    })
-    --[[ use({ ]]
-    --[[   "ray-x/lsp_signature.nvim", ]] -- Noice's Signature
-    --[[ }) ]]
-    use({
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
-      config = "require('config.null-ls')",
-    })
-    use({
-      "jayp0521/mason-null-ls.nvim",
     })
 
     --[[ COMPLETION ]]
@@ -376,10 +339,48 @@ return packer.startup({
       requires = { "williamboman/mason.nvim", "mfussenegger/nvim-dap" },
     }
 
+    --[[ LSP ]]
     use({
-      "ahmedkhalf/project.nvim",
-      config = "require('config.projects')",
+      "folke/neodev.nvim",
+      module = "neodev",
+      config = function()
+        require("neodev").setup({})
+      end,
     })
+    use({
+      "williamboman/mason.nvim",
+      config = "require('config.mason')",
+    })
+    use({
+      "williamboman/mason-lspconfig.nvim",
+    })
+    use({
+      "onsails/lspkind-nvim",
+    })
+    use({
+      "neovim/nvim-lspconfig",
+      config = "require('config.lsp')",
+    })
+    use({
+      "folke/lsp-colors.nvim",
+    })
+    use({
+      "tami5/lspsaga.nvim",
+      branch = "main",
+      config = "require('config.lspsaga')",
+    })
+    --[[ use({ ]]
+    --[[   "ray-x/lsp_signature.nvim", ]] -- Noice's Signature
+    --[[ }) ]]
+    use({
+      "jose-elias-alvarez/null-ls.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = "require('config.null-ls')",
+    })
+    use({
+      "jayp0521/mason-null-ls.nvim",
+    })
+
     --[[ use({ ]]
     --[[ 	"Pheon-Dev/pheon.nvim", ]]
     --[[ 	config = "require('config.pheon')", ]]

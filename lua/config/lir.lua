@@ -36,6 +36,8 @@ lir.setup({
 
     ["h"] = actions.up,
     ["q"] = actions.quit,
+    ["<esc>"] = actions.quit,
+    ["b"] = actions.quit,
 
     ["A"] = actions.mkdir,
     ["a"] = actions.newfile,
