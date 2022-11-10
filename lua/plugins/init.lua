@@ -23,26 +23,8 @@ return packer.startup({
     use({
       "nvim-lua/plenary.nvim",
     })
-    use({
-      "nathom/filetype.nvim",
-    })
-    --[[ use({ ]]
-    --[[   "folke/persistence.nvim", ]]
-    --[[   event = "BufReadPre", ]]
-    --[[   module = "persistence", ]]
-    --[[   config = function() ]]
-    --[[     require("persistence").setup() ]]
-    --[[   end, ]]
-    --[[ }) ]]
 
     --[[ START UP ]]
-    --[[ use({ ]]
-    --[[   "dstein64/vim-startuptime", ]]
-    --[[   cmd = "StartupTime", ]]
-    --[[   config = function() ]]
-    --[[     vim.g.startuptime_tries = 10 ]]
-    --[[   end, ]]
-    --[[ }) ]]
     use({
       "folke/tokyonight.nvim",
       config = "require('config.tokyonight')",
@@ -82,27 +64,13 @@ return packer.startup({
       config = "require('config.lir')",
     })
     use({
-      "tamago324/lir-git-status.nvim",
-      config = function()
-        require("lir.git_status").setup({
-          show_ignored = false,
-        })
-      end,
-    })
-    use({
       "Pheon-Dev/harpoon",
     })
-    use 'jvgrootveld/telescope-zoxide'
-    use { "nvim-telescope/telescope-file-browser.nvim" }
-    use {
-      "nvim-telescope/telescope-frecency.nvim",
-      requires = { "kkharji/sqlite.lua" }
-    }
     use {
       'kyazdani42/nvim-tree.lua',
       requires = { 'kyazdani42/nvim-web-devicons' },
       cmd = "NvimTreeToggle",
-      --[[ config = "require('config.nvim-tree')" ]]
+      config = "require('config.nvim-tree')"
     }
     use({
       "ahmedkhalf/project.nvim",
@@ -218,9 +186,6 @@ return packer.startup({
       "hrsh7th/vim-vsnip",
     })
     use({
-      "hrsh7th/vim-vsnip-integ",
-    })
-    use({
       "L3MON4D3/LuaSnip",
       config = function()
         require("luasnip.loaders.from_vscode").lazy_load()
@@ -229,7 +194,6 @@ return packer.startup({
     use({
       "saadparwaiz1/cmp_luasnip",
     })
-    use({ "b0o/SchemaStore.nvim", module = "schemastore" })
 
     --[[ COMMENTS ]]
     use {
@@ -287,10 +251,6 @@ return packer.startup({
     })
     use({
       "airblade/vim-gitgutter",
-    })
-    use({
-      "cljoly/telescope-repo.nvim",
-      requires = "airblade/vim-rooter",
     })
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = "require('config.diffview')" }
 
@@ -350,19 +310,6 @@ return packer.startup({
     use({
       "jayp0521/mason-null-ls.nvim",
     })
-
-    --[[ use({ ]]
-    --[[ 	"Pheon-Dev/pheon.nvim", ]]
-    --[[ 	config = "require('config.pheon')", ]]
-    --[[ }) ]]
-    --[[ use({ ]]
-    --[[ 	"sunjon/Shade.nvim", ]]
-    --[[ 	config = "require('config.shade')", ]]
-    --[[ }) ]]
-    --[[ use({ ]]
-    --[[ 	"tamago324/nlsp-settings.nvim", ]]
-    --[[ }) ]]
-    --[[ use { 'echasnovski/mini.nvim' } ]]
   end,
   config = {
     display = {

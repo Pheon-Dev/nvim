@@ -48,11 +48,7 @@ local mappings = {
     l = { ":lua require'dapui'.toggle()<cr>", "Toggle" },
   },
   e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
-  f = {
-    name = "Frecency",
-    f = { ":Telescope frecency theme=dropdown initial_mode=normal previewer=false<cr>", "Frecency" },
-    w = { ":Telescope frecency workspace=CWD theme=dropdown initial_mode=normal previewer=false<cr>", "Frecency" },
-  },
+  f = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
   g = {
     name = "Diff View",
     g = { ":DiffviewClose<cr>", "Close" },
@@ -66,7 +62,14 @@ local mappings = {
     c = { ":Telescope git_commits theme=dropdown initial_mode=normal<cr>", "Git Commits" },
     s = { ":Telescope git_status theme=dropdown initial_mode=normal<cr>", "Git Status" },
   },
-  h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
+  h = {
+    name = "Harpoon",
+    h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
+    j = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
+    k = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
+    l = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+    t = { ":lua require('harpoon.tmux').gotoTerminal(1)<cr>", "Tmux" },
+  },
   i = {
     name = "TODO",
     h = { ":TodoTrouble cwd=.<cr>", "Trouble" },
@@ -75,13 +78,10 @@ local mappings = {
     k = { ":TodoQuickFix<cr>", "Quick Fix" },
     l = { ":TodoLocList<cr>", "Loclist" },
   },
-  j = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
-  --[[ k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" }, ]]
-  k = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+  j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+  k = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
   m = { ":Mason<cr>", "Mason" },
-  n = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
-  o = { ":Telescope file_browser theme=ivy initial_mode=normal<cr>", "File Browser" },
   p = {
     name = "Projects | Packer | Prettier",
     p = { ":Telescope projects theme=dropdown initial_mode=normal previewer=false<cr>", "Projects" },
@@ -90,7 +90,6 @@ local mappings = {
     c = { ":PackerCompile<cr>", "Packer Compile" },
   },
   q = { ":bd<cr>", "Close Buffer" },
-  r = { ":Telescope repo list theme=dropdown initial_mode=normal previewer=false<cr>", "Git Repos" },
   s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TypeScript",
@@ -100,7 +99,6 @@ local mappings = {
     f = { ":TypescriptFixAll<cr>", "Fix All" },
   },
   x = { ":qa!<cr>", "Quit All!" },
-  z = { ":Telescope zoxide list theme=dropdown initial_mode=normal previewer=false<cr>", "Zoxide" },
 }
 
 local opts = { prefix = "<leader>" }

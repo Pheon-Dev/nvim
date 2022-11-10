@@ -89,28 +89,3 @@ require("typescript").setup({
   },
 })
 
-require('lspconfig').jsonls.setup {
-  settings = {
-    json = {
-      schemas = require('schemastore').json.schemas {
-        select = {
-          '.eslintrc',
-          'package.json',
-        },
-        --[[ ignore = { ]]
-        --[[   '.eslintrc', ]]
-        --[[   'package.json', ]]
-        --[[ }, ]]
-        --[[ replace = { ]]
-        --[[   ['package.json'] = { ]]
-        --[[     description = 'package.json overriden', ]]
-        --[[     fileMatch = { 'package.json' }, ]]
-        --[[     name = 'package.json', ]]
-        --[[     url = 'https://example.com/package.json', ]]
-        --[[   }, ]]
-        --[[ }, ]]
-      },
-      validate = { enable = true },
-    },
-  },
-}
