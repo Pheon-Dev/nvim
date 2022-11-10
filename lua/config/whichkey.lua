@@ -23,7 +23,7 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
-  a = { ":Telescope live_grep_args theme=dropdown<cr>", "Live Grep" },
+  --[[ a = { ":Telescope live_grep_args theme=dropdown<cr>", "Live Grep" }, ]]
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   c = {
     name = "Others",

@@ -1,8 +1,8 @@
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
-local has_words_before = function()
-  local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
+--[[ local has_words_before = function() ]]
+--[[   local line, col = table.unpack(vim.api.nvim_win_get_cursor(0)) ]]
+--[[   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil ]]
+--[[ end ]]
 
 local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
@@ -12,7 +12,6 @@ local cmp = require("cmp")
 local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 local compare = require("cmp.config.compare")
-local neogen = require('neogen')
 
 local source_mapping = {
   buffer = " buffer",
@@ -81,10 +80,8 @@ cmp.setup({
         luasnip.expand_or_jump()
       elseif vim.fn["vsnip#available"]() == 1 then
         feedkey("<Plug>(vsnip-expand-or-jump)", "")
-      elseif neogen.jumpable() then
-        neogen.jump_next()
-      elseif has_words_before() then
-        cmp.complete()
+        --[[ elseif has_words_before() then ]]
+        --[[   cmp.complete() ]]
       else
         fallback()
       end
@@ -92,8 +89,6 @@ cmp.setup({
     ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif neogen.jumpable(true) then
-        neogen.jump_prev()
       elseif vim.fn["vsnip#jumpable"](-1) == 1 then
         feedkey("<Plug>(vsnip-jump-prev)", "")
       end

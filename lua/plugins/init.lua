@@ -26,29 +26,29 @@ return packer.startup({
     use({
       "nathom/filetype.nvim",
     })
-    use({
-      "folke/persistence.nvim",
-      event = "BufReadPre",
-      module = "persistence",
-      config = function()
-        require("persistence").setup()
-      end,
-    })
+    --[[ use({ ]]
+    --[[   "folke/persistence.nvim", ]]
+    --[[   event = "BufReadPre", ]]
+    --[[   module = "persistence", ]]
+    --[[   config = function() ]]
+    --[[     require("persistence").setup() ]]
+    --[[   end, ]]
+    --[[ }) ]]
 
     --[[ START UP ]]
-    use({
-      "dstein64/vim-startuptime",
-      cmd = "StartupTime",
-      config = function()
-        vim.g.startuptime_tries = 10
-      end,
-    })
+    --[[ use({ ]]
+    --[[   "dstein64/vim-startuptime", ]]
+    --[[   cmd = "StartupTime", ]]
+    --[[   config = function() ]]
+    --[[     vim.g.startuptime_tries = 10 ]]
+    --[[   end, ]]
+    --[[ }) ]]
     use({
       "folke/tokyonight.nvim",
       config = "require('config.tokyonight')",
     })
     use({
-      "Pheon-Dev/dashboard-nvim",
+      "glepnir/dashboard-nvim",
       config = "require('config.dashboard')",
     })
     use({
@@ -104,7 +104,6 @@ return packer.startup({
       cmd = "NvimTreeToggle",
       --[[ config = "require('config.nvim-tree')" ]]
     }
-    use { "nvim-telescope/telescope-live-grep-args.nvim", requires = "nvim-telescope/telescope.nvim" }
     use({
       "ahmedkhalf/project.nvim",
       config = "require('config.projects')",
@@ -156,14 +155,6 @@ return packer.startup({
       "petertriho/nvim-scrollbar",
       config = "require('config.scrollbar')",
     })
-    use({
-      "j-hui/fidget.nvim",
-      config = "require('config.fidget')",
-    })
-    use {
-      "b0o/incline.nvim",
-      config = "require('config.incline')"
-    }
 
     --[[ TREESITTER ]]
     use({
@@ -238,12 +229,6 @@ return packer.startup({
     use({
       "saadparwaiz1/cmp_luasnip",
     })
-    use({
-      "danymat/neogen",
-      module = "neogen",
-      requires = "nvim-treesitter/nvim-treesitter",
-      config = "require('config.neogen')",
-    })
     use({ "b0o/SchemaStore.nvim", module = "schemastore" })
 
     --[[ COMMENTS ]]
@@ -269,11 +254,6 @@ return packer.startup({
     })
     use({
       "easymotion/vim-easymotion",
-    })
-    use({
-      "m-demare/hlargs.nvim",
-      event = "User PackerDefered",
-      config = "require('config.hlargs')",
     })
     use({
       "terryma/vim-multiple-cursors",
@@ -341,13 +321,6 @@ return packer.startup({
 
     --[[ LSP ]]
     use({
-      "folke/neodev.nvim",
-      module = "neodev",
-      config = function()
-        require("neodev").setup({})
-      end,
-    })
-    use({
       "williamboman/mason.nvim",
       config = "require('config.mason')",
     })
@@ -369,9 +342,6 @@ return packer.startup({
       branch = "main",
       config = "require('config.lspsaga')",
     })
-    --[[ use({ ]]
-    --[[   "ray-x/lsp_signature.nvim", ]] -- Noice's Signature
-    --[[ }) ]]
     use({
       "jose-elias-alvarez/null-ls.nvim",
       requires = { "nvim-lua/plenary.nvim" },

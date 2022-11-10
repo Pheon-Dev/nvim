@@ -29,12 +29,12 @@ lir.setup({
   devicons_enable = true,
   mappings = {
     ["<CR>"] = actions.edit,
+    ["h"] = actions.up,
     ["l"] = actions.edit,
     ["s"] = actions.split,
     ["v"] = actions.vsplit,
     ["t"] = actions.tabedit,
 
-    ["h"] = actions.up,
     ["q"] = actions.quit,
     ["<esc>"] = actions.quit,
     ["b"] = actions.quit,
@@ -47,13 +47,14 @@ lir.setup({
     ["."] = actions.toggle_show_hidden,
     ["d"] = actions.delete,
 
+    ["c"] = clipboard_actions.copy,
+    ["x"] = clipboard_actions.cut,
+    ["p"] = clipboard_actions.paste,
+
     ["m"] = function()
       mark_actions.toggle_mark("n")
       vim.cmd("normal! j")
     end,
-    ["c"] = clipboard_actions.copy,
-    ["x"] = clipboard_actions.cut,
-    ["p"] = clipboard_actions.paste,
   },
   float = {
     winblend = 0,

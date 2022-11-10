@@ -100,15 +100,15 @@ end
 local my_colors = { n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V = "#966bfe", R = "#f62bfe" }
 
 local mode = {
-  n = "◌",
+  n = "",
   i = "●",
   ic = "●",
-  v = "",
-  V = "",
-  [""] = "",
-  s = "✪",
-  S = "✪",
-  [""] = "✪",
+  v = "◌",
+  V = "◌",
+  [""] = "◌",
+  s = "",
+  S = "",
+  [""] = "",
   r = "∅",
   R = "∅",
   Rv = "∅",
@@ -119,7 +119,7 @@ local mode = {
   ce = "○",
   t = "○",
   ["!"] = "○",
-  no = "",
+  no = "✪",
   gui = "",
 }
 
@@ -184,16 +184,6 @@ wins_left({
   end,
 })
 
-wins_left({
-  function()
-    return mode[vim.fn.mode()]
-  end,
-  color = function()
-    return { fg = colors.orange1 }
-  end,
-  padding = { right = 1, left = 1 },
-})
-
 wins_right({
   function()
     return " 🧹"
@@ -227,6 +217,16 @@ ins_left({
   "branch",
   icon = "",
   color = { fg = "#7f7f7f", gui = "bold" },
+})
+
+ins_left({
+  function()
+    return mode[vim.fn.mode()]
+  end,
+  color = function()
+    return { fg = colors.orange1 }
+  end,
+  padding = { right = 1, left = 1 },
 })
 
 ins_left({
