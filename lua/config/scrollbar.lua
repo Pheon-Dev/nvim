@@ -8,7 +8,7 @@ require("scrollbar").setup({
   max_lines = false, -- disables if no. of lines in buffer exceeds this
   handle = {
     text = " ",
-    color = colors.bg_highlight,
+    color = colors.bg_highlight1,
     cterm = nil,
     highlight = "CursorColumn",
     hide_if_all_visible = true, -- Hides handle if all lines are visible

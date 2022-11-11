@@ -82,6 +82,7 @@ local mappings = {
   k = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
   m = { ":Mason<cr>", "Mason" },
+  n = { ":Telescope neoclip theme=dropdown initial_mode=normal previewer=false<cr>", "Neoclip" },
   p = {
     name = "Projects | Packer | Prettier",
     p = { ":Telescope projects theme=dropdown initial_mode=normal previewer=false<cr>", "Projects" },

@@ -89,6 +89,10 @@ return packer.startup({
       config = "require('config.dial')",
     })
     use({
+      "AckslD/nvim-neoclip.lua",
+      config = "require('config.neoclip')",
+    })
+    use({
       "karb94/neoscroll.nvim",
       config = "require('config.neoscroll')",
     })
