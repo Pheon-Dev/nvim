@@ -74,7 +74,6 @@ vim.cmd("highlight CmpBorder guifg='#363636' guibg='#363636'")
 vim.cmd("highlight CmpDocBorder guifg='#363636' guibg='#2e2e2e'")
 
 --[[ Noice ]]
-vim.cmd("highlight NoiceMini guifg='#5e5e5e' guibg='#363636'")
 vim.cmd("highlight NoiceConfirm guifg='#5e5e5e' guibg='#363636'")
 
 vim.cmd("highlight NoiceCmdline guibg='#363636'")
@@ -85,3 +84,34 @@ vim.cmd("highlight NoicePopupBorder guifg='#363636' guibg='#363636'")
 vim.cmd("highlight NoicePopupmenuBorder guifg='#363636' guibg='#363636'")
 vim.cmd("highlight NoiceCmdlinePopupBorder guifg='#363636' guibg='#363636'")
 vim.cmd("highlight NoiceCmdlinePopupBorderSearch guifg='#363636' guibg='#363636'")
+
+--[[ Notify ]]
+vim.cmd("highlight NotifyERRORBorder guifg=#363636 guibg=#363636")
+vim.cmd("highlight NotifyWARNBorder guifg=#363636 guibg=#363636")
+vim.cmd("highlight NotifyINFOBorder guifg=#363636 guibg=#363636")
+vim.cmd("highlight NotifyDEBUGBorder guifg=#363636 guibg=#363636")
+vim.cmd("highlight NotifyTRACEBorder guifg=#363636 guibg=#363636")
+
+vim.cmd("highlight NotifyERRORIcon guifg=#F70067 guibg=#363636")
+vim.cmd("highlight NotifyWARNIcon guifg=#F79000 guibg=#363636")
+vim.cmd("highlight NotifyINFOIcon guifg=#A9FF68 guibg=#363636")
+vim.cmd("highlight NotifyDEBUGIcon guifg=#8B8B8B guibg=#363636")
+vim.cmd("highlight NotifyTRACEIcon guifg=#D484FF guibg=#363636")
+
+vim.cmd("highlight NotifyERRORTitle guifg=#F70067 guibg=#363636")
+vim.cmd("highlight NotifyWARNTitle guifg=#F79000 guibg=#363636")
+vim.cmd("highlight NotifyINFOTitle guifg=#A9FF68 guibg=#363636")
+vim.cmd("highlight NotifyDEBUGTitle guifg=#8B8B8B guibg=#363636")
+vim.cmd("highlight NotifyTRACETitle guifg=#D484FF guibg=#363636")
+
+vim.cmd("highlight NotifyERRORBody guibg=#363636")
+vim.cmd("highlight NotifyWARNBody guibg=#363636")
+vim.cmd("highlight NotifyINFOBody guibg=#363636")
+vim.cmd("highlight NotifyDEBUGBody guibg=#363636")
+vim.cmd("highlight NotifyTRACEBody guibg=#363636")
+
+--[[ vim.cmd("highlight link NotifyERRORBody Normal") ]]
+--[[ vim.cmd("highlight link NotifyWARNBody Normal") ]]
+--[[ vim.cmd("highlight link NotifyINFOBody Normal") ]]
+--[[ vim.cmd("highlight link NotifyDEBUGBody Normal") ]]
+--[[ vim.cmd("highlight link NotifyTRACEBody Normal") ]]
