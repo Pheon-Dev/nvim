@@ -150,13 +150,11 @@ local mode_color = {
 
 --[[ WINBAR ]]
 wins_left({
-  function()
-    return mode[vim.fn.mode()]
-  end,
-  color = function()
-    return { fg = colors.orange1 }
-  end,
-  padding = { right = 1, left = 3 },
+  "filetype",
+  cond = conditions.buffer_not_empty,
+  icon_only = true,
+  --[[ color = { fg = colors.orange1 }, ]]
+  padding = { right = 0, left = 3 },
 })
 
 wins_left({
@@ -166,14 +164,6 @@ wins_left({
     return { fg = mode_color[vim.fn.mode()] }
   end,
   path = 1,
-})
-
-wins_left({
-  "filetype",
-  cond = conditions.buffer_not_empty,
-  icon_only = true,
-  --[[ color = { fg = colors.orange1 }, ]]
-  --[[ padding = { right = 1, left = 3 }, ]]
 })
 
 wins_left({
@@ -194,6 +184,13 @@ wins_left({
 })
 
 wins_right({
+  navic.get_location,
+  cond = navic.is_available,
+  color = { fg = colors.grey },
+  padding = { right = 1 },
+})
+
+wins_right({
   "diagnostics",
   sources = { "nvim_diagnostic" },
   symbols = { error = " ", warn = " ", info = " " },
@@ -204,21 +201,22 @@ wins_right({
   },
 })
 
-wins_right({
-  require("noice").api.statusline.message.get_hl,
-  cond = require("noice").api.statusline.message.has,
-  padding = { right = 1, left = 1 },
-})
-
 --[[ STATUSLINE ]]
 ins_left({
-  "filetype",
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
+  function()
+    return mode[vim.fn.mode()]
   end,
-  icon_only = false,
-  icon = { align = "left" },
-  padding = { left = 3 },
+  color = function()
+    return { fg = colors.orange1 }
+  end,
+  padding = { right = 0, left = 3 },
+})
+
+ins_left({
+  "branch",
+  icon = "",
+  --[[ color = { fg = colors.purple }, ]]
+  padding = { right = 1 },
 })
 
 ins_left({
@@ -228,11 +226,19 @@ ins_left({
   padding = { right = 1, left = 1 },
 })
 
-ins_right({
-  navic.get_location,
-  cond = navic.is_available,
-  color = { fg = colors.grey },
-  padding = { right = 1 },
+ins_left({
+  function()
+    return "%="
+  end,
+})
+
+ins_left({
+  "filetype",
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  icon_only = false,
+  icon = { align = "left" },
 })
 
 ins_right({
