@@ -182,13 +182,31 @@ require("noice").setup({
   ---@type NoiceConfigViews
   views = {
     cmdline_popup = {
-      border = {
-        style = "none",
-        padding = { 2, 3 },
+      --[[ position = { ]]
+      --[[   row = 5, ]]
+      --[[   col = "50%", ]]
+      --[[ }, ]]
+      size = {
+        width = 60,
+        height = "auto",
       },
-      filter_options = {},
+    },
+    popupmenu = {
+      relative = "editor",
+      position = {
+        row = 8,
+        col = "50%",
+      },
+      size = {
+        width = 60,
+        height = 10,
+      },
+      border = {
+        style = "rounded",
+        padding = { 0, 1 },
+      },
       win_options = {
-        winhighlight = "NormalFloat:PmenuSel,FloatBorder:FloatBorder",
+        winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
       },
     },
   },
@@ -198,7 +216,7 @@ require("noice").setup({
       filter = {
         event = "msg_show",
         kind = "",
-        find = "written",
+        find = "<",
       },
       opts = { skip = true },
     },

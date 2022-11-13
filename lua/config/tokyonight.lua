@@ -67,5 +67,21 @@ vim.cmd("highlight LirFloatCursorLine guibg='#363636'")
 vim.cmd("highlight LirFloatBorder guibg='#2e2e2e' guifg='#5e5e5e'")
 
 --[[ CMP ]]
-vim.cmd("highlight CmpBorder guifg='#5e5e5e'")
-vim.cmd("highlight CmpDocBorder guifg='#5e5e5e'")
+vim.cmd("highlight CmpPmenu guibg='#363636'")
+vim.cmd("highlight PmenuSel guibg='#5e5e5e'")
+
+vim.cmd("highlight CmpBorder guifg='#363636' guibg='#363636'")
+vim.cmd("highlight CmpDocBorder guifg='#363636' guibg='#2e2e2e'")
+
+--[[ Noice ]]
+vim.cmd("highlight NoiceMini guifg='#5e5e5e' guibg='#363636'")
+vim.cmd("highlight NoiceConfirm guifg='#5e5e5e' guibg='#363636'")
+
+vim.cmd("highlight NoiceCmdline guibg='#363636'")
+vim.cmd("highlight NoiceCmdlinePopup guibg='#363636'")
+
+vim.cmd("highlight NoiceConfirmBorder guifg='#363636' guibg='#363636'")
+vim.cmd("highlight NoicePopupBorder guifg='#363636' guibg='#363636'")
+vim.cmd("highlight NoicePopupmenuBorder guifg='#363636' guibg='#363636'")
+vim.cmd("highlight NoiceCmdlinePopupBorder guifg='#363636' guibg='#363636'")
+vim.cmd("highlight NoiceCmdlinePopupBorderSearch guifg='#363636' guibg='#363636'")
