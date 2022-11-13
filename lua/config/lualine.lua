@@ -148,15 +148,15 @@ local mode_color = {
   gui = "bold",
 }
 
--- winbar
-
+--[[ WINBAR ]]
 wins_left({
-  "filetype",
-  cond = conditions.buffer_not_empty,
-  icon_only = true,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
+  function()
+    return mode[vim.fn.mode()]
   end,
+  color = function()
+    return { fg = colors.orange1 }
+  end,
+  padding = { right = 1, left = 3 },
 })
 
 wins_left({
@@ -166,6 +166,14 @@ wins_left({
     return { fg = mode_color[vim.fn.mode()] }
   end,
   path = 1,
+})
+
+wins_left({
+  "filetype",
+  cond = conditions.buffer_not_empty,
+  icon_only = true,
+  --[[ color = { fg = colors.orange1 }, ]]
+  --[[ padding = { right = 1, left = 3 }, ]]
 })
 
 wins_left({
@@ -202,12 +210,7 @@ wins_right({
   padding = { right = 1, left = 1 },
 })
 
-ins_left({
-  "branch",
-  icon = "",
-  color = { fg = colors.yellow, gui = "bold" },
-})
-
+--[[ STATUSLINE ]]
 ins_left({
   "filetype",
   color = function()
@@ -215,7 +218,7 @@ ins_left({
   end,
   icon_only = false,
   icon = { align = "left" },
-  padding = { right = 1, left = 1 },
+  padding = { left = 3 },
 })
 
 ins_left({
@@ -246,16 +249,6 @@ ins_right({
 ins_right({
   "progress",
   color = { fg = colors.purple },
-})
-
-ins_right({
-  function()
-    return mode[vim.fn.mode()]
-  end,
-  color = function()
-    return { fg = colors.orange1 }
-  end,
-  padding = { right = 1, left = 1 },
 })
 
 lualine.setup(config)
