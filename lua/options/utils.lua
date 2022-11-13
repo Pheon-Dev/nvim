@@ -93,12 +93,12 @@ vim.cmd([[
     augroup END
 ]])
 
-vim.cmd([[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost ~/.config/nvim/lua/plugins/init.lua source <afile> | PackerCompile --preview
-    augroup END
-]])
+--[[ vim.cmd([[ ]]
+--[[     augroup packer_user_config ]]
+--[[         autocmd! ]]
+--[[         autocmd BufWritePost ~/.config/nvim/lua/plugins/init.lua source <afile> | PackerCompile --preview ]]
+--[[     augroup END ]]
+-- ]]) ]]
 
 vim.cmd("au BufnewFile,BufRead term:* setf Terminal")
 vim.cmd("au BufnewFile,BufRead *.lua setf lua")

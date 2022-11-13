@@ -23,13 +23,9 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
-  a = { ":Telescope notify theme=dropdown initial_mode=normal<cr>", "Issues" },
+  a = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
-  c = {
-    name = "Others",
-    p = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
-    h = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
-  },
+  c = { ":PackerCompile --preview<cr>", "Packer Compile" },
   d = {
     name = "DAP & Dashboard",
     d = { ":Dashboard<cr>", "Dashboard" },
@@ -75,21 +71,21 @@ local mappings = {
   k = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
   m = { ":Mason<cr>", "Mason" },
-  n = { ":Telescope neoclip theme=dropdown initial_mode=normal previewer=false<cr>", "Neoclip" },
-  p = {
-    name = "Projects | Packer | Prettier | PR",
-    c = { ":PackerCompile --preview<cr>", "Packer Compile" },
+  n = { ":Telescope notify theme=dropdown initial_mode=normal<cr>", "Issues" },
+  o = {
+    name = "Others",
+    c = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
+    h = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
     f = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
-    i = { ":PackerInstall --preview<cr>", "Packer Install" },
     l = { ":PackerLoad --preview", "Packer Load arg1 arg2" },
-    p = { ":Telescope projects theme=dropdown initial_mode=normal previewer=false<cr>", "Projects" },
-    r = { ":Telescope gh pull_request theme=ivy initial_mode=normal<cr>", "PR" },
-    s = { ":PackerSync --preview<cr>", "Packer Sync" },
+    i = { ":PackerInstall --preview<cr>", "Packer Install" },
     u = { ":PackerUpdate --preview<cr>", "Packer Update" },
     x = { ":PackerClean --preview<cr>", "Packer Clean" },
   },
+  p = { ":Telescope projects theme=dropdown initial_mode=normal previewer=false<cr>", "Projects" },
   q = { ":bd<cr>", "Close Buffer" },
-  s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
+  r = { ":Telescope gh pull_request theme=ivy initial_mode=normal<cr>", "PR" },
+  s = { ":PackerSync --preview<cr>", "Packer Sync" },
   t = {
     name = "TODO | TypeScript | Terminal",
     a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
@@ -104,6 +100,7 @@ local mappings = {
     l = { ":TodoLocList<cr>", "Loclist" },
   },
   x = { ":qa!<cr>", "Quit All!" },
+  y = { ":Telescope neoclip theme=dropdown initial_mode=normal previewer=false<cr>", "Neoclip" },
 }
 
 local opts = { prefix = "<leader>" }

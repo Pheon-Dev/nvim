@@ -134,6 +134,10 @@ return packer.startup({
       "petertriho/nvim-scrollbar",
       config = "require('config.scrollbar')",
     })
+    use({
+      "b0o/incline.nvim",
+      config = "require('config.incline')",
+    })
 
     --[[ TREESITTER ]]
     use({
@@ -329,7 +333,7 @@ return packer.startup({
   config = {
     display = {
       --[[ open_fn = function() ]]
-      --[[   return require("packer.util").float({ border = "none" }) ]]
+      --[[   return require("packer.util").float({ border = "single" }) ]]
       --[[ end, ]]
       --[[ non_interactive = false, ]]
       --[[ compact = false, ]]
