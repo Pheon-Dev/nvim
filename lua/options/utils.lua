@@ -87,12 +87,20 @@ vim.cmd('autocmd FileType javascript lua vim.api.nvim_buf_set_keymap(0, "n", "<C
 vim.cmd('autocmd FileType javascriptreact lua vim.api.nvim_buf_set_keymap(0, "n", "<C-x>", require("dial.map").inc_normal("typescript"), {noremap = true})')
 
 vim.cmd([[
+    augroup zap_config
+        autocmd!
+        autocmd BufWritePost zap.zsh !shfmt -l -w .
+    augroup END
+]])
+
+vim.cmd([[
     augroup packer_user_config
         autocmd!
         autocmd BufWritePost ~/.config/nvim/lua/plugins/init.lua source <afile> | PackerSync
     augroup END
 ]])
 
+vim.cmd("au BufnewFile,BufRead term:* setf Terminal")
 vim.cmd("au BufnewFile,BufRead *.lua setf lua")
 vim.cmd("au BufnewFile,BufRead *.js setf javascript")
 vim.cmd("au BufnewFile,BufRead *.jsx setf javascript")

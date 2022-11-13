@@ -36,6 +36,7 @@ return packer.startup({
     use({
       "nvim-telescope/telescope.nvim",
       requires = {
+        { "nvim-telescope/telescope-github.nvim" },
         { "nvim-lua/plenary.nvim" },
       },
       cmd = "Telescope",

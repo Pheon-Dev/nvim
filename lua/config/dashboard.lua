@@ -51,7 +51,7 @@ db.custom_center = {
   { icon = " ", desc = "⇕ ------------------------------------------------- NVIM Tree        ",
     action = "NvimTreeToggle" },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- TODO             ",
     action = "TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE",
   },
@@ -66,14 +66,24 @@ db.custom_center = {
     action = "Mason",
   },
   {
-    icon = " ",
-    desc = "⇕ ------------------------------------------------- Terminal         ",
-    action = toggle_terminal,
+    icon = " ",
+    desc = "⇕ ------------------------------------------------- Issues           ",
+    action = "Telescope gh issues initial_mode=normal",
   },
   {
     icon = " ",
-    desc = "⇕ ------------------------------------------------- Git              ",
+    desc = "⇕ ------------------------------------------------- PRs              ",
+    action = "Telescope gh pull_request theme=ivy initial_mode=normal",
+  },
+  {
+    icon = " ",
+    desc = "⇕ ------------------------------------------------- Lazygit          ",
     action = toggle_lazygit,
+  },
+  {
+    icon = " ",
+    desc = "⇕ ------------------------------------------------- Terminal         ",
+    action = toggle_terminal,
   },
   {
     icon = "炙",
