@@ -150,23 +150,6 @@ local mode_color = {
 
 --[[ WINBAR ]]
 wins_left({
-  "filetype",
-  cond = conditions.buffer_not_empty,
-  icon_only = true,
-  --[[ color = { fg = colors.orange1 }, ]]
-  padding = { right = 0, left = 3 },
-})
-
-wins_left({
-  "filename",
-  cond = conditions.buffer_not_empty,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  path = 1,
-})
-
-wins_left({
   "diff",
   symbols = { added = " ", modified = "柳", removed = " " },
   diff_color = {
@@ -175,6 +158,19 @@ wins_left({
     removed = { fg = colors.red },
   },
   cond = conditions.hide_in_width,
+  padding = { right = 2, left = 3 },
+})
+
+wins_left({
+  "diagnostics",
+  sources = { "nvim_diagnostic" },
+  symbols = { error = " ", warn = " ", info = " " },
+  diagnostics_color = {
+    color_error = { fg = colors.red },
+    color_warn = { fg = colors.yellow },
+    color_info = { fg = colors.cyan },
+  },
+  padding = { right = 1, left = 1 },
 })
 
 wins_left({
@@ -190,17 +186,6 @@ wins_right({
   padding = { right = 1 },
 })
 
-wins_right({
-  "diagnostics",
-  sources = { "nvim_diagnostic" },
-  symbols = { error = " ", warn = " ", info = " " },
-  diagnostics_color = {
-    color_error = { fg = colors.red },
-    color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
-  },
-})
-
 --[[ STATUSLINE ]]
 ins_left({
   function()
@@ -209,14 +194,16 @@ ins_left({
   color = function()
     return { fg = colors.orange1 }
   end,
-  padding = { right = 0, left = 3 },
+  padding = { right = 1, left = 3 },
 })
 
 ins_left({
-  "branch",
-  icon = "",
-  --[[ color = { fg = colors.purple }, ]]
-  padding = { right = 1 },
+  "filename",
+  cond = conditions.buffer_not_empty,
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  path = 1,
 })
 
 ins_left({

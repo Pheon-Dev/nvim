@@ -90,7 +90,7 @@ require("bufferline").setup({
       bg = "#2e2e2e",
     },
     tab_selected = {
-      --[[ fg = "#a9b1d6", ]]
+      fg = "#a9b1d6",
       bg = "#2e2e2e",
     },
     tab_close = {
@@ -98,43 +98,43 @@ require("bufferline").setup({
       bg = "#2e2e2e",
     },
     close_button = {
-      fg = "#565656",
+      fg = "#3f3f3f",
       bg = "#2e2e2e",
     },
     close_button_visible = {
-      --[[ fg = "#c0caf5", ]]
+      fg = "#3f3f3f",
       bg = "#2e2e2e",
     },
     close_button_selected = {
-      --[[ fg = "#c0caf5", ]]
+      fg = "#565656",
       bg = "#2e2e2e",
     },
     buffer_visible = {
-      fg = "#7aa2f7",
+      fg = "#7f7f7f",
       bg = "#2e2e2e",
     },
     buffer_selected = {
-      fg = "#c678dd",
+      fg = "#7aa2f7",
       bg = "#2e2e2e",
       bold = true,
       italic = true,
     },
     numbers = {
-      fg = "#565656",
+      fg = "#3f3f3f",
       bg = "#2e2e2e",
     },
     numbers_visible = {
-      --[[ fg = "#c0caf5", ]]
+      fg = "#3f3f3f",
       bg = "#2e2e2e",
     },
     numbers_selected = {
-      --[[ fg = "#c0caf5", ]]
+      fg = "#565656",
       bg = "#2e2e2e",
       bold = true,
       italic = true,
     },
     diagnostic = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       bg = "#2e2e2e",
     },
     diagnostic_visible = {
@@ -148,7 +148,7 @@ require("bufferline").setup({
       italic = true,
     },
     hint = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       sp = "#2e2e2e",
       bg = "#2e2e2e",
     },
@@ -164,7 +164,7 @@ require("bufferline").setup({
       italic = true,
     },
     hint_diagnostic = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       sp = "#2e2e2e",
       bg = "#2e2e2e",
     },
@@ -180,7 +180,7 @@ require("bufferline").setup({
       italic = true,
     },
     info = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       sp = "#2e2e2e",
       bg = "#2e2e2e",
     },
@@ -196,7 +196,7 @@ require("bufferline").setup({
       italic = true,
     },
     info_diagnostic = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       sp = "#2e2e2e",
       bg = "#2e2e2e",
     },
@@ -212,7 +212,7 @@ require("bufferline").setup({
       italic = true,
     },
     warning = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       sp = "#2e2e2e",
       bg = "#2e2e2e",
     },
@@ -228,7 +228,7 @@ require("bufferline").setup({
       italic = true,
     },
     warning_diagnostic = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       sp = "#2e2e2e",
       bg = "#2e2e2e",
     },
@@ -244,7 +244,7 @@ require("bufferline").setup({
       italic = true,
     },
     error = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       bg = "#2e2e2e",
       sp = "#2e2e2e",
     },
@@ -260,7 +260,7 @@ require("bufferline").setup({
       italic = true,
     },
     error_diagnostic = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       bg = "#2e2e2e",
       sp = "#2e2e2e",
     },
@@ -298,7 +298,7 @@ require("bufferline").setup({
       italic = true,
     },
     duplicate = {
-      fg = "#565656",
+      --[[ fg = "#565656", ]]
       bg = "#2e2e2e",
       italic = true,
     },
@@ -341,7 +341,7 @@ require("bufferline").setup({
       italic = true,
     },
     offset_separator = {
-      fg = "#2e2e2e",
+      --[[ fg = "#2e2e2e", ]]
       bg = "#2e2e2e",
     },
   },
