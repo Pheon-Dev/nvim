@@ -62,9 +62,9 @@ vim.cmd("highlight DashboardShortCut guifg=#10f030 ")
 --[[ vim.cmd("highlight WinBarNC guifg=#808080 guibg=#2e2e2e ") ]]
 
 --[[ Lir ]]
-vim.cmd("highlight LirFloatNormal guibg='#2e2e2e'")
-vim.cmd("highlight LirFloatCursorLine guibg='#363636'")
-vim.cmd("highlight LirFloatBorder guibg='#2e2e2e' guifg='#5e5e5e'")
+vim.cmd("highlight LirFloatNormal guibg='#363636'")
+vim.cmd("highlight LirFloatCursorLine guibg='#2e2e2e'")
+vim.cmd("highlight LirFloatBorder guibg='#363636' guifg='#363636'")
 
 --[[ CMP ]]
 vim.cmd("highlight CmpPmenu guibg='#363636'")

@@ -23,7 +23,7 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
-  --[[ a = { ":Telescope live_grep_args theme=dropdown<cr>", "Live Grep" }, ]]
+  a = { ":Telescope notify theme=dropdown initial_mode=normal<cr>", "Issues" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   c = {
     name = "Others",
@@ -78,11 +78,15 @@ local mappings = {
   n = { ":Telescope neoclip theme=dropdown initial_mode=normal previewer=false<cr>", "Neoclip" },
   p = {
     name = "Projects | Packer | Prettier | PR",
-    p = { ":Telescope projects theme=dropdown initial_mode=normal previewer=false<cr>", "Projects" },
+    c = { ":PackerCompile --preview<cr>", "Packer Compile" },
     f = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
-    s = { ":PackerSync<cr>", "Packer Sync" },
-    c = { ":PackerCompile<cr>", "Packer Compile" },
+    i = { ":PackerInstall --preview<cr>", "Packer Install" },
+    l = { ":PackerLoad --preview", "Packer Load arg1 arg2" },
+    p = { ":Telescope projects theme=dropdown initial_mode=normal previewer=false<cr>", "Projects" },
     r = { ":Telescope gh pull_request theme=ivy initial_mode=normal<cr>", "PR" },
+    s = { ":PackerSync --preview<cr>", "Packer Sync" },
+    u = { ":PackerUpdate --preview<cr>", "Packer Update" },
+    x = { ":PackerClean --preview<cr>", "Packer Clean" },
   },
   q = { ":bd<cr>", "Close Buffer" },
   s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },

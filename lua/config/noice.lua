@@ -210,19 +210,11 @@ require("noice").setup({
       },
     },
   },
-  ---@type NoiceRouteConfig[]
   routes = {
-    {
-      filter = {
-        event = "msg_show",
-        kind = "",
-        find = "<",
-      },
-      opts = { skip = true },
-    },
+    --[[ { filter = { event = "msg_show", kind = "", find = "written", }, opts = { skip = true }, }, ]]
+    { filter = { event = "msg_show", kind = "", find = "<", }, opts = { skip = true }, },
+    { filter = { event = "msg_show", kind = "", find = "plugins/", }, opts = { skip = true }, },
   },
-  ---@type table<string, NoiceFilter>
   status = {}, --- @see section on statusline components
-  ---@type NoiceFormatOptions
   format = {}, --- @see section on formatting
 })

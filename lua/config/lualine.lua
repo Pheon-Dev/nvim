@@ -20,6 +20,7 @@ local colors = {
   green = "#82cf00",
   orange2 = "#c03000",
   orange1 = "#ff7222",
+  orange3 = "#ff9e64",
   orange = "#FF8800",
   violet = "#a9a1e1",
   magenta = "#c678dd",
@@ -185,16 +186,6 @@ wins_left({
 })
 
 wins_right({
-  function()
-    return " 🧹"
-  end,
-  color = function()
-    return { fg = colors.grey }
-  end,
-  padding = { left = 1, right = 1 },
-})
-
-wins_right({
   "diagnostics",
   sources = { "nvim_diagnostic" },
   symbols = { error = " ", warn = " ", info = " " },
@@ -206,27 +197,15 @@ wins_right({
 })
 
 wins_right({
-  "filesize",
-  cond = conditions.buffer_not_empty,
-  color = { fg = "#9f9f9f" },
+  require("noice").api.statusline.message.get_hl,
+  cond = require("noice").api.statusline.message.has,
+  padding = { right = 1, left = 1 },
 })
-
--- statusline
 
 ins_left({
   "branch",
-  icon = "",
-  color = { fg = "#7f7f7f", gui = "bold" },
-})
-
-ins_left({
-  function()
-    return mode[vim.fn.mode()]
-  end,
-  color = function()
-    return { fg = colors.orange1 }
-  end,
-  padding = { right = 1, left = 1 },
+  icon = "",
+  color = { fg = colors.yellow, gui = "bold" },
 })
 
 ins_left({
@@ -234,37 +213,49 @@ ins_left({
   color = function()
     return { fg = mode_color[vim.fn.mode()] }
   end,
-  icon_only = false, -- Display only an icon for filetype
-  icon = { align = "left" }, -- Display filetype icon on the right hand side
+  icon_only = false,
+  icon = { align = "left" },
   padding = { right = 1, left = 1 },
 })
 
 ins_left({
   require("noice").api.statusline.mode.get,
   cond = require("noice").api.statusline.mode.has,
-  color = { fg = "#ff9e64" },
+  color = { fg = colors.orange1 },
   padding = { right = 1, left = 1 },
 })
 
 ins_right({
   navic.get_location,
   cond = navic.is_available,
-  color = { fg = "#5e5e5e" },
+  color = { fg = colors.grey },
   padding = { right = 1 },
 })
 
 ins_right({
+  "filesize",
+  cond = conditions.buffer_not_empty,
+  color = { fg = colors.purple },
+})
+
+ins_right({
   "location",
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
+  color = { fg = colors.purple },
 })
 
 ins_right({
   "progress",
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
+  color = { fg = colors.purple },
+})
+
+ins_right({
+  function()
+    return mode[vim.fn.mode()]
   end,
+  color = function()
+    return { fg = colors.orange1 }
+  end,
+  padding = { right = 1, left = 1 },
 })
 
 lualine.setup(config)
