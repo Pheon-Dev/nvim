@@ -49,8 +49,8 @@ require("tokyonight.colors").default = {
     change = "#536c9e",
     delete = "#b2555b",
   },
-
 }
+
 vim.cmd("colorscheme tokyonight")
 
 --[[ Dashboard ]]
@@ -86,32 +86,36 @@ vim.cmd("highlight NoiceCmdlinePopupBorder guifg='#363636' guibg='#363636'")
 vim.cmd("highlight NoiceCmdlinePopupBorderSearch guifg='#363636' guibg='#363636'")
 
 --[[ Notify ]]
-vim.cmd("highlight NotifyERRORBorder guifg=#363636 guibg=#363636")
-vim.cmd("highlight NotifyWARNBorder guifg=#363636 guibg=#363636")
-vim.cmd("highlight NotifyINFOBorder guifg=#363636 guibg=#363636")
-vim.cmd("highlight NotifyDEBUGBorder guifg=#363636 guibg=#363636")
-vim.cmd("highlight NotifyTRACEBorder guifg=#363636 guibg=#363636")
+vim.cmd("highlight NotifyERRORBorder guifg=#3f3f3f guibg=#3f3f3f")
+vim.cmd("highlight NotifyWARNBorder guifg=#3f3f3f guibg=#3f3f3f")
+vim.cmd("highlight NotifyINFOBorder guifg=#3f3f3f guibg=#3f3f3f")
+vim.cmd("highlight NotifyDEBUGBorder guifg=#3f3f3f guibg=#3f3f3f")
+vim.cmd("highlight NotifyTRACEBorder guifg=#3f3f3f guibg=#3f3f3f")
 
-vim.cmd("highlight NotifyERRORIcon guifg=#F70067 guibg=#363636")
-vim.cmd("highlight NotifyWARNIcon guifg=#F79000 guibg=#363636")
-vim.cmd("highlight NotifyINFOIcon guifg=#A9FF68 guibg=#363636")
-vim.cmd("highlight NotifyDEBUGIcon guifg=#8B8B8B guibg=#363636")
-vim.cmd("highlight NotifyTRACEIcon guifg=#D484FF guibg=#363636")
+vim.cmd("highlight NotifyERRORIcon guifg=#ec5f67 guibg=#3f3f3f")
+vim.cmd("highlight NotifyWARNIcon guifg=#F79000 guibg=#3f3f3f")
+vim.cmd("highlight NotifyINFOIcon guifg=#A9FF68 guibg=#3f3f3f")
+vim.cmd("highlight NotifyDEBUGIcon guifg=#51afef guibg=#3f3f3f")
+vim.cmd("highlight NotifyTRACEIcon guifg=#D484FF guibg=#3f3f3f")
 
-vim.cmd("highlight NotifyERRORTitle guifg=#F70067 guibg=#363636")
-vim.cmd("highlight NotifyWARNTitle guifg=#F79000 guibg=#363636")
-vim.cmd("highlight NotifyINFOTitle guifg=#A9FF68 guibg=#363636")
-vim.cmd("highlight NotifyDEBUGTitle guifg=#8B8B8B guibg=#363636")
-vim.cmd("highlight NotifyTRACETitle guifg=#D484FF guibg=#363636")
+vim.cmd("highlight NotifyERRORTitle guifg=#ec5f67 guibg=#3f3f3f")
+vim.cmd("highlight NotifyWARNTitle guifg=#F79000 guibg=#3f3f3f")
+vim.cmd("highlight NotifyINFOTitle guifg=#A9FF68 guibg=#3f3f3f")
+vim.cmd("highlight NotifyDEBUGTitle guifg=#51afef guibg=#3f3f3f")
+vim.cmd("highlight NotifyTRACETitle guifg=#D484FF guibg=#3f3f3f")
 
-vim.cmd("highlight NotifyERRORBody guibg=#363636")
-vim.cmd("highlight NotifyWARNBody guibg=#363636")
-vim.cmd("highlight NotifyINFOBody guibg=#363636")
-vim.cmd("highlight NotifyDEBUGBody guibg=#363636")
-vim.cmd("highlight NotifyTRACEBody guibg=#363636")
+vim.cmd("highlight NotifyERRORBody guibg=#3f3f3f")
+vim.cmd("highlight NotifyWARNBody guibg=#3f3f3f")
+vim.cmd("highlight NotifyINFOBody guibg=#3f3f3f")
+vim.cmd("highlight NotifyDEBUGBody guibg=#3f3f3f")
+vim.cmd("highlight NotifyTRACEBody guibg=#3f3f3f")
 
 --[[ vim.cmd("highlight link NotifyERRORBody Normal") ]]
 --[[ vim.cmd("highlight link NotifyWARNBody Normal") ]]
 --[[ vim.cmd("highlight link NotifyINFOBody Normal") ]]
 --[[ vim.cmd("highlight link NotifyDEBUGBody Normal") ]]
 --[[ vim.cmd("highlight link NotifyTRACEBody Normal") ]]
+
+--[[ Blankline ]]
+vim.cmd("highlight IndentBlanklineChar guibg='#2e2e2e' guifg='#363636'")
+vim.cmd("highlight IndentBlanklineContextChar guibg='#2e2e2e' guifg='#3f3f3f'")

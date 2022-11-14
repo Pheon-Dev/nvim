@@ -8,6 +8,7 @@ require("indent_blankline").setup({
     "lspsaga",
     "noice",
     "lir",
+    "help",
     "harpoon",
   },
   show_current_context = true,
@@ -35,3 +36,5 @@ require("indent_blankline").setup({
     "operation_type",
   },
 })
+
+vim.cmd("let g:indent_blankline_char = '|'")

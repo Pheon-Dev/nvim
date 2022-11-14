@@ -18,6 +18,7 @@ local colors = {
   cyan = "#008080",
   darkblue = "#081633",
   green = "#82cf00",
+  green1 = "#A9FF68",
   orange2 = "#c03000",
   orange1 = "#ff7222",
   orange3 = "#ff9e64",
