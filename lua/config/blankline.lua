@@ -10,6 +10,7 @@ require("indent_blankline").setup({
     "lir",
     "help",
     "harpoon",
+    "TelescopePrompt",
   },
   show_current_context = true,
   show_current_context_start = false,
@@ -37,4 +38,5 @@ require("indent_blankline").setup({
   },
 })
 
-vim.cmd("let g:indent_blankline_char = '|'")
+vim.cmd("let g:indent_blankline_char = '┊'")
+--[[ let g:indent_blankline_char_list = ['|', '¦', '┆', '┊', '│'] ]]

@@ -151,44 +151,6 @@ local mode_color = {
 
 --[[ WINBAR ]]
 wins_left({
-  "diff",
-  symbols = { added = " ", modified = "柳", removed = " " },
-  diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
-  },
-  cond = conditions.hide_in_width,
-  padding = { right = 2, left = 3 },
-})
-
-wins_left({
-  "diagnostics",
-  sources = { "nvim_diagnostic" },
-  symbols = { error = " ", warn = " ", info = " " },
-  diagnostics_color = {
-    color_error = { fg = colors.red },
-    color_warn = { fg = colors.yellow },
-    color_info = { fg = colors.cyan },
-  },
-  padding = { right = 1, left = 1 },
-})
-
-wins_left({
-  function()
-    return "%="
-  end,
-})
-
-wins_right({
-  navic.get_location,
-  cond = navic.is_available,
-  color = { fg = colors.grey },
-  padding = { right = 1 },
-})
-
---[[ STATUSLINE ]]
-ins_left({
   function()
     return mode[vim.fn.mode()]
   end,
@@ -198,7 +160,7 @@ ins_left({
   padding = { right = 1, left = 3 },
 })
 
-ins_left({
+wins_left({
   "filename",
   cond = conditions.buffer_not_empty,
   color = function()
@@ -207,11 +169,61 @@ ins_left({
   path = 1,
 })
 
+wins_left({
+  function()
+    return "%="
+  end,
+})
+
+wins_right({
+  "filesize",
+  cond = conditions.buffer_not_empty,
+  color = { fg = colors.purple },
+})
+
+wins_right({
+  "location",
+  color = { fg = colors.purple },
+})
+
+wins_right({
+  "progress",
+  color = { fg = colors.purple },
+})
+
+--[[ STATUSLINE ]]
 ins_left({
-  require("noice").api.statusline.mode.get,
-  cond = require("noice").api.statusline.mode.has,
-  color = { fg = colors.orange1 },
-  padding = { right = 1, left = 1 },
+  "filetype",
+  color = function()
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  icon_only = false,
+  icon = { align = "left" },
+  padding = { right = 1, left = 3 },
+})
+
+ins_left({
+  "diff",
+  symbols = { added = " ", modified = "柳", removed = " " },
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.orange },
+    removed = { fg = colors.red },
+  },
+  cond = conditions.hide_in_width,
+  padding = { right = 2, left = 1 },
+})
+
+ins_left({
+  "diagnostics",
+  sources = { "nvim_diagnostic" },
+  symbols = { error = " ", warn = " ", info = " " },
+  diagnostics_color = {
+    color_error = { fg = colors.red },
+    color_warn = { fg = colors.yellow },
+    color_info = { fg = colors.cyan },
+  },
+  padding = { right = 1, left = 2 },
 })
 
 ins_left({
@@ -221,28 +233,24 @@ ins_left({
 })
 
 ins_left({
-  "filetype",
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
-  icon_only = false,
-  icon = { align = "left" },
+  require("noice").api.statusline.mode.get,
+  cond = require("noice").api.statusline.mode.has,
+  color = { fg = colors.orange1 },
+  padding = { right = 1, left = 1 },
 })
 
 ins_right({
-  "filesize",
-  cond = conditions.buffer_not_empty,
-  color = { fg = colors.purple },
+  navic.get_location,
+  cond = navic.is_available,
+  color = { fg = colors.grey },
+  padding = { right = 1 },
 })
 
 ins_right({
-  "location",
-  color = { fg = colors.purple },
-})
-
-ins_right({
-  "progress",
-  color = { fg = colors.purple },
+  "branch",
+  icon = "",
+  color = { fg = colors.yellow },
+  padding = { right = 1, left = 1 },
 })
 
 lualine.setup(config)

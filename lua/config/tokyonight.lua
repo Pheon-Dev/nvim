@@ -74,7 +74,7 @@ vim.cmd("highlight CmpBorder guifg='#363636' guibg='#363636'")
 vim.cmd("highlight CmpDocBorder guifg='#363636' guibg='#2e2e2e'")
 
 --[[ Noice ]]
-vim.cmd("highlight NoiceConfirm guifg='#5e5e5e' guibg='#363636'")
+vim.cmd("highlight NoiceConfirm guifg='#7f7f7f' guibg='#363636'")
 
 vim.cmd("highlight NoiceCmdline guibg='#363636'")
 vim.cmd("highlight NoiceCmdlinePopup guibg='#363636'")
@@ -117,5 +117,5 @@ vim.cmd("highlight NotifyTRACEBody guibg=#3f3f3f")
 --[[ vim.cmd("highlight link NotifyTRACEBody Normal") ]]
 
 --[[ Blankline ]]
-vim.cmd("highlight IndentBlanklineChar guibg='#2e2e2e' guifg='#363636'")
-vim.cmd("highlight IndentBlanklineContextChar guibg='#2e2e2e' guifg='#3f3f3f'")
+vim.cmd("highlight IndentBlanklineChar guifg='#363636'")
+vim.cmd("highlight IndentBlanklineContextChar guifg='#3f3f3f'")

@@ -71,12 +71,12 @@ db.custom_center = {
     action = "Telescope gh issues initial_mode=normal",
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- PRs              ",
     action = "Telescope gh pull_request theme=ivy initial_mode=normal",
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- Lazygit          ",
     action = toggle_lazygit,
   },
