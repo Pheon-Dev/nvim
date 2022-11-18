@@ -90,8 +90,8 @@ db.custom_center = {
     desc = "⇕ ------------------------------------------------- Help Tags        ",
     action = "Telescope help_tags theme=dropdown initial_mode=insert",
   },
-  { icon = " ", desc = "⇕ ------------------------------------------------- Sync             ",
-    action = "PackerSync" },
+  --[[ { icon = " ", desc = "⇕ ------------------------------------------------- Sync             ", ]]
+  --[[   action = "PackerSync" }, ]]
   { icon = " ", desc = "⇕ ------------------------------------------------- Compile          ",
     action = "PackerCompile" },
   { icon = "✗ ", desc = "⇑ ------------------------------------------------- Exit             ", action = "q!" },

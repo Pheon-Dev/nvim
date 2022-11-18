@@ -12,6 +12,7 @@ end
 local colors = {
   bg = "#2e2e2e",
   bg1 = "#363636",
+  bg2 = "#5e5e5e",
   grey = "#7f7f7f",
   fg = "#8aa2f7",
   yellow = '#ffff0f',
@@ -163,9 +164,7 @@ wins_left({
 wins_left({
   "filename",
   cond = conditions.buffer_not_empty,
-  color = function()
-    return { fg = mode_color[vim.fn.mode()] }
-  end,
+  color = { fg = colors.bg2 },
   path = 1,
 })
 

@@ -134,10 +134,6 @@ return packer.startup({
       "petertriho/nvim-scrollbar",
       config = "require('config.scrollbar')",
     })
-    use({
-      "b0o/incline.nvim",
-      config = "require('config.incline')",
-    })
 
     --[[ TREESITTER ]]
     use({
@@ -254,7 +250,20 @@ return packer.startup({
       "ckipp01/stylua-nvim",
       run = "cargo install stylua",
     })
+
+    --[[ Language Specific ]]
     use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
+    use({
+      "dense-analysis/ale",
+      --[[ config = "require('config.go')", ]]
+    })
+    --[[ use({ ]]
+    --[[   "w0rp/ale", ]]
+    --[[ }) ]]
+    use({
+      "fatih/vim-go",
+      --[[ config = "require('config.go')", ]]
+    })
 
     --[[ GIT ]]
     use({

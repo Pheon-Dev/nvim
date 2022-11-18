@@ -71,6 +71,21 @@ vim.cmd("set formatoptions+=r")
 vim.cmd("set completeopt-=preview")
 vim.cmd("let g:deoplete#enable_at_startup=1")
 
+--[[ GO ]]
+vim.cmd("let g:go_def_mode='gopls'")
+vim.cmd("let g:go_info_mode='gopls'")
+
+--[[ ALE ]]
+vim.cmd("let g:ale_linters = { 'go': ['gopls'],}")
+vim.cmd("let b:ale_fixers = ['prettier', 'eslint']")
+vim.cmd("let b:ale_fixers = {'javascript': ['prettier', 'eslint']}")
+vim.cmd("let g:ale_fix_on_save = 1")
+vim.cmd("let g:ale_completion_enabled = 1")
+vim.cmd("let g:ale_completion_autoimport = 1")
+vim.cmd("let g:ale_linters_explicit = 1")
+vim.cmd("let g:ale_sign_error = '>>'")
+vim.cmd("let g:ale_sign_warning = '--'")
+
 vim.cmd("autocmd!")
 vim.cmd("autocmd Insertleave * set nopaste")
 vim.cmd('autocmd VimEnter * :silent exec "!kill -s SIGNWINCH $PPID"')
