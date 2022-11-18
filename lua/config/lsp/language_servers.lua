@@ -114,13 +114,14 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 local lsp_flags = {
-  -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
+
 --[[ require('lspconfig')['pyright'].setup { ]]
 --[[   on_attach = on_attach, ]]
 --[[   flags = lsp_flags, ]]
 --[[ } ]]
+
 --[[ require('lspconfig')['rust_analyzer'].setup { ]]
 --[[   on_attach = on_attach, ]]
 --[[   flags = lsp_flags, ]]
@@ -129,19 +130,6 @@ local lsp_flags = {
 --[[     ["rust-analyzer"] = {} ]]
 --[[   } ]]
 --[[ } ]]
-
---[[ require("lspconfig").tsserver.setup({ ]]
---[[   capabilities = capability, ]]
---[[   on_attach = on_attach, ]]
---[[   cmd = { "typescript-language-server", "--stdio" }, ]]
---[[   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }, ]]
---[[   init_options = { ]]
---[[     hostInfo = "neovim", ]]
---[[   }, ]]
---[[   root_dir = function(fname) ]]
---[[     return vim.loop.cwd() ]]
---[[   end, ]]
---[[ }) ]]
 
 require("typescript").setup({
   disable_commands = false, -- prevent the plugin from creating Vim commands
