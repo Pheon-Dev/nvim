@@ -119,15 +119,14 @@ return packer.startup({
     })
 
     --[[ FOLD ]]
-    use { 'anuvyklack/pretty-fold.nvim',
+    use({
+      "anuvyklack/pretty-fold.nvim",
+      requires = {
+        "anuvyklack/fold-preview.nvim",
+        "anuvyklack/keymap-amend.nvim",
+      },
       config = "require('config.fold')",
-    }
-    use { 'anuvyklack/fold-preview.nvim',
-      requires = 'anuvyklack/keymap-amend.nvim',
-      config = function()
-        require('fold-preview').setup()
-      end
-    }
+    })
 
     --[[ AESTHETICS ]]
     use({
