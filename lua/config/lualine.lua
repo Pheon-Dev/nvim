@@ -164,7 +164,7 @@ wins_left({
 wins_left({
   "filename",
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.bg2 },
+  color = { fg = colors.grey },
   path = 1,
 })
 
@@ -175,19 +175,10 @@ wins_left({
 })
 
 wins_right({
-  "filesize",
-  cond = conditions.buffer_not_empty,
-  color = { fg = colors.purple },
-})
-
-wins_right({
-  "location",
-  color = { fg = colors.purple },
-})
-
-wins_right({
-  "progress",
-  color = { fg = colors.purple },
+  navic.get_location,
+  cond = navic.is_available,
+  color = { fg = colors.grey },
+  padding = { right = 1 },
 })
 
 --[[ STATUSLINE ]]
@@ -239,15 +230,24 @@ ins_left({
 })
 
 ins_right({
-  navic.get_location,
-  cond = navic.is_available,
-  color = { fg = colors.grey },
-  padding = { right = 1 },
+  "filesize",
+  cond = conditions.buffer_not_empty,
+  color = { fg = colors.bg2 },
+})
+
+ins_right({
+  "location",
+  color = { fg = colors.bg2 },
+})
+
+ins_right({
+  "progress",
+  color = { fg = colors.bg2 },
 })
 
 ins_right({
   "branch",
-  icon = "",
+  icon = { "", align = "left" },
   color = { fg = colors.yellow },
   padding = { right = 1, left = 1 },
 })

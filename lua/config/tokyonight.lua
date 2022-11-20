@@ -13,12 +13,14 @@ require("tokyonight.colors").default = {
   fg = "#c0caf5",
   fg_dark = "#a9b1d6",
   fg_gutter = "#565656",
-  dark3 = "#545c7e",
+  dark3 = "#565656",
+  dark4 = "#545c7e",
   comment = "#7f7f7f",
   comment1 = "#c678dd",
   comment2 = "#737aa2",
   comment3 = "#ff8fff",
-  dark5 = "#565f89",
+  dark5 = "#7f7f7f",
+  dark6 = "#565f89",
   blue0 = "#565656",
   blue = "#6790eb",
   cyan = "#7dcfff",
@@ -64,9 +66,9 @@ vim.cmd("highlight DashboardShortCut guifg=#10f030 ")
 --[[ vim.cmd("highlight WinBarNC guifg=#808080 guibg=#2e2e2e ") ]]
 
 --[[ Lir ]]
-vim.cmd("highlight LirFloatNormal guibg='#363636'")
-vim.cmd("highlight LirFloatCursorLine guibg='#2e2e2e'")
-vim.cmd("highlight LirFloatBorder guibg='#363636' guifg='#363636'")
+vim.cmd("highlight LirFloatNormal guibg='#333333'")
+vim.cmd("highlight LirFloatCursorLine guibg='#3f3f3f'")
+vim.cmd("highlight LirFloatBorder guibg='#333333' guifg='#333333'")
 
 --[[ CMP ]]
 vim.cmd("highlight CmpPmenu guibg='#363636'")
@@ -121,3 +123,7 @@ vim.cmd("highlight NotifyTRACEBody guibg=#3f3f3f")
 --[[ Blankline ]]
 vim.cmd("highlight IndentBlanklineChar guifg='#363636'")
 vim.cmd("highlight IndentBlanklineContextChar guifg='#3f3f3f'")
+
+--[[ Fold Preview ]]
+vim.cmd("highlight FoldPreview guibg='#363636'")
+vim.cmd("highlight FoldPreviewBorder guibg='#363636'")

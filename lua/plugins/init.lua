@@ -83,6 +83,12 @@ return packer.startup({
       "ahmedkhalf/project.nvim",
       config = "require('config.projects')",
     })
+    use({
+      "nvim-telescope/telescope-frecency.nvim",
+      requires = {
+        { "kkharji/sqlite.lua" },
+      },
+    })
 
     --[[ UTILS ]]
     use({
@@ -103,12 +109,32 @@ return packer.startup({
       "karb94/neoscroll.nvim",
       config = "require('config.neoscroll')",
     })
+    use({
+      "Pocco81/auto-save.nvim",
+      config = "require('config.auto-save')",
+    })
+    use({
+      "gbprod/yanky.nvim",
+      config = "require('config.yanky')",
+    })
+
+    --[[ FOLD ]]
+    use { 'anuvyklack/pretty-fold.nvim',
+      config = "require('config.fold')",
+    }
+    use { 'anuvyklack/fold-preview.nvim',
+      requires = 'anuvyklack/keymap-amend.nvim',
+      config = function()
+        require('fold-preview').setup()
+      end
+    }
 
     --[[ AESTHETICS ]]
     use({
       "nvim-lualine/lualine.nvim",
       requires = {
-        "kyazdani42/nvim-web-devicons", opt = true,
+        "kyazdani42/nvim-web-devicons",
+        opt = true,
       },
       event = "BufRead",
       config = "require('config.lualine')",
@@ -255,14 +281,9 @@ return packer.startup({
     use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
     use({
       "dense-analysis/ale",
-      --[[ config = "require('config.go')", ]]
     })
-    --[[ use({ ]]
-    --[[   "w0rp/ale", ]]
-    --[[ }) ]]
     use({
       "fatih/vim-go",
-      --[[ config = "require('config.go')", ]]
     })
 
     --[[ GIT ]]
@@ -277,6 +298,11 @@ return packer.startup({
       "airblade/vim-gitgutter",
     })
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = "require('config.diffview')" }
+    use {
+      'ldelossa/gh.nvim',
+      requires = { { 'ldelossa/litee.nvim' } },
+      config = "require('config.gh')",
+    }
 
     --[[ DIAGNOSTICS ]]
     use({

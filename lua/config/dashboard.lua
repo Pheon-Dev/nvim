@@ -50,6 +50,10 @@ db.custom_center = {
     action = "Telescope projects theme=dropdown initial_mode=normal" },
   { icon = " ", desc = "⇕ ------------------------------------------------- NVIM Tree        ",
     action = "NvimTreeToggle" },
+  --[[ { icon = "ℤ ", desc = "⇕ ------------------------------------------------- Zoxide           ", ]]
+  --[[   action = "Telescope zoxide list theme=dropdown initial_mode=normal previewer=false" }, ]]
+  { icon = " ", desc = "⇕ ------------------------------------------------- Frecency         ",
+    action = "Telescope frecency theme=dropdown initial_mode=normal previewer=false" },
   {
     icon = " ",
     desc = "⇕ ------------------------------------------------- TODO             ",
