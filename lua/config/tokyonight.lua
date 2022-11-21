@@ -73,19 +73,19 @@ vim.cmd("highlight LirFloatBorder guibg='#333333' guifg='#333333'")
 --[[ CMP ]]
 vim.cmd("highlight CmpPmenu guibg='#363636'")
 vim.cmd("highlight PmenuSel guibg='#5e5e5e'")
-
 vim.cmd("highlight CmpBorder guifg='#363636' guibg='#363636'")
 vim.cmd("highlight CmpDocBorder guifg='#363636' guibg='#2e2e2e'")
 
 --[[ Noice ]]
 vim.cmd("highlight NoiceConfirm guifg='#7f7f7f' guibg='#363636'")
+vim.cmd("highlight NoiceConfirmBorder guifg='#363636' guibg='#363636'")
+
+vim.cmd("highlight NoicePopup guibg='#363636'")
+vim.cmd("highlight NoicePopupBorder guifg='#363636' guibg='#363636'")
+vim.cmd("highlight NoicePopupmenuBorder guifg='#363636' guibg='#363636'")
 
 vim.cmd("highlight NoiceCmdline guibg='#363636'")
 vim.cmd("highlight NoiceCmdlinePopup guibg='#363636'")
-
-vim.cmd("highlight NoiceConfirmBorder guifg='#363636' guibg='#363636'")
-vim.cmd("highlight NoicePopupBorder guifg='#363636' guibg='#363636'")
-vim.cmd("highlight NoicePopupmenuBorder guifg='#363636' guibg='#363636'")
 vim.cmd("highlight NoiceCmdlinePopupBorder guifg='#363636' guibg='#363636'")
 vim.cmd("highlight NoiceCmdlinePopupBorderSearch guifg='#363636' guibg='#363636'")
 
@@ -127,3 +127,28 @@ vim.cmd("highlight IndentBlanklineContextChar guifg='#3f3f3f'")
 --[[ Fold Preview ]]
 vim.cmd("highlight FoldPreview guibg='#363636'")
 vim.cmd("highlight FoldPreviewBorder guibg='#363636'")
+
+-- [[ Ale ]]
+vim.cmd("highlight ALEWarningSignLineNr guibg='#363636'")
+vim.cmd("highlight ALEWarningSign guibg='#363636'")
+vim.cmd("highlight ALEWarningLine guibg='#363636'")
+vim.cmd("highlight ALEWarning guibg='#363636'")
+vim.cmd("highlight ALEVirtualTextWarning guibg='#363636'")
+vim.cmd("highlight ALEVirtualTextStyleWarning guibg='#363636'")
+vim.cmd("highlight ALEVirtualTextStyleError guibg='#363636'")
+vim.cmd("highlight ALEVirtualTextInfo guibg='#363636'")
+vim.cmd("highlight ALEVirtualTextError guibg='#363636'")
+vim.cmd("highlight ALEStyleWarningSignLineNr guibg='#363636'")
+vim.cmd("highlight ALEStyleWarningSign guibg='#363636'")
+vim.cmd("highlight ALEStyleWarning guibg='#363636'")
+vim.cmd("highlight ALEStyleErrorSignLineNr guibg='#363636'")
+vim.cmd("highlight ALEStyleErrorSign guibg='#363636'")
+vim.cmd("highlight ALEStyleError guibg='#363636'")
+vim.cmd("highlight ALEInfoSignLineNr guibg='#363636'")
+vim.cmd("highlight ALEInfoLine guibg='#363636'")
+vim.cmd("highlight ALEInfoSign guibg='#363636'")
+vim.cmd("highlight ALEInfo guibg='#363636'")
+vim.cmd("highlight ALEErrorSignLineNr guibg='#363636'")
+vim.cmd("highlight ALEErrorSign guibg='#363636'")
+vim.cmd("highlight ALEErrorLine guibg='#363636'")
+vim.cmd("highlight ALEError guibg='#363636'")

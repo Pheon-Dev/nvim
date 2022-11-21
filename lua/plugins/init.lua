@@ -83,12 +83,6 @@ return packer.startup({
       "ahmedkhalf/project.nvim",
       config = "require('config.projects')",
     })
-    use({
-      "nvim-telescope/telescope-frecency.nvim",
-      requires = {
-        { "kkharji/sqlite.lua" },
-      },
-    })
 
     --[[ UTILS ]]
     use({
@@ -98,34 +92,8 @@ return packer.startup({
       "christoomey/vim-tmux-navigator",
     })
     use({
-      "monaqa/dial.nvim",
-      config = "require('config.dial')",
-    })
-    use({
-      "AckslD/nvim-neoclip.lua",
-      config = "require('config.neoclip')",
-    })
-    use({
       "karb94/neoscroll.nvim",
       config = "require('config.neoscroll')",
-    })
-    use({
-      "Pocco81/auto-save.nvim",
-      config = "require('config.auto-save')",
-    })
-    use({
-      "gbprod/yanky.nvim",
-      config = "require('config.yanky')",
-    })
-
-    --[[ FOLD ]]
-    use({
-      "anuvyklack/pretty-fold.nvim",
-      requires = {
-        "anuvyklack/fold-preview.nvim",
-        "anuvyklack/keymap-amend.nvim",
-      },
-      config = "require('config.fold')",
     })
 
     --[[ AESTHETICS ]]
@@ -297,11 +265,6 @@ return packer.startup({
       "airblade/vim-gitgutter",
     })
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = "require('config.diffview')" }
-    use {
-      'ldelossa/gh.nvim',
-      requires = { { 'ldelossa/litee.nvim' } },
-      config = "require('config.gh')",
-    }
 
     --[[ DIAGNOSTICS ]]
     use({
