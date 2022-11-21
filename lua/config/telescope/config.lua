@@ -26,8 +26,7 @@ require("telescope").setup({
     generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     path_display = { "truncate" }, -- "smart"
     winblend = 0,
-    border = {},
-    --[[ borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, ]]
+    border = {}, --[[ borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }, ]]
     color_devicons = true,
     use_less = true,
     set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
@@ -58,7 +57,7 @@ require("telescope").setup({
   },
   pickers = {
     buffers = {
-      theme = "dropdown", -- cursor , dropdown, ivy
+      theme = "dropdown",
       initial_mode = "normal",
       previewer = false,
     },

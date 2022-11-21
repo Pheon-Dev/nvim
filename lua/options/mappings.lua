@@ -1,10 +1,8 @@
 vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 
--- Saving and  ESC on insert Mode
-map("i", "jj", "<esc>", { noremap = true, silent = true })
-map("i", "kk", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
-map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+--[[ ESC ]]
+map("i", "jj", "<esc>:lua vim.lsp.buf.format()<cr><esc>:noh<cr>", { noremap = true, silent = true })
 
 -- Saving and Quitting
 map("n", "<C-s>", ":lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
