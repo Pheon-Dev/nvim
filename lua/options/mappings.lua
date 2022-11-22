@@ -173,19 +173,21 @@ map("n", "ch", "c^", { noremap = true, silent = true })
 map("n", "tl", ":ToggleTerm size=60 dir=. direction=vertical<cr>", { noremap = true, silent = true })
 map("n", "tj", ":ToggleTerm size=20 dir=. direction=horizontal<cr>", { noremap = true, silent = true })
 
--- Easymotion
-map("n", "s", "<Plug>(easymotion-prefix)", { noremap = true, silent = true })
-map("n", "sh", "<Plug>(easymotion-Fl)", { noremap = true, silent = true })
-map("n", "sj", "<Plug>(easymotion-j)", { noremap = true, silent = true })
-map("n", "sk", "<Plug>(easymotion-k)", { noremap = true, silent = true })
-map("n", "sl", "<Plug>(easymotion-fl)", { noremap = true, silent = true })
-map("n", "sf", "<Plug>(easymotion-overwin-w)", { noremap = true, silent = true })
-map("n", "s.", "<Plug>(easymotion-repeat)", { noremap = true, silent = true })
-
--- Shade Toggle
-map("n", "S", ":lua require'shade'.toggle()<cr>", { noremap = true, silent = false })
-
-map("i", "C-Return", "<cr><cr><C-o>k<TAB>", { noremap = true, silent = false })
+-- Motion
+local hop = require('hop')
+local directions = require('hop.hint').HintDirection
+vim.keymap.set('', 'f', function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+end, { remap = true })
+vim.keymap.set('', 'F', function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+end, { remap = true })
+vim.keymap.set('', 't', function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
+end, { remap = true })
+vim.keymap.set('', 'T', function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
+end, { remap = true })
 
 -- Dial
 map("n", "<C-x>", require("dial.map").inc_normal(), { noremap = true })
@@ -211,15 +213,6 @@ map('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
 map('n', '<Leader>l', ':noh<CR>', kopts)
 
--- Neogen
-local opts = { noremap = true, silent = true }
-map("n", "<Leader>ng", ":lua require('neogen').generate()<CR>", opts)
-map("i", "<C-l>", ":lua require('neogen').jump_next<CR>", opts)
-map("i", "<C-h>", ":lua require('neogen').jump_prev<CR>", opts)
-map("n", "<Leader>nc", ":lua require('neogen').generate({ type = 'class' })<CR>", opts)
-map("n", "<Leader>nf", ":lua require('neogen').generate({ type = 'func' })<CR>", opts)
-map("n", "<Leader>nt", ":lua require('neogen').generate({ type = 'type' })<CR>", opts)
-
 vim.keymap.set("n", "<c-f>", function()
   if not require("noice.lsp").scroll(4) then
     return "<c-f>"
@@ -231,31 +224,6 @@ vim.keymap.set("n", "<c-b>", function()
     return "<c-b>"
   end
 end, { silent = true, expr = true })
-
---[[ Fold ]]
-local fp = require('fold-preview')
-local mapping = require('fold-preview').mapping
-local keymap = vim.keymap
-keymap.amend = require('keymap-amend')
-
-fp.setup({
-  default_keybindings = false
-  -- another settings
-})
-
-keymap.amend('n', 'K', function(original)
-  if not fp.toggle_preview() then original() end
-  -- or
-  -- if not fp.show_preview() then original() end
-  -- to close preview on second press on K.
-end)
-keymap.amend('n', 'h', mapping.close_preview_open_fold)
-keymap.amend('n', 'l', mapping.close_preview_open_fold)
-keymap.amend('n', 'zo', mapping.close_preview)
-keymap.amend('n', 'zO', mapping.close_preview)
-keymap.amend('n', 'zc', mapping.close_preview_without_defer)
-keymap.amend('n', 'zR', mapping.close_preview)
-keymap.amend('n', 'zM', mapping.close_preview_without_defer)
 
 map("n", "zh", "zfi)", { noremap = true, silent = true })
 map("n", "zj", "zfi}", { noremap = true, silent = true })

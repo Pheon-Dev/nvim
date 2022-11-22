@@ -20,6 +20,8 @@ return packer.startup({
 
     --[[ ESSENTIALS ]]
     use("lewis6991/impatient.nvim")
+    use("tweekmonster/startuptime.vim")
+    use("nathom/filetype.nvim")
     use({
       "kyazdani42/nvim-web-devicons",
     })
@@ -102,10 +104,6 @@ return packer.startup({
       config = "require('config.dial')",
     })
     use({
-      "AckslD/nvim-neoclip.lua",
-      config = "require('config.neoclip')",
-    })
-    use({
       "karb94/neoscroll.nvim",
       config = "require('config.neoscroll')",
     })
@@ -117,17 +115,6 @@ return packer.startup({
       "gbprod/yanky.nvim",
       config = "require('config.yanky')",
     })
-
-    --[[ FOLD ]]
-    use { 'anuvyklack/pretty-fold.nvim',
-      config = "require('config.fold')",
-    }
-    use { 'anuvyklack/fold-preview.nvim',
-      requires = 'anuvyklack/keymap-amend.nvim',
-      config = function()
-        require('fold-preview').setup()
-      end
-    }
 
     --[[ AESTHETICS ]]
     use({
@@ -253,9 +240,11 @@ return packer.startup({
       "kevinhwang91/nvim-hlslens",
       config = "require('config.hlslens')",
     })
-    use({
-      "easymotion/vim-easymotion",
-    })
+    use {
+      'phaazon/hop.nvim',
+      branch = 'v2', -- optional but strongly recommended
+      config = "require('config.hop')",
+    }
     use({
       "terryma/vim-multiple-cursors",
     })
@@ -298,11 +287,6 @@ return packer.startup({
       "airblade/vim-gitgutter",
     })
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', config = "require('config.diffview')" }
-    use {
-      'ldelossa/gh.nvim',
-      requires = { { 'ldelossa/litee.nvim' } },
-      config = "require('config.gh')",
-    }
 
     --[[ DIAGNOSTICS ]]
     use({
@@ -320,9 +304,11 @@ return packer.startup({
 
     --[[ DAP ]]
     use { "nvim-telescope/telescope-dap.nvim", requires = "nvim-telescope/telescope.nvim" }
-    use { "mfussenegger/nvim-dap" }
+    use { "mfussenegger/nvim-dap",
+    }
     use { "rcarriga/nvim-dap-ui", requires = "mfussenegger/nvim-dap" }
-    use { "rcarriga/cmp-dap", requires = "mfussenegger/nvim-dap" }
+    use { "rcarriga/cmp-dap", requires = "mfussenegger/nvim-dap",
+    }
     use { "Weissle/persistent-breakpoints.nvim", requires = "mfussenegger/nvim-dap" }
     use {
       "jayp0521/mason-nvim-dap.nvim",
