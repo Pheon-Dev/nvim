@@ -19,9 +19,15 @@ return packer.startup({
     use("wbthomason/packer.nvim")
 
     --[[ ESSENTIALS ]]
-    use("lewis6991/impatient.nvim")
-    use("tweekmonster/startuptime.vim")
-    use("nathom/filetype.nvim")
+    use({
+      "lewis6991/impatient.nvim",
+    })
+    use({
+      "tweekmonster/startuptime.vim",
+    })
+    use({
+      "nathom/filetype.nvim",
+    })
     use({
       "kyazdani42/nvim-web-devicons",
     })
@@ -74,6 +80,7 @@ return packer.startup({
     })
     use({
       "Pheon-Dev/harpoon",
+      config = "require('config.harpoon')",
     })
     use {
       'kyazdani42/nvim-tree.lua',
@@ -84,12 +91,6 @@ return packer.startup({
     use({
       "ahmedkhalf/project.nvim",
       config = "require('config.projects')",
-    })
-    use({
-      "nvim-telescope/telescope-frecency.nvim",
-      requires = {
-        { "kkharji/sqlite.lua" },
-      },
     })
 
     --[[ UTILS ]]
@@ -268,9 +269,6 @@ return packer.startup({
 
     --[[ Language Specific ]]
     use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
-    use({
-      "dense-analysis/ale",
-    })
     use({
       "fatih/vim-go",
     })
