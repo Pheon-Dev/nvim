@@ -5,11 +5,11 @@ vim.o.background = 'dark'
 
 require("tokyonight.colors").default = {
   none = "NONE",
-  bg_dark = "#2e2e2e",
-  bg = "#2e2e2e",
+  bg_dark = "#2a2a2a",
+  bg = "#2a2a2a",
   bg_highlight = "#363636",
   bg_highlight1 = "#464646",
-  terminal_black = "#2e2e2e",
+  terminal_black = "#2a2a2a",
   fg = "#c0caf5",
   fg_dark = "#a9b1d6",
   fg_gutter = "#565656",
@@ -62,8 +62,8 @@ vim.cmd("highlight DashboardHeader guifg=#1080f0 ")
 vim.cmd("highlight DashboardCenter guifg=#10a0f0 ")
 vim.cmd("highlight DashboardFooter guifg=#10f0f0 ")
 vim.cmd("highlight DashboardShortCut guifg=#10f030 ")
---[[ vim.cmd("highlight WinBar guifg=#8aa2f7 guibg=#2e2e2e ") ]]
---[[ vim.cmd("highlight WinBarNC guifg=#808080 guibg=#2e2e2e ") ]]
+--[[ vim.cmd("highlight WinBar guifg=#8aa2f7 guibg=#2a2a2a ") ]]
+--[[ vim.cmd("highlight WinBarNC guifg=#808080 guibg=#2a2a2a ") ]]
 
 --[[ Lir ]]
 vim.cmd("highlight LirFloatNormal guibg='#333333'")
@@ -74,7 +74,7 @@ vim.cmd("highlight LirFloatBorder guibg='#333333' guifg='#333333'")
 vim.cmd("highlight CmpPmenu guibg='#363636'")
 vim.cmd("highlight PmenuSel guibg='#5e5e5e'")
 vim.cmd("highlight CmpBorder guifg='#363636' guibg='#363636'")
-vim.cmd("highlight CmpDocBorder guifg='#363636' guibg='#2e2e2e'")
+vim.cmd("highlight CmpDocBorder guifg='#363636' guibg='#2a2a2a'")
 
 --[[ Noice ]]
 vim.cmd("highlight NoiceConfirm guifg='#7f7f7f' guibg='#363636'")

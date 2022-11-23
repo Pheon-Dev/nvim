@@ -79,270 +79,270 @@ require("bufferline").setup({
   highlights = {
     fill = {
       fg = "#565656",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     background = {
       fg = "#565656",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     tab = {
       fg = "#565656",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     tab_selected = {
       fg = "#a9b1d6",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     tab_close = {
       fg = "#565656",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     close_button = {
       fg = "#3f3f3f",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     close_button_visible = {
       fg = "#3f3f3f",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     close_button_selected = {
       fg = "#565656",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     buffer_visible = {
       fg = "#7f7f7f",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     buffer_selected = {
       fg = "#7aa2f7",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       bold = true,
       italic = true,
     },
     numbers = {
       fg = "#3f3f3f",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     numbers_visible = {
       fg = "#3f3f3f",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     numbers_selected = {
       fg = "#565656",
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       bold = true,
       italic = true,
     },
     diagnostic = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     diagnostic_visible = {
       --[[ fg = "#eb9af7", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     diagnostic_selected = {
       --[[ fg = "#eb9af7", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       bold = true,
       italic = true,
     },
     hint = {
       --[[ fg = "#565656", ]]
-      sp = "#2e2e2e",
-      bg = "#2e2e2e",
+      sp = "#2a2a2a",
+      bg = "#2a2a2a",
     },
     hint_visible = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     hint_selected = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2e2e2e",
-      sp = "#2e2e2e",
+      bg = "#2a2a2a",
+      sp = "#2a2a2a",
       bold = true,
       italic = true,
     },
     hint_diagnostic = {
       --[[ fg = "#565656", ]]
-      sp = "#2e2e2e",
-      bg = "#2e2e2e",
+      sp = "#2a2a2a",
+      bg = "#2a2a2a",
     },
     hint_diagnostic_visible = {
       --[[ fg = "#c66bfe", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     hint_diagnostic_selected = {
       --[[ fg = "#c66bfe", ]]
-      bg = "#2e2e2e",
-      sp = "#2e2e2e",
+      bg = "#2a2a2a",
+      sp = "#2a2a2a",
       bold = true,
       italic = true,
     },
     info = {
       --[[ fg = "#565656", ]]
-      sp = "#2e2e2e",
-      bg = "#2e2e2e",
+      sp = "#2a2a2a",
+      bg = "#2a2a2a",
     },
     info_visible = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     info_selected = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2e2e2e",
-      sp = "#2e2e2e",
+      bg = "#2a2a2a",
+      sp = "#2a2a2a",
       bold = true,
       italic = true,
     },
     info_diagnostic = {
       --[[ fg = "#565656", ]]
-      sp = "#2e2e2e",
-      bg = "#2e2e2e",
+      sp = "#2a2a2a",
+      bg = "#2a2a2a",
     },
     info_diagnostic_visible = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     info_diagnostic_selected = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2e2e2e",
-      sp = "#2e2e2e",
+      bg = "#2a2a2a",
+      sp = "#2a2a2a",
       bold = true,
       italic = true,
     },
     warning = {
       --[[ fg = "#565656", ]]
-      sp = "#2e2e2e",
-      bg = "#2e2e2e",
+      sp = "#2a2a2a",
+      bg = "#2a2a2a",
     },
     warning_visible = {
       --[[ fg = "#e0af68", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     warning_selected = {
       --[[ fg = "#e0af68", ]]
-      bg = "#2e2e2e",
-      sp = "#2e2e2e",
+      bg = "#2a2a2a",
+      sp = "#2a2a2a",
       bold = true,
       italic = true,
     },
     warning_diagnostic = {
       --[[ fg = "#565656", ]]
-      sp = "#2e2e2e",
-      bg = "#2e2e2e",
+      sp = "#2a2a2a",
+      bg = "#2a2a2a",
     },
     warning_diagnostic_visible = {
       --[[ fg = "#e0af68", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     warning_diagnostic_selected = {
       --[[ fg = "#e0af68", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       sp = "",
       bold = true,
       italic = true,
     },
     error = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
-      sp = "#2e2e2e",
+      bg = "#2a2a2a",
+      sp = "#2a2a2a",
     },
     error_visible = {
       --[[ fg = "#f7768e", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     error_selected = {
       --[[ fg = "#f7768e", ]]
-      bg = "#2e2e2e",
-      sp = "#2e2e2e",
+      bg = "#2a2a2a",
+      sp = "#2a2a2a",
       bold = true,
       italic = true,
     },
     error_diagnostic = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
-      sp = "#2e2e2e",
+      bg = "#2a2a2a",
+      sp = "#2a2a2a",
     },
     error_diagnostic_visible = {
       --[[ fg = "#f7768e", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     error_diagnostic_selected = {
       --[[ fg = "#f7768e", ]]
-      bg = "#2e2e2e",
-      sp = "#2e2e2e",
+      bg = "#2a2a2a",
+      sp = "#2a2a2a",
       bold = true,
       italic = true,
     },
     modified = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     modified_visible = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     modified_selected = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     duplicate_selected = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       italic = true,
     },
     duplicate_visible = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       italic = true,
     },
     duplicate = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       italic = true,
     },
     separator_selected = {
-      fg = "#2e2e2e",
-      bg = "#2e2e2e",
+      fg = "#2a2a2a",
+      bg = "#2a2a2a",
     },
     separator_visible = {
-      fg = "#2e2e2e",
-      bg = "#2e2e2e",
+      fg = "#2a2a2a",
+      bg = "#2a2a2a",
     },
     separator = {
-      fg = "#2e2e2e",
-      bg = "#2e2e2e",
+      fg = "#2a2a2a",
+      bg = "#2a2a2a",
     },
     indicator_visible = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     indicator_selected = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
     },
     pick_selected = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       bold = true,
       italic = true,
     },
     pick_visible = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       bold = true,
       italic = true,
     },
     pick = {
       --[[ fg = "#565656", ]]
-      bg = "#2e2e2e",
+      bg = "#2a2a2a",
       bold = true,
       italic = true,
     },
     offset_separator = {
-      --[[ fg = "#2e2e2e", ]]
-      bg = "#2e2e2e",
+      --[[ fg = "#2a2a2a", ]]
+      bg = "#2a2a2a",
     },
   },
 })
