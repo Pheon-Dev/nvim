@@ -83,12 +83,6 @@ vim.cmd("autocmd FileType ruby setlocal shiftwidth=2 tabstop=2")
 vim.cmd("autocmd FileType yaml setlocal shiftwidth=2 tabstop=2")
 vim.cmd("autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart")
 vim.cmd("autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear")
---[[ vim.cmd("autocmd BufLeave ~/.config/nvim/lua/plugins/init.lua :silent PackerSync") ]]
-
-vim.cmd('autocmd FileType typescript lua vim.api.nvim_buf_set_keymap(0, "n", "<C-x>", require("dial.map").inc_normal("typescript"), {noremap = true})')
-vim.cmd('autocmd FileType typescriptreact lua vim.api.nvim_buf_set_keymap(0, "n", "<C-x>", require("dial.map").inc_normal("typescript"), {noremap = true})')
-vim.cmd('autocmd FileType javascript lua vim.api.nvim_buf_set_keymap(0, "n", "<C-x>", require("dial.map").inc_normal("typescript"), {noremap = true})')
-vim.cmd('autocmd FileType javascriptreact lua vim.api.nvim_buf_set_keymap(0, "n", "<C-x>", require("dial.map").inc_normal("typescript"), {noremap = true})')
 
 vim.cmd([[
     augroup zap_config

@@ -2,7 +2,7 @@ local actions = require("telescope.actions")
 
 require("telescope").setup({
   defaults = {
-    hidden = false,
+    hidden = true,
     find_command = {
       "rg",
       "--no-heading",
