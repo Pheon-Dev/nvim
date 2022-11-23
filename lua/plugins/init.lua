@@ -74,20 +74,10 @@ return packer.startup({
     use({ "windwp/nvim-autopairs", after = "nvim-cmp", config = "require('config.autopairs')", })
 
     --[[ COMPLETION ]]
-    use({
-      "hrsh7th/nvim-cmp",
-      requires = {
-        { "hrsh7th/cmp-buffer" },
-        { "hrsh7th/cmp-nvim-lsp" },
-        { "hrsh7th/cmp-path" },
-        { "hrsh7th/cmp-nvim-lua" },
-        { "ray-x/cmp-treesitter" },
-        { "hrsh7th/cmp-vsnip" },
-        { "f3fora/cmp-spell" },
-        { "hrsh7th/cmp-cmdline" },
-        { "tamago324/cmp-zsh" },
-      },
-    })
+    use({ "hrsh7th/nvim-cmp",
+      requires = { { "hrsh7th/cmp-buffer" }, { "hrsh7th/cmp-nvim-lsp" }, { "hrsh7th/cmp-path" },
+        { "hrsh7th/cmp-nvim-lua" }, { "ray-x/cmp-treesitter" }, { "hrsh7th/cmp-vsnip" }, { "f3fora/cmp-spell" },
+        { "hrsh7th/cmp-cmdline" }, { "tamago324/cmp-zsh" }, }, })
 
     --[[ SNIPPETS ]]
     use({ "rafamadriz/friendly-snippets", })
@@ -142,6 +132,10 @@ return packer.startup({
     use({ "tami5/lspsaga.nvim", branch = "main", config = "require('config.lspsaga')", })
     use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" }, config = "require('config.null-ls')", })
     use({ "jayp0521/mason-null-ls.nvim", })
+
+    --[[ FOLD ]]
+    use({ "anuvyklack/pretty-fold.nvim", requires = { "anuvyklack/fold-preview.nvim", "anuvyklack/keymap-amend.nvim", },
+      config = "require('config.fold')", })
 
     if packer_bootstrap then
       require('packer').sync()

@@ -114,12 +114,6 @@ vim.cmd("highlight NotifyINFOBody guibg=#3f3f3f")
 vim.cmd("highlight NotifyDEBUGBody guibg=#3f3f3f")
 vim.cmd("highlight NotifyTRACEBody guibg=#3f3f3f")
 
---[[ vim.cmd("highlight link NotifyERRORBody Normal") ]]
---[[ vim.cmd("highlight link NotifyWARNBody Normal") ]]
---[[ vim.cmd("highlight link NotifyINFOBody Normal") ]]
---[[ vim.cmd("highlight link NotifyDEBUGBody Normal") ]]
---[[ vim.cmd("highlight link NotifyTRACEBody Normal") ]]
-
 --[[ Blankline ]]
 vim.cmd("highlight IndentBlanklineChar guifg='#363636'")
 vim.cmd("highlight IndentBlanklineContextChar guifg='#3f3f3f'")
@@ -128,27 +122,5 @@ vim.cmd("highlight IndentBlanklineContextChar guifg='#3f3f3f'")
 vim.cmd("highlight FoldPreview guibg='#363636'")
 vim.cmd("highlight FoldPreviewBorder guibg='#363636'")
 
--- [[ Ale ]]
-vim.cmd("highlight ALEWarningSignLineNr guibg='#363636'")
-vim.cmd("highlight ALEWarningSign guibg='#363636'")
-vim.cmd("highlight ALEWarningLine guibg='#363636'")
-vim.cmd("highlight ALEWarning guibg='#363636'")
-vim.cmd("highlight ALEVirtualTextWarning guibg='#363636'")
-vim.cmd("highlight ALEVirtualTextStyleWarning guibg='#363636'")
-vim.cmd("highlight ALEVirtualTextStyleError guibg='#363636'")
-vim.cmd("highlight ALEVirtualTextInfo guibg='#363636'")
-vim.cmd("highlight ALEVirtualTextError guibg='#363636'")
-vim.cmd("highlight ALEStyleWarningSignLineNr guibg='#363636'")
-vim.cmd("highlight ALEStyleWarningSign guibg='#363636'")
-vim.cmd("highlight ALEStyleWarning guibg='#363636'")
-vim.cmd("highlight ALEStyleErrorSignLineNr guibg='#363636'")
-vim.cmd("highlight ALEStyleErrorSign guibg='#363636'")
-vim.cmd("highlight ALEStyleError guibg='#363636'")
-vim.cmd("highlight ALEInfoSignLineNr guibg='#363636'")
-vim.cmd("highlight ALEInfoLine guibg='#363636'")
-vim.cmd("highlight ALEInfoSign guibg='#363636'")
-vim.cmd("highlight ALEInfo guibg='#363636'")
-vim.cmd("highlight ALEErrorSignLineNr guibg='#363636'")
-vim.cmd("highlight ALEErrorSign guibg='#363636'")
-vim.cmd("highlight ALEErrorLine guibg='#363636'")
-vim.cmd("highlight ALEError guibg='#363636'")
+--[[ Yanky ]]
+vim.cmd("highlight YankyYanked guibg='#525252'")
