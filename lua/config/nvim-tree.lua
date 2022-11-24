@@ -8,8 +8,8 @@ local tree_cb = require('nvim-tree.config').nvim_tree_callback
 _.setup {
   sync_root_with_cwd = true,
   respect_buf_cwd = true,
-  disable_netrw = true,
-  hijack_netrw = true,
+  disable_netrw = false,
+  hijack_netrw = false,
   open_on_setup = false,
   ignore_ft_on_setup = {
     "startify",
@@ -42,7 +42,7 @@ _.setup {
     ignore = false,
     timeout = 200,
   },
-  hijack_unnamed_buffer_when_opening = false,
+  hijack_unnamed_buffer_when_opening = true,
   view = {
     adaptive_size = true,
     width = 30,
@@ -79,7 +79,7 @@ _.setup {
     },
   },
   renderer = {
-    highlight_git = false,
+    highlight_git = true,
     highlight_opened_files = "none",
 
     indent_markers = {
