@@ -37,12 +37,12 @@ db.custom_center = {
     action = "Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false",
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- Find File        ",
     action = "Telescope find_files theme=dropdown initial_mode=insert previewer=false",
   },
   {
-    icon = " ",
+    icon = " ",
     desc = "⇕ ------------------------------------------------- Search Word      ",
     action = "Telescope live_grep theme=dropdown",
   },
@@ -53,7 +53,7 @@ db.custom_center = {
   },
   { icon = " ", desc = "⇕ ------------------------------------------------- Projects         ",
     action = "Telescope projects theme=dropdown initial_mode=normal" },
-  { icon = " ", desc = "⇕ ------------------------------------------------- NVIM Tree        ",
+  { icon = " ", desc = "⇕ ------------------------------------------------- NVIM Tree        ",
     action = "NvimTreeToggle" },
   {
     icon = " ",
@@ -66,7 +66,7 @@ db.custom_center = {
     action = "Mason",
   },
   {
-    icon = " ",
+    icon = "⨀ ",
     desc = "⇕ ------------------------------------------------- Issues           ",
     action = "Telescope gh issues initial_mode=normal",
   },
@@ -91,7 +91,7 @@ db.custom_center = {
     action = "Telescope help_tags theme=dropdown initial_mode=insert",
   },
   { icon = " ", desc = "⇕ ------------------------------------------------- Sync             ",
-    action = "PackerSync --preview" },
+    action = "PackerSync" },
   { icon = " ", desc = "⇕ ------------------------------------------------- Compile          ",
     action = "PackerCompile" },
   { icon = "✗ ", desc = "⇑ ------------------------------------------------- Exit             ", action = "q!" },

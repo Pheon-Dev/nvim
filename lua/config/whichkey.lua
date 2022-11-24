@@ -161,8 +161,7 @@ local mappings = {
     s = { ":PackerSync<cr>", "Packer Sync" },
   },
   q = { ":bd<cr>", "Close Buffer" },
-  r = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
-  s = { ":Telescope frecency theme=dropdown initial_mode=normal previewer=false<cr>", "Frecency" },
+  s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TODO | TypeScript | Terminal",
     a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
