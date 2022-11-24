@@ -78,271 +78,271 @@ require("bufferline").setup({
   },
   highlights = {
     fill = {
-      fg = "#565656",
-      bg = "#2a2a2a",
+      fg = "#44475a",
+      bg = "#21222c",
     },
     background = {
-      fg = "#565656",
-      bg = "#2a2a2a",
+      fg = "#44475a",
+      bg = "#21222c",
     },
     tab = {
-      fg = "#565656",
-      bg = "#2a2a2a",
+      fg = "#44475a",
+      bg = "#21222c",
     },
     tab_selected = {
       fg = "#a9b1d6",
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     tab_close = {
-      fg = "#565656",
-      bg = "#2a2a2a",
+      fg = "#44475a",
+      bg = "#21222c",
     },
     close_button = {
       fg = "#3f3f3f",
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     close_button_visible = {
       fg = "#3f3f3f",
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     close_button_selected = {
-      fg = "#565656",
-      bg = "#2a2a2a",
+      fg = "#44475a",
+      bg = "#21222c",
     },
     buffer_visible = {
       fg = "#7f7f7f",
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     buffer_selected = {
-      fg = "#7aa2f7",
-      bg = "#2a2a2a",
+      fg = "#bd93f9",
+      bg = "#21222c",
       bold = true,
       italic = true,
     },
     numbers = {
       fg = "#3f3f3f",
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     numbers_visible = {
       fg = "#3f3f3f",
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     numbers_selected = {
-      fg = "#565656",
-      bg = "#2a2a2a",
+      fg = "#44475a",
+      bg = "#21222c",
       bold = true,
       italic = true,
     },
     diagnostic = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
     },
     diagnostic_visible = {
       --[[ fg = "#eb9af7", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     diagnostic_selected = {
       --[[ fg = "#eb9af7", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
       bold = true,
       italic = true,
     },
     hint = {
-      --[[ fg = "#565656", ]]
-      sp = "#2a2a2a",
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      sp = "#21222c",
+      bg = "#21222c",
     },
     hint_visible = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     hint_selected = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2a2a2a",
-      sp = "#2a2a2a",
+      bg = "#21222c",
+      sp = "#21222c",
       bold = true,
       italic = true,
     },
     hint_diagnostic = {
-      --[[ fg = "#565656", ]]
-      sp = "#2a2a2a",
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      sp = "#21222c",
+      bg = "#21222c",
     },
     hint_diagnostic_visible = {
       --[[ fg = "#c66bfe", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     hint_diagnostic_selected = {
       --[[ fg = "#c66bfe", ]]
-      bg = "#2a2a2a",
-      sp = "#2a2a2a",
+      bg = "#21222c",
+      sp = "#21222c",
       bold = true,
       italic = true,
     },
     info = {
-      --[[ fg = "#565656", ]]
-      sp = "#2a2a2a",
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      sp = "#21222c",
+      bg = "#21222c",
     },
     info_visible = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     info_selected = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2a2a2a",
-      sp = "#2a2a2a",
+      bg = "#21222c",
+      sp = "#21222c",
       bold = true,
       italic = true,
     },
     info_diagnostic = {
-      --[[ fg = "#565656", ]]
-      sp = "#2a2a2a",
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      sp = "#21222c",
+      bg = "#21222c",
     },
     info_diagnostic_visible = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     info_diagnostic_selected = {
       --[[ fg = "#62ff00", ]]
-      bg = "#2a2a2a",
-      sp = "#2a2a2a",
+      bg = "#21222c",
+      sp = "#21222c",
       bold = true,
       italic = true,
     },
     warning = {
-      --[[ fg = "#565656", ]]
-      sp = "#2a2a2a",
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      sp = "#21222c",
+      bg = "#21222c",
     },
     warning_visible = {
       --[[ fg = "#e0af68", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     warning_selected = {
       --[[ fg = "#e0af68", ]]
-      bg = "#2a2a2a",
-      sp = "#2a2a2a",
+      bg = "#21222c",
+      sp = "#21222c",
       bold = true,
       italic = true,
     },
     warning_diagnostic = {
-      --[[ fg = "#565656", ]]
-      sp = "#2a2a2a",
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      sp = "#21222c",
+      bg = "#21222c",
     },
     warning_diagnostic_visible = {
       --[[ fg = "#e0af68", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     warning_diagnostic_selected = {
       --[[ fg = "#e0af68", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
       sp = "",
       bold = true,
       italic = true,
     },
     error = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
-      sp = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
+      sp = "#21222c",
     },
     error_visible = {
       --[[ fg = "#f7768e", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     error_selected = {
       --[[ fg = "#f7768e", ]]
-      bg = "#2a2a2a",
-      sp = "#2a2a2a",
+      bg = "#21222c",
+      sp = "#21222c",
       bold = true,
       italic = true,
     },
     error_diagnostic = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
-      sp = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
+      sp = "#21222c",
     },
     error_diagnostic_visible = {
       --[[ fg = "#f7768e", ]]
-      bg = "#2a2a2a",
+      bg = "#21222c",
     },
     error_diagnostic_selected = {
       --[[ fg = "#f7768e", ]]
-      bg = "#2a2a2a",
-      sp = "#2a2a2a",
+      bg = "#21222c",
+      sp = "#21222c",
       bold = true,
       italic = true,
     },
     modified = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
     },
     modified_visible = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
     },
     modified_selected = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
     },
     duplicate_selected = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
       italic = true,
     },
     duplicate_visible = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
       italic = true,
     },
     duplicate = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
       italic = true,
     },
     separator_selected = {
-      fg = "#2a2a2a",
-      bg = "#2a2a2a",
+      fg = "#21222c",
+      bg = "#21222c",
     },
     separator_visible = {
-      fg = "#2a2a2a",
-      bg = "#2a2a2a",
+      fg = "#21222c",
+      bg = "#21222c",
     },
     separator = {
-      fg = "#2a2a2a",
-      bg = "#2a2a2a",
+      fg = "#21222c",
+      bg = "#21222c",
     },
     indicator_visible = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
     },
     indicator_selected = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
     },
     pick_selected = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
       bold = true,
       italic = true,
     },
     pick_visible = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
       bold = true,
       italic = true,
     },
     pick = {
-      --[[ fg = "#565656", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#44475a", ]]
+      bg = "#21222c",
       bold = true,
       italic = true,
     },
     offset_separator = {
-      --[[ fg = "#2a2a2a", ]]
-      bg = "#2a2a2a",
+      --[[ fg = "#21222c", ]]
+      bg = "#21222c",
     },
   },
 })

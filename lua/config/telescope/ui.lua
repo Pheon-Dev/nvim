@@ -1,19 +1,13 @@
 local normal_hl = vim.api.nvim_get_hl_by_name('Normal', true)
 
-local purple = "#c66bfe"
 local purple0 = '#777777'
-local purple1 = '#464646'
-local purple2 = '#363636'
-local purple3 = '#363636'
-local bg = '#2a2a2a'
-local red1 = '#f7768e'
-local red2 = '#ec5f67'
-local green1 = '#9ece6a'
-local green2 = '#2ccf00'
-local blue1 = '#6272a4'
-local blue2 = '#6790eb'
-local blue3 = '#51afef'
-local magenta = "#c678dd"
+local purple1 = '#44475a'
+local purple2 = '#282a36'
+local purple3 = '#282a36'
+local bg = '#21222c'
+local red1 = '#ff5555'
+local green1 = '#50fa7b'
+local blue2 = '#bd93f9'
 
 ----------------------------------------------------------------------
 --                              Prompt                              --
@@ -98,7 +92,7 @@ vim.api.nvim_set_hl(0, 'TelescopePreviewLine', {
 
 vim.api.nvim_set_hl(0, 'TelescopePreviewMatch', {
   fg = normal_hl.foreground,
-  bg = magenta,
+  bg = purple1,
 })
 
 --[[ TelescopeSelection ]]

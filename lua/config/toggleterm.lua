@@ -29,14 +29,14 @@ require("toggleterm").setup({
     -- highlights which map to a highlight group name and a table of it's values
     -- NOTE: this is only a subset of values, any group placed here will be set for the terminal window split
     Normal = {
-      guibg = "#363636",
+      guibg = "#282a36",
     },
     NormalFloat = {
       link = 'CmpPmenu'
     },
     FloatBorder = {
-      guifg = "#363636",
-      guibg = "#363636",
+      guifg = "#282a36",
+      guibg = "#282a36",
     },
   },
   winbar = {

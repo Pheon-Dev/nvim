@@ -15,12 +15,12 @@ if not oc then
 end
 
 local colors = {
-  bg = "#2a2a2a",
-  bg1 = "#363636",
-  bg2 = "#5e5e5e",
-  grey = "#7f7f7f",
-  fg = "#8aa2f7",
-  yellow = '#ffff0f',
+  bg = "#21222c",
+  bg1 = "#282a36",
+  bg2 = "#44475a",
+  grey = "#a9a1e1",
+  fg = "#bd93f9",
+  yellow = '#f1fa8c',
   cyan = "#008080",
   darkblue = "#081633",
   green = "#82cf00",
