@@ -124,3 +124,7 @@ vim.cmd("highlight FoldPreviewBorder guibg='#363636'")
 
 --[[ Yanky ]]
 vim.cmd("highlight YankyYanked guibg='#525252'")
+
+--[[ Popup ]]
+vim.cmd("highlight FloatBorder guifg='#2f2f2f' guibg='#2f2f2f'")
+vim.cmd("highlight NormalFloat guifg='#c0caf5' guibg='#2f2f2f'")
