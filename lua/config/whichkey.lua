@@ -75,7 +75,7 @@ local toggle_lazygit = function()
 end
 
 local mappings = {
-  a = { ":ASToggle<cr>", "Live Grep" },
+  a = { ":ASToggle<cr>", "Auto Save Toggle" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   d = {
     name = "DAP & Dashboard",

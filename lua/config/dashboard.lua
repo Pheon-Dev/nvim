@@ -37,32 +37,28 @@ db.custom_center = {
     action = "Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false",
   },
   {
-    icon = " ",
-    desc = "⇕ ------------------------------------------------- lir              ",
-    action = "lua require('lir.float').toggle()",
-  },
-  {
     icon = " ",
     desc = "⇕ ------------------------------------------------- Find File        ",
     action = "Telescope find_files theme=dropdown initial_mode=insert previewer=false",
-  },
-  { icon = " ", desc = "⇕ ------------------------------------------------- Projects         ",
-    action = "Telescope projects theme=dropdown initial_mode=normal" },
-  { icon = " ", desc = "⇕ ------------------------------------------------- NVIM Tree        ",
-    action = "NvimTreeToggle" },
-  --[[ { icon = "ℤ ", desc = "⇕ ------------------------------------------------- Zoxide           ", ]]
-  --[[   action = "Telescope zoxide list theme=dropdown initial_mode=normal previewer=false" }, ]]
-  { icon = " ", desc = "⇕ ------------------------------------------------- Frecency         ",
-    action = "Telescope frecency theme=dropdown initial_mode=normal previewer=false" },
-  {
-    icon = " ",
-    desc = "⇕ ------------------------------------------------- TODO             ",
-    action = "TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE",
   },
   {
     icon = " ",
     desc = "⇕ ------------------------------------------------- Search Word      ",
     action = "Telescope live_grep theme=dropdown",
+  },
+  {
+    icon = " ",
+    desc = "⇕ ------------------------------------------------- lir              ",
+    action = "lua require('lir.float').toggle()",
+  },
+  { icon = " ", desc = "⇕ ------------------------------------------------- Projects         ",
+    action = "Telescope projects theme=dropdown initial_mode=normal" },
+  { icon = " ", desc = "⇕ ------------------------------------------------- NVIM Tree        ",
+    action = "NvimTreeToggle" },
+  {
+    icon = " ",
+    desc = "⇕ ------------------------------------------------- TODO             ",
+    action = "TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE",
   },
   {
     icon = " ",
@@ -94,8 +90,8 @@ db.custom_center = {
     desc = "⇕ ------------------------------------------------- Help Tags        ",
     action = "Telescope help_tags theme=dropdown initial_mode=insert",
   },
-  --[[ { icon = " ", desc = "⇕ ------------------------------------------------- Sync             ", ]]
-  --[[   action = "PackerSync" }, ]]
+  { icon = " ", desc = "⇕ ------------------------------------------------- Sync             ",
+    action = "PackerSync --preview" },
   { icon = " ", desc = "⇕ ------------------------------------------------- Compile          ",
     action = "PackerCompile" },
   { icon = "✗ ", desc = "⇑ ------------------------------------------------- Exit             ", action = "q!" },
