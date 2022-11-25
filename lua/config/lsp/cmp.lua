@@ -13,7 +13,7 @@ local source_mapping = {
   buffer = " buffer",
   nvim_lsp = " lsp",
   nvim_lua = " lua",
-  --[[ vsnip = "✀ snip", ]]
+  vsnip = "✀ snip",
   path = " path",
   luasnip = " snip",
 }
@@ -39,6 +39,7 @@ cmp.setup({
     },
     documentation = {
       border = border("CmpDocBorder"),
+      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
     },
   },
   snippet = {
@@ -74,8 +75,8 @@ cmp.setup({
         cmp.select_next_item()
       elseif luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
-        --[[ elseif vim.fn["vsnip#available"]() == 1 then ]]
-        --[[   feedkey("<Plug>(vsnip-expand-or-jump)", "") ]]
+      elseif vim.fn["vsnip#available"]() == 1 then
+        feedkey("<Plug>(vsnip-expand-or-jump)", "")
       else
         fallback()
       end
@@ -83,15 +84,15 @@ cmp.setup({
     ["<S-Tab>"] = cmp.mapping(function()
       if cmp.visible() then
         cmp.select_prev_item()
-        --[[ elseif vim.fn["vsnip#jumpable"](-1) == 1 then ]]
-        --[[   feedkey("<Plug>(vsnip-jump-prev)", "") ]]
+      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+        feedkey("<Plug>(vsnip-jump-prev)", "")
       end
     end, { "i", "s" }),
   },
   sources = cmp.config.sources({
     { name = "nvim_lsp_signature_help" },
     { name = "luasnip" },
-    --[[ { name = "vsnip" }, ]]
+    { name = "vsnip" },
     { name = "buffer" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
@@ -118,7 +119,7 @@ cmp.setup.cmdline("lua", {
     { name = "nvim_lsp_signature_help" },
     { name = "buffer" },
     { name = "luasnip" },
-    --[[ { name = "vsnip" }, ]]
+    { name = "vsnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "path" },
@@ -131,7 +132,7 @@ cmp.setup.cmdline("/", {
     { name = "nvim_lsp_signature_help" },
     { name = "buffer" },
     { name = "luasnip" },
-    --[[ { name = "vsnip" }, ]]
+    { name = "vsnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "path" },
@@ -144,7 +145,7 @@ cmp.setup.cmdline("?", {
     { name = "nvim_lsp_signature_help" },
     { name = "buffer" },
     { name = "luasnip" },
-    --[[ { name = "vsnip" }, ]]
+    { name = "vsnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "path" },
@@ -157,7 +158,7 @@ cmp.setup.cmdline("/", {
     { name = "nvim_lsp_signature_help" },
     { name = "buffer" },
     { name = "luasnip" },
-    --[[ { name = "vsnip" }, ]]
+    { name = "vsnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "path" },
@@ -171,7 +172,7 @@ cmp.setup.cmdline(":", {
     { name = "path" },
     { name = "buffer" },
     { name = "luasnip" },
-    --[[ { name = "vsnip" }, ]]
+    { name = "vsnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
   }),

@@ -72,53 +72,53 @@ vim.cmd("highlight DashboardCenter guifg=#8aa2f7 ")
 --[[ vim.cmd("highlight WinBarNC guifg=#808080 guibg=#21222c ") ]]
 
 --[[ Lir ]]
-vim.cmd("highlight LirFloatNormal guibg='#282a36'")
-vim.cmd("highlight LirFloatCursorLine guibg='#44475a'")
-vim.cmd("highlight LirFloatBorder guibg='#282a36' guifg='#282a36'")
+vim.cmd("highlight LirFloatNormal guibg='#21222c'")
+vim.cmd("highlight LirFloatCursorLine guibg='#282a36'")
+vim.cmd("highlight LirFloatBorder guibg='#21222c' guifg='#282a36'")
 
 --[[ CMP ]]
-vim.cmd("highlight CmpPmenu guibg='#282a36'")
+vim.cmd("highlight CmpPmenu guibg='#21222c'")
 vim.cmd("highlight PmenuSel guibg='#44475a'")
-vim.cmd("highlight CmpBorder guifg='#282a36' guibg='#282a36'")
-vim.cmd("highlight CmpDocBorder guifg='#282a36' guibg='#21222c'")
+vim.cmd("highlight CmpBorder guifg='#282a36' guibg='#21222c'")
+vim.cmd("highlight CmpDocBorder guifg='#44475a' guibg='#21222c'")
 
 --[[ Noice ]]
-vim.cmd("highlight NoiceConfirm guifg='#a9a1e1' guibg='#282a36'")
-vim.cmd("highlight NoiceConfirmBorder guifg='#282a36' guibg='#282a36'")
+vim.cmd("highlight NoiceConfirm guifg='#a9a1e1' guibg='#21222c'")
+vim.cmd("highlight NoiceConfirmBorder guifg='#282a36' guibg='#21222c'")
 
-vim.cmd("highlight NoicePopup guibg='#282a36'")
-vim.cmd("highlight NoicePopupBorder guifg='#282a36' guibg='#282a36'")
-vim.cmd("highlight NoicePopupmenuBorder guifg='#282a36' guibg='#282a36'")
+vim.cmd("highlight NoicePopup guibg='#21222c'")
+vim.cmd("highlight NoicePopupBorder guifg='#282a36' guibg='#21222c'")
+vim.cmd("highlight NoicePopupmenuBorder guifg='#282a36' guibg='#21222c'")
 
-vim.cmd("highlight NoiceCmdline guibg='#282a36'")
-vim.cmd("highlight NoiceCmdlinePopup guibg='#282a36'")
-vim.cmd("highlight NoiceCmdlinePopupBorder guifg='#282a36' guibg='#282a36'")
-vim.cmd("highlight NoiceCmdlinePopupBorderSearch guifg='#282a36' guibg='#282a36'")
+vim.cmd("highlight NoiceCmdline guibg='#21222c'")
+vim.cmd("highlight NoiceCmdlinePopup guibg='#21222c'")
+vim.cmd("highlight NoiceCmdlinePopupBorder guifg='#282a36' guibg='#21222c'")
+vim.cmd("highlight NoiceCmdlinePopupBorderSearch guifg='#282a36' guibg='#21222c'")
 
 --[[ Notify ]]
-vim.cmd("highlight NotifyERRORBorder guifg=#282a36 guibg=#282a36")
-vim.cmd("highlight NotifyWARNBorder guifg=#282a36 guibg=#282a36")
-vim.cmd("highlight NotifyINFOBorder guifg=#282a36 guibg=#282a36")
-vim.cmd("highlight NotifyDEBUGBorder guifg=#282a36 guibg=#282a36")
-vim.cmd("highlight NotifyTRACEBorder guifg=#282a36 guibg=#282a36")
+vim.cmd("highlight NotifyERRORBorder guifg='#282a36' guibg='#21222c'")
+vim.cmd("highlight NotifyWARNBorder guifg='#282a36' guibg='#21222c'")
+vim.cmd("highlight NotifyINFOBorder guifg='#282a36' guibg='#21222c'")
+vim.cmd("highlight NotifyDEBUGBorder guifg='#282a36' guibg='#21222c'")
+vim.cmd("highlight NotifyTRACEBorder guifg='#282a36' guibg='#21222c'")
 
-vim.cmd("highlight NotifyERRORIcon guifg=#ec5f67 guibg=#282a36")
-vim.cmd("highlight NotifyWARNIcon guifg=#F79000 guibg=#282a36")
-vim.cmd("highlight NotifyINFOIcon guifg=#A9FF68 guibg=#282a36")
-vim.cmd("highlight NotifyDEBUGIcon guifg=#51afef guibg=#282a36")
-vim.cmd("highlight NotifyTRACEIcon guifg=#D484FF guibg=#282a36")
+vim.cmd("highlight NotifyERRORIcon guifg='#ec5f67' guibg='#21222c'")
+vim.cmd("highlight NotifyWARNIcon guifg='#F79000' guibg='#21222c'")
+vim.cmd("highlight NotifyINFOIcon guifg='#A9FF68' guibg='#21222c'")
+vim.cmd("highlight NotifyDEBUGIcon guifg='#51afef' guibg='#21222c'")
+vim.cmd("highlight NotifyTRACEIcon guifg='#D484FF' guibg='#21222c'")
 
-vim.cmd("highlight NotifyERRORTitle guifg=#ec5f67 guibg=#282a36")
-vim.cmd("highlight NotifyWARNTitle guifg=#F79000 guibg=#282a36")
-vim.cmd("highlight NotifyINFOTitle guifg=#A9FF68 guibg=#282a36")
-vim.cmd("highlight NotifyDEBUGTitle guifg=#51afef guibg=#282a36")
-vim.cmd("highlight NotifyTRACETitle guifg=#D484FF guibg=#282a36")
+vim.cmd("highlight NotifyERRORTitle guifg='#ec5f67' guibg='#21222c'")
+vim.cmd("highlight NotifyWARNTitle guifg='#F79000' guibg='#21222c'")
+vim.cmd("highlight NotifyINFOTitle guifg='#A9FF68' guibg='#21222c'")
+vim.cmd("highlight NotifyDEBUGTitle guifg='#51afef' guibg='#21222c'")
+vim.cmd("highlight NotifyTRACETitle guifg='#D484FF' guibg='#21222c'")
 
-vim.cmd("highlight NotifyERRORBody guibg=#282a36")
-vim.cmd("highlight NotifyWARNBody guibg=#282a36")
-vim.cmd("highlight NotifyINFOBody guibg=#282a36")
-vim.cmd("highlight NotifyDEBUGBody guibg=#282a36")
-vim.cmd("highlight NotifyTRACEBody guibg=#282a36")
+vim.cmd("highlight NotifyERRORBody guibg='#21222c'")
+vim.cmd("highlight NotifyWARNBody guibg='#21222c'")
+vim.cmd("highlight NotifyINFOBody guibg='#21222c'")
+vim.cmd("highlight NotifyDEBUGBody guibg='#21222c'")
+vim.cmd("highlight NotifyTRACEBody guibg='#21222c'")
 
 --[[ Blankline ]]
 vim.cmd("highlight IndentBlanklineChar guifg='#282a36'")
@@ -126,11 +126,11 @@ vim.cmd("highlight IndentBlanklineContextChar guifg='#44475a'")
 
 --[[ Fold Preview ]]
 vim.cmd("highlight FoldPreview guibg='#282a36'")
-vim.cmd("highlight FoldPreviewBorder guibg='#282a36'")
+vim.cmd("highlight FoldPreviewBorder guifg='#282a36' guibg='#21222c'")
 
 --[[ Yanky ]]
-vim.cmd("highlight YankyYanked guibg='#44475a'")
+vim.cmd("highlight YankyYanked guibg='#282a36'")
 
 --[[ Popup ]]
-vim.cmd("highlight FloatBorder guifg='#44475a' guibg='#44475a'")
-vim.cmd("highlight NormalFloat guifg='#c0caf5' guibg='#44475a'")
+vim.cmd("highlight FloatBorder guifg='#282a36' guibg='#21222c'")
+vim.cmd("highlight NormalFloat guifg='#c0caf5' guibg='#21222c'")
