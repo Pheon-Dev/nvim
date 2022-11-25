@@ -37,8 +37,8 @@ require("tokyonight.colors").default = {
   purple = "#c66bfe",
   purple1 = "#9d7cd8",
   purple2 = "#bd93f9",
-  purple3 = "#c34bfe", --
-  pink = "#ff79c6", --
+  purple3 = "#c34bfe",
+  pink = "#ff79c6",
   orange = "#ffb86c",
   orange1 = "#ff9e64",
   yellow = "#f1fa8c",
@@ -78,7 +78,7 @@ vim.cmd("highlight LirFloatBorder guibg='#21222c' guifg='#282a36'")
 
 --[[ CMP ]]
 vim.cmd("highlight CmpPmenu guibg='#21222c'")
-vim.cmd("highlight PmenuSel guibg='#44475a'")
+vim.cmd("highlight PmenuSel guibg='#282a36'")
 vim.cmd("highlight CmpBorder guifg='#282a36' guibg='#21222c'")
 vim.cmd("highlight CmpDocBorder guifg='#44475a' guibg='#21222c'")
 
@@ -125,11 +125,11 @@ vim.cmd("highlight IndentBlanklineChar guifg='#282a36'")
 vim.cmd("highlight IndentBlanklineContextChar guifg='#44475a'")
 
 --[[ Fold Preview ]]
-vim.cmd("highlight FoldPreview guibg='#282a36'")
+vim.cmd("highlight FoldPreview guibg='#21222c'")
 vim.cmd("highlight FoldPreviewBorder guifg='#282a36' guibg='#21222c'")
 
 --[[ Yanky ]]
-vim.cmd("highlight YankyYanked guibg='#282a36'")
+vim.cmd("highlight YankyYanked guibg='#44475a'")
 
 --[[ Popup ]]
 vim.cmd("highlight FloatBorder guifg='#282a36' guibg='#21222c'")
