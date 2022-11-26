@@ -175,8 +175,7 @@ local mappings = {
     k = { ":TodoQuickFix<cr>", "Quick Fix" },
     l = { ":TodoLocList<cr>", "Loclist" },
   },
-  x = { ":qa!<cr>", "Quit All!" },
-  y = { ":Telescope neoclip theme=dropdown initial_mode=normal previewer=false<cr>", "Neoclip" },
+  x = { ":TroubleToggle<cr>", "Toggle Trouble" },
 }
 
 local opts = {

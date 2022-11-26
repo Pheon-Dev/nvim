@@ -28,13 +28,13 @@ lir.setup({
     ["<CR>"] = actions.edit,
     ["h"] = actions.up,
     ["l"] = actions.edit,
-    ["s"] = actions.split,
-    ["v"] = actions.vsplit,
+    ["b"] = actions.split,
+    ["n"] = actions.vsplit,
     ["t"] = actions.tabedit,
 
     ["q"] = actions.quit,
     ["<esc>"] = actions.quit,
-    ["b"] = actions.quit,
+    [";"] = actions.quit,
 
     ["A"] = actions.mkdir,
     ["a"] = actions.newfile,

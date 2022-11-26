@@ -113,7 +113,7 @@ return packer.startup({
 
     --[[ DIAGNOSTICS ]]
     use({ "folke/trouble.nvim", event = "BufReadPre", module = "trouble", cmd = { "TroubleToggle", "Trouble" },
-      config = function() require("trouble").setup({ auto_open = false, use_diagnostic_signs = true, }) end, })
+      config = "require('config.trouble')", })
 
     --[[ DAP ]]
     use({ "nvim-telescope/telescope-dap.nvim", requires = "nvim-telescope/telescope.nvim" })

@@ -1,5 +1,5 @@
 local capability = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-local util = require "lspconfig/util"
+local util = require("lspconfig.util")
 
 local navic = require("nvim-navic")
 -- Use an on_attach function to only map the following keys
@@ -141,6 +141,7 @@ require("typescript").setup({
     capabilities = capability,
     on_attach = on_attach,
     flags = lsp_flags,
+    root_dir = util.root_pattern(".git"),
     cmd = { "typescript-language-server", "--stdio" },
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   },

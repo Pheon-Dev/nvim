@@ -37,10 +37,3 @@ require("hlslens").setup({
     render.setVirt(0, lnum - 1, col - 1, chunks, nearest)
   end
 })
-
-vim.cmd([[
-    augroup scrollbar_search_hide
-        autocmd!
-        autocmd CmdlineLeave : lua require('scrollbar.handlers.search').handler.hide()
-    augroup END
-]])

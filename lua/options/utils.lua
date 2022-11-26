@@ -103,7 +103,6 @@ vim.cmd("au BufnewFile,BufRead *.lua setf lua")
 vim.cmd("au BufnewFile,BufRead *.js setf javascript")
 vim.cmd("au BufnewFile,BufRead *.jsx setf javascript")
 vim.cmd("au BufnewFile,BufRead *.es6 setf javascript")
---[[ vim.cmd('au BufnewFile,BufRead *.tsx setf typescriptreact') ]]
 vim.cmd("au BufnewFile,BufRead *.tsx setf tsx")
 vim.cmd("au BufnewFile,BufRead *.html setf html")
 vim.cmd("au BufnewFile,BufRead *.ts setf typescript")
@@ -121,6 +120,19 @@ vim.cmd([[
 		autocmd WinLeave * set nocul
 	augroup END
 ]])
+
+vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
+  callback = function()
+    require("scrollbar.handlers.search").handler.hide()
+  end,
+})
+
+--[[ vim.cmd([[ ]]
+--[[     augroup scrollbar_search_hide ]]
+--[[         autocmd! ]]
+--[[         autocmd CmdlineLeave : lua require('scrollbar.handlers.search').handler.hide() ]]
+--[[     augroup END ]]
+-- ]]) ]]
 
 vim.cmd([[
 	if &term =~ "screen"

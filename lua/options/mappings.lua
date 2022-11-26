@@ -134,6 +134,8 @@ map("n", "v'", "vt'", { noremap = true, silent = true })
 map("n", 'v"', 'vt"', { noremap = true, silent = true })
 map("n", "vb", "vip", { noremap = true, silent = true })
 map("n", "vL", "v$", { noremap = true, silent = true })
+map("n", "vu", "v{", { noremap = true, silent = true })
+map("n", "vd", "v}", { noremap = true, silent = true })
 
 -- Edit (yank)
 map("n", "y1", "yiw", { noremap = true, silent = true })
