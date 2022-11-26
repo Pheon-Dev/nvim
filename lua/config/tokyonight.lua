@@ -87,6 +87,15 @@ local theme = {
 	color80 = "#4fd6be",
 	color81 = "#ff757f",
 	color82 = "#c53b53",
+	color83 = "#8aa2f7",
+	color84 = "#10f0f0",
+	color85 = "#808080",
+	color86 = "#a9a1e1",
+	color87 = "#ec5f67",
+	color88 = "#F79000",
+	color89 = "#A9FF68",
+	color90 = "#51afef",
+	coloro1 = "#D484FF",
 }
 
 require("tokyonight.colors").default = {
@@ -135,73 +144,73 @@ require("tokyonight.colors").default = {
 vim.cmd("colorscheme tokyonight")
 
 --[[ Dashboard ]]
-vim.cmd("highlight DashboardHeader guifg=#6272a4 ")
-vim.cmd("highlight DashboardCenter guifg=#8aa2f7 ")
---[[ vim.cmd("highlight DashboardFooter guifg=#10f0f0 ") ]]
---[[ vim.cmd("highlight DashboardShortCut guifg=#62ff00 ") ]]
---[[ vim.cmd("highlight WinBar guifg=#8aa2f7 guibg=#21222c ") ]]
---[[ vim.cmd("highlight WinBarNC guifg=#808080 guibg=#21222c ") ]]
+vim.api.nvim_set_hl(0, "DashboardHeader", { fg = theme.color3 })
+vim.api.nvim_set_hl(0, "DashboardCenter", { fg = theme.color83 })
+--[[ vim.api.nvim_set_hl(0, "DashboardFooter", { fg = theme.color83 }) ]]
+--[[ vim.api.nvim_set_hl(0, "DashboardShortCut", { fg = theme.color83 }) ]]
+--[[ vim.api.nvim_set_hl(0, "WinBar", { fg = theme.color83, bg = theme.color0 }) ]]
+--[[ vim.api.nvim_set_hl(0, "WinBarNC", { fg = theme.color83, bg = theme.color0 }) ]]
 
 --[[ Lir ]]
-vim.cmd("highlight LirFloatNormal guibg='#21222c'")
-vim.cmd("highlight LirFloatCursorLine guibg='#282a36'")
-vim.cmd("highlight LirFloatBorder guibg='#21222c' guifg='#282a36'")
+vim.api.nvim_set_hl(0, "LirFloatNormal", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "LirFloatCursorLine", { bg = theme.color1 })
+vim.api.nvim_set_hl(0, "LirFloatBorder", { fg = theme.color1, bg = theme.color0 })
 
 --[[ CMP ]]
-vim.cmd("highlight CmpPmenu guibg='#21222c'")
-vim.cmd("highlight PmenuSel guibg='#282a36'")
-vim.cmd("highlight CmpBorder guifg='#282a36' guibg='#21222c'")
-vim.cmd("highlight CmpDocBorder guifg='#44475a' guibg='#21222c'")
+vim.api.nvim_set_hl(0, "CmpPmenu", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "PmenuSel", { bg = theme.color3 })
+vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color1, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = theme.color2, bg = theme.color0 })
 
 --[[ Noice ]]
-vim.cmd("highlight NoiceConfirm guifg='#a9a1e1' guibg='#21222c'")
-vim.cmd("highlight NoiceConfirmBorder guifg='#282a36' guibg='#21222c'")
+vim.api.nvim_set_hl(0, "NoiceConfirm", { fg = theme.color86, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color1, bg = theme.color0 })
 
-vim.cmd("highlight NoicePopup guibg='#21222c'")
-vim.cmd("highlight NoicePopupBorder guifg='#282a36' guibg='#21222c'")
-vim.cmd("highlight NoicePopupmenuBorder guifg='#282a36' guibg='#21222c'")
+vim.api.nvim_set_hl(0, "NoicePopup", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NoicePopupmenuBorder", { fg = theme.color1, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NoicePopupBorder", { fg = theme.color1, bg = theme.color0 })
 
-vim.cmd("highlight NoiceCmdline guibg='#21222c'")
-vim.cmd("highlight NoiceCmdlinePopup guibg='#21222c'")
-vim.cmd("highlight NoiceCmdlinePopupBorder guifg='#282a36' guibg='#21222c'")
-vim.cmd("highlight NoiceCmdlinePopupBorderSearch guifg='#282a36' guibg='#21222c'")
+vim.api.nvim_set_hl(0, "NoiceCmdline", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = theme.color1, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = theme.color1, bg = theme.color0 })
 
 --[[ Notify ]]
-vim.cmd("highlight NotifyERRORBorder guifg='#282a36' guibg='#21222c'")
-vim.cmd("highlight NotifyWARNBorder guifg='#282a36' guibg='#21222c'")
-vim.cmd("highlight NotifyINFOBorder guifg='#282a36' guibg='#21222c'")
-vim.cmd("highlight NotifyDEBUGBorder guifg='#282a36' guibg='#21222c'")
-vim.cmd("highlight NotifyTRACEBorder guifg='#282a36' guibg='#21222c'")
+vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = theme.color1, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = theme.color1, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyINFOBorder", { fg = theme.color1, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { fg = theme.color1, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { fg = theme.color1, bg = theme.color0 })
 
-vim.cmd("highlight NotifyERRORIcon guifg='#ec5f67' guibg='#21222c'")
-vim.cmd("highlight NotifyWARNIcon guifg='#F79000' guibg='#21222c'")
-vim.cmd("highlight NotifyINFOIcon guifg='#A9FF68' guibg='#21222c'")
-vim.cmd("highlight NotifyDEBUGIcon guifg='#51afef' guibg='#21222c'")
-vim.cmd("highlight NotifyTRACEIcon guifg='#D484FF' guibg='#21222c'")
+vim.api.nvim_set_hl(0, "NotifyERRORIcon", { fg = theme.color87, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyWARNIcon", { fg = theme.color88, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyINFOIcon", { fg = theme.color89, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyDEBUGIcon", { fg = theme.color90, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyTRACEIcon", { fg = theme.color91, bg = theme.color0 })
 
-vim.cmd("highlight NotifyERRORTitle guifg='#ec5f67' guibg='#21222c'")
-vim.cmd("highlight NotifyWARNTitle guifg='#F79000' guibg='#21222c'")
-vim.cmd("highlight NotifyINFOTitle guifg='#A9FF68' guibg='#21222c'")
-vim.cmd("highlight NotifyDEBUGTitle guifg='#51afef' guibg='#21222c'")
-vim.cmd("highlight NotifyTRACETitle guifg='#D484FF' guibg='#21222c'")
+vim.api.nvim_set_hl(0, "NotifyERRORTitle", { fg = theme.color87, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyWARNTitle", { fg = theme.color88, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyINFOTitle", { fg = theme.color89, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyDEBUGTitle", { fg = theme.color90, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyTRACETitle", { fg = theme.color91, bg = theme.color0 })
 
-vim.cmd("highlight NotifyERRORBody guibg='#21222c'")
-vim.cmd("highlight NotifyWARNBody guibg='#21222c'")
-vim.cmd("highlight NotifyINFOBody guibg='#21222c'")
-vim.cmd("highlight NotifyDEBUGBody guibg='#21222c'")
-vim.cmd("highlight NotifyTRACEBody guibg='#21222c'")
+vim.api.nvim_set_hl(0, "NotifyERRORBody", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyWARNBody", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyINFOBody", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NotifyTRACEBody", { bg = theme.color0 })
 
 --[[ Blankline ]]
-vim.cmd("highlight IndentBlanklineChar guifg='#282a36'")
-vim.cmd("highlight IndentBlanklineContextChar guifg='#44475a'")
+vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = theme.color1 })
+vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = theme.color2 })
 
 --[[ Fold Preview ]]
-vim.cmd("highlight FoldPreview guibg='#282a36'")
-vim.cmd("highlight FoldPreviewBorder guifg='#282a36' guibg='#282a36'")
+vim.api.nvim_set_hl(0, "FoldPreview", { bg = theme.color1 })
+vim.api.nvim_set_hl(0, "FoldPreviewBorder", { fg = theme.color1, bg = theme.color1 })
 
 --[[ Yanky ]]
-vim.cmd("highlight YankyYanked guibg='#44475a'")
+vim.api.nvim_set_hl(0, "YankyYanked", { bg = theme.color2 })
 
 --[[ Popup ]]
-vim.cmd("highlight FloatBorder guifg='#282a36' guibg='#21222c'")
-vim.cmd("highlight NormalFloat guifg='#c0caf5' guibg='#21222c'")
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color1, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NormalFloat", { fg = theme.color22, bg = theme.color0 })
