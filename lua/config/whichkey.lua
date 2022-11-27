@@ -15,7 +15,7 @@ wk.setup({
     },
   },
   operators = {
-    gc = "Comments"
+    gc = "Comments",
   },
   key_labels = {
     -- override the label used to display some keys. It doesn't effect WK in any other way.
@@ -30,15 +30,15 @@ wk.setup({
     group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
-    scroll_down = '<c-d>', -- binding to scroll down inside the popup
-    scroll_up = '<c-u>', -- binding to scroll up inside the popup
+    scroll_down = "<c-d>", -- binding to scroll down inside the popup
+    scroll_up = "<c-u>", -- binding to scroll up inside the popup
   },
   window = {
     border = "none", -- none, single, double, shadow
     position = "bottom", -- bottom, top
     margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-    winblend = 0
+    winblend = 0,
   },
   layout = {
     height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -132,12 +132,8 @@ local mappings = {
   h = {
     name = "Harpoon",
     h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
-    j = { ":lua require('harpoon.ui').nav_prev()<cr>", "Previous" },
-    k = { ":lua require('harpoon.ui').nav_next()<cr>", "Next" },
     l = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
-    d = { ":lua require('harpoon.mark').rm_file()<cr>", "Mark File" },
     x = { ":lua require('harpoon.mark').clear_all()<cr>", "Mark File" },
-    t = { ":lua require('harpoon.tmux').gotoTerminal(1)<cr>", "Tmux" },
   },
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
@@ -170,8 +166,10 @@ local mappings = {
     r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
     f = { ":TypescriptFixAll<cr>", "Fix All" },
     h = { ":TodoTrouble cwd=.<cr>", "Trouble" },
-    j = { ":TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE<cr>",
-      "Telescope" },
+    j = {
+      ":TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE<cr>",
+      "Telescope",
+    },
     k = { ":TodoQuickFix<cr>", "Quick Fix" },
     l = { ":TodoLocList<cr>", "Loclist" },
   },
