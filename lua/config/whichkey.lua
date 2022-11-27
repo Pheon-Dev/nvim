@@ -117,8 +117,31 @@ local mappings = {
       t = { ":DiffviewToggleFiles<cr>", "Toggle Files" },
       w = { ":DiffviewFileHistory ", "Which File History" },
     },
-    h = {
-      name = "Common",
+    g = {
+      name = "Gitsigns",
+      s = { ":Gitsigns stage_hunk<CR>", "Stage Hunks" },
+      r = { ":Gitsigns reset_hunk<CR>", "Reset Hunks" },
+      b = { gs.stage_buffer, "Stage Buffer" },
+      u = { gs.undo_stage_hunk, "Undo Stage Hunk" },
+      R = { gs.reset_buffer, "Reset Buffer" },
+      l = {
+        function()
+          gs.blame_line({ full = true })
+        end,
+        "Blame Line",
+      },
+      t = { gs.toggle_current_line_blame, "Toggle Blame Line" },
+      d = { gs.diffthis, "Diff This" },
+      D = {
+        function()
+          gs.diffthis("~")
+        end,
+        "Blame Line",
+      },
+      x = { gs.toggle_deleted, "Toggle Deleted" },
+    },
+    t = {
+      name = "Telescope git",
       b = { ":Telescope git_branches theme=dropdown previewer=false<cr>", "Git Branches" },
       c = { ":Telescope git_commits theme=dropdown initial_mode=normal<cr>", "Git Commits" },
       s = { ":Telescope git_status theme=dropdown initial_mode=normal<cr>", "Git Status" },
