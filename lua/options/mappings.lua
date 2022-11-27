@@ -176,18 +176,18 @@ map("n", "tl", ":ToggleTerm size=60 dir=. direction=vertical<cr>", { noremap = t
 map("n", "tj", ":ToggleTerm size=20 dir=. direction=horizontal<cr>", { noremap = true, silent = true })
 
 -- Motion
-local hop = require('hop')
-local directions = require('hop.hint').HintDirection
-vim.keymap.set('', 'f', function()
+local hop = require("hop")
+local directions = require("hop.hint").HintDirection
+vim.keymap.set("", "f", function()
   hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
 end, { remap = true })
-vim.keymap.set('', 'F', function()
+vim.keymap.set("", "F", function()
   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
 end, { remap = true })
-vim.keymap.set('', 't', function()
+vim.keymap.set("", "t", function()
   hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
 end, { remap = true })
-vim.keymap.set('', 'T', function()
+vim.keymap.set("", "T", function()
   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
 end, { remap = true })
 
@@ -202,18 +202,14 @@ map("v", "gX", require("dial.map").dec_gvisual(), { noremap = true })
 -- hlslens
 local kopts = { noremap = true, silent = true }
 
-map('n', 'n',
-  [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
-  kopts)
-map('n', 'N',
-  [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
-  kopts)
-map('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
-map('n', '<Leader>l', ':noh<CR>', kopts)
+map("n", "<Leader>l", ":noh<CR>", kopts)
 
 vim.keymap.set("n", "<c-f>", function()
   if not require("noice.lsp").scroll(4) then
@@ -228,29 +224,31 @@ vim.keymap.set("n", "<c-b>", function()
 end, { silent = true, expr = true })
 
 --[[ Fold ]]
-local fp = require('fold-preview')
-local mapping = require('fold-preview').mapping
+local fp = require("fold-preview")
+local mapping = require("fold-preview").mapping
 local keymap = vim.keymap
-keymap.amend = require('keymap-amend')
+keymap.amend = require("keymap-amend")
 
 fp.setup({
-  default_keybindings = false
+  default_keybindings = false,
   -- another settings
 })
 
-keymap.amend('n', 'K', function(original)
-  if not fp.toggle_preview() then original() end
+keymap.amend("n", "K", function(original)
+  if not fp.toggle_preview() then
+    original()
+  end
   -- or
   -- if not fp.show_preview() then original() end
   -- to close preview on second press on K.
 end)
-keymap.amend('n', 'h', mapping.close_preview_open_fold)
-keymap.amend('n', 'l', mapping.close_preview_open_fold)
-keymap.amend('n', 'zo', mapping.close_preview)
-keymap.amend('n', 'zO', mapping.close_preview)
-keymap.amend('n', 'zc', mapping.close_preview_without_defer)
-keymap.amend('n', 'zR', mapping.close_preview)
-keymap.amend('n', 'zM', mapping.close_preview_without_defer)
+keymap.amend("n", "h", mapping.close_preview_open_fold)
+keymap.amend("n", "l", mapping.close_preview_open_fold)
+keymap.amend("n", "zo", mapping.close_preview)
+keymap.amend("n", "zO", mapping.close_preview)
+keymap.amend("n", "zc", mapping.close_preview_without_defer)
+keymap.amend("n", "zR", mapping.close_preview)
+keymap.amend("n", "zM", mapping.close_preview_without_defer)
 
 map("n", "zh", "zfi)", { noremap = true, silent = true })
 map("n", "zj", "zfi}", { noremap = true, silent = true })
@@ -258,3 +256,9 @@ map("n", "zk", "zfi]", { noremap = true, silent = true })
 map("n", "zl", "za", { noremap = true, silent = true })
 map("n", "z;", "zR", { noremap = true, silent = true })
 map("n", "zg", "zM", { noremap = true, silent = true })
+
+--[[ Gitsigns ]]
+map("v", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = true })
+map("v", "<leader>hr", ":Gitsigns reset_hunk<CR>", { noremap = true, silent = true })
+map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
+map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
