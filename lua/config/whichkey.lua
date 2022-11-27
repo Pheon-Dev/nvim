@@ -1,3 +1,4 @@
+local gs = package.loaded.gitsigns
 local wk = require("which-key")
 wk.setup({
   plugins = {
@@ -107,7 +108,7 @@ local mappings = {
   f = { ":Telescope find_files theme=dropdown initial_mode=insert previewer=false<cr>", "Find Files" },
   g = {
     name = "Git",
-    g = {
+    d = {
       name = "DiffView",
       x = { ":DiffviewClose<cr>", "Close" },
       f = { ":DiffviewFocusFiles<cr>", "Focus Files" },
@@ -119,24 +120,56 @@ local mappings = {
     },
     g = {
       name = "Gitsigns",
-      s = { ":Gitsigns stage_hunk<CR>", "Stage Hunks" },
-      r = { ":Gitsigns reset_hunk<CR>", "Reset Hunks" },
-      b = { gs.stage_buffer, "Stage Buffer" },
-      u = { gs.undo_stage_hunk, "Undo Stage Hunk" },
-      R = { gs.reset_buffer, "Reset Buffer" },
-      l = {
+      s = {
+        name = "Stage",
+        b = { gs.stage_buffer, "Stage Buffer" },
+        h = { ":Gitsigns stage_hunk<CR>", "Stage Hunks" },
+        l = { gs.undo_stage_hunk, "Undo Stage Hunk" },
+      },
+      r = {
+        name = "Reset",
+        b = { gs.reset_buffer, "Reset Buffer" },
+        h = { ":Gitsigns reset_hunk<CR>", "Reset Hunks" },
+      },
+      b = {
         function()
           gs.blame_line({ full = true })
         end,
         "Blame Line",
       },
-      t = { gs.toggle_current_line_blame, "Toggle Blame Line" },
-      d = { gs.diffthis, "Diff This" },
-      D = {
+      j = {
         function()
-          gs.diffthis("~")
+          if vim.wo.diff then
+            return "]c"
+          end
+          vim.schedule(function()
+            gs.next_hunk()
+          end)
+          return "<Ignore>"
         end,
-        "Blame Line",
+        "Next Hunk",
+      },
+      k = {
+        function()
+          if vim.wo.diff then
+            return "[c"
+          end
+          vim.schedule(function()
+            gs.prev_hunk()
+          end)
+          return "<Ignore>"
+        end,
+        "Previous Hunk",
+      },
+      d = {
+        name = "Diff",
+        d = {
+          function()
+            gs.diffthis("~")
+          end,
+          "Diff ~",
+        },
+        l = { gs.diffthis, "Diff This" },
       },
       x = { gs.toggle_deleted, "Toggle Deleted" },
     },
