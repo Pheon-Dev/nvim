@@ -1,3 +1,5 @@
+local lsp = require("lspconfig")
+local coq = require("coq")
 local capability = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local util = require("lspconfig.util")
 
@@ -6,7 +8,7 @@ local navic = require("nvim-navic")
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   --[[ local bufopts = { noremap = true, silent = true, buffer = bufnr } ]]
@@ -27,7 +29,8 @@ local on_attach = function(client, bufnr)
   --[[ vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts) ]]
   --[[ end ]]
   --[[ local on_attach = function(client, bufnr) ]]
-  --[[ require("lsp_signature").on_attach() ]] -- Noice overriden
+  --[[ require("lsp_signature").on_attach() ]]
+  -- Noice overriden
   if client.server_capabilities.documentSymbolProvider then
     navic.attach(client, bufnr)
   end
@@ -68,7 +71,7 @@ navic.setup({
   depth_limit_indicator = "..",
 })
 
-require("lspconfig").gopls.setup({
+lsp["gopls"].setup(coq.lsp_ensure_capabilities({
   on_attach = on_attach,
   capabilities = capability,
   cmd = { "gopls", "serve" },
@@ -82,9 +85,9 @@ require("lspconfig").gopls.setup({
       staticcheck = true,
     },
   },
-})
+}))
 
-require("lspconfig")["sumneko_lua"].setup({
+lsp["sumneko_lua"].setup(coq.lsp_ensure_capabilities({
   on_attach = on_attach,
   capabilities = capability,
 
@@ -103,35 +106,35 @@ require("lspconfig")["sumneko_lua"].setup({
       },
     },
   },
-})
+}))
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts)
 
 local lsp_flags = {
   debounce_text_changes = 150,
 }
 
---[[ require('lspconfig')['pyright'].setup { ]]
---[[   on_attach = on_attach, ]]
---[[   flags = lsp_flags, ]]
---[[ } ]]
+lsp["pyright"].setup(coq.lsp_ensure_capabilities({
+  on_attach = on_attach,
+  flags = lsp_flags,
+}))
 
---[[ require('lspconfig')['rust_analyzer'].setup { ]]
---[[   on_attach = on_attach, ]]
---[[   flags = lsp_flags, ]]
---[[   -- Server-specific settings... ]]
---[[   settings = { ]]
---[[     ["rust-analyzer"] = {} ]]
---[[   } ]]
---[[ } ]]
+lsp["rust_analyzer"].setup(coq.lsp_ensure_capabilities({
+  on_attach = on_attach,
+  flags = lsp_flags,
+  -- Server-specific settings...
+  settings = {
+    ["rust-analyzer"] = {},
+  },
+}))
 
-require("typescript").setup({
+require("typescript").setup(coq.lsp_ensure_capabilities({
   disable_commands = false, -- prevent the plugin from creating Vim commands
   debug = false, -- enable debug logging for commands
   go_to_source_definition = {
@@ -143,6 +146,13 @@ require("typescript").setup({
     flags = lsp_flags,
     root_dir = util.root_pattern(".git"),
     cmd = { "typescript-language-server", "--stdio" },
-    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    filetypes = {
+      "javascript",
+      "javascriptreact",
+      "javascript.jsx",
+      "typescript",
+      "typescriptreact",
+      "typescript.tsx",
+    },
   },
-})
+}))
