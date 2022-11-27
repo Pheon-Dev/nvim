@@ -75,6 +75,18 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 
+local next_hunk = function()
+  gs.next_hunk()
+end
+
+local prev_hunk = function()
+  gs.prev_hunk()
+end
+
+local blame_line = function()
+  gs.blame_line({ full = true })
+end
+
 local mappings = {
   a = { ":ASToggle<cr>", "Auto Save Toggle" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
@@ -122,8 +134,8 @@ local mappings = {
       name = "Gitsigns",
       s = {
         name = "Stage",
+        s = { ":Gitsigns stage_hunk<CR>", "Stage Hunks" },
         b = { gs.stage_buffer, "Stage Buffer" },
-        h = { ":Gitsigns stage_hunk<CR>", "Stage Hunks" },
         l = { gs.undo_stage_hunk, "Undo Stage Hunk" },
       },
       r = {
@@ -131,46 +143,10 @@ local mappings = {
         b = { gs.reset_buffer, "Reset Buffer" },
         h = { ":Gitsigns reset_hunk<CR>", "Reset Hunks" },
       },
-      b = {
-        function()
-          gs.blame_line({ full = true })
-        end,
-        "Blame Line",
-      },
-      j = {
-        function()
-          if vim.wo.diff then
-            return "]c"
-          end
-          vim.schedule(function()
-            gs.next_hunk()
-          end)
-          return "<Ignore>"
-        end,
-        "Next Hunk",
-      },
-      k = {
-        function()
-          if vim.wo.diff then
-            return "[c"
-          end
-          vim.schedule(function()
-            gs.prev_hunk()
-          end)
-          return "<Ignore>"
-        end,
-        "Previous Hunk",
-      },
-      d = {
-        name = "Diff",
-        d = {
-          function()
-            gs.diffthis("~")
-          end,
-          "Diff ~",
-        },
-        l = { gs.diffthis, "Diff This" },
-      },
+      b = { blame_line, "Blame Line" },
+      j = { next_hunk, "Next Hunk" },
+      k = { prev_hunk, "Previous Hunk" },
+      d = { gs.diffthis, "Diff This" },
       x = { gs.toggle_deleted, "Toggle Deleted" },
     },
     t = {
