@@ -87,6 +87,8 @@ local blame_line = function()
   gs.blame_line({ full = true })
 end
 
+local diff_this = gs.diffthis
+
 local mappings = {
   a = { ":ASToggle<cr>", "Auto Save Toggle" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
@@ -146,7 +148,7 @@ local mappings = {
       b = { blame_line, "Blame Line" },
       j = { next_hunk, "Next Hunk" },
       k = { prev_hunk, "Previous Hunk" },
-      d = { gs.diffthis, "Diff This" },
+      d = { diff_this, "Diff This" },
       x = { gs.toggle_deleted, "Toggle Deleted" },
     },
     t = {

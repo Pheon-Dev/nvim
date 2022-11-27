@@ -1,4 +1,4 @@
-require("trouble").setup {
+require("trouble").setup({
   position = "left", -- position of the list can be: bottom, top, left, right
   height = 10, -- height of the trouble list when position is top or bottom
   width = 30, -- width of the list when position is left or right
@@ -23,11 +23,11 @@ require("trouble").setup {
     toggle_preview = "P", -- toggle auto_preview
     hover = "K", -- opens a small popup with the full multiline message
     preview = "p", -- preview the diagnostic location
-    close_folds = { "zM", "zm", "h" }, -- close all folds
-    open_folds = { "zR", "zr", "l" }, -- open all folds
-    toggle_fold = { "zA", "za", "l" }, -- toggle fold of current file
+    close_folds = { "zM", "zm" }, -- close all folds
+    open_folds = { "zR", "zr" }, -- open all folds
+    toggle_fold = { "zA", "za", "h" }, -- toggle fold of current file
     previous = "k", -- previous item
-    next = "j" -- next item
+    next = "j", -- next item
   },
   indent_lines = true, -- add an indent guide below the fold icons
   auto_open = false, -- automatically open the list when you have diagnostics
@@ -41,7 +41,7 @@ require("trouble").setup {
     warning = "",
     hint = "",
     information = "",
-    other = "﫠"
+    other = "﫠",
   },
-  use_diagnostic_signs = true -- enabling this will use the signs defined in your lsp client
-}
+  use_diagnostic_signs = true, -- enabling this will use the signs defined in your lsp client
+})
