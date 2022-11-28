@@ -194,8 +194,8 @@ return packer.startup({
 
     --[[ FOLD ]]
     use({
-      "anuvyklack/pretty-fold.nvim",
-      requires = { "anuvyklack/fold-preview.nvim", "anuvyklack/keymap-amend.nvim" },
+      "kevinhwang91/nvim-ufo",
+      requires = { "kevinhwang91/promise-async" },
       config = "require('config.fold')",
     })
 
@@ -206,6 +206,11 @@ return packer.startup({
     use({ "karb94/neoscroll.nvim", config = "require('config.neoscroll')" })
     use({ "Pocco81/auto-save.nvim", config = "require('config.auto-save')" })
     use({ "gbprod/yanky.nvim", config = "require('config.yanky')" })
+    use({ "jghauser/mkdir.nvim" })
+    use({
+      "xiyaowong/link-visitor.nvim",
+      config = "require('config.link')",
+    })
 
     --[[ Language Specific ]]
     use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })

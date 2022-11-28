@@ -224,38 +224,17 @@ vim.keymap.set("n", "<c-b>", function()
 end, { silent = true, expr = true })
 
 --[[ Fold ]]
-local fp = require("fold-preview")
-local mapping = require("fold-preview").mapping
-local keymap = vim.keymap
-keymap.amend = require("keymap-amend")
-
-fp.setup({
-  default_keybindings = false,
-  -- another settings
-})
-
-keymap.amend("n", "K", function(original)
-  if not fp.toggle_preview() then
-    original()
-  end
-  -- or
-  -- if not fp.show_preview() then original() end
-  -- to close preview on second press on K.
-end)
-keymap.amend("n", "h", mapping.close_preview_open_fold)
-keymap.amend("n", "l", mapping.close_preview_open_fold)
-keymap.amend("n", "zo", mapping.close_preview)
-keymap.amend("n", "zO", mapping.close_preview)
-keymap.amend("n", "zc", mapping.close_preview_without_defer)
-keymap.amend("n", "zR", mapping.close_preview)
-keymap.amend("n", "zM", mapping.close_preview_without_defer)
-
-map("n", "zh", "zfi)", { noremap = true, silent = true })
-map("n", "zj", "zfi}", { noremap = true, silent = true })
-map("n", "zk", "zfi]", { noremap = true, silent = true })
 map("n", "zl", "za", { noremap = true, silent = true })
-map("n", "z;", "zR", { noremap = true, silent = true })
-map("n", "zg", "zM", { noremap = true, silent = true })
+vim.keymap.set("n", "zj", require("ufo").openAllFolds)
+vim.keymap.set("n", "zk", require("ufo").closeAllFolds)
+vim.keymap.set("n", "zh", require("ufo").openFoldsExceptKinds)
+vim.keymap.set("n", "zg", require("ufo").closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+vim.keymap.set("n", "K", function()
+  local winid = require("ufo").peekFoldedLinesUnderCursor()
+  if not winid then
+    vim.lsp.buf.hover()
+  end
+end)
 
 --[[ Gitsigns ]]
 map("v", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = true })

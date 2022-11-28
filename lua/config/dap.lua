@@ -91,7 +91,7 @@ dapui.setup({
   mappings = {
     -- Use a table to apply multiple mappings
     expand = { "l", "<2-LeftMouse>" },
-    open = "o",
+    open = { "o", "l" },
     remove = "d",
     edit = "e",
     repl = "r",
@@ -166,3 +166,11 @@ dapui.setup({
     max_value_lines = 100, -- Can be integer or nil.
   },
 })
+
+--[[ https://github.com/leoluz/nvim-dap-go ]]
+--[[ https://raw.githubusercontent.com/folke/dot/master/config/nvim/lua/plugins/dap.lua ]]
+--[[ https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#bash ]]
+--[[ https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation ]]
+--[[ https://github.com/ray-x/go.nvim ]]
+--[[ https://github.com/mfussenegger/nvim-dap ]]
+--[[ https://github.com/rockerBOO/awesome-neovim ]]

@@ -27,6 +27,7 @@ vim.o.expandtab = true
 vim.o.lazyredraw = false
 vim.o.ignorecase = true
 vim.o.exrc = true
+vim.o.foldenable = true
 
 vim.o.showmode = false
 vim.o.writebackup = false
@@ -71,9 +72,12 @@ vim.o.softtabstop = 4
 vim.o.pumheight = 10
 vim.o.scrolloff = 10
 vim.o.updatetime = 300
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
 
+vim.o.foldcolumn = '1' -- '0' is not bad
 vim.o.encoding = "utf-8"
-vim.o.foldmethod = "manual"
+--[[ vim.o.foldmethod = "manual" ]]
 vim.o.signcolumn = "yes"
 vim.o.fileencoding = "utf-8"
 vim.o.mouse = "a"
@@ -104,7 +108,7 @@ vim.cmd("let g:go_info_mode='gopls'")
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-   require('go.format').goimport()
+    require("go.format").goimport()
   end,
   group = format_sync_grp,
 })
@@ -113,7 +117,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-   require('go.format').goimport()
+    require("go.format").goimport()
   end,
   group = format_sync_grp,
 })
@@ -165,9 +169,9 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
-	callback = function()
-		require("scrollbar.handlers.search").handler.hide()
-	end,
+  callback = function()
+    require("scrollbar.handlers.search").handler.hide()
+  end,
 })
 
 --[[ vim.cmd([[ ]]

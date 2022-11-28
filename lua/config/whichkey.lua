@@ -92,6 +92,7 @@ local diff_this = gs.diffthis
 local mappings = {
   a = { ":ASToggle<cr>", "Auto Save Toggle" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
+  c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
   d = {
     name = "DAP & Dashboard",
     d = { ":Dashboard<cr>", "Dashboard" },
@@ -164,21 +165,18 @@ local mappings = {
       i = { ":Telescope gh issues initial_mode=normal<cr>", "Issues" },
     },
   },
-  h = {
-    name = "Harpoon",
-    h = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
-    l = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
-    x = { ":lua require('harpoon.mark').clear_all()<cr>", "Mark File" },
-  },
+  h = { ":ReachOpen marks<cr>", "Reach Marks" },
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
-  k = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
+  k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
   m = { ":Mason<cr>", "Mason" },
-  n = { ":Telescope notify theme=dropdown initial_mode=normal<cr>", "Issues" },
+  n = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
   o = {
     name = "Others",
-    h = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
+    c = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
     t = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
+    n = { ":Telescope notify theme=dropdown initial_mode=normal<cr>", "Issues" },
+    h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
   },
   p = {
     name = "Peas",
@@ -192,6 +190,17 @@ local mappings = {
     s = { ":PackerSync<cr>", "Packer Sync" },
   },
   q = { ":bd<cr>", "Close Buffer" },
+  r = {
+    name = "Reach",
+    b = {
+      function()
+        require("reach").buffers(1)
+      end,
+      "Buffers",
+    },
+    m = { ":ReachOpen marks<cr>", "Reach Marks" },
+    t = { ":ReachOpen tabpages<cr>", "Tab Pages" },
+  },
   s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TODO | TypeScript | Terminal",
@@ -208,6 +217,7 @@ local mappings = {
     k = { ":TodoQuickFix<cr>", "Quick Fix" },
     l = { ":TodoLocList<cr>", "Loclist" },
   },
+  v = { ":VisitLinkUnderCursor<cr>", "Visit Link" },
   x = { ":TroubleToggle<cr>", "Toggle Trouble" },
 }
 

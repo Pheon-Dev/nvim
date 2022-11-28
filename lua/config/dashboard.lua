@@ -29,7 +29,7 @@ db.custom_center = {
   {
     icon = "ﯠ ",
     desc = "☆ ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Harpoon          ",
-    action = "Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false",
+    action = "lua require('harpoon.ui').toggle_quick_menu()",
   },
   {
     icon = " ",
