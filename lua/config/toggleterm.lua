@@ -29,21 +29,21 @@ require("toggleterm").setup({
     -- highlights which map to a highlight group name and a table of it's values
     -- NOTE: this is only a subset of values, any group placed here will be set for the terminal window split
     Normal = {
-      guibg = "#21222c",
+      guibg = "#282a36",
     },
     NormalFloat = {
-      link = 'CmpPmenu'
+      link = "PmenuSel",
     },
     FloatBorder = {
       guifg = "#282a36",
-      guibg = "#21222c",
+      guibg = "#282a36",
     },
   },
   winbar = {
     enabled = false,
     name_formatter = function(term) --  term: Terminal
       return term.name
-    end
+    end,
   },
 })
 function _G.set_terminal_keymaps()

@@ -33,11 +33,37 @@ vim.o.writebackup = false
 vim.o.backup = false
 vim.o.showtabline = false
 
-vim.o.conceallevel = 0
-vim.g.rainbow_active = 1
+vim.g.loaded_gzip = 1
+vim.g.loaded_zip = 1
+vim.g.loaded_zipPlugin = 1
+vim.g.loaded_tar = 1
+vim.g.loaded_tarPlugin = 1
+
+vim.g.loaded_getscript = 1
+vim.g.loaded_getscriptPlugin = 1
+vim.g.loaded_vimball = 1
+vim.g.loaded_vimballPlugin = 1
+vim.g.loaded_2html_plugin = 1
+
+vim.g.loaded_matchit = 1
+vim.g.loaded_matchparen = 1
+vim.g.loaded_logiPat = 1
+vim.g.loaded_rrhelper = 1
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrwSettings = 1
+vim.g.loaded_netrwFileHandlers = 1
+
+vim.g.loaded_remote_plugins = 1
+vim.g.loaded_tutor_mode_plugin = 1
+vim.g.loaded_spellfile_plugin = 1
+vim.g.loaded_shada_plugin = 1
+
+vim.g.rainbow_active = 1
 vim.o.cmdheight = 1
+
+vim.o.conceallevel = 0
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.laststatus = 2
@@ -74,6 +100,23 @@ vim.cmd("let g:deoplete#enable_at_startup=1")
 --[[ GO ]]
 vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
+
+-- Run gofmt + goimport on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
 
 vim.cmd("autocmd!")
 vim.cmd("autocmd Insertleave * set nopaste")
@@ -122,9 +165,9 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
-  callback = function()
-    require("scrollbar.handlers.search").handler.hide()
-  end,
+	callback = function()
+		require("scrollbar.handlers.search").handler.hide()
+	end,
 })
 
 --[[ vim.cmd([[ ]]

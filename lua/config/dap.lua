@@ -1,4 +1,92 @@
-require("dapui").setup({
+local dap = require("dap")
+local dapui = require("dapui")
+
+require("dap-go").setup()
+
+dap.configurations.lua = {
+  {
+    type = "nlua",
+    request = "attach",
+    name = "Attach to running Neovim instance",
+  },
+}
+
+dap.adapters.nlua = function(callback, config)
+  callback({ type = "server", host = config.host or "127.0.0.1", port = config.port or 8086 })
+end
+
+dap.adapters.go = {
+  type = "executable",
+  command = "node",
+  args = { os.getenv("HOME") .. "/Downloads/vscode-go/dist/debugAdapter.js" },
+}
+
+dap.configurations.go = {
+  {
+    type = "go",
+    name = "Debug",
+    request = "launch",
+    showLog = false,
+    program = "${file}",
+    dlvToolPath = vim.fn.exepath("dlv"), -- Adjust to where delve is installed [[ yay -S delve ]]
+  },
+}
+
+dap.adapters.firefox = {
+  type = "executable",
+  command = "node",
+  args = { os.getenv("HOME") .. "/Downloads/vscode-firefox-debug/dist/adapter.bundle.js" },
+}
+
+dap.configurations.typescript = {
+  name = "Debug with Firefox",
+  type = "firefox",
+  request = "launch",
+  reAttach = true,
+  url = "http://localhost:3000",
+  webRoot = "${workspaceFolder}",
+  firefoxExecutable = "/usr/bin/firefox",
+}
+
+dap.adapters.bashdb = {
+  type = "executable",
+  command = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/bash-debug-adapter",
+  name = "bashdb",
+}
+
+dap.configurations.sh = {
+  {
+    type = "bashdb",
+    request = "launch",
+    name = "Launch file",
+    showDebugOutput = true,
+    pathBashdb = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb",
+    pathBashdbLib = vim.fn.stdpath("data") .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir",
+    trace = true,
+    file = "${file}",
+    program = "${file}",
+    cwd = "${workspaceFolder}",
+    pathCat = "cat",
+    pathBash = "/bin/bash",
+    pathMkfifo = "mkfifo",
+    pathPkill = "pkill",
+    args = {},
+    env = {},
+    terminalKind = "integrated",
+  },
+}
+
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open({})
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close({})
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close({})
+end
+
+dapui.setup({
   icons = { expanded = "▾", collapsed = "▸", current_frame = "▸" },
   mappings = {
     -- Use a table to apply multiple mappings
@@ -76,22 +164,5 @@ require("dapui").setup({
   render = {
     max_type_length = nil, -- Can be integer or nil.
     max_value_lines = 100, -- Can be integer or nil.
-  }
+  },
 })
-
-local dap, dapui = require("dap"), require("dapui")
-dap.listeners.after.event_initialized["dapui_config"] = function()
-  dapui.open()
-end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-  dapui.close()
-end
-dap.listeners.before.event_exited["dapui_config"] = function()
-  dapui.close()
-end
-
---[[ require'telescope'.extensions.dap.commands{} ]]
---[[ require'telescope'.extensions.dap.configurations{} ]]
---[[ require'telescope'.extensions.dap.list_breakpoints{} ]]
---[[ require'telescope'.extensions.dap.variables{} ]]
---[[ require'telescope'.extensions.dap.frames{} ]]

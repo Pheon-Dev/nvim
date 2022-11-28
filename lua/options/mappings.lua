@@ -262,3 +262,25 @@ map("v", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = tr
 map("v", "<leader>hr", ":Gitsigns reset_hunk<CR>", { noremap = true, silent = true })
 map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
 map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
+
+--[[ DAP ]]
+map("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = true })
+map("n", "<F5>", ":lua require'dap'.continue()<CR>", { noremap = true, silent = true })
+map("n", "<F10>", ":lua require'dap'.step_over()<CR>", { noremap = true, silent = true })
+map("n", "<F11>", ":lua require'dap'.step_into()<CR>", { noremap = true, silent = true })
+map("n", "<F12>", ":lua require'dap'.step_out()<CR>", { noremap = true, silent = true })
+map("n", "<Leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", { noremap = true, silent = true })
+map(
+  "n",
+  "<Leader>B",
+  ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+  { noremap = true, silent = true }
+)
+map(
+  "n",
+  "<Leader>lp",
+  ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+  { noremap = true, silent = true }
+)
+map("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true })
+map("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true })
