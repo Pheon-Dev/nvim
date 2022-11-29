@@ -89,12 +89,6 @@ return packer.startup({
       config = "require('config.windows')",
     })
     use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" })
-    --[[ use({ ]]
-    --[[   "ghillb/cybu.nvim", ]]
-    --[[   branch = "main", ]]
-    --[[   requires = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" }, ]]
-    --[[   config = "require('config.cybu')", ]]
-    --[[ }) ]]
     use({
       "nmac427/guess-indent.nvim",
       config = "require('config.indent')",
@@ -218,12 +212,17 @@ return packer.startup({
 
     --[[ UTILS ]]
     use({ "matze/vim-move" })
-    use({ "christoomey/vim-tmux-navigator" })
+    use({
+      "numToStr/Navigator.nvim",
+      config = function()
+        require("Navigator").setup()
+      end,
+    })
     use({ "monaqa/dial.nvim", config = "require('config.dial')" })
     use({ "karb94/neoscroll.nvim", config = "require('config.neoscroll')" })
     use({
       "Pocco81/auto-save.nvim",
-      config = "require('config.auto-save')"
+      config = "require('config.auto-save')",
     })
     use({ "gbprod/yanky.nvim", requires = { "kkharji/sqlite.lua" }, config = "require('config.yanky')" })
     use({ "jghauser/mkdir.nvim" })

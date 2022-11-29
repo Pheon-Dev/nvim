@@ -34,11 +34,16 @@ map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
 map("n", "(", ":resize +3<cr>", { noremap = true, silent = true })
 map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
 
--- Split Navigation
-map("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })
-map("n", "<C-j>", "<C-w>j", { noremap = true, silent = false })
-map("n", "<C-k>", "<C-w>k", { noremap = true, silent = false })
-map("n", "<C-l>", "<C-w>l", { noremap = true, silent = false })
+--[[ Split Navigation ]]
+vim.keymap.set("n", "<A-h>", "<CMD>NavigatorLeft<CR>")
+vim.keymap.set("n", "<A-l>", "<CMD>NavigatorRight<CR>")
+vim.keymap.set("n", "<A-k>", "<CMD>NavigatorUp<CR>")
+vim.keymap.set("n", "<A-j>", "<CMD>NavigatorDown<CR>")
+vim.keymap.set("n", "<A-p>", "<CMD>NavigatorPrevious<CR>")
+--[[ map("n", "<A-h>", "<C-w>h", { noremap = true, silent = false }) ]]
+--[[ map("n", "<A-j>", "<C-w>j", { noremap = true, silent = false }) ]]
+--[[ map("n", "<A-k>", "<C-w>k", { noremap = true, silent = false }) ]]
+--[[ map("n", "<A-l>", "<C-w>l", { noremap = true, silent = false }) ]]
 
 -- Editing Keybindings
 map("i", "<C-z>", ":redo<cr>", { noremap = true, silent = true })
@@ -268,9 +273,3 @@ map(
 )
 map("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true })
 map("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true })
-
---[[ Cybu ]]
-vim.keymap.set("n", "<s-tab>", "<Plug>(CybuPrev)")
-vim.keymap.set("n", "<tab>", "<Plug>(CybuNext)")
-vim.keymap.set("n", "<C-[>", "<plug>(CybuLastusedPrev)")
-vim.keymap.set("n", "<C-]>", "<plug>(CybuLastusedNext)")

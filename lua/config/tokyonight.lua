@@ -172,12 +172,6 @@ vim.api.nvim_set_hl(0, "PmenuSel", { bg = theme.color1 })
 vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color1, bg = theme.color0 })
 vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = theme.color2, bg = theme.color0 })
 
---[[ Cybu ]]
-vim.api.nvim_set_hl(0, "CybuFocus", { bg = theme.color2 })
-vim.api.nvim_set_hl(0, "CybuAdjacent", { bg = theme.color1 })
-vim.api.nvim_set_hl(0, "CybuBackground", { bg = theme.color1 })
-vim.api.nvim_set_hl(0, "CybuBorder", { fg = theme.color1, bg = theme.color1 })
-
 --[[ Noice ]]
 vim.api.nvim_set_hl(0, "NoiceConfirm", { fg = theme.color86, bg = theme.color0 })
 vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color1, bg = theme.color0 })

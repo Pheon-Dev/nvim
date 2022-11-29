@@ -75,6 +75,8 @@ vim.o.updatetime = 300
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 
+vim.g.move_key_modifier_visualmode = "S"
+vim.g.move_key_modifier = "C"
 vim.o.foldcolumn = "0" -- '1' is not bad
 vim.o.encoding = "utf-8"
 vim.o.signcolumn = "yes"
