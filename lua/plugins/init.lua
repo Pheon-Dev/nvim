@@ -60,6 +60,14 @@ return packer.startup({
       cmd = "NvimTreeToggle",
       config = "require('config.nvim-tree')",
     })
+    use({
+      "folke/zen-mode.nvim",
+      config = "require('config.zen')",
+    })
+    use({
+      "folke/twilight.nvim",
+      config = "require('config.twilight')",
+    })
 
     --[[ AESTHETICS ]]
     use({ "petertriho/nvim-scrollbar", config = "require('config.scrollbar')" })
@@ -212,6 +220,8 @@ return packer.startup({
     use({ "Pocco81/auto-save.nvim", config = "require('config.auto-save')" })
     use({ "gbprod/yanky.nvim", config = "require('config.yanky')" })
     use({ "jghauser/mkdir.nvim" })
+
+    --[[ Links ]]
     use({
       "xiyaowong/link-visitor.nvim",
       config = "require('config.link')",

@@ -165,6 +165,7 @@ local mappings = {
       i = { ":Telescope gh issues initial_mode=normal<cr>", "Issues" },
     },
   },
+  h = { ":Twilight<cr>", "Twilight" },
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
@@ -207,6 +208,7 @@ local mappings = {
   },
   v = { ":VisitLinkUnderCursor<cr>", "Visit Link" },
   x = { ":TroubleToggle<cr>", "Toggle Trouble" },
+  z = { ":ZenMode<cr>", "Zen Mode" },
 }
 
 local opts = {
