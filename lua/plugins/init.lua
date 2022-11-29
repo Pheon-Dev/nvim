@@ -81,6 +81,12 @@ return packer.startup({
       config = "require('config.windows')",
     })
     use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" })
+    use({
+      "ghillb/cybu.nvim",
+      branch = "main",
+      requires = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" },
+      config = "require('config.cybu')",
+    })
 
     --[[ TREESITTER ]]
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('config.treesitter')" })
@@ -163,7 +169,6 @@ return packer.startup({
     })
 
     --[[ DAP ]]
-
     use({ "nvim-telescope/telescope-dap.nvim", requires = "nvim-telescope/telescope.nvim" })
     use({ "theHamsta/nvim-dap-virtual-text" })
     use({ "Weissle/persistent-breakpoints.nvim", requires = "mfussenegger/nvim-dap" })

@@ -7,7 +7,7 @@ local ftMap = {
   git = "",
 }
 
-local handler = function(virtText, lnum, endLnum, width, truncate)
+local handler = function(virtText, lnum, endLnum, width, truncate, ctx)
   local newVirtText = {}
   local suffix = ("  %d "):format(endLnum - lnum)
   local sufWidth = vim.fn.strdisplaywidth(suffix)
@@ -31,19 +31,39 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
     end
     curWidth = curWidth + chunkWidth
   end
+
   table.insert(newVirtText, { suffix, "MoreMsg" })
   return newVirtText
 end
 
--- global handler
+local function custom_selector(bufnr)
+  local function handleFallbackException(err, providerName)
+    if type(err) == "string" and err:match("UfoFallbackException") then
+      return require("ufo").getFolds(bufnr, providerName)
+    else
+      return require("promise").reject(err)
+    end
+  end
+
+  return require("ufo")
+      .getFolds(bufnr, "lsp")
+      :catch(function(err)
+        return handleFallbackException(err, "treesitter")
+      end)
+      :catch(function(err)
+        return handleFallbackException(err, "indent")
+      end)
+end
+
 ufo.setup({
   fold_virt_text_handler = handler,
   open_fold_hl_timeout = 150,
   close_fold_kinds = { "imports", "comment" },
   preview = {
     win_config = {
+      --[[ border = "rounded", ]]
       border = { "", "─", "", "", "", "─", "", "" },
-      winhighlight = "Normal:Folded",
+      winhighlight = "Normal:PmenuSel",
       winblend = 0,
       --[[ maxheight = 20 ]]
     },
@@ -53,8 +73,7 @@ ufo.setup({
     },
   },
   provider_selector = function(bufnr, filetype, buftype)
-    --[[ return ftMap[filetype] ]]
-    return { "treesitter", "indent" }
+    return ftMap[filetype] or custom_selector
   end,
   enable_get_fold_virt_text = true,
 })

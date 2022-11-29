@@ -263,3 +263,9 @@ map(
 )
 map("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true })
 map("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true })
+
+--[[ Cybu ]]
+vim.keymap.set("n", "<s-tab>", "<Plug>(CybuPrev)")
+vim.keymap.set("n", "<tab>", "<Plug>(CybuNext)")
+vim.keymap.set("n", "[b", "<plug>(CybuLastusedPrev)")
+vim.keymap.set("n", "]b", "<plug>(CybuLastusedNext)")
