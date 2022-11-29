@@ -24,10 +24,15 @@ map("n", "wk", ":WindowsMaximizeVertically<cr>", { noremap = true, silent = true
 map("n", "wl", ":WindowsMaximizeHorizontally<cr>", { noremap = true, silent = true })
 map("n", "ww", ":WindowsToggleAutowidth<cr>", { noremap = true, silent = true })
 
-map("n", "<C-Right>", ":vertical resize +3<cr>", { noremap = true, silent = true })
-map("n", "<C-Left>", ":vertical resize -3<cr>", { noremap = true, silent = true })
+map("n", "<C-Left>", ":vertical resize +3<cr>", { noremap = true, silent = true })
+map("n", "<C-Right>", ":vertical resize -3<cr>", { noremap = true, silent = true })
 map("n", "<C-Up>", ":resize +3<cr>", { noremap = true, silent = true })
 map("n", "<C-Down>", ":resize -3<cr>", { noremap = true, silent = true })
+
+map("n", "<M-h>", ":vertical resize +3<cr>", { noremap = true, silent = true })
+map("n", "<M-l>", ":vertical resize -3<cr>", { noremap = true, silent = true })
+map("n", "<M-k>", ":resize +3<cr>", { noremap = true, silent = true })
+map("n", "<M-l>", ":resize -3<cr>", { noremap = true, silent = true })
 
 -- Split Navigation
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })

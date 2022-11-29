@@ -1,7 +1,7 @@
 require("yanky").setup({
   ring = {
     history_length = 100,
-    storage = "shada",
+    storage = "sqlite", -- shada
     sync_with_numbered_registers = true,
     cancel_event = "update",
   },

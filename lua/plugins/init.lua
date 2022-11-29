@@ -85,7 +85,7 @@ return packer.startup({
     })
     use({
       "anuvyklack/windows.nvim",
-      requires = { "anuvyklack/middleclass", "anuvyklack/animation.nvim" },
+      requires = { "anuvyklack/middleclass", "anuvyklack/animation.nvim", "sindrets/winshift.nvim" },
       config = "require('config.windows')",
     })
     use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" })
@@ -94,6 +94,10 @@ return packer.startup({
       branch = "main",
       requires = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" },
       config = "require('config.cybu')",
+    })
+    use({
+      "nmac427/guess-indent.nvim",
+      config = "require('config.indent')",
     })
 
     --[[ TREESITTER ]]
@@ -217,8 +221,11 @@ return packer.startup({
     use({ "christoomey/vim-tmux-navigator" })
     use({ "monaqa/dial.nvim", config = "require('config.dial')" })
     use({ "karb94/neoscroll.nvim", config = "require('config.neoscroll')" })
-    use({ "Pocco81/auto-save.nvim", config = "require('config.auto-save')" })
-    use({ "gbprod/yanky.nvim", config = "require('config.yanky')" })
+    use({
+      "Pocco81/auto-save.nvim",
+      config = "require('config.auto-save')"
+    })
+    use({ "gbprod/yanky.nvim", requires = { "kkharji/sqlite.lua" }, config = "require('config.yanky')" })
     use({ "jghauser/mkdir.nvim" })
 
     --[[ Links ]]

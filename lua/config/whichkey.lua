@@ -207,6 +207,14 @@ local mappings = {
     l = { ":TodoLocList<cr>", "Loclist" },
   },
   v = { ":VisitLinkUnderCursor<cr>", "Visit Link" },
+  w = {
+    name = "Windows",
+    w = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },
+    h = { ":WinShift left<cr><esc>:WindowsEqualize<cr>", "Shift Left" },
+    j = { ":WinShift down<cr><esc>:WindowsEqualize<cr>", "Shift Down" },
+    k = { ":WinShift up<cr><esc>:WindowsEqualize<cr>", "Shift Up" },
+    l = { ":WinShift right<cr><esc>:WindowsEqualize<cr>", "Shift Right" },
+  },
   x = { ":TroubleToggle<cr>", "Toggle Trouble" },
   z = { ":ZenMode<cr>", "Zen Mode" },
 }
