@@ -89,12 +89,12 @@ return packer.startup({
       config = "require('config.windows')",
     })
     use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" })
-    use({
-      "ghillb/cybu.nvim",
-      branch = "main",
-      requires = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" },
-      config = "require('config.cybu')",
-    })
+    --[[ use({ ]]
+    --[[   "ghillb/cybu.nvim", ]]
+    --[[   branch = "main", ]]
+    --[[   requires = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" }, ]]
+    --[[   config = "require('config.cybu')", ]]
+    --[[ }) ]]
     use({
       "nmac427/guess-indent.nvim",
       config = "require('config.indent')",

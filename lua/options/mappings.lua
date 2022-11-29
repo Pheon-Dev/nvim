@@ -29,10 +29,10 @@ map("n", "<C-Right>", ":vertical resize -3<cr>", { noremap = true, silent = true
 map("n", "<C-Up>", ":resize +3<cr>", { noremap = true, silent = true })
 map("n", "<C-Down>", ":resize -3<cr>", { noremap = true, silent = true })
 
-map("n", "<M-h>", ":vertical resize +3<cr>", { noremap = true, silent = true })
-map("n", "<M-l>", ":vertical resize -3<cr>", { noremap = true, silent = true })
-map("n", "<M-k>", ":resize +3<cr>", { noremap = true, silent = true })
-map("n", "<M-l>", ":resize -3<cr>", { noremap = true, silent = true })
+map("n", ">", ":vertical resize +3<cr>", { noremap = true, silent = true })
+map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
+map("n", "(", ":resize +3<cr>", { noremap = true, silent = true })
+map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
 
 -- Split Navigation
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })
