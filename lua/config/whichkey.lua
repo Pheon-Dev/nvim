@@ -165,7 +165,6 @@ local mappings = {
       i = { ":Telescope gh issues initial_mode=normal<cr>", "Issues" },
     },
   },
-  h = { ":ReachOpen marks<cr>", "Reach Marks" },
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
@@ -190,17 +189,6 @@ local mappings = {
     s = { ":PackerSync<cr>", "Packer Sync" },
   },
   q = { ":bd<cr>", "Close Buffer" },
-  r = {
-    name = "Reach",
-    b = {
-      function()
-        require("reach").buffers(1)
-      end,
-      "Buffers",
-    },
-    m = { ":ReachOpen marks<cr>", "Reach Marks" },
-    t = { ":ReachOpen tabpages<cr>", "Tab Pages" },
-  },
   s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TODO | TypeScript | Terminal",
