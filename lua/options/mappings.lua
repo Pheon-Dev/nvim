@@ -267,5 +267,5 @@ map("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, sil
 --[[ Cybu ]]
 vim.keymap.set("n", "<s-tab>", "<Plug>(CybuPrev)")
 vim.keymap.set("n", "<tab>", "<Plug>(CybuNext)")
-vim.keymap.set("n", "[b", "<plug>(CybuLastusedPrev)")
-vim.keymap.set("n", "]b", "<plug>(CybuLastusedNext)")
+vim.keymap.set("n", "<C-[>", "<plug>(CybuLastusedPrev)")
+vim.keymap.set("n", "<C-]>", "<plug>(CybuLastusedNext)")
