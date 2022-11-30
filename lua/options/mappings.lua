@@ -273,3 +273,13 @@ map(
 )
 map("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true })
 map("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true })
+
+--[[ Move ]]
+vim.keymap.set("n", "sh", "<Plug>MoveCharLeft")
+vim.keymap.set("n", "sl", "<Plug>MoveCharRight")
+vim.keymap.set("n", "sk", "<Plug>MoveLineUp")
+vim.keymap.set("n", "sj", "<Plug>MoveLineDown")
+vim.keymap.set("v", "<S-h>", "<Plug>MoveBlockLeft")
+vim.keymap.set("v", "<S-l>", "<Plug>MoveBlockRight")
+vim.keymap.set("v", "<S-k>", "<Plug>MoveBlockUp")
+vim.keymap.set("v", "<S-j>", "<Plug>MoveBlockDown")

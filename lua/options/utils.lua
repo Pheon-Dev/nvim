@@ -74,9 +74,11 @@ vim.o.scrolloff = 10
 vim.o.updatetime = 300
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
+vim.g.move_map_keys = 0
+--[[ vim.g.move_normal_option = 1 ]]
 
-vim.g.move_key_modifier_visualmode = "S"
-vim.g.move_key_modifier = "C"
+--[[ vim.g.move_key_modifier_visualmode = "S" ]]
+--[[ vim.g.move_key_modifier = "C" ]]
 vim.o.foldcolumn = "0" -- '1' is not bad
 vim.o.encoding = "utf-8"
 vim.o.signcolumn = "yes"
@@ -107,20 +109,20 @@ vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-    require("go.format").goimport()
-  end,
-  group = format_sync_grp,
+	pattern = "*.go",
+	callback = function()
+		require("go.format").goimport()
+	end,
+	group = format_sync_grp,
 })
 
 -- Run gofmt + goimport on save
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-    require("go.format").goimport()
-  end,
-  group = format_sync_grp,
+	pattern = "*.go",
+	callback = function()
+		require("go.format").goimport()
+	end,
+	group = format_sync_grp,
 })
 
 vim.cmd("autocmd!")
@@ -170,9 +172,9 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
-  callback = function()
-    require("scrollbar.handlers.search").handler.hide()
-  end,
+	callback = function()
+		require("scrollbar.handlers.search").handler.hide()
+	end,
 })
 
 --[[ vim.cmd([[ ]]

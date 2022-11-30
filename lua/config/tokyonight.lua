@@ -156,7 +156,7 @@ vim.api.nvim_set_hl(0, "DashboardCenter", { fg = theme.color83 })
 
 --[[ Lir ]]
 vim.api.nvim_set_hl(0, "LirFloatNormal", { bg = theme.color1 })
-vim.api.nvim_set_hl(0, "LirFloatCursorLine", { bg = theme.color93 })
+vim.api.nvim_set_hl(0, "LirFloatCursorLine", { bg = theme.color2 })
 vim.api.nvim_set_hl(0, "LirFloatBorder", { fg = theme.color1, bg = theme.color1 })
 
 --[[ Harpoon ]]
@@ -169,12 +169,12 @@ vim.api.nvim_set_hl(0, "Harpoon", { fg = theme.color3, bg = theme.color0 })
 vim.api.nvim_set_hl(0, "Visual", { bg = theme.color2 })
 vim.api.nvim_set_hl(0, "CmpPmenu", { bg = theme.color0 })
 vim.api.nvim_set_hl(0, "PmenuSel", { bg = theme.color1 })
-vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color1, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color2, bg = theme.color0 })
 vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = theme.color2, bg = theme.color0 })
 
 --[[ Noice ]]
-vim.api.nvim_set_hl(0, "NoiceConfirm", { fg = theme.color86, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color1 })
+vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color1 })
 
 vim.api.nvim_set_hl(0, "NoicePopup", { bg = theme.color0 })
 vim.api.nvim_set_hl(0, "NoicePopupmenuBorder", { fg = theme.color2, bg = theme.color0 })

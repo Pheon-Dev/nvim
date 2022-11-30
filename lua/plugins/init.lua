@@ -176,7 +176,7 @@ return packer.startup({
 
     --[[ DAP ]]
     use({ "nvim-telescope/telescope-dap.nvim", requires = "nvim-telescope/telescope.nvim" })
-    use({ "theHamsta/nvim-dap-virtual-text" })
+    --[[ use({ "theHamsta/nvim-dap-virtual-text" }) ]]
     use({ "Weissle/persistent-breakpoints.nvim", requires = "mfussenegger/nvim-dap" })
     use({
       "jayp0521/mason-nvim-dap.nvim",
