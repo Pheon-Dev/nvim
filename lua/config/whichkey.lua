@@ -74,6 +74,16 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 
+local toggle_btop = function()
+  local btop = Terminal:new({ cmd = "btop", direction = "float" })
+  return btop:toggle()
+end
+
+local toggle_ranger = function()
+  local ranger = Terminal:new({ cmd = "ranger", direction = "float" })
+  return ranger:toggle()
+end
+
 local next_hunk = function()
   gs.next_hunk()
 end
@@ -165,6 +175,7 @@ local mappings = {
     },
   },
   h = { ":Twilight<cr>", "Twilight" },
+  i = { toggle_btop, "Btop" },
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
@@ -189,6 +200,7 @@ local mappings = {
     s = { ":PackerSync<cr>", "Packer Sync" },
   },
   q = { ":bd<cr>", "Close Buffer" },
+  r = { toggle_ranger, "Ranger" },
   s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TODO | TypeScript | Terminal",
