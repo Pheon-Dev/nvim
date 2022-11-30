@@ -52,7 +52,7 @@ db.custom_center = {
     action = "Telescope projects theme=dropdown initial_mode=normal",
   },
   {
-    icon = " ",
+    icon = "פּ ",
     desc = "☆ ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ NVIM Tree        ",
     action = "NvimTreeToggle",
   },
@@ -67,7 +67,7 @@ db.custom_center = {
     action = "Mason",
   },
   {
-    icon = "⨀ ",
+    icon = " ",
     desc = "☆ ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Issues           ",
     action = "Telescope gh issues initial_mode=normal",
   },
@@ -92,7 +92,7 @@ db.custom_center = {
     action = "Telescope help_tags theme=dropdown initial_mode=insert",
   },
   {
-    icon = "⏲ ",
+    icon = "",
     desc = "☆ ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Startup Time     ",
     action = "StartupTime",
   },

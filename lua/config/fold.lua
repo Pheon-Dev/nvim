@@ -68,8 +68,8 @@ ufo.setup({
       --[[ maxheight = 20 ]]
     },
     mappings = {
-      scrollU = "<C-k>",
-      scrollD = "<C-j>",
+      scrollU = "<C-u>",
+      scrollD = "<C-d>",
     },
   },
   provider_selector = function(bufnr, filetype, buftype)
