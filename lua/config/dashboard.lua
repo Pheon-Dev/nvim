@@ -52,6 +52,11 @@ db.custom_center = {
     action = "Telescope projects theme=dropdown initial_mode=normal",
   },
   {
+    icon = " ",
+    desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Ranger           ",
+    action = "RnvimrToggle",
+  },
+  {
     icon = "פּ ",
     desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ NVIM Tree        ",
     action = "NvimTreeToggle",

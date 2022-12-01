@@ -200,7 +200,7 @@ local mappings = {
     s = { ":PackerSync<cr>", "Packer Sync" },
   },
   q = { ":bd<cr>", "Close Buffer" },
-  r = { toggle_ranger, "Ranger" },
+  r = { ":RnvimrToggle<cr>", "Ranger" },
   s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TODO | TypeScript | Terminal",

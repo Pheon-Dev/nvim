@@ -90,7 +90,7 @@ vim.o.clipboard = "unnamedplus"
 vim.o.shell = "zsh"
 vim.o.backupskip = "/tmp/*,/private/tmp/*"
 vim.g.python3_host_prog = "/usr/bin/python"
-
+vim.g.gitblame_highlight_group = "Blame"
 vim.o.guifont = "Courier\\ New:h10"
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")

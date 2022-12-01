@@ -93,6 +93,7 @@ return packer.startup({
       "nmac427/guess-indent.nvim",
       config = "require('config.indent')",
     })
+    use({ "kevinhwang91/rnvimr" })
 
     --[[ TREESITTER ]]
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('config.treesitter')" })
@@ -163,6 +164,9 @@ return packer.startup({
       "lewis6991/gitsigns.nvim",
       requires = { "nvim-lua/plenary.nvim" },
       config = "require('config.gitsigns')",
+    })
+    use({
+      "f-person/git-blame.nvim",
     })
 
     --[[ DIAGNOSTICS ]]
