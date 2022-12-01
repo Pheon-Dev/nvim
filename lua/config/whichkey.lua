@@ -79,11 +79,6 @@ local toggle_btop = function()
   return btop:toggle()
 end
 
-local toggle_ranger = function()
-  local ranger = Terminal:new({ cmd = "ranger", direction = "float" })
-  return ranger:toggle()
-end
-
 local next_hunk = function()
   gs.next_hunk()
 end
@@ -99,6 +94,7 @@ end
 local diff_this = gs.diffthis
 
 local mappings = {
+  [";"] = { ":TagbarToggle<cr>", "Tagbar" },
   a = { ":ASToggle<cr>", "Auto Save Toggle" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
@@ -179,11 +175,13 @@ local mappings = {
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
-  m = { ":Mason<cr>", "Mason" },
+  m = { ":ReachOpen marks<cr>", "Marks" },
   n = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
   o = {
     name = "Others",
     c = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
+    b = { ":ReachOpen buffers<cr>", "Buffers" },
+    m = { ":Mason<cr>", "Mason" },
     t = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
     n = { ":Telescope notify theme=dropdown initial_mode=normal<cr>", "Issues" },
     h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },

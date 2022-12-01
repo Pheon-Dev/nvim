@@ -75,11 +75,28 @@ vim.o.updatetime = 300
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.g.move_map_keys = 0
---[[ vim.g.move_normal_option = 1 ]]
 
+--[[ move ]]
+--[[ vim.g.move_normal_option = 1 ]]
 --[[ vim.g.move_key_modifier_visualmode = "S" ]]
 --[[ vim.g.move_key_modifier = "C" ]]
-vim.o.foldcolumn = "0" -- '1' is not bad
+
+--[[ ufo ]]
+vim.o.foldcolumn = "0" -- '1', '0' is not bad
+vim.o.foldnestmax = "1" -- '1', '0' is not bad
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+--[[ tagbar ]]
+vim.g.tagbar_map_togglesort = "r"
+vim.g.tagbar_map_jump = "l"
+vim.g.tagbar_map_togglefold = "h"
+vim.g.tagbar_map_closeallfolds = "H"
+vim.g.tagbar_position = "left"
+vim.g.tagbar_width = 24
+vim.g.tagbar_help_visibility = 0
+vim.g.tagbar_no_status_line = 1
+vim.g.tagbar_iconchars = { "", "" }
+
 vim.o.encoding = "utf-8"
 vim.o.signcolumn = "yes"
 vim.o.fileencoding = "utf-8"
@@ -94,7 +111,6 @@ vim.g.gitblame_highlight_group = "Blame"
 vim.o.guifont = "Courier\\ New:h10"
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
-
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")
 vim.cmd("set nu rnu")

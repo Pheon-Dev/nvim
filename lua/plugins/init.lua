@@ -68,6 +68,7 @@ return packer.startup({
       "folke/twilight.nvim",
       config = "require('config.twilight')",
     })
+    use({ "toppair/reach.nvim", after = "nvim-cmp", config = "require('config.reach')" })
 
     --[[ AESTHETICS ]]
     use({ "petertriho/nvim-scrollbar", config = "require('config.scrollbar')" })
@@ -94,6 +95,7 @@ return packer.startup({
       config = "require('config.indent')",
     })
     use({ "kevinhwang91/rnvimr" })
+    use({ "preservim/tagbar" })
 
     --[[ TREESITTER ]]
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('config.treesitter')" })

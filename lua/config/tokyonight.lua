@@ -3,6 +3,8 @@ vim.g.style = "storm" -- night, day, night, moon
 vim.o.background = "dark"
 --[[ vim.g.tokyonight_transparent = true ]]
 
+local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
+
 local theme = {
 	color29 = "#565656",
 	color85 = "#808080",
@@ -233,3 +235,41 @@ vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93 })
 
 --[[ Ranger ]]
 vim.api.nvim_set_hl(0, "RnvimrNormal", { bg = theme.color0 })
+
+--[[ Reach ]]
+
+vim.api.nvim_set_hl(0, "ReachBorder", { fg = theme.color2, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "ReachMarkLocation", { fg = theme.color4 })
+vim.api.nvim_set_hl(0, "ReachHandleMarkLocal", { fg = theme.color7, bg = theme.color0 })
+
+vim.api.nvim_set_hl(0, "ReachMark", { fg = theme.color23, bg = theme.color0 })
+
+--[[ vim.api.nvim_set_hl(0, "ReachCurrent", { bg = theme.color42 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachMatchExact", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachPriority", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachDirectory", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachModifiedIndicator", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachHandleBuffer", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachHandleDelete", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachHandleSplit", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachTail", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachHandleMarkGlobal", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachHandleTabpage", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vim.api.nvim_set_hl(0, "ReachGrayOut", { fg = theme.color1, bg = theme.color1 }) ]]
+
+--[[ ReachBorder             -> 'Comment' ]]
+--[[ ReachDirectory          -> 'Directory' ]]
+--[[ ReachModifiedIndicator  -> 'String' ]]
+--[[ ReachHandleBuffer       -> 'String' ]]
+--[[ ReachHandleDelete       -> 'Error' ]]
+--[[ ReachHandleSplit        -> 'Directory' ]]
+--[[ ReachTail               -> 'Normal' ]]
+--[[ ReachHandleMarkLocal    -> 'Type' ]]
+--[[ ReachHandleMarkGlobal   -> 'Number' ]]
+--[[ ReachMark               -> 'Normal' ]]
+--[[ ReachMarkLocation       -> 'Comment' ]]
+--[[ ReachHandleTabpage      -> 'TabLineSel' ]]
+--[[ ReachGrayOut            -> 'Comment' ]]
+--[[ ReachMatchExact         -> 'String' ]]
+--[[ ReachPriority           -> 'Special' ]]
+--[[ ReachCurrent            -> 'Title' ]]

@@ -118,7 +118,7 @@ map("n", "d.", "dt.", { noremap = true, silent = true })
 map("n", "d'", "dt'", { noremap = true, silent = true })
 map("n", 'd"', 'dt"', { noremap = true, silent = true })
 map("n", "dp", "dipdd", { noremap = true, silent = true })
-map("n", "X", "d^", { noremap = true, silent = true })
+map("n", "<C-c>", "d^", { noremap = true, silent = true })
 
 -- Edit (visual)
 map("n", "v1", "viw", { noremap = true, silent = true })
