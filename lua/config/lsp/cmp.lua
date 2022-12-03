@@ -1,8 +1,6 @@
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
 
-local feedkey = function(key, mode)
-  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-end
+require("luasnip.loaders.from_vscode").lazy_load()
 
 local cmp = require("cmp")
 local lspkind = require("lspkind")

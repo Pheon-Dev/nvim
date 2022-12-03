@@ -95,6 +95,7 @@ local diff_this = gs.diffthis
 
 local mappings = {
   [";"] = { ":TagbarToggle<cr>", "Tagbar" },
+  ["'"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
   a = { ":ASToggle<cr>", "Auto Save Toggle" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },

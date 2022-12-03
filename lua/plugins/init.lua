@@ -18,13 +18,133 @@ return packer.startup({
     --[[ PACKER ]]
     use({ "wbthomason/packer.nvim" })
 
-    --[[ ESSENTIALS ]]
+    --[[ REQUIRED ]]
     use({ "lewis6991/impatient.nvim" })
     use({ "tweekmonster/startuptime.vim" })
     use({ "nathom/filetype.nvim" })
     use({ "kyazdani42/nvim-web-devicons" })
     use({ "nvim-lua/popup.nvim" })
     use({ "nvim-lua/plenary.nvim" })
+    use({ "rcarriga/nvim-notify" })
+    use({ "MunifTanjim/nui.nvim" })
+
+    --[[ START UP ]]
+    use({ "folke/tokyonight.nvim" })
+    use({ "glepnir/dashboard-nvim" })
+    use({ "akinsho/toggleterm.nvim" })
+    use({ "tamago324/lir.nvim" })
+    use({ "Pheon-Dev/harpoon" })
+    use({ "ahmedkhalf/project.nvim" })
+    use({ "folke/zen-mode.nvim" })
+    use({ "folke/twilight.nvim" })
+
+    --[[ AESTHETICS ]]
+    use({ "petertriho/nvim-scrollbar" })
+    use({ "anuvyklack/windows.nvim" })
+    use({ "anuvyklack/middleclass" })
+    use({ "anuvyklack/animation.nvim" })
+    use({ "sindrets/winshift.nvim" })
+    use({ "nmac427/guess-indent.nvim" })
+    use({ "SmiteshP/nvim-navic" })
+    use({ "kevinhwang91/rnvimr" })
+    use({ "preservim/tagbar" })
+    use({ "toppair/reach.nvim", after = "nvim-cmp" })
+
+    --[[ TREESITTER ]]
+    use({ "nvim-treesitter/nvim-treesitter-refactor" })
+    use({ "windwp/nvim-ts-autotag" })
+    use({ "p00f/nvim-ts-rainbow" })
+
+    --[[ SYNTAX ]]
+    use({ "tpope/vim-surround" })
+    use({ "junegunn/rainbow_parentheses.vim" })
+    use({ "norcalli/nvim-colorizer.lua" })
+
+    --[[ COMPLETION ]]
+    use({ "hrsh7th/nvim-cmp" })
+    use({ "hrsh7th/cmp-buffer" })
+    use({ "hrsh7th/cmp-nvim-lsp" })
+    use({ "hrsh7th/cmp-path" })
+    use({ "hrsh7th/cmp-nvim-lua" })
+    use({ "ray-x/cmp-treesitter" })
+    use({ "f3fora/cmp-spell" })
+    use({ "hrsh7th/cmp-cmdline" })
+    use({ "tamago324/cmp-zsh" })
+    use({ "ms-jpq/coq_nvim" })
+
+    --[[ SNIPPETS ]]
+    use({ "rafamadriz/friendly-snippets" })
+    use({ "L3MON4D3/LuaSnip" })
+    use({ "saadparwaiz1/cmp_luasnip" })
+
+    --[[ COMMENTS ]]
+    use({ "folke/todo-comments.nvim" })
+    use({ "JoosepAlviste/nvim-ts-context-commentstring", event = "BufWinEnter" })
+
+    --[[ HIGHLIGHTS ]]
+    use({ "kevinhwang91/nvim-hlslens" })
+    use({ "phaazon/hop.nvim", branch = "v2" })
+    use({ "terryma/vim-multiple-cursors" })
+
+    --[[ FORMATTING ]]
+    use({ "prettier/vim-prettier", run = "yarn install --frozen-lockfile --production" })
+    use({ "ckipp01/stylua-nvim", run = "cargo install stylua" })
+
+    --[[ GIT ]]
+    use({ "sindrets/diffview.nvim" })
+    use({ "lewis6991/gitsigns.nvim" })
+    use({ "f-person/git-blame.nvim" })
+    use({ "nvim-telescope/telescope-github.nvim" })
+
+    --[[ DAP ]]
+    use({ "mfussenegger/nvim-dap" })
+    use({ "rcarriga/nvim-dap-ui" })
+    use({ "jbyuki/one-small-step-for-vimkind" })
+    use({ "nvim-telescope/telescope-dap.nvim" })
+    --[[ use({ "theHamsta/nvim-dap-virtual-text" }) ]]
+    use({ "Weissle/persistent-breakpoints.nvim" })
+    use({ "jayp0521/mason-nvim-dap.nvim" })
+    use({ "leoluz/nvim-dap-go" })
+
+    --[[ LSP ]]
+    use({ "williamboman/mason.nvim" })
+    use({ "williamboman/mason-lspconfig.nvim" })
+    use({ "onsails/lspkind-nvim" })
+    use({
+      "neovim/nvim-lspconfig",
+      config = "require('config.lsp')",
+    })
+    use({ "folke/lsp-colors.nvim" })
+    use({ "tami5/lspsaga.nvim", branch = "main" })
+    use({ "jose-elias-alvarez/null-ls.nvim" })
+    use({ "jayp0521/mason-null-ls.nvim" })
+
+    --[[ FOLD ]]
+    use({ "kevinhwang91/nvim-ufo" })
+    use({ "kevinhwang91/promise-async" })
+
+    --[[ UTILS ]]
+    use({ "matze/vim-move" })
+    use({ "numToStr/Navigator.nvim" })
+    use({ "monaqa/dial.nvim" })
+    use({ "karb94/neoscroll.nvim" })
+    use({ "Pocco81/auto-save.nvim" })
+    use({ "gbprod/yanky.nvim" })
+    use({ "kkharji/sqlite.lua" })
+    use({ "jghauser/mkdir.nvim" })
+
+    --[[ Links ]]
+    use({ "xiyaowong/link-visitor.nvim" })
+
+    --[[ TS ]]
+    use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
+
+    --[[ GO ]]
+    use({ "ray-x/go.nvim" })
+    use({ "ray-x/guihua.lua" })
+    use({ "crusj/structrue-go.nvim", branch = "main" })
+    use({ "olexsmir/gopher.nvim" })
+
     use({
       "folke/persistence.nvim",
       event = "BufReadPre",
@@ -33,121 +153,56 @@ return packer.startup({
         require("persistence").setup()
       end,
     })
-
-    --[[ START UP ]]
-    use({ "folke/tokyonight.nvim", config = "require('config.tokyonight')" })
-    use({ "glepnir/dashboard-nvim", config = "require('config.dashboard')" })
-    use({ "akinsho/toggleterm.nvim", config = "require('config.toggleterm')" })
-    use({ "folke/which-key.nvim", event = "BufWinEnter", config = "require('config.whichkey')" })
-    use({ "tamago324/lir.nvim", config = "require('config.lir')" })
-    use({ "Pheon-Dev/harpoon", config = "require('config.harpoon')" })
-    use({ "ahmedkhalf/project.nvim", config = "require('config.projects')" })
+    use({
+      "folke/which-key.nvim",
+      event = "BufWinEnter",
+      config = "require('config.whichkey')",
+    })
     use({
       "nvim-telescope/telescope.nvim",
-      requires = { { "nvim-telescope/telescope-github.nvim" }, { "nvim-lua/plenary.nvim" } },
       cmd = "Telescope",
       config = "require('config.telescope')",
     })
     use({
       "folke/noice.nvim",
       event = "VimEnter",
-      requires = { "rcarriga/nvim-notify", "MunifTanjim/nui.nvim" },
       config = "require('config.noice')",
     })
     use({
       "kyazdani42/nvim-tree.lua",
-      requires = { "kyazdani42/nvim-web-devicons" },
       cmd = "NvimTreeToggle",
       config = "require('config.nvim-tree')",
     })
     use({
-      "folke/zen-mode.nvim",
-      config = "require('config.zen')",
-    })
-    use({
-      "folke/twilight.nvim",
-      config = "require('config.twilight')",
-    })
-    use({ "toppair/reach.nvim", after = "nvim-cmp", config = "require('config.reach')" })
-
-    --[[ AESTHETICS ]]
-    use({ "petertriho/nvim-scrollbar", config = "require('config.scrollbar')" })
-    use({
       "nvim-lualine/lualine.nvim",
-      requires = { "kyazdani42/nvim-web-devicons", opt = true },
       event = "BufRead",
       config = "require('config.lualine')",
     })
     use({
       "akinsho/bufferline.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
       event = "BufWinEnter",
       config = "require('config.bufferline')",
     })
     use({
-      "anuvyklack/windows.nvim",
-      requires = { "anuvyklack/middleclass", "anuvyklack/animation.nvim", "sindrets/winshift.nvim" },
-      config = "require('config.windows')",
+      "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate",
+      config = "require('config.treesitter')",
     })
-    use({ "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig" })
     use({
-      "nmac427/guess-indent.nvim",
-      config = "require('config.indent')",
+      "lukas-reineke/indent-blankline.nvim",
+      event = "BufRead",
+      config = "require('config.blankline')",
     })
-    use({ "kevinhwang91/rnvimr" })
-    use({ "preservim/tagbar" })
-
-    --[[ TREESITTER ]]
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = "require('config.treesitter')" })
-    use({ "nvim-treesitter/nvim-treesitter-refactor" })
-    use({ "windwp/nvim-ts-autotag" })
-    use({ "p00f/nvim-ts-rainbow" })
-
-    --[[ SYNTAX ]]
-    use({ "tpope/vim-surround" })
-    use({ "junegunn/rainbow_parentheses.vim" })
-    use({ "norcalli/nvim-colorizer.lua", config = "require('config.colorizer')" })
-    use({ "lukas-reineke/indent-blankline.nvim", event = "BufRead", config = "require('config.blankline')" })
-    use({ "windwp/nvim-autopairs", after = "nvim-cmp", config = "require('config.autopairs')" })
-
-    --[[ COMPLETION ]]
     use({
-      "hrsh7th/nvim-cmp",
-      requires = {
-        { "hrsh7th/cmp-buffer" },
-        { "hrsh7th/cmp-nvim-lsp" },
-        { "hrsh7th/cmp-path" },
-        { "hrsh7th/cmp-nvim-lua" },
-        { "ray-x/cmp-treesitter" },
-        --[[ { "hrsh7th/cmp-vsnip" }, ]]
-        { "f3fora/cmp-spell" },
-        { "hrsh7th/cmp-cmdline" },
-        { "tamago324/cmp-zsh" },
-      },
+      "windwp/nvim-autopairs",
+      after = "nvim-cmp",
+      config = "require('config.autopairs')",
     })
-    use({ "ms-jpq/coq_nvim" })
-
-    --[[ SNIPPETS ]]
-    use({ "rafamadriz/friendly-snippets" })
-    --[[ use({ "hrsh7th/vim-vsnip" }) ]]
-    --[[ use({ "hrsh7th/vim-vsnip-integ" }) ]]
     use({
-      "L3MON4D3/LuaSnip",
-      config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end,
+      "numToStr/Comment.nvim",
+      event = "BufRead",
+      config = "require('config.comment')",
     })
-    use({ "saadparwaiz1/cmp_luasnip" })
-
-    --[[ COMMENTS ]]
-    use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim", config = "require('config.todo')" })
-    use({ "JoosepAlviste/nvim-ts-context-commentstring", event = "BufWinEnter" })
-    use({ "numToStr/Comment.nvim", event = "BufRead", config = "require('config.comment')" })
-
-    --[[ HIGHLIGHTS ]]
-    use({ "kevinhwang91/nvim-hlslens", config = "require('config.hlslens')" })
-    use({ "phaazon/hop.nvim", branch = "v2", config = "require('config.hop')" })
-    use({ "terryma/vim-multiple-cursors" })
     use({
       "andymass/vim-matchup",
       event = "BufReadPost",
@@ -155,110 +210,12 @@ return packer.startup({
         vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
       end,
     })
-
-    --[[ FORMATTING ]]
-    use({ "prettier/vim-prettier", run = "yarn install --frozen-lockfile --production" })
-    use({ "ckipp01/stylua-nvim", run = "cargo install stylua" })
-
-    --[[ GIT ]]
-    use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", config = "require('config.diffview')" })
-    use({
-      "lewis6991/gitsigns.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
-      config = "require('config.gitsigns')",
-    })
-    use({
-      "f-person/git-blame.nvim",
-    })
-
-    --[[ DIAGNOSTICS ]]
     use({
       "folke/trouble.nvim",
       event = "BufReadPre",
       module = "trouble",
       cmd = { "TroubleToggle", "Trouble" },
       config = "require('config.trouble')",
-    })
-
-    --[[ DAP ]]
-    use({ "nvim-telescope/telescope-dap.nvim", requires = "nvim-telescope/telescope.nvim" })
-    --[[ use({ "theHamsta/nvim-dap-virtual-text" }) ]]
-    use({ "Weissle/persistent-breakpoints.nvim", requires = "mfussenegger/nvim-dap" })
-    use({
-      "jayp0521/mason-nvim-dap.nvim",
-      requires = {
-        "williamboman/mason.nvim",
-        "mfussenegger/nvim-dap",
-        "jbyuki/one-small-step-for-vimkind",
-      },
-    })
-    use({ "leoluz/nvim-dap-go" })
-    use({ "rcarriga/nvim-dap-ui", requires = "mfussenegger/nvim-dap", config = "require('config.dap')" })
-
-    --[[ LSP ]]
-    use({ "williamboman/mason.nvim", config = "require('config.mason')" })
-    use({ "williamboman/mason-lspconfig.nvim" })
-    use({ "onsails/lspkind-nvim" })
-    use({ "neovim/nvim-lspconfig", config = "require('config.lsp')" })
-    use({ "folke/lsp-colors.nvim" })
-    use({ "tami5/lspsaga.nvim", branch = "main", config = "require('config.lspsaga')" })
-    use({
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
-      config = "require('config.null-ls')",
-    })
-    use({ "jayp0521/mason-null-ls.nvim" })
-
-    --[[ FOLD ]]
-    use({
-      "kevinhwang91/nvim-ufo",
-      requires = { "kevinhwang91/promise-async" },
-      config = "require('config.fold')",
-    })
-
-    --[[ UTILS ]]
-    use({ "matze/vim-move" })
-    use({
-      "numToStr/Navigator.nvim",
-      config = function()
-        require("Navigator").setup()
-      end,
-    })
-    use({ "monaqa/dial.nvim", config = "require('config.dial')" })
-    use({ "karb94/neoscroll.nvim", config = "require('config.neoscroll')" })
-    use({
-      "Pocco81/auto-save.nvim",
-      config = "require('config.auto-save')",
-    })
-    use({ "gbprod/yanky.nvim", requires = { "kkharji/sqlite.lua" }, config = "require('config.yanky')" })
-    use({ "jghauser/mkdir.nvim" })
-
-    --[[ Links ]]
-    use({
-      "xiyaowong/link-visitor.nvim",
-      config = "require('config.link')",
-    })
-
-    --[[ TS ]]
-    use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
-
-    --[[ GO ]]
-    --[[ use({ "fatih/vim-go" }) ]]
-    use({
-      "ray-x/go.nvim",
-      requires = { "ray-x/guihua.lua" },
-      config = "require('config.go')",
-    })
-    use({
-      "crusj/structrue-go.nvim",
-      branch = "main",
-    })
-    use({
-      "olexsmir/gopher.nvim",
-      requires = { -- dependencies
-        "nvim-lua/plenary.nvim",
-        "nvim-treesitter/nvim-treesitter",
-      },
     })
 
     if packer_bootstrap then

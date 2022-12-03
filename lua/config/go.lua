@@ -4,22 +4,22 @@ require("structrue-go").setup({
   show_others_method = true, -- bool show methods of struct whose not in current file
   show_filename = true, -- bool
   number = "no", -- show number: no | nu | rnu
-  fold_open_icon = " ",
-  fold_close_icon = " ",
+  fold_open_icon = " ",
+  fold_close_icon = " ",
   cursor_symbol_hl = "guibg=#21222c guifg=#c8d3f5", -- symbol hl under cursor,
   indent = "┠", -- Hierarchical indent icon, nil or empty will be a tab
   position = "botright", -- window position,default botright,also can set float
   symbol = { -- symbol style
     filename = {
-      hl = "guifg=#0096C7", -- highlight symbol
+      hl = "guifg=#bd93f9", -- highlight symbol
       icon = " ", -- symbol icon
     },
     package = {
-      hl = "guifg=#0096C7",
+      hl = "guifg=#bd93f9",
       icon = " ",
     },
     import = {
-      hl = "guifg=#0096C7",
+      hl = "guifg=#bd93f9",
       icon = " ◈ ",
     },
     const = {
@@ -27,35 +27,35 @@ require("structrue-go").setup({
       icon = " π ",
     },
     variable = {
-      hl = "guifg=#52A5A2",
+      hl = "guifg=#50fa7b",
       icon = " ◈ ",
     },
     func = {
-      hl = "guifg=#CEB996",
+      hl = "guifg=#ff9c33",
       icon = "  ",
     },
     interface = {
-      hl = "guifg=#00B4D8",
+      hl = "guifg=#8be9fd",
       icon = "❙ ",
     },
     type = {
-      hl = "guifg=#00B4D8",
+      hl = "guifg=#8be9fd",
       icon = "▱ ",
     },
     struct = {
-      hl = "guifg=#00B4D8",
+      hl = "guifg=#8be9fd",
       icon = "❏ ",
     },
     field = {
-      hl = "guifg=#CEB996",
+      hl = "guifg=#ff9c33",
       icon = " ▪ ",
     },
     method_current = {
-      hl = "guifg=#CEB996",
+      hl = "guifg=#ff9c33",
       icon = " ƒ ",
     },
     method_others = {
-      hl = "guifg=#CEB996",
+      hl = "guifg=#ff9c33",
       icon = "  ",
     },
   },
