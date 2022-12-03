@@ -175,8 +175,8 @@ local mappings = {
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
-  m = { ":ReachOpen marks<cr>", "Marks" },
-  n = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+  n = { ":ReachOpen marks<cr>", "Marks" },
+  m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
   o = {
     name = "Others",
     c = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },

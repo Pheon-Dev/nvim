@@ -32,7 +32,7 @@ vim.o.foldenable = true
 vim.o.showmode = false
 vim.o.writebackup = false
 vim.o.backup = false
-vim.o.showtabline = false
+vim.o.showtabline = true
 
 vim.g.loaded_gzip = 1
 vim.g.loaded_zip = 1
@@ -92,6 +92,7 @@ vim.g.tagbar_map_jump = "l"
 vim.g.tagbar_map_togglefold = "h"
 vim.g.tagbar_map_closeallfolds = "H"
 vim.g.tagbar_position = "left"
+vim.g.tagbar_silent = 1
 vim.g.tagbar_width = 24
 vim.g.tagbar_help_visibility = 0
 vim.g.tagbar_no_status_line = 1

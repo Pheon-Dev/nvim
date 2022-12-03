@@ -3,8 +3,6 @@ vim.g.style = "storm" -- night, day, night, moon
 vim.o.background = "dark"
 --[[ vim.g.tokyonight_transparent = true ]]
 
-local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
-
 local theme = {
 	color29 = "#565656",
 	color85 = "#808080",

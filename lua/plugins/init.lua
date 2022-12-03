@@ -239,15 +239,26 @@ return packer.startup({
       config = "require('config.link')",
     })
 
-    --[[ Language Specific ]]
+    --[[ TS ]]
     use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
+
+    --[[ GO ]]
     --[[ use({ "fatih/vim-go" }) ]]
     use({
       "ray-x/go.nvim",
       requires = { "ray-x/guihua.lua" },
-      config = function()
-        require("go").setup()
-      end,
+      config = "require('config.go')",
+    })
+    use({
+      "crusj/structrue-go.nvim",
+      branch = "main",
+    })
+    use({
+      "olexsmir/gopher.nvim",
+      requires = { -- dependencies
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+      },
     })
 
     if packer_bootstrap then
