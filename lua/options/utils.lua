@@ -98,6 +98,8 @@ vim.g.tagbar_help_visibility = 0
 vim.g.tagbar_no_status_line = 1
 vim.g.tagbar_iconchars = { "", "" }
 
+vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
+
 vim.o.encoding = "utf-8"
 vim.o.signcolumn = "yes"
 vim.o.fileencoding = "utf-8"

@@ -28,7 +28,7 @@ require("config.dial")
 require("config.neoscroll")
 require("config.auto-save")
 require("config.reach")
-require("config.yanky")
+--[[ require("config.yanky") ]]
 require("config.link")
 require("config.go")
 
