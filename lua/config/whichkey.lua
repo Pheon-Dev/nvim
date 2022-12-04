@@ -96,21 +96,18 @@ local diff_this = gs.diffthis
 local mappings = {
   [";"] = { ":TagbarToggle<cr>", "Tagbar" },
   ["'"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
+  [","] = { ":Dashboard<cr>", "Dashboard" },
   a = { ":ASToggle<cr>", "Auto Save Toggle" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
   d = {
-    name = "DAP & Dashboard",
-    d = { ":Dashboard<cr>", "Dashboard" },
+    name = "Dashboard",
     g = { ":lua require('dap-go').debug_test()<cr>", "Dap Go" },
-    j = {
-      name = "DAP",
-      j = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-      k = { ":lua require'dap'.repl.open()<cr>", "Open Repl" },
-      h = { ":lua require'dap'.step_over()<cr>", "Step Over" },
-      l = { ":lua require'dap'.step_into()<cr>", "Step Into" },
-      c = { ":lua require'dap'.continue()<cr>", "Continue" },
-    },
+    b = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
+    o = { ":lua require'dap'.repl.open()<cr>", "Open Repl" },
+    h = { ":lua require'dap'.step_over()<cr>", "Step Over" },
+    l = { ":lua require'dap'.step_into()<cr>", "Step Into" },
+    c = { ":lua require'dap'.continue()<cr>", "Continue" },
     k = { ":lua require'dapui'.toggle()<cr>", "Toggle DAP UI" },
   },
   e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
@@ -152,7 +149,7 @@ local mappings = {
       c = { ":Telescope git_commits theme=dropdown initial_mode=normal<cr>", "Git Commits" },
       s = { ":Telescope git_status theme=dropdown initial_mode=normal<cr>", "Git Status" },
     },
-    j = {
+    h = {
       name = "gh",
       p = { ":Telescope gh pull_request theme=ivy initial_mode=normal<cr>", "PR" },
       i = { ":Telescope gh issues initial_mode=normal<cr>", "Issues" },
