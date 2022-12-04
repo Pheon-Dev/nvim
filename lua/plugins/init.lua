@@ -100,8 +100,7 @@ return packer.startup({
 		use({ "mfussenegger/nvim-dap" })
 		use({ "rcarriga/nvim-dap-ui" })
 		use({ "jbyuki/one-small-step-for-vimkind" })
-		use({ "nvim-telescope/telescope-dap.nvim" })
-		--[[ use({ "theHamsta/nvim-dap-virtual-text" }) ]]
+		use({ "theHamsta/nvim-dap-virtual-text" })
 		use({ "Weissle/persistent-breakpoints.nvim" })
 		use({ "jayp0521/mason-nvim-dap.nvim" })
 		use({ "leoluz/nvim-dap-go" })

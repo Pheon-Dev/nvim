@@ -201,8 +201,9 @@ require("noice").setup({
   },
   routes = {
     --[[ { filter = { event = "msg_show", kind = "", find = "written", }, opts = { skip = true }, }, ]]
-    { filter = { event = "msg_show", kind = "", find = "<", }, opts = { skip = true }, },
-    { filter = { event = "msg_show", kind = "", find = "plugins/", }, opts = { skip = true }, },
+    { filter = { event = "msg_show", kind = "", find = "Expected lua string" }, opts = { skip = true } },
+    { filter = { event = "msg_show", kind = "", find = "<" }, opts = { skip = true } },
+    { filter = { event = "msg_show", kind = "", find = "plugins/" }, opts = { skip = true } },
   },
   status = {}, --- @see section on statusline components
   format = {}, --- @see section on formatting

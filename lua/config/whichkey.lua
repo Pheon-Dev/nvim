@@ -103,14 +103,6 @@ local mappings = {
     name = "DAP & Dashboard",
     d = { ":Dashboard<cr>", "Dashboard" },
     g = { ":lua require('dap-go').debug_test()<cr>", "Dap Go" },
-    h = {
-      name = "Telescope DAP",
-      g = { ":Telescope dap commands theme=dropdown previewer=false initial_mode=normal<cr>", "Commands" },
-      h = { ":Telescope dap configurations theme=ivy initial_mode=insert<cr>", "Configurations" },
-      j = { ":Telescope dap list_breakpoints theme=ivy initial_mode=insert<cr>", "List Breakpoints" },
-      k = { ":Telescope dap variables theme=ivy initial_mode=insert<cr>", "Variables" },
-      l = { ":Telescope dap frames theme=ivy initial_mode=insert<cr>", "Framse" },
-    },
     j = {
       name = "DAP",
       j = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
@@ -119,12 +111,7 @@ local mappings = {
       l = { ":lua require'dap'.step_into()<cr>", "Step Into" },
       c = { ":lua require'dap'.continue()<cr>", "Continue" },
     },
-    k = {
-      name = "DAP UI",
-      j = { ":lua require'dapui'.open()<cr>", "Open" },
-      l = { ":lua require'dapui'.close()<cr>", "Close" },
-      k = { ":lua require'dapui'.toggle()<cr>", "Toggle" },
-    },
+    k = { ":lua require'dapui'.toggle()<cr>", "Toggle DAP UI" },
   },
   e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
   f = { ":Telescope find_files theme=dropdown initial_mode=insert<cr>", "Find Files" },
