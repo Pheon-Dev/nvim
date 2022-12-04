@@ -74,7 +74,7 @@ return packer.startup({
 
 		--[[ SNIPPETS ]]
 		use({ "rafamadriz/friendly-snippets" })
-		use({ "L3MON4D3/LuaSnip" })
+		use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" })
 		use({ "saadparwaiz1/cmp_luasnip" })
 
 		--[[ COMMENTS ]]
@@ -140,6 +140,7 @@ return packer.startup({
 		--[[ GO ]]
 		use({ "ray-x/go.nvim" })
 		use({ "ray-x/guihua.lua" })
+		use({ "nsf/gocode" })
 		use({ "crusj/structrue-go.nvim", branch = "main" })
 		use({ "olexsmir/gopher.nvim" })
 

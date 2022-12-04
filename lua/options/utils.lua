@@ -127,6 +127,8 @@ vim.cmd("let g:deoplete#enable_at_startup=1")
 vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
 
+local format_sync_grp = vim.api.nvim_create_augroup("format_sync_grp", { clear = true })
+
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*.go",
 	callback = function()
