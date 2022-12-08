@@ -5,17 +5,10 @@ if not present then
 end
 
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "tsserver" }
+  ensure_installed = { "sumneko_lua", "tsserver", "gopls" }
 })
 
 vim.api.nvim_create_augroup("_mason", { clear = true })
---[[ vim.api.nvim_create_autocmd("Filetype", { ]]
---[[   pattern = "mason", ]]
---[[   callback = function() ]]
---[[     require("base46").load_highlight "mason" ]]
---[[   end, ]]
---[[   group = "_mason", ]]
---[[ }) ]]
 
 local options = {
   ensure_installed = { "lua-language-server", "typescript-language-server", "prisma-language-server" },
@@ -43,11 +36,5 @@ local options = {
 
   max_concurrent_installers = 10,
 }
-
---[[ options = require("core.utils").load_override(options, "williamboman/mason.nvim") ]]
-
---[[ vim.api.nvim_create_user_command("MasonInstallAll", function() ]]
---[[   vim.cmd("MasonInstall " .. table.concat(options.ensure_installed, " ")) ]]
---[[ end, {}) ]]
 
 mason.setup(options)

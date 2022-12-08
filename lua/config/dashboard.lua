@@ -20,6 +20,11 @@ local toggle_terminal = function()
   return float:toggle()
 end
 
+local toggle_fm = function()
+  local fm = Terminal:new({ cmd = "fm", direction = "float" })
+  return fm:toggle()
+end
+
 local toggle_lazygit = function()
   local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
   return lazygit:toggle()
@@ -52,9 +57,9 @@ db.custom_center = {
     action = "Telescope projects theme=dropdown initial_mode=normal",
   },
   {
-    icon = " ",
-    desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Ranger           ",
-    action = "RnvimrToggle",
+    icon = " ",
+    desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ File Manager     ",
+    action = toggle_fm,
   },
   {
     icon = "פּ ",

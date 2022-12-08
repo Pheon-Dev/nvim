@@ -46,7 +46,6 @@ return packer.startup({
 		use({ "sindrets/winshift.nvim" })
 		use({ "nmac427/guess-indent.nvim" })
 		use({ "SmiteshP/nvim-navic" })
-		use({ "kevinhwang91/rnvimr" })
 		use({ "preservim/tagbar" })
 		use({ "toppair/reach.nvim", after = "nvim-cmp" })
 
@@ -74,7 +73,7 @@ return packer.startup({
 
 		--[[ SNIPPETS ]]
 		use({ "rafamadriz/friendly-snippets" })
-		use({ "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" })
+		use({ "L3MON4D3/LuaSnip" })
 		use({ "saadparwaiz1/cmp_luasnip" })
 
 		--[[ COMMENTS ]]

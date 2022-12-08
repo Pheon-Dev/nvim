@@ -74,6 +74,11 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 
+local toggle_fm = function()
+  local fm = Terminal:new({ cmd = "fm", direction = "float" })
+  return fm:toggle()
+end
+
 local toggle_btop = function()
   local btop = Terminal:new({ cmd = "btop", direction = "float" })
   return btop:toggle()
@@ -183,7 +188,7 @@ local mappings = {
     s = { ":PackerSync<cr>", "Packer Sync" },
   },
   q = { ":bd<cr>", "Close Buffer" },
-  r = { ":RnvimrToggle<cr>", "Ranger" },
+  r = { toggle_fm, "LazyGit" },
   s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TODO | TypeScript | Terminal",

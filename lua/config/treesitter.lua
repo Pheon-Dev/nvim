@@ -6,17 +6,17 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
-		"html",
 		"javascript",
 		"lua",
 		"typescript",
 		"tsx",
+		"go",
 		"vue",
 		"json",
 		"css",
 		"prisma",
 		"bash",
-		"go",
+		"html",
 	},
 	matchup = {
 		enable = true, -- mandatory, false will disable the whole extension
