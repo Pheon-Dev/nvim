@@ -6,7 +6,7 @@ require("mason-null-ls").setup({
 
 require("mason-null-ls").setup_handlers({
 	function(source_name, methods)
-		null_ls.register(null_ls.builtins.completion.spell)
+		--[[ null_ls.register(null_ls.builtins.completion.spell) ]]
 		require("mason-null-ls.automatic_setup")(source_name, methods)
 	end,
 	--[[ prettierd = null_ls.register(null_ls.builtins.formatting.prettierd), ]]
