@@ -6,9 +6,9 @@ if not ok then
   vim.notify("Lualine didn't load properly!", "error")
 end
 
-if not on then
-  vim.notify("Noice didn't load properly!", "error")
-end
+--[[ if not on then ]]
+--[[   vim.notify("Noice didn't load properly!", "error") ]]
+--[[ end ]]
 
 if not oc then
   vim.notify("Navic didn't load properly!", "error")
@@ -227,12 +227,14 @@ ins_left({
   end,
 })
 
-ins_left({
-  noice.api.statusline.mode.get,
-  cond = noice.api.statusline.mode.has,
-  color = { fg = colors.orange1 },
-  padding = { right = 1, left = 1 },
-})
+if on then
+  ins_left({
+    noice.api.statusline.mode.get,
+    cond = noice.api.statusline.mode.has,
+    color = { fg = colors.orange1 },
+    padding = { right = 1, left = 1 },
+  })
+end
 
 ins_right({
   "filesize",

@@ -43,7 +43,6 @@ cmp.setup({
     },
     documentation = {
       border = border("CmpDocBorder"),
-      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
     },
   },
   snippet = {
