@@ -129,6 +129,8 @@ return packer.startup({
 		use({ "Pocco81/auto-save.nvim" })
 		use({ "kkharji/sqlite.lua" })
 		use({ "jghauser/mkdir.nvim" })
+		use({ "gaborvecsei/memento.nvim" })
+		use({ "xiyaowong/virtcolumn.nvim" })
 
 		--[[ Links ]]
 		use({ "xiyaowong/link-visitor.nvim" })

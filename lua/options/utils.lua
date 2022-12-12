@@ -6,7 +6,6 @@ vim.cmd("syntax enable")
 vim.notify = require("notify")
 
 vim.o.termguicolors = true
-vim.o.colorcolumn = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.hidden = true
@@ -25,15 +24,15 @@ vim.o.title = true
 vim.o.hlsearch = true
 vim.o.showcmd = true
 vim.o.expandtab = true
-vim.o.lazyredraw = false
 vim.o.ignorecase = true
 vim.o.exrc = true
 vim.o.foldenable = true
+vim.o.showtabline = true
 
+vim.o.lazyredraw = false
 vim.o.showmode = false
 vim.o.writebackup = false
 vim.o.backup = false
-vim.o.showtabline = true
 
 vim.g.move_map_keys = 0
 vim.g.tagbar_help_visibility = 0
@@ -70,6 +69,7 @@ vim.o.laststatus = 2
 vim.o.softtabstop = 4
 vim.o.pumheight = 10
 vim.o.scrolloff = 10
+vim.g.virtcolumn_priority = 10
 vim.g.tagbar_width = 24
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
@@ -108,6 +108,9 @@ vim.g.gitblame_highlight_group = "Blame"
 vim.o.guifont = "Courier\\ New:h10"
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.g.virtcolumn_char = '▕'
+
+vim.cmd("set colorcolumn=120")
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")
 vim.cmd("set nu rnu")
@@ -193,7 +196,7 @@ vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
 vim.cmd([[
 	if &term =~ "screen"
   		autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
-  		autocmd VinLeave * silent! exe '!echo -n "\ek[`hostname`;`basenane $PWD`]\e\\"'
+  		autocmd VinLeave * silent! exe '!echo -n "\ek[`hostname`;`basename $PWD`]\e\\"'
 	endif
 ]])
 

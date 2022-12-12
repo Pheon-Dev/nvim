@@ -275,3 +275,10 @@ vim.api.nvim_set_hl(0, "ReachMark", { fg = theme.color23, bg = theme.color0 })
 --[[ ReachMatchExact         -> 'String' ]]
 --[[ ReachPriority           -> 'Special' ]]
 --[[ ReachCurrent            -> 'Title' ]]
+
+--[[ Virt-Column ]]
+vim.api.nvim_set_hl(0, "ColorColumn", { bg = theme.color1 })
+
+--[[ Memento ]]
+vim.api.nvim_set_hl(0, "MementoWindow", { fg = theme.color67, bg = theme.color1 })
+vim.api.nvim_set_hl(0, "MementoBorder", { fg = theme.color1, bg = theme.color1 })

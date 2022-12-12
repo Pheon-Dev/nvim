@@ -5,13 +5,13 @@ if not present then
 end
 
 require("mason-lspconfig").setup({
-  ensure_installed = { "sumneko_lua", "tsserver", "gopls" }
+  ensure_installed = { "sumneko_lua", "tsserver", "gopls", "remark_ls" }
 })
 
 vim.api.nvim_create_augroup("_mason", { clear = true })
 
 local options = {
-  ensure_installed = { "lua-language-server", "typescript-language-server", "prisma-language-server" },
+  ensure_installed = { "lua-language-server", "typescript-language-server", "prisma-language-server", "remark-language-server" },
 
   PATH = "prepend", -- append | skip
 

@@ -99,8 +99,8 @@ end
 local diff_this = gs.diffthis
 
 local mappings = {
-  [";"] = { ":TagbarToggle<cr>", "Tagbar" },
-  ["'"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
+  ["'"] = { ":TagbarToggle<cr>", "Tagbar" },
+  [";"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
   [","] = { ":Dashboard<cr>", "Dashboard" },
   a = { ":ASToggle<cr>", "Auto Save Toggle" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
@@ -204,6 +204,11 @@ local mappings = {
     },
     k = { ":TodoQuickFix<cr>", "Quick Fix" },
     l = { ":TodoLocList<cr>", "Loclist" },
+  },
+  u = {
+    name = "Memento",
+    u = { ":lua require('memento').toggle()<cr>", "Toggle" },
+    x = { ":lua require('memento').clear_history()<cr>", "Clear History" },
   },
   v = { ":VisitLinkUnderCursor<cr>", "Visit Link" },
   w = {

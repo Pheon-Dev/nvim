@@ -1,7 +1,7 @@
 local null_ls = require("null-ls")
 
 require("mason-null-ls").setup({
-	ensure_installed = { "stylua", "eslint_d", "gitsigns" },
+	ensure_installed = { "stylua", "eslint_d", "gitsigns", "renark" },
 })
 
 require("mason-null-ls").setup_handlers({

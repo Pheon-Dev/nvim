@@ -127,6 +127,11 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+lsp["remark_ls"].setup(coq.lsp_ensure_capabilities({
+  on_attach = on_attach,
+  flags = lsp_flags,
+}))
+
 lsp["pyright"].setup(coq.lsp_ensure_capabilities({
   on_attach = on_attach,
   flags = lsp_flags,
