@@ -6,6 +6,7 @@ vim.cmd("syntax enable")
 vim.notify = require("notify")
 
 vim.o.termguicolors = true
+vim.o.colorcolumn = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.hidden = true
@@ -34,48 +35,45 @@ vim.o.writebackup = false
 vim.o.backup = false
 vim.o.showtabline = true
 
+vim.g.move_map_keys = 0
+vim.g.tagbar_help_visibility = 0
+vim.o.conceallevel = 0
 vim.g.loaded_gzip = 1
 vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
 vim.g.loaded_tar = 1
 vim.g.loaded_tarPlugin = 1
-
 vim.g.loaded_getscript = 1
 vim.g.loaded_getscriptPlugin = 1
 vim.g.loaded_vimball = 1
 vim.g.loaded_vimballPlugin = 1
 vim.g.loaded_2html_plugin = 1
-
 vim.g.loaded_matchit = 1
 vim.g.loaded_matchparen = 1
 vim.g.loaded_logiPat = 1
 vim.g.loaded_rrhelper = 1
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrwSettings = 1
 vim.g.loaded_netrwFileHandlers = 1
-
 vim.g.loaded_remote_plugins = 1
 vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_spellfile_plugin = 1
 vim.g.loaded_shada_plugin = 1
-
+vim.g.tagbar_silent = 1
+vim.g.tagbar_no_status_line = 1
 vim.g.rainbow_active = 1
 vim.o.cmdheight = 1
-
-vim.o.conceallevel = 0
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.laststatus = 2
 vim.o.softtabstop = 4
 vim.o.pumheight = 10
 vim.o.scrolloff = 10
-vim.o.updatetime = 300
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.g.tagbar_width = 24
+vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
-vim.g.move_map_keys = 0
-
+vim.o.updatetime = 300
 --[[ move ]]
 --[[ vim.g.move_normal_option = 1 ]]
 --[[ vim.g.move_key_modifier_visualmode = "S" ]]
@@ -92,10 +90,6 @@ vim.g.tagbar_map_jump = "l"
 vim.g.tagbar_map_togglefold = "h"
 vim.g.tagbar_map_closeallfolds = "H"
 vim.g.tagbar_position = "left"
-vim.g.tagbar_silent = 1
-vim.g.tagbar_width = 24
-vim.g.tagbar_help_visibility = 0
-vim.g.tagbar_no_status_line = 1
 vim.g.tagbar_iconchars = { "", "" }
 
 vim.g.matchup_matchparen_offscreen = { method = "status_manual" }

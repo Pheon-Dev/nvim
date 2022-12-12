@@ -174,17 +174,17 @@ vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color2, bg = theme.color0 })
 vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = theme.color2, bg = theme.color0 })
 
 --[[ Noice ]]
-vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color1 })
-vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color1 })
+vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color2 })
+vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color2 })
 
-vim.api.nvim_set_hl(0, "NoicePopup", { bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoicePopupmenuBorder", { fg = theme.color2, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoicePopupBorder", { fg = theme.color2, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NoicePopup", { bg = theme.color93 })
+vim.api.nvim_set_hl(0, "NoicePopupmenuBorder", { fg = theme.color93, bg = theme.color93 })
+vim.api.nvim_set_hl(0, "NoicePopupBorder", { fg = theme.color93, bg = theme.color93 })
 
-vim.api.nvim_set_hl(0, "NoiceCmdline", { bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = theme.color2, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = theme.color2, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NoiceCmdline", { bg = theme.color93 })
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = theme.color93 })
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = theme.color93, bg = theme.color93 })
+vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = theme.color93, bg = theme.color93 })
 
 --[[ Matchup ]]
 --[[ vim.api.nvim_set_hl(0, "MatchParen", { fg = theme.color89 }) ]]

@@ -201,7 +201,10 @@ require("noice").setup({
   },
   routes = {
     --[[ { filter = { event = "msg_show", kind = "", find = "written", }, opts = { skip = true }, }, ]]
-    { filter = { event = "msg_show", kind = "", find = "Expected lua string" }, opts = { skip = true } },
+    {
+      filter = { event = "msg_show", kind = "error", find = "vim/meta.lua:0: Expected lua string" },
+      opts = { skip = true },
+    },
     { filter = { event = "msg_show", kind = "", find = "<" }, opts = { skip = true } },
     { filter = { event = "msg_show", kind = "", find = "plugins/" }, opts = { skip = true } },
   },
