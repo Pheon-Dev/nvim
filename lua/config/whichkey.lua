@@ -172,6 +172,7 @@ local mappings = {
     c = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
     b = { ":ReachOpen buffers<cr>", "Buffers" },
     m = { ":Mason<cr>", "Mason" },
+    i = { ":lua require('lsp-inlayhints').toggle()<cr>", "Inlayhints" },
     t = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
     n = { ":Telescope notify theme=dropdown initial_mode=normal<cr>", "Issues" },
     h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },

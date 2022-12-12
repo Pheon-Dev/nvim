@@ -131,9 +131,8 @@ return packer.startup({
 		use({ "jghauser/mkdir.nvim" })
 		use({ "gaborvecsei/memento.nvim" })
 		use({ "xiyaowong/virtcolumn.nvim" })
-
-		--[[ Links ]]
 		use({ "xiyaowong/link-visitor.nvim" })
+		use({ "lvimuser/lsp-inlayhints.nvim" })
 
 		--[[ TS ]]
 		use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
