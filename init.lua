@@ -31,6 +31,5 @@ require("config.auto-save")
 require("config.reach")
 require("config.link")
 require("config.go")
-require("config.inlayhints")
 
 require("options")

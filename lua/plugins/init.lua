@@ -69,6 +69,7 @@ return packer.startup({
 		use({ "f3fora/cmp-spell" })
 		use({ "hrsh7th/cmp-cmdline" })
 		use({ "tamago324/cmp-zsh" })
+		use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 		use({ "ms-jpq/coq_nvim" })
 
 		--[[ SNIPPETS ]]
