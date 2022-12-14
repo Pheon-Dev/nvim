@@ -74,6 +74,7 @@ cmp.setup({
       compare.offset,
       compare.exact,
       compare.score,
+      require("cmp-under-comparator").under,
       compare.recently_used,
       compare.kind,
       compare.sort_text,

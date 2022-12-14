@@ -58,6 +58,7 @@ return packer.startup({
 		use({ "tpope/vim-surround" })
 		use({ "junegunn/rainbow_parentheses.vim" })
 		use({ "norcalli/nvim-colorizer.lua" })
+		use({ "ray-x/sad.nvim" })
 
 		--[[ COMPLETION ]]
 		use({ "hrsh7th/nvim-cmp" })
@@ -70,6 +71,7 @@ return packer.startup({
 		use({ "hrsh7th/cmp-cmdline" })
 		use({ "tamago324/cmp-zsh" })
 		use({ "tzachar/cmp-tabnine", run = "./install.sh" })
+		use({ "lukas-reineke/cmp-under-comparator" })
 		use({ "ms-jpq/coq_nvim" })
 
 		--[[ SNIPPETS ]]
