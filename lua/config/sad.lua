@@ -8,5 +8,3 @@ require'sad'.setup({
   width_ratio = 0.6, -- height ratio of sad window when split vertically
 
 })
---[[ brew install ms-jpq/sad/sad delta ]]
---[[ brew unlink delta ]]

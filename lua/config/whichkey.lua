@@ -159,6 +159,13 @@ local mappings = {
       p = { ":Telescope gh pull_request theme=ivy initial_mode=normal<cr>", "PR" },
       i = { ":Telescope gh issues initial_mode=normal<cr>", "Issues" },
     },
+    l = {
+      name = "Glance",
+      h = { ":Glance definitions<cr>", "Definitions" },
+      j = { ":Glance references<cr>", "References" },
+      k = { ":Glance type_definitions<cr>", "Type Definitions" },
+      l = { ":Glance implementations<cr>", "Implementations" },
+    },
   },
   h = { ":Twilight<cr>", "Twilight" },
   i = { toggle_btop, "Btop" },

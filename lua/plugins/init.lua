@@ -59,6 +59,7 @@ return packer.startup({
 		use({ "junegunn/rainbow_parentheses.vim" })
 		use({ "norcalli/nvim-colorizer.lua" })
 		use({ "ray-x/sad.nvim" })
+		use({ "dnlhc/glance.nvim" })
 
 		--[[ COMPLETION ]]
 		use({ "hrsh7th/nvim-cmp" })
