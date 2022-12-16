@@ -213,11 +213,7 @@ local mappings = {
     k = { ":TodoQuickFix<cr>", "Quick Fix" },
     l = { ":TodoLocList<cr>", "Loclist" },
   },
-  u = {
-    name = "Memento",
-    u = { ":lua require('memento').toggle()<cr>", "Toggle" },
-    x = { ":lua require('memento').clear_history()<cr>", "Clear History" },
-  },
+  u = { ":UndotreeToggle<cr>", "Toggle UndoTree" },
   v = { ":VisitLinkUnderCursor<cr>", "Visit Link" },
   w = {
     name = "Windows",

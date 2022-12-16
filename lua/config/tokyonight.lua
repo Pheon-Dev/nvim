@@ -279,12 +279,7 @@ vim.api.nvim_set_hl(0, "ReachMark", { fg = theme.color23, bg = theme.color0 })
 --[[ Virt-Column ]]
 vim.api.nvim_set_hl(0, "ColorColumn", { bg = theme.color1 })
 
---[[ Memento ]]
-vim.api.nvim_set_hl(0, "MementoWindow", { fg = theme.color67, bg = theme.color1 })
-vim.api.nvim_set_hl(0, "MementoBorder", { fg = theme.color1, bg = theme.color1 })
-
 --[[ Glances ]]
-
 vim.api.nvim_set_hl(0, "GlancePreviewNormal", { bg = theme.color1 })
 vim.api.nvim_set_hl(0, "GlancePreviewMatch", { bg = theme.color1 })
 vim.api.nvim_set_hl(0, "GlancePreviewCursorLine", { bg = theme.color93 })

@@ -133,10 +133,10 @@ return packer.startup({
 		use({ "Pocco81/auto-save.nvim" })
 		use({ "kkharji/sqlite.lua" })
 		use({ "jghauser/mkdir.nvim" })
-		use({ "gaborvecsei/memento.nvim" })
 		use({ "xiyaowong/virtcolumn.nvim" })
 		use({ "xiyaowong/link-visitor.nvim" })
 		use({ "lvimuser/lsp-inlayhints.nvim" })
+		use({ "mbbill/undotree" })
 
 		--[[ TS ]]
 		use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
