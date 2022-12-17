@@ -94,7 +94,7 @@ return packer.startup({
 		use({ "ckipp01/stylua-nvim", run = "cargo install stylua" })
 
 		--[[ GIT ]]
-		use({ "sindrets/diffview.nvim" })
+		use({ "sindrets/diffview.nvim", commit = "c6a3d3f1de85bc67b2da62eaf266d4f8cf714fab" })
 		use({ "lewis6991/gitsigns.nvim" })
 		use({ "f-person/git-blame.nvim" })
 		use({ "nvim-telescope/telescope-github.nvim" })
