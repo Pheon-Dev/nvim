@@ -2,9 +2,10 @@
 -- go to the above and then enter <c-v>u<unicode> and the symbold should appear
 -- or go here and upload the font file: https://mathew-kurian.github.io/CharacterMap/
 -- find more here: https://www.nerdfonts.com/cheat-sheet
+-- https://fontawesome.com/icons
 vim.g.use_nerd_icons = false
 if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
-  -- elseif vim.fn.has "mac" == 1 then
+  -- elseif vim.fn.has "mac" == 1 then 
   return {
     kind = {
       Text = "",
@@ -168,6 +169,13 @@ else
       Diff = " ",
       Repo = " ",
       Octoface = " ",
+      error_sign = "",
+      warn_sign = "",
+      hint_sign = "",
+      infor_sign = "",
+      diagnostic_header_icon = "   ",
+      -- code action title icon
+      code_action_icon = " ",
     },
     ui = {
       ArrowClosed = "",

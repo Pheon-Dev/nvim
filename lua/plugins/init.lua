@@ -34,7 +34,7 @@ return packer.startup({
 		use({ "akinsho/toggleterm.nvim" })
 		use({ "tamago324/lir.nvim" })
 		use({ "Pheon-Dev/harpoon" })
-		use({ "ahmedkhalf/project.nvim" })
+		use({ "nvim-telescope/telescope-file-browser.nvim" })
 		use({ "folke/zen-mode.nvim" })
 		use({ "folke/twilight.nvim" })
 

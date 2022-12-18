@@ -186,7 +186,7 @@ local mappings = {
   },
   p = {
     name = "Peas",
-    p = { ":Telescope projects theme=dropdown initial_mode=normal previewer=false<cr>", "Projects" },
+    p = { ":Telescope file_browser theme=ivy initial_mode=normal<cr>", "File Browser" },
     f = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
     l = { ":PackerLoad", "Packer Load arg1 arg2" },
     i = { ":PackerInstall<cr>", "Packer Install" },

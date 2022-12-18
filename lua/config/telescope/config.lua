@@ -81,7 +81,7 @@ require("telescope").setup({
 })
 
 require("telescope").load_extension("noice")
-require("telescope").load_extension("projects")
+require("telescope").load_extension("file_browser")
 require("telescope").load_extension("gh")
 require("telescope").load_extension("notify")
 require("telescope").load_extension("harpoon")
