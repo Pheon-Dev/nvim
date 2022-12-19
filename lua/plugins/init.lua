@@ -35,8 +35,6 @@ return packer.startup({
 		use({ "tamago324/lir.nvim" })
 		use({ "Pheon-Dev/harpoon" })
 		use({ "nvim-telescope/telescope-file-browser.nvim" })
-		use({ "folke/zen-mode.nvim" })
-		use({ "folke/twilight.nvim" })
 
 		--[[ AESTHETICS ]]
 		use({ "petertriho/nvim-scrollbar" })
@@ -46,8 +44,6 @@ return packer.startup({
 		use({ "sindrets/winshift.nvim" })
 		use({ "nmac427/guess-indent.nvim" })
 		use({ "SmiteshP/nvim-navic" })
-		use({ "preservim/tagbar" })
-		use({ "toppair/reach.nvim", after = "nvim-cmp" })
 
 		--[[ TREESITTER ]]
 		use({ "nvim-treesitter/nvim-treesitter-refactor" })
@@ -55,7 +51,6 @@ return packer.startup({
 		use({ "p00f/nvim-ts-rainbow" })
 
 		--[[ SYNTAX ]]
-		use({ "tpope/vim-surround" })
 		use({ "junegunn/rainbow_parentheses.vim" })
 		use({ "norcalli/nvim-colorizer.lua" })
 		use({ "ray-x/sad.nvim" })
@@ -94,19 +89,8 @@ return packer.startup({
 		use({ "ckipp01/stylua-nvim", run = "cargo install stylua" })
 
 		--[[ GIT ]]
-		use({ "sindrets/diffview.nvim", commit = "c6a3d3f1de85bc67b2da62eaf266d4f8cf714fab" })
 		use({ "lewis6991/gitsigns.nvim" })
 		use({ "f-person/git-blame.nvim" })
-		use({ "nvim-telescope/telescope-github.nvim" })
-
-		--[[ DAP ]]
-		use({ "mfussenegger/nvim-dap" })
-		use({ "rcarriga/nvim-dap-ui" })
-		use({ "jbyuki/one-small-step-for-vimkind" })
-		use({ "theHamsta/nvim-dap-virtual-text" })
-		use({ "Weissle/persistent-breakpoints.nvim" })
-		use({ "jayp0521/mason-nvim-dap.nvim" })
-		use({ "leoluz/nvim-dap-go" })
 
 		--[[ LSP ]]
 		use({ "williamboman/mason.nvim" })

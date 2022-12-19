@@ -1,4 +1,5 @@
 local actions = require("telescope.actions")
+local fb_actions = require("telescope").extensions.file_browser.actions
 
 require("telescope").setup({
   defaults = {
@@ -34,7 +35,21 @@ require("telescope").setup({
     grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
     qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
     buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
-    extensions = {},
+    extensions = {
+      file_browser = {
+        theme = "ivy",
+        -- disables netrw and use telescope-file-browser in its place
+        hijack_netrw = true,
+        mappings = {
+          ["i"] = {
+            ["<C-h>"] = fb_actions.goto_home_dir,
+          },
+          ["n"] = {
+            --[[ ["l"] = fb_actions.select_default, ]]
+          },
+        },
+      },
+    },
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
@@ -82,6 +97,5 @@ require("telescope").setup({
 
 require("telescope").load_extension("noice")
 require("telescope").load_extension("file_browser")
-require("telescope").load_extension("gh")
 require("telescope").load_extension("notify")
 require("telescope").load_extension("harpoon")

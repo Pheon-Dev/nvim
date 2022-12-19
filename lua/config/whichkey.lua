@@ -99,37 +99,21 @@ end
 local diff_this = gs.diffthis
 
 local mappings = {
-  ["'"] = { ":TagbarToggle<cr>", "Tagbar" },
   [";"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
-  [","] = { ":Dashboard<cr>", "Dashboard" },
   a = { ":ASToggle<cr>", "Auto Save Toggle" },
   b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
   c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
-  d = {
-    name = "Dashboard",
-    g = { ":lua require('dap-go').debug_test()<cr>", "Dap Go" },
-    b = { ":lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-    o = { ":lua require'dap'.repl.open()<cr>", "Open Repl" },
-    h = { ":lua require'dap'.step_over()<cr>", "Step Over" },
-    l = { ":lua require'dap'.step_into()<cr>", "Step Into" },
-    c = { ":lua require'dap'.continue()<cr>", "Continue" },
-    k = { ":lua require'dapui'.toggle()<cr>", "Toggle DAP UI" },
-  },
+  d = { ":Dashboard<cr>", "Dashboard" },
   e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
-  f = { ":Telescope find_files theme=dropdown initial_mode=insert<cr>", "Find Files" },
+  f = {
+    name = "Files",
+    f = { ":Telescope find_files theme=dropdown initial_mode=insert<cr>", "Find Files" },
+    b = { ":Telescope file_browser theme=ivy initial_mode=normal<cr>", "File Browser" },
+    m = { toggle_fm, "fm" },
+  },
   g = {
     name = "Git",
-    d = {
-      name = "DiffView",
-      x = { ":DiffviewClose<cr>", "Close" },
-      f = { ":DiffviewFocusFiles<cr>", "Focus Files" },
-      h = { ":DiffviewFileHistory %<cr>", "Current File History" },
-      o = { ":DiffviewOpen<cr>", "Open" },
-      r = { ":DiffviewRefresh<cr>", "Refresh" },
-      t = { ":DiffviewToggleFiles<cr>", "Toggle Files" },
-      w = { ":DiffviewFileHistory ", "Which File History" },
-    },
-    g = {
+    s = {
       name = "Gitsigns",
       s = {
         name = "Stage",
@@ -154,11 +138,6 @@ local mappings = {
       c = { ":Telescope git_commits theme=dropdown initial_mode=normal<cr>", "Git Commits" },
       s = { ":Telescope git_status theme=dropdown initial_mode=normal<cr>", "Git Status" },
     },
-    h = {
-      name = "gh",
-      p = { ":Telescope gh pull_request theme=ivy initial_mode=normal<cr>", "PR" },
-      i = { ":Telescope gh issues initial_mode=normal<cr>", "Issues" },
-    },
     l = {
       name = "Glance",
       h = { ":Glance definitions<cr>", "Definitions" },
@@ -167,17 +146,14 @@ local mappings = {
       l = { ":Glance implementations<cr>", "Implementations" },
     },
   },
-  h = { ":Twilight<cr>", "Twilight" },
   i = { toggle_btop, "Btop" },
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
-  n = { ":ReachOpen marks<cr>", "Marks" },
   m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
   o = {
     name = "Others",
     c = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },
-    b = { ":ReachOpen buffers<cr>", "Buffers" },
     m = { ":Mason<cr>", "Mason" },
     i = { ":lua require('lsp-inlayhints').toggle()<cr>", "Inlayhints" },
     t = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
@@ -186,7 +162,6 @@ local mappings = {
   },
   p = {
     name = "Peas",
-    p = { ":Telescope file_browser theme=ivy initial_mode=normal<cr>", "File Browser" },
     f = { ":Prettier<cr><esc>:w! | noh<cr>", "Prettier" },
     l = { ":PackerLoad", "Packer Load arg1 arg2" },
     i = { ":PackerInstall<cr>", "Packer Install" },
@@ -196,7 +171,6 @@ local mappings = {
     s = { ":PackerSync<cr>", "Packer Sync" },
   },
   q = { ":bd<cr>", "Close Buffer" },
-  r = { toggle_fm, "LazyGit" },
   s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TODO | TypeScript | Terminal",
@@ -224,7 +198,6 @@ local mappings = {
     l = { ":WinShift right<cr><esc>:WindowsEqualize<cr>", "Shift Right" },
   },
   x = { ":TroubleToggle<cr>", "Toggle Trouble" },
-  z = { ":ZenMode<cr>", "Zen Mode" },
 }
 
 local opts = {

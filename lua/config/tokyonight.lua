@@ -231,14 +231,6 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color1 })
 --[[ Fold ]]
 vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93 })
 
---[[ Ranger ]]
-vim.api.nvim_set_hl(0, "RnvimrNormal", { bg = theme.color0 })
-
-vim.api.nvim_set_hl(0, "TagbarHelpTitle", { fg = theme.color0, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "TagbarHelp", { fg = theme.color0, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "TagbarHelpKey", { fg = theme.color0, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "TagbarHelpKey", { fg = theme.color0, bg = theme.color0 })
-
 --[[ Reach ]]
 vim.api.nvim_set_hl(0, "ReachBorder", { fg = theme.color2, bg = theme.color0 })
 vim.api.nvim_set_hl(0, "ReachMarkLocation", { fg = theme.color4 })

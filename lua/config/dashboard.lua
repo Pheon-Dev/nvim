@@ -25,6 +25,11 @@ local toggle_fm = function()
   return fm:toggle()
 end
 
+local toggle_gh = function()
+  local gh = Terminal:new({ cmd = "gh-dash", direction = "float" })
+  return gh:toggle()
+end
+
 local toggle_lazygit = function()
   local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
   return lazygit:toggle()
@@ -77,14 +82,9 @@ db.custom_center = {
     action = "Mason",
   },
   {
-    icon = " ",
-    desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Issues           ",
-    action = "Telescope gh issues initial_mode=normal",
-  },
-  {
     icon = " ",
     desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ PRs              ",
-    action = "Telescope gh pull_request theme=ivy initial_mode=normal",
+    action = toggle_gh,
   },
   {
     icon = " ",

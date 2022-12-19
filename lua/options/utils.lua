@@ -35,7 +35,6 @@ vim.o.writebackup = false
 vim.o.backup = false
 
 vim.g.move_map_keys = 0
-vim.g.tagbar_help_visibility = 0
 vim.o.conceallevel = 0
 vim.g.loaded_gzip = 1
 vim.g.loaded_zip = 1
@@ -59,8 +58,6 @@ vim.g.loaded_remote_plugins = 1
 vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_spellfile_plugin = 1
 vim.g.loaded_shada_plugin = 1
-vim.g.tagbar_silent = 1
-vim.g.tagbar_no_status_line = 1
 vim.g.rainbow_active = 1
 vim.o.cmdheight = 1
 vim.o.tabstop = 2
@@ -70,7 +67,6 @@ vim.o.softtabstop = 4
 vim.o.pumheight = 10
 vim.o.scrolloff = 10
 vim.g.virtcolumn_priority = 10
-vim.g.tagbar_width = 24
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.updatetime = 300
@@ -83,14 +79,6 @@ vim.o.updatetime = 300
 vim.o.foldcolumn = "0" -- '1', '0' is not bad
 vim.o.foldnestmax = "1" -- '1', '0' is not bad
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
---[[ tagbar ]]
-vim.g.tagbar_map_togglesort = "r"
-vim.g.tagbar_map_jump = "l"
-vim.g.tagbar_map_togglefold = "h"
-vim.g.tagbar_map_closeallfolds = "H"
-vim.g.tagbar_position = "left"
-vim.g.tagbar_iconchars = { "", "" }
 
 vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
 
