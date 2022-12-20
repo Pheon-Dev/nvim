@@ -15,7 +15,7 @@ require("config.colorizer")
 require("config.todo")
 require("config.hlslens")
 require("config.hop")
---[[ require("config.navigator") ]]
+require("config.navigator")
 require("config.mason")
 require("config.lspsaga")
 require("config.null-ls")
