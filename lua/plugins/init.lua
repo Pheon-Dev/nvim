@@ -121,6 +121,7 @@ return packer.startup({
 		use({ "xiyaowong/link-visitor.nvim" })
 		use({ "lvimuser/lsp-inlayhints.nvim" })
 		use({ "mbbill/undotree" })
+		use({ "ray-x/navigator.lua" })
 
 		--[[ TS ]]
 		use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })

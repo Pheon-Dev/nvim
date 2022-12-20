@@ -151,6 +151,17 @@ local mappings = {
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
   m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+  n = {
+    name = "Navigator",
+    k = { ":LspKeymaps<cr>", "LSP Keymaps" },
+    t = { ":LspToggleFmt<cr>", "Toggle LSP Format" },
+    n = { ":Nctags", "show ctags symbols, args: -g regen ctags" },
+    r = { ":LspRestart<cr>", "Reload LSP" },
+    s = { ":LspSymbols<cr>", "Symbols LSP" },
+    p = { ":NRefPanel<cr>", "show symbol reference in side panel" },
+    y = { ":TSymbols<cr>", "treesitter symbol in side panel" },
+    c = { ":Caltree", "lsp call hierarchy call tree, args: -i (incomming default), -o (outgoing)" },
+  },
   o = {
     name = "Others",
     c = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },

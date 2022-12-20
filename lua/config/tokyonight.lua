@@ -17,6 +17,9 @@ local theme = {
 	color94 = "#292a30",
 	color59 = "#292e42",
 	color65 = "#2f334d",
+	color95 = "#332e55",
+	color96 = "#103234",
+	color97 = "#404254",
 	color61 = "#3b4261",
 	color60 = "#414868",
 	color66 = "#444a73",
@@ -33,6 +36,7 @@ local theme = {
 	color67 = "#c8d3f5",
 	color22 = "#c0caf5",
 	color23 = "#a9b1d6",
+	color98 = "#e0d8f4",
 	color21 = "#f8f8f2",
 	color83 = "#8aa2f7",
 	color71 = "#82aaff",
@@ -293,3 +297,8 @@ vim.api.nvim_set_hl(0, "GlanceListBorderBottom", { bg = theme.color0 })
 vim.api.nvim_set_hl(0, "GlanceFoldIcon", { fg = theme.color69 })
 --[[ vim.api.nvim_set_hl(0, "GlanceIndent", { bg = theme.color93 }) ]]
 vim.api.nvim_set_hl(0, "GlanceBorderTop", { bg = theme.color0 })
+
+--[[ Navigator ]]
+--[[ vim.api.nvim_set_hl(0, "GuihuaTextViewDark ", { fg = theme.color98, bg = theme.color95 }) ]]
+--[[ vim.api.nvim_set_hl(0, "GuihuaListDark ", { fg = theme.color98, bg = theme.color61 }) ]]
+--[[ vim.api.nvim_set_hl(0, "GuihuaListHl ", { fg = theme.color98, bg = theme.color97 }) ]]

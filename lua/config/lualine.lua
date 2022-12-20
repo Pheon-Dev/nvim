@@ -252,6 +252,18 @@ ins_right({
   color = { fg = colors.bg2 },
 })
 
+--[[ ins_right({ ]]
+--[[   function() ]]
+--[[     local anim = { ]]
+--[[       ".", ]]
+--[[       "..", ]]
+--[[       "...", ]]
+--[[       "....", ]]
+--[[     } ]]
+--[[     return anim[os.date("%s") % #anim + 1] ]]
+--[[   end, ]]
+--[[ }) ]]
+
 ins_right({
   "branch",
   icon = { "", align = "left" },

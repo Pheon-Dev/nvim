@@ -39,6 +39,12 @@ map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
 --[[ map("n", "<A-j>", "<C-w>j", { noremap = true, silent = false }) ]]
 --[[ map("n", "<A-k>", "<C-w>k", { noremap = true, silent = false }) ]]
 --[[ map("n", "<A-l>", "<C-w>l", { noremap = true, silent = false }) ]]
+require("Navigator").setup()
+vim.keymap.set("n", "<A-h>", "<CMD>NavigatorLeft<CR>")
+vim.keymap.set("n", "<A-l>", "<CMD>NavigatorRight<CR>")
+vim.keymap.set("n", "<A-k>", "<CMD>NavigatorUp<CR>")
+vim.keymap.set("n", "<A-j>", "<CMD>NavigatorDown<CR>")
+vim.keymap.set("n", "<A-p>", "<CMD>NavigatorPrevious<CR>")
 
 -- Editing Keybindings
 map("i", "<C-z>", ":redo<cr>", { noremap = true, silent = true })
@@ -278,3 +284,4 @@ vim.keymap.set("v", "<S-h>", "<Plug>MoveBlockLeft")
 vim.keymap.set("v", "<S-l>", "<Plug>MoveBlockRight")
 vim.keymap.set("v", "<S-k>", "<Plug>MoveBlockUp")
 vim.keymap.set("v", "<S-j>", "<Plug>MoveBlockDown")
+
