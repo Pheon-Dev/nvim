@@ -170,7 +170,7 @@ lsp["rust_analyzer"].setup(coq.lsp_ensure_capabilities({
 
 require("typescript").setup(coq.lsp_ensure_capabilities({
   disable_commands = false, -- prevent the plugin from creating Vim commands
-  debug = false, -- enable debug logging for commands
+  debug = true, -- enable debug logging for commands
   go_to_source_definition = {
     fallback = true, -- fall back to standard LSP definition on failure
   },

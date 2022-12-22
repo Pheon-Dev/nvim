@@ -122,6 +122,13 @@ return packer.startup({
 		use({ "lvimuser/lsp-inlayhints.nvim" })
 		use({ "mbbill/undotree" })
 		use({ "ray-x/navigator.lua" })
+		use({ "kevinhwang91/nvim-bqf" })
+		use({
+			"junegunn/fzf",
+			run = function()
+				vim.fn["fzf#install"]()
+			end,
+		})
 
 		--[[ TS ]]
 		use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })

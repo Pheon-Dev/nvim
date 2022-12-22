@@ -27,5 +27,6 @@ require("config.link")
 require("config.go")
 require("config.sad")
 require("config.glance")
+require("config.bqf")
 
 require("options")

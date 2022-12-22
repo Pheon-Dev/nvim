@@ -150,6 +150,10 @@ require("tokyonight.colors").default = {
 
 vim.cmd("colorscheme tokyonight")
 
+vim.api.nvim_set_hl(0, "Visual", { bg = theme.color2 })
+--[[ vim.api.nvim_set_hl(0, "Cursor", { bg = theme.color74 }) ]]
+vim.api.nvim_set_hl(0, "IncSearch", { fg = theme.color0, bg = theme.color25 })
+
 --[[ Dashboard ]]
 vim.api.nvim_set_hl(0, "DashboardHeader", { fg = theme.color3 })
 vim.api.nvim_set_hl(0, "DashboardCenter", { fg = theme.color83 })
@@ -171,7 +175,6 @@ vim.api.nvim_set_hl(0, "Harpoon", { fg = theme.color3, bg = theme.color0 })
 --[[ CMP ]]
 --[[ vim.api.nvim_set_hl(0, "PmenuThumb", { fg = theme.color59, bg = theme.color59 }) ]]
 vim.api.nvim_set_hl(0, "Blame", { fg = theme.color3, bg = theme.color1 })
-vim.api.nvim_set_hl(0, "Visual", { bg = theme.color2 })
 vim.api.nvim_set_hl(0, "CmpPmenu", { bg = theme.color0 })
 vim.api.nvim_set_hl(0, "PmenuSel", { bg = theme.color1 })
 vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color2, bg = theme.color0 })
@@ -302,3 +305,12 @@ vim.api.nvim_set_hl(0, "GlanceBorderTop", { bg = theme.color0 })
 --[[ vim.api.nvim_set_hl(0, "GuihuaTextViewDark ", { fg = theme.color98, bg = theme.color95 }) ]]
 --[[ vim.api.nvim_set_hl(0, "GuihuaListDark ", { fg = theme.color98, bg = theme.color61 }) ]]
 --[[ vim.api.nvim_set_hl(0, "GuihuaListHl ", { fg = theme.color98, bg = theme.color97 }) ]]
+
+--[[ bqf ]]
+--[[ vim.api.nvim_set_hl(0, "GlanceWinBarFilename", { fg = theme.color27, bg = theme.color93 }) ]]
+vim.api.nvim_set_hl(0, "BqfPreviewFloat", { bg = theme.color1 })
+vim.api.nvim_set_hl(0, "BqfPreviewBorder", { fg = theme.color1, bg = theme.color1 })
+--[[ vim.api.nvim_set_hl(0, "BqfPreviewCursor", { fg = theme.color27, bg = theme.color93 }) ]]
+--[[ vim.api.nvim_set_hl(0, "BqfPreviewRange", { fg = theme.color27, bg = theme.color93 }) ]]
+--[[ vim.api.nvim_set_hl(0, "BqfPreviewCountLabel", { fg = theme.color27, bg = theme.color93 }) ]]
+--[[ vim.api.nvim_set_hl(0, "BqfSign", { fg = theme.color27, bg = theme.color93 }) ]]
