@@ -220,8 +220,6 @@ map("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
-map("n", "<Leader>l", ":noh<CR>", kopts)
-
 vim.keymap.set("n", "<c-f>", function()
   if not require("noice.lsp").scroll(4) then
     return "<c-f>"
@@ -276,10 +274,10 @@ map("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", { noremap = true, si
 map("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true })
 
 --[[ Move ]]
-map( "n", "-", "<Plug>GoNSMLeft", {} )
-map( "n", "+", "<Plug>GoNSMDown", {} )
-map( "n", "_", "<Plug>GoNSMUp", {} )
-map( "n", "=", "<Plug>GoNSMRight", {} )
+map( "n", "_", "<Plug>GoNSMLeft", {} )
+map( "n", "-", "<Plug>GoNSMDown", {} )
+map( "n", "=", "<Plug>GoNSMUp", {} )
+map( "n", "+", "<Plug>GoNSMRight", {} )
 
 map( "x", "<S-h>", "<Plug>GoVSMLeft", {} )
 map( "x", "<S-j>", "<Plug>GoVSMDown", {} )

@@ -125,6 +125,9 @@ return packer.startup({
 		use({ "toppair/reach.nvim" })
 		use({ "haringsrob/nvim_context_vt" })
 
+		use({ "cbochs/grapple.nvim" })
+		use({ "cbochs/portal.nvim" })
+
 		--[[ TS ]]
 		use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
 

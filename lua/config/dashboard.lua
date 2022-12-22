@@ -42,6 +42,11 @@ db.custom_center = {
     action = "lua require('harpoon.ui').toggle_quick_menu()",
   },
   {
+    icon = " ",
+    desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Grapple Tags     ",
+    action = "GrapplePopup tags",
+  },
+  {
     icon = " ",
     desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Find File        ",
     action = "Telescope find_files theme=dropdown initial_mode=insert",

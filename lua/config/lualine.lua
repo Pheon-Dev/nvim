@@ -237,6 +237,14 @@ if on then
 end
 
 ins_right({
+  function()
+    local key = require("grapple").key()
+    return "  [" .. key .. "]"
+  end,
+  cond = require("grapple").exists,
+})
+
+ins_right({
   "filesize",
   cond = conditions.buffer_not_empty,
   color = { fg = colors.bg2 },

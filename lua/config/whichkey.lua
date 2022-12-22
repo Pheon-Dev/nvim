@@ -150,7 +150,16 @@ local mappings = {
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
-  n = { ":ReachOpen marks<cr>", "Marks" },
+  n = {
+    name = "Grapple",
+    o = { require("portal").jump_forward, "Portal Jump Forward" },
+    i = { require("portal").jump_backward, "Portal Jump Backward" },
+    n = { ":GrapplePopup tags<cr>", "Tags" },
+    h = { ":GrappleCycle forward<cr>", "Cycle Forward" },
+    j = { ":GrappleTag<cr>", "Tag" },
+    k = { ":GrapplePopup scopes<cr>", "Scopes" },
+    l = { ":GrappleCycle backward<cr>", "Cycle Backward" },
+  },
   m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
   o = {
     name = "Others",
@@ -172,6 +181,7 @@ local mappings = {
     s = { ":PackerSync<cr>", "Packer Sync" },
   },
   q = { ":bd<cr>", "Close Buffer" },
+  r = { ":ReachOpen marks<cr>", "Marks" },
   s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
   t = {
     name = "TODO | TypeScript | Terminal",

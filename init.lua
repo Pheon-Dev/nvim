@@ -29,5 +29,6 @@ require("config.go")
 require("config.sad")
 require("config.glance")
 require("config.quickfix")
+require("config.grapple")
 
 require("options")

@@ -314,3 +314,7 @@ vim.api.nvim_set_hl(0, "BqfPreviewBorder", { fg = theme.color1, bg = theme.color
 --[[ vim.api.nvim_set_hl(0, "BqfPreviewRange", { fg = theme.color27, bg = theme.color93 }) ]]
 --[[ vim.api.nvim_set_hl(0, "BqfPreviewCountLabel", { fg = theme.color27, bg = theme.color93 }) ]]
 --[[ vim.api.nvim_set_hl(0, "BqfSign", { fg = theme.color27, bg = theme.color93 }) ]]
+
+-- Give window borders a "portal" feel
+vim.api.nvim_set_hl(0, "PortalBorder", { fg = "#fab387" })
+vim.api.nvim_set_hl(0, "PortalBorderNone", { fg = "#89b4fa" })
