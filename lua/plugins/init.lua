@@ -82,7 +82,7 @@ return packer.startup({
 		--[[ HIGHLIGHTS ]]
 		use({ "kevinhwang91/nvim-hlslens" })
 		use({ "phaazon/hop.nvim", branch = "v2" })
-		use({ "mg979/vim-visual-multi", branch = "master", after="nvim-cmp" })
+		use({ "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" })
 
 		--[[ FORMATTING ]]
 		use({ "prettier/vim-prettier", run = "yarn install --frozen-lockfile --production" })
@@ -183,8 +183,8 @@ return packer.startup({
 		})
 		use({
 			"gbprod/yanky.nvim",
-			after = "nvim-cmp",
-			config = "require('config.yanky')",
+			event = "BufReadPre",
+			config = "require'config.yanky'",
 		})
 		use({
 			"windwp/nvim-autopairs",
