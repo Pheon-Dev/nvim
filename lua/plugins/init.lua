@@ -110,7 +110,7 @@ return packer.startup({
 		use({ "kevinhwang91/promise-async" })
 
 		--[[ UTILS ]]
-		use({ "matze/vim-move" })
+		use({ "booperlv/nvim-gomove" })
 		use({ "numToStr/Navigator.nvim" })
 		use({ "monaqa/dial.nvim" })
 		use({ "karb94/neoscroll.nvim" })
@@ -122,13 +122,8 @@ return packer.startup({
 		use({ "lvimuser/lsp-inlayhints.nvim" })
 		use({ "mbbill/undotree" })
 		use({ "ray-x/navigator.lua" })
-		use({ "kevinhwang91/nvim-bqf" })
-		use({
-			"junegunn/fzf",
-			run = function()
-				vim.fn["fzf#install"]()
-			end,
-		})
+		use({ "toppair/reach.nvim" })
+		use({ "haringsrob/nvim_context_vt" })
 
 		--[[ TS ]]
 		use({ "jose-elias-alvarez/typescript.nvim", module = "typescript" })
@@ -207,6 +202,8 @@ return packer.startup({
 			"andymass/vim-matchup",
 			event = "BufReadPost",
 		})
+
+		--[[ QUICKFIX ]]
 		use({
 			"folke/trouble.nvim",
 			event = "BufReadPre",
@@ -214,6 +211,7 @@ return packer.startup({
 			cmd = { "TroubleToggle", "Trouble" },
 			config = "require('config.trouble')",
 		})
+		use({ "kevinhwang91/nvim-bqf" })
 
 		if packer_bootstrap then
 			require("packer").sync()

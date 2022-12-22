@@ -150,17 +150,8 @@ local mappings = {
   j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
   k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
   l = { toggle_lazygit, "LazyGit" },
+  n = { ":ReachOpen marks<cr>", "Marks" },
   m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
-  n = {
-    name = "Navigator",
-    t = { ":LspToggleFmt<cr>", "Toggle LSP Format" },
-    n = { ":Nctags", "show ctags symbols, args: -g regen ctags" },
-    r = { ":LspRestart<cr>", "Reload LSP" },
-    h = { ":TSymbols<cr>", "treesitter symbol in side panel" },
-    j = { ":LspSymbols<cr>", "Symbols LSP" },
-    k = { ":NRefPanel<cr>", "show symbol reference in side panel" },
-    l = { ":LspKeymaps<cr>", "LSP Keymaps" },
-  },
   o = {
     name = "Others",
     c = { ":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>", "Command History" },

@@ -276,12 +276,22 @@ map("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", { noremap = true, si
 map("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true })
 
 --[[ Move ]]
-vim.keymap.set("n", "sh", "<Plug>MoveCharLeft")
-vim.keymap.set("n", "sl", "<Plug>MoveCharRight")
-vim.keymap.set("n", "sk", "<Plug>MoveLineUp")
-vim.keymap.set("n", "sj", "<Plug>MoveLineDown")
-vim.keymap.set("v", "<S-h>", "<Plug>MoveBlockLeft")
-vim.keymap.set("v", "<S-l>", "<Plug>MoveBlockRight")
-vim.keymap.set("v", "<S-k>", "<Plug>MoveBlockUp")
-vim.keymap.set("v", "<S-j>", "<Plug>MoveBlockDown")
+map( "n", "-", "<Plug>GoNSMLeft", {} )
+map( "n", "+", "<Plug>GoNSMDown", {} )
+map( "n", "_", "<Plug>GoNSMUp", {} )
+map( "n", "=", "<Plug>GoNSMRight", {} )
 
+map( "x", "<S-h>", "<Plug>GoVSMLeft", {} )
+map( "x", "<S-j>", "<Plug>GoVSMDown", {} )
+map( "x", "<S-k>", "<Plug>GoVSMUp", {} )
+map( "x", "<S-l>", "<Plug>GoVSMRight", {} )
+
+map( "n", "<C-h>", "<Plug>GoNSDLeft", {} )
+map( "n", "<C-j>", "<Plug>GoNSDDown", {} )
+map( "n", "<C-k>", "<Plug>GoNSDUp", {} )
+map( "n", "<C-l>", "<Plug>GoNSDRight", {} )
+
+map( "x", "<C-h>", "<Plug>GoVSDLeft", {} )
+map( "x", "<C-j>", "<Plug>GoVSDDown", {} )
+map( "x", "<C-l>", "<Plug>GoVSDRight", {} )
+map( "x", "<C-k>", "<Plug>GoVSDUp", {} )

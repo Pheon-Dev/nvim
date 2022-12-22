@@ -247,7 +247,7 @@ vim.api.nvim_set_hl(0, "ReachMark", { fg = theme.color23, bg = theme.color0 })
 
 --[[ vim.api.nvim_set_hl(0, "ReachCurrent", { bg = theme.color42 }) ]]
 --[[ vim.api.nvim_set_hl(0, "ReachMatchExact", { fg = theme.color1, bg = theme.color1 }) ]]
---[[ vim.api.nvim_set_hl(0, "ReachPriority", { fg = theme.color1, bg = theme.color1 }) ]]
+--[[ vij.api.nvim_set_hl(0, "ReachPriority", { fg = theme.color1, bg = theme.color1 }) ]]
 --[[ vim.api.nvim_set_hl(0, "ReachDirectory", { fg = theme.color1, bg = theme.color1 }) ]]
 --[[ vim.api.nvim_set_hl(0, "ReachModifiedIndicator", { fg = theme.color1, bg = theme.color1 }) ]]
 --[[ vim.api.nvim_set_hl(0, "ReachHandleBuffer", { fg = theme.color1, bg = theme.color1 }) ]]
