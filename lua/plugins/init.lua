@@ -82,7 +82,7 @@ return packer.startup({
 		--[[ HIGHLIGHTS ]]
 		use({ "kevinhwang91/nvim-hlslens" })
 		use({ "phaazon/hop.nvim", branch = "v2" })
-		use({ "terryma/vim-multiple-cursors" })
+		use({ "mg979/vim-visual-multi", branch = "master", after="nvim-cmp" })
 
 		--[[ FORMATTING ]]
 		use({ "prettier/vim-prettier", run = "yarn install --frozen-lockfile --production" })
