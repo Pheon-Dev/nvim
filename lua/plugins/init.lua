@@ -124,7 +124,6 @@ return packer.startup({
 		use({ "ray-x/navigator.lua" })
 		use({ "toppair/reach.nvim" })
 		use({ "haringsrob/nvim_context_vt" })
-
 		use({ "cbochs/grapple.nvim" })
 		use({ "cbochs/portal.nvim" })
 
@@ -215,6 +214,8 @@ return packer.startup({
 			config = "require('config.trouble')",
 		})
 		use({ "kevinhwang91/nvim-bqf" })
+		use({ "onsails/diaglist.nvim" })
+		use({ "https://git.sr.ht/~whynothugo/lsp_lines.nvim" })
 
 		if packer_bootstrap then
 			require("packer").sync()

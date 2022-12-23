@@ -208,7 +208,13 @@ local mappings = {
     k = { ":WinShift up<cr><esc>:WindowsEqualize<cr>", "Shift Up" },
     l = { ":WinShift right<cr><esc>:WindowsEqualize<cr>", "Shift Right" },
   },
-  x = { ":TroubleToggle<cr>", "Toggle Trouble" },
+  x = {
+    name = "Files",
+    x = { ":TroubleToggle<cr>", "Toggle Trouble" },
+    a = { ":lua require('diaglist').open_all_diagnostics()<cr>", "Opan All Diagnostics" },
+    s = { ":lua require('diaglist').open_buffer_diagnostics()<cr>", "Opan Buffer Diagnostics" },
+    l = { require("lsp_lines").toggle, "Toggle LSP Lines" },
+  },
 }
 
 local opts = {

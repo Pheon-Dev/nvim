@@ -45,3 +45,14 @@ require("trouble").setup({
   },
   use_diagnostic_signs = true, -- enabling this will use the signs defined in your lsp client
 })
+
+require("diaglist").init({
+  -- optional settings
+  -- below are defaults
+  debug = false,
+
+  -- increase for noisy servers
+  debounce_ms = 150,
+})
+
+require("lsp_lines").setup()
