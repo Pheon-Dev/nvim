@@ -96,4 +96,5 @@ return {
 
   -- ui components
   "MunifTanjim/nui.nvim",
+  "nvim-lua/popup.nvim",
 }

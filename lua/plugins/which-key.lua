@@ -109,7 +109,6 @@ return {
       b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
       c = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
       d = { ":Dashboard<cr>", "Dashboard" },
-      e = { ":NvimTreeToggle<cr>", "Nvim Tree" },
       f = {
         name = "Files",
         f = { ":Telescope find_files theme=dropdown initial_mode=insert<cr>", "Find Files" },
