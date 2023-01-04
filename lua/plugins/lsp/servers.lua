@@ -2,6 +2,7 @@
 ---@type lspconfig.options
 local servers = {
   bashls = {},
+  gopls = {},
   clangd = {},
   cssls = {},
   tsserver = {},

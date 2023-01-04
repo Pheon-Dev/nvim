@@ -1,5 +1,6 @@
 local M = {}
 
+local navic = require("nvim-navic")
 function M.on_attach(client, buffer)
   local self = M.new(client, buffer)
 
@@ -31,8 +32,45 @@ function M.on_attach(client, buffer)
     self:map("<leader>co", "TypescriptOrganizeImports", { desc = "Organize Imports" })
     self:map("<leader>cR", "TypescriptRenameFile", { desc = "Rename File" })
   end
+  if client.server_capabilities.documentSymbolProvider then
+    navic.attach(client, buffer)
+  end
 end
 
+navic.setup({
+  icons = {
+    File = " ",
+    Module = " ",
+    Namespace = " ",
+    Package = " ",
+    Class = " ",
+    Method = " ",
+    Property = " ",
+    Field = " ",
+    Constructor = " ",
+    Enum = "練",
+    Interface = "練",
+    Function = " ",
+    Variable = " ",
+    Constant = " ",
+    String = " ",
+    Number = " ",
+    Boolean = "◩ ",
+    Array = " ",
+    Object = " ",
+    Key = " ",
+    Null = "ﳠ ",
+    EnumMember = " ",
+    Struct = " ",
+    Event = " ",
+    Operator = " ",
+    TypeParameter = " ",
+  },
+  highlight = false,
+  separator = " » ",
+  depth_limit = 0,
+  depth_limit_indicator = "..",
+})
 function M.new(client, buffer)
   return setmetatable({ client = client, buffer = buffer }, { __index = M })
 end
