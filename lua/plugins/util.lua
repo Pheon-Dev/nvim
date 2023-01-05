@@ -37,7 +37,7 @@ return {
 	},
 	"xiyaowong/virtcolumn.nvim",
 	"xiyaowong/link-visitor.nvim",
-		{ "kevinhwang91/nvim-hlslens" },
-		{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" },
+	{ "kevinhwang91/nvim-hlslens" },
+	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" },
 	--[[ { "phaazon/hop.nvim", branch = "v2" }, ]]
 }
