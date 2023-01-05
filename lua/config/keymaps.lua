@@ -39,12 +39,6 @@ map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
 --[[ map("n", "<A-j>", "<C-w>j", { noremap = true, silent = false }) ]]
 --[[ map("n", "<A-k>", "<C-w>k", { noremap = true, silent = false }) ]]
 --[[ map("n", "<A-l>", "<C-w>l", { noremap = true, silent = false }) ]]
-require("Navigator").setup()
-vim.keymap.set("n", "<A-h>", "<CMD>NavigatorLeft<CR>")
-vim.keymap.set("n", "<A-l>", "<CMD>NavigatorRight<CR>")
-vim.keymap.set("n", "<A-k>", "<CMD>NavigatorUp<CR>")
-vim.keymap.set("n", "<A-j>", "<CMD>NavigatorDown<CR>")
-vim.keymap.set("n", "<A-p>", "<CMD>NavigatorPrevious<CR>")
 
 -- Editing Keybindings
 map("i", "<C-z>", ":redo<cr>", { noremap = true, silent = true })
@@ -202,14 +196,6 @@ map("n", "tj", ":ToggleTerm size=20 dir=. direction=horizontal<cr>", { noremap =
 --[[   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 }) ]]
 --[[ end, { remap = true }) ]]
 
---[[ -- Dial ]]
---[[ map("n", "<C-x>", require("dial.map").inc_normal(), { noremap = true }) ]]
---[[ map("n", "X", require("dial.map").dec_normal(), { noremap = true }) ]]
---[[ map("v", "<C-x>", require("dial.map").inc_visual(), { noremap = true }) ]]
---[[ map("v", "X", require("dial.map").dec_visual(), { noremap = true }) ]]
---[[ map("v", "g<C-x>", require("dial.map").inc_gvisual(), { noremap = true }) ]]
---[[ map("v", "gX", require("dial.map").dec_gvisual(), { noremap = true }) ]]
-
 -- hlslens
 -- local kopts = { noremap = true, silent = true }
 -- map("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
@@ -231,19 +217,7 @@ vim.keymap.set("n", "<c-b>", function()
   end
 end, { silent = true, expr = true })
 
---[[ Fold ]]
-
---[[ map("n", "zl", "za", { noremap = true, silent = true }) ]]
---[[ vim.keymap.set("n", "zj", require("ufo").openAllFolds) ]]
---[[ vim.keymap.set("n", "zk", require("ufo").closeAllFolds) ]]
---[[ vim.keymap.set("n", "zh", require("ufo").openFoldsExceptKinds) ]]
---[[ vim.keymap.set("n", "zg", require("ufo").closeFoldsWith) -- closeAllFolds == closeFoldsWith(0) ]]
---[[ vim.keymap.set("n", "K", function() ]]
---[[   local winid = require("ufo").peekFoldedLinesUnderCursor() ]]
---[[   if not winid then ]]
---[[     vim.lsp.buf.hover() ]]
---[[   end ]]
---[[ end) ]]
+map("n", "zl", "za", { noremap = true, silent = true })
 
 --[[ Gitsigns ]]
 map("v", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = true })

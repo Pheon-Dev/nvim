@@ -156,8 +156,8 @@ return {
       l = { toggle_lazygit, "LazyGit" },
       n = {
         name = "Grapple",
-        o = { require("portal").jump_forward, "Portal Jump Forward" },
-        i = { require("portal").jump_backward, "Portal Jump Backward" },
+        --[[ o = { require("portal").jump_forward, "Portal Jump Forward" }, ]]
+        --[[ i = { require("portal").jump_backward, "Portal Jump Backward" }, ]]
         n = { ":GrapplePopup tags<cr>", "Tags" },
         h = { ":GrappleCycle forward<cr>", "Cycle Forward" },
         j = { ":GrappleTag<cr>", "Tag" },

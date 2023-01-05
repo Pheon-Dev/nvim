@@ -3,8 +3,6 @@ vim.cmd("if !1 | finish | endif")
 vim.cmd("set nocompatible")
 vim.cmd("syntax enable")
 
---[[ vim.notify = require("notify") ]]
-
 vim.o.termguicolors = true
 vim.o.splitbelow = true
 vim.o.splitright = true
@@ -107,7 +105,7 @@ vim.g.virtcolumn_char = "▕"
 --[[ vim.cmd("set formatoptions+=r") ]]
 --[[ vim.cmd("set completeopt-=preview") ]]
 --[[ vim.cmd("let g:deoplete#enable_at_startup=1") ]]
---[[]]
---[[ vim.cmd("let g:go_def_mode='gopls'") ]]
---[[ vim.cmd("let g:go_info_mode='gopls'") ]]
---[[]]
+
+vim.cmd("let g:go_def_mode='gopls'")
+vim.cmd("let g:go_info_mode='gopls'")
+
