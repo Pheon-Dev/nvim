@@ -108,4 +108,3 @@ vim.g.virtcolumn_char = "▕"
 
 vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
-

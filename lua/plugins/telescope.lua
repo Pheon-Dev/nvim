@@ -41,18 +41,7 @@ return {
 					grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
 					qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
 					buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
-					extensions = {
-						file_browser = {
-							theme = "ivy",
-							hijack_netrw = true,
-							mappings = {
-								["i"] = {
-									["<C-h>"] = fb_actions.goto_home_dir,
-								},
-								["n"] = {},
-							},
-						},
-					},
+					extensions = {},
 					mappings = {
 						i = {
 							["<C-j>"] = actions.move_selection_next,
