@@ -37,7 +37,14 @@ return {
 	},
 	"xiyaowong/virtcolumn.nvim",
 	"xiyaowong/link-visitor.nvim",
-	{ "kevinhwang91/nvim-hlslens" },
+	{ "kevinhwang91/nvim-hlslens", config = true },
+
+	"jghauser/mkdir.nvim",
+	"mbbill/undotree",
+	-- "ray-x/navigator.lua",
+	"toppair/reach.nvim",
+	"haringsrob/nvim_context_vt",
+
 	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" },
 	--[[ { "phaazon/hop.nvim", branch = "v2" }, ]]
 }
