@@ -1,6 +1,4 @@
 return {
-
-	-- tokyonight
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -137,7 +135,8 @@ return {
 			vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = theme.color2 })
 
 			--[[ Yanky ]]
-			vim.api.nvim_set_hl(0, "YankyYanked", { bg = theme.color2 })
+			vim.api.nvim_set_hl(0, "YankyYanked", { bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "YankyPut", { bg = theme.color4 })
 
 			--[[ Popup ]]
 			vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color1, bg = theme.color1 })

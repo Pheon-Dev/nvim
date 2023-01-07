@@ -96,15 +96,15 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
 vim.g.virtcolumn_char = "▕"
 
---[[ vim.cmd("set colorcolumn=120") ]]
---[[ vim.cmd("set t_BE=") ]]
---[[ vim.cmd("set nosc noru nosm") ]]
---[[ vim.cmd("set nu rnu") ]]
---[[ vim.cmd("set path+=**") ]]
---[[ vim.cmd("set wildignore+=*node_modules*") ]]
---[[ vim.cmd("set formatoptions+=r") ]]
---[[ vim.cmd("set completeopt-=preview") ]]
---[[ vim.cmd("let g:deoplete#enable_at_startup=1") ]]
+vim.cmd("set colorcolumn=120")
+vim.cmd("set t_BE=")
+vim.cmd("set nosc noru nosm")
+vim.cmd("set nu rnu")
+vim.cmd("set path+=**")
+vim.cmd("set wildignore+=*node_modules*")
+vim.cmd("set formatoptions+=r")
+vim.cmd("set completeopt-=preview")
+vim.cmd("let g:deoplete#enable_at_startup=1")
 
 vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
