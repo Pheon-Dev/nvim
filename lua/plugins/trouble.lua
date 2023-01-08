@@ -1,6 +1,14 @@
 return {
 	{
+		url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		-- config = function()
+		-- 	require("lsp_lines").setup()
+		-- 	vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+		-- end,
+	},
+	{
 		"onsails/diaglist.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("diaglist").init({
 				-- optional settings
@@ -10,13 +18,9 @@ return {
 				-- increase for noisy servers
 				debounce_ms = 150,
 			})
-
-			require("lsp_lines").setup()
+			-- require("lsp_lines").setup()
+			-- vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
 		end,
-	},
-	{
-		url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-		-- config = true,
 	},
 
 	{

@@ -1,5 +1,8 @@
 return {
 
+	"lewis6991/impatient.nvim",
+	"nathom/filetype.nvim",
+
 	-- measure startuptime
 	{
 		"dstein64/vim-startuptime",
@@ -9,7 +12,12 @@ return {
 		end,
 	},
 
-	-- library used by other plugins
+	-- persistence
+	{
+		"folke/persistence.nvim",
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		config = true,
+	},
 	"nvim-lua/plenary.nvim",
 
 	--[[ Notifications ]]
@@ -90,6 +98,7 @@ return {
 		end,
 	},
 	"haringsrob/nvim_context_vt",
+	{ "ckipp01/stylua-nvim", run = "cargo install stylua" },
 	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" },
 	--[[ { "phaazon/hop.nvim", branch = "v2" }, ]]
 }
