@@ -147,16 +147,16 @@ return {
 
 		dashboard.section.header.val = vim.split(logo, "\n")
 		dashboard.section.buttons.val = {
-			dashboard.button("h", "ﯠ " .. "   Harpoon", ":lua require('harpoon.ui').toggle_quick_menu()<cr>"),
+			dashboard.button("k", "ﯠ " .. "   Harpoon", ":lua require('harpoon.ui').toggle_quick_menu()<cr>"),
 			dashboard.button("g", " " .. "   Grapple Tags", ":GrapplePopup tags<cr>"),
 			dashboard.button(
 				"f",
 				" " .. "   Find File",
 				":Telescope find_files theme=dropdown initial_mode=insert<cr>"
 			),
-			dashboard.button("l", " " .. "   Lir", ":lua require('lir.float').toggle()<cr>"),
-			dashboard.button("n", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("c", " " .. "   Neoconf", ":Neoconf<CR>"),
+			dashboard.button("j", " " .. "   Lir", ":lua require('lir.float').toggle()<cr>"),
+			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
+			dashboard.button("n", " " .. "   Neoconf", ":Neoconf<CR>"),
 			dashboard.button("e", "פּ " .. "   Neotree", ":Neotree<CR>"),
 			dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles <CR>"),
 			dashboard.button(
@@ -164,10 +164,10 @@ return {
 				" " .. "   Find text",
 				":TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE<CR>"
 			),
-			dashboard.button("i", " " .. "   Config", ":e $MYVIMRC <CR>"),
-			dashboard.button("a", " " .. "   Mason", ":Mason<CR>"),
+			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
+			dashboard.button("m", " " .. "   Mason", ":Mason<CR>"),
 			dashboard.button("l", "鈴" .. "   Lazy", ":Lazy<CR>"),
-			dashboard.button("q", " " .. "   Quit", ":qa<CR>"),
+			dashboard.button("h", " " .. "   Quit", ":qa<CR>"),
 		}
 		for _, button in ipairs(dashboard.section.buttons.val) do
 			button.opts.hl = "AlphaButtons"
