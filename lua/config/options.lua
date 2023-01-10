@@ -104,6 +104,7 @@ vim.cmd("set path+=**")
 vim.cmd("set wildignore+=*node_modules*")
 vim.cmd("set formatoptions+=r")
 vim.cmd("set completeopt-=preview")
+
 vim.cmd("let g:deoplete#enable_at_startup=1")
 
 vim.cmd("let g:go_def_mode='gopls'")

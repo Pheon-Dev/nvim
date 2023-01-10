@@ -155,13 +155,14 @@ return {
 				":Telescope find_files theme=dropdown initial_mode=insert<cr>"
 			),
 			dashboard.button("j", " " .. "   Lir", ":lua require('lir.float').toggle()<cr>"),
+			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep theme=dropdown<cr>"),
 			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("n", " " .. "   Neoconf", ":Neoconf<CR>"),
 			dashboard.button("e", "פּ " .. "   Neotree", ":Neotree<CR>"),
 			dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles <CR>"),
 			dashboard.button(
 				"t",
-				" " .. "   Find text",
+				" " .. "  TODO",
 				":TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE<CR>"
 			),
 			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
