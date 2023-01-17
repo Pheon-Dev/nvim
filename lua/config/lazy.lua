@@ -19,22 +19,22 @@ require("lazy").setup({
 		-- automatically check for plugin updates
 		enabled = true,
 		-- concurrency = nil, ---@type number? set to 1 to check for updates very slowly
-		-- notify = true, -- get a notification when new updates are found
-		-- frequency = 3600, -- check for updates every hour
+		notify = true, -- get a notification when new updates are found
+		frequency = 3600, -- check for updates every hour
 	},
 	performance = {
-		-- cache = {
-		-- 	enabled = true,
-		-- 	path = vim.fn.stdpath("cache") .. "/lazy/cache",
-		-- 	-- Once one of the following events triggers, caching will be disabled.
-		-- 	-- To cache all modules, set this to `{}`, but that is not recommended.
-		-- 	-- The default is to disable on:
-		-- 	--  * VimEnter: not useful to cache anything else beyond startup
-		-- 	--  * BufReadPre: this will be triggered early when opening a file from the command line directly
-		-- 	disable_events = { "VimEnter", "BufReadPre" },
-		-- 	ttl = 3600 * 24 * 5, -- keep unused modules for up to 5 days
-		-- },
-		-- reset_packpath = true, -- reset the package path to improve startup time
+		cache = {
+			enabled = true,
+			path = vim.fn.stdpath("cache") .. "/lazy/cache",
+			-- Once one of the following events triggers, caching will be disabled.
+			-- To cache all modules, set this to `{}`, but that is not recommended.
+			-- The default is to disable on:
+			--  * VimEnter: not useful to cache anything else beyond startup
+			--  * BufReadPre: this will be triggered early when opening a file from the command line directly
+			disable_events = { "VimEnter", "BufReadPre" },
+			ttl = 3600 * 24 * 5, -- keep unused modules for up to 5 days
+		},
+		reset_packpath = true, -- reset the package path to improve startup time
 		rtp = {
 			disabled_plugins = {
 				"gzip",
@@ -103,7 +103,7 @@ require("lazy").setup({
 	change_detection = {
 		-- automatically check for config file changes and reload the ui
 		enabled = true,
-		notify = true, -- get a notification when changes are found
+		notify = false, -- get a notification when changes are found
 	},
 	-- lazy can generate helptags from the headings in markdown readme files,
 	-- so :help works even for plugins that don't have vim docs.

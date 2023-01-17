@@ -60,7 +60,7 @@ return {
 				options = {
 					icons_enabled = true,
 					globalstatus = true,
-					disabled_filetypes = { statusline = { "lazy", "dashboard" } },
+					disabled_filetypes = { statusline = { "lazy", "alpha" } },
 					component_separators = "",
 					theme = {
 						normal = { c = { fg = colors.fg, bg = colors.bg } },
@@ -252,6 +252,12 @@ return {
 			})
 
 			ins_right({
+				require("lazy.status").updates,
+				cond = require("lazy.status").has_updates,
+				color = { fg = "#ff9e64" },
+			})
+
+			ins_right({
 				"filesize",
 				cond = conditions.buffer_not_empty,
 				color = { fg = colors.bg2 },
@@ -267,17 +273,20 @@ return {
 				color = { fg = colors.bg2 },
 			})
 
-			--[[ ins_right({ ]]
-			--[[   function() ]]
-			--[[     local anim = { ]]
-			--[[       ".", ]]
-			--[[       "..", ]]
-			--[[       "...", ]]
-			--[[       "....", ]]
-			--[[     } ]]
-			--[[     return anim[os.date("%s") % #anim + 1] ]]
-			--[[   end, ]]
-			--[[ }) ]]
+			-- ins_right({
+			-- 	function()
+			-- 		local battery = io.popen("cat /sys/class/power_supply/BAT0/status")
+			-- 		if battery == "Full" then
+			-- 			local anim = {
+			-- 				".",
+			-- 				"..",
+			-- 				"...",
+			-- 				"....",
+			-- 			}
+			-- 			return anim[os.date("%s") % #anim + 1]
+			-- 		end
+			-- 	end,
+			-- })
 
 			ins_right({
 				"branch",

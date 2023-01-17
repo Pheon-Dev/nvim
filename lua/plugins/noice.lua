@@ -206,7 +206,7 @@ return {
 			routes = {
 				--[[ { filter = { event = "msg_show", kind = "", find = "written", }, opts = { skip = true }, }, ]]
 				{
-					filter = { event = "msg_show", kind = "error", find = "vim/meta.lua:0: Expected lua string" },
+					filter = { event = "msg_show", kind = "", find = "vim/meta.lua:0: Expected lua string" },
 					opts = { skip = true },
 				},
 				{ filter = { event = "msg_show", kind = "", find = "<" }, opts = { skip = true } },

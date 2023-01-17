@@ -46,7 +46,7 @@ return {
 		config = {
 			-- char = "▏",
 			char = "│",
-			filetype_exclude = { "help", "dashboard", "nvim-tree", "Trouble", "lazy" },
+			filetype_exclude = { "help", "alpha", "nvim-tree", "Trouble", "lazy" },
 			show_trailing_blankline_indent = false,
 			show_current_context = false,
 		},
@@ -58,7 +58,7 @@ return {
 		event = "BufReadPre",
 		config = function()
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "dashboard", "lazy" },
+				pattern = { "alpha", "lazy" },
 				callback = function()
 					vim.b.miniindentscope_disable = true
 				end,

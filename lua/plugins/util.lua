@@ -60,7 +60,6 @@ return {
 
 	"jghauser/mkdir.nvim",
 	"mbbill/undotree",
-	{ "norcalli/nvim-colorizer.lua", event = "VeryLazy", config = true },
 	{
 		"ray-x/sad.nvim",
 		config = function()
@@ -79,7 +78,7 @@ return {
 	{
 		"toppair/reach.nvim",
 		config = function()
-			if not vim.fn.filetype == "dashboard" then
+			if not vim.fn.filetype == "alpha" then
 				local mark_opts = {
 					filter = function(mark)
 						return mark:match("[a-zA-Z]") -- return true to disable
@@ -100,5 +99,4 @@ return {
 	"haringsrob/nvim_context_vt",
 	{ "ckipp01/stylua-nvim", run = "cargo install stylua" },
 	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" },
-	--[[ { "phaazon/hop.nvim", branch = "v2" }, ]]
 }

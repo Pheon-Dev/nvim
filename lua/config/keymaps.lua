@@ -34,11 +34,11 @@ map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
 map("n", "(", ":resize +3<cr>", { noremap = true, silent = true })
 map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
 
---[[ Split Navigation ]]
---[[ map("n", "<A-h>", "<C-w>h", { noremap = true, silent = false }) ]]
---[[ map("n", "<A-j>", "<C-w>j", { noremap = true, silent = false }) ]]
---[[ map("n", "<A-k>", "<C-w>k", { noremap = true, silent = false }) ]]
---[[ map("n", "<A-l>", "<C-w>l", { noremap = true, silent = false }) ]]
+-- -- Split Navigation
+-- map("n", "<A-h>", "<C-w>h", { noremap = true, silent = false })
+-- map("n", "<A-j>", "<C-w>j", { noremap = true, silent = false })
+-- map("n", "<A-k>", "<C-w>k", { noremap = true, silent = false })
+-- map("n", "<A-l>", "<C-w>l", { noremap = true, silent = false })
 
 -- Editing Keybindings
 map("i", "<C-z>", ":redo<cr>", { noremap = true, silent = true })
@@ -181,20 +181,20 @@ map("n", "tl", ":ToggleTerm size=60 dir=. direction=vertical<cr>", { noremap = t
 map("n", "tj", ":ToggleTerm size=20 dir=. direction=horizontal<cr>", { noremap = true, silent = true })
 
 --[[ -- Motion ]]
---[[ local hop = require("hop") ]]
---[[ local directions = require("hop.hint").HintDirection ]]
---[[ vim.keymap.set("", "f", function() ]]
---[[   hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true }) ]]
---[[ end, { remap = true }) ]]
---[[ vim.keymap.set("", "F", function() ]]
---[[   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true }) ]]
---[[ end, { remap = true }) ]]
---[[ vim.keymap.set("", "t", function() ]]
---[[   hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 }) ]]
---[[ end, { remap = true }) ]]
---[[ vim.keymap.set("", "T", function() ]]
---[[   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 }) ]]
---[[ end, { remap = true }) ]]
+local hop = require("hop")
+local directions = require("hop.hint").HintDirection
+vim.keymap.set("", "f", function()
+	hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+end, { remap = true })
+vim.keymap.set("", "F", function()
+	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+end, { remap = true })
+vim.keymap.set("", "t", function()
+	hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
+end, { remap = true })
+vim.keymap.set("", "T", function()
+	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
+end, { remap = true })
 
 -- hlslens
 local kopts = { noremap = true, silent = true }
@@ -206,15 +206,15 @@ map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
 vim.keymap.set("n", "<c-f>", function()
-  if not require("noice.lsp").scroll(4) then
-    return "<c-f>"
-  end
+	if not require("noice.lsp").scroll(4) then
+		return "<c-f>"
+	end
 end, { silent = true, expr = true })
 
 vim.keymap.set("n", "<c-b>", function()
-  if not require("noice.lsp").scroll(-4) then
-    return "<c-b>"
-  end
+	if not require("noice.lsp").scroll(-4) then
+		return "<c-b>"
+	end
 end, { silent = true, expr = true })
 
 map("n", "zl", "za", { noremap = true, silent = true })
