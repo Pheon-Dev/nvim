@@ -2,6 +2,10 @@ return {
 
 	"lewis6991/impatient.nvim",
 	"nathom/filetype.nvim",
+	{
+		"imsnif/kdl.vim",
+		event = "VeryLazy",
+	},
 
 	-- measure startuptime
 	{
@@ -26,6 +30,7 @@ return {
 		config = true,
 	},
 	"Pheon-Dev/harpoon",
+	-- "ThePrimeagen/harpoon",
 	"SmiteshP/nvim-navic",
 	{
 		"booperlv/nvim-gomove",

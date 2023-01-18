@@ -133,6 +133,7 @@ return {
 			--[[ Blankline ]]
 			vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = theme.color1 })
 			vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = theme.color2 })
+			vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = theme.color24 })
 
 			--[[ Yanky ]]
 			vim.api.nvim_set_hl(0, "YankyYanked", { bg = theme.color1 })
