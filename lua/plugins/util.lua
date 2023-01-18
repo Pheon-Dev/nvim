@@ -97,6 +97,6 @@ return {
 		end,
 	},
 	"haringsrob/nvim_context_vt",
-	{ "ckipp01/stylua-nvim", run = "cargo install stylua" },
+	"ckipp01/stylua-nvim",
 	{ "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" },
 }
