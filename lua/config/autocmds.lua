@@ -1,11 +1,11 @@
 local format_sync_grp = vim.api.nvim_create_augroup("format_sync_grp", { clear = true })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-    require("go.format").goimport()
-  end,
-  group = format_sync_grp,
+	pattern = "*.go",
+	callback = function()
+		require("go.format").goimport()
+	end,
+	group = format_sync_grp,
 })
 
 vim.cmd("autocmd!")
@@ -48,9 +48,9 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
-  callback = function()
-    require("scrollbar.handlers.search").handler.hide()
-  end,
+	callback = function()
+		require("scrollbar.handlers.search").handler.hide()
+	end,
 })
 
 --[[ vim.cmd([[ ]]
