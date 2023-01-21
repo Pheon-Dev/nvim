@@ -227,16 +227,27 @@ return {
 			vim.api.nvim_set_hl(0, "PortalBorder", { fg = "#fab387" })
 			vim.api.nvim_set_hl(0, "PortalBorderNone", { fg = "#89b4fa" })
 
+			-- GitSigns
+			vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = theme.color7 })
+			vim.api.nvim_set_hl(0, "GitSignsAddNr", { fg = theme.color7 })
+			vim.api.nvim_set_hl(0, "GitSignsAddLn", { fg = theme.color7 })
+			vim.api.nvim_set_hl(0, "GitSignsChange", { fg = theme.color99 })
+			vim.api.nvim_set_hl(0, "GitSignsChangeNr", { fg = theme.color99 })
+			vim.api.nvim_set_hl(0, "GitSignsChangeLn", { fg = theme.color99 })
+			vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = theme.color16 })
+			vim.api.nvim_set_hl(0, "GitSignsDeleteNr", { fg = theme.color16 })
+			vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { fg = theme.color16 })
+
 			-- Telescope
 			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
 
-			local purple0 = "#777777"
-			local purple1 = "#292e42"
-			local purple2 = "#282a36"
-			local bg = "#21222c"
-			local red1 = "#ff5555"
-			local green1 = "#50fa7b"
-			local blue2 = "#bd93f9"
+			local purple0 = theme.colo60
+			local purple1 = theme.color59
+			local purple2 = theme.color1
+			local bg = theme.color0
+			local red1 = theme.color16
+			local green1 = theme.color7
+			local blue2 = theme.color5
 
 			----------------------------------------------------------------------
 			--                              Prompt                              --

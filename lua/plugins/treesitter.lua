@@ -1,11 +1,12 @@
 return {
 	"windwp/nvim-ts-autotag",
-	"p00f/nvim-ts-rainbow",
+	{ "mrjones2014/nvim-ts-rainbow" },
 	"junegunn/rainbow_parentheses.vim",
 	-- references
 	{
 		"RRethy/vim-illuminate",
-		event = "BufReadPost",
+		event = "VeryLazy",
+		-- event = "BufReadPost",
 		config = function()
 			require("illuminate").configure({ delay = 200 })
 		end,
@@ -59,7 +60,7 @@ return {
 				autotag = { enable = true },
 				rainbow = {
 					enable = true,
-					extended_mode = false,
+					extended_mode = true,
 					max_file_lines = nil,
 				},
 				autopairs = { enable = true },
