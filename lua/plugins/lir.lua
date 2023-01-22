@@ -26,8 +26,8 @@ return {
 
 			lir.setup({
 				show_hidden_files = false,
-				ignore = { "lazy-lock.json" },
-				devicons_enable = true,
+				ignore = {},
+				devicons = { enable = true, highlight_dirname = false },
 				mappings = {
 					["<CR>"] = actions.edit,
 					["h"] = actions.up,
