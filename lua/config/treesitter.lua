@@ -1,6 +1,6 @@
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+vim.lsp.handlers["textdocument/publishdiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
-	virtual_text = { spacing = 5, severity_limit = "Warning" },
+	virtual_text = { spacing = 5, severity_limit = "warning" },
 	update_in_insert = true,
 })
 
@@ -23,7 +23,7 @@ require("nvim-treesitter.configs").setup({
 		enable = true, -- mandatory, false will disable the whole extension
 		--[[ disable = { "c", "ruby" }, -- optional, list of language that will be disabled ]]
 		-- [options]
-		--:MatchupWhereAmI?
+		--:matchupwhereami?
 	},
 	refactor = {
 		smart_rename = {
@@ -35,15 +35,15 @@ require("nvim-treesitter.configs").setup({
 		highlight_current_scope = { enable = false },
 		highlight_definitions = {
 			enable = true,
-			-- Set to false if you have an `updatetime` of ~100.
+			-- set to false if you have an `updatetime` of ~100.
 			clear_on_cursor_move = true,
 		},
 		navigation = {
 			enable = true,
 			keymaps = {
 				goto_definition = "gnd",
-				list_definitions = "gnD",
-				list_definitions_toc = "gO",
+				list_definitions = "gnd",
+				list_definitions_toc = "go",
 				goto_next_usage = "<a-*>",
 				goto_previous_usage = "<a-#>",
 			},
