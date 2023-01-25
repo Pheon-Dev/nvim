@@ -26,7 +26,7 @@ return {
 
 			lir.setup({
 				show_hidden_files = false,
-				ignore = {},
+				ignore = { "lazy-lock.json", "node-modules", ".gitignore" },
 				devicons = { enable = true, highlight_dirname = false },
 				mappings = {
 					["<CR>"] = actions.edit,

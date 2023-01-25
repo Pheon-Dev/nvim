@@ -16,11 +16,17 @@ return {
 		"lukas-reineke/cmp-under-comparator",
 		"ms-jpq/coq_nvim",
 		"tzachar/cmp-tabnine",
+		-- "Exafunction/codeium.vim",
 	},
 	config = function()
 		vim.g.completeopt = "menu,menuone,noselect,noinsert"
 
 		require("luasnip.loaders.from_vscode").lazy_load()
+
+		-- -- Change '<C-g>' here to any keycode you like.
+		-- vim.keymap.set("i", "<C-g>", function()
+		-- 	return vim.fn["codeium#Accept"]()
+		-- end, { expr = true })
 
 		-- local has_words_before = function()
 		-- 	local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))

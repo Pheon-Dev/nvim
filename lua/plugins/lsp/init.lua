@@ -4,6 +4,13 @@ return {
 		event = "VeryLazy",
 	},
 	{
+		"Pheon-Dev/lsp_lines.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("lsp_lines").register_lsp_virtual_lines()
+		end,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
 		dependencies = {
