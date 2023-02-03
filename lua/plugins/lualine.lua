@@ -244,14 +244,6 @@ return {
 			end
 
 			ins_right({
-				function()
-					local key = require("grapple").key()
-					return "  [" .. key .. "]"
-				end,
-				cond = require("grapple").exists,
-			})
-
-			ins_right({
 				require("lazy.status").updates,
 				cond = require("lazy.status").has_updates,
 				color = { fg = "#ff9e64" },

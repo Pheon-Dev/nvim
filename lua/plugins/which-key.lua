@@ -79,16 +79,6 @@ return {
 			return lazygit:toggle()
 		end
 
-		local toggle_fm = function()
-			local fm = Terminal:new({ cmd = "fm", direction = "float" })
-			return fm:toggle()
-		end
-
-		local toggle_btop = function()
-			local btop = Terminal:new({ cmd = "btop", direction = "float" })
-			return btop:toggle()
-		end
-
 		local next_hunk = function()
 			gs.next_hunk()
 		end
@@ -122,11 +112,7 @@ return {
 				k = { ":lua require'dapui'.close()<cr>", "Close" },
 				l = { ":lua require'dapui'.toggle()<cr>", "Toggle" },
 			},
-			f = {
-				name = "Files",
-				f = { ":Telescope find_files theme=dropdown initial_mode=insert<cr>", "Find Files" },
-				m = { toggle_fm, "fm" },
-			},
+			f = { ":Telescope find_files theme=dropdown initial_mode=insert<cr>", "Find Files" },
 			g = {
 				name = "Git",
 				s = {
@@ -154,30 +140,10 @@ return {
 					c = { ":Telescope git_commits theme=dropdown initial_mode=normal<cr>", "Git Commits" },
 					s = { ":Telescope git_status theme=dropdown initial_mode=normal<cr>", "Git Status" },
 				},
-				l = {
-					name = "Glance",
-					h = { ":Glance definitions<cr>", "Definitions" },
-					j = { ":Glance references<cr>", "References" },
-					k = { ":Glance type_definitions<cr>", "Type Definitions" },
-					l = { ":Glance implementations<cr>", "Implementations" },
-				},
 			},
-			h = { ":ChatGPT<cr>", "ChatGPT" },
-			i = { toggle_btop, "Btop" },
 			j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
 			k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
 			l = { toggle_lazygit, "LazyGit" },
-			n = {
-				name = "Grapple",
-				--[[ o = { require("portal").jump_forward, "Portal Jump Forward" }, ]]
-				--[[ i = { require("portal").jump_backward, "Portal Jump Backward" }, ]]
-				n = { ":GrapplePopup tags<cr>", "Tags" },
-				h = { ":GrappleCycle forward<cr>", "Cycle Forward" },
-				j = { ":GrappleTag<cr>", "Tag" },
-				k = { ":GrapplePopup scopes<cr>", "Scopes" },
-				l = { ":GrappleCycle backward<cr>", "Cycle Backward" },
-				c = { ":Neoconf<cr>", "Neo Conf" },
-			},
 			m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
 			o = {
 				name = "Others",
@@ -193,25 +159,15 @@ return {
 				x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
 			},
 			q = { ":bd<cr>", "Close Buffer" },
-			r = { ":ReachOpen marks<cr>", "Marks" },
 			s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
 			t = {
-				name = "TODO | TypeScript | Terminal",
+				name = "TypeScript | Terminal",
 				a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
 				b = { ":ToggleTerm size=20 direction=horizontal<cr>", "Horizontal Terminal" },
 				o = { ":TypescriptOrganizeImports<cr>", "Organise Imports" },
 				r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
 				f = { ":TypescriptFixAll<cr>", "Fix All" },
-				h = { ":TodoTrouble cwd=.<cr>", "Trouble" },
-				j = {
-					":TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE<cr>",
-					"Telescope",
-				},
-				k = { ":TodoQuickFix<cr>", "Quick Fix" },
-				l = { ":TodoLocList<cr>", "Loclist" },
 			},
-			u = { ":UndotreeToggle<cr>", "Toggle UndoTree" },
-			v = { ":VisitLinkUnderCursor<cr>", "Visit Link" },
 			w = {
 				name = "Windows",
 				e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },
@@ -220,13 +176,7 @@ return {
 				k = { ":WinShift up<cr><esc>:WindowsEqualize<cr>", "Shift Up" },
 				l = { ":WinShift right<cr><esc>:WindowsEqualize<cr>", "Shift Right" },
 			},
-			x = {
-				name = "Files",
-				x = { ":TroubleToggle<cr>", "Toggle Trouble" },
-				a = { ":lua require('diaglist').open_all_diagnostics()<cr>", "Opan All Diagnostics" },
-				s = { ":lua require('diaglist').open_buffer_diagnostics()<cr>", "Opan Buffer Diagnostics" },
-				l = { require("lsp_lines").toggle, "Toggle LSP Lines" },
-			},
+			x = { ":TroubleToggle<cr>", "Toggle Trouble" },
 			z = { ":Lazy<cr>", "Lazy" },
 		}
 

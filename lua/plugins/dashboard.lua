@@ -1,136 +1,3 @@
--- return {
--- 	"glepnir/dashboard-nvim",
--- 	event = "VimEnter",
--- 	config = function()
--- 		vim.g.dashboard_default_executive = "telescope"
---
--- 		local db = require("dashboard")
---
--- 		db.confirm_key = "l"
---
--- 		db.custom_header = {
--- 			[[ ███████╗  ██╗   ██╗ ███████╗  ██████╗  ███╗   ██╗     ⠀⠀⠀⠀ ███████╗  ███████╗ ██╗   ██╗ ]],
--- 			[[ ██╔═══██╗ ██║   ██║ ██╔════╝ ██╔═══██╗ ████═╗ ██║          ██╔═══██╗ ██╔════╝ ██║   ██║ ]],
--- 			[[ ███████╔╝ ████████║ █████╗   ██║   ██║ ██╔███╗██║ ███████╗ ██║   ██║ █████╗   ██║   ██║ ]],
--- 			[[ ██╔════╝  ██╔═══██║ ██╔══╝   ██║   ██║ ██║╚═████║  ╚═════╝ ██║   ██║ ██╔══╝   ╚██╗ ██╔╝ ]],
--- 			[[ ██║       ██║   ██║ ███████╗ ╚██████╔╝ ██║  ╚███║         ⠀███████╔╝ ███████╗  ╚████╔╝  ]],
--- 			[[ ╚═╝       ╚═╝⠀  ╚═╝ ╚══════╝  ╚═════┘  ╚═╝  ⠀ ╚═╝      ⠀    ╚═════╝  ╚══════╝   ╚═══╝   ]],
--- 		}
---
--- 		local Terminal = require("toggleterm.terminal").Terminal
---
--- 		local toggle_terminal = function()
--- 			local float = Terminal:new({ direction = "float" })
--- 			return float:toggle()
--- 		end
---
--- 		local toggle_fm = function()
--- 			local fm = Terminal:new({ cmd = "fm", direction = "float" })
--- 			return fm:toggle()
--- 		end
---
--- 		local toggle_gh = function()
--- 			local gh = Terminal:new({ cmd = "gh-dash", direction = "float" })
--- 			return gh:toggle()
--- 		end
---
--- 		local toggle_lazygit = function()
--- 			local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
--- 			return lazygit:toggle()
--- 		end
---
--- 		db.custom_center = {
--- 			{
--- 				icon = "ﯠ ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Harpoon          ",
--- 				action = "lua require('harpoon.ui').toggle_quick_menu()",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Grapple Tags     ",
--- 				action = "GrapplePopup tags",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Find File        ",
--- 				action = "Telescope find_files theme=dropdown initial_mode=insert",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ lir              ",
--- 				action = "lua require('lir.float').toggle()",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Search Word      ",
--- 				action = "Telescope live_grep theme=dropdown",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ File Manager     ",
--- 				action = toggle_fm,
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ NeoConf          ",
--- 				action = "Neoconf",
--- 			},
--- 			{
--- 				icon = "פּ ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ NeoTree          ",
--- 				action = "Neotree",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ TODO             ",
--- 				action = "TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Mason            ",
--- 				action = "Mason",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ PRs              ",
--- 				action = toggle_gh,
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Lazygit          ",
--- 				action = toggle_lazygit,
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Terminal         ",
--- 				action = toggle_terminal,
--- 			},
--- 			{
--- 				icon = "炙",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Help Tags        ",
--- 				action = "Telescope help_tags theme=dropdown initial_mode=insert",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Startup Time     ",
--- 				action = "StartupTime",
--- 			},
--- 			{
--- 				icon = " ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Lazy             ",
--- 				action = "Lazy",
--- 			},
--- 			{
--- 				icon = "✗ ",
--- 				desc = " ⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯⋯ Exit             ",
--- 				action = "q!",
--- 			},
--- 		}
---
--- 		db.custom_footer = {}
--- 	end,
--- }
-
 return {
 	"goolord/alpha-nvim",
 	event = "VimEnter",
@@ -148,7 +15,11 @@ return {
 		dashboard.section.header.val = vim.split(logo, "\n")
 		dashboard.section.buttons.val = {
 			dashboard.button("k", "ﯠ " .. "   Harpoon", ":lua require('harpoon.ui').toggle_quick_menu()<cr>"),
-			dashboard.button("g", " " .. "   Grapple Tags", ":GrapplePopup tags<cr>"),
+			dashboard.button(
+				"g",
+				" " .. "   Lazygit",
+				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>"
+			),
 			dashboard.button(
 				"f",
 				" " .. "   Find File",
@@ -157,7 +28,6 @@ return {
 			dashboard.button("j", " " .. "   Lir", ":lua require('lir.float').toggle()<cr>"),
 			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep theme=dropdown<cr>"),
 			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("n", " " .. "   Neoconf", ":Neoconf<CR>"),
 			dashboard.button("e", "פּ " .. "   Neotree", ":Neotree<CR>"),
 			dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles <CR>"),
 			dashboard.button(

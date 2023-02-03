@@ -26,7 +26,7 @@ return {
 
 			lir.setup({
 				show_hidden_files = false,
-				ignore = {},
+				ignore = { "node_modules", "yarn.lock", "yarn-error.log" },
 				devicons = { enable = true, highlight_dirname = false },
 				mappings = {
 					["<CR>"] = actions.edit,
