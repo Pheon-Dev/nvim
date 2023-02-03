@@ -14,6 +14,7 @@
   "cmp-tabnine": { "branch": "main", "commit": "ee1341c53e7b82f55c6e83287828f652c2ac35e1" },
   "cmp-under-comparator": { "branch": "master", "commit": "6857f10272c3cfe930cece2afa2406e1385bfef8" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
+  "coq_nvim": { "branch": "coq", "commit": "b6032a67b53ca92b7bda401ef45284e888c5f4b6" },
   "dressing.nvim": { "branch": "master", "commit": "4436d6f41e2f6b8ada57588acd1a9f8b3d21453c" },
   "filetype.nvim": { "branch": "main", "commit": "295e1074fa94e588aa7c2fc4e2e1367af508c4be" },
   "friendly-snippets": { "branch": "main", "commit": "a6f7a1609addb4e57daa6bedc300f77f8d225ab7" },

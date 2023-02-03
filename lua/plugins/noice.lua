@@ -196,10 +196,10 @@ return {
 					},
 					border = {
 						style = "rounded",
-						padding = { 0, 1 },
+						padding = { -1, 1 },
 					},
 					win_options = {
-						winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+						winhighlight = { Normal = "NoiceCmdlinePopup", FloatBorder = "NoiceCmdlinePopupBorder" },
 					},
 				},
 			},

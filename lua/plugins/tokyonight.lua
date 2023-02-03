@@ -86,6 +86,10 @@ return {
 			vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color2, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = theme.color2, bg = theme.color0 })
 
+			--[[ Popup ]]
+			vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color1, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color1 })
+
 			--[[ Noice ]]
 			vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color2 })
 			vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color2 })
@@ -138,10 +142,6 @@ return {
 			--[[ Yanky ]]
 			vim.api.nvim_set_hl(0, "YankyYanked", { bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "YankyPut", { bg = theme.color4 })
-
-			--[[ Popup ]]
-			vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color1, bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color1 })
 
 			--[[ Fold ]]
 			vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93 })
