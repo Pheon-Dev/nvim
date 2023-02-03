@@ -10,6 +10,7 @@ return {
 			"mason.nvim",
 			{ "williamboman/mason-lspconfig.nvim", config = { automatic_installation = true } },
 			"hrsh7th/cmp-nvim-lsp",
+			"ms-jpq/coq_nvim",
 		},
 		---@type lspconfig.options
 		servers = nil,

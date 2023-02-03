@@ -33,7 +33,9 @@ local servers = {
 	pyright = {},
 	yamlls = {},
 	remark_ls = {},
-	rust_analyzer = { cmd = { "rustup", "run", "stable", "rust-analyzer" } }, -- rustup component add rust-analyzer
+	rust_analyzer = { -- rustup component add rust-analyzer
+		cmd = { "rustup", "run", "stable", "rust-analyzer" },
+	},
 	sumneko_lua = {
 		settings = {
 			Lua = {

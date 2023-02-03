@@ -9,19 +9,22 @@ return {
 				require("luasnip.loaders.from_vscode").lazy_load()
 			end,
 		},
-		config = {
-			history = true,
-			delete_check_events = "TextChanged",
-		},
-		init = function()
-			local function jump(key, dir)
-				vim.keymap.set({ "i", "s" }, key, function()
-					return require("luasnip").jump(dir) or key
-				end, { expr = true })
-			end
-			jump("<tab>", 1)
-			jump("<s-tab>", -1)
-		end,
+		version = "<CurrentMajor>.*",
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp",
+		-- config = {
+		-- 	history = true,
+		-- 	delete_check_events = "TextChanged",
+		-- },
+		-- init = function()
+		-- 	local function jump(key, dir)
+		-- 		vim.keymap.set({ "i", "s" }, key, function()
+		-- 			return require("luasnip").jump(dir) or key
+		-- 		end, { expr = true })
+		-- 	end
+		-- 	jump("<tab>", 1)
+		-- 	jump("<s-tab>", -1)
+		-- end,
 	},
 
 	-- auto pairs

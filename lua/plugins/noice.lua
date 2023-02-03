@@ -175,10 +175,10 @@ return {
 			throttle = 1000 / 30, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
 			views = {
 				cmdline_popup = {
-					--[[ position = { ]]
-					--[[   row = 5, ]]
-					--[[   col = "50%", ]]
-					--[[ }, ]]
+					position = {
+						row = 5,
+						col = "50%",
+					},
 					size = {
 						width = 60,
 						height = "auto",
