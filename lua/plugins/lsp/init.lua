@@ -7,6 +7,8 @@ return {
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
 		dependencies = {
+			{ "folke/neoconf.nvim", cmd = "Neoconf", config = true },
+			{ "folke/neodev.nvim", config = true },
 			"mason.nvim",
 			{ "williamboman/mason-lspconfig.nvim", config = { automatic_installation = true } },
 			"hrsh7th/cmp-nvim-lsp",

@@ -31,6 +31,7 @@ return {
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>"
 			),
 			dashboard.button("m", " " .. "   Mason", ":Mason<CR>"),
+			dashboard.button("n", " " .. "   Neoconf", ":Neoconf<CR>"),
 			dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles <CR>"),
 			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep theme=dropdown<cr>"),
 			dashboard.button(
