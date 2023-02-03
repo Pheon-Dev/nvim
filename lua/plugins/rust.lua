@@ -1,6 +1,6 @@
 return {
 	"simrat39/rust-tools.nvim",
-	event = "VeryLazy",
+	-- event = "VeryLazy",
 	config = function()
 		local rt = require("rust-tools")
 
@@ -167,12 +167,6 @@ return {
 				-- standalone file support
 				-- setting it to false may improve startup time
 				standalone = true,
-				on_attach = function(_, bufnr)
-					-- Hover actions
-					vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-					-- Code action groups
-					vim.keymap.set("n", "<Leader>ra", rt.code_action_group.code_action_group, { buffer = bufnr })
-				end,
 			}, -- rust-analyzer options
 
 			-- debugging stuff
@@ -196,7 +190,8 @@ return {
 
 		-- Set inlay hints for the current buffer
 
-		-- rt.inlay_hints.set()
+		rt.hover_actions.hover_actions()
+		rt.inlay_hints.set()
 		-- rt.inlay_hints.unset()
 		rt.inlay_hints.enable()
 		-- rt.inlay_hints.disable()

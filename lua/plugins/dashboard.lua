@@ -14,31 +14,31 @@ return {
 
 		dashboard.section.header.val = vim.split(logo, "\n")
 		dashboard.section.buttons.val = {
-			dashboard.button("k", "ﯠ " .. "   Harpoon", ":lua require('harpoon.ui').toggle_quick_menu()<cr>"),
-			dashboard.button(
-				"g",
-				" " .. "   Lazygit",
-				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>"
-			),
+			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
+			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
+			dashboard.button("e", "פּ " .. "   Neotree", ":Neotree<CR>"),
 			dashboard.button(
 				"f",
 				" " .. "   Find File",
 				":Telescope find_files theme=dropdown initial_mode=insert<cr>"
 			),
+			dashboard.button("h", " " .. "   Quit", ":qa<CR>"),
 			dashboard.button("j", " " .. "   Lir", ":lua require('lir.float').toggle()<cr>"),
-			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep theme=dropdown<cr>"),
-			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("e", "פּ " .. "   Neotree", ":Neotree<CR>"),
+			dashboard.button("k", "ﯠ " .. "   Harpoon", ":lua require('harpoon.ui').toggle_quick_menu()<cr>"),
+			dashboard.button(
+				"l",
+				" " .. "   Lazygit",
+				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>"
+			),
+			dashboard.button("m", " " .. "   Mason", ":Mason<CR>"),
 			dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles <CR>"),
+			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep theme=dropdown<cr>"),
 			dashboard.button(
 				"t",
 				" " .. "  TODO",
 				":TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE<CR>"
 			),
-			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
-			dashboard.button("m", " " .. "   Mason", ":Mason<CR>"),
-			dashboard.button("l", "鈴" .. "   Lazy", ":Lazy<CR>"),
-			dashboard.button("h", " " .. "   Quit", ":qa<CR>"),
+			dashboard.button("z", "鈴" .. "   Lazy", ":Lazy<CR>"),
 		}
 		for _, button in ipairs(dashboard.section.buttons.val) do
 			button.opts.hl = "AlphaButtons"

@@ -4,6 +4,7 @@ return {
 	config = function()
 		-- local gs = package.loaded.gitsigns
 		local gs = require("gitsigns")
+		local rt = require("rust-tools")
 		local wk = require("which-key")
 		wk.setup({
 			plugins = {
@@ -145,6 +146,7 @@ return {
 			k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
 			l = { toggle_lazygit, "LazyGit" },
 			m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+			n = { ":Telescope notify theme=ivy<cr>", "Notifications" },
 			o = {
 				name = "Others",
 				c = {
@@ -160,6 +162,23 @@ return {
 			},
 			q = { ":bd<cr>", "Close Buffer" },
 			s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
+			r = {
+				name = "Rust",
+				a = { rt.code_action_group.code_action_group, "Code Action Group" },
+				c = { ":RustOpenCargo<cr>", "Open Cargo" },
+				h = { rt.hover_actions.hover_actions, "Hover Actions" },
+				i = {
+					name = "Inlayhints",
+					e = { ":RustEnableInlayHints<cr>", "Enable" },
+					d = { ":RustDisableInlayHints<cr>", "Disable" },
+					s = { ":RustSetInlayHints<cr>", "Set" },
+					u = { ":RustUnsetInlayHints<cr>", "Unset" },
+				},
+				j = { ":RustJoinLines<cr>", "Join Lines" },
+				m = { ":RustExpandMacro<cr>", "Expand Macro" },
+				p = { ":RustParentModule<cr>", "Parent Module" },
+				r = { ":RustRunnables<cr>", "Runnables" },
+			},
 			t = {
 				name = "TypeScript | Terminal",
 				a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
