@@ -15,6 +15,11 @@ return {
 		dashboard.section.header.val = vim.split(logo, "\n")
 		dashboard.section.buttons.val = {
 			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
+			dashboard.button(
+				"b",
+				" " .. "   File Manager",
+				":lua require('toggleterm.terminal').Terminal:new({cmd = 'joshuto', direction = 'float'}):toggle()<cr>"
+			),
 			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
 			dashboard.button("e", "פּ " .. "   Neotree", ":Neotree<CR>"),
 			dashboard.button(

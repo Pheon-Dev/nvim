@@ -262,11 +262,11 @@ return {
 				bg = red1,
 			})
 
-			vim.api.nvim_set_hl(0, "TelescopePreviewLine", {
-				fg = normal_hl.foreground,
-				bg = purple2,
-			})
-
+			-- vim.api.nvim_set_hl(0, "TelescopePreviewLine", {
+			-- 	fg = normal_hl.foreground,
+			-- 	bg = purple2,
+			-- })
+			--
 			vim.api.nvim_set_hl(0, "TelescopePreviewMatch", {
 				fg = normal_hl.foreground,
 				bg = purple1,
