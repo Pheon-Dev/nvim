@@ -21,7 +21,7 @@ return {
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'joshuto', direction = 'float'}):toggle()<cr>"
 			),
 			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
-			dashboard.button("e", "פּ " .. "   Neotree", ":Neotree<CR>"),
+			dashboard.button("e", "פּ " .. "   Nvim-Tree", ":NvimTreeToggle<CR>"),
 			dashboard.button(
 				"f",
 				" " .. "   Find File",

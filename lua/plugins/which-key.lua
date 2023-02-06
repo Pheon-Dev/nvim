@@ -113,6 +113,7 @@ return {
 				-- k = { ":lua require'dapui'.close()<cr>", "Close" },
 				-- l = { ":lua require'dapui'.toggle()<cr>", "Toggle" },
 			},
+			e = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
 			f = { ":Telescope find_files theme=dropdown initial_mode=insert<cr>", "Find Files" },
 			g = {
 				name = "Git",
