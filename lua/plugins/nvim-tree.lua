@@ -1,3 +1,4 @@
+-- https://github.com/nvim-tree/nvim-tree.lua/wiki/Open-At-Startup
 return {
 	"kyazdani42/nvim-tree.lua",
 	cmd = "NvimTreeToggle",
@@ -14,11 +15,6 @@ return {
 			respect_buf_cwd = true,
 			disable_netrw = false,
 			hijack_netrw = false,
-			open_on_setup = false,
-			ignore_ft_on_setup = {
-				"startify",
-				"alpha",
-			},
 			open_on_tab = false,
 			hijack_cursor = false,
 			update_cwd = false,
