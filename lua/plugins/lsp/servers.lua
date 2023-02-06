@@ -25,7 +25,7 @@ local servers = {
 			},
 		},
 	},
-	clangd = {},
+	-- clangd = {},
 	cssls = {},
 	tsserver = {},
 	html = {},

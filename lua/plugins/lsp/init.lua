@@ -44,7 +44,9 @@ return {
 				lineFoldingOnly = true,
 			}
 
-			capabilities.offsetEncoding = { "utf-32" }
+			local capability = vim.lsp.protocol.make_client_capabilities()
+			capability.offsetEncoding = { "utf-16" }
+			require("lspconfig").clangd.setup({ capabilities = capability })
 
 			---@type lspconfig.options
 			local servers = plugin.servers or require("plugins.lsp.servers")
@@ -70,9 +72,9 @@ return {
 					null_ls.builtins.diagnostics.eslint_d,
 					null_ls.builtins.completion.spell,
 				},
-				on_init = function(new_client, _)
-					new_client.offset_encoding = "utf-32"
-				end,
+				-- on_init = function(new_client, _)
+				-- 	new_client.offset_encoding = "utf-32"
+				-- end,
 			})
 		end,
 	},
