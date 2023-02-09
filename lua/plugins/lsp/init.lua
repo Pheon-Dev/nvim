@@ -72,9 +72,6 @@ return {
 					null_ls.builtins.diagnostics.eslint_d,
 					null_ls.builtins.completion.spell,
 				},
-				-- on_init = function(new_client, _)
-				-- 	new_client.offset_encoding = "utf-32"
-				-- end,
 			})
 		end,
 	},

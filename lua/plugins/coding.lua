@@ -9,9 +9,9 @@ return {
 				require("luasnip.loaders.from_vscode").lazy_load()
 			end,
 		},
-		version = "<CurrentMajor>.*",
+		-- version = "<CurrentMajor>.*",
 		-- install jsregexp (optional!).
-		build = "make install_jsregexp",
+		-- build = "make install_jsregexp",
 		-- config = {
 		-- 	history = true,
 		-- 	delete_check_events = "TextChanged",

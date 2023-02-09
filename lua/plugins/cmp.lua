@@ -139,9 +139,9 @@ return {
 				end, { "i", "s" }),
 			},
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" },
 				{ name = "cmp_tabnine" },
+				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
 				{ name = "cmdline" },
 				{ name = "emoji" },
@@ -178,9 +178,9 @@ return {
 		cmp.setup.cmdline({ "?", "/" }, {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
-				{ name = "nvim_lsp_signature_help" },
 				{ name = "luasnip" },
 				{ name = "cmp_tabnine" },
+				{ name = "nvim_lsp_signature_help" },
 				{ name = "buffer" },
 				{ name = "nvim_lsp" },
 				{ name = "nvim_lua" },
