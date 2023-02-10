@@ -189,6 +189,15 @@ return {
 				r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
 				f = { ":TypescriptFixAll<cr>", "Fix All" },
 			},
+			u = {
+				name = "LSPUI",
+				h = { ":LspUI hover<cr>", "Hover" },
+				r = { ":LspUI rename<cr>", "Rename" },
+				c = { ":LspUI code_action<cr>", "Code Action" },
+				n = { ":LspUI diagnostic_next<cr>", "Diagnostic Next" },
+				p = { ":LspUI diagnostic_prev<cr>", "Diagnostic Prev" },
+				d = { ":LspUI peek_definition<cr>", "Peek Definition" },
+			},
 			w = {
 				name = "Windows",
 				e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },

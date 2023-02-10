@@ -38,6 +38,14 @@ return {
 		local compare = require("cmp.config.compare")
 		local tabnine = require("cmp_tabnine.config")
 
+		cmp.event:on("menu_opened", function()
+			vim.b.copilot_suggestion_hidden = true
+		end)
+
+		cmp.event:on("menu_closed", function()
+			vim.b.copilot_suggestion_hidden = false
+		end)
+
 		tabnine:setup({
 			max_lines = 1000,
 			max_num_results = 20,
