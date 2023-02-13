@@ -84,6 +84,7 @@ local theme = {
 	color43 = "#c34bfe",
 	color44 = "#ff9e64",
 	color9 = "#ffd4a6",
+	color100 = "#f1fa8c",
 	color10 = "#ffb86c",
 	color11 = "#ff9c33",
 	color77 = "#ffc777",

@@ -59,6 +59,7 @@ return {
 			vim.api.nvim_set_hl(0, "Visual", { bg = theme.color2 })
 			--[[ vim.api.nvim_set_hl(0, "Cursor", { bg = theme.color74 }) ]]
 			vim.api.nvim_set_hl(0, "IncSearch", { fg = theme.color0, bg = theme.color25 })
+			vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color100 })
 
 			--[[ Dashboard ]]
 			vim.api.nvim_set_hl(0, "DashboardHeader", { fg = theme.color3 })

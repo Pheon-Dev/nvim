@@ -66,6 +66,7 @@ return {
 			cmp_tabnine = " nine",
 			buffer = " buf",
 			nvim_lua = " lua",
+			orgmode = " org",
 			--[[ vsnip = "✀ snip", ]]
 			path = " path",
 		}
@@ -151,6 +152,7 @@ return {
 				{ name = "cmp_tabnine" },
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
+				{ name = "orgmode" },
 				{ name = "cmdline" },
 				{ name = "emoji" },
 				{ name = "nvim_lua" },
