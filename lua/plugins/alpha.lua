@@ -17,7 +17,7 @@ return {
 			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
 			dashboard.button(
 				"b",
-				"" .. "   File Manager",
+				" " .. "   File Manager",
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'joshuto', direction = 'float'}):toggle()<cr>"
 			),
 			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
@@ -41,7 +41,7 @@ return {
 			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep theme=dropdown<cr>"),
 			dashboard.button(
 				"t",
-				" " .. "  TODO",
+				" " .. "   TODO",
 				":TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE<CR>"
 			),
 			dashboard.button("z", "鈴" .. "   Lazy", ":Lazy<CR>"),
@@ -66,7 +66,28 @@ return {
 				end,
 			})
 		end
-
+		if vim.bo.filetype == "alpha" then
+			vim.api.nvim_create_autocmd("User", {
+				pattern = "AlphaReady",
+				desc = "hide cursor for alpha",
+				callback = function()
+					local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
+					hl.blend = 100
+					vim.api.nvim_set_hl(0, "Cursor", hl)
+					vim.opt.guicursor:append("a:Cursor/lCursor")
+				end,
+			})
+			vim.api.nvim_create_autocmd("BufUnload", {
+				buffer = 0,
+				desc = "show cursor after alpha",
+				callback = function()
+					local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
+					hl.blend = 0
+					vim.api.nvim_set_hl(0, "Cursor", hl)
+					vim.opt.guicursor:remove("a:Cursor/lCursor")
+				end,
+			})
+		end
 		require("alpha").setup(dashboard.opts)
 
 		vim.api.nvim_create_autocmd("User", {
