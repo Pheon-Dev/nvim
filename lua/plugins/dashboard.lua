@@ -17,7 +17,7 @@ return {
 			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
 			dashboard.button(
 				"b",
-				" " .. "   File Manager",
+				"" .. "   File Manager",
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'joshuto', direction = 'float'}):toggle()<cr>"
 			),
 			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
