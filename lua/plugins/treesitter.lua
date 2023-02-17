@@ -5,8 +5,7 @@ return {
 	-- references
 	{
 		"RRethy/vim-illuminate",
-		event = "VeryLazy",
-		-- event = "BufReadPost",
+		event = "BufReadPost",
 		config = function()
 			require("illuminate").configure({ delay = 200 })
 		end,
@@ -30,8 +29,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = "VeryLazy",
-		-- event = "BufReadPost",
+		event = "BufReadPost",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				sync_install = false,

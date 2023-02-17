@@ -36,6 +36,7 @@ vim.cmd("au BufnewFile,BufRead *.md set filetype=markdown")
 vim.cmd("au BufnewFile,BufRead *.mdx set filetype=markdown")
 vim.cmd("au BufnewFile,BufRead *.flow set filetype=javascript")
 vim.cmd("au BufnewFile,BufRead *.fish set filetype=fish")
+vim.cmd("au BufnewFile,BufRead *.norg set filetype=norg")
 --[[ vim.cmd("au BufnewFile,BufRead *.sh set filetype=bash") ]]
 vim.cmd("au BufnewFile,BufRead *.zsh set filetype=bash")
 

@@ -129,16 +129,16 @@ return {
 					opts = {},
 				},
 				-- defaults for hover and signature help
-				documentation = {
-					view = "hover",
-					opts = {
-						lang = "markdown",
-						replace = true,
-						render = "plain",
-						format = { "{message}" },
-						win_options = { concealcursor = "n", conceallevel = 3 },
-					},
-				},
+				-- documentation = {
+				-- 	view = "hover",
+				-- 	opts = {
+				-- 		lang = "markdown",
+				-- 		replace = true,
+				-- 		render = "plain",
+				-- 		format = { "{message}" },
+				-- 		win_options = { concealcursor = "n", conceallevel = 3 },
+				-- 	},
+				-- },
 			},
 			markdown = {
 				hover = {
@@ -206,7 +206,11 @@ return {
 			routes = {
 				--[[ { filter = { event = "msg_show", kind = "", find = "written", }, opts = { skip = true }, }, ]]
 				{
-					filter = { event = "msg_show", kind = "", find = "vim/meta.lua:0: Expected lua string" },
+					filter = {
+						event = "msg_show",
+						kind = "Error",
+						find = 'Error detected while processing TextChangedI Autocommands for " * ":',
+					},
 					opts = { skip = true },
 				},
 				{ filter = { event = "msg_show", kind = "", find = "<" }, opts = { skip = true } },

@@ -1,7 +1,7 @@
 return {
 	{
 		"lvimuser/lsp-inlayhints.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 	},
 	{
 		"jinzhongjia/LspUI.nvim",
