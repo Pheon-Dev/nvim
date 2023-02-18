@@ -96,7 +96,6 @@ return {
 			[";"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
 			a = { ":ASToggle<cr>", "Auto Save Toggle" },
 			b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
-			c = { ":ColorizerToggle<cr>", "Colorizer" },
 			d = {
 				name = "DAP & Dashboard",
 				d = { ":Alpha<cr>", "Dashboard" },
