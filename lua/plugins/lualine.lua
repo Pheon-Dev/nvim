@@ -250,6 +250,13 @@ return {
 			})
 
 			ins_right({
+				function()
+					return "{...} %3{codeium#GetStatusString()}"
+				end,
+				color = { fg = colors.grey },
+			})
+
+			ins_right({
 				"filesize",
 				cond = conditions.buffer_not_empty,
 				color = { fg = colors.bg2 },
@@ -268,6 +275,7 @@ return {
 			-- ins_right({
 			-- 	function()
 			-- 		local battery = io.popen("cat /sys/class/power_supply/BAT0/status")
+			-- 		local wifi = io.popen("/home/pheon/.config/arco-dwm/dwmbar/modules/wifi")
 			-- 		if battery == "Full" then
 			-- 			local anim = {
 			-- 				".",
@@ -275,7 +283,9 @@ return {
 			-- 				"...",
 			-- 				"....",
 			-- 			}
-			-- 			return anim[os.date("%s") % #anim + 1]
+			-- 			return wifi
+			-- 			-- return anim[os.date("%s") % #anim + 1]
+			-- 			-- return set statusline+={…}%3{codeium#GetStatusString()}
 			-- 		end
 			-- 	end,
 			-- })
