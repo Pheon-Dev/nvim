@@ -1,8 +1,9 @@
 return {
 	"folke/which-key.nvim",
-	event = "VeryLazy",
+	event = "BufReadPre",
 	config = function()
-		-- local gs = package.loaded.gitsigns
+		vim.o.timeout = true
+		vim.o.timeoutlen = 300
 		local gs = require("gitsigns")
 		local rt = require("rust-tools")
 		local wk = require("which-key")
