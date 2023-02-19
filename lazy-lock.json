@@ -16,6 +16,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "codeium.vim": { "branch": "main", "commit": "be2fa21f4f63850382a0cefeaa9f766b977c9f0c" },
   "coq_nvim": { "branch": "coq", "commit": "49189b020236002bae41f823da9ac0f73dca873f" },
+  "crates.nvim": { "branch": "main", "commit": "1dffccc0a95f656ebe00cacb4de282473430c5a1" },
   "dressing.nvim": { "branch": "master", "commit": "db716a0f1279f79a886c0e0b6ab3c3d5ffdb42fe" },
   "filetype.nvim": { "branch": "main", "commit": "295e1074fa94e588aa7c2fc4e2e1367af508c4be" },
   "friendly-snippets": { "branch": "main", "commit": "1645e7cd98ed99e766c84ab3cf13a1612c77dcee" },

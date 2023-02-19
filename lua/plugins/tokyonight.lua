@@ -146,24 +146,6 @@ return {
 			--[[ Fold ]]
 			vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93 })
 
-			--[[ Navigator ]]
-			--[[ vim.api.nvim_set_hl(0, "GuihuaTextViewDark ", { fg = theme.color98, bg = theme.color95 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "GuihuaListDark ", { fg = theme.color98, bg = theme.color61 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "GuihuaListHl ", { fg = theme.color98, bg = theme.color97 }) ]]
-
-			--[[ bqf ]]
-			--[[ vim.api.nvim_set_hl(0, "GlanceWinBarFilename", { fg = theme.color27, bg = theme.color93 }) ]]
-			vim.api.nvim_set_hl(0, "BqfPreviewFloat", { bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "BqfPreviewBorder", { fg = theme.color1, bg = theme.color1 })
-			--[[ vim.api.nvim_set_hl(0, "BqfPreviewCursor", { fg = theme.color27, bg = theme.color93 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "BqfPreviewRange", { fg = theme.color27, bg = theme.color93 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "BqfPreviewCountLabel", { fg = theme.color27, bg = theme.color93 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "BqfSign", { fg = theme.color27, bg = theme.color93 }) ]]
-
-			-- Give window borders a "portal" feel
-			vim.api.nvim_set_hl(0, "PortalBorder", { fg = "#fab387" })
-			vim.api.nvim_set_hl(0, "PortalBorderNone", { fg = "#89b4fa" })
-
 			-- GitSigns
 			vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = theme.color7 })
 			vim.api.nvim_set_hl(0, "GitSignsAddNr", { fg = theme.color7 })
@@ -174,6 +156,9 @@ return {
 			vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = theme.color16 })
 			vim.api.nvim_set_hl(0, "GitSignsDeleteNr", { fg = theme.color16 })
 			vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { fg = theme.color16 })
+
+			vim.api.nvim_set_hl(0, "GitBlame", { fg = theme.color68, bg = theme.color1 })
+			vim.g.gitblame_highlight_group = "GitBlame"
 
 			-- Telescope
 			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)

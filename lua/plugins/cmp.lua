@@ -146,6 +146,7 @@ return {
 				{ name = "cmp_tabnine" },
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
+				{ name = "crates" },
 				{ name = "orgmode" },
 				{ name = "cmdline" },
 				{ name = "emoji" },

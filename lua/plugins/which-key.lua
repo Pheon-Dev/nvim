@@ -2,8 +2,8 @@ return {
 	"folke/which-key.nvim",
 	event = "BufReadPre",
 	config = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 300
+		-- vim.o.timeout = true
+		-- vim.o.timeoutlen = 300
 		local gs = require("gitsigns")
 		local rt = require("rust-tools")
 		local wk = require("which-key")
