@@ -285,3 +285,9 @@ end, { expr = true })
 vim.keymap.set("i", "<c-x>", function()
 	return vim.fn["codeium#Clear"]()
 end, { expr = true })
+
+local crates = require("crates")
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set("v", "<leader>cU", crates.upgrade_crates, opts)
+vim.keymap.set("v", "<leader>cu", crates.update_crates, opts)

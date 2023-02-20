@@ -92,6 +92,8 @@ return {
 		end
 		local diff_this = gs.diffthis
 
+		local crates = require("crates")
+
 		local mappings = {
 			[";"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
 			a = { ":ASToggle<cr>", "Auto Save Toggle" },
@@ -100,6 +102,28 @@ return {
 				name = "Codeium",
 				j = { ":Codeium Enable<cr>", "Enable" },
 				k = { ":Codeium Disable<cr>", "Disable" },
+				t = { crates.toggle, "Toggle" },
+				r = { crates.reload, "Reload" },
+				v = { crates.show_versions_popup, "Show Versions Popup" },
+				f = { crates.show_features_popup, "Show Features Popup" },
+				d = { crates.show_dependencies_popup, "Show Dependencies Popup" },
+				u = {
+					name = "Update",
+					u = { crates.update_crate, "Update Crate" },
+					a = { crates.update_all_crates, "Update All Crates" },
+				},
+				g = {
+					name = "Upgrade",
+					g = { crates.upgrade_crate, "Upgrade Crate" },
+					a = { crates.upgrade_all_crates, "Upgrade All Crates" },
+				},
+				o = {
+					name = "Open",
+					c = { crates.open_crates_io, "Crates IO" },
+					h = { crates.open_homepage, "Home Page" },
+					d = { crates.open_documentation, "Documentation" },
+					r = { crates.open_repository, "Repository" },
+				},
 			},
 			d = {
 				name = "DAP & Dashboard",
@@ -198,7 +222,11 @@ return {
 				k = { ":WinShift up<cr><esc>:WindowsEqualize<cr>", "Shift Up" },
 				l = { ":WinShift right<cr><esc>:WindowsEqualize<cr>", "Shift Right" },
 			},
-			x = { ":TroubleToggle<cr>", "Toggle Trouble" },
+			x = {
+				name = "LSP Diagnostics",
+				x = { ":TroubleToggle<cr>", "Toggle Trouble" },
+				l = { require("lsp_lines").toggle, "Toggle LSP Lines" },
+			},
 			z = { ":Lazy<cr>", "Lazy" },
 		}
 

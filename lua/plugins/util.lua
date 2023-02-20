@@ -22,6 +22,11 @@ return {
 		config = true,
 	},
 	"nvim-lua/plenary.nvim",
+	-- {
+	-- 	"lukas-reineke/virt-column.nvim",
+	-- 	event = "VeryLazy",
+	-- 	config = true,
+	-- },
 
 	--[[ Notifications ]]
 	{
