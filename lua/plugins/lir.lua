@@ -1,7 +1,7 @@
 return {
 	{
-		-- "tamago324/lir.nvim",
-		"Pheon-Dev/lir.nvim",
+		"tamago324/lir.nvim",
+		-- "Pheon-Dev/lir.nvim",
 		config = function()
 			local actions_ok, actions = pcall(require, "lir.actions")
 			local mark_actions_ok, mark_actions = pcall(require, "lir.mark.actions")
