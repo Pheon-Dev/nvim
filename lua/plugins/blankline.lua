@@ -11,8 +11,8 @@ return {
 				end,
 			})
 			require("mini.indentscope").setup({
-				-- symbol = "▏",
-				symbol = "┊",
+				symbol = "▏",
+				-- symbol = "┊",
 				options = { try_as_border = true },
 			})
 		end,
@@ -22,7 +22,7 @@ return {
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPre",
 		config = {
-			char = "┊", -- '|', '¦', '┆', '┊', '│', '▏'
+			char = "│", -- '|', '¦', '┆', '┊', '│', '▏'
 			show_trailing_blankline_indent = false,
 			show_current_context = false,
 			buftype_exclude = { "terminal" },

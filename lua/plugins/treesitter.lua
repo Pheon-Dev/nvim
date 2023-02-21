@@ -109,7 +109,7 @@ return {
 				autotag = { enable = true },
 				rainbow = {
 					enable = true,
-					extended_mode = true,
+					extended_mode = false,
 					max_file_lines = nil,
 				},
 				autopairs = { enable = true },
