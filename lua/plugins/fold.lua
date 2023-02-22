@@ -109,9 +109,9 @@ return {
 			require("nvim-foldsign").setup({
 				offset = -2,
 				foldsigns = {
-					closed = "●",
-					opened = "○",
-					folding = { "", "" },
+					close = "●",
+					open = "○",
+					seps = { "│", "┃" },
 				},
 			})
 		end,
