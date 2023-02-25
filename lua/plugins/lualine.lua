@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "VeryLazy",
+		event = "BufReadPre",
 		config = function()
 			local ok, lualine = pcall(require, "lualine")
 			local oc, navic = pcall(require, "nvim-navic")
@@ -60,7 +60,7 @@ return {
 				options = {
 					icons_enabled = true,
 					globalstatus = true,
-					disabled_filetypes = { statusline = { "lazy", "alpha" } },
+					disabled_filetypes = { statusline = { "alpha" } },
 					component_separators = "",
 					theme = {
 						normal = { c = { fg = colors.fg, bg = colors.bg } },

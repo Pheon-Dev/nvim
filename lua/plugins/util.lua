@@ -18,7 +18,7 @@ return {
 	-- persistence
 	{
 		"folke/persistence.nvim",
-		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+		event = "BufReadPre",
 		config = true,
 	},
 	"nvim-lua/plenary.nvim",
@@ -38,7 +38,7 @@ return {
 	"SmiteshP/nvim-navic",
 	{
 		"booperlv/nvim-gomove",
-		event = "VeryLazy",
+		event = "BufReadPre",
 		config = function()
 			require("gomove").setup({
 				-- whether or not to map default key bindings, (true/false)
