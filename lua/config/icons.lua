@@ -171,7 +171,7 @@ else
 			ArrowClosed = "",
 			ArrowOpen = "",
 			Lock = " ",
-			Circle = " ",
+			Circle = " ",
 			BigCircle = " ",
 			BigUnfilledCircle = " ",
 			Close = " ",

@@ -159,12 +159,13 @@ return {
 					s = { ":Telescope git_status theme=dropdown initial_mode=normal<cr>", "Git Status" },
 				},
 			},
+			h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
 			i = { ":Neoconf<cr>", "Neo Conf" },
 			j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
 			k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
 			l = { toggle_lazygit, "LazyGit" },
-			m = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
-			n = { ":Telescope notify theme=ivy<cr> initial_mode=normal", "Notifications" },
+			m = { ":Telescope marks theme=dropdown initial_mode=insert<cr>", "Marks" },
+			n = { ":Telescope notify theme=ivy initial_mode=normal<cr>", "Notifications" },
 			o = {
 				name = "Others",
 				c = {

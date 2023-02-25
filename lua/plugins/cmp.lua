@@ -144,6 +144,7 @@ return {
 			sources = cmp.config.sources({
 				{ name = "luasnip" },
 				{ name = "cmp_tabnine" },
+				{ name = "buffer" },
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
 				{ name = "crates" },
@@ -151,7 +152,6 @@ return {
 				{ name = "cmdline" },
 				{ name = "emoji" },
 				{ name = "nvim_lua" },
-				{ name = "buffer" },
 				{ name = "path" },
 			}),
 			formatting = {

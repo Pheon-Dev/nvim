@@ -67,6 +67,7 @@ return {
 		event = "VeryLazy",
 		config = function()
 			require("lsp_lines").register_lsp_virtual_lines()
+			-- vim.keymap.set("n", "<Leader>xl", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
 		end,
 	},
 	-- formatters
