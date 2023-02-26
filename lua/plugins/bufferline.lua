@@ -64,7 +64,7 @@ return {
 				--     return true
 				--   end
 				-- end,
-				--[[ offsets = { { filetype = "NvimTree", text = "File Explorer" } }, ]]
+				offsets = { { filetype = "NvimTree", text = "Nvim-Tree" } },
 				show_buffer_icons = true, -- disable filetype icons for buffers
 				show_buffer_close_icons = true,
 				show_close_icon = true,

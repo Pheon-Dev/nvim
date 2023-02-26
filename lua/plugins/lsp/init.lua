@@ -1,7 +1,8 @@
 return {
 	{
 		"lvimuser/lsp-inlayhints.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
+		event = "BufReadPre",
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -64,13 +65,12 @@ return {
 	{
 		-- url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 		"Pheon-Dev/lsp_lines.nvim",
-		event = "VeryLazy",
+		event = "BufReadPre",
 		config = function()
 			require("lsp_lines").register_lsp_virtual_lines()
 			-- vim.keymap.set("n", "<Leader>xl", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
 		end,
 	},
-	-- formatters
 	{
 		"jose-elias-alvarez/null-ls.nvim",
 		event = "BufReadPre",
