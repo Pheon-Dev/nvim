@@ -96,8 +96,9 @@ return {
 
 		local mappings = {
 			[";"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
+			-- [" "] = { ":ReachOpen marks<cr>", "Marks" },
+			b = { ":Antelope buffers<cr>", "Buffers" },
 			a = { ":ASToggle<cr>", "Auto Save Toggle" },
-			b = { ":Telescope buffers initial_mode=normal previewer=false theme=dropdown<cr>", "Buffers" },
 			c = {
 				name = "Codeium",
 				j = { ":Codeium Enable<cr>", "Enable" },
@@ -164,7 +165,7 @@ return {
 			j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
 			k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
 			l = { toggle_lazygit, "LazyGit" },
-			m = { ":Telescope marks theme=dropdown initial_mode=insert<cr>", "Marks" },
+			m = { ":Antelope marks<cr>", "Marks" },
 			n = { ":Telescope notify theme=ivy initial_mode=normal<cr>", "Notifications" },
 			o = {
 				name = "Others",

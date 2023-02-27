@@ -265,7 +265,7 @@ return {
 
 			ins_right({
 				function()
-					return "{...} %3{codeium#GetStatusString()}"
+					return "﯑ %3{codeium#GetStatusString()}"
 				end,
 				color = { fg = colors.grey },
 			})

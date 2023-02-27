@@ -135,7 +135,7 @@ return {
 			vim.api.nvim_set_hl(0, "NotifyTRACEBody", { bg = theme.color93 })
 
 			--[[ Blankline ]]
-			vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = theme.color1 })
+			vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = theme.color59 })
 			vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = theme.color2 })
 			vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = theme.color24 })
 
@@ -160,6 +160,12 @@ return {
 			vim.api.nvim_set_hl(0, "GitBlame", { fg = theme.color68, bg = theme.color1 })
 			vim.g.gitblame_highlight_group = "GitBlame"
 
+			-- Antelope
+			vim.api.nvim_set_hl(0, "AntelopeBorder", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "AntelopeMarkLocation", { fg = theme.color4 })
+			vim.api.nvim_set_hl(0, "AntelopeHandleMarkLocal", { fg = theme.color7, bg = theme.color0 })
+
+			vim.api.nvim_set_hl(0, "AntelopeMark", { fg = theme.color23, bg = theme.color0 })
 			-- Telescope
 			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
 
