@@ -58,7 +58,12 @@ return {
 			},
 		}
 
+		vim.cmd([[
+     delmarks Z 
+    ]])
+
 		require("antelope").marks(mark_options)
+
 		require("antelope").marks(buffer_options)
 	end,
 }

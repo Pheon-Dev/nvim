@@ -14,7 +14,7 @@ return {
 
 		dashboard.section.header.val = vim.split(logo, "\n")
 		dashboard.section.buttons.val = {
-			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
+			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("b", " " .. "   Bookmarks", ":Reach marks<CR>"),
 			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
 			dashboard.button("e", "פּ " .. "   Nvim-Tree", ":NvimTreeToggle<CR>"),
