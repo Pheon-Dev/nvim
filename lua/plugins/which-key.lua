@@ -232,6 +232,7 @@ return {
 				x = { ":TroubleToggle<cr>", "Toggle Trouble" },
 				l = { require("lsp_lines").toggle, "Toggle LSP Lines" },
 			},
+			y = { ":Telescope yank_history theme=dropdown previewer=false initial_mode=normal<cr>", "Yank History" },
 			z = { ":Lazy<cr>", "Lazy" },
 		}
 
