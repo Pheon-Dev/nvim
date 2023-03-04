@@ -8,6 +8,7 @@ return {
 		cmd = "Telescope",
 		config = function()
 			local actions = require("telescope.actions")
+			local fb_actions = require("telescope").extensions.file_browser.actions
 
 			require("telescope").setup({
 				defaults = {
@@ -66,7 +67,7 @@ return {
 				},
 				pickers = {
 					buffers = {
-						theme = "dropdown",
+						-- theme = "dropdown",
 						initial_mode = "normal",
 						previewer = false,
 					},

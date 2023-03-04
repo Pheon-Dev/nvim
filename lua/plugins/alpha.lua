@@ -18,11 +18,7 @@ return {
 			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
 			dashboard.button("e", "פּ " .. "   Nvim-Tree", ":NvimTreeToggle<CR>"),
-			dashboard.button(
-				"f",
-				" " .. "   Find File",
-				":Telescope find_files theme=dropdown initial_mode=insert<cr>"
-			),
+			dashboard.button("f", " " .. "   Find File", ":Telescope find_files initial_mode=insert<cr>"),
 			dashboard.button("h", " " .. "   Quit", ":qa<CR>"),
 			dashboard.button("j", " " .. "   Lir", ":lua require('lir.float').toggle()<cr>"),
 			dashboard.button("k", "ﯠ " .. "   Harpoon", ":lua require('harpoon.ui').toggle_quick_menu()<cr>"),
@@ -33,13 +29,9 @@ return {
 			),
 			dashboard.button("m", " " .. "   Mason", ":Mason<CR>"),
 			dashboard.button("n", " " .. "   Neoconf", ":Neoconf<CR>"),
-			dashboard.button(
-				"p",
-				" " .. "   File Browser",
-				":Telescope file_browser theme=dropdown initial_mode=normal<CR>"
-			),
+			dashboard.button("p", " " .. "   File Browser", ":Telescope file_browser initial_mode=normal<CR>"),
 			dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles<CR>"),
-			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep theme=dropdown<cr>"),
+			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep<cr>"),
 			dashboard.button(
 				"t",
 				" " .. "   TODO",

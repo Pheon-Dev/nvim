@@ -131,7 +131,7 @@ return {
 				d = { ":Alpha<cr>", "Dashboard" },
 			},
 			e = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
-			f = { ":Telescope find_files theme=dropdown initial_mode=insert<cr>", "Find Files" },
+			f = { ":Telescope find_files initial_mode=insert<cr>", "Find Files" },
 			g = {
 				name = "Git",
 				s = {
@@ -166,7 +166,7 @@ return {
 			k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
 			l = { toggle_lazygit, "LazyGit" },
 			m = { ":Antelope marks<cr>", "Marks" },
-			n = { ":Telescope notify theme=ivy initial_mode=normal<cr>", "Notifications" },
+			n = { ":Telescope notify initial_mode=normal<cr>", "Notifications" },
 			o = {
 				name = "Others",
 				c = {
@@ -176,12 +176,11 @@ return {
 				m = { ":Mason<cr>", "Mason" },
 				i = { ":lua require('lsp-inlayhints').toggle()<cr>", "Inlayhints" },
 				t = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
-				n = { ":Telescope notify theme=dropdown initial_mode=normal<cr>", "Issues" },
 				h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
 				x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
 			},
 			p = {
-				":Telescope file_browser theme=dropdown initial_mode=normal path=%:p:h select_buffer=tre<cr>",
+				":Telescope file_browser initial_mode=normal path=%:p:h select_buffer=tre<cr>",
 				"File Browser",
 			},
 			q = { ":bd<cr>", "Close Buffer" },
@@ -202,7 +201,7 @@ return {
 				p = { ":RustParentModule<cr>", "Parent Module" },
 				r = { ":RustRunnables<cr>", "Runnables" },
 			},
-			s = { ":Telescope live_grep theme=dropdown<cr>", "Live Grep" },
+			s = { ":Telescope live_grep<cr>", "Live Grep" },
 			t = {
 				name = "TypeScript | Terminal",
 				a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
