@@ -5,11 +5,14 @@ return {
 		require("antelope").setup({
 			notifications = true,
 		})
+		local marks = {
+			data = "Z",
+		}
+		vim.api.nvim_command("delmarks " .. marks.data)
 		local mark_options = {
 			filter = function(mark)
-				return mark:match("[a-z]") -- return true to disable
+				return mark:match("[a-zA-Z]")
 			end,
-			-- A map of action to key that should be used to invoke it
 			actions = {
 				split = "-",
 				vertsplit = "/",
@@ -57,10 +60,6 @@ return {
 				priority = "=",
 			},
 		}
-
-		vim.cmd([[
-     delmarks Z 
-    ]])
 
 		require("antelope").marks(mark_options)
 

@@ -16,7 +16,6 @@ return {
 		dashboard.section.header.val = vim.split(logo, "\n")
 		dashboard.section.buttons.val = {
 			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("b", " " .. "   Bookmarks", ":Reach marks<CR>"),
 			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
 			dashboard.button("e", "פּ " .. "   Nvim-Tree", ":NvimTreeToggle<CR>"),
 			dashboard.button(
@@ -36,8 +35,8 @@ return {
 			dashboard.button("n", " " .. "   Neoconf", ":Neoconf<CR>"),
 			dashboard.button(
 				"p",
-				" " .. "   File Manager",
-				":lua require('toggleterm.terminal').Terminal:new({cmd = 'joshuto', direction = 'float'}):toggle()<cr>"
+				" " .. "   File Browser",
+				":Telescope file_browser theme=dropdown initial_mode=normal<CR>"
 			),
 			dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles<CR>"),
 			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep theme=dropdown<cr>"),

@@ -97,8 +97,8 @@ return {
 		local mappings = {
 			[";"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
 			-- [" "] = { ":ReachOpen marks<cr>", "Marks" },
-			b = { ":Antelope buffers<cr>", "Buffers" },
 			a = { ":ASToggle<cr>", "Auto Save Toggle" },
+			b = { ":Antelope buffers<cr>", "Buffers" },
 			c = {
 				name = "Codeium",
 				j = { ":Codeium Enable<cr>", "Enable" },
@@ -179,6 +179,10 @@ return {
 				n = { ":Telescope notify theme=dropdown initial_mode=normal<cr>", "Issues" },
 				h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
 				x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
+			},
+			p = {
+				":Telescope file_browser theme=dropdown initial_mode=normal path=%:p:h select_buffer=tre<cr>",
+				"File Browser",
 			},
 			q = { ":bd<cr>", "Close Buffer" },
 			r = {
