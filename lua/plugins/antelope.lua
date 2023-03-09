@@ -2,13 +2,13 @@ return {
 	"Pheon-Dev/antelope",
 	event = "BufReadPre",
 	config = function()
-		require("antelope").setup({
-			notifications = true,
-		})
+		local antelope = require("antelope")
+
 		local marks = {
 			data = "Z",
 		}
 		vim.api.nvim_command("delmarks " .. marks.data)
+
 		local mark_options = {
 			filter = function(mark)
 				return mark:match("[a-zA-Z]")
@@ -61,8 +61,11 @@ return {
 			},
 		}
 
-		require("antelope").marks(mark_options)
+		antelope.marks(mark_options)
+		antelope.marks(buffer_options)
 
-		require("antelope").marks(buffer_options)
+		antelope.setup({
+			notifications = false,
+		})
 	end,
 }
