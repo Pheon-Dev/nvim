@@ -35,6 +35,13 @@ return {
 			require("mini.pairs").setup({})
 		end,
 	},
+	{
+		"utilyre/sentiment.nvim",
+		event = "BufReadPre",
+		config = function()
+			require("sentiment").setup({})
+		end,
+	},
 
 	-- surround
 	{
