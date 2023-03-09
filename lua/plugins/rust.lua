@@ -1,7 +1,7 @@
 return {
 	{
 		"saecki/crates.nvim",
-		event = { "BufRead Cargo.toml", "VeryLazy" },
+		event = { "BufRead Cargo.toml", "BufReadPre" },
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 		config = function()
 			local function show_documentation()
@@ -24,12 +24,12 @@ return {
 				avoid_prerelease = true,
 				autoload = true,
 				autoupdate = true,
-				autoupdate_throttle = 250,
+				-- autoupdate_throttle = 250,
 				loading_indicator = true,
 				date_format = "%Y-%m-%d",
 				thousands_separator = ".",
 				notification_title = "Crates",
-				curl_args = { "-sL", "--retry", "1" },
+				-- curl_args = { "-sL", "--retry", "1" },
 				disable_invalid_feature_diagnostic = false,
 				text = {
 					loading = "   Loading",
@@ -51,7 +51,7 @@ return {
 				},
 				popup = {
 					autofocus = false,
-					hide_on_select = false,
+					-- hide_on_select = false,
 					copy_register = '"',
 					style = "minimal",
 					border = "none",

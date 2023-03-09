@@ -96,7 +96,7 @@ return {
 
 		local mappings = {
 			[";"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
-			-- [" "] = { ":ReachOpen marks<cr>", "Marks" },
+			[" "] = { ":Telescope lazy <cr>", "Lazy Plugins" },
 			a = { ":ASToggle<cr>", "Auto Save Toggle" },
 			b = { ":Antelope buffers<cr>", "Buffers" },
 			c = {
