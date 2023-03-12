@@ -4,6 +4,10 @@ return {
 	config = function()
 		local antelope = require("antelope")
 
+		antelope.setup({
+			notifications = false,
+		})
+
 		local marks = {
 			data = "Z",
 		}
@@ -63,9 +67,5 @@ return {
 
 		antelope.marks(mark_options)
 		antelope.marks(buffer_options)
-
-		antelope.setup({
-			notifications = false,
-		})
 	end,
 }
