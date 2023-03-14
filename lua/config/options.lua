@@ -64,6 +64,7 @@ vim.o.laststatus = 2
 vim.o.softtabstop = 4
 vim.o.pumheight = 10
 vim.o.scrolloff = 10
+vim.g.virtcolumn_priority = 10
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.updatetime = 300
@@ -93,8 +94,9 @@ vim.g.gitblame_highlight_group = "Blame"
 vim.o.guifont = "Courier\\ New:h10"
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.g.virtcolumn_char = "▕" -- char to display the line
 
--- vim.cmd("set colorcolumn=120")
+vim.cmd("set colorcolumn=120")
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")
 vim.cmd("set nu rnu")

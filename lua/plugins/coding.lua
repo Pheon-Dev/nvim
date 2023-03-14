@@ -27,7 +27,17 @@ return {
 		-- end,
 	},
 
-	-- auto pairs
+	{
+		"xiyaowong/virtcolumn.nvim",
+		event = "BufReadPre",
+	},
+	{
+		"echasnovski/mini.splitjoin",
+		event = "VeryLazy",
+		config = function()
+			require("mini.splitjoin").setup({})
+		end,
+	},
 	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
