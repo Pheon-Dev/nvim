@@ -110,7 +110,7 @@ return {
 			--[[ vim.api.nvim_set_hl(0, "MatchParenCur", { fg = theme.color89 }) ]]
 			--[[ vim.api.nvim_set_hl(0, "MatchWordCur", { fg = theme.color89 }) ]]
 
-			--[[ Notify ]]
+			-- Notify
 			vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = theme.color93, bg = theme.color93 })
 			vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = theme.color93, bg = theme.color93 })
 			vim.api.nvim_set_hl(0, "NotifyINFOBorder", { fg = theme.color93, bg = theme.color93 })
@@ -135,16 +135,16 @@ return {
 			vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { bg = theme.color93 })
 			vim.api.nvim_set_hl(0, "NotifyTRACEBody", { bg = theme.color93 })
 
-			--[[ Blankline ]]
+			-- Blankline
 			vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = theme.color59 })
 			vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = theme.color2 })
 			vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = theme.color24 })
 
-			--[[ Yanky ]]
+			-- Yanky
 			vim.api.nvim_set_hl(0, "YankyYanked", { bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "YankyPut", { bg = theme.color4 })
 
-			--[[ Fold ]]
+			-- Fold
 			vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93 })
 
 			-- GitSigns
