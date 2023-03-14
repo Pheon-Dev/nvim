@@ -6,7 +6,7 @@ return {
 			enabled = true, -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
 			execution_message = {
 				message = function() -- message to print on save
-					return ("Saved: saved at " .. vim.fn.strftime("%H:%M:%S"))
+					return ("   Saved:   " .. vim.fn.strftime("%H:%M:%S"))
 				end,
 				dim = 0.18, -- dim the color of `message`
 				cleaning_interval = 1250, -- (milliseconds) automatically clean MsgArea after displaying `message`. See :h MsgArea
@@ -24,6 +24,7 @@ return {
 				end
 				return false -- can't save
 			end,
+
 			write_all_buffers = false, -- write all buffers when the current one meets `condition`
 			debounce_delay = 3000, -- saves the file at most every `debounce_delay` 135 milliseconds
 			callbacks = { -- functions to be executed at different intervals
