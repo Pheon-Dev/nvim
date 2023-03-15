@@ -219,6 +219,13 @@ else
 		},
 		-- Custom Section ﰟ↻
 		symbols = {
+			git = {
+				one = " ",
+				two = " ",
+				three = " ",
+				four = " ",
+				five = " ",
+			},
 			branch = "⎇ ",
 			hashprefix = " =",
 			ahead = "↑·",
