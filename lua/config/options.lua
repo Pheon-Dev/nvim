@@ -94,9 +94,9 @@ vim.g.gitblame_highlight_group = "Blame"
 vim.o.guifont = "Courier\\ New:h10"
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.opt.whichwrap:append("<,>,[,],h,l")
-vim.g.virtcolumn_char = "▕" -- char to display the line
+vim.g.virtcolumn_char = "┊" -- char to display the line
 
-vim.cmd("set colorcolumn=120")
+vim.cmd("set colorcolumn=80")
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")
 vim.cmd("set nu rnu")
