@@ -9,21 +9,10 @@ return {
 		},
 	},
 	{
-		"TheBlob42/houdini.nvim",
+		"max397574/better-escape.nvim",
 		event = "BufReadPre",
 		config = function()
-			-- default settings
-			require("houdini").setup({
-				mappings = { "jj" },
-				timeout = vim.o.timeoutlen,
-				check_modified = true,
-				escape_sequences = {
-					i = "<BS><BS><ESC>",
-					R = "<BS><BS><ESC>",
-					t = "<BS><BS><C-\\><C-n>",
-					c = "<BS><BS><C-c>",
-				},
-			})
+			require("better_escape").setup()
 		end,
 	},
 	{
