@@ -48,11 +48,11 @@ vim.cmd([[
 	augroup END
 ]])
 
-vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
-	callback = function()
-		require("scrollbar.handlers.search").handler.hide()
-	end,
-})
+-- vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
+-- 	callback = function()
+-- 		require("scrollbar.handlers.search").handler.hide()
+-- 	end,
+-- })
 
 --[[ vim.cmd([[ ]]
 --[[     augroup scrollbar_search_hide ]]

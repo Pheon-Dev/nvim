@@ -111,7 +111,8 @@ return {
 				foldsigns = {
 					close = "●",
 					open = "○",
-					seps = { "│", "┃" },
+					-- seps = { "│", "┃" },
+					seps = { " ", " " },
 				},
 			})
 		end,
