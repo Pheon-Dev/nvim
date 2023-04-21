@@ -10,7 +10,7 @@ return {
 			vim.keymap.set("n", "<A-j>", "<CMD>NavigatorDown<CR>")
 			vim.keymap.set("n", "<A-p>", "<CMD>NavigatorPrevious<CR>")
 
-			vim.keymap.set("n", "<C-l>", "<CMD>NavigatorPrevious<CR>")
+			vim.keymap.set("n", "<C-l>", "<CMD>NavigatorRight<CR>")
 		end,
 	},
 }
