@@ -219,6 +219,7 @@ return {
 				p = { ":LspUI diagnostic_prev<cr>", "Diagnostic Prev" },
 				d = { ":LspUI peek_definition<cr>", "Peek Definition" },
 			},
+			v = { ":Antelope tabs<cr>", "tabs" },
 			w = {
 				name = "Windows",
 				e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },

@@ -65,7 +65,18 @@ return {
 			},
 		}
 
+		-- default
+		local tab_options = {
+			show_icons = true,
+			show_current = false,
+			-- A map of action to key that should be used to invoke it
+			actions = {
+				delete = "<Space>",
+			},
+		}
+
+		antelope.tabpages(tab_options)
 		antelope.marks(mark_options)
-		antelope.marks(buffer_options)
+		antelope.buffers(buffer_options)
 	end,
 }
