@@ -202,14 +202,15 @@ return {
 				r = { ":RustRunnables<cr>", "Runnables" },
 			},
 			s = { ":Telescope live_grep<cr>", "Live Grep" },
-			t = {
-				name = "TypeScript | Terminal",
-				a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
-				b = { ":ToggleTerm size=20 direction=horizontal<cr>", "Horizontal Terminal" },
-				o = { ":TypescriptOrganizeImports<cr>", "Organise Imports" },
-				r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
-				f = { ":TypescriptFixAll<cr>", "Fix All" },
-			},
+			-- t = {
+			-- 	name = "TypeScript | Terminal | Tabs",
+			-- 	a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
+			-- 	b = { ":ToggleTerm size=20 direction=horizontal<cr>", "Horizontal Terminal" },
+			-- 	o = { ":TypescriptOrganizeImports<cr>", "Organise Imports" },
+			-- 	r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
+			-- 	f = { ":TypescriptFixAll<cr>", "Fix All" },
+			-- },
+			t = { ":Antelope tabpages<cr>", "tabs" },
 			u = {
 				name = "LSPUI",
 				h = { ":LspUI hover<cr>", "Hover" },
@@ -219,7 +220,6 @@ return {
 				p = { ":LspUI diagnostic_prev<cr>", "Diagnostic Prev" },
 				d = { ":LspUI peek_definition<cr>", "Peek Definition" },
 			},
-			v = { ":Antelope tabs<cr>", "tabs" },
 			w = {
 				name = "Windows",
 				e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },

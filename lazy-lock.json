@@ -1,6 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "500981ff6cefc7343e3959ef0f939bd0bfd49ba9" },
   "Navigator.nvim": { "branch": "master", "commit": "52225923679ec866651bb0c2e0691374131ec939" },
+  "NeoComposer.nvim": { "branch": "main", "commit": "a85782bd7968eb462da03cbc2c186bc236f0b3c6" },
   "alpha-nvim": { "branch": "main", "commit": "87c204040e3f5d4c1c95067b35905d8f8a2f2545" },
   "animation.nvim": { "branch": "main", "commit": "fb77091ab72ec9971aee0562e7081182527aaa6a" },
   "antelope": { "branch": "main", "commit": "2c3885a50280638e0eaf9340094c135eaf6f0ccf" },
@@ -89,6 +90,7 @@
   "satellite.nvim": { "branch": "main", "commit": "223fd56405993175f60dbc0ee6bdda0582b78b19" },
   "sentiment.nvim": { "branch": "main", "commit": "54a6db15b630eccfa98c32a76baf90f21c6f1e40" },
   "sj.nvim": { "branch": "main", "commit": "973b4b045b164e9bb9b9d4f1f34c0dddb19041f3" },
+  "sqlite.lua": { "branch": "master", "commit": "6c00ab414dc1b69621b145908c582b747f24b46e" },
   "structrue-go.nvim": { "branch": "main", "commit": "4282b860cde0f5f25a1fb1af3ea8edb0db278e73" },
   "stylua-nvim": { "branch": "main", "commit": "ce59a353f02938cba3e0285e662fcd3901cd270f" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "e0fcb12702ad0d2873544a31730f9aaef04fd032" },
