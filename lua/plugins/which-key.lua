@@ -220,6 +220,7 @@ return {
 				p = { ":LspUI diagnostic_prev<cr>", "Diagnostic Prev" },
 				d = { ":LspUI peek_definition<cr>", "Peek Definition" },
 			},
+			v = { ":NeoAIToggle<cr>", "Chat-GPT" },
 			w = {
 				name = "Windows",
 				e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },

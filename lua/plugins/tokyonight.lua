@@ -8,7 +8,6 @@ return {
 			vim.g.style = "storm" -- night, day, night, moon
 			vim.o.background = "dark"
 			--[[ vim.g.tokyonight_transparent = true ]]
-
 			local theme = require("config.colors")
 
 			require("tokyonight.colors").default = {
@@ -68,7 +67,6 @@ return {
 			--[[ vim.api.nvim_set_hl(0, "DashboardShortCut", { fg = theme.color83 }) ]]
 			--[[ vim.api.nvim_set_hl(0, "WinBar", { fg = theme.color83, bg = theme.color0 }) ]]
 			--[[ vim.api.nvim_set_hl(0, "WinBarNC", { fg = theme.color83, bg = theme.color0 }) ]]
-
 			--[[ Lir ]]
 			vim.api.nvim_set_hl(0, "LirFloatNormal", { bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "LirFloatCursorLine", { bg = theme.color2 })
@@ -77,7 +75,7 @@ return {
 			--[[ Harpoon ]]
 			vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color1, bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "Harpoon", { fg = theme.color3, bg = theme.color0 })
-			--[[ vim.api.nvim_set_hl(0, "HarpoonWindow", { fg = theme.color4, bg = theme.color8 }) ]]
+			vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = theme.color1 })
 
 			--[[ CMP ]]
 			--[[ vim.api.nvim_set_hl(0, "PmenuThumb", { fg = theme.color59, bg = theme.color59 }) ]]
@@ -87,9 +85,9 @@ return {
 			vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color2, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = theme.color2, bg = theme.color0 })
 
-			--[[ Popup ]]
-			vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color1, bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color1 })
+			-- --[[ Popup ]]
+			vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color1, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color0 })
 
 			--[[ Noice ]]
 			vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color2 })
@@ -109,7 +107,6 @@ return {
 			--[[ vim.api.nvim_set_hl(0, "MatchWord", { fg = theme.color89 }) ]]
 			--[[ vim.api.nvim_set_hl(0, "MatchParenCur", { fg = theme.color89 }) ]]
 			--[[ vim.api.nvim_set_hl(0, "MatchWordCur", { fg = theme.color89 }) ]]
-
 			-- Notify
 			vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = theme.color93, bg = theme.color93 })
 			vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = theme.color93, bg = theme.color93 })
@@ -167,6 +164,7 @@ return {
 			vim.api.nvim_set_hl(0, "AntelopeHandleMarkLocal", { fg = theme.color7, bg = theme.color0 })
 
 			vim.api.nvim_set_hl(0, "AntelopeMark", { fg = theme.color23, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "AntelopeHandleTabpage", { fg = theme.color7, bg = theme.color0 })
 
 			-- Telescope
 			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
