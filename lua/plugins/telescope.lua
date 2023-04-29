@@ -3,7 +3,6 @@ return {
 		"nvim-telescope/telescope-file-browser.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	},
-	{ "nvim-telescope/telescope.nvim", dependencies = "tsakirist/telescope-lazy.nvim" },
 	{
 		"nvim-telescope/telescope.nvim",
 		cmd = "Telescope",
@@ -96,7 +95,6 @@ return {
 			require("telescope").load_extension("harpoon")
 			require("telescope").load_extension("file_browser")
 			require("telescope").load_extension("yank_history")
-			require("telescope").load_extension("lazy")
 		end,
 	},
 }

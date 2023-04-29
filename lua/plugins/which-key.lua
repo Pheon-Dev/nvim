@@ -76,6 +76,11 @@ return {
 
 		local Terminal = require("toggleterm.terminal").Terminal
 
+		local toggle_toipe = function()
+			local toipe = Terminal:new({ cmd = "toipe", direction = "float" })
+			return toipe:toggle()
+		end
+
 		local toggle_lazygit = function()
 			local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
 			return lazygit:toggle()
@@ -96,7 +101,7 @@ return {
 
 		local mappings = {
 			[";"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
-			[" "] = { ":Telescope lazy <cr>", "Lazy Plugins" },
+			[" "] = { toggle_toipe, "Toipe" },
 			a = { ":ASToggle<cr>", "Auto Save Toggle" },
 			b = { ":Antelope buffers<cr>", "Buffers" },
 			c = {
