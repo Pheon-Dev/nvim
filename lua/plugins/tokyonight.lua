@@ -15,7 +15,7 @@ return {
 				bg_dark = theme.color0,
 				bg = theme.color0,
 				bg_highlight = theme.color1,
-				terminal_black = theme.color0,
+				terminal_black = theme.color2,
 				fg = theme.color22,
 				fg_dark = theme.color23,
 				fg_gutter = theme.color2,
