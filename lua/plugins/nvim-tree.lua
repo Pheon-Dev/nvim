@@ -120,7 +120,7 @@ return {
 			sync_root_with_cwd = true,
 			auto_reload_on_write = true,
 			respect_buf_cwd = true,
-			disable_netrw = true,
+			disable_netrw = false,
 			hijack_netrw = false,
 			open_on_tab = false,
 			hijack_cursor = false,
