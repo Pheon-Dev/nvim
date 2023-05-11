@@ -68,14 +68,14 @@ return {
 			--[[ vim.api.nvim_set_hl(0, "WinBar", { fg = theme.color83, bg = theme.color0 }) ]]
 			--[[ vim.api.nvim_set_hl(0, "WinBarNC", { fg = theme.color83, bg = theme.color0 }) ]]
 			--[[ Lir ]]
-			vim.api.nvim_set_hl(0, "LirFloatNormal", { bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "LirFloatCursorLine", { bg = theme.color2 })
-			vim.api.nvim_set_hl(0, "LirFloatBorder", { fg = theme.color1, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "LirFloatNormal", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "LirFloatCursorLine", { bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "LirFloatBorder", { fg = theme.color1, bg = theme.color0 })
 
 			--[[ Harpoon ]]
-			vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color1, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color1, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "Harpoon", { fg = theme.color3, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = theme.color0 })
 
 			--[[ CMP ]]
 			--[[ vim.api.nvim_set_hl(0, "PmenuThumb", { fg = theme.color59, bg = theme.color59 }) ]]
