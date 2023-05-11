@@ -7,8 +7,8 @@ return {
 		if not ok then
 			vim.notify("Nvim-Tree didn't load properly!", "error")
 		end
-
 		-- local tree_cb = require("nvim-tree.config").nvim_tree_callback
+
 		local function on_attach(bufnr)
 			local api = require("nvim-tree.api")
 
@@ -35,14 +35,26 @@ return {
 			vim.keymap.set("n", "<", api.node.navigate.sibling.prev, opts("Previous Sibling"))
 			vim.keymap.set("n", ".", api.node.run.cmd, opts("Run Command"))
 			vim.keymap.set("n", "-", api.tree.change_root_to_parent, opts("Up"))
-			vim.keymap.set("n", "a", api.fs.create, opts("Create"))
+			-- vim.keymap.set("n", "a", api.fs.create, opts("Create"))
+			vim.keymap.set("n", "a", function()
+				local eventignore = vim.opt.eventignore:get()
+				vim.opt.eventignore:append("WinLeave")
+				api.fs.create()
+				vim.opt.eventignore = eventignore
+			end, { buffer = bufnr })
 			vim.keymap.set("n", "bmv", api.marks.bulk.move, opts("Move Bookmarked"))
 			vim.keymap.set("n", "B", api.tree.toggle_no_buffer_filter, opts("Toggle No Buffer"))
 			vim.keymap.set("n", "c", api.fs.copy.node, opts("Copy"))
 			vim.keymap.set("n", "C", api.tree.toggle_git_clean_filter, opts("Toggle Git Clean"))
 			vim.keymap.set("n", "[c", api.node.navigate.git.prev, opts("Prev Git"))
 			vim.keymap.set("n", "]c", api.node.navigate.git.next, opts("Next Git"))
-			vim.keymap.set("n", "d", api.fs.remove, opts("Delete"))
+			-- vim.keymap.set("n", "d", api.fs.remove, opts("Delete"))
+			vim.keymap.set("n", "d", function()
+				local eventignore = vim.opt.eventignore:get()
+				vim.opt.eventignore:append("WinLeave")
+				api.fs.remove()
+				vim.opt.eventignore = eventignore
+			end, { buffer = bufnr })
 			vim.keymap.set("n", "D", api.fs.trash, opts("Trash"))
 			vim.keymap.set("n", "E", api.tree.expand_all, opts("Expand All"))
 			vim.keymap.set("n", "e", api.fs.rename_basename, opts("Rename: Basename"))
@@ -63,7 +75,13 @@ return {
 			vim.keymap.set("n", "P", api.node.navigate.parent, opts("Parent Directory"))
 			vim.keymap.set("n", "q", api.tree.close, opts("Close"))
 			vim.keymap.set("n", ";", api.tree.close, opts("Close"))
-			vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
+			-- vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
+			vim.keymap.set("n", "r", function()
+				local eventignore = vim.opt.eventignore:get()
+				vim.opt.eventignore:append("WinLeave")
+				api.fs.rename()
+				vim.opt.eventignore = eventignore
+			end, { buffer = bufnr })
 			vim.keymap.set("n", "R", api.tree.reload, opts("Refresh"))
 			vim.keymap.set("n", "s", api.node.run.system, opts("Run System"))
 			vim.keymap.set("n", "S", api.tree.search_node, opts("Search"))
@@ -79,6 +97,7 @@ return {
 			-- Mappings migrated from view.mappings.list
 			--
 			-- You will need to insert "your code goes here" for any mappings with a custom action_cb
+
 			vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
 			vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Open"))
 			vim.keymap.set("n", "o", api.node.open.edit, opts("Open"))
@@ -95,8 +114,9 @@ return {
 		_.setup({
 			on_attach = on_attach,
 			sync_root_with_cwd = true,
+			auto_reload_on_write = true,
 			respect_buf_cwd = true,
-			disable_netrw = false,
+			disable_netrw = true,
 			hijack_netrw = false,
 			open_on_tab = false,
 			hijack_cursor = false,
@@ -125,7 +145,7 @@ return {
 				ignore = false,
 				timeout = 200,
 			},
-			hijack_unnamed_buffer_when_opening = true,
+			hijack_unnamed_buffer_when_opening = false,
 			view = {
 				adaptive_size = true,
 				width = 30,
@@ -144,7 +164,7 @@ return {
 				signcolumn = "yes",
 				float = {
 					enable = true,
-					quit_on_focus_loss = false,
+					quit_on_focus_loss = true,
 					open_win_config = {
 						relative = "editor",
 						border = "rounded",
@@ -175,18 +195,22 @@ return {
 			renderer = {
 				highlight_git = true,
 				highlight_opened_files = "none",
+				-- root_folder_label = ":~:s?$?/..?",
 				root_folder_label = false,
-
 				indent_markers = {
 					enable = false,
 				},
 
 				icons = {
+					modified_placement = "after",
+					git_placement = "before",
+					padding = " ",
 					show = {
 						file = true,
 						folder = true,
 						folder_arrow = true,
 						git = true,
+						modified = true,
 					},
 
 					glyphs = {

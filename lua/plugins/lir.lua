@@ -34,7 +34,7 @@ return {
 					["h"] = actions.up,
 					["l"] = actions.edit,
 					["b"] = actions.split,
-					["n"] = actions.vsplit,
+					["v"] = actions.vsplit,
 					["t"] = actions.tabedit,
 
 					["q"] = actions.quit,
