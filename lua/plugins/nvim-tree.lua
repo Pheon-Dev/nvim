@@ -1,6 +1,7 @@
 -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Open-At-Startup
 return {
 	"kyazdani42/nvim-tree.lua",
+	event = "VeryLazy",
 	cmd = "NvimTreeToggle",
 	config = function()
 		local ok, _ = pcall(require, "nvim-tree")
@@ -11,6 +12,21 @@ return {
 
 		local function on_attach(bufnr)
 			local api = require("nvim-tree.api")
+
+			local function retain_window(action)
+				local eventignore = vim.opt.eventignore:get()
+				vim.opt.eventignore:append("WinLeave")
+				if action == "Create" then
+					api.fs.create()
+				end
+				if action == "Rename" then
+					api.fs.rename()
+				end
+				if action == "Delete" then
+					api.fs.remove()
+				end
+				vim.opt.eventignore = eventignore
+			end
 
 			local function opts(desc)
 				return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
@@ -35,26 +51,18 @@ return {
 			vim.keymap.set("n", "<", api.node.navigate.sibling.prev, opts("Previous Sibling"))
 			vim.keymap.set("n", ".", api.node.run.cmd, opts("Run Command"))
 			vim.keymap.set("n", "-", api.tree.change_root_to_parent, opts("Up"))
-			-- vim.keymap.set("n", "a", api.fs.create, opts("Create"))
 			vim.keymap.set("n", "a", function()
-				local eventignore = vim.opt.eventignore:get()
-				vim.opt.eventignore:append("WinLeave")
-				api.fs.create()
-				vim.opt.eventignore = eventignore
-			end, { buffer = bufnr })
+				retain_window("Create")
+			end, opts("Create"))
 			vim.keymap.set("n", "bmv", api.marks.bulk.move, opts("Move Bookmarked"))
 			vim.keymap.set("n", "B", api.tree.toggle_no_buffer_filter, opts("Toggle No Buffer"))
 			vim.keymap.set("n", "c", api.fs.copy.node, opts("Copy"))
 			vim.keymap.set("n", "C", api.tree.toggle_git_clean_filter, opts("Toggle Git Clean"))
 			vim.keymap.set("n", "[c", api.node.navigate.git.prev, opts("Prev Git"))
 			vim.keymap.set("n", "]c", api.node.navigate.git.next, opts("Next Git"))
-			-- vim.keymap.set("n", "d", api.fs.remove, opts("Delete"))
 			vim.keymap.set("n", "d", function()
-				local eventignore = vim.opt.eventignore:get()
-				vim.opt.eventignore:append("WinLeave")
-				api.fs.remove()
-				vim.opt.eventignore = eventignore
-			end, { buffer = bufnr })
+				retain_window("Delete")
+			end, opts("Delete"))
 			vim.keymap.set("n", "D", api.fs.trash, opts("Trash"))
 			vim.keymap.set("n", "E", api.tree.expand_all, opts("Expand All"))
 			vim.keymap.set("n", "e", api.fs.rename_basename, opts("Rename: Basename"))
@@ -75,13 +83,9 @@ return {
 			vim.keymap.set("n", "P", api.node.navigate.parent, opts("Parent Directory"))
 			vim.keymap.set("n", "q", api.tree.close, opts("Close"))
 			vim.keymap.set("n", ";", api.tree.close, opts("Close"))
-			-- vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
 			vim.keymap.set("n", "r", function()
-				local eventignore = vim.opt.eventignore:get()
-				vim.opt.eventignore:append("WinLeave")
-				api.fs.rename()
-				vim.opt.eventignore = eventignore
-			end, { buffer = bufnr })
+				retain_window("Rename")
+			end, opts("Rename"))
 			vim.keymap.set("n", "R", api.tree.reload, opts("Refresh"))
 			vim.keymap.set("n", "s", api.node.run.system, opts("Run System"))
 			vim.keymap.set("n", "S", api.tree.search_node, opts("Search"))
