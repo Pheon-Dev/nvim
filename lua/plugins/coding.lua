@@ -36,6 +36,4 @@ return {
 			require("sentiment").setup({})
 		end,
 	},
-
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 }

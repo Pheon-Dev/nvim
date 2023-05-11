@@ -76,11 +76,6 @@ return {
 
 		local Terminal = require("toggleterm.terminal").Terminal
 
-		local toggle_toipe = function()
-			local toipe = Terminal:new({ cmd = "toipe", direction = "float" })
-			return toipe:toggle()
-		end
-
 		local toggle_lazygit = function()
 			local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
 			return lazygit:toggle()
@@ -100,14 +95,10 @@ return {
 		local crates = require("crates")
 
 		local mappings = {
-			[";"] = { ":lua require'structrue-go'.toggle()<cr>", "Structrue" },
-			[" "] = { toggle_toipe, "Toipe" },
 			a = { ":ASToggle<cr>", "Auto Save Toggle" },
 			b = { ":Antelope buffers<cr>", "Buffers" },
 			c = {
-				name = "Codeium",
-				j = { ":Codeium Enable<cr>", "Enable" },
-				k = { ":Codeium Disable<cr>", "Disable" },
+				name = "Crates",
 				t = { crates.toggle, "Toggle" },
 				r = { crates.reload, "Reload" },
 				v = { crates.show_versions_popup, "Show Versions Popup" },
@@ -131,10 +122,7 @@ return {
 					r = { crates.open_repository, "Repository" },
 				},
 			},
-			d = {
-				name = "DAP & Dashboard",
-				d = { ":Alpha<cr>", "Dashboard" },
-			},
+			d = { ":Alpha<cr>", "Dashboard" },
 			e = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
 			f = { ":Telescope find_files initial_mode=insert<cr>", "Find Files" },
 			g = {
@@ -166,7 +154,6 @@ return {
 				},
 			},
 			h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
-			i = { ":Neoconf<cr>", "Neo Conf" },
 			j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
 			k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
 			l = { toggle_lazygit, "LazyGit" },
@@ -183,10 +170,6 @@ return {
 				t = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
 				h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
 				x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
-			},
-			p = {
-				":Telescope file_browser initial_mode=normal path=%:p:h select_buffer=tre<cr>",
-				"File Browser",
 			},
 			q = { ":bd<cr>", "Close Buffer" },
 			r = {
@@ -207,26 +190,8 @@ return {
 				r = { ":RustRunnables<cr>", "Runnables" },
 			},
 			s = { ":Telescope live_grep<cr>", "Live Grep" },
-			-- t = {
-			-- 	name = "TypeScript | Terminal | Tabs",
-			-- 	a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
-			-- 	b = { ":ToggleTerm size=20 direction=horizontal<cr>", "Horizontal Terminal" },
-			-- 	o = { ":TypescriptOrganizeImports<cr>", "Organise Imports" },
-			-- 	r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
-			-- 	f = { ":TypescriptFixAll<cr>", "Fix All" },
-			-- },
 			t = { ":Antelope tabpages<cr>", "tabs" },
-			-- u = {
-			-- 	name = "LSPUI",
-			-- 	h = { ":LspUI hover<cr>", "Hover" },
-			-- 	r = { ":LspUI rename<cr>", "Rename" },
-			-- 	c = { ":LspUI code_action<cr>", "Code Action" },
-			-- 	n = { ":LspUI diagnostic_next<cr>", "Diagnostic Next" },
-			-- 	p = { ":LspUI diagnostic_prev<cr>", "Diagnostic Prev" },
-			-- 	d = { ":LspUI peek_definition<cr>", "Peek Definition" },
-			-- },
 			u = { ":MurenToggle<cr>", "Muren" },
-			v = { ":NeoAIToggle<cr>", "Chat-GPT" },
 			w = {
 				name = "Windows",
 				e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },

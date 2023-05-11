@@ -1,6 +1,7 @@
 return {
 	"windwp/nvim-ts-autotag",
 	{ "mrjones2014/nvim-ts-rainbow" },
+	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	"junegunn/rainbow_parentheses.vim",
 	-- references
 	{
@@ -115,7 +116,7 @@ return {
 				},
 				autopairs = { enable = true },
 				indent = { enable = true },
-				context_commentstring = { enable = true, enable_autocmd = false },
+				context_commentstring = { enable = true },
 			})
 		end,
 	},

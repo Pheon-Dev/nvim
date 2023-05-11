@@ -9,7 +9,7 @@ return {
 			shade_filetypes = {},
 			shade_terminals = false,
 			shading_factor = 1,
-			start_in_insert = true,
+			start_in_insert = false,
 			insert_mappings = true,
 			persist_size = false,
 			direction = "float",
