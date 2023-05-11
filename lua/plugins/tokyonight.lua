@@ -73,7 +73,7 @@ return {
 			vim.api.nvim_set_hl(0, "LirFloatBorder", { fg = theme.color1, bg = theme.color0 })
 
 			--[[ Harpoon ]]
-			vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color1, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color2, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "Harpoon", { fg = theme.color3, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = theme.color0 })
 
@@ -86,7 +86,7 @@ return {
 			vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = theme.color2, bg = theme.color0 })
 
 			-- --[[ Popup ]]
-			vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color1, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color2, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color0 })
 
 			--[[ Noice ]]
