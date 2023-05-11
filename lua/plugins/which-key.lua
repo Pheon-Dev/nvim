@@ -4,7 +4,6 @@ return {
 	config = function()
 		-- vim.o.timeout = true
 		-- vim.o.timeoutlen = 300
-		local a = 3
 		local gs = require("gitsigns")
 		local rt = require("rust-tools")
 		local wk = require("which-key")
