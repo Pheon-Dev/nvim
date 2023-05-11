@@ -123,6 +123,7 @@ return {
 				},
 			},
 			d = { ":Alpha<cr>", "Dashboard" },
+			e = { ":MurenToggle<cr>", "Muren" },
 			f = { ":Telescope find_files initial_mode=insert<cr>", "Find Files" },
 			g = {
 				name = "Git",
@@ -191,7 +192,6 @@ return {
 			},
 			s = { ":Telescope live_grep<cr>", "Live Grep" },
 			t = { ":Antelope tabpages<cr>", "tabs" },
-			u = { ":MurenToggle<cr>", "Muren" },
 			w = {
 				name = "Windows",
 				e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },

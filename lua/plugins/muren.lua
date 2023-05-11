@@ -24,7 +24,7 @@ return {
 			patterns_width = 30,
 			patterns_height = 10,
 			options_width = 15,
-			preview_height = 12,
+			preview_height = 16,
 			-- options order in ui
 			order = {
 				"buffer",
