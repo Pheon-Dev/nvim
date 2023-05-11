@@ -36,8 +36,18 @@
 
     ***
 
+*   [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
+    ![Mason](rice/mason.png)
+
+    ***
+
 *   [AckslD/muren.nvim](https://github.com/AckslD/muren.nvim)
     ![Muren](rice/muren.png)
+
+    ***
+
+*   [folke/noice.nvim](https://github.com/folke/noice.nvim)
+    ![Noice](rice/noice.png)
 
     ***
 
