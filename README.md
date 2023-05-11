@@ -1,10 +1,52 @@
 # PHEON-DEV
 
-![Alpha](rice/alpha.png)
-![Antelope](rice/antelope.png)
-![Harpoon](rice/harpoon.png)
-![Lazygit](rice/lazygit.png)
-![Lsp](rice/lsp.png)
-![Muren](rice/muren.png)
-![Nvim-Tree](rice/nvim-tree.png)
-![Telescope](rice/telescope.png)
+    ------------------------
+
+*   [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+
+*   [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
+    ![Alpha](rice/alpha.png)
+
+    ***
+
+*   [Pheon-Dev/antelope](https://github.com/Pheon-Dev/antelope)
+    ![Antelope](rice/antelope.png)
+
+    ***
+
+*   [Pheon-Dev/antelope](https://github.com/Pheon-Dev/antelope)
+    ![Harpoon](rice/harpoon.png)
+
+    ***
+
+*   [folke/lazy.nvim](https://github.com/folke/lazy.nvim)
+    ![lazy](rice/lazy.png)
+
+    ***
+
+*   [Lazygit](https://github.com/jesseduffield/lazygit)
+
+*   [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+    ![Lazygit](rice/lazygit.png)
+
+    ***
+
+*   [Pheon-Dev/lsp\_lines.nvim](https://github.com/Pheon-Dev/lsp_lines.nvim)
+    ![Lsp](rice/lsp.png)
+
+    ***
+
+*   [AckslD/muren.nvim](https://github.com/AckslD/muren.nvim)
+    ![Muren](rice/muren.png)
+
+    ***
+
+*   [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
+
+*   [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+    ![Nvim-Tree](rice/nvim-tree.png)
+
+    ***
+
+*   [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+    ![Telescope](rice/telescope.png)
