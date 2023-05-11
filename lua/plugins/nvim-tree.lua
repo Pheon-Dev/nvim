@@ -8,7 +8,7 @@ return {
 			vim.notify("Nvim-Tree didn't load properly!", "error")
 		end
 
-		local tree_cb = require("nvim-tree.config").nvim_tree_callback
+		-- local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
 		local function on_attach(bufnr)
 			local api = require("nvim-tree.api")

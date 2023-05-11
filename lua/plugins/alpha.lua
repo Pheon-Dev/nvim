@@ -17,10 +17,10 @@ return {
 		dashboard.section.buttons.val = {
 			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
-			dashboard.button("e", "פּ " .. "   Nvim-Tree", ":NvimTreeToggle<CR>"),
 			dashboard.button("f", " " .. "   Find File", ":Telescope find_files initial_mode=insert<cr>"),
 			dashboard.button("h", " " .. "   Quit", ":qa<CR>"),
-			dashboard.button("j", " " .. "   Lir", ":lua require('lir.float').toggle()<cr>"),
+			dashboard.button("i", " " .. "   Lir", ":lua require('lir.float').toggle()<cr>"),
+			dashboard.button("j", "פּ " .. "   Nvim-Tree", ":NvimTreeToggle<CR>"),
 			dashboard.button("k", "ﯠ " .. "   Harpoon", ":lua require('harpoon.ui').toggle_quick_menu()<cr>"),
 			dashboard.button(
 				"l",

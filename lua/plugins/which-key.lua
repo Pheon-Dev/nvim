@@ -123,7 +123,6 @@ return {
 				},
 			},
 			d = { ":Alpha<cr>", "Dashboard" },
-			e = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
 			f = { ":Telescope find_files initial_mode=insert<cr>", "Find Files" },
 			g = {
 				name = "Git",
@@ -154,7 +153,8 @@ return {
 				},
 			},
 			h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
-			j = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+			i = { ":lua require('lir.float').toggle()<cr>", "Lir" },
+			j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
 			k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
 			l = { toggle_lazygit, "LazyGit" },
 			m = { ":Antelope marks<cr>", "Marks" },
