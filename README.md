@@ -14,7 +14,7 @@
 
     ***
 
-*   [Pheon-Dev/antelope](https://github.com/Pheon-Dev/antelope)
+*   [Pheon-Dev/harpoon](https://github.com/Pheon-Dev/harpoon)
     ![Harpoon](rice/harpoon.png)
 
     ***
