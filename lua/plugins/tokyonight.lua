@@ -70,7 +70,7 @@ return {
 			--[[ Lir ]]
 			vim.api.nvim_set_hl(0, "LirFloatNormal", { bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "LirFloatCursorLine", { bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "LirFloatBorder", { fg = theme.color1, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "LirFloatBorder", { fg = theme.color2, bg = theme.color0 })
 
 			--[[ Harpoon ]]
 			vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color2, bg = theme.color0 })
