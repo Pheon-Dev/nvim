@@ -29,7 +29,6 @@ return {
 			),
 			dashboard.button("m", " " .. "   Mason", ":Mason<CR>"),
 			dashboard.button("n", " " .. "   Neoconf", ":Neoconf<CR>"),
-			dashboard.button("p", " " .. "   File Browser", ":Telescope file_browser initial_mode=normal<CR>"),
 			dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles<CR>"),
 			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep<cr>"),
 			dashboard.button(

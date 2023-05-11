@@ -5,7 +5,7 @@ return {
 		event = "BufReadPre",
 		config = function()
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "alpha", "lazy" },
+				pattern = { "alpha", "lazy", "NvimTree" },
 				callback = function()
 					vim.b.miniindentscope_disable = true
 				end,
@@ -30,6 +30,7 @@ return {
 				"help",
 				"alpha",
 				"nvim-tree",
+				"NvimTree",
 				"Trouble",
 				"lazy",
 				"dashboard",
