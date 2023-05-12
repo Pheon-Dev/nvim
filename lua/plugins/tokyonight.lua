@@ -90,17 +90,17 @@ return {
 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color0 })
 
 			--[[ Noice ]]
-			vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color2 })
-			vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color2 })
+			vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color0 })
 
-			vim.api.nvim_set_hl(0, "NoicePopup", { bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NoicePopupmenuBorder", { fg = theme.color93, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NoicePopupBorder", { fg = theme.color93, bg = theme.color93 })
+			vim.api.nvim_set_hl(0, "NoicePopup", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NoicePopupmenuBorder", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NoicePopupBorder", { fg = theme.color2, bg = theme.color0 })
 
-			vim.api.nvim_set_hl(0, "NoiceCmdline", { bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = theme.color93, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = theme.color93, bg = theme.color93 })
+			vim.api.nvim_set_hl(0, "NoiceCmdline", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = theme.color2, bg = theme.color0 })
 
 			--[[ Matchup ]]
 			--[[ vim.api.nvim_set_hl(0, "MatchParen", { fg = theme.color89 }) ]]
@@ -108,29 +108,29 @@ return {
 			--[[ vim.api.nvim_set_hl(0, "MatchParenCur", { fg = theme.color89 }) ]]
 			--[[ vim.api.nvim_set_hl(0, "MatchWordCur", { fg = theme.color89 }) ]]
 			-- Notify
-			vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = theme.color93, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = theme.color93, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyINFOBorder", { fg = theme.color93, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { fg = theme.color93, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { fg = theme.color93, bg = theme.color93 })
+			vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyINFOBorder", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { fg = theme.color2, bg = theme.color0 })
 
-			vim.api.nvim_set_hl(0, "NotifyERRORIcon", { fg = theme.color87, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyWARNIcon", { fg = theme.color88, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyINFOIcon", { fg = theme.color89, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyDEBUGIcon", { fg = theme.color90, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyTRACEIcon", { fg = theme.color91, bg = theme.color93 })
+			vim.api.nvim_set_hl(0, "NotifyERRORIcon", { fg = theme.color87, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyWARNIcon", { fg = theme.color88, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyINFOIcon", { fg = theme.color89, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyDEBUGIcon", { fg = theme.color90, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyTRACEIcon", { fg = theme.color91, bg = theme.color0 })
 
-			vim.api.nvim_set_hl(0, "NotifyERRORTitle", { fg = theme.color87, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyWARNTitle", { fg = theme.color88, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyINFOTitle", { fg = theme.color89, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyDEBUGTitle", { fg = theme.color90, bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyTRACETitle", { fg = theme.color91, bg = theme.color93 })
+			vim.api.nvim_set_hl(0, "NotifyERRORTitle", { fg = theme.color87, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyWARNTitle", { fg = theme.color88, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyINFOTitle", { fg = theme.color89, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyDEBUGTitle", { fg = theme.color90, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyTRACETitle", { fg = theme.color91, bg = theme.color0 })
 
-			vim.api.nvim_set_hl(0, "NotifyERRORBody", { bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyWARNBody", { bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyINFOBody", { bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { bg = theme.color93 })
-			vim.api.nvim_set_hl(0, "NotifyTRACEBody", { bg = theme.color93 })
+			vim.api.nvim_set_hl(0, "NotifyERRORBody", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyWARNBody", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyINFOBody", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyTRACEBody", { bg = theme.color0 })
 
 			-- Blankline
 			vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = theme.color59 })
@@ -169,69 +169,65 @@ return {
 			-- Telescope
 			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
 
-			local purple0 = theme.colo60
-			local purple1 = theme.color59
-			local purple2 = theme.color1
-			local bg = theme.color0
-			local red1 = theme.color16
-			local green1 = theme.color7
-			local blue2 = theme.color5
-
 			----------------------------------------------------------------------
 			--                              Prompt                              --
 			----------------------------------------------------------------------
+			-- vim.api.nvim_set_hl(0, "TelescopePrompt", {
+			-- 	fg = theme.color0,
+			-- 	bg = theme.color0,
+			-- })
+
 			vim.api.nvim_set_hl(0, "TelescopePromptBorder", {
-				fg = purple2,
-				bg = purple2,
+				fg = theme.color1,
+				bg = theme.color1,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePromptNormal", {
-				fg = blue2,
-				bg = purple2,
+				fg = theme.color5,
+				bg = theme.color1,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePromptTitle", {
-				fg = bg,
-				bg = blue2,
+				fg = theme.color2,
+				bg = theme.color5,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePromptCounter", {
-				fg = blue2,
-				bg = purple2,
+				fg = theme.color5,
+				bg = theme.color1,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePromptPrefix", {
-				fg = blue2,
-				bg = purple2,
+				fg = theme.color2,
+				bg = theme.color0,
 			})
 
 			----------------------------------------------------------------------
 			--                              Result                              --
 			----------------------------------------------------------------------
 			vim.api.nvim_set_hl(0, "TelescopeResultsBorder", {
-				fg = purple2,
-				bg = purple2,
+				fg = theme.color1,
+				bg = theme.color0,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopeResultsNormal", {
 				fg = normal_hl.foreground,
-				bg = purple2,
+				bg = theme.color0,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopeResultsTitle", {
-				--[[ fg = normal_hl.foreground, ]]
-				fg = bg,
-				bg = green1,
+				fg = theme.color2,
+				bg = theme.color7,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopeSelection", {
 				fg = normal_hl.foreground,
-				bg = purple1,
+				bg = theme.color1,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", {
-				fg = purple0,
-				bg = purple1,
+				fg = theme.color2,
+				bg = theme.color0,
 			})
 
 			----------------------------------------------------------------------
@@ -239,18 +235,18 @@ return {
 			----------------------------------------------------------------------
 
 			vim.api.nvim_set_hl(0, "TelescopePreviewBorder", {
-				fg = purple1,
-				bg = purple1,
+				fg = theme.color2,
+				bg = theme.color0,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePreviewNormal", {
 				fg = normal_hl.foreground,
-				bg = purple1,
+				bg = theme.color0,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePreviewTitle", {
-				fg = bg,
-				bg = red1,
+				fg = theme.color2,
+				bg = theme.color16,
 			})
 
 			-- vim.api.nvim_set_hl(0, "TelescopePreviewLine", {
@@ -260,7 +256,7 @@ return {
 			--
 			vim.api.nvim_set_hl(0, "TelescopePreviewMatch", {
 				fg = normal_hl.foreground,
-				bg = purple1,
+				bg = theme.color0,
 			})
 		end,
 	},

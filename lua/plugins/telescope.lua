@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
+		event = "VeryLazy",
 		cmd = "Telescope",
 		config = function()
 			local actions = require("telescope.actions")
