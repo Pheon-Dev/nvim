@@ -172,6 +172,7 @@ return {
 				h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
 				x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
 			},
+			p = { ":Antelope tabpages<cr>", "tabs" },
 			q = { ":bd<cr>", "Close Buffer" },
 			r = {
 				name = "Rust",
@@ -191,7 +192,12 @@ return {
 				r = { ":RustRunnables<cr>", "Runnables" },
 			},
 			s = { ":Telescope live_grep<cr>", "Live Grep" },
-			t = { ":Antelope tabpages<cr>", "tabs" },
+			t = {
+				name = "TODO",
+				t = { ":TodoTelescope<cr>", "Telescope" },
+				q = { ":TodoQuickFix<cr>", "QuickFix" },
+				r = { ":TodoTrouble<cr>", "Trouble" },
+			},
 			w = {
 				name = "Windows",
 				e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },
