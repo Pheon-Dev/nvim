@@ -1,4 +1,9 @@
 return {
+	-- {
+	-- 	"kevinhwang91/nvim-bqf",
+	-- 	event = "BufReadPre",
+	-- 	config = true,
+	-- },
 	{
 		"folke/trouble.nvim",
 		event = "BufReadPre",
