@@ -295,3 +295,18 @@ local opts = { noremap = true, silent = true }
 
 vim.keymap.set("v", "<leader>cU", crates.upgrade_crates, opts)
 vim.keymap.set("v", "<leader>cu", crates.update_crates, opts)
+
+-- todo-comments
+vim.keymap.set("n", "]t", function()
+	require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+	require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+-- You can also specify a list of valid jump keywords
+
+-- vim.keymap.set("n", "]t", function()
+-- 	require("todo-comments").jump_next({ keywords = { "ERROR", "WARNING" } })
+-- end, { desc = "Next error/warning todo comment" })
