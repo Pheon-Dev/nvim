@@ -171,6 +171,7 @@ return {
 
 			-- Lazy
 			vim.api.nvim_set_hl(0, "LazyNormal", { bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "LazyButtonActive", { bg = theme.color72, fg = theme.color0 })
 
 			-- Telescope
 			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)

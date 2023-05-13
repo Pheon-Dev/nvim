@@ -7,6 +7,7 @@ return {
 		local gs = require("gitsigns")
 		local rt = require("rust-tools")
 		local wk = require("which-key")
+
 		wk.setup({
 			plugins = {
 				marks = true,

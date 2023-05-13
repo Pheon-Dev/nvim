@@ -8,10 +8,6 @@ return {
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
 		dependencies = {
-			{ "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-			{ "folke/neodev.nvim", config = true },
-			"mason.nvim",
-			{ "williamboman/mason-lspconfig.nvim", config = { automatic_installation = true } },
 			"hrsh7th/cmp-nvim-lsp",
 			"ms-jpq/coq_nvim",
 			"SmiteshP/nvim-navic",
@@ -95,7 +91,6 @@ return {
 
 	-- cmdline tools and lsp servers
 	{
-
 		"williamboman/mason.nvim",
 		cmd = "Mason",
 		keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },

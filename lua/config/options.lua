@@ -72,7 +72,6 @@ vim.o.updatetime = 300
 --[[ vim.g.move_normal_option = 1 ]]
 --[[ vim.g.move_key_modifier_visualmode = "S" ]]
 --[[ vim.g.move_key_modifier = "C" ]]
-
 --[[ ufo ]]
 vim.o.foldcolumn = "0" -- '1', '0' is not bad
 vim.o.foldnestmax = "1" -- '1', '0' is not bad
