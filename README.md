@@ -24,6 +24,11 @@
 
     ***
 
+*   [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+    ![Gitsigns](rice/git.png)
+
+    ***
+
 *   [Lazygit](https://github.com/jesseduffield/lazygit)
 
 *   [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
