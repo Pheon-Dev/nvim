@@ -100,9 +100,7 @@
 *   [winshift.nvim](https://github.com/sindrets/winshift.nvim)
 *   [yanky.nvim](https://github.com/gbprod/yanky.nvim)
 
-<!---->
-
-*   [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+## Screenshots
 
 *   [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
     ![Alpha](rice/alpha.png)
