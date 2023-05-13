@@ -81,16 +81,9 @@ return {
 			return lazygit:toggle()
 		end
 
-		local next_hunk = function()
-			gs.next_hunk()
-		end
-		local prev_hunk = function()
-			gs.prev_hunk()
-		end
 		local blame_line = function()
 			gs.blame_line({ full = true })
 		end
-		local diff_this = gs.diffthis
 
 		local crates = require("crates")
 
