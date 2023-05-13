@@ -14,6 +14,11 @@ return {
 			{ "williamboman/mason-lspconfig.nvim", config = { automatic_installation = true } },
 			"hrsh7th/cmp-nvim-lsp",
 			"ms-jpq/coq_nvim",
+			"SmiteshP/nvim-navic",
+			"mason.nvim",
+			{ "williamboman/mason-lspconfig.nvim", config = { automatic_installation = true } },
+			{ "folke/neoconf.nvim", cmd = "Neoconf", config = true },
+			{ "folke/neodev.nvim", config = true },
 		},
 		---@type lspconfig.options
 		servers = nil,
