@@ -201,10 +201,9 @@ return {
 			})
 
 			wins_right({
-				navic.get_location,
-				cond = navic.is_available,
-				color = { fg = colors.grey },
-				padding = { right = 1 },
+				function()
+					return navic.get_location()
+				end,
 			})
 
 			--[[ STATUSLINE ]]
