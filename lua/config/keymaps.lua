@@ -10,7 +10,6 @@ map("n", "<C-s>", ":lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent 
 map("n", "<C-p>", ":Prettier<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 map("n", "<C-q>", ":w! | bp | sp | bn | bd!<cr>", { noremap = true, silent = true })
 --[[ map("n", "<C-x>", ":qa!<cr>", { noremap = true, silent = true }) ]]
-
 -- Windows
 map("n", "vj", ":vsplit<cr>", { noremap = true, silent = true })
 map("n", "vk", ":split<cr>", { noremap = true, silent = true })
@@ -234,7 +233,6 @@ map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true
 map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
 
 --[[ DAP ]]
-
 --[[ map("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = true }) ]]
 --[[ map("n", "<F5>", ":lua require'dap'.continue()<CR>", { noremap = true, silent = true }) ]]
 --[[ map("n", "<F10>", ":lua require'dap'.step_over()<CR>", { noremap = true, silent = true }) ]]
@@ -255,7 +253,6 @@ map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true
 --[[ ) ]]
 --[[ map("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true }) ]]
 --[[ map("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true }) ]]
-
 --[[ Move ]]
 map("n", "_", "<Plug>GoNSMLeft", {})
 map("n", "-", "<Plug>GoNSMDown", {})
