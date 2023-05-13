@@ -1,5 +1,3 @@
-# PHEON-DEV
-
 ## Screenshots
 
 *   [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
