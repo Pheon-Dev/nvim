@@ -144,9 +144,9 @@ return {
 			sources = cmp.config.sources({
 				{ name = "luasnip" },
 				{ name = "cmp_tabnine" },
-				{ name = "buffer" },
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
+				{ name = "buffer" },
 				{ name = "crates" },
 				{ name = "orgmode" },
 				{ name = "cmdline" },
@@ -184,10 +184,10 @@ return {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
 				{ name = "luasnip" },
-				{ name = "cmp_tabnine" },
 				{ name = "nvim_lsp_signature_help" },
-				{ name = "buffer" },
 				{ name = "nvim_lsp" },
+				{ name = "cmp_tabnine" },
+				{ name = "buffer" },
 				{ name = "nvim_lua" },
 				{ name = "path" },
 			},

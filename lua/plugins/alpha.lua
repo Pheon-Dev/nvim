@@ -15,8 +15,8 @@ return {
 
 		dashboard.section.header.val = vim.split(logo, "\n")
 		dashboard.section.buttons.val = {
-			dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
+			-- dashboard.button("a", " " .. "   New File", ":ene <BAR> startinsert <CR>"),
+			-- dashboard.button("c", " " .. "   Config", ":e $MYVIMRC <CR>"),
 			dashboard.button("f", " " .. "   Find File", ":Telescope find_files initial_mode=insert<cr>"),
 			dashboard.button("h", " " .. "   Quit", ":qa<CR>"),
 			dashboard.button("i", " " .. "   Lir", ":lua require('lir.float').toggle()<cr>"),
@@ -28,7 +28,7 @@ return {
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>"
 			),
 			dashboard.button("m", " " .. "   Mason", ":Mason<CR>"),
-			dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles<CR>"),
+			-- dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles<CR>"),
 			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep<cr>"),
 			dashboard.button(
 				"t",

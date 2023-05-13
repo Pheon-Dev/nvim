@@ -108,11 +108,11 @@ return {
 			--[[ vim.api.nvim_set_hl(0, "MatchParenCur", { fg = theme.color89 }) ]]
 			--[[ vim.api.nvim_set_hl(0, "MatchWordCur", { fg = theme.color89 }) ]]
 			-- Notify
-			vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = theme.color2, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = theme.color2, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "NotifyINFOBorder", { fg = theme.color2, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { fg = theme.color2, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = theme.color1, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = theme.color1, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyINFOBorder", { fg = theme.color1, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { fg = theme.color1, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { fg = theme.color1, bg = theme.color0 })
 
 			vim.api.nvim_set_hl(0, "NotifyERRORIcon", { fg = theme.color87, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "NotifyWARNIcon", { fg = theme.color88, bg = theme.color0 })
@@ -166,6 +166,12 @@ return {
 			vim.api.nvim_set_hl(0, "AntelopeMark", { fg = theme.color23, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "AntelopeHandleTabpage", { fg = theme.color7, bg = theme.color0 })
 
+			-- Mason
+			vim.api.nvim_set_hl(0, "MasonNormal", { bg = theme.color1 })
+
+			-- Lazy
+			vim.api.nvim_set_hl(0, "LazyNormal", { bg = theme.color1 })
+
 			-- Telescope
 			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
 
@@ -184,7 +190,7 @@ return {
 
 			vim.api.nvim_set_hl(0, "TelescopePromptNormal", {
 				fg = theme.color5,
-				bg = theme.color1,
+				bg = theme.color0,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePromptTitle", {
@@ -194,7 +200,7 @@ return {
 
 			vim.api.nvim_set_hl(0, "TelescopePromptCounter", {
 				fg = theme.color5,
-				bg = theme.color1,
+				bg = theme.color0,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePromptPrefix", {
