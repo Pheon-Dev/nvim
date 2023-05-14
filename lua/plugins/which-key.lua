@@ -180,6 +180,7 @@ return {
 				s = { ":TodoTelescope<cr>", "Telescope" },
 				t = { ":TodoTrouble<cr>", "Trouble" },
 			},
+			u = { ":NodeAction<cr>", "Node Action" },
 			w = {
 				name = "Windows",
 				e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },
