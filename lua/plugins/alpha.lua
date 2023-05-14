@@ -4,13 +4,13 @@ return {
 	config = function()
 		local dashboard = require("alpha.themes.dashboard")
 		local logo = [[
-░░░░░░░   ░░    ░░  ░░░░░░░   ░░░░░░   ░░░    ░░           ░░░░░░░   ░░░░░░░  ░░    ░░  
+░░░░░░░   ░░    ░░  ░░░░░░░   ░░░░░░   ░░░    ░░           ░░░░░░░   ░░░░░░░  ░░    ░░
 ░███████╗ ░██╗  ░██╗░███████╗░░██████╗ ░███╗  ░██╗     ⠀⠀⠀⠀░███████╗ ░███████╗░██╗  ░██╗
 ░██░░░░██╗░██░░░░██║░██░░═══╝░██╔══░██╗░████░╗░██║░░░░░░░  ░██╔══░██╗░██░░═══╝░██║  ░██║
 ░███████╔╝░████████║░█████╗  ░██║  ░██║░██╔███░██║ ███████╗░██║  ░██║░█████╗   ██║ ░░██║
 ░██╔════╝ ░██╔══░██║░██░░░░   ██░░░░██║░██║  ████║  ╚═════╝░██░░░░██║░██░░░░    ██░░██╔╝
- ██║       ██║   ██║ ███████╗  ██████╔╝ ██║   ███║          ███████╔╝ ███████╗   ████╔╝ 
-  ╚╝        ╚╝⠀   ╚╝  ╚═════╝   ╚════┘   ╚╝  ⠀ ╚═╝      ⠀    ╚═════╝   ╚═════╝    ╚══╝  
+ ██║       ██║   ██║ ███████╗  ██████╔╝ ██║   ███║          ███████╔╝ ███████╗   ████╔╝
+  ╚╝        ╚╝⠀   ╚╝  ╚═════╝   ╚════┘   ╚╝  ⠀ ╚═╝      ⠀    ╚═════╝   ╚═════╝    ╚══╝
 ]]
 
 		dashboard.section.header.val = vim.split(logo, "\n")
@@ -28,7 +28,7 @@ return {
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>"
 			),
 			dashboard.button("m", " " .. "   Mason", ":Mason<CR>"),
-			-- dashboard.button("r", " " .. "   Recent files", ":Telescope oldfiles<CR>"),
+			dashboard.button("n", " " .. "   Notifications", ":Telescope notify<CR>"),
 			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep<cr>"),
 			dashboard.button(
 				"t",
