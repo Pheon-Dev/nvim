@@ -56,9 +56,15 @@ return {
 			vim.cmd("colorscheme tokyonight")
 
 			vim.api.nvim_set_hl(0, "Visual", { bg = theme.color65 })
-			vim.api.nvim_set_hl(0, "IncSearch", { fg = theme.color0, bg = theme.color25 })
+			vim.api.nvim_set_hl(0, "Search", { fg = theme.color1, bg = theme.color89 })
+			vim.api.nvim_set_hl(0, "IncSearch", { fg = theme.color89, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "ColorColumn", { bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color100 })
+
+			-- Hlslens
+			vim.api.nvim_set_hl(0, "HlSearchNear", { fg = theme.color89, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "HlSearchLens", { fg = theme.color89, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "HlSearchLensNear", { fg = theme.color0, bg = theme.color89 })
 
 			--[[ Dashboard ]]
 			vim.api.nvim_set_hl(0, "DashboardHeader", { fg = theme.color3 })
