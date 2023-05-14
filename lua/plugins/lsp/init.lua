@@ -58,6 +58,25 @@ return {
 			local servers = plugin.servers or require("plugins.lsp.servers")
 			local coq = require("coq")
 			for server, opts in pairs(servers) do
+				local hl_name = "FloatBorder"
+				local border = {
+					{ "╭", hl_name },
+					{ "─", hl_name },
+					{ "╮", hl_name },
+					{ "│", hl_name },
+					{ "╯", hl_name },
+					{ "─", hl_name },
+					{ "╰", hl_name },
+					{ "│", hl_name },
+				}
+
+				-- LSP settings (for overriding per client)
+				local handlers = {
+					["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
+					["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
+				}
+
+				opts.handlers = handlers
 				opts.capabilities = capabilities
 				require("lspconfig")[server].setup(coq.lsp_ensure_capabilities(opts))
 			end
