@@ -15,7 +15,7 @@ return {
 				bg_dark = theme.color0,
 				bg = theme.color0,
 				bg_highlight = theme.color1,
-				terminal_black = theme.color2,
+				terminal_black = theme.color24,
 				fg = theme.color22,
 				fg_dark = theme.color23,
 				fg_gutter = theme.color2,
@@ -87,6 +87,7 @@ return {
 
 			-- --[[ Popup ]]
 			vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color2, bg = theme.color0 })
+			-- vim.api.nvim_set_hl(0, "NormalFloat", { fg = theme.color2, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color0 })
 
 			--[[ Noice ]]
@@ -102,11 +103,17 @@ return {
 			vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = theme.color2, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = theme.color2, bg = theme.color0 })
 
-			--[[ Matchup ]]
-			--[[ vim.api.nvim_set_hl(0, "MatchParen", { fg = theme.color89 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "MatchWord", { fg = theme.color89 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "MatchParenCur", { fg = theme.color89 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "MatchWordCur", { fg = theme.color89 }) ]]
+			-- Match
+			vim.api.nvim_set_hl(0, "MatchParen", { fg = theme.color89 })
+			-- vim.api.nvim_set_hl(0, "MatchWord", { fg = theme.color89 })
+			-- vim.api.nvim_set_hl(0, "MatchParenCur", { fg = theme.color89 })
+			-- vim.api.nvim_set_hl(0, "MatchWordCur", { fg = theme.color89 })
+
+			-- Illuminate
+			vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = theme.color99, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = theme.color99, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = theme.color89, bg = theme.color1 })
+
 			-- Notify
 			vim.api.nvim_set_hl(0, "NotifyERRORBorder", { fg = theme.color1, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "NotifyWARNBorder", { fg = theme.color1, bg = theme.color0 })
