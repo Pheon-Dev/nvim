@@ -1,9 +1,52 @@
 return {
 	"windwp/nvim-ts-autotag",
-	{ "mrjones2014/nvim-ts-rainbow" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
-	"junegunn/rainbow_parentheses.vim",
-	-- references
+	{
+		"ckolkey/ts-node-action",
+		dependencies = { "nvim-treesitter" },
+		event = "BufReadPost",
+		config = true,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		event = "BufReadPost",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				sync_install = false,
+				ensure_installed = {
+					"bash",
+					"go",
+					"help",
+					"html",
+					"javascript",
+					"json",
+					"lua",
+					"markdown",
+					"markdown_inline",
+					"norg",
+					"org",
+					"python",
+					"query",
+					"regex",
+					"rust",
+					"tsx",
+					"typescript",
+					"vim",
+					"yaml",
+				},
+				highlight = {
+					enable = true,
+					additional_vim_regex_highlighting = false,
+				},
+				autotag = { enable = true },
+				rainbow = {},
+				autopairs = { enable = true },
+				indent = { enable = true },
+				context_commentstring = { enable = true },
+			})
+		end,
+	},
 	{
 		"RRethy/vim-illuminate",
 		event = "BufReadPost",
@@ -29,6 +72,7 @@ return {
 					"lir",
 					"harpoon",
 					"toggleterm",
+					"NvimTree",
 				},
 				-- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
 				filetypes_allowlist = {},
@@ -75,49 +119,5 @@ return {
 				desc = "Prev Reference",
 			},
 		},
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		event = "BufReadPost",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				sync_install = false,
-				ensure_installed = {
-					"bash",
-					"go",
-					"help",
-					"html",
-					"javascript",
-					"json",
-					"lua",
-					"markdown",
-					"markdown_inline",
-					"norg",
-					"org",
-					"python",
-					"query",
-					"regex",
-					"rust",
-					"tsx",
-					"typescript",
-					"vim",
-					"yaml",
-				},
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = false,
-				},
-				autotag = { enable = true },
-				rainbow = {
-					enable = true,
-					extended_mode = false,
-					max_file_lines = nil,
-				},
-				autopairs = { enable = true },
-				indent = { enable = true },
-				context_commentstring = { enable = true },
-			})
-		end,
 	},
 }
