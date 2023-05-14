@@ -107,7 +107,7 @@ map("n", "cc", "0D", { noremap = true, silent = true })
 map("n", "<A-i>", "<C-i>", { noremap = true, silent = true })
 map("n", "<A-o>", "<C-o>", { noremap = true, silent = true })
 
---[[ Gitsigns ]]
+-- Gitsigns
 map("v", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = true })
 map("v", "<leader>hr", ":Gitsigns reset_hunk<CR>", { noremap = true, silent = true })
 map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
