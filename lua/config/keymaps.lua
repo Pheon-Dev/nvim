@@ -9,7 +9,7 @@ map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap 
 map("n", "<C-s>", ":lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
 map("n", "<C-p>", ":Prettier<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 map("n", "<C-q>", ":w! | bp | sp | bn | bd!<cr>", { noremap = true, silent = true })
---[[ map("n", "<C-x>", ":qa!<cr>", { noremap = true, silent = true }) ]]
+
 -- Windows
 map("n", "vj", ":vsplit<cr>", { noremap = true, silent = true })
 map("n", "vk", ":split<cr>", { noremap = true, silent = true })
@@ -69,14 +69,6 @@ map("n", "tn", ":tabNext<cr>", { noremap = true, silent = true })
 map("n", "tp", ":tabprevious<cr>", { noremap = true, silent = true })
 map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
 
--- map("n", "cd", "cc<esc>", { noremap = true, silent = true })
--- map("n", "co", "cc<esc>ddO<esc>", { noremap = true, silent = true })
--- map("n", "ci", "ddO", { noremap = true, silent = true })
--- map("n", "dh", "c^<esc>", { noremap = true, silent = true })
--- map("n", "ch", "c^", { noremap = true, silent = true })
--- map("n", "tl", ":ToggleTerm size=60 dir=. direction=vertical<cr>", { noremap = true, silent = true })
--- map("n", "tj", ":ToggleTerm size=20 dir=. direction=horizontal<cr>", { noremap = true, silent = true })
-
 --[[ -- Motion ]]
 local hop = require("hop")
 local directions = require("hop.hint").HintDirection
@@ -86,12 +78,6 @@ end, { remap = true })
 vim.keymap.set("", "F", function()
 	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
 end, { remap = true })
--- vim.keymap.set("", "t", function()
--- 	hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
--- end, { remap = true })
--- vim.keymap.set("", "T", function()
--- 	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
--- end, { remap = true })
 
 -- hlslens
 local kopts = { noremap = true, silent = true }
@@ -116,6 +102,8 @@ end, { silent = true, expr = true })
 
 map("n", "zl", "za", { noremap = true, silent = true })
 
+map("n", "cc", "0D", { noremap = true, silent = true })
+
 map("n", "<A-i>", "<C-i>", { noremap = true, silent = true })
 map("n", "<A-o>", "<C-o>", { noremap = true, silent = true })
 
@@ -125,46 +113,15 @@ map("v", "<leader>hr", ":Gitsigns reset_hunk<CR>", { noremap = true, silent = tr
 map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
 map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
 
---[[ DAP ]]
---[[ map("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = true }) ]]
---[[ map("n", "<F5>", ":lua require'dap'.continue()<CR>", { noremap = true, silent = true }) ]]
---[[ map("n", "<F10>", ":lua require'dap'.step_over()<CR>", { noremap = true, silent = true }) ]]
---[[ map("n", "<F11>", ":lua require'dap'.step_into()<CR>", { noremap = true, silent = true }) ]]
---[[ map("n", "<F12>", ":lua require'dap'.step_out()<CR>", { noremap = true, silent = true }) ]]
---[[ map("n", "<Leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", { noremap = true, silent = true }) ]]
---[[ map( ]]
---[[   "n", ]]
---[[   "<Leader>B", ]]
---[[   ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", ]]
---[[   { noremap = true, silent = true } ]]
---[[ ) ]]
---[[ map( ]]
---[[   "n", ]]
---[[   "<Leader>lp", ]]
---[[   ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>", ]]
---[[   { noremap = true, silent = true } ]]
---[[ ) ]]
---[[ map("n", "<Leader>dr", ":lua require'dap'.repl.open()<CR>", { noremap = true, silent = true }) ]]
---[[ map("n", "<Leader>dl", ":lua require'dap'.run_last()<CR>", { noremap = true, silent = true }) ]]
---[[ Move ]]
-map("n", "_", "<Plug>GoNSMLeft", {})
+map("n", "<C-x>", "<Plug>GoNSMLeft", {})
 map("n", "-", "<Plug>GoNSMDown", {})
 map("n", "=", "<Plug>GoNSMUp", {})
-map("n", "+", "<Plug>GoNSMRight", {})
+map("n", "<S-x>", "<Plug>GoNSMRight", {})
 
 map("x", "<S-h>", "<Plug>GoVSMLeft", {})
 map("x", "<S-j>", "<Plug>GoVSMDown", {})
 map("x", "<S-k>", "<Plug>GoVSMUp", {})
 map("x", "<S-l>", "<Plug>GoVSMRight", {})
-
--- map("n", "<C-h>", "<Plug>GoNSDLeft", {})
--- map("n", "<C-j>", "<Plug>GoNSDDown", {})
--- map("n", "<C-k>", "<Plug>GoNSDUp", {})
--- map("n", "<C-l>", "<Plug>GoNSDRight", {})
--- map("x", "<C-h>", "<Plug>GoVSDLeft", {})
--- map("x", "<C-j>", "<Plug>GoVSDDown", {})
--- map("x", "<C-l>", "<Plug>GoVSDRight", {})
--- map("x", "<C-k>", "<Plug>GoVSDUp", {})
 
 -- Codeium
 vim.keymap.set("i", "<C-l>", function()
@@ -194,9 +151,3 @@ end, { desc = "Next todo comment" })
 vim.keymap.set("n", "[t", function()
 	require("todo-comments").jump_prev()
 end, { desc = "Previous todo comment" })
-
--- You can also specify a list of valid jump keywords
-
--- vim.keymap.set("n", "]t", function()
--- 	require("todo-comments").jump_next({ keywords = { "ERROR", "WARNING" } })
--- end, { desc = "Next error/warning todo comment" })
