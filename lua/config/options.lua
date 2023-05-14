@@ -44,8 +44,6 @@ vim.g.loaded_getscriptPlugin = 1
 vim.g.loaded_vimball = 1
 vim.g.loaded_vimballPlugin = 1
 vim.g.loaded_2html_plugin = 1
-vim.g.loaded_matchit = 1
-vim.g.loaded_matchparen = 1
 vim.g.loaded_logiPat = 1
 vim.g.loaded_rrhelper = 1
 vim.g.loaded_netrw = 1
@@ -68,16 +66,10 @@ vim.g.virtcolumn_priority = 10
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.updatetime = 300
---[[ move ]]
---[[ vim.g.move_normal_option = 1 ]]
---[[ vim.g.move_key_modifier_visualmode = "S" ]]
---[[ vim.g.move_key_modifier = "C" ]]
---[[ ufo ]]
+
 vim.o.foldcolumn = "0" -- '1', '0' is not bad
 vim.o.foldnestmax = "1" -- '1', '0' is not bad
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
-vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
 
 vim.o.encoding = "utf-8"
 vim.o.signcolumn = "yes"
