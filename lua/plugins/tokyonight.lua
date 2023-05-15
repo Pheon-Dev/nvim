@@ -4,10 +4,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			--[[ require("tokyonight").setup() ]]
 			vim.g.style = "storm" -- night, day, night, moon
 			vim.o.background = "dark"
-			--[[ vim.g.tokyonight_transparent = true ]]
 			local theme = require("config.colors")
 
 			require("tokyonight.colors").default = {
@@ -66,37 +64,33 @@ return {
 			vim.api.nvim_set_hl(0, "HlSearchLens", { fg = theme.color89, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "HlSearchLensNear", { fg = theme.color0, bg = theme.color89 })
 
-			--[[ Dashboard ]]
-			vim.api.nvim_set_hl(0, "DashboardHeader", { fg = theme.color3 })
-			vim.api.nvim_set_hl(0, "DashboardCenter", { fg = theme.color83 })
-			--[[ vim.api.nvim_set_hl(0, "DashboardFooter", { fg = theme.color83 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "DashboardShortCut", { fg = theme.color83 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "WinBar", { fg = theme.color83, bg = theme.color0 }) ]]
-			--[[ vim.api.nvim_set_hl(0, "WinBarNC", { fg = theme.color83, bg = theme.color0 }) ]]
-			--[[ Lir ]]
+			-- Winbar
+			-- vim.api.nvim_set_hl(0, "WinBar", { fg = theme.color83, bg = theme.color0 })
+			-- vim.api.nvim_set_hl(0, "WinBarNC", { fg = theme.color83, bg = theme.color0 })
+
+			-- Lir
 			vim.api.nvim_set_hl(0, "LirFloatNormal", { bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "LirFloatCursorLine", { bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "LirFloatBorder", { fg = theme.color2, bg = theme.color0 })
 
-			--[[ Harpoon ]]
+			-- Harpoon
 			vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color2, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "Harpoon", { fg = theme.color3, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = theme.color0 })
 
-			--[[ CMP ]]
-			--[[ vim.api.nvim_set_hl(0, "PmenuThumb", { fg = theme.color59, bg = theme.color59 }) ]]
+			-- CMP
+			-- vim.api.nvim_set_hl(0, "PmenuThumb", { fg = theme.color59, bg = theme.color59 })
 			vim.api.nvim_set_hl(0, "Blame", { fg = theme.color3, bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "CmpPmenu", { bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "PmenuSel", { bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color2, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = theme.color2, bg = theme.color0 })
 
-			-- --[[ Popup ]]
+			-- Popup
 			vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color2, bg = theme.color0 })
-			-- vim.api.nvim_set_hl(0, "NormalFloat", { fg = theme.color2, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color0 })
 
-			--[[ Noice ]]
+			-- Noice
 			vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color0 })
 
@@ -111,9 +105,9 @@ return {
 
 			-- Match
 			vim.api.nvim_set_hl(0, "MatchParen", { fg = theme.color89 })
-			-- vim.api.nvim_set_hl(0, "MatchWord", { fg = theme.color89 })
-			-- vim.api.nvim_set_hl(0, "MatchParenCur", { fg = theme.color89 })
-			-- vim.api.nvim_set_hl(0, "MatchWordCur", { fg = theme.color89 })
+			vim.api.nvim_set_hl(0, "MatchWord", { fg = theme.color100 })
+			vim.api.nvim_set_hl(0, "MatchParenCur", { fg = theme.color100 })
+			vim.api.nvim_set_hl(0, "MatchWordCur", { fg = theme.color100 })
 
 			-- Illuminate
 			vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = theme.color99, bg = theme.color1 })
