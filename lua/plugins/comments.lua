@@ -73,11 +73,8 @@ return {
 
 	{
 		"numToStr/Comment.nvim",
-		event = "BufRead",
+		event = "BufReadPre",
 		config = function()
-			if vim.bo.filetype == "lua" then
-				vim.bo.commentstring = "--%s"
-			end
 			require("Comment").setup({
 				---Add a space b/w comment and the line
 				padding = true,
@@ -119,6 +116,7 @@ return {
 				---Function to call after (un)comment
 				post_hook = nil,
 				---Function to call before (un)comment
+				pre_hook = nil,
 				-- pre_hook = function(ctx)
 				-- 	local U = require("Comment.utils")
 				--

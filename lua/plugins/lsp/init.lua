@@ -76,6 +76,16 @@ return {
 					["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
 				}
 
+				vim.lsp.handlers["textDocument/publishDiagnostics"] =
+					vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+						underline = true,
+						virtual_text = {
+							spacing = 5,
+							severity_limit = "Warning",
+						},
+						update_in_insert = true,
+					})
+
 				opts.handlers = handlers
 				opts.capabilities = capabilities
 				require("lspconfig")[server].setup(coq.lsp_ensure_capabilities(opts))

@@ -1,5 +1,11 @@
 return {
-	"windwp/nvim-ts-autotag",
+	{
+		"windwp/nvim-ts-autotag",
+		event = "BufReadPre",
+		config = function()
+			require("nvim-ts-autotag").setup({})
+		end,
+	},
 	{
 		"ckolkey/ts-node-action",
 		dependencies = { "nvim-treesitter" },
@@ -10,7 +16,7 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = "BufReadPost",
-		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
+		-- dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				sync_install = false,
@@ -43,7 +49,7 @@ return {
 				rainbow = {},
 				autopairs = { enable = true },
 				indent = { enable = true },
-				context_commentstring = { enable = true },
+				-- context_commentstring = { enable = true },
 			})
 		end,
 	},
