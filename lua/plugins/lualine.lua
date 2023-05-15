@@ -23,6 +23,7 @@ return {
 				bg = "#21222c",
 				bg1 = "#282a36",
 				bg2 = "#44475a",
+				bg3 = "#565f89",
 				grey = "#a9a1e1",
 				fg = "#bd93f9",
 				yellow = "#f1fa8c",
@@ -203,6 +204,9 @@ return {
 			wins_right({
 				function()
 					return navic.get_location()
+				end,
+				color = function()
+					return { fg = colors.bg3 }
 				end,
 			})
 

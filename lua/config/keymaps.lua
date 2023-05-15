@@ -69,7 +69,7 @@ map("n", "tn", ":tabNext<cr>", { noremap = true, silent = true })
 map("n", "tp", ":tabprevious<cr>", { noremap = true, silent = true })
 map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
 
---[[ -- Motion ]]
+-- Motion
 local hop = require("hop")
 local directions = require("hop.hint").HintDirection
 vim.keymap.set("", "f", function()
@@ -103,6 +103,8 @@ end, { silent = true, expr = true })
 map("n", "zl", "za", { noremap = true, silent = true })
 
 map("n", "cc", "0D", { noremap = true, silent = true })
+
+map("n", "gcb", "gcip", { noremap = true, silent = true })
 
 map("n", "<A-i>", "<C-i>", { noremap = true, silent = true })
 map("n", "<A-o>", "<C-o>", { noremap = true, silent = true })

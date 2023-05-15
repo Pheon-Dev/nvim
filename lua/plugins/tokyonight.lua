@@ -184,7 +184,7 @@ return {
 
 			-- Lazy
 			vim.api.nvim_set_hl(0, "LazyNormal", { bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "LazyButtonActive", { bg = theme.color72, fg = theme.color0 })
+			vim.api.nvim_set_hl(0, "LazyButtonActive", { bg = theme.color0, fg = theme.color89 })
 
 			-- Telescope
 			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
@@ -214,7 +214,7 @@ return {
 
 			vim.api.nvim_set_hl(0, "TelescopePromptCounter", {
 				fg = theme.color5,
-				bg = theme.color0,
+				bg = theme.color1,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePromptPrefix", {
