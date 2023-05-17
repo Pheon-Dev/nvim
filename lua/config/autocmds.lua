@@ -27,11 +27,13 @@ vim.cmd([[
 vim.cmd("au BufnewFile,BufRead term:* setf Terminal")
 vim.cmd("au BufnewFile,BufRead *.lua setf lua")
 vim.cmd("au BufnewFile,BufRead *.js setf javascript")
-vim.cmd("au BufnewFile,BufRead *.jsx setf javascript")
+-- vim.cmd("au BufnewFile,BufRead *.jsx setf javascript")
+vim.cmd("au BufnewFile,BufRead *.jsx setf javascriptreact")
 vim.cmd("au BufnewFile,BufRead *.es6 setf javascript")
-vim.cmd("au BufnewFile,BufRead *.tsx setf tsx")
+-- vim.cmd("au BufnewFile,BufRead *.tsx setf tsx")
 vim.cmd("au BufnewFile,BufRead *.html setf html")
 vim.cmd("au BufnewFile,BufRead *.ts setf typescript")
+vim.cmd("au BufnewFile,BufRead *.tsx setf typescriptreact")
 vim.cmd("au BufnewFile,BufRead *.md set filetype=markdown")
 vim.cmd("au BufnewFile,BufRead *.mdx set filetype=markdown")
 vim.cmd("au BufnewFile,BufRead *.flow set filetype=javascript")
@@ -71,7 +73,7 @@ vim.cmd([[
 vim.cmd([[
 	if has("nvim")
 		set inccommand=split
-	endif 
+	endif
 ]])
 vim.cmd([[
   if has("syntax")
