@@ -175,10 +175,14 @@ return {
 			},
 			s = { ":Telescope live_grep<cr>", "Live Grep" },
 			t = {
-				name = "TODO",
+				name = "TODO | Typescript",
 				q = { ":TodoQuickFix<cr>", "QuickFix" },
 				s = { ":TodoTelescope<cr>", "Telescope" },
 				t = { ":TodoTrouble<cr>", "Trouble" },
+				a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
+				o = { ":TypescriptOrganizeImports<cr>", "Organise Imports" },
+				r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
+				f = { ":TypescriptFixAll<cr>", "Fix All" },
 			},
 			u = { ":NodeAction<cr>", "Node Action" },
 			w = {
