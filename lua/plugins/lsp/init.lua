@@ -4,6 +4,7 @@ return {
 		-- event = "VeryLazy",
 		event = "BufReadPre",
 	},
+	{ "jose-elias-alvarez/typescript.nvim", event = "BufReadPre" },
 	{
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
@@ -90,6 +91,62 @@ return {
 				opts.capabilities = capabilities
 				require("lspconfig")[server].setup(coq.lsp_ensure_capabilities(opts))
 			end
+			local util = require("lspconfig.util")
+			local on_attach = require("util").on_attach(function(client, buffer)
+				require("plugins.lsp.format").on_attach(client, buffer)
+				require("plugins.lsp.keymaps").on_attach(client, buffer)
+			end)
+			local lsp_flags = {
+				debounce_text_changes = 150,
+			}
+
+			require("typescript").setup(coq.lsp_ensure_capabilities({
+				disable_commands = false, -- prevent the plugin from creating Vim commands
+				debug = true, -- enable debug logging for commands
+				go_to_source_definition = {
+					fallback = true, -- fall back to standard LSP definition on failure
+				},
+				server = {
+					-- pass options to lspconfig's setup method
+					capabilities = capabilities,
+					on_attach = on_attach,
+					flags = lsp_flags,
+					root_dir = util.root_pattern(".git"),
+					cmd = { "typescript-language-server", "--stdio" },
+					filetypes = {
+						"javascript",
+						"javascriptreact",
+						"javascript.jsx",
+						"typescript",
+						"typescriptreact",
+						"typescript.tsx",
+					},
+					settings = {
+						typescript = {
+							inlayHints = {
+								includeInlayParameterNameHints = "all",
+								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+								includeInlayFunctionParameterTypeHints = true,
+								includeInlayVariableTypeHints = true,
+								includeInlayPropertyDeclarationTypeHints = true,
+								includeInlayFunctionLikeReturnTypeHints = true,
+								includeInlayEnumMemberValueHints = true,
+							},
+						},
+						javascript = {
+							inlayHints = {
+								includeInlayParameterNameHints = "all",
+								includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+								includeInlayFunctionParameterTypeHints = true,
+								includeInlayVariableTypeHints = true,
+								includeInlayPropertyDeclarationTypeHints = true,
+								includeInlayFunctionLikeReturnTypeHints = true,
+								includeInlayEnumMemberValueHints = true,
+							},
+						},
+					},
+				},
+			}))
 		end,
 	},
 	{
@@ -111,9 +168,10 @@ return {
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.formatting.stylua,
-					-- null_ls.builtins.diagnostics.eslint_d,
+					null_ls.builtins.diagnostics.eslint_d,
 					-- null_ls.builtins.diagnostics.eslint,
 					null_ls.builtins.completion.spell,
+					require("typescript.extensions.null-ls.code-actions"),
 				},
 			})
 		end,
