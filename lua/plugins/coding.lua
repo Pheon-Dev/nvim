@@ -19,4 +19,11 @@ return {
 			require("sentiment").setup({})
 		end,
 	},
+	{
+		"mg979/vim-visual-multi",
+		event = "BufReadPre",
+		config = function()
+			-- require("sentiment").setup({})
+		end,
+	},
 }

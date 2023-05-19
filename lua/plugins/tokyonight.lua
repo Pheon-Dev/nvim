@@ -104,7 +104,7 @@ return {
 			vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = theme.color2, bg = theme.color0 })
 
 			-- Match
-			vim.api.nvim_set_hl(0, "MatchParen", { fg = theme.color89 })
+			vim.api.nvim_set_hl(0, "MatchParen", { fg = theme.color99 })
 			vim.api.nvim_set_hl(0, "MatchWord", { fg = theme.color100 })
 			vim.api.nvim_set_hl(0, "MatchParenCur", { fg = theme.color100 })
 			vim.api.nvim_set_hl(0, "MatchWordCur", { fg = theme.color100 })
