@@ -2,6 +2,7 @@ return {
 	"akinsho/toggleterm.nvim",
 	event = "VeryLazy",
 	config = function()
+		local theme = require("config.colors")
 		require("toggleterm").setup({
 			on_config_done = nil,
 			open_mapping = [[`]],
@@ -19,8 +20,8 @@ return {
 				border = "curved", -- single, double, shadow, curved,
 				winblend = 0,
 				highlights = {
-					border = "Normal",
-					background = "Normal",
+					border = theme.color0,
+					background = theme.color0,
 					cursor = "Normal",
 				},
 			},
@@ -33,14 +34,15 @@ return {
 				-- highlights which map to a highlight group name and a table of it's values
 				-- NOTE: this is only a subset of values, any group placed here will be set for the terminal window split
 				Normal = {
-					guibg = "#282a36",
+					guibg = theme.color0,
 				},
 				NormalFloat = {
-					link = "PmenuSel",
+					-- link = "PmenuSel",
+					link = "NormalFloat",
 				},
 				FloatBorder = {
-					guifg = "#282a36",
-					guibg = "#282a36",
+					guifg = theme.color2,
+					guibg = theme.color0,
 				},
 			},
 			winbar = {
