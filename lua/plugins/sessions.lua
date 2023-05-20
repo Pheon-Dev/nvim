@@ -1,66 +1,79 @@
 return {
-	"jedrzejboczar/possession.nvim",
-	event = "VeryLazy",
-	requires = { "nvim-lua/plenary.nvim" },
-	config = function()
-		require("possession").setup({
-			-- session_dir = (Path:new(vim.fn.stdpath('data')) / 'possession'):absolute(),
-			session_dir = vim.fn.stdpath("data") .. "/sessions/",
-			silent = false,
-			load_silent = true,
-			debug = false,
-			logfile = false,
-			prompt_no_cr = false,
-			autosave = {
-				current = false, -- or fun(name): boolean
-				tmp = false, -- or fun(): boolean
-				tmp_name = "tmp",
-				on_load = true,
-				on_quit = true,
-			},
-			commands = {
-				save = "PossessionSave",
-				load = "PossessionLoad",
-				rename = "PossessionRename",
-				close = "PossessionClose",
-				delete = "PossessionDelete",
-				show = "PossessionShow",
-				list = "PossessionList",
-				migrate = "PossessionMigrate",
-			},
-			hooks = {
-				before_save = function(name)
-					return {}
-				end,
-				after_save = function(name, user_data, aborted) end,
-				before_load = function(name, user_data)
-					return user_data
-				end,
-				after_load = function(name, user_data) end,
-			},
-			plugins = {
-				close_windows = {
-					hooks = { "before_save", "before_load" },
-					preserve_layout = true, -- or fun(win): boolean
-					match = {
-						floating = true,
-						buftype = {},
-						filetype = {},
-						custom = false, -- or fun(win): boolean
-					},
+	{
+		"gennaro-tedesco/nvim-possession",
+		dependencies = {
+			"ibhagwan/fzf-lua",
+		},
+		config = function()
+			local theme = require("config.colors")
+
+			vim.api.nvim_set_hl(0, "FzfLuaNormal", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FzfLuaBorder", { fg = theme.color2, bg = theme.color0 })
+
+			vim.api.nvim_set_hl(0, "FzfLuaCursor", { fg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FzfLuaCursorLine", { fg = theme.color89, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FzfLuaCursorLineNr", { fg = theme.color7, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FzfLuaSearch", { fg = theme.color100, bg = theme.color0 })
+
+			vim.api.nvim_set_hl(0, "FzfLuaHelpNormal", { bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FzfLuaTitle", { fg = theme.color7, bg = theme.color0 })
+
+			vim.api.nvim_set_hl(0, "FzfLuaScrollBorderEmpty", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FzfLuaScrollBorderFull", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FzfLuaScrollFloatEmpty", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FzfLuaScrollFloatFull", { fg = theme.color2, bg = theme.color0 })
+
+			vim.api.nvim_set_hl(0, "FzfLuaHelpBorder", { fg = theme.color2, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FzfLuaHelpNormal", { bg = theme.color0 })
+
+			require("fzf-lua").setup({
+				"telescope", -- max-perf, fzf-native, default, fzf-tmux, skim, telescope
+			})
+			require("nvim-possession").setup({
+				sessions = {
+					sessions_path = vim.fn.stdpath("data") .. "/sessions/",
+					-- sessions_path = ... -- folder to look for sessions, must be a valid existing path
+					--     sessions_variable = .. -- defines vim.g[sessions_variable] when a session is loaded
+					--     sessions_icon = ...
 				},
-				delete_hidden_buffers = {
-					hooks = {
-						"before_load",
-						vim.o.sessionoptions:match("buffer") and "before_save",
-					},
-					force = false, -- or fun(buf): boolean
+				--
+				autoload = false, -- whether to autoload sessions in the cwd at startup
+				autosave = true, -- whether to autosave loaded sessions before quitting
+				autoswitch = {
+					enable = false, -- whether to enable autoswitch
+					exclude_ft = {}, -- list of filetypes to exclude from autoswitch
 				},
-				nvim_tree = true,
-				tabby = true,
-				dap = true,
-				delete_buffers = false,
-			},
-		})
-	end,
+
+				post_hook = nil, -- callback, function to execute after loading a session
+				-- useful to restore file trees, file managers or terminals
+				-- function()
+				--     require('FTerm').open()
+				--     require('nvim-tree').toggle(false, true)
+				-- end
+
+				fzf_winopts = {
+					-- any valid fzf-lua winopts options, for instance
+					width = 0.5,
+					-- preview = {
+					-- 	vertical = "right:30%",
+					-- },
+				},
+			})
+		end,
+		init = function()
+			local possession = require("nvim-possession")
+			vim.keymap.set("n", "<leader>pl", function()
+				possession.list()
+			end)
+			vim.keymap.set("n", "<leader>pn", function()
+				possession.new()
+			end)
+			vim.keymap.set("n", "<leader>pu", function()
+				possession.update()
+			end)
+			vim.keymap.set("n", "<leader>pd", function()
+				possession.delete()
+			end)
+		end,
+	},
 }

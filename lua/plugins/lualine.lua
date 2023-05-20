@@ -246,9 +246,9 @@ return {
 			})
 
 			ins_left({
-				function()
-					local session_name = require("possession.session").session_name
-					return "   " .. session_name
+				require("nvim-possession").status,
+				cond = function()
+					return require("nvim-possession").status() ~= nil
 				end,
 			})
 
