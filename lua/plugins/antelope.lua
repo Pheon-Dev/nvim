@@ -1,6 +1,6 @@
 return {
 	"Pheon-Dev/antelope",
-	event = "BufReadPre",
+	event = "VeryLazy",
 	config = function()
 		local antelope = require("antelope")
 
