@@ -89,6 +89,7 @@ return {
 			require("telescope").load_extension("noice")
 			require("telescope").load_extension("notify")
 			require("telescope").load_extension("harpoon")
+			require("telescope").load_extension("possession")
 			require("telescope").load_extension("yank_history")
 		end,
 	},

@@ -29,6 +29,11 @@ return {
 			),
 			dashboard.button("m", " " .. "   Mason", ":Mason<CR>"),
 			dashboard.button("n", " " .. "   Notifications", ":Telescope notify<CR>"),
+			dashboard.button(
+				"p",
+				" " .. "   Possessions",
+				":Telescope possession list<cr>"
+			),
 			dashboard.button("s", " " .. "   Search Word", ":Telescope live_grep<cr>"),
 			dashboard.button(
 				"t",
