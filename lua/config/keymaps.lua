@@ -106,8 +106,9 @@ map("n", "cc", "0D", { noremap = true, silent = true })
 
 map("n", "gcb", "gcip", { noremap = true, silent = true })
 
-map("n", "<A-i>", "<C-i>", { noremap = true, silent = true })
-map("n", "<A-o>", "<C-o>", { noremap = true, silent = true })
+-- map("n", "<A-i>", "<C-i>", { noremap = true, silent = true })
+-- map("n", "<A-o>", "<C-o>", { noremap = true, silent = true })
+map("i", "<A-o>", "<C-o>", { noremap = true, silent = true })
 
 -- Gitsigns
 map("v", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = true })
