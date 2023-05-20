@@ -62,18 +62,18 @@ return {
 		end,
 		init = function()
 			local possession = require("nvim-possession")
-			vim.keymap.set("n", "<leader>pl", function()
+			vim.keymap.set("n", "<leader>pp", function()
 				possession.list()
-			end)
+			end, { desc = "List sessions" })
 			vim.keymap.set("n", "<leader>pn", function()
 				possession.new()
-			end)
+			end, { desc = "New session" })
 			vim.keymap.set("n", "<leader>pu", function()
 				possession.update()
-			end)
+			end, { desc = "Update session" })
 			vim.keymap.set("n", "<leader>pd", function()
 				possession.delete()
-			end)
+			end, { desc = "Delete session" })
 		end,
 	},
 }

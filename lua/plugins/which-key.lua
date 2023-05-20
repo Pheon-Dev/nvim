@@ -88,7 +88,6 @@ return {
 
 		local crates = require("crates")
 
-
 		local mappings = {
 			a = { ":ASToggle<cr>", "Auto Save Toggle" },
 			b = { ":Antelope buffers<cr>", "Buffers" },
