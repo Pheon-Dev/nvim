@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "BufReadPre",
+		event = "VeryLazy",
 		config = function()
 			local ok, lualine = pcall(require, "lualine")
 			local oc, navic = pcall(require, "nvim-navic")
@@ -112,31 +112,38 @@ return {
 				table.insert(config.sections.lualine_x, component)
 			end
 
-			local my_colors =
-				{ n = "#7aa2f7", i = "#bd93f9", c = "#10e070", v = "#c66bfe", V = "#966bfe", R = "#f62bfe" }
+			local theme = require("config.colors")
+			local my_colors = {
+				n = theme.color37, -- "#7aa2f7",
+				i = theme.color89, -- "#bd93f9",
+				c = theme.color50, -- "#10e070",
+				v = theme.color43, -- "#c66bfe",
+				V = theme.color43, -- "#966bfe",
+				R = theme.color99, -- "#f62bfe"
+			}
 
 			local mode = {
-				n = "",
-				i = "●",
-				ic = "●",
-				v = "◌",
-				V = "◌",
-				[""] = "◌",
-				s = "",
-				S = "",
-				[""] = "",
-				r = "∅",
-				R = "∅",
-				Rv = "∅",
-				rm = "∅",
-				["r?"] = "∅",
-				c = "○",
-				cv = "○",
-				ce = "○",
-				t = "○",
-				["!"] = "○",
-				no = "✪",
-				gui = "",
+				n = "",
+				i = "",
+				ic = "",
+				v = "",
+				V = "",
+				s = "",
+				S = "",
+				r = "",
+				R = "",
+				Rv = "",
+				rm = "",
+				c = "",
+				cv = "",
+				ce = "",
+				t = "",
+				no = "",
+				gui = "",
+				[""] = "",
+				[""] = "",
+				["r?"] = "",
+				["!"] = "",
 			}
 
 			local mode_color = {
@@ -169,7 +176,7 @@ return {
 					return mode[vim.fn.mode()]
 				end,
 				color = function()
-					return { fg = colors.orange1 }
+					return { fg = mode_color[vim.fn.mode()] }
 				end,
 				padding = { right = 1, left = 3 },
 			})

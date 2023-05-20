@@ -17,7 +17,8 @@ return {
 				-- -- and so changing this is NOT recommended, this is intended
 				-- -- as an escape hatch for people who cannot bear it for whatever reason
 				indicator = {
-					icon = "|",
+					icon = "﯑ ",
+					-- icon = "|",
 					style = "icon",
 				},
 				buffer_close_icon = "",
@@ -64,7 +65,7 @@ return {
 				--     return true
 				--   end
 				-- end,
-				offsets = { { filetype = "NvimTree", text = "Nvim-Tree" } },
+				-- offsets = { { filetype = "NvimTree", text = "Nvim-Tree" } },
 				show_buffer_icons = true, -- disable filetype icons for buffers
 				show_buffer_close_icons = true,
 				show_close_icon = true,
