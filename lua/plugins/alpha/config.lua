@@ -121,9 +121,6 @@ function M.buttons()
 	vim.api.nvim_create_autocmd({ "User" }, {
 		pattern = { "AlphaReady" },
 		callback = function(_)
-			vim.api.nvim_buf_set_keymap(0, "n", "p", "<cmd>Telescope projects<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "t", "<cmd>Telescope themes<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "s", "<cmd>e $MYVIMRC<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "f", ":Telescope find_files initial_mode=insert<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "i", ":lua require('lir.float').toggle()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(
@@ -135,9 +132,8 @@ function M.buttons()
 			)
 			vim.api.nvim_buf_set_keymap(0, "n", "m", ":Mason<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "n", ":Telescope notify<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "ps", ":lua require('nvim-possession').list()<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "pj", "<cmd>Telescope projects<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "s", ":Telescope live_grep<cr>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "s", ":lua require('nvim-possession').list()<cr>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "r", ":Telescope live_grep<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(
 				0,
 				"n",
@@ -154,11 +150,11 @@ function M.buttons()
 			val = {
 				"[f]" .. "               " .. " Find File",
 				"[i]" .. "               " .. " Lir",
-				"[l]" .. "               " .. " Lazygit",
+				"[g]" .. "               " .. " Lazygit",
 				"[m]" .. "               " .. " Mason",
 				"[n]" .. "               " .. " Notifications",
-				"[p]" .. "               " .. " Possessions",
-				"[s]" .. "               " .. " Search",
+				"[r]" .. "               " .. " Search",
+				"[s]" .. "               " .. " Possessions",
 				"[t]" .. "               " .. " TODO",
 			},
 			opts = {
@@ -186,13 +182,7 @@ function M.shortcuts()
 			vim.api.nvim_buf_set_keymap(0, "n", "<leader>j", ":NvimTreeToggle<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "e", ":NvimTreeToggle<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "h", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(
-				0,
-				"n",
-				"<leader>k",
-				":lua require('harpoon.ui').toggle_quick_menu()<cr>",
-				keybind_opts
-			)
+			vim.api.nvim_buf_set_keymap(0, "n", "h", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "<esc>", "<cmd>q<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "l", "<cmd>q<CR>", keybind_opts)
@@ -237,7 +227,12 @@ end
 M.section_info = {
 	type = "text",
 	val = function()
-		-- pcall(vim.cmd.AlphaRedraw)
+		vim.api.nvim_create_autocmd({ "User" }, {
+			pattern = { "LazyVimStarted" },
+			callback = function()
+				pcall(vim.cmd.AlphaRedraw)
+			end,
+		})
 		return M.info_text()
 	end,
 	opts = {

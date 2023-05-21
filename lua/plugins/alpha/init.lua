@@ -1,6 +1,6 @@
 return {
 	"goolord/alpha-nvim",
-	event = "VimEnter",
+	event = { "VimEnter" },
 	config = function()
 		local has_alpha, alpha = pcall(require, "alpha")
 		if not has_alpha then
