@@ -89,22 +89,23 @@ return {
 			-- will override global handler if it is existed
 			local bufnr = vim.api.nvim_get_current_buf()
 			ufo.setFoldVirtTextHandler(bufnr, handler)
-			vim.keymap.set("n", "zj", require("ufo").openAllFolds)
-			vim.keymap.set("n", "zk", require("ufo").closeAllFolds)
-			vim.keymap.set("n", "zh", require("ufo").openFoldsExceptKinds)
-			vim.keymap.set("n", "zg", require("ufo").closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+			vim.keymap.set("n", "zj", require("ufo").openAllFolds, { desc = "Open all folds" })
+			vim.keymap.set("n", "zk", require("ufo").closeAllFolds, { desc = "Close all folds" })
+			vim.keymap.set("n", "zh", require("ufo").openFoldsExceptKinds, { desc = "Open folds except kinds" })
+			vim.keymap.set("n", "zg", require("ufo").closeFoldsWith, { desc = "Close folds with" }) -- closeAllFolds == closeFoldsWith(0)
 			vim.keymap.set("n", "zz", function()
 				local winid = require("ufo").peekFoldedLinesUnderCursor()
 				if not winid then
 					vim.lsp.buf.hover()
 				end
-			end)
+			end, { desc = "Hover" })
 		end,
 	},
 	"kevinhwang91/promise-async",
 	{
 		"yaocccc/nvim-foldsign",
-		event = "CursorHold",
+		event = "BufReadPre",
+		-- event = "CursorHold",
 		config = function()
 			require("nvim-foldsign").setup({
 				offset = -2,

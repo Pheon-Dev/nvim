@@ -53,6 +53,12 @@ return {
 
 			vim.cmd("colorscheme tokyonight")
 
+			-- Alpha
+			vim.api.nvim_set_hl(0, "AlphaKeys", { fg = theme.color23, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "AlphaDesc", { fg = theme.color7, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "AlphaIcon", { fg = theme.color100, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "AlphaQuit", { fg = theme.color16, bg = theme.color0 })
+
 			vim.api.nvim_set_hl(0, "Visual", { bg = theme.color65 })
 			vim.api.nvim_set_hl(0, "Search", { fg = theme.color1, bg = theme.color89 })
 			vim.api.nvim_set_hl(0, "IncSearch", { fg = theme.color89, bg = theme.color0 })
@@ -149,7 +155,16 @@ return {
 			vim.api.nvim_set_hl(0, "YankyPut", { bg = theme.color4 })
 
 			-- Fold
+			-- TODO: hover highlights
 			vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93 })
+			-- vim.api.nvim_set_hl(0, "UfoFoldedFg", { fg = theme.color93, bg = theme.color0 })
+			-- vim.api.nvim_set_hl(0, "UfoFoldedBg", { fg = theme.color93, bg = theme.color0 })
+			-- vim.api.nvim_set_hl(0, "UfoPreviewSbar", { fg = theme.color93, bg = theme.color0 })
+			-- vim.api.nvim_set_hl(0, "UfoPreviewThumb", { bg = theme.color0, bg = theme.color0 })
+			-- vim.api.nvim_set_hl(0, "UfoPreviewWinBar", { fg = theme.color93, bg = theme.color0 })
+			-- vim.api.nvim_set_hl(0, "UfoPreviewCursorLine", { fg = theme.color93, bg = theme.color0 })
+			-- vim.api.nvim_set_hl(0, "UfoFoldedEllipsis", { fg = theme.color93, bg = theme.color0 })
+			-- vim.api.nvim_set_hl(0, "UfoCursorFoldedLine", { fg = theme.color93, bg = theme.color0 })
 
 			-- GitSigns
 			vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = theme.color7 })
@@ -163,7 +178,6 @@ return {
 			vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { fg = theme.color16 })
 
 			vim.api.nvim_set_hl(0, "GitBlame", { fg = theme.color68, bg = theme.color1 })
-			vim.g.gitblame_highlight_group = "GitBlame"
 
 			-- Antelope
 			vim.api.nvim_set_hl(0, "AntelopeBorder", { fg = theme.color2, bg = theme.color0 })
@@ -179,6 +193,8 @@ return {
 			-- Lazy
 			vim.api.nvim_set_hl(0, "LazyNormal", { bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "LazyButtonActive", { bg = theme.color0, fg = theme.color89 })
+			vim.api.nvim_set_hl(0, "LazyProgressDone", { bg = theme.color0, fg = theme.color89 })
+			vim.api.nvim_set_hl(0, "LazyProgressTodo", { bg = theme.color0, fg = theme.color89 })
 
 			-- Telescope
 			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
