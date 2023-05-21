@@ -236,7 +236,10 @@ end
 
 M.section_info = {
 	type = "text",
-	val = M.info_text(),
+	val = function()
+		-- pcall(vim.cmd.AlphaRedraw)
+		return M.info_text()
+	end,
 	opts = {
 		hl = "Comment",
 		position = "center",
