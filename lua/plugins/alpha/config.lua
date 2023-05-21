@@ -72,7 +72,7 @@ function M.recent_projects(start, target_width)
 			end
 			buttons[added_projects] = {
 				type = "button",
-				val = " " .. display_path,
+				val = "蘒 " .. display_path,
 				on_press = function()
 					M.open_project(project_path)
 				end,
@@ -90,7 +90,7 @@ function M.recent_projects(start, target_width)
 					keymap = {
 						"n",
 						shortcut,
-						"<cmd>lua require('custom.configs.alpha').open_project('" .. project_path .. "')<CR>",
+						":lua require('custom.configs.alpha').open_project('" .. project_path .. "')<CR>",
 						{ noremap = true, silent = true, nowait = true },
 					},
 				},
