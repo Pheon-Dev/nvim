@@ -153,10 +153,10 @@ function M.buttons()
 	}
 	local buttons_hl = {
 		{ "Comment", 0, 1 },
-	  { "AlphaKeys", 1, 2 },
+		{ "AlphaKeys", 1, 2 },
 		{ "Comment", 2, 8 },
-	  { "AlphaIcon", 25, 30 },
-	  { "AlphaDesc", 30, 70 }
+		{ "AlphaIcon", 25, 30 },
+		{ "AlphaDesc", 30, 70 },
 	}
 	return {
 		{
@@ -260,6 +260,15 @@ M.section_info = {
 	},
 }
 
+M.section_footer = {
+	type = "text",
+	val = require("alpha.fortune")(),
+	opts = {
+		hl = "Comment",
+		position = "center",
+	},
+}
+
 vim.b.miniindentscope_disable = true
 
 -- close Lazy and re-open when the dashboard is ready
@@ -285,6 +294,8 @@ M.config = {
 		M.section_buttons,
 		{ type = "padding", val = 1 },
 		M.section_projects,
+		{ type = "padding", val = 1 },
+		M.section_footer,
 	},
 }
 
