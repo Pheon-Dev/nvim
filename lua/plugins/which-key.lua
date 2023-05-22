@@ -145,13 +145,13 @@ return {
 			o = {
 				name = "Others",
 				c = {
-					":Telescope command_history theme=dropdown previewer=false initial_mode=normal<cr>",
+					":Telescope command_history previewer=false initial_mode=normal<cr>",
 					"Command History",
 				},
 				m = { ":Mason<cr>", "Mason" },
 				i = { ":lua require('lsp-inlayhints').toggle()<cr>", "Inlayhints" },
-				t = { ":Telescope help_tags theme=dropdown initial_mode=insert<cr>", "Help Tags" },
-				h = { ":Telescope harpoon marks theme=dropdown initial_mode=normal previewer=false<cr>", "Harpoon" },
+				t = { ":Telescope help_tags previewer=false initial_mode=insert<cr>", "Help Tags" },
+				h = { ":Telescope harpoon marks initial_mode=normal previewer=false<cr>", "Harpoon" },
 				x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
 			},
 			q = { ":bd<cr>", "Close Buffer" },
@@ -203,7 +203,7 @@ return {
 				l = { ":TroubleToggle loclist<cr>", "Loclist" },
 				p = { require("lsp_lines").toggle, "Toggle LSP Lines" },
 			},
-			y = { ":Telescope yank_history theme=dropdown previewer=false initial_mode=normal<cr>", "Yank History" },
+			y = { ":Telescope yank_history previewer=false initial_mode=normal<cr>", "Yank History" },
 			z = { ":Lazy<cr>", "Lazy" },
 		}
 
