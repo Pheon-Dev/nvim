@@ -1,5 +1,4 @@
 local has_project, project_history = pcall(require, "project_nvim.utils.history")
-local theme = require("config.colors")
 local M = {}
 
 local function header_hl_today()
@@ -29,6 +28,7 @@ M.section_header = {
 		hl = header_hl_today(),
 	},
 }
+
 function M.open_project(project_path)
 	local success = require("project_nvim.project").set_pwd(project_path, "alpha")
 	if not success then
@@ -121,18 +121,18 @@ function M.buttons()
 	vim.api.nvim_create_autocmd({ "User" }, {
 		pattern = { "AlphaReady" },
 		callback = function(_)
-			vim.api.nvim_buf_set_keymap(0, "n", "f", ":Telescope find_files initial_mode=insert<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "i", ":lua require('lir.float').toggle()<cr>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "<leader>j", ":NvimTreeToggle<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(
 				0,
 				"n",
-				"g",
-				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>",
+				"<leader>k",
+				":lua require('harpoon.ui').toggle_quick_menu()<cr>",
 				keybind_opts
 			)
-			vim.api.nvim_buf_set_keymap(0, "n", "m", ":Mason<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "f", ":Telescope find_files initial_mode=insert<cr>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "i", ":lua require('lir.float').toggle()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "n", ":Telescope notify<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "s", ":lua require('nvim-possession').list()<cr>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "p", ":Telescope projects previewer=false<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "r", ":Telescope live_grep<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(
 				0,
@@ -143,19 +143,19 @@ function M.buttons()
 			)
 		end,
 	})
-	local buttons_hl = { { "AlphaKeys", 0, 5 }, { "AlphaIcon", 5, 20 }, { "AlphaDesc", 20, 70 } }
+	local buttons_hl = { { "AlphaKeys", 0, 8 }, { "AlphaIcon", 25, 30 }, { "AlphaDesc", 30, 70 } }
 	return {
 		{
 			type = "text",
 			val = {
-				"[f]" .. "               " .. " Find File",
-				"[i]" .. "               " .. " Lir",
-				"[g]" .. "               " .. " Lazygit",
-				"[m]" .. "               " .. " Mason",
-				"[n]" .. "               " .. " Notifications",
-				"[r]" .. "               " .. " Search",
-				"[s]" .. "               " .. " Possessions",
-				"[t]" .. "               " .. " TODO",
+				"[f]" .. "                       " .. " Find File",
+				"[i]" .. "                       " .. " Lir",
+				"[␣k]" .. "                     ﯠ " .. " Harpoon",
+				"[␣j]" .. "                     פּ " .. " Nvim-Tree",
+				"[n]" .. "                       " .. " Notifications",
+				"[p]" .. "                       " .. " Projects",
+				"[r]" .. "                       " .. " Search",
+				"[t]" .. "                       " .. " TODO",
 			},
 			opts = {
 				position = "center",
@@ -179,30 +179,35 @@ function M.shortcuts()
 	vim.api.nvim_create_autocmd({ "User" }, {
 		pattern = { "AlphaReady" },
 		callback = function(_)
-			vim.api.nvim_buf_set_keymap(0, "n", "<leader>j", ":NvimTreeToggle<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "e", ":NvimTreeToggle<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "h", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "h", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "<esc>", "<cmd>q<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "l", "<cmd>q<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", ";", "<cmd>q<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "z", ":Lazy<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(
+				0,
+				"n",
+				"g",
+				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>",
+				keybind_opts
+			)
+			vim.api.nvim_buf_set_keymap(0, "n", "m", ":Mason<CR>", keybind_opts)
+
+			-- Quit
+			vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "h", "<cmd>q<CR>", keybind_opts)
 		end,
 	})
 	return {
 		{
 			type = "text",
 			val = {
-				"ﯠ Harpoon [h]    פּ Nvim-Tree [e]    鈴 Lazy [z]     Quit [q]",
+				-- "ﯠ Harpoon [h]    פּ Nvim-Tree [e]    鈴 Lazy [z]     Quit [q]",
+				" Lazygit [l]     Mason [m]    鈴 Lazy [z]     Quit [q]",
 			},
 			opts = {
 				position = "center",
 				hl = {
 					{ "Constant", 1, 20 },
 					{ "Keyword", 20, 38 },
-					{ "Function", 38, 58 },
-					{ "AlphaQuit", 58, 70 },
+					{ "Function", 38, 50 },
+					{ "AlphaQuit", 51, 70 },
 				},
 			},
 		},
@@ -221,18 +226,18 @@ function M.info_text()
 	local total_plugins = "  " .. lazy_stats.loaded .. "/" .. lazy_stats.count .. " in " .. ms .. " ms"
 	local version = vim.version()
 	local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
+	vim.api.nvim_create_autocmd({ "User" }, {
+		pattern = { "LazyVimStarted" },
+		callback = function()
+			pcall(vim.cmd.AlphaRedraw)
+		end,
+	})
 	return datetime .. total_plugins .. nvim_version_info
 end
 
 M.section_info = {
 	type = "text",
 	val = function()
-		vim.api.nvim_create_autocmd({ "User" }, {
-			pattern = { "LazyVimStarted" },
-			callback = function()
-				pcall(vim.cmd.AlphaRedraw)
-			end,
-		})
 		return M.info_text()
 	end,
 	opts = {
@@ -266,8 +271,6 @@ M.config = {
 		M.section_buttons,
 		{ type = "padding", val = 1 },
 		M.section_projects,
-		{ type = "padding", val = 1 },
-		M.section_footer,
 	},
 }
 

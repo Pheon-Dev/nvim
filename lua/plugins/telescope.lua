@@ -91,6 +91,6 @@ return {
 			require("telescope").load_extension("harpoon")
 			require("telescope").load_extension("projects")
 			require("telescope").load_extension("yank_history")
-		end,
+	  	end,
 	},
 }
