@@ -143,7 +143,21 @@ function M.buttons()
 			)
 		end,
 	})
-	local buttons_hl = { { "AlphaKeys", 0, 8 }, { "AlphaIcon", 25, 30 }, { "AlphaDesc", 30, 70 } }
+	local leader_buttons_hl = {
+		{ "Comment", 0, 1 },
+		{ "AlphaQuit", 1, 4 },
+		{ "AlphaKeys", 4, 5 },
+		{ "Comment", 5, 8 },
+		{ "AlphaIcon", 25, 30 },
+		{ "AlphaDesc", 30, 70 },
+	}
+	local buttons_hl = {
+		{ "Comment", 0, 1 },
+	  { "AlphaKeys", 1, 2 },
+		{ "Comment", 2, 8 },
+	  { "AlphaIcon", 25, 30 },
+	  { "AlphaDesc", 30, 70 }
+	}
 	return {
 		{
 			type = "text",
@@ -162,8 +176,8 @@ function M.buttons()
 				hl = {
 					buttons_hl,
 					buttons_hl,
-					buttons_hl,
-					buttons_hl,
+					leader_buttons_hl,
+					leader_buttons_hl,
 					buttons_hl,
 					buttons_hl,
 					buttons_hl,

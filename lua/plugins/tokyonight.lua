@@ -54,8 +54,8 @@ return {
 			vim.cmd("colorscheme tokyonight")
 
 			-- Alpha
-			vim.api.nvim_set_hl(0, "AlphaKeys", { fg = theme.color23, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "AlphaDesc", { fg = theme.color7, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "AlphaKeys", { fg = theme.color43, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "AlphaDesc", { fg = theme.color20, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "AlphaIcon", { fg = theme.color100, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "AlphaQuit", { fg = theme.color16, bg = theme.color0 })
 
