@@ -154,7 +154,7 @@ function M.buttons()
 				"[␣j]" .. "                     פּ " .. " Nvim-Tree",
 				"[n]" .. "                       " .. " Notifications",
 				"[p]" .. "                       " .. " Projects",
-				"[r]" .. "                       " .. " Search",
+				"[s]" .. "                       " .. " Search",
 				"[t]" .. "                       " .. " TODO",
 			},
 			opts = {
@@ -183,7 +183,7 @@ function M.shortcuts()
 			vim.api.nvim_buf_set_keymap(
 				0,
 				"n",
-				"g",
+				"l",
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>",
 				keybind_opts
 			)
