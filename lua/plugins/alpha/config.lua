@@ -127,7 +127,7 @@ function M.buttons()
 			vim.api.nvim_buf_set_keymap(0, "n", "i", ":lua require('lir.float').toggle()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "n", ":Telescope notify<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "p", ":Telescope projects previewer=false<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "r", ":Telescope live_grep<cr>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "s", ":Telescope live_grep<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(
 				0,
 				"n",
