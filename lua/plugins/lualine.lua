@@ -61,7 +61,7 @@ return {
 				options = {
 					icons_enabled = true,
 					globalstatus = true,
-					disabled_filetypes = { statusline = { "alpha" } },
+					disabled_filetypes = { statusline = { "alpha" }, winbar = { "alpha" } },
 					component_separators = "",
 					theme = {
 						normal = { c = { fg = colors.fg, bg = colors.bg } },
