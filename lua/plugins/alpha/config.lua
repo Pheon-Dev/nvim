@@ -1,12 +1,6 @@
 local has_project, project_history = pcall(require, "project_nvim.utils.history")
 local M = {}
 
-local function header_hl_today()
-	local wday = os.date("*t").wday
-	local colors = { "Keyword", "Constant", "Number", "Type", "String", "Special", "Function" }
-	return colors[wday]
-end
-
 M.section_header = {
 	type = "text",
 	val = {
@@ -25,7 +19,7 @@ M.section_header = {
 	},
 	opts = {
 		position = "center",
-		hl = header_hl_today(),
+		hl = "Keyword",
 	},
 }
 
@@ -264,7 +258,7 @@ M.section_footer = {
 	type = "text",
 	val = require("alpha.fortune")(),
 	opts = {
-		hl = "Comment",
+		hl = "AlphaFoot",
 		position = "center",
 	},
 }
