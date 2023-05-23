@@ -1,6 +1,5 @@
--- https://github.com/nvim-tree/nvim-tree.lua/wiki/Open-At-Startup
 return {
-	"kyazdani42/nvim-tree.lua",
+	"nvim-tree/nvim-tree.lua",
 	event = "VeryLazy",
 	cmd = "NvimTreeToggle",
 	config = function()
