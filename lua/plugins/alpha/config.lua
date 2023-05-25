@@ -158,8 +158,8 @@ function M.buttons()
 			val = {
 				"[f]" .. "                       " .. " Find File",
 				"[i]" .. "                       " .. " Lir",
-				"[␣k]" .. "                     ﯠ " .. " Harpoon",
 				"[␣j]" .. "                     פּ " .. " Nvim-Tree",
+				"[␣k]" .. "                     ﯠ " .. " Harpoon",
 				"[n]" .. "                       " .. " Notifications",
 				"[p]" .. "                       " .. " Projects",
 				"[s]" .. "                       " .. " Search",
