@@ -28,6 +28,7 @@
   "gocode": { "branch": "master", "commit": "b672b49f3818b1e1829babe10d5a25e560190d66" },
   "gopher.nvim": { "branch": "main", "commit": "03cabf675ce129c28bd855969a3e569edcf63366" },
   "guihua.lua": { "branch": "master", "commit": "6f82135529b95a0f12460702bb4043603caceb1d" },
+  "hardtime.nvim": { "branch": "main", "commit": "7955fa49d32f72e33a87e2f3749079bfc266aada" },
   "harpoon": { "branch": "master", "commit": "1ed1946dd7a89b05a3392ed95f09940e9473d850" },
   "hop.nvim": { "branch": "v2", "commit": "90db1b2c61b820e230599a04fedcd2679e64bd07" },
   "impatient.nvim": { "branch": "main", "commit": "969f2c5c90457612c09cf2a13fee1adaa986d350" },
