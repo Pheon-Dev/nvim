@@ -116,13 +116,7 @@ function M.buttons()
 		pattern = { "AlphaReady" },
 		callback = function(_)
 			vim.api.nvim_buf_set_keymap(0, "n", "j", ":NvimTreeToggle<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(
-				0,
-				"n",
-				"k",
-				":lua require('harpoon.ui').toggle_quick_menu()<cr>",
-				keybind_opts
-			)
+			vim.api.nvim_buf_set_keymap(0, "n", "k", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "f", ":Telescope find_files initial_mode=insert<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "i", ":lua require('lir.float').toggle()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "n", ":Telescope notify<CR>", keybind_opts)
