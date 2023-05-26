@@ -115,11 +115,11 @@ function M.buttons()
 	vim.api.nvim_create_autocmd({ "User" }, {
 		pattern = { "AlphaReady" },
 		callback = function(_)
-			vim.api.nvim_buf_set_keymap(0, "n", "<leader>j", ":NvimTreeToggle<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "j", ":NvimTreeToggle<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(
 				0,
 				"n",
-				"<leader>k",
+				"k",
 				":lua require('harpoon.ui').toggle_quick_menu()<cr>",
 				keybind_opts
 			)
@@ -137,14 +137,6 @@ function M.buttons()
 			)
 		end,
 	})
-	local leader_buttons_hl = {
-		{ "Comment", 0, 1 },
-		{ "AlphaQuit", 1, 4 },
-		{ "AlphaKeys", 4, 5 },
-		{ "Comment", 5, 8 },
-		{ "AlphaIcon", 25, 30 },
-		{ "AlphaDesc", 30, 70 },
-	}
 	local buttons_hl = {
 		{ "Comment", 0, 1 },
 		{ "AlphaKeys", 1, 2 },
@@ -170,8 +162,8 @@ function M.buttons()
 				hl = {
 					buttons_hl,
 					buttons_hl,
-					leader_buttons_hl,
-					leader_buttons_hl,
+					buttons_hl,
+					buttons_hl,
 					buttons_hl,
 					buttons_hl,
 					buttons_hl,
