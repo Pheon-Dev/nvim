@@ -32,7 +32,7 @@ local servers = {
 	jsonls = {},
 	pyright = {},
 	-- yamlls = {},
-	remark_ls = {},
+	-- remark_ls = {},
 	rust_analyzer = { -- rustup component add rust-analyzer
 		cmd = { "rustup", "run", "stable", "rust-analyzer" },
 	},

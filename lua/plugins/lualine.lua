@@ -185,9 +185,9 @@ return {
         "filename",
         cond = conditions.buffer_not_empty,
         color = { fg = colors.grey },
-        file_status = true, -- Displays file status (readonly status, modified status)
+        file_status = true,     -- Displays file status (readonly status, modified status)
         newfile_status = false, -- Display new file status (new file means no write after created)
-        path = 1,           -- 0: Just the filename
+        path = 1,               -- 0: Just the filename
         -- 1: Relative path
         -- 2: Absolute path
         -- 3: Absolute path, with tilde as the home directory
@@ -254,7 +254,17 @@ return {
 
       ins_right({
         function()
-          local battery = require("config.modules").battery()
+          local datetime = require("pigeon").datetime()
+          local time = os.date("%H:%M")
+
+          return datetime
+        end,
+        color = { fg = theme.color3 },
+      })
+
+      ins_right({
+        function()
+          local battery = require("pigeon").battery()
           return battery
         end,
         color = { fg = colors.orange3 },
@@ -262,7 +272,7 @@ return {
 
       ins_right({
         function()
-          local wifi = require("config.modules").wifi()
+          local wifi = require("pigeon").wifi()
           return wifi
         end,
         color = { fg = theme.color89 },
