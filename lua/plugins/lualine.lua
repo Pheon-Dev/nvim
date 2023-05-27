@@ -185,9 +185,9 @@ return {
         "filename",
         cond = conditions.buffer_not_empty,
         color = { fg = colors.grey },
-        file_status = true,     -- Displays file status (readonly status, modified status)
+        file_status = true, -- Displays file status (readonly status, modified status)
         newfile_status = false, -- Display new file status (new file means no write after created)
-        path = 1,               -- 0: Just the filename
+        path = 1,           -- 0: Just the filename
         -- 1: Relative path
         -- 2: Absolute path
         -- 3: Absolute path, with tilde as the home directory
@@ -254,36 +254,16 @@ return {
 
       ins_right({
         function()
-          local capacity = vim.fn.system("cat /sys/class/power_supply/BAT0/capacity")
-          local result = " " .. capacity
-          result = result:gsub("\n", "")
-          return result
+          local battery = require("config.modules").battery()
+          return battery
         end,
         color = { fg = colors.orange3 },
       })
 
       ins_right({
         function()
-          local connection = vim.fn.system('ping -c 1 8.8.8.8 > /dev/null 2>&1 && echo "  " || echo ""')
-          connection = connection:gsub("\n", "")
-          local signal_speed = ""
-          local function fetch_signal_speed()
-            local signal = vim.fn.systemlist('iwconfig 2>&1 | grep -o "Bit Rate=.*" | grep -o "[0-9.]*"')
-            -- signal = signal:gsub("\n", "")
-            -- signal = tonumber(signal)
-            if signal and #signal > 0 then
-              local speed = math.floor(tonumber(signal[1]) / 1)
-              signal_speed = speed .. " dBm"
-              -- signal_speed = speed .. " Mb/s"
-            else
-              signal_speed = "N/A"
-            end
-          end
-
-          -- fetch_signal_speed()
-
-          local result = connection .. " " .. signal_speed
-          return result
+          local wifi = require("config.modules").wifi()
+          return wifi
         end,
         color = { fg = theme.color89 },
       })
