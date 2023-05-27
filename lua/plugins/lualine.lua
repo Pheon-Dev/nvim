@@ -1,6 +1,7 @@
 return {
   {
     "nvim-lualine/lualine.nvim",
+    dependencies = { "Pheon-Dev/pigeon" },
     event = { "VeryLazy", "BufRead" },
     config = function()
       local ok, lualine = pcall(require, "lualine")
@@ -254,9 +255,11 @@ return {
 
       ins_right({
         function()
-          local datetime = require("pigeon").datetime()
-          local time = os.date("%H:%M")
+          local time = require("pigeon").time()
+          local day = require("pigeon").datetime()
+          local date = require("pigeon").datetime()
 
+          local datetime = ""
           return datetime
         end,
         color = { fg = theme.color3 },
