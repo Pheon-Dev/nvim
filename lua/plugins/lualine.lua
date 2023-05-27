@@ -266,7 +266,7 @@ return {
         function()
           local connection = vim.fn.system('ping -c 1 8.8.8.8 > /dev/null 2>&1 && echo "  " || echo ""')
           connection = connection:gsub("\n", "")
-          local signal_speed = "N/A"
+          local signal_speed = ""
           local function fetch_signal_speed()
             local signal = vim.fn.systemlist('iwconfig 2>&1 | grep -o "Bit Rate=.*" | grep -o "[0-9.]*"')
             -- signal = signal:gsub("\n", "")
@@ -280,7 +280,7 @@ return {
             end
           end
 
-          fetch_signal_speed()
+          -- fetch_signal_speed()
 
           local result = connection .. " " .. signal_speed
           return result
