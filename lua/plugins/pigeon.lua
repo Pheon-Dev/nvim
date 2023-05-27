@@ -1,3 +1,0 @@
-return {
-	"Pheon-Dev/pigeon",
-}
