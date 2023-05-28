@@ -201,7 +201,6 @@ return {
 				q = { ":TroubleToggle quickfix<cr>", "Quick Fix" },
 				s = { ":TroubleToggle lsp_references<cr>", "LSP References" },
 				l = { ":TroubleToggle loclist<cr>", "Loclist" },
-				p = { require("lsp_lines").toggle, "Toggle LSP Lines" },
 			},
 			y = { ":Telescope yank_history previewer=false initial_mode=normal<cr>", "Yank History" },
 			z = { ":Lazy<cr>", "Lazy" },
