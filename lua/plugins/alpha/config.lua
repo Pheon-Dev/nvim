@@ -193,7 +193,7 @@ function M.shortcuts()
 			type = "text",
 			val = {
 				-- "ﯠ Harpoon [h]    פּ Nvim-Tree [e]    鈴 Lazy [z]     Quit [q]",
-				" Lazygit [l]     Mason [m]    鈴 Lazy [z]     Quit [q]",
+				" Lazygit [l]     Mason [m]    鈴 Lazy [z]     Quit [q]",
 			},
 			opts = {
 				position = "center",
