@@ -255,12 +255,24 @@ return {
 
       ins_right({
         function()
-          local time = require("pigeon").time()
-          local day = require("pigeon").datetime()
-          local date = require("pigeon").datetime()
+          local result = require("pigeon").time()
+          return result
+        end,
+        color = { fg = theme.color3 },
+      })
 
-          local datetime = ""
-          return datetime
+      ins_right({
+        function()
+          local result = require("pigeon").date()
+          return result
+        end,
+        color = { fg = theme.color3 },
+      })
+
+      ins_right({
+        function()
+          local result = require("pigeon").day()
+          return result
         end,
         color = { fg = theme.color3 },
       })
@@ -273,13 +285,13 @@ return {
         color = { fg = colors.orange3 },
       })
 
-      ins_right({
-        function()
-          local wifi = require("pigeon").wifi()
-          return wifi
-        end,
-        color = { fg = theme.color89 },
-      })
+      -- ins_right({
+      --   function()
+      --     local wifi = require("pigeon").wifi()
+      --     return wifi
+      --   end,
+      --   color = { fg = theme.color89 },
+      -- })
 
       ins_left({
         function()
