@@ -35,6 +35,7 @@ vim.o.backup = false
 vim.g.move_map_keys = 0
 vim.o.conceallevel = 0
 vim.g.loaded_gzip = 1
+vim.g.codeium_disable_bindings = 1
 vim.g.loaded_zip = 1
 vim.g.loaded_zipPlugin = 1
 vim.g.loaded_tar = 1
