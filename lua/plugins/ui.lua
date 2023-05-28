@@ -11,29 +11,31 @@ return {
 				desc = "Clear all Notifications",
 			},
 		},
-		config = {
-			background_colour = "Normal",
-			fps = 30,
-			icons = {
-				DEBUG = "",
-				ERROR = "",
-				INFO = "",
-				TRACE = "✎",
-				WARN = "",
-			},
-			level = 2,
-			-- minimum_width = 50,
-			render = "compact",
-			stages = "slide",
-			top_down = true,
-			timeout = 3000,
-			max_height = function()
-				return math.floor(vim.o.lines * 0.75)
-			end,
-			max_width = function()
-				return math.floor(vim.o.columns * 0.75)
-			end,
-		},
+		config = function()
+			require("notify").setup({
+				background_colour = "Normal",
+				fps = 30,
+				icons = {
+					DEBUG = "",
+					ERROR = "",
+					INFO = "",
+					TRACE = "✎",
+					WARN = "",
+				},
+				level = 2,
+				-- minimum_width = 50,
+				render = "compact",
+				stages = "slide",
+				top_down = true,
+				timeout = 3000,
+				max_height = function()
+					return math.floor(vim.o.lines * 0.75)
+				end,
+				max_width = function()
+					return math.floor(vim.o.columns * 0.75)
+				end,
+			})
+		end,
 	},
 
 	-- better vim.ui
