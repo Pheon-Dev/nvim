@@ -2,20 +2,27 @@ for name, icon in pairs(require("config.settings").icons.diagnostics) do
 	name = "DiagnosticSign" .. name
 	vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 end
+local icons = {
+	[vim.diagnostic.severity.ERROR] = "",
+	[vim.diagnostic.severity.WARN] = "",
+	[vim.diagnostic.severity.INFO] = "",
+	[vim.diagnostic.severity.HINT] = "󰌶",
+}
+
 vim.diagnostic.config({
 	-- underline = false,
 	update_in_insert = false,
-	-- virtual_text = { spacing = 4, prefix = "●" },
-	virtual_text = false,
 	virtual_lines = false,
 	severity_sort = true,
 	-- No virtual text (distracting!), show popup window on hover.
-	-- virtual_text = {
-	-- 	severity = { min = vim.diagnostic.severity.WARN },
-	-- 	prefix = vim.fn.has("nvim-0.10") > 0 and function(diagnostic) ---@param diagnostic Diagnostic
-	-- 		return (icons[diagnostic.severity] or "") .. " "
-	-- 	end,
-	-- },
+	-- virtual_text = { spacing = 4, prefix = "●" },
+	-- virtual_text = false,
+	virtual_text = {
+		severity = { min = vim.diagnostic.severity.WARN },
+		prefix = vim.fn.has("nvim-0.10") > 0 and function(diagnostic) ---@param diagnostic Diagnostic
+			return (icons[diagnostic.severity] or "") .. " "
+		end,
+	},
 	underline = {
 		-- Do not underline text when severity is low (INFO or HINT).
 		-- severity = { min = vim.diagnostic.severity.WARN },
@@ -24,7 +31,7 @@ vim.diagnostic.config({
 		source = "always",
 		focusable = true,
 		focus = false,
-		border = "single",
+		border = "rounded",
 
 		-- Customize how diagnostic message will be shown: show error code.
 		format = function(diagnostic)
@@ -64,7 +71,7 @@ _G.LspDiagnosticsPopupHandler = function()
 		local _, winnr = _G.LspDiagnosticsShowPopup()
 		if winnr ~= nil then
 			-- opacity/alpha for diagnostics
-			vim.api.nvim_win_set_option(winnr, "winblend", 20)
+			vim.api.nvim_win_set_option(winnr, "winblend", 0)
 		end
 	end
 end
@@ -82,3 +89,50 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 	},
 	update_in_insert = false,
 })
+
+-- Redefine signs (:help diagnostic-signs) and highlights (:help diagnostic-highlights)
+do
+	vim.fn.sign_define(
+		"DiagnosticSignError",
+		{ text = icons[vim.diagnostic.severity.ERROR], texthl = "DiagnosticSignError" }
+	)
+	vim.fn.sign_define(
+		"DiagnosticSignWarn",
+		{ text = icons[vim.diagnostic.severity.WARN], texthl = "DiagnosticSignWarn" }
+	)
+	vim.fn.sign_define(
+		"DiagnosticSignInfo",
+		{ text = icons[vim.diagnostic.severity.INFO], texthl = "DiagnosticSignInfo" }
+	)
+	vim.fn.sign_define(
+		"DiagnosticSignHint",
+		{ text = icons[vim.diagnostic.severity.HINT], texthl = "DiagnosticSignHint" }
+	)
+end
+-- require("utils.rc_utils").RegisterHighlights(function()
+-- 	vim.cmd([[
+--       hi DiagnosticSignError    guifg=#e6645f ctermfg=167
+--       hi DiagnosticSignWarn     guifg=#b1b14d ctermfg=143
+--       hi DiagnosticSignHint     guifg=#3e6e9e ctermfg=75
+--
+--       hi DiagnosticVirtualTextError   guifg=#a6242f  gui=italic,underdashed,underline
+--       hi DiagnosticVirtualTextWarn    guifg=#777744  gui=italic,underdashed,underline
+--       hi DiagnosticVirtualTextHint    guifg=#555555  gui=italic,underdashed,underline
+--     ]])
+-- end)
+--
+-- -- Turning on and off diagnostics
+-- -- Disable default commands, assuming the plugin is always lazy-loaded
+-- vim.g.toggle_lsp_diagnostics_loaded_install = 1
+-- require("toggle_lsp_diagnostics").init(vim.diagnostic.config())
+--
+-- do
+-- 	vim.cmd([[
+--       command! DiagnosticsDisableBuffer       :lua vim.diagnostic.disable(0)
+--       command! DiagnosticsEnableBuffer        :lua vim.diagnostic.enable(0)
+--       command! DiagnosticsDisableAll          :lua vim.diagnostic.disable()
+--       command! DiagnosticsEnableAll           :lua vim.diagnostic.enable()
+--       command! DiagnosticsVirtualTextToggle   :lua require('toggle_lsp_diagnostics').toggle_diagnostic('virtual_text')
+--       command! DiagnosticsUnderlineToggle     :lua require('toggle_lsp_diagnostics').toggle_diagnostic('underline')
+--     ]])
+-- end
