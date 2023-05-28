@@ -232,11 +232,11 @@ else
 			ahead = "↑·",
 			behind = "↓·",
 			staged = "● ",
-			conflict = "✖ ",
+			conflict = "✖✗ ",
 			modified = "✚ ",
 			untracked = "… ",
 			stashed = "⚑ ",
-			clean = "✔",
+			clean = "✔✓",
 		},
 		kinds = {
 			File = "",
