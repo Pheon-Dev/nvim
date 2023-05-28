@@ -45,7 +45,6 @@ return {
 				lineFoldingOnly = true,
 			}
 
-			local capability = vim.lsp.protocol.make_client_capabilities()
 			capabilities.offsetEncoding = { "utf-16" }
 			require("lspconfig").clangd.setup({ capabilities = capabilities })
 
