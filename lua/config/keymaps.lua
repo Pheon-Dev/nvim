@@ -71,10 +71,10 @@ map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
 local hop = require("hop")
 local directions = require("hop.hint").HintDirection
 vim.keymap.set("", "f", function()
-  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+	hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
 end, { remap = true })
 vim.keymap.set("", "F", function()
-  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
 end, { remap = true })
 
 -- hlslens
@@ -87,15 +87,15 @@ map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
 vim.keymap.set("n", "<c-f>", function()
-  if not require("noice.lsp").scroll(4) then
-    return "<c-f>"
-  end
+	if not require("noice.lsp").scroll(4) then
+		return "<c-f>"
+	end
 end, { silent = true, expr = true })
 
 vim.keymap.set("n", "<c-b>", function()
-  if not require("noice.lsp").scroll(-4) then
-    return "<c-b>"
-  end
+	if not require("noice.lsp").scroll(-4) then
+		return "<c-b>"
+	end
 end, { silent = true, expr = true })
 
 map("n", "zl", "za", { noremap = true, silent = true })
@@ -124,16 +124,16 @@ map("x", "<S-l>", "<Plug>GoVSMRight", {})
 
 -- Codeium
 vim.keymap.set("i", "<C-l>", function()
-  return vim.fn["codeium#Accept"]()
+	return vim.fn["codeium#Accept"]()
 end, { expr = true })
 vim.keymap.set("i", "<c-n>", function()
-  return vim.fn["codeium#CycleCompletions"](1)
+	return vim.fn["codeium#CycleCompletions"](1)
 end, { expr = true })
 vim.keymap.set("i", "<c-p>", function()
-  return vim.fn["codeium#CycleCompletions"](-1)
+	return vim.fn["codeium#CycleCompletions"](-1)
 end, { expr = true })
 vim.keymap.set("i", "<c-u>", function()
-  return vim.fn["codeium#Clear"]()
+	return vim.fn["codeium#Clear"]()
 end, { expr = true })
 
 local crates = require("crates")
@@ -144,9 +144,9 @@ vim.keymap.set("v", "<leader>cu", crates.update_crates, opts)
 
 -- todo-comments
 vim.keymap.set("n", "]t", function()
-  require("todo-comments").jump_next()
+	require("todo-comments").jump_next()
 end, { desc = "Next todo comment" })
 
 vim.keymap.set("n", "[t", function()
-  require("todo-comments").jump_prev()
+	require("todo-comments").jump_prev()
 end, { desc = "Previous todo comment" })

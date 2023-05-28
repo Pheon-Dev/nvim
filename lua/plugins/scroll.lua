@@ -48,7 +48,8 @@ return {
 					},
 					gitsigns = {
 						enable = true,
-						signs = { -- can only be a single character (multibyte is okay)
+						signs = {
+							-- can only be a single character (multibyte is okay)
 							add = "│",
 							change = "│",
 							delete = "-",
