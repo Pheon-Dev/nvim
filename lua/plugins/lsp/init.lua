@@ -172,7 +172,15 @@ return {
 		-- 	"flake8",
 		-- },
 		config = function(plugin)
-			require("mason").setup()
+			require("mason").setup({
+				ui = {
+					icons = {
+						package_installed = "✔",
+						package_pending = "➜",
+						package_uninstalled = "",
+					},
+				},
+			})
 			-- local mr = require("mason-registry")
 			-- for _, tool in ipairs(plugin.ensure_installed) do
 			--   local p = mr.get_package(tool)
@@ -180,13 +188,6 @@ return {
 			--     p:install()
 			--   end
 			-- end
-			ui = {
-				icons = {
-					package_installed = "✔",
-					package_pending = "➜",
-					package_uninstalled = "✖",
-				},
-			}
 		end,
 	},
 	"onsails/lspkind-nvim",
