@@ -1,10 +1,15 @@
 return {
 	"Pheon-Dev/pigeon",
-	event = "BufReadPre",
+	-- event = { "VeryLazy", "BufRead" },
 	config = function()
 		require("pigeon").setup({
+			enabled = true,
 			os = "linux", -- windows, osx
 			plugin_manager = "lazy", -- packer, paq, vim-plug
+			callbacks = {
+				killing_pigeon = nil,
+				respawning_pigeon = nil,
+			},
 			updates = {
 				pretext = "",
 				posttext = "",

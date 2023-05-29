@@ -217,6 +217,22 @@ return {
       end,
     })
 
+    wins_right({
+      "filesize",
+      cond = conditions.buffer_not_empty,
+      color = { fg = colors.grey },
+    })
+
+    wins_right({
+      "location",
+      color = { fg = colors.grey },
+    })
+
+    wins_right({
+      "progress",
+      color = { fg = colors.grey },
+    })
+
     --[[ STATUSLINE ]]
     ins_left({
       "filetype",
@@ -281,7 +297,7 @@ return {
         local capacity = require("pigeon.battery").battery_capacity()
         local charge = require("pigeon.battery").battery_charge()
         local status = require("pigeon.battery").battery_status()
-        local result = status .. capacity ..  charge
+        local result = status .. capacity .. charge
         return result
       end,
       color = { fg = colors.orange3 },
@@ -295,21 +311,13 @@ return {
       color = { fg = theme.color89 },
     })
 
-    ins_right({
-      function()
-        local signal = require("pigeon.internet").signal_speed()
-        return signal
-      end,
-      color = { fg = theme.color89 },
-    })
-
-    ins_right({
-      function()
-        local wifi = require("pigeon").wifi()
-        return wifi
-      end,
-      color = { fg = theme.color89 },
-    })
+    -- ins_right({
+    -- 	function()
+    -- 		local signal = require("pigeon.internet").signal_speed()
+    -- 		return signal
+    -- 	end,
+    -- 	color = { fg = theme.color89 },
+    -- })
 
     ins_left({
       function()
@@ -337,22 +345,6 @@ return {
         return "﯑ %3{codeium#GetStatusString()}"
       end,
       color = { fg = colors.grey },
-    })
-
-    ins_right({
-      "filesize",
-      cond = conditions.buffer_not_empty,
-      color = { fg = colors.bg2 },
-    })
-
-    ins_right({
-      "location",
-      color = { fg = colors.bg2 },
-    })
-
-    ins_right({
-      "progress",
-      color = { fg = colors.bg2 },
     })
 
     ins_right({
