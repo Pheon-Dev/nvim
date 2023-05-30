@@ -99,7 +99,7 @@ M.section_projects = {
 	val = {
 		{
 			type = "text",
-			val = " Recent Projects",
+			val = " Recent Projects",
 			opts = {
 				hl = "SpecialComment",
 				shrink_margin = false,
@@ -142,8 +142,8 @@ function M.buttons()
 		{
 			type = "text",
 			val = {
-				"[f]" .. "                       " .. " Find File",
-				"[i]" .. "                       " .. " Lir",
+				"[f]" .. "                      󰈞 " .. " Find File",
+				"[i]" .. "                       " .. " Lir",
 				"[j]" .. "                      פּ " .. " Nvim-Tree",
 				"[k]" .. "                      ﯠ " .. " Harpoon",
 				"[n]" .. "                       " .. " Notifications",
@@ -193,7 +193,7 @@ function M.shortcuts()
 			type = "text",
 			val = {
 				-- "ﯠ Harpoon [h]    פּ Nvim-Tree [e]    鈴 Lazy [z]     Quit [q]",
-				" Lazygit [l]     Mason [m]    鈴 Lazy [z]     Quit [q]",
+				" Lazy [l]    󰺾 Mason [m]    鈴 Lazy [z]     Quit [q]",
 			},
 			opts = {
 				position = "center",
