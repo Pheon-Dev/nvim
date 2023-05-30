@@ -306,18 +306,13 @@ return {
     ins_right({
       function()
         local wifi = require("pigeon.internet").wifi_status()
-        return wifi
+        local signal = require("pigeon.internet").bit_rate()
+        local essid = require("pigeon.internet").wifi_essid()
+
+        return essid .. " " .. wifi .. " " .. signal
       end,
       color = { fg = theme.color89 },
     })
-
-    -- ins_right({
-    -- 	function()
-    -- 		local signal = require("pigeon.internet").signal_speed()
-    -- 		return signal
-    -- 	end,
-    -- 	color = { fg = theme.color89 },
-    -- })
 
     ins_left({
       function()
