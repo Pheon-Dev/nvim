@@ -185,9 +185,9 @@ return {
       "filename",
       cond = conditions.buffer_not_empty,
       color = { fg = colors.grey },
-      file_status = true,  -- Displays file status (readonly status, modified status)
+      file_status = true,     -- Displays file status (readonly status, modified status)
       newfile_status = false, -- Display new file status (new file means no write after created)
-      path = 1,            -- 0: Just the filename
+      path = 1,               -- 0: Just the filename
       -- 1: Relative path
       -- 2: Absolute path
       -- 3: Absolute path, with tilde as the home directory
@@ -270,46 +270,54 @@ return {
 
     ins_right({
       function()
-        local result = require("pigeon.datetime").current_time()
-        return result
+        local enabled = require("pigeon.config").options.datetime.enabled
+        local datetime = require("pigeon.datetime")
+
+        local time = datetime.current_time()
+        local date = datetime.current_date()
+        local day = datetime.current_day()
+
+        if enabled then
+          return time .. " " .. date .. " " .. day
+        else
+          return ""
+        end
       end,
       color = { fg = theme.color3 },
     })
 
     ins_right({
       function()
-        local result = require("pigeon.datetime").current_date()
-        return result
-      end,
-      color = { fg = theme.color3 },
-    })
+        local enabled = require("pigeon.config").options.battery.enabled
+        local battery = require("pigeon.battery")
 
-    ins_right({
-      function()
-        local result = require("pigeon.datetime").current_day()
-        return result
-      end,
-      color = { fg = theme.color3 },
-    })
+        local capacity = battery.battery_capacity()
+        local charge = battery.battery_charge()
+        local status = battery.battery_status()
 
-    ins_right({
-      function()
-        local capacity = require("pigeon.battery").battery_capacity()
-        local charge = require("pigeon.battery").battery_charge()
-        local status = require("pigeon.battery").battery_status()
-        local result = status .. capacity .. charge
-        return result
+        if enabled then
+          return status .. capacity .. charge
+        else
+          return ""
+        end
       end,
       color = { fg = colors.orange3 },
     })
 
     ins_right({
       function()
-        local wifi = require("pigeon.internet").wifi_status()
-        local signal = require("pigeon.internet").bit_rate()
-        local essid = require("pigeon.internet").wifi_essid()
+        local enabled = require("pigeon.config").options.internet.enabled
+        local internet = require("pigeon.internet")
 
-        return essid .. " " .. wifi .. " " .. signal
+        local wifi = internet.wifi_status()
+        local signal = internet.bit_rate()
+        local essid = internet.wifi_essid()
+
+        if enabled then
+          return essid .. " " .. wifi .. " " .. signal
+        else
+          return ""
+        end
       end,
       color = { fg = theme.color89 },
     })
