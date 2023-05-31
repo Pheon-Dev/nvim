@@ -161,6 +161,9 @@ return {
         d = { ":PigeonToggleDateTime<cr>", "Toggle Date and Time Module" },
         b = { ":PigeonToggleBattery<cr>", "Toggle Battery Module" },
         i = { ":PigeonToggleInternet<cr>", "Toggle Internet Module" },
+        y = { ":PigeonToggleDay<cr>", "Toggle Day Submodule" },
+        e = { ":PigeonToggleDate<cr>", "Toggle Date Submodule" },
+        t = { ":PigeonToggleTime<cr>", "Toggle Time Submodule" },
       },
       r = {
         name = "Rust",

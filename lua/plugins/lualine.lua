@@ -272,18 +272,39 @@ return {
       function()
         local enabled = require("pigeon.config").options.datetime.enabled
         local datetime = require("pigeon.datetime")
+        local time_enabled = require("pigeon.config").options.datetime.time.enabled
 
-        local time = datetime.current_time()
-        local date = datetime.current_date()
-        local day = datetime.current_day()
+        local time = time_enabled and datetime.current_time() or ""
 
-        if enabled then
-          return time .. " " .. date .. " " .. day
-        else
-          return ""
-        end
+        return enabled and time or ""
       end,
-      color = { fg = theme.color3 },
+      color = { fg = theme.color16 },
+    })
+
+    ins_right({
+      function()
+        local enabled = require("pigeon.config").options.datetime.enabled
+        local datetime = require("pigeon.datetime")
+        local date_enabled = require("pigeon.config").options.datetime.date.enabled
+
+        local date = date_enabled and datetime.current_date() or ""
+
+        return enabled and date or ""
+      end,
+      color = { fg = theme.color73 },
+    })
+
+    ins_right({
+      function()
+        local enabled = require("pigeon.config").options.datetime.enabled
+        local datetime = require("pigeon.datetime")
+        local day_enabled = require("pigeon.config").options.datetime.day.enabled
+
+        local day = day_enabled and datetime.current_day() or ""
+
+        return enabled and day or ""
+      end,
+      color = { fg = theme.color14 },
     })
 
     ins_right({
