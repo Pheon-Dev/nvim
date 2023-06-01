@@ -278,7 +278,7 @@ return {
 
         return enabled and time or ""
       end,
-      color = { fg = theme.color16 },
+      color = { fg = theme.color20 },
     })
 
     ins_right({
@@ -304,7 +304,7 @@ return {
 
         return enabled and day or ""
       end,
-      color = { fg = theme.color14 },
+      color = { fg = theme.color74 },
     })
 
     ins_right({
