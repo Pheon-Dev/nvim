@@ -112,10 +112,10 @@ map("v", "<leader>hr", ":Gitsigns reset_hunk<CR>", { noremap = true, silent = tr
 map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
 map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
 
-map("n", "<C-x>", "<Plug>GoNSMLeft", {})
+-- map("n", "<C-x>", "<Plug>GoNSMLeft", {})
+-- map("n", "<S-x>", "<Plug>GoNSMRight", {})
 map("n", "-", "<Plug>GoNSMDown", {})
 map("n", "=", "<Plug>GoNSMUp", {})
-map("n", "<S-x>", "<Plug>GoNSMRight", {})
 
 map("x", "<S-h>", "<Plug>GoVSMLeft", {})
 map("x", "<S-j>", "<Plug>GoVSMDown", {})
