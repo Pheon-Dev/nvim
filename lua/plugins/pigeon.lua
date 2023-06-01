@@ -1,6 +1,6 @@
 return {
   "Pheon-Dev/pigeon",
-  -- event = { "VeryLazy", "BufRead" },
+  event = { "VeryLazy", "BufRead" },
   config = function()
     require("pigeon").setup({
       enabled = true,
@@ -65,7 +65,7 @@ return {
         enabled = true,
         signal = {
           enabled = true,
-          unit = "mbps", -- mbps | mb/s | Mb/s | MB/s | Mbps | MBps
+          unit = "mbps", -- mbps, dbm
         },
         ethernet = {
           enabled = true,
