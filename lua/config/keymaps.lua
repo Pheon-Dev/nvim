@@ -103,8 +103,10 @@ map("n", "zl", "za", { noremap = true, silent = true })
 map("n", "cc", "0D", { noremap = true, silent = true })
 
 -- map("n", "<A-i>", "<C-i>", { noremap = true, silent = true })
--- map("n", "<A-o>", "<C-o>", { noremap = true, silent = true })
 map("i", "<A-o>", "<C-o>", { noremap = true, silent = true })
+map("i", "<C-k>", "<C-o>O", { noremap = true, silent = true })
+map("i", "<C-j>", "<C-o>o", { noremap = true, silent = true })
+map("i", "<C-a>", "<C-o>A", { noremap = true, silent = true })
 
 -- Gitsigns
 map("v", "<leader>hs", ":Gitsigns stage_hunk<CR>", { noremap = true, silent = true })
