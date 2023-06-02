@@ -209,8 +209,8 @@ return {
 			-- })
 
 			vim.api.nvim_set_hl(0, "TelescopePromptBorder", {
-				fg = theme.color1,
-				bg = theme.color1,
+				fg = theme.color2,
+				bg = theme.color0,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePromptNormal", {
@@ -225,7 +225,7 @@ return {
 
 			vim.api.nvim_set_hl(0, "TelescopePromptCounter", {
 				fg = theme.color5,
-				bg = theme.color1,
+				bg = theme.color0,
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopePromptPrefix", {
@@ -237,7 +237,7 @@ return {
 			--                              Result                              --
 			----------------------------------------------------------------------
 			vim.api.nvim_set_hl(0, "TelescopeResultsBorder", {
-				fg = theme.color1,
+				fg = theme.color2,
 				bg = theme.color0,
 			})
 
@@ -257,8 +257,8 @@ return {
 			})
 
 			vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", {
-				fg = theme.color2,
-				bg = theme.color0,
+				fg = theme.color3,
+				bg = theme.color1,
 			})
 
 			----------------------------------------------------------------------
