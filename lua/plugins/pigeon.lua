@@ -17,7 +17,7 @@ return {
         time = {
           enabled = true,
           format = "%H:%M",
-          posttext = "hrs",
+          posttext = "",
           icon = " ",
         },
         day = {
