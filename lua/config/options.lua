@@ -118,3 +118,8 @@ end
 set_cursorline("WinLeave", false)
 set_cursorline("WinEnter", true)
 set_cursorline("FileType", false, "TelescopePrompt")
+
+vim.cmd([[
+set listchars=tab:\ \ ,nbsp:·,eol:󰌑,trail:·,extends:>,precedes:<,nbsp:␣,conceal:┊
+set list
+]])
