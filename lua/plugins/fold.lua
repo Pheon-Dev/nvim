@@ -68,9 +68,9 @@ return {
 				close_fold_kinds = { "imports", "comment" },
 				preview = {
 					win_config = {
-						--[[ border = "rounded", ]]
-						border = { "", "─", "", "", "", "─", "", "" },
-						winhighlight = "Normal:PmenuSel",
+						border = "rounded",
+						--[[ border = { "", "─", "", "", "", "─", "", "" }, ]]
+						-- winhighlight = "Normal:PmenuSel",
 						winblend = 0,
 						--[[ maxheight = 20 ]]
 					},
