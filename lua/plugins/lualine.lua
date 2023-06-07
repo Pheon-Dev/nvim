@@ -235,6 +235,15 @@ return {
 
     --[[ STATUSLINE ]]
     ins_left({
+      function()
+        local enabled = require("pigeon.config").options.hostname.enabled
+        local hostname = require("pigeon.hostname").hostname()
+
+        return enabled and hostname or ""
+      end,
+      color = { fg = theme.color20 },
+    })
+    ins_left({
       "filetype",
       color = function()
         return { fg = mode_color[vim.fn.mode()] }
@@ -266,6 +275,29 @@ return {
         color_info = { fg = colors.cyan },
       },
       padding = { right = 1, left = 2 },
+    })
+
+    ins_right({
+      function()
+        local enabled = require("pigeon.config").options.ram.enabled
+        local ram = require("pigeon.ram")
+        local perc_enabled = requirw("pigeon.config").options.ram.show_percentage
+
+        local total_ram = ram.total_ram()
+        local used_ram = ram.used_ram()
+        local perc_ram = ram.perc_ram()
+        local icon = ram.ram_icon
+
+        local result = icon .. " " .. used_ram .. "/" .. total_ram .. " "
+        local perc_result = icon .. " " .. used_ram .. "/" .. total_ram .. " " .. "(" .. perc_ram .. ")"
+
+        if enabled then
+          return perc_enabled and perc_result or result
+        else
+          return ""
+        end
+      end,
+      color = { fg = theme.color20 },
     })
 
     ins_right({
