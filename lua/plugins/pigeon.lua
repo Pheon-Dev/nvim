@@ -4,8 +4,12 @@ return {
   config = function()
     require("pigeon").setup({
       enabled = true,
-      os = "linux",       -- windows, osx
+      os = "linux",         -- windows, osx
       plugin_manager = "lazy", -- packer, paq, vim-plug
+      hostname = {
+        enabled = false,
+        icon = " ",
+      },
       updates = {
         enabled = true,
         pretext = "",
@@ -21,12 +25,12 @@ return {
           icon = " ",
         },
         day = {
-          enabled = true,
+          enabled = false,
           format = "%A",
           icon = " ",
         },
         date = {
-          enabled = true,
+          enabled = false,
           format = "%Y-%m-%d",
           icon = " ",
         },
@@ -57,10 +61,10 @@ return {
             full = { icon = "  " },
             unknown = { icon = " " },
             critical = { icon = " " },
-            percentage = { icon = " 󰏰" },
           },
         },
       },
+      percentage = { icon = " 󰏰" },
       internet = {
         enabled = true,
         signal = {
@@ -98,8 +102,8 @@ return {
         icon = "󱛟",
       },
       ram = {
-        enabled = true,
-        show_percentage = false,
+        enabled = false,
+        show_percentage = true,
         icon = "󰍛",
       },
       cpu = {
