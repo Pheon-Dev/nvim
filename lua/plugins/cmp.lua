@@ -113,7 +113,7 @@ return {
 			mapping = {
 				["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 				["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-				["<S-x>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+				["<C-c>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 				["<C-y>"] = cmp.config.disable,
 				["<C-x>"] = cmp.mapping({
 					i = cmp.mapping.abort(),
