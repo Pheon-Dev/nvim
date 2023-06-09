@@ -281,7 +281,7 @@ return {
       function()
         local enabled = require("pigeon.config").options.ram.enabled
         local ram = require("pigeon.ram")
-        local perc_enabled = requirw("pigeon.config").options.ram.show_percentage
+        local perc_enabled = require("pigeon.config").options.ram.show_percentage
 
         local total_ram = ram.total_ram()
         local used_ram = ram.used_ram()
@@ -291,14 +291,27 @@ return {
         local result = icon .. " " .. used_ram .. "/" .. total_ram .. " "
         local perc_result = icon .. " " .. used_ram .. "/" .. total_ram .. " " .. "(" .. perc_ram .. ")"
 
+        result = "RAM: " .. result
+        perc_result = "RAM: " .. perc_result
         if enabled then
           return perc_enabled and perc_result or result
         else
           return ""
         end
       end,
-      color = { fg = theme.color20 },
+      color = { fg = theme.color26 },
     })
+
+    -- ins_right({
+    --   function()
+    --     local enabled = require("pigeon.config").options.cpu.enabled
+    --     local cpu = require("pigeon.cpu")
+    --
+    --
+    --     return enabled and cpu.cpu_load() or ""
+    --   end,
+    --   color = { fg = theme.color20 },
+    -- })
 
     ins_right({
       function()
