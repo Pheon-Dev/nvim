@@ -2,14 +2,27 @@ return {
 	{
 		"kana/vim-textobj-user",
 		event = "BufReadPre",
-		dependencies = { "beloglazov/vim-textobj-quotes" },
+		dependencies = {
+			"beloglazov/vim-textobj-quotes",
+			"kana/vim-textobj-entire",
+		},
 		config = function()
 			vim.keymap.set("n", "q", "iq", { noremap = true, silent = true })
 		end,
 	},
+   {
+    "glts/vim-textobj-comment",
+    keys = {
+      { "ic", mode = { "o", "x" }, desc = "Select comment block" },
+      { "ac", mode = { "o", "x" }, desc = "Select comment block" },
+    },
+    dependencies = { "kana/vim-textobj-user" },
+  }, -- vic, vac
+
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		dependencies = "nvim-treesitter/nvim-treesitter",
+		event = "BufReadPre",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				textobjects = {
@@ -17,16 +30,23 @@ return {
 						enable = true,
 
 						-- Automatically jump forward to textobj, similar to targets.vim
-						lookahead = true,
+						lookahead = false,
 
 						keymaps = {
 							-- You can use the capture groups defined in textobjects.scm
 							["af"] = "@function.outer",
 							["if"] = "@function.inner",
-							["ac"] = "@class.outer",
+							["ab"] = "@block.outer",
+							["ib"] = "@block.inner",
+							-- ["ab"] = "@parameter.outer",
+							-- ["ib"] = "@parameter.inner",
+							-- ["ac"] = "@comment.outer",
+							-- ["ic"] = "@comment.inner",
+							["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+							["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
 							-- You can optionally set descriptions to the mappings (used in the desc parameter of
 							-- nvim_buf_set_keymap) which plugins like which-key display
-							["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+							-- ["ic"] = { query = "@comment.inner", desc = "Select inner part of a comment region" },
 							-- You can also use captures from other query groups like `locals.scm`
 							["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
 						},
