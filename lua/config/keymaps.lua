@@ -58,8 +58,6 @@ map("i", "<C-n>", ":Telescope buffers<cr>", { noremap = true, silent = true })
 -- Move to Start/End of Line
 map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
-map("n", "e", "w", { noremap = true, silent = true })
-map("n", "vv", "v", { noremap = true, silent = true })
 
 -- Tabs
 map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
