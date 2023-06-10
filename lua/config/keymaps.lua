@@ -3,7 +3,7 @@ local map = vim.api.nvim_set_keymap
 
 -- Saving and  ESC on insert Mode
 map("i", "jj", "<esc>", { noremap = true, silent = true })
-map("n", "ss", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+map("n", "s", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Saving and Quitting
 map("n", "<C-s>", ":lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
@@ -66,16 +66,6 @@ map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
 map("n", "tn", ":tabNext<cr>", { noremap = true, silent = true })
 map("n", "tp", ":tabprevious<cr>", { noremap = true, silent = true })
 map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
-
--- -- Motion
--- local hop = require("hop")
--- local directions = require("hop.hint").HintDirection
--- vim.keymap.set("", "f", function()
---   hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
--- end, { remap = true })
--- vim.keymap.set("", "F", function()
---   hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
--- end, { remap = true })
 
 -- hlslens
 local kopts = { noremap = true, silent = true }
