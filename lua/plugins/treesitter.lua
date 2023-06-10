@@ -69,6 +69,19 @@ return {
       "RRethy/nvim-treesitter-endwise",
     },
     config = function()
+      local function starts_with(str, start)
+        return str:sub(1, #start) == start
+      end
+
+      local function treesitter_selection_mode(info)
+        -- * query_string: eg '@function.inner'
+        -- * method: eg 'v' or 'o'
+        --print(info['method'])		-- visual, operator-pending
+        if starts_with(info["query_string"], "@function.") then
+          return "V"
+        end
+        return "v"
+      end
 
       require("nvim-treesitter.configs").setup({
         sync_install = false,
@@ -169,7 +182,7 @@ return {
             -- * query_string: eg '@function.inner'
             -- * selection_mode: eg 'v'
             -- and should return true of false
-            include_surrounding_whitespace = treesitter_incwhitespaces,
+            include_surrounding_whitespace = false
           },
           swap = {
             enable = true,
