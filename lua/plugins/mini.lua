@@ -1,11 +1,11 @@
 return {
-	{
-		"echasnovski/mini.ai",
-		event = "VeryLazy",
-		config = function()
-			require("mini.ai").setup({})
-		end,
-	},
+	-- {
+	-- 	"echasnovski/mini.ai",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("mini.ai").setup({})
+	-- 	end,
+	-- },
   -- {
   --   "Wansmer/treesj",
   --   keys = {
@@ -33,15 +33,15 @@ return {
 		end,
 	}, ]]
 
-  -- {
-  --   -- Similar to tpope/vim-surround
-  --   -- dsf to delete surrounding function call.
-  --   "kylechui/nvim-surround",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("nvim-surround").setup()
-  --   end,
-  -- },
+  {
+    -- Similar to tpope/vim-surround
+    -- dsf to delete surrounding function call.
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup()
+    end,
+  },
 	-- {
 	-- 	"echasnovski/mini.surround",
 	-- 	event = "VeryLazy",
