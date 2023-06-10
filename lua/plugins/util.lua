@@ -45,4 +45,49 @@ return {
 
 	"ckipp01/stylua-nvim",
 	-- { "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" },
+  {
+    "Wansmer/treesj",
+    keys = {
+      { "gs", "<cmd>TSJSplit<CR>", desc = "Treesitter Split" },
+      { "gS", "<cmd>TSJJoin<CR>", desc = "Treesitter Join" },
+      -- { "<space>g", "<cmd>TSJToggle<CR>", desc = "Treesitter Toggle" },
+    },
+    config = function()
+      require("treesj").setup { use_default_keymaps = false }
+    end,
+  },
+  {
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup()
+    end,
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      config = function()
+        require("luasnip.loaders.from_vscode").lazy_load()
+      end,
+    },
+  },
+  {
+    "xiyaowong/virtcolumn.nvim",
+    event = "BufReadPre",
+  },
+  {
+    "utilyre/sentiment.nvim",
+    event = "BufReadPre",
+    config = function()
+      require("sentiment").setup({})
+    end,
+  },
+  {
+    "mg979/vim-visual-multi",
+    event = "BufReadPre",
+    config = function()
+      -- require("sentiment").setup({})
+    end,
+  },
 }
