@@ -14,7 +14,15 @@ return {
 			restricted_keys = { "h", "j", "k", "l" },
 			hint_keys = { "^", "$", "a", "i", "d", "y", "c", "l" },
 			-- disabled_keys = { "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>" },
-			disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "lir" },
+			disabled_filetypes = {
+        "qf",
+        "netrw",
+        "NvimTree",
+        "lazy",
+        "mason",
+        "lir",
+        "harpoon",
+      },
 		})
 	end,
 }
