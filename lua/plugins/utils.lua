@@ -43,13 +43,13 @@ return {
 	},
 	{ "kevinhwang91/nvim-hlslens", config = true },
 
-	"ckipp01/stylua-nvim",
-	-- { "mg979/vim-visual-multi", branch = "master", event = "BufReadPre" },
+	{ "ckipp01/stylua-nvim" },
+
   {
     "Wansmer/treesj",
     keys = {
-      { "gs", "<cmd>TSJSplit<CR>", desc = "Treesitter Split" },
-      { "gS", "<cmd>TSJJoin<CR>", desc = "Treesitter Join" },
+      { "gk", "<cmd>TSJSplit<CR>", desc = "Treesitter Split" },
+      { "gj", "<cmd>TSJJoin<CR>", desc = "Treesitter Join" },
       -- { "<space>g", "<cmd>TSJToggle<CR>", desc = "Treesitter Toggle" },
     },
     config = function()
