@@ -4,20 +4,11 @@ return {
 		event = "BufReadPre",
 		opts = { useDefaultKeymaps = true },
 		config = function()
-			-- default config
 			require("various-textobjs").setup({
-				-- lines to seek forwards for "small" textobjs (mostly characterwise textobjs)
-				-- set to 0 to only look in the current line
 				lookForwardSmall = 5,
-
-				-- lines to seek forwards for "big" textobjs (linewise textobjs & url textobj)
 				lookForwardBig = 15,
-
-				-- use suggested keymaps (see README)
 				useDefaultKeymaps = false,
-
-				-- disable some default keymaps, e.g. { "ai", "ii" }
-				disabledKeymaps = {},
+				disabledKeymaps = { "ai", "ii", "aI", "iI" },
 			})
 		end,
 	},
@@ -39,5 +30,34 @@ return {
 			{ "ac", mode = { "o", "x" }, desc = "Select comment block" },
 		},
 		dependencies = { "kana/vim-textobj-user" },
+	},
+	{
+		"kiyoon/treesitter-indent-object.nvim",
+		keys = {
+			{
+				"ai",
+				"<Cmd>lua require'treesitter_indent_object.textobj'.select_indent_outer()<CR>",
+				mode = { "x", "o" },
+				desc = "Select context-aware indent (outer)",
+			},
+			{
+				"aI",
+				"<Cmd>lua require'treesitter_indent_object.textobj'.select_indent_outer(true)<CR>",
+				mode = { "x", "o" },
+				desc = "Select context-aware indent (outer, line-wise)",
+			},
+			{
+				"ii",
+				"<Cmd>lua require'treesitter_indent_object.textobj'.select_indent_inner()<CR>",
+				mode = { "x", "o" },
+				desc = "Select context-aware indent (inner, partial range)",
+			},
+			{
+				"iI",
+				"<Cmd>lua require'treesitter_indent_object.textobj'.select_indent_inner(true)<CR>",
+				mode = { "x", "o" },
+				desc = "Select context-aware indent (inner, entire range)",
+			},
+		},
 	},
 }
