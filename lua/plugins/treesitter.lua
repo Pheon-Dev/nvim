@@ -1,7 +1,7 @@
 return {
   {
     "windwp/nvim-ts-autotag",
-    event = "BufReadPre",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       local filetypes = {
         "html",
@@ -67,36 +67,8 @@ return {
         "nvim-treesitter/nvim-treesitter-textobjects",
       },
       "RRethy/nvim-treesitter-endwise",
-      -- {
-      --   "andymass/vim-matchup",
-      --   init = function()
-      --     --- Without this, lualine will flicker when matching offscreen
-      --     --- Maybe it happens when cmdheight is set to 0
-      --     vim.g.matchup_matchparen_offscreen = { method = "popup" }
-      --   end,
-      -- },
     },
     config = function()
-      -- local function treesitter_selection_mode(info)
-      --   -- * query_string: eg '@function.inner'
-      --   -- * method: eg 'v' or 'o'
-      --   --print(info['method'])		-- visual, operator-pending
-      --   if starts_with(info["query_string"], "@function.") then
-      --     return "V"
-      --   end
-      --   return "v"
-      -- end
-
-      -- local function treesitter_incwhitespaces(info)
-      --   -- * query_string: eg '@function.inner'
-      --   -- * selection_mode: eg 'charwise', 'linewise', 'blockwise'
-      --   -- if starts_with(info['query_string'], '@function.') then
-      --   --  return false
-      --   -- elseif starts_with(info['query_string'], '@comment.') then
-      --   --  return false
-      --   -- end
-      --   return false
-      -- end
 
       require("nvim-treesitter.configs").setup({
         sync_install = false,
