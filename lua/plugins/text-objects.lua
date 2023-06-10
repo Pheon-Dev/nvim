@@ -17,7 +17,7 @@ return {
 			{ "ac", mode = { "o", "x" }, desc = "Select comment block" },
 		},
 		dependencies = { "kana/vim-textobj-user" },
-	}, -- vic, vac
+	},
 	{
 		"kiyoon/treesitter-indent-object.nvim",
 		keys = {

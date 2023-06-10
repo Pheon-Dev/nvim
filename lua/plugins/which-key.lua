@@ -154,7 +154,6 @@ return {
         h = { ":Telescope harpoon marks initial_mode=normal previewer=false<cr>", "Harpoon" },
         x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
       },
-      q = { ":bd<cr>", "Close Buffer" },
       p = {
         name = "Pigeon",
         p = { ":PigeonToggle<cr>", "Toggle All Pigeon Modules" },
@@ -165,6 +164,7 @@ return {
         e = { ":PigeonToggleDate<cr>", "Toggle Date Submodule" },
         t = { ":PigeonToggleTime<cr>", "Toggle Time Submodule" },
       },
+      q = { ":bd<cr>", "Close Buffer" },
       r = {
         name = "Rust",
         a = { rt.code_action_group.code_action_group, "Code Action Group" },
