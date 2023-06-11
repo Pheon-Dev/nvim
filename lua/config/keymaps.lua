@@ -5,22 +5,18 @@ local map = vim.api.nvim_set_keymap
 map("i", "jj", "<esc>", { noremap = true, silent = true })
 map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
--- Saving and Quitting
-map("n", "<C-s>", ":lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
-map("n", "<C-p>", ":Prettier<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
-map("n", "<C-q>", ":w! | bp | sp | bn | bd!<cr>", { noremap = true, silent = true })
-
 -- Windows
 map("n", "vj", ":vsplit<cr>", { noremap = true, silent = true })
 map("n", "vk", ":split<cr>", { noremap = true, silent = true })
 map("n", "vJ", "<C-w>t<C-w>K", { noremap = true, silent = true })
 map("n", "vK", "<C-w>t<C-w>H", { noremap = true, silent = true })
 
-map("n", "Wh", ":WindowsEqualize<cr>", { noremap = true, silent = true })
-map("n", "Wj", ":WindowsMaximize<cr>", { noremap = true, silent = true })
-map("n", "Wk", ":WindowsMaximizeVertically<cr>", { noremap = true, silent = true })
-map("n", "Wl", ":WindowsMaximizeHorizontally<cr>", { noremap = true, silent = true })
-map("n", "Ww", ":WindowsToggleAutowidth<cr>", { noremap = true, silent = true })
+map("n", "<C-j>", "<C-w>h", { noremap = true, silent = false })
+map("n", "<C-k>", "<C-w>l", { noremap = true, silent = false })
+map("n", "<A-h>", "<C-w>h", { noremap = true, silent = false })
+map("n", "<A-j>", "<C-w>j", { noremap = true, silent = false })
+map("n", "<A-k>", "<C-w>k", { noremap = true, silent = false })
+map("n", "<A-l>", "<C-w>l", { noremap = true, silent = false })
 
 map("n", "<C-Left>", ":vertical resize +3<cr>", { noremap = true, silent = true })
 map("n", "<C-Right>", ":vertical resize -3<cr>", { noremap = true, silent = true })
