@@ -4,7 +4,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local ok, lualine = pcall(require, "lualine")
-    local oc, navic = pcall(require, "nvim-navic")
+    local pg, pigeon = pcall(require, "pigeon")
     local on, noice = pcall(require, "noice")
 
     if not ok then
@@ -15,8 +15,8 @@ return {
       vim.notify("Noice didn't load properly!", "error")
     end
 
-    if not oc then
-      vim.notify("Navic didn't load properly!", "error")
+    if not pg then
+      vim.notify("Pigeon didn't load properly!", "error")
     end
 
     local colors = {
@@ -209,15 +209,6 @@ return {
     })
 
     wins_right({
-      function()
-        return navic.get_location()
-      end,
-      color = function()
-        return { fg = colors.bg3 }
-      end,
-    })
-
-    wins_right({
       "filesize",
       cond = conditions.buffer_not_empty,
       color = { fg = colors.grey },
@@ -233,7 +224,7 @@ return {
       color = { fg = colors.grey },
     })
 
-    --[[ STATUSLINE ]]
+    -- Statusline
     ins_left({
       function()
         local enabled = require("pigeon.config").options.hostname.enabled
@@ -277,29 +268,10 @@ return {
       padding = { right = 1, left = 2 },
     })
 
-    ins_right({
+    ins_left({
       function()
-        local enabled = require("pigeon.config").options.ram.enabled
-        local ram = require("pigeon.ram")
-        local perc_enabled = require("pigeon.config").options.ram.show_percentage
-
-        local total_ram = ram.total_ram()
-        local used_ram = ram.used_ram()
-        local perc_ram = ram.perc_ram()
-        local icon = ram.ram_icon
-
-        local result = icon .. " " .. used_ram .. "/" .. total_ram .. " "
-        local perc_result = icon .. " " .. used_ram .. "/" .. total_ram .. " " .. "(" .. perc_ram .. ")"
-
-        result = "RAM: " .. result
-        perc_result = "RAM: " .. perc_result
-        if enabled then
-          return perc_enabled and perc_result or result
-        else
-          return ""
-        end
+        return "%="
       end,
-      color = { fg = theme.color26 },
     })
 
     -- ins_right({
@@ -388,11 +360,29 @@ return {
       color = { fg = theme.color89 },
     })
 
-    ins_left({
+    ins_right({
       function()
-        return "%="
+        local enabled = require("pigeon.config").options.ram.enabled
+        local ram = require("pigeon.ram")
+        local perc_enabled = require("pigeon.config").options.ram.show_percentage
+
+        local total_ram = ram.total_ram()
+        local used_ram = ram.used_ram()
+        local perc_ram = ram.perc_ram()
+        local icon = ram.ram_icon
+
+        local result = icon .. " " .. used_ram .. "/" .. total_ram .. " "
+        local perc_result = icon .. " " .. used_ram .. "/" .. total_ram .. " " .. "(" .. perc_ram .. ")"
+
+        if enabled then
+          return perc_enabled and perc_result or result
+        else
+          return ""
+        end
       end,
+      color = { fg = theme.color26 },
     })
+
 
     if on then
       ins_left({
