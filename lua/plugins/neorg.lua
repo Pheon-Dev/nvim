@@ -15,7 +15,7 @@ return {
 						workspaces = {
 							class = "~/.nb/home",
 							home = "~/notes/home",
-							work = "~/notes/wor",
+							work = "~/notes/work",
 						},
 					},
 				},
