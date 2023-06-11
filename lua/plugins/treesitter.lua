@@ -323,7 +323,6 @@ return {
         filetypes_denylist = {
           "dirvish",
           "fugitive",
-          "lir",
           "harpoon",
           "toggleterm",
           "NvimTree",

@@ -2,6 +2,7 @@ for name, icon in pairs(require("config.settings").icons.diagnostics) do
 	name = "DiagnosticSign" .. name
 	vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 end
+
 local icons = {
 	[vim.diagnostic.severity.ERROR] = "",
 	[vim.diagnostic.severity.WARN] = "",

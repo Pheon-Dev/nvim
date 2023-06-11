@@ -20,7 +20,6 @@ return {
         "NvimTree",
         "lazy",
         "mason",
-        "lir",
         "harpoon",
       },
 		})

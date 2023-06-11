@@ -136,7 +136,6 @@ return {
         x = { gs.toggle_deleted, "Toggle Deleted" },
       },
       h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
-      i = { ":lua require('lir.float').toggle()<cr>", "Lir" },
       j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
       l = { toggle_lazygit, "LazyGit" },
