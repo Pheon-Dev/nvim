@@ -1,26 +1,26 @@
 return {
-  "lewis6991/impatient.nvim",
-  "nathom/filetype.nvim",
+  -- "lewis6991/impatient.nvim",
+  -- "nathom/filetype.nvim",
   {
     "imsnif/kdl.vim",
     event = "VeryLazy",
   },
-
-  -- measure startuptime
-  {
-    "dstein64/vim-startuptime",
-    cmd = "StartupTime",
-    config = function()
-      vim.g.startuptime_tries = 10
-    end,
-  },
-
-  -- persistence
-  {
-    "folke/persistence.nvim",
-    event = "BufReadPre",
-    config = true,
-  },
+  --
+  -- -- measure startuptime
+  -- {
+  --   "dstein64/vim-startuptime",
+  --   cmd = "StartupTime",
+  --   config = function()
+  --     vim.g.startuptime_tries = 10
+  --   end,
+  -- },
+  --
+  -- -- persistence
+  -- {
+  --   "folke/persistence.nvim",
+  --   event = "BufReadPre",
+  --   config = true,
+  -- },
   "nvim-lua/plenary.nvim",
 
   "Pheon-Dev/harpoon",
@@ -43,47 +43,8 @@ return {
   },
   { "kevinhwang91/nvim-hlslens", config = true },
 
-  { "ckipp01/stylua-nvim" },
+  -- { "ckipp01/stylua-nvim" },
 
-  {
-    "Wansmer/treesj",
-    keys = {
-      -- { "gk", "<cmd>TSJSplit<CR>", desc = "Treesitter Split" },
-      -- { "gj", "<cmd>TSJJoin<CR>", desc = "Treesitter Join" },
-      { "gj", "<cmd>TSJToggle<CR>", desc = "Treesitter Toggle" },
-    },
-    config = function()
-      local tsj = require('treesj')
-
-      local langs = { --[[ configuration for languages ]] }
-
-      tsj.setup({
-        -- Use default keymaps
-        -- (<space>m - toggle, <space>j - join, <space>s - split)
-        use_default_keymaps = false,
-
-        -- Node with syntax error will not be formatted
-        check_syntax_error = true,
-
-        -- If line after join will be longer than max value,
-        -- node will not be formatted
-        max_join_length = 120,
-
-        -- hold|start|end:
-        -- hold - cursor follows the node/place on which it was called
-        -- start - cursor jumps to the first symbol of the node being formatted
-        -- end - cursor jumps to the last symbol of the node being formatted
-        cursor_behavior = 'hold',
-
-        -- Notify about possible problems or not
-        notify = true,
-        langs = langs,
-
-        -- Use `dot` for repeat action
-        dot_repeat = true,
-      })
-    end,
-  },
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
@@ -103,15 +64,6 @@ return {
     end,
   },
   {
-    "L3MON4D3/LuaSnip",
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-      config = function()
-        require("luasnip.loaders.from_vscode").lazy_load()
-      end,
-    },
-  },
-  {
     "xiyaowong/virtcolumn.nvim",
     event = "BufReadPre",
   },
@@ -125,8 +77,5 @@ return {
   {
     "mg979/vim-visual-multi",
     event = "BufReadPre",
-    config = function()
-      -- require("sentiment").setup({})
-    end,
   },
 }
