@@ -7,7 +7,7 @@ return {
   { "jose-elias-alvarez/typescript.nvim", event = "BufReadPre" },
   {
     "neovim/nvim-lspconfig",
-    event = "BufReadPre",
+    event = "VeryLazy",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "mason.nvim",
@@ -25,12 +25,6 @@ return {
     ---@type lspconfig.options
     servers = nil,
     config = function(plugin)
-      -- setup formatting and keymaps
-      require("util").on_attach(function(client, buffer)
-        require("plugins.lsp.format").on_attach(client, buffer)
-        require("plugins.lsp.keymaps").on_attach(client, buffer)
-      end)
-
       -- diagnostics
       require("plugins.lsp.diagnostics")
 
@@ -72,6 +66,12 @@ return {
         opts.capabilities = capabilities
         require("lspconfig")[server].setup(opts)
       end
+      -- setup formatting and keymaps
+      require("util").on_attach(function(client, buffer)
+        require("plugins.lsp.format").on_attach(client, buffer)
+        require("plugins.lsp.keymaps").on_attach(client, buffer)
+      end)
+
       local util = require("lspconfig.util")
       local on_attach = require("util").on_attach(function(client, buffer)
         require("plugins.lsp.format").on_attach(client, buffer)
