@@ -1,26 +1,4 @@
 return {
-  -- "lewis6991/impatient.nvim",
-  -- "nathom/filetype.nvim",
-  {
-    "imsnif/kdl.vim",
-    event = "VeryLazy",
-  },
-  --
-  -- -- measure startuptime
-  -- {
-  --   "dstein64/vim-startuptime",
-  --   cmd = "StartupTime",
-  --   config = function()
-  --     vim.g.startuptime_tries = 10
-  --   end,
-  -- },
-  --
-  -- -- persistence
-  -- {
-  --   "folke/persistence.nvim",
-  --   event = "BufReadPre",
-  --   config = true,
-  -- },
   "nvim-lua/plenary.nvim",
 
   "Pheon-Dev/harpoon",
