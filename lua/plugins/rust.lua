@@ -51,7 +51,7 @@ return {
 				},
 				popup = {
 					autofocus = false,
-					-- hide_on_select = false,
+					hide_on_select = false,
 					copy_register = '"',
 					style = "minimal",
 					border = "none",
@@ -164,7 +164,7 @@ return {
 	},
 	{
 		"simrat39/rust-tools.nvim",
-		event = "VeryLazy",
+		event = { "BufRead *.rs", "BufReadPre" },
 		config = function()
 			local rt = require("rust-tools")
 
@@ -197,11 +197,11 @@ return {
 
 						-- prefix for parameter hints
 						-- default: "<-"
-						parameter_hints_prefix = "<- ",
+						parameter_hints_prefix = "  ← ",
 
 						-- prefix for all the other hints (type, chaining)
 						-- default: "=>"
-						other_hints_prefix = "=> ",
+						other_hints_prefix = "  ⇒ ",
 
 						-- whether to align to the length of the longest line in the file
 						max_len_align = false,
@@ -216,7 +216,7 @@ return {
 						right_align_padding = 7,
 
 						-- The color of the hints
-						highlight = "Comment",
+						highlight = "RustToolsInlayHints",
 					},
 
 					-- options same as lsp hover / vim.lsp.util.open_floating_preview()
