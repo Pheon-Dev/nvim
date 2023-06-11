@@ -91,6 +91,7 @@ return {
           "help",
           "html",
           "javascript",
+          "kdl",
           "json",
           "lua",
           "markdown",
