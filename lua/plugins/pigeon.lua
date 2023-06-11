@@ -1,6 +1,5 @@
 return {
   "Pheon-Dev/pigeon",
-  event = { "VeryLazy", "BufRead" },
   config = function()
     require("pigeon").setup({
       enabled = true,
@@ -102,7 +101,7 @@ return {
         icon = "󱛟",
       },
       ram = {
-        enabled = false,
+        enabled = true,
         show_percentage = false,
         icon = "󰍛",
       },
