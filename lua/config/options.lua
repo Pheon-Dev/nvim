@@ -70,7 +70,6 @@ vim.o.updatetime = 300
 
 vim.o.foldcolumn = "0" -- '1', '0' is not bad
 vim.o.foldnestmax = "1" -- '1', '0' is not bad
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.g.gitblame_highlight_group = "GitBlame"
 vim.o.encoding = "utf-8"
 vim.o.signcolumn = "yes"
