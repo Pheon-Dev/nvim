@@ -3,7 +3,7 @@ local map = vim.api.nvim_set_keymap
 
 -- Saving and  ESC on insert Mode
 map("i", "jj", "<esc>", { noremap = true, silent = true })
-map("n", "s", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Saving and Quitting
 map("n", "<C-s>", ":lua vim.lsp.buf.formatting()<cr>", { noremap = true, silent = true })
@@ -58,6 +58,8 @@ map("i", "<C-n>", ":Telescope buffers<cr>", { noremap = true, silent = true })
 -- Move to Start/End of Line
 map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
+map("n", "+", "<C-a>", { noremap = true, silent = true })
+map("n", "_", "<C-x>", { noremap = true, silent = true })
 
 -- Tabs
 map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
@@ -147,7 +149,7 @@ local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
 -- Repeat movement with ; and ,
 -- ensure ; goes forward and , goes backward, regardless of the last direction
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
-vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+-- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
 
 -- vim way: ; goes to the direction you were moving.
 -- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
@@ -169,3 +171,30 @@ end)
 vim.keymap.set({ "n", "x", "o" }, "<end>", function()
   ts_repeat_move.repeat_last_move { forward = true, start = false }
 end)
+
+-- Motion
+local hop = require("hop")
+local directions = require("hop.hint").HintDirection
+vim.keymap.set("", "f", function()
+  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+end, { remap = true })
+vim.keymap.set("", "F", function()
+  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+end, { remap = true })
+map("n", "s", ":HopChar2<cr>", { noremap = true, silent = true })
+-- map("n", "sc", ":HopChar1<cr>", { noremap = true, silent = true })
+-- map("n", "sw", ":HopWord<cr>", { noremap = true, silent = true })
+-- map("n", "sv", ":HopVertical<cr>", { noremap = true, silent = true })
+map("n", "sp", ":HopPattern<cr>", { noremap = true, silent = true })
+
+-- fold
+vim.keymap.set("n", "zj", require("ufo").openAllFolds, { desc = "Open all folds" })
+vim.keymap.set("n", "zk", require("ufo").closeAllFolds, { desc = "Close all folds" })
+vim.keymap.set("n", "zh", require("ufo").openFoldsExceptKinds, { desc = "Open folds except kinds" })
+vim.keymap.set("n", "zg", require("ufo").closeFoldsWith, { desc = "Close folds with" }) -- closeAllFolds == closeFoldsWith(0)
+vim.keymap.set("n", "zz", function()
+  local winid = require("ufo").peekFoldedLinesUnderCursor()
+  if not winid then
+    vim.lsp.buf.hover()
+  end
+end, { desc = "Hover" })
