@@ -1,4 +1,3 @@
-local has_project, project_history = pcall(require, "project_nvim.utils.history")
 local M = {}
 
 M.section_header = {
@@ -23,93 +22,6 @@ M.section_header = {
 	},
 }
 
-function M.open_project(project_path)
-	local success = require("project_nvim.project").set_pwd(project_path, "alpha")
-	if not success then
-		return
-	end
-	require("telescope.builtin").find_files({
-		cwd = project_path,
-	})
-end
-
-function M.recent_projects(start, target_width)
-	if start == nil then
-		start = 1
-	end
-	if target_width == nil then
-		target_width = 50
-	end
-	if not has_project then
-		return require("alpha.themes.theta").mru(start, vim.fn.getcwd())
-	end
-	local buttons = {}
-	local project_paths = project_history.get_recent_projects()
-	local added_projects = 0
-	-- most recent project is the last
-	for i = #project_paths, 1, -1 do
-		if added_projects == 9 then
-			break
-		end
-		local project_path = project_paths[i]
-		local stat = vim.loop.fs_stat(project_path .. "/.git")
-		if stat ~= nil and stat.type == "directory" then
-			added_projects = added_projects + 1
-			local shortcut = tostring(added_projects)
-			local display_path = project_path:gsub(vim.env.HOME, "~")
-			local path_ok, plenary_path = pcall(require, "plenary.path")
-			if #display_path > target_width and path_ok then
-				display_path = plenary_path.new(display_path):shorten(1, { -2, -1 })
-				if #display_path > target_width then
-					display_path = plenary_path.new(display_path):shorten(1, { -1 })
-				end
-			end
-			buttons[added_projects] = {
-				type = "button",
-				val = "蘒 " .. display_path,
-				on_press = function()
-					M.open_project(project_path)
-				end,
-				opts = {
-					position = "center",
-					shortcut = shortcut,
-					cursor = target_width + 3,
-					width = target_width + 3,
-					align_shortcut = "right",
-					hl_shortcut = "Keyword",
-					hl = {
-						{ "Number", 1, 3 },
-						{ "Comment", 4, 100 },
-					},
-					keymap = {
-						"n",
-						shortcut,
-						":lua require('custom.configs.alpha').open_project('" .. project_path .. "')<CR>",
-						{ noremap = true, silent = true, nowait = true },
-					},
-				},
-			}
-		end
-	end
-	return buttons
-end
-
-M.section_projects = {
-	type = "group",
-	val = {
-		{
-			type = "text",
-			val = " Recent Projects",
-			opts = {
-				hl = "SpecialComment",
-				shrink_margin = false,
-				position = "center",
-			},
-		},
-		{ type = "group", val = M.recent_projects },
-	},
-}
-
 function M.buttons()
 	local keybind_opts = { silent = true, noremap = true }
 	vim.api.nvim_create_autocmd({ "User" }, {
@@ -118,9 +30,7 @@ function M.buttons()
 			vim.api.nvim_buf_set_keymap(0, "n", "j", ":NvimTreeToggle<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "k", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "f", ":Telescope find_files initial_mode=insert<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "i", ":lua require('lir.float').toggle()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "n", ":Telescope notify<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "p", ":Telescope projects previewer=false<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "s", ":Telescope live_grep<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(
 				0,
@@ -143,11 +53,9 @@ function M.buttons()
 			type = "text",
 			val = {
 				"[f]" .. "                      󰈞 " .. " Find File",
-				"[i]" .. "                       " .. " Lir",
 				"[j]" .. "                      פּ " .. " Nvim-Tree",
 				"[k]" .. "                      ﯠ " .. " Harpoon",
 				"[n]" .. "                       " .. " Notifications",
-				"[p]" .. "                       " .. " Projects",
 				"[s]" .. "                       " .. " Search",
 				"[t]" .. "                       " .. " TODO",
 			},
@@ -272,8 +180,6 @@ M.config = {
 		{ type = "padding", val = 1 },
 		{ type = "padding", val = 1 },
 		M.section_buttons,
-		{ type = "padding", val = 1 },
-		M.section_projects,
 		{ type = "padding", val = 1 },
 		M.section_footer,
 	},
