@@ -65,6 +65,7 @@ return {
 			-- vim.api.nvim_set_hl(0, "IncSearch", { fg = theme.color89, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "ColorColumn", { bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color100 })
+			vim.api.nvim_set_hl(0, "RustToolsInlayHints", { fg = theme.color24 })
 
 			-- Hlslens
 			vim.api.nvim_set_hl(0, "HlSearchNear", { fg = theme.color89, bg = theme.color1 })
@@ -74,11 +75,6 @@ return {
 			-- Winbar
 			-- vim.api.nvim_set_hl(0, "WinBar", { fg = theme.color83, bg = theme.color0 })
 			-- vim.api.nvim_set_hl(0, "WinBarNC", { fg = theme.color83, bg = theme.color0 })
-
-			-- Lir
-			vim.api.nvim_set_hl(0, "LirFloatNormal", { bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "LirFloatCursorLine", { bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "LirFloatBorder", { fg = theme.color2, bg = theme.color0 })
 
 			-- Harpoon
 			vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color2, bg = theme.color0 })
