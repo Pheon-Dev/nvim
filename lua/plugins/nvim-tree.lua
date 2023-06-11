@@ -1,6 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   cmd = "NvimTreeToggle",
   config = function()
     local ok, _ = pcall(require, "nvim-tree")

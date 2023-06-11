@@ -1,7 +1,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "Pheon-Dev/pigeon" },
-  event = { "VeryLazy", "BufRead" },
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     local ok, lualine = pcall(require, "lualine")
     local oc, navic = pcall(require, "nvim-navic")

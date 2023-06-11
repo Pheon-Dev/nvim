@@ -1,7 +1,7 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 		cmd = "Telescope",
 		config = function()
 			local actions = require("telescope.actions")
@@ -89,7 +89,6 @@ return {
 			require("telescope").load_extension("noice")
 			require("telescope").load_extension("notify")
 			require("telescope").load_extension("harpoon")
-			require("telescope").load_extension("projects")
 			require("telescope").load_extension("yank_history")
 	  	end,
 	},

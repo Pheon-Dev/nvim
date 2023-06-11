@@ -1,7 +1,7 @@
 return {
   {
     "anuvyklack/windows.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     dependencies = {
       "anuvyklack/middleclass",
       "anuvyklack/animation.nvim",
@@ -16,7 +16,7 @@ return {
   },
   {
     "sindrets/winshift.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     config = function()
       -- Lua
       require("winshift").setup({
