@@ -7,7 +7,7 @@ return {
   { "jose-elias-alvarez/typescript.nvim", event = "BufReadPre" },
   {
     "neovim/nvim-lspconfig",
-    event = "VeryLazy",
+    event = "BufReadPre",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "mason.nvim",
