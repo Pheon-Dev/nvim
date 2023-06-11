@@ -2,9 +2,7 @@ return {
 	{
 		"phaazon/hop.nvim",
 		branch = "v2",
-		config = function()
-			require("hop").setup({ keys = "asdfghjklmnpqrstuv" })
-		end,
+    config = true,
 	},
 	{
 		"chaoren/vim-wordmotion",
