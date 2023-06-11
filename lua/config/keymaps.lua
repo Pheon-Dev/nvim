@@ -73,15 +73,15 @@ map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
 vim.keymap.set("n", "<c-f>", function()
-  if not require("noice.lsp").scroll(4) then
-    return "<c-f>"
-  end
+	if not require("noice.lsp").scroll(4) then
+		return "<c-f>"
+	end
 end, { silent = true, expr = true })
 
 vim.keymap.set("n", "<c-b>", function()
-  if not require("noice.lsp").scroll(-4) then
-    return "<c-b>"
-  end
+	if not require("noice.lsp").scroll(-4) then
+		return "<c-b>"
+	end
 end, { silent = true, expr = true })
 
 map("n", "zl", "za", { noremap = true, silent = true })
@@ -113,16 +113,16 @@ map("x", "<S-l>", "<Plug>GoVSMRight", {})
 
 -- Codeium
 vim.keymap.set("i", "<C-l>", function()
-  return vim.fn["codeium#Accept"]()
+	return vim.fn["codeium#Accept"]()
 end, { expr = true, silent = true })
 vim.keymap.set("i", "<c-n>", function()
-  return vim.fn["codeium#CycleCompletions"](1)
+	return vim.fn["codeium#CycleCompletions"](1)
 end, { expr = true, silent = true })
 vim.keymap.set("i", "<c-p>", function()
-  return vim.fn["codeium#CycleCompletions"](-1)
+	return vim.fn["codeium#CycleCompletions"](-1)
 end, { expr = true, silent = true })
 vim.keymap.set("i", "<c-u>", function()
-  return vim.fn["codeium#Clear"]()
+	return vim.fn["codeium#Clear"]()
 end, { expr = true, silent = true })
 
 local crates = require("crates")
@@ -133,19 +133,19 @@ vim.keymap.set("v", "<leader>cu", crates.update_crates, opts)
 
 -- todo-comments
 vim.keymap.set("n", "]t", function()
-  require("todo-comments").jump_next()
+	require("todo-comments").jump_next()
 end, { desc = "Next todo comment" })
 
 vim.keymap.set("n", "[t", function()
-  require("todo-comments").jump_prev()
+	require("todo-comments").jump_prev()
 end, { desc = "Previous todo comment" })
 
-local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
+local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 
 -- Repeat movement with ; and ,
 -- ensure ; goes forward and , goes backward, regardless of the last direction
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
--- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+vim.keymap.set({ "n", "x", "o" }, "'", ts_repeat_move.repeat_last_move_previous)
 
 -- vim way: ; goes to the direction you were moving.
 -- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
@@ -160,28 +160,23 @@ vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
 
 -- This repeats the last query with always previous direction and to the start of the range.
 vim.keymap.set({ "n", "x", "o" }, "<home>", function()
-  ts_repeat_move.repeat_last_move { forward = false, start = true }
+	ts_repeat_move.repeat_last_move({ forward = false, start = true })
 end)
 
 -- This repeats the last query with always next direction and to the end of the range.
 vim.keymap.set({ "n", "x", "o" }, "<end>", function()
-  ts_repeat_move.repeat_last_move { forward = true, start = false }
+	ts_repeat_move.repeat_last_move({ forward = true, start = false })
 end)
 
 -- Motion
-local hop = require("hop")
-local directions = require("hop.hint").HintDirection
-vim.keymap.set("", "f", function()
-  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
-end, { remap = true })
-vim.keymap.set("", "F", function()
-  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
-end, { remap = true })
-map("n", "s", ":HopChar2<cr>", { noremap = true, silent = true })
--- map("n", "sc", ":HopChar1<cr>", { noremap = true, silent = true })
+require("hop")
+map("n", "f", ":HopChar1CurrentLineAC<cr>", { noremap = true, silent = true })
+map("n", "F", ":HopChar1CurrentLineBC<cr>", { noremap = true, silent = true })
+map("n", "s", ":HopChar1<cr>", { noremap = true, silent = true })
+map("n", "S", ":HopChar2<cr>", { noremap = true, silent = true })
 -- map("n", "sw", ":HopWord<cr>", { noremap = true, silent = true })
--- map("n", "sv", ":HopVertical<cr>", { noremap = true, silent = true })
-map("n", "sp", ":HopPattern<cr>", { noremap = true, silent = true })
+-- map("n", "sj", ":HopVertical<cr>", { noremap = true, silent = true })
+-- map("n", "sp", ":HopPattern<cr>", { noremap = true, silent = true })
 
 -- fold
 vim.keymap.set("n", "zj", require("ufo").openAllFolds, { desc = "Open all folds" })
@@ -189,8 +184,63 @@ vim.keymap.set("n", "zk", require("ufo").closeAllFolds, { desc = "Close all fold
 vim.keymap.set("n", "zh", require("ufo").openFoldsExceptKinds, { desc = "Open folds except kinds" })
 vim.keymap.set("n", "zg", require("ufo").closeFoldsWith, { desc = "Close folds with" }) -- closeAllFolds == closeFoldsWith(0)
 vim.keymap.set("n", "zz", function()
-  local winid = require("ufo").peekFoldedLinesUnderCursor()
-  if not winid then
-    vim.lsp.buf.hover()
-  end
+	local winid = require("ufo").peekFoldedLinesUnderCursor()
+	if not winid then
+		vim.lsp.buf.hover()
+	end
 end, { desc = "Hover" })
+
+-- TEXT OBJECTS
+local keymap = vim.keymap.set
+--indentation
+keymap({ "o", "x" }, "ii", "<cmd>lua require('various-textobjs').indentation(true, true)<CR>")
+keymap({ "o", "x" }, "ai", "<cmd>lua require('various-textobjs').indentation(false, true)<CR>")
+keymap({ "o", "x" }, "iI", "<cmd>lua require('various-textobjs').indentation(true, true)<CR>")
+keymap({ "o", "x" }, "aI", "<cmd>lua require('various-textobjs').indentation(false, false)<CR>")
+
+keymap({ "o", "x" }, "R", "<cmd>lua require('various-textobjs').restOfIndentation()<CR>")
+-- subwords
+keymap({ "o", "x" }, "iS", "<cmd>lua require('various-textobjs').subword(true)<CR>")
+keymap({ "o", "x" }, "aS", "<cmd>lua require('various-textobjs').subword(false)<CR>")
+-- near closing brackets
+keymap({ "o", "x" }, "%", "<cmd>lua require('various-textobjs').toNextClosingBracket()<CR>")
+-- paragraphs
+keymap({ "o", "x" }, "r", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>")
+--
+keymap({ "o", "x" }, "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>")
+--
+keymap({ "o", "x" }, "n", "<cmd>lua require('various-textobjs').nearEoL()<CR>")
+--
+keymap({ "o", "x" }, "il", "<cmd>lua require('various-textobjs').lineCharacterwise(true)<CR>")
+keymap({ "o", "x" }, "al", "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>")
+--
+keymap({ "o", "x" }, "|", "<cmd>lua require('various-textobjs').column()<CR>")
+--
+keymap({ "o", "x" }, "iv", "<cmd>lua require('various-textobjs').value(true)<CR>")
+keymap({ "o", "x" }, "av", "<cmd>lua require('various-textobjs').value(false)<CR>")
+--
+keymap({ "o", "x" }, "ik", "<cmd>lua require('various-textobjs').key(true)<CR>")
+keymap({ "o", "x" }, "ak", "<cmd>lua require('various-textobjs').key(false)<CR>")
+--
+keymap({ "o", "x" }, "L", "<cmd>lua require('various-textobjs').url()<CR>")
+--
+keymap({ "o", "x" }, "!", "<cmd>lua require('various-textobjs').diagnostic()<CR>")
+--
+keymap({ "o", "x" }, "iz", "<cmd>lua require('various-textobjs').closedFold(true)<CR>")
+keymap({ "o", "x" }, "az", "<cmd>lua require('various-textobjs').closedFold(false)<CR>")
+--
+keymap({ "o", "x" }, "im", "<cmd>lua require('various-textobjs').chainMember(true)<CR>")
+keymap({ "o", "x" }, "am", "<cmd>lua require('various-textobjs').chainMember(false)<CR>")
+--
+keymap({ "o", "x" }, "gw", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>")
+keymap({ "o", "x" }, "gW", "<cmd>lua require('various-textobjs').restOfWindow()<CR>")
+--
+---- example: make gitsigns.nvim movement repeatable with ; and , keys.
+local gs = require("gitsigns")
+
+-- make sure forward function comes first
+local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
+-- Or, use `make_repeatable_move` or `set_last_move` functions for more control. See the code for instructions.
+
+vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
+vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
