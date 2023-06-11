@@ -51,7 +51,7 @@ return {
 				},
 				popup = {
 					autofocus = false,
-					hide_on_select = false,
+					-- hide_on_select = false,
 					copy_register = '"',
 					style = "minimal",
 					border = "none",
@@ -169,7 +169,8 @@ return {
 			local rt = require("rust-tools")
 
 			local opts = {
-				tools = { -- rust-tools options
+				tools = {
+					-- rust-tools options
 
 					-- how to execute terminal commands
 					-- options right now: termopen / quickfix
@@ -221,7 +222,6 @@ return {
 
 					-- options same as lsp hover / vim.lsp.util.open_floating_preview()
 					hover_actions = {
-
 						-- the border that is used for the hover window
 						-- see vim.api.nvim_open_win()
 						border = {
