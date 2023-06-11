@@ -134,8 +134,6 @@
 
 *   [lazy.nvim](https://github.com/folke/lazy.nvim)
 
-*   [lir.nvim](https://github.com/tamago324/lir.nvim)
-
 *   [lsp-colors.nvim](https://github.com/folke/lsp-colors.nvim)
 
 *   [lsp-inlayhints.nvim](https://github.com/lvimuser/lsp-inlayhints.nvim)
@@ -154,17 +152,7 @@
 
 *   [middleclass](https://github.com/anuvyklack/middleclass)
 
-*   [mini.ai](https://github.com/echasnovski/mini.ai)
-
-*   [mini.comment](https://github.com/echasnovski/mini.comment)
-
 *   [mini.indentscope](https://github.com/echasnovski/mini.indentscope)
-
-*   [mini.pairs](https://github.com/echasnovski/mini.pairs)
-
-*   [mini.splitjoin](https://github.com/echasnovski/mini.splitjoin)
-
-*   [mini.surround](https://github.com/echasnovski/mini.surround)
 
 *   [muren.nvim](https://github.com/AckslD/muren.nvim)
 
