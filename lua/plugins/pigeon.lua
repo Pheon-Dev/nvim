@@ -29,7 +29,7 @@ return {
           icon = " ",
         },
         date = {
-          enabled = false,
+          enabled = true,
           format = "%Y-%m-%d",
           icon = " ",
         },
