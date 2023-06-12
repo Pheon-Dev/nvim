@@ -175,10 +175,11 @@ return {
       function()
         return mode[vim.fn.mode()]
       end,
+      -- "mode",
       color = function()
         return { fg = mode_color[vim.fn.mode()] }
       end,
-      padding = { right = 1, left = 3 },
+      -- padding = { right = 1, left = 3 },
     })
 
     wins_left({
@@ -208,19 +209,7 @@ return {
       end,
     })
 
-    wins_left({
-      "diff",
-      symbols = { added = " ", modified = "柳", removed = " " },
-      diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-      },
-      cond = conditions.hide_in_width,
-      padding = { right = 2, left = 1 },
-    })
-
-    wins_left({
+    wins_right({
       "diagnostics",
       sources = { "nvim_diagnostic" },
       symbols = { error = " ", warn = " ", info = " " },
@@ -233,19 +222,15 @@ return {
     })
 
     wins_right({
-      "filesize",
-      cond = conditions.buffer_not_empty,
-      color = { fg = colors.grey },
-    })
-
-    wins_right({
-      "location",
-      color = { fg = colors.grey },
-    })
-
-    wins_right({
-      "progress",
-      color = { fg = colors.grey },
+      "diff",
+      symbols = { added = " ", modified = "柳", removed = " " },
+      diff_color = {
+        added = { fg = colors.green },
+        modified = { fg = colors.orange },
+        removed = { fg = colors.red },
+      },
+      cond = conditions.hide_in_width,
+      padding = { right = 2, left = 1 },
     })
 
     -- Statusline
