@@ -208,6 +208,30 @@ return {
       end,
     })
 
+    wins_left({
+      "diff",
+      symbols = { added = " ", modified = "柳", removed = " " },
+      diff_color = {
+        added = { fg = colors.green },
+        modified = { fg = colors.orange },
+        removed = { fg = colors.red },
+      },
+      cond = conditions.hide_in_width,
+      padding = { right = 2, left = 1 },
+    })
+
+    wins_left({
+      "diagnostics",
+      sources = { "nvim_diagnostic" },
+      symbols = { error = " ", warn = " ", info = " " },
+      diagnostics_color = {
+        color_error = { fg = colors.red },
+        color_warn = { fg = colors.yellow },
+        color_info = { fg = colors.cyan },
+      },
+      padding = { right = 1, left = 2 },
+    })
+
     wins_right({
       "filesize",
       cond = conditions.buffer_not_empty,
@@ -242,30 +266,6 @@ return {
       icon_only = false,
       icon = { align = "left" },
       padding = { right = 1, left = 3 },
-    })
-
-    ins_left({
-      "diff",
-      symbols = { added = " ", modified = "柳", removed = " " },
-      diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-      },
-      cond = conditions.hide_in_width,
-      padding = { right = 2, left = 1 },
-    })
-
-    ins_left({
-      "diagnostics",
-      sources = { "nvim_diagnostic" },
-      symbols = { error = " ", warn = " ", info = " " },
-      diagnostics_color = {
-        color_error = { fg = colors.red },
-        color_warn = { fg = colors.yellow },
-        color_info = { fg = colors.cyan },
-      },
-      padding = { right = 1, left = 2 },
     })
 
     ins_left({
