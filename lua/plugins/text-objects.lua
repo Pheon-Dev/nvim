@@ -13,14 +13,6 @@ return {
 		end,
 	},
 	{
-		"kana/vim-textobj-user",
-		event = "BufReadPre",
-		dependencies = {
-			"beloglazov/vim-textobj-quotes",
-			"kana/vim-textobj-entire",
-		},
-	},
-	{
 		"glts/vim-textobj-comment",
 		keys = {
 			{ "ic", mode = { "o", "x" }, desc = "Select comment block" },
