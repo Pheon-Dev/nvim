@@ -233,6 +233,12 @@ return {
       padding = { right = 2, left = 1 },
     })
 
+    wins_right({
+      function()
+        return "  "
+      end,
+    })
+
     -- Statusline
     ins_left({
       function()
