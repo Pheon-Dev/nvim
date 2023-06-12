@@ -24,7 +24,7 @@ return {
 				},
 				level = 2,
 				-- minimum_width = 50,
-				render = "compact",
+				render = "minimal", -- compact, minimal, simple, default
 				stages = "slide",
 				top_down = true,
 				timeout = 3000,
@@ -32,7 +32,7 @@ return {
 					return math.floor(vim.o.lines * 0.75)
 				end,
 				max_width = function()
-					return math.floor(vim.o.columns * 0.75)
+					return math.floor(vim.o.columns * 0.35)
 				end,
 			})
 		end,
