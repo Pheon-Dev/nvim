@@ -19,8 +19,6 @@ return {
           })
         end,
       },
-      { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-      { "folke/neodev.nvim",  config = true },
     },
     ---@type lspconfig.options
     servers = nil,
