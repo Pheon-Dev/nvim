@@ -1,13 +1,12 @@
 return {
   {
     "lvimuser/lsp-inlayhints.nvim",
-    -- event = "VeryLazy",
     event = "BufReadPre",
   },
   { "jose-elias-alvarez/typescript.nvim", event = "BufReadPre" },
   {
     "neovim/nvim-lspconfig",
-    event = "BufReadPre",
+    -- event = "BufReadPre",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "mason.nvim",
@@ -34,9 +33,6 @@ return {
         dynamicRegistration = false,
         lineFoldingOnly = true,
       }
-
-      capabilities.offsetEncoding = { "utf-16" }
-      require("lspconfig").clangd.setup({ capabilities = capabilities })
 
       ---@type lspconfig.options
       local servers = plugin.servers or require("plugins.lsp.servers")
@@ -70,6 +66,7 @@ return {
         require("plugins.lsp.keymaps").on_attach(client, buffer)
       end)
 
+      local nvim_lsp = require('lspconfig')
       local util = require("lspconfig.util")
       local on_attach = require("util").on_attach(function(client, buffer)
         require("plugins.lsp.format").on_attach(client, buffer)
@@ -79,11 +76,33 @@ return {
         debounce_text_changes = 150,
       }
 
+      -- GoLang
+      nvim_lsp['gopls'].setup {
+        cmd = { 'gopls' },
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+          gopls = {
+            experimentalPostfixCompletions = true,
+            analyses = {
+              unusedparams = true,
+              shadow = true,
+            },
+            staticcheck = true,
+          },
+        },
+        init_options = {
+          usePlaceholders = true,
+        }
+      }
+      capabilities.offsetEncoding = { "utf-16" }
+      require("lspconfig").clangd.setup({ capabilities = capabilities })
+
       require("typescript").setup({
         disable_commands = false, -- prevent the plugin from creating Vim commands
-        debug = true,         -- enable debug logging for commands
+        debug = true,             -- enable debug logging for commands
         go_to_source_definition = {
-          fallback = true,    -- fall back to standard LSP definition on failure
+          fallback = true,        -- fall back to standard LSP definition on failure
         },
         server = {
           -- pass options to lspconfig's setup method
