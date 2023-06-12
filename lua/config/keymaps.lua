@@ -72,21 +72,23 @@ map("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
-vim.keymap.set("n", "<c-f>", function()
-	if not require("noice.lsp").scroll(4) then
-		return "<c-f>"
-	end
-end, { silent = true, expr = true })
-
-vim.keymap.set("n", "<c-b>", function()
-	if not require("noice.lsp").scroll(-4) then
-		return "<c-b>"
-	end
-end, { silent = true, expr = true })
+-- vim.keymap.set("n", "<c-f>", function()
+--   if not require("noice.lsp").scroll(4) then
+--     return "<c-f>"
+--   end
+-- end, { silent = true, expr = true })
+--
+-- vim.keymap.set("n", "<c-b>", function()
+--   if not require("noice.lsp").scroll(-4) then
+--     return "<c-b>"
+--   end
+-- end, { silent = true, expr = true })
 
 map("n", "zl", "za", { noremap = true, silent = true })
 
 map("n", "cc", "0D", { noremap = true, silent = true })
+map("n", "gi", "<C-i>", { noremap = true, silent = true })
+map("n", "go", "<C-o>", { noremap = true, silent = true })
 
 -- map("n", "<A-i>", "<C-i>", { noremap = true, silent = true })
 map("i", "<A-o>", "<C-o>", { noremap = true, silent = true })
@@ -113,16 +115,16 @@ map("x", "<S-l>", "<Plug>GoVSMRight", {})
 
 -- Codeium
 vim.keymap.set("i", "<C-l>", function()
-	return vim.fn["codeium#Accept"]()
+  return vim.fn["codeium#Accept"]()
 end, { expr = true, silent = true })
 vim.keymap.set("i", "<c-n>", function()
-	return vim.fn["codeium#CycleCompletions"](1)
+  return vim.fn["codeium#CycleCompletions"](1)
 end, { expr = true, silent = true })
 vim.keymap.set("i", "<c-p>", function()
-	return vim.fn["codeium#CycleCompletions"](-1)
+  return vim.fn["codeium#CycleCompletions"](-1)
 end, { expr = true, silent = true })
 vim.keymap.set("i", "<c-u>", function()
-	return vim.fn["codeium#Clear"]()
+  return vim.fn["codeium#Clear"]()
 end, { expr = true, silent = true })
 
 local crates = require("crates")
@@ -133,11 +135,11 @@ vim.keymap.set("v", "<leader>cu", crates.update_crates, opts)
 
 -- todo-comments
 vim.keymap.set("n", "]t", function()
-	require("todo-comments").jump_next()
+  require("todo-comments").jump_next()
 end, { desc = "Next todo comment" })
 
 vim.keymap.set("n", "[t", function()
-	require("todo-comments").jump_prev()
+  require("todo-comments").jump_prev()
 end, { desc = "Previous todo comment" })
 
 local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
@@ -160,12 +162,12 @@ vim.keymap.set({ "n", "x", "o" }, "'", ts_repeat_move.repeat_last_move_previous)
 
 -- This repeats the last query with always previous direction and to the start of the range.
 vim.keymap.set({ "n", "x", "o" }, "<home>", function()
-	ts_repeat_move.repeat_last_move({ forward = false, start = true })
+  ts_repeat_move.repeat_last_move({ forward = false, start = true })
 end)
 
 -- This repeats the last query with always next direction and to the end of the range.
 vim.keymap.set({ "n", "x", "o" }, "<end>", function()
-	ts_repeat_move.repeat_last_move({ forward = true, start = false })
+  ts_repeat_move.repeat_last_move({ forward = true, start = false })
 end)
 
 -- Motion
@@ -184,10 +186,10 @@ vim.keymap.set("n", "zk", require("ufo").closeAllFolds, { desc = "Close all fold
 vim.keymap.set("n", "zh", require("ufo").openFoldsExceptKinds, { desc = "Open folds except kinds" })
 vim.keymap.set("n", "zg", require("ufo").closeFoldsWith, { desc = "Close folds with" }) -- closeAllFolds == closeFoldsWith(0)
 vim.keymap.set("n", "zz", function()
-	local winid = require("ufo").peekFoldedLinesUnderCursor()
-	if not winid then
-		vim.lsp.buf.hover()
-	end
+  local winid = require("ufo").peekFoldedLinesUnderCursor()
+  if not winid then
+    vim.lsp.buf.hover()
+  end
 end, { desc = "Hover" })
 
 -- TEXT OBJECTS
@@ -206,35 +208,92 @@ keymap({ "o", "x" }, "aS", "<cmd>lua require('various-textobjs').subword(false)<
 keymap({ "o", "x" }, "%", "<cmd>lua require('various-textobjs').toNextClosingBracket()<CR>")
 -- paragraphs
 keymap({ "o", "x" }, "r", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>")
---
+-- entire buffer
 keymap({ "o", "x" }, "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>")
---
+-- near end of line
 keymap({ "o", "x" }, "n", "<cmd>lua require('various-textobjs').nearEoL()<CR>")
---
+-- line characterwise
 keymap({ "o", "x" }, "il", "<cmd>lua require('various-textobjs').lineCharacterwise(true)<CR>")
 keymap({ "o", "x" }, "al", "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>")
---
+-- column
 keymap({ "o", "x" }, "|", "<cmd>lua require('various-textobjs').column()<CR>")
---
+-- value
 keymap({ "o", "x" }, "iv", "<cmd>lua require('various-textobjs').value(true)<CR>")
 keymap({ "o", "x" }, "av", "<cmd>lua require('various-textobjs').value(false)<CR>")
---
+-- key
 keymap({ "o", "x" }, "ik", "<cmd>lua require('various-textobjs').key(true)<CR>")
 keymap({ "o", "x" }, "ak", "<cmd>lua require('various-textobjs').key(false)<CR>")
---
+-- url
 keymap({ "o", "x" }, "L", "<cmd>lua require('various-textobjs').url()<CR>")
---
+-- diagnostic
 keymap({ "o", "x" }, "!", "<cmd>lua require('various-textobjs').diagnostic()<CR>")
---
+-- fold
 keymap({ "o", "x" }, "iz", "<cmd>lua require('various-textobjs').closedFold(true)<CR>")
 keymap({ "o", "x" }, "az", "<cmd>lua require('various-textobjs').closedFold(false)<CR>")
---
+-- chain member
 keymap({ "o", "x" }, "im", "<cmd>lua require('various-textobjs').chainMember(true)<CR>")
 keymap({ "o", "x" }, "am", "<cmd>lua require('various-textobjs').chainMember(false)<CR>")
---
+-- window
 keymap({ "o", "x" }, "gw", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>")
 keymap({ "o", "x" }, "gW", "<cmd>lua require('various-textobjs').restOfWindow()<CR>")
---
+
+-- QUOTES
+-- visual
+keymap({ "n", "x", "o" }, "vs", "^vi'")
+keymap({ "n", "x", "o" }, "vS", "^va'")
+keymap({ "n", "x", "o" }, "vd", '^vi"')
+keymap({ "n", "x", "o" }, "2vd", '^f"f"f"lvi"')
+keymap({ "n", "x", "o" }, "3vd", '^f"f"f"f"f"lvi"')
+keymap({ "n", "x", "o" }, "4vd", '^f"f"f"f"f"f"f"lvi"')
+keymap({ "n", "x", "o" }, "5vd", '^f"f"f"f"f"f"f"f"f"lvi"')
+keymap({ "n", "x", "o" }, "6vd", '^f"f"f"f"f"f"f"f"f"f"f"lvi"')
+keymap({ "n", "x", "o" }, "7vd", '^f"f"f"f"f"f"f"f"f"f"f"f"f"lvi"')
+keymap({ "n", "x", "o" }, "8vd", '^f"f"f"f"f"f"f"f"f"f"f"f"f"f"f"lvi"')
+keymap({ "n", "x", "o" }, "vD", '^va"')
+keymap({ "n", "x", "o" }, "vq", '^vi`')
+keymap({ "n", "x", "o" }, "vQ", '^va`')
+-- yank
+keymap({ "n", "x", "o" }, "ys", "yi'")
+keymap({ "n", "x", "o" }, "yS", "ya'")
+keymap({ "n", "x", "o" }, "yd", 'yi"')
+keymap({ "n", "x", "o" }, "2yd", '^f"f"f"lyi"')
+keymap({ "n", "x", "o" }, "3yd", '^f"f"f"f"f"lyi"')
+keymap({ "n", "x", "o" }, "4yd", '^f"f"f"f"f"f"f"lyi"')
+keymap({ "n", "x", "o" }, "5yd", '^f"f"f"f"f"f"f"f"f"lyi"')
+keymap({ "n", "x", "o" }, "6yd", '^f"f"f"f"f"f"f"f"f"f"f"lyi"')
+keymap({ "n", "x", "o" }, "7yd", '^f"f"f"f"f"f"f"f"f"f"f"f"f"lyi"')
+keymap({ "n", "x", "o" }, "8yd", '^f"f"f"f"f"f"f"f"f"f"f"f"f"f"f"lyi"')
+keymap({ "n", "x", "o" }, "yD", 'ya"')
+keymap({ "n", "x", "o" }, "yq", 'yi`')
+keymap({ "n", "x", "o" }, "yQ", 'ya`')
+-- change
+keymap({ "n", "x", "o" }, "cs", "ci'")
+keymap({ "n", "x", "o" }, "cS", "ca'")
+keymap({ "n", "x", "o" }, "cd", 'ci"')
+keymap({ "n", "x", "o" }, "2cd", '^f"f"f"lci"')
+keymap({ "n", "x", "o" }, "3cd", '^f"f"f"f"f"lci"')
+keymap({ "n", "x", "o" }, "4cd", '^f"f"f"f"f"f"f"lci"')
+keymap({ "n", "x", "o" }, "5cd", '^f"f"f"f"f"f"f"f"f"lci"')
+keymap({ "n", "x", "o" }, "6cd", '^f"f"f"f"f"f"f"f"f"f"f"lci"')
+keymap({ "n", "x", "o" }, "7cd", '^f"f"f"f"f"f"f"f"f"f"f"f"f"lci"')
+keymap({ "n", "x", "o" }, "8cd", '^f"f"f"f"f"f"f"f"f"f"f"f"f"f"f"lci"')
+keymap({ "n", "x", "o" }, "cD", 'ca"')
+keymap({ "n", "x", "o" }, "cq", 'ci`')
+keymap({ "n", "x", "o" }, "cQ", 'ca`')
+-- delete
+keymap({ "n", "x", "o" }, "ds", "di'")
+keymap({ "n", "x", "o" }, "dS", "da'")
+keymap({ "n", "x", "o" }, "did", 'di"')
+keymap({ "n", "x", "o" }, "2did", '^f"f"f"ldi"')
+keymap({ "n", "x", "o" }, "3did", '^f"f"f"f"f"ldi"')
+keymap({ "n", "x", "o" }, "4did", '^f"f"f"f"f"f"f"ldi"')
+keymap({ "n", "x", "o" }, "5did", '^f"f"f"f"f"f"f"f"f"ldi"')
+keymap({ "n", "x", "o" }, "6did", '^f"f"f"f"f"f"f"f"f"f"f"ldi"')
+keymap({ "n", "x", "o" }, "7did", '^f"f"f"f"f"f"f"f"f"f"f"f"f"ldi"')
+keymap({ "n", "x", "o" }, "8did", '^f"f"f"f"f"f"f"f"f"f"f"f"f"f"f"ldi"')
+keymap({ "n", "x", "o" }, "daD", 'da"')
+keymap({ "n", "x", "o" }, "dq", 'di`')
+keymap({ "n", "x", "o" }, "dQ", 'da`')
 ---- example: make gitsigns.nvim movement repeatable with ; and , keys.
 local gs = require("gitsigns")
 
