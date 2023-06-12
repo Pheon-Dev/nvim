@@ -232,14 +232,6 @@ return {
       },
       routes = {
         { filter = { event = "msg_show", kind = "", find = "written", }, opts = { skip = true }, },
-        {
-          filter = {
-            event = "msg_show",
-            kind = "Error",
-            find = 'Error detected while processing TextChangedI Autocommands for " * ":',
-          },
-          opts = { skip = true },
-        },
         { filter = { event = "msg_show", kind = "", find = "<" },         opts = { skip = true } },
         { filter = { event = "msg_show", kind = "", find = "clipboard" }, opts = { skip = true } },
         { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
