@@ -7,10 +7,10 @@ return {
       "L3MON4D3/LuaSnip",
       dependencies = { "rafamadriz/friendly-snippets" },
     },
+    { "hrsh7th/cmp-nvim-lsp-signature-help" },
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
-    "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-nvim-lua",
     "hrsh7th/cmp-cmdline",
     "saadparwaiz1/cmp_luasnip",
@@ -26,8 +26,9 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     local has_words_before = function()
-    	local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
-    	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+      unpack = unpack or table.unpack
+      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
     end
 
     local cmp = require("cmp")
@@ -61,12 +62,14 @@ return {
     local source_mapping = {
       luasnip = " snip",
       nvim_lsp = "󰯓 lsp",
-      cmp_tabnine = " nine",
-      buffer = " buf",
+      cmp_tabnine = " tab9",
+      buffer = "󰓩 buf",
       nvim_lua = " lua",
       orgmode = " org",
-      --[[ vsnip = "✀ snip", ]]
-      path = " path",
+      cmdline = " cmd",
+      crates = " cr8",
+      nvim_lsp_signature_help = "󰏚 sign",
+      path = "󰙅 path",
     }
 
     local function border(hl_name)
@@ -99,6 +102,17 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
+      enabled = function()
+        -- disable completion in comments
+        local context = require 'cmp.config.context'
+        -- keep command mode completion enabled when cursor is in a comment
+        if vim.api.nvim_get_mode().mode == 'c' then
+          return true
+        else
+          return not context.in_treesitter_capture("comment")
+              and not context.in_syntax_group("Comment")
+        end
+      end,
       sorting = {
         priority_weight = 2,
         comparators = {
@@ -129,8 +143,8 @@ return {
             cmp.select_next_item()
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
-            elseif has_words_before() then
-            	cmp.complete()
+          elseif has_words_before() then
+            cmp.complete()
           else
             fallback()
           end
@@ -146,17 +160,17 @@ return {
         end, { "i", "s" }),
       },
       sources = cmp.config.sources({
-        { name = "luasnip" },
-        { name = "nvim_lsp_signature_help" },
         { name = "nvim_lsp" },
+        { name = "nvim_lsp_signature_help" },
+        { name = "nvim_lua" },
+        { name = "luasnip" },
         { name = "cmp_tabnine" },
-        { name = "buffer" },
+        { name = "path" },
+        { name = "cmdline" },
         { name = "crates" },
         { name = "orgmode" },
-        { name = "cmdline" },
-        { name = "emoji" },
-        { name = "nvim_lua" },
-        { name = "path" },
+      }, {
+        { name = "buffer", keyword_length = 3 },
       }),
       formatting = {
         format = function(entry, vim_item)
@@ -180,24 +194,44 @@ return {
         end,
       },
       experimental = {
-        ghost_text = false,
+        ghost_text = true,
       },
       completion = { completeopt = "menu,menuone,noinsert" },
     })
 
     cmp.setup.cmdline({ "?", "/", ":" }, {
       mapping = cmp.mapping.preset.cmdline(),
-      sources = {
-        { name = "luasnip" },
-        { name = "nvim_lsp_signature_help" },
-        { name = "nvim_lsp" },
-        { name = "cmp_tabnine" },
-        { name = "buffer" },
-        { name = "nvim_lua" },
-        { name = "path" },
-      },
+      -- sources = {
+      --   { name = "luasnip" },
+      --   { name = "nvim_lsp_signature_help" },
+      --   { name = "nvim_lsp" },
+      --   { name = "cmp_tabnine" },
+      --   { name = "buffer" },
+      --   { name = "nvim_lua" },
+      --   { name = "path" },
+      -- },
     })
-
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      -- sources = cmp.config.sources({
+      -- 	{ name = "cmdline" },
+      -- 	{ name = "buffer" },
+      -- 	{ name = "cmp_tabnine" },
+      -- }, {
+      -- 	{ name = "path" },
+      -- }),
+      enabled = function()
+        -- Set of commands where cmp will be disabled
+        local disabled = {
+          IncRename = true
+        }
+        -- Get first word of cmdline
+        local cmd = vim.fn.getcmdline():match("%S+")
+        -- Return true if cmd isn't disabled
+        -- else call/return cmp.close(), which returns false
+        return not disabled[cmd] or cmp.close()
+      end
+    })
     require("luasnip").config.set_config({ history = true, updateevents = "TextChanged,TextChangedI" })
   end,
 }
