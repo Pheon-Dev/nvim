@@ -301,3 +301,4 @@ local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_p
 
 vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
 vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
+
