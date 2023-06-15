@@ -70,28 +70,12 @@ map("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
 map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
--- vim.keymap.set("n", "<c-f>", function()
---   if not require("noice.lsp").scroll(4) then
---     return "<c-f>"
---   end
--- end, { silent = true, expr = true })
---
--- vim.keymap.set("n", "<c-b>", function()
---   if not require("noice.lsp").scroll(-4) then
---     return "<c-b>"
---   end
--- end, { silent = true, expr = true })
-
 map("n", "zl", "za", { noremap = true, silent = true })
 
 map("n", "cc", "0D", { noremap = true, silent = true })
 map("n", "gi", "<C-i>", { noremap = true, silent = true })
 map("n", "go", "<C-o>", { noremap = true, silent = true })
 
--- map("n", "<A-i>", "<C-i>", { noremap = true, silent = true })
 map("i", "<A-o>", "<C-o>", { noremap = true, silent = true })
 map("i", "<C-k>", "<C-o>O", { noremap = true, silent = true })
 map("i", "<C-j>", "<C-o>o", { noremap = true, silent = true })
--- map("i", "<C-K>", "<C-o>A", { noremap = true, silent = true })
--- map("i", "<C-J>", "<C-o>I", { noremap = true, silent = true })
-
