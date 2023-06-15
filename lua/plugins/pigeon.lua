@@ -78,6 +78,7 @@ return {
           },
         },
         wifi = {
+          -- install wireless_tools
           enabled = true,
           icons = {
             connected = "󰤪",
