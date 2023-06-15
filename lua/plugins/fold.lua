@@ -1,7 +1,7 @@
 return {
 	{
 		"kevinhwang91/nvim-ufo",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 		config = function()
 			local ufo = require("ufo")
 			local ftMap = {
