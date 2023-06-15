@@ -95,8 +95,8 @@ return {
           usePlaceholders = true,
         }
       }
-      capabilities.offsetEncoding = { "utf-16" }
-      require("lspconfig").clangd.setup({ capabilities = capabilities })
+      -- capabilities.offsetEncoding = { "utf-16" }
+      -- require("lspconfig").clangd.setup({ capabilities = capabilities })
 
       require("typescript").setup({
         disable_commands = false, -- prevent the plugin from creating Vim commands
@@ -178,6 +178,7 @@ return {
   -- cmdline tools and lsp servers
   {
     "williamboman/mason.nvim",
+    event = "VeryLazy",
     build = "MasonUpdate",
     -- keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     -- ensure_installed = {
@@ -215,13 +216,12 @@ return {
         debug = false,
         use_saga_diagnostic_sign = true,
         -- diagnostic sign
-        error_sign = "",
-        warn_sign = "",
-        hint_sign = "",
-        infor_sign = "",
+        error_sign = "",
+        warn_sign = "",
+        hint_sign = "",
+        infor_sign = "",
         diagnostic_header_icon = "   ",
-        -- code action title icon
-        code_action_icon = " ",
+        code_action_icon = "",
         code_action_prompt = { enable = true, sign = true, sign_priority = 40, virtual_text = true },
         finder_definition_icon = "  ",
         finder_reference_icon = "  ",
