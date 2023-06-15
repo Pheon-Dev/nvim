@@ -5,6 +5,7 @@ return {
     -- vim.o.timeout = true
     -- vim.o.timeoutlen = 300
     local gs = require("gitsigns")
+    local rt = require("rust-tools")
     local wk = require("which-key")
 
     wk.setup({
@@ -85,36 +86,36 @@ return {
       gs.blame_line({ full = true })
     end
 
-    -- local crates = require("crates")
+    local crates = require("crates")
 
     local mappings = {
       a = { ":ASToggle<cr>", "Auto Save Toggle" },
       b = { ":Antelope buffers<cr>", "Buffers" },
-      -- c = {
-      --   name = "Crates",
-      --   t = { crates.toggle, "Toggle" },
-      --   r = { crates.reload, "Reload" },
-      --   v = { crates.show_versions_popup, "Show Versions Popup" },
-      --   f = { crates.show_features_popup, "Show Features Popup" },
-      --   d = { crates.show_dependencies_popup, "Show Dependencies Popup" },
-      --   u = {
-      --     name = "Update",
-      --     u = { crates.update_crate, "Update Crate" },
-      --     a = { crates.update_all_crates, "Update All Crates" },
-      --   },
-      --   g = {
-      --     name = "Upgrade",
-      --     g = { crates.upgrade_crate, "Upgrade Crate" },
-      --     a = { crates.upgrade_all_crates, "Upgrade All Crates" },
-      --   },
-      --   o = {
-      --     name = "Open",
-      --     c = { crates.open_crates_io, "Crates IO" },
-      --     h = { crates.open_homepage, "Home Page" },
-      --     d = { crates.open_documentation, "Documentation" },
-      --     r = { crates.open_repository, "Repository" },
-      --   },
-      -- },
+      c = {
+        name = "Crates",
+        t = { crates.toggle, "Toggle" },
+        r = { crates.reload, "Reload" },
+        v = { crates.show_versions_popup, "Show Versions Popup" },
+        f = { crates.show_features_popup, "Show Features Popup" },
+        d = { crates.show_dependencies_popup, "Show Dependencies Popup" },
+        u = {
+          name = "Update",
+          u = { crates.update_crate, "Update Crate" },
+          a = { crates.update_all_crates, "Update All Crates" },
+        },
+        g = {
+          name = "Upgrade",
+          g = { crates.upgrade_crate, "Upgrade Crate" },
+          a = { crates.upgrade_all_crates, "Upgrade All Crates" },
+        },
+        o = {
+          name = "Open",
+          c = { crates.open_crates_io, "Crates IO" },
+          h = { crates.open_homepage, "Home Page" },
+          d = { crates.open_documentation, "Documentation" },
+          r = { crates.open_repository, "Repository" },
+        },
+      },
       d = { ":Alpha<cr>", "Dashboard" },
       e = { ":MurenToggle<cr>", "Muren" },
       f = { ":Telescope find_files initial_mode=insert<cr>", "Find Files" },
@@ -165,9 +166,9 @@ return {
       q = { ":bd<cr>", "Close Buffer" },
       r = {
         name = "Rust",
-        -- a = { rt.code_action_group.code_action_group, "Code Action Group" },
+        a = { rt.code_action_group.code_action_group, "Code Action Group" },
         c = { ":RustOpenCargo<cr>", "Open Cargo" },
-        -- h = { rt.hover_actions.hover_actions, "Hover Actions" },
+        h = { rt.hover_actions.hover_actions, "Hover Actions" },
         i = {
           name = "Inlayhints",
           e = { ":RustEnableInlayHints<cr>", "Enable" },
