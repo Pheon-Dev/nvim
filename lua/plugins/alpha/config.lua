@@ -44,7 +44,6 @@ function M.buttons()
 			vim.api.nvim_buf_set_keymap(0, "n", "j", ":NvimTreeToggle<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "k", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "f", ":Telescope find_files initial_mode=insert<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "n", ":Telescope notify<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "s", ":Telescope live_grep<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(
 				0,
@@ -69,16 +68,12 @@ function M.buttons()
 				"[f]" .. "                      󰈞 " .. " Find File",
 				"[j]" .. "                      פּ " .. " Nvim-Tree",
 				"[k]" .. "                      ﯠ " .. " Harpoon",
-				"[n]" .. "                       " .. " Notifications",
 				"[s]" .. "                       " .. " Search",
 				"[t]" .. "                       " .. " TODO",
 			},
 			opts = {
 				position = "center",
 				hl = {
-					buttons_hl,
-					buttons_hl,
-					buttons_hl,
 					buttons_hl,
 					buttons_hl,
 					buttons_hl,
