@@ -2,14 +2,18 @@ local M = {
   {
     "nvim-treesitter/nvim-treesitter",
     build = function()
-        require("nvim-treesitter.install").update({ with_sync = true })
+      require("nvim-treesitter.install").update({ with_sync = true })
     end,
     event = "BufReadPost",
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
+        event = "BufReadPost",
       },
-      "RRethy/nvim-treesitter-endwise",
+      {
+        "RRethy/nvim-treesitter-endwise",
+        event = "BufReadPost",
+      },
     },
     config = function()
       local function starts_with(str, start)
