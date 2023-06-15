@@ -235,8 +235,9 @@ return {
 
     wins_right({
       function()
-        return "  "
+        return "  "
       end,
+      color = { fg = theme.color20 },
     })
 
     -- Statusline
