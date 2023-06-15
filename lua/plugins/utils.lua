@@ -19,7 +19,7 @@ return {
       })
     end,
   },
-  { "kevinhwang91/nvim-hlslens", config = true },
+  { "kevinhwang91/nvim-hlslens", event = "BufReadPre", config = true },
 
   -- { "ckipp01/stylua-nvim" },
 
