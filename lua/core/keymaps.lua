@@ -79,3 +79,103 @@ map("n", "go", "<C-o>", { noremap = true, silent = true })
 map("i", "<A-o>", "<C-o>", { noremap = true, silent = true })
 map("i", "<C-k>", "<C-o>O", { noremap = true, silent = true })
 map("i", "<C-j>", "<C-o>o", { noremap = true, silent = true })
+
+local keymap = vim.keymap.set
+-- fold
+keymap("n", "zj", require("ufo").openAllFolds, { desc = "Open all folds" })
+keymap("n", "zk", require("ufo").closeAllFolds, { desc = "Close all folds" })
+keymap("n", "zh", require("ufo").openFoldsExceptKinds, { desc = "Open folds except kinds" })
+keymap("n", "zg", require("ufo").closeFoldsWith, { desc = "Close folds with" }) -- closeAllFolds == closeFoldsWith(0)
+keymap("n", "zi", function()
+  local winid = require("ufo").peekFoldedLinesUnderCursor()
+  if not winid then
+    vim.lsp.buf.hover()
+  end
+end, { desc = "Hover" })
+
+-- TEXT OBJECTS
+--indentation
+keymap({ "o", "x" }, "ii", "<cmd>lua require('various-textobjs').indentation(true, true)<CR>")
+keymap({ "o", "x" }, "ai", "<cmd>lua require('various-textobjs').indentation(false, true)<CR>")
+keymap({ "o", "x" }, "iI", "<cmd>lua require('various-textobjs').indentation(true, true)<CR>")
+keymap({ "o", "x" }, "aI", "<cmd>lua require('various-textobjs').indentation(false, false)<CR>")
+keymap({ "o", "x" }, "R", "<cmd>lua require('various-textobjs').restOfIndentation()<CR>")
+-- subwords
+keymap({ "o", "x" }, "iS", "<cmd>lua require('various-textobjs').subword(true)<CR>")
+keymap({ "o", "x" }, "aS", "<cmd>lua require('various-textobjs').subword(false)<CR>")
+-- near closing brackets
+keymap({ "o", "x" }, "%", "<cmd>lua require('various-textobjs').toNextClosingBracket()<CR>")
+-- paragraphs
+keymap({ "o", "x" }, "r", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>")
+-- entire buffer
+keymap({ "o", "x" }, "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>")
+-- near end of line
+keymap({ "o", "x" }, "n", "<cmd>lua require('various-textobjs').nearEoL()<CR>")
+-- line characterwise
+keymap({ "o", "x" }, "il", "<cmd>lua require('various-textobjs').lineCharacterwise(true)<CR>")
+keymap({ "o", "x" }, "al", "<cmd>lua require('various-textobjs').lineCharacterwise(false)<CR>")
+-- column
+keymap({ "o", "x" }, "|", "<cmd>lua require('various-textobjs').column()<CR>")
+-- value
+keymap({ "o", "x" }, "iv", "<cmd>lua require('various-textobjs').value(true)<CR>")
+keymap({ "o", "x" }, "av", "<cmd>lua require('various-textobjs').value(false)<CR>")
+-- key
+keymap({ "o", "x" }, "ik", "<cmd>lua require('various-textobjs').key(true)<CR>")
+keymap({ "o", "x" }, "ak", "<cmd>lua require('various-textobjs').key(false)<CR>")
+-- url
+keymap({ "o", "x" }, "vu", "<cmd>lua require('various-textobjs').url()<CR>")
+-- diagnostic
+keymap({ "o", "x" }, "!", "<cmd>lua require('various-textobjs').diagnostic()<CR>")
+-- fold
+keymap({ "o", "x" }, "iz", "<cmd>lua require('various-textobjs').closedFold(true)<CR>")
+keymap({ "o", "x" }, "az", "<cmd>lua require('various-textobjs').closedFold(false)<CR>")
+-- chain member
+keymap({ "o", "x" }, "im", "<cmd>lua require('various-textobjs').chainMember(true)<CR>")
+keymap({ "o", "x" }, "am", "<cmd>lua require('various-textobjs').chainMember(false)<CR>")
+-- window
+keymap({ "o", "x" }, "gw", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>")
+keymap({ "o", "x" }, "gW", "<cmd>lua require('various-textobjs').restOfWindow()<CR>")
+-- Motion
+require("hop")
+map("n", "f", ":HopChar1CurrentLineAC<cr>", { noremap = true, silent = true })
+map("n", "F", ":HopChar1CurrentLineBC<cr>", { noremap = true, silent = true })
+map("n", "s", ":HopChar1<cr>", { noremap = true, silent = true })
+map("n", "S", ":HopChar2<cr>", { noremap = true, silent = true })
+-- map("n", "sw", ":HopWord<cr>", { noremap = true, silent = true })
+-- map("n", "sj", ":HopVertical<cr>", { noremap = true, silent = true })
+-- map("n", "sp", ":HopPattern<cr>", { noremap = true, silent = true })
+
+-- todo-comments
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
+local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+
+-- Repeat movement with ; and ,
+-- ensure ; goes forward and , goes backward, regardless of the last direction
+vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+vim.keymap.set({ "n", "x", "o" }, "'", ts_repeat_move.repeat_last_move_previous)
+
+local gs = require("gitsigns")
+
+-- make sure forward function comes first
+local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
+-- Or, use `make_repeatable_move` or `set_last_move` functions for more control. See the code for instructions.
+
+vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
+vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
+
+-- Move
+-- map("n", "<C-x>", "<Plug>GoNSMLeft", {})
+-- map("n", "<S-x>", "<Plug>GoNSMRight", {})
+map("n", "-", "<Plug>GoNSMDown", {})
+map("n", "=", "<Plug>GoNSMUp", {})
+map("x", "H", "<Plug>GoVSMLeft", {})
+map("x", "J", "<Plug>GoVSMDown", {})
+map("x", "K", "<Plug>GoVSMUp", {})
+map("x", "L", "<Plug>GoVSMRight", {})
