@@ -87,7 +87,6 @@ return {
 
 			-- CMP
 			-- vim.api.nvim_set_hl(0, "PmenuThumb", { fg = theme.color59, bg = theme.color59 })
-			vim.api.nvim_set_hl(0, "Blame", { fg = theme.color3, bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "CmpPmenu", { bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "PmenuSel", { bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color2, bg = theme.color0 })
@@ -178,7 +177,7 @@ return {
 			vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = theme.color16 })
 			vim.api.nvim_set_hl(0, "GitSignsDeleteNr", { fg = theme.color16 })
 			vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { fg = theme.color16 })
-
+			vim.api.nvim_set_hl(0, "Blame", { fg = theme.color3, bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "GitBlame", { fg = theme.color68, bg = theme.color1 })
 
 			-- Antelope
