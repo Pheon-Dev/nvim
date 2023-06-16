@@ -2,7 +2,6 @@
 local util = require("lspconfig.util")
 ---@type lspconfig.options
 local servers = {
-	bashls = {},
 	gopls = {
 		cmd = { "gopls", "serve" },
 		filetypes = { "go", "gomod", "gowork", "gotmpl" },
@@ -26,6 +25,8 @@ local servers = {
 		},
 	},
 	clangd = {},
+	-- codelldb = {},
+	-- bashls = {},
 	-- cssls = {},
 	-- tsserver = {},
 	-- html = {},
