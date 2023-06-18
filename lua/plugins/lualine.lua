@@ -391,12 +391,12 @@ return {
       color = { fg = "#ff9e64" },
     })
 
-    -- ins_right({
-    --   function()
-    --     return "﯑ %3{codeium#GetStatusString()}"
-    --   end,
-    --   color = { fg = colors.grey },
-    -- })
+    ins_right({
+      function()
+        return "﯑ %3{codeium#GetStatusString()}"
+      end,
+      color = { fg = colors.grey },
+    })
 
     ins_right({
       "branch",

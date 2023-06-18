@@ -215,8 +215,8 @@ return {
               open = "",
               symlink = "",
               symlink_open = "",
-              arrow_open = "", -- ○
-              arrow_closed = "", -- ●
+              arrow_open = "", -- ○
+              arrow_closed = "", -- ●
             },
             git = {
               unstaged = "∗",
