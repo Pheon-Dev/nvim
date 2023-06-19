@@ -135,6 +135,7 @@ keymap({ "o", "x" }, "am", "<cmd>lua require('various-textobjs').chainMember(fal
 -- window
 keymap({ "o", "x" }, "gw", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>")
 keymap({ "o", "x" }, "gW", "<cmd>lua require('various-textobjs').restOfWindow()<CR>")
+
 -- Motion
 require("hop")
 map("n", "f", ":HopChar1CurrentLineAC<cr>", { noremap = true, silent = true })
@@ -193,3 +194,6 @@ end, { expr = true, silent = true })
 vim.keymap.set("i", "<c-u>", function()
   return vim.fn["codeium#Clear"]()
 end, { expr = true, silent = true })
+
+-- Split Join
+vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
