@@ -11,7 +11,7 @@ return {
     tsj.setup({
       -- Use default keymaps
       -- (<space>m - toggle, <space>j - join, <space>s - split)
-      use_default_keymaps = true,
+      use_default_keymaps = false,
 
       -- Node with syntax error will not be formatted
       check_syntax_error = true,
