@@ -58,10 +58,11 @@ return {
     "smjonas/inc-rename.nvim",
     event = "BufReadPre",
     cmd = "IncRename",
-    config = function()
-      require("inc_rename").setup {
-        input_buffer_type = "dressing",
-      }
-    end,
+    config = true,
+    -- config = function()
+    --   require("inc_rename").setup {
+    --     input_buffer_type = "dressing",
+    --   }
+    -- end,
   },
 }
