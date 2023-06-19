@@ -2,6 +2,7 @@ return {
   "folke/noice.nvim",
   event = "VeryLazy",
   config = function()
+    
     require("noice").setup({
       cmdline = {
         enabled = true,     -- enables the Noice cmdline UI
@@ -232,6 +233,7 @@ return {
       },
       routes = {
         { filter = { event = "msg_show", kind = "", find = "written", }, opts = { skip = true }, },
+        { filter = { event = "msg_show", kind = "", find = "deprecated:", }, opts = { skip = true }, },
         { filter = { event = "msg_show", kind = "", find = "<" },         opts = { skip = true } },
         { filter = { event = "msg_show", kind = "", find = "clipboard" }, opts = { skip = true } },
         { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
