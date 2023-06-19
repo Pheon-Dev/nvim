@@ -54,4 +54,14 @@ return {
     "mg979/vim-visual-multi",
     event = "BufReadPre",
   },
+  {
+    "smjonas/inc-rename.nvim",
+    event = "BufReadPre",
+    cmd = "IncRename",
+    config = function()
+      require("inc_rename").setup {
+        input_buffer_type = "dressing",
+      }
+    end,
+  },
 }
