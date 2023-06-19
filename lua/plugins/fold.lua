@@ -8,7 +8,7 @@ return {
         vim = "indent",
         python = { "indent" },
         typescript = { "treesitter" },
-        -- rust = { "treesitter" },
+        rust = { "indent" },
         -- go = { "treesitter" },
         lua = { "indent" },
         git = "",
