@@ -192,7 +192,7 @@ return {
         p = { ":Antelope tabpages<cr>", "tabs" },
         f = { ":TypescriptFixAll<cr>", "Fix All" },
       },
-      u = { ":NodeAction<cr>", "Node Action" },
+      -- u = { ":NodeAction<cr>", "Node Action" },
       w = {
         name = "Windows",
         e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },

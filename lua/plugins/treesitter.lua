@@ -301,12 +301,12 @@ local M = {
       })
     end,
   },
-  {
-    "ckolkey/ts-node-action",
-    dependencies = { "nvim-treesitter" },
-    event = "BufReadPost",
-    config = true,
-  },
+  -- {
+  --   "ckolkey/ts-node-action",
+  --   dependencies = { "nvim-treesitter" },
+  --   event = "BufReadPost",
+  --   config = true,
+  -- },
   {
     "RRethy/vim-illuminate",
     event = "BufReadPost",
