@@ -2,20 +2,15 @@ return {
   -- better vim.notify
   {
     "rcarriga/nvim-notify",
-    keys = {
-      {
-        "<leader>nc",
-        function()
-          require("notify").dismiss({ silent = true, pending = true })
-        end,
-        desc = "Clear all Notifications",
-      },
-      {
-        "<leader>nn",
-        ":Telescope notify initial_mode=normal<cr>",
-        desc = "Notifications"
-      },
-    },
+    -- keys = {
+    --   {
+    --     "<leader>nc",
+    --     function()
+    --       require("notify").dismiss({ silent = true, pending = true })
+    --     end,
+    --     desc = "Clear all Notifications",
+    --   },
+    -- },
     config = function()
       require("notify").setup({
         background_colour = "Normal",

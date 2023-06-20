@@ -140,6 +140,7 @@ return {
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
       l = { toggle_lazygit, "LazyGit" },
       m = { ":Antelope marks<cr>", "Marks" },
+      n = { ":Telescope notify<cr>", "Notifications" },
       o = {
         name = "Others",
         c = {
@@ -192,7 +193,6 @@ return {
         p = { ":Antelope tabpages<cr>", "tabs" },
         f = { ":TypescriptFixAll<cr>", "Fix All" },
       },
-      -- u = { ":IncRename", "Incremental Rename" },
       w = {
         name = "Windows",
         e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },
