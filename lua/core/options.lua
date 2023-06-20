@@ -103,6 +103,7 @@ vim.g.loaded_tutor_mode_plugin = 1
 vim.g.loaded_spellfile_plugin = 1
 vim.g.loaded_shada_plugin = 1
 vim.g.rainbow_active = 1
+vim.g.yankring_clipboard_monitor = 0
 
 opt.cmdheight = 1
 opt.softtabstop = 4
