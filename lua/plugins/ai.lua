@@ -1,5 +1,21 @@
 return {
   {
+    -- "huggingface/hfcc.nvim",
+    -- event = "BufReadPre",
+    -- opts = {
+    --   -- api_token = "HUGGING_FACE_HUB_TOKEN",
+    --   model = "bigcode/starcoder",
+    --   query_params = {
+    --     max_new_tokens = 200,
+    --   },
+    -- },
+    -- init = function()
+    --   vim.api.nvim_create_user_command("StarCoder", function()
+    --     require("hfcc.completion").complete()
+    --   end, {})
+    -- end,
+  },
+  {
     "Exafunction/codeium.vim",
     event = "VeryLazy",
     config = function()
