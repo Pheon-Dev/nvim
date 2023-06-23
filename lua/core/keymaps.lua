@@ -6,10 +6,10 @@ map("i", "jj", "<esc>", { noremap = true, silent = true })
 map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
-map("n", "vj", ":vsplit<cr>", { noremap = true, silent = true })
-map("n", "vk", ":split<cr>", { noremap = true, silent = true })
-map("n", "vh", "<C-w>t<C-w>K", { noremap = true, silent = true })
-map("n", "vl", "<C-w>t<C-w>H", { noremap = true, silent = true })
+map("n", "Wj", ":vsplit<cr>", { noremap = true, silent = true })
+map("n", "Wk", ":split<cr>", { noremap = true, silent = true })
+map("n", "Wh", "<C-w>t<C-w>K", { noremap = true, silent = true })
+map("n", "Wl", "<C-w>t<C-w>H", { noremap = true, silent = true })
 
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })
 map("n", "<C-j>", "<C-w>j", { noremap = true, silent = false })
@@ -33,22 +33,6 @@ map("n", "U", ":redo<cr>", { noremap = true, silent = true })
 map("v", "<", "<gv", { noremap = true, silent = true })
 map("v", ">", ">gv", { noremap = true, silent = true })
 
--- Buffer Navigation
-map("n", "<TAB>", ":BufferLineCycleNext<cr>", { noremap = true, silent = true })
-map("n", "<S-TAB>", ":BufferLineCyclePrev<cr>", { noremap = true, silent = true })
-
--- Gitsigns
-map("v", "<leader>hs", ":Gitsigns stage_hunk<cr>", { noremap = true, silent = true })
-map("v", "<leader>hr", ":Gitsigns reset_hunk<cr>", { noremap = true, silent = true })
-map("o", "ih", "<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
-map("x", "ih", "<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
-map("n", "[c", "&diff ? '[c' : ':Gitsigns prev_hunk<cr>'", { expr = true, noremap = true, silent = true })
-map("n", "]c", "&diff ? ']c' : ':Gitsigns next_hunk<cr>'", { expr = true, noremap = true, silent = true })
-
--- Telescope
-map("i", "<C-h>", ":Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
-map("i", "<C-n>", ":Telescope buffers<cr>", { noremap = true, silent = true })
-
 -- Move to Start/End of Line
 map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
@@ -61,15 +45,6 @@ map("n", "tn", ":tabNext<cr>", { noremap = true, silent = true })
 map("n", "tp", ":tabprevious<cr>", { noremap = true, silent = true })
 map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
 
--- hlslens
-local kopts = { noremap = true, silent = true }
-map("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-
 map("n", "zl", "za", { noremap = true, silent = true })
 
 map("n", "cc", "0D", { noremap = true, silent = true })
@@ -80,18 +55,46 @@ map("i", "<A-o>", "<C-o>", { noremap = true, silent = true })
 map("i", "<C-k>", "<C-o>O", { noremap = true, silent = true })
 map("i", "<C-j>", "<C-o>o", { noremap = true, silent = true })
 
+-- quote text objects
+map("n", "cq", 'f"ci"', { noremap = true, silent = true })
+map("n", "cQ", 'f"ca"', { noremap = true, silent = true })
+map("n", "dq", 'f"di"', { noremap = true, silent = true })
+map("n", "dQ", 'f"da"', { noremap = true, silent = true })
+map("n", "vq", 'f"vi"', { noremap = true, silent = true })
+map("n", "vQ", 'f"va"', { noremap = true, silent = true })
+map("n", "yq", 'f"yi"', { noremap = true, silent = true })
+map("n", "yQ", 'f"ya"', { noremap = true, silent = true })
+
+map("n", "c'", "f'ci'", { noremap = true, silent = true })
+map("n", "c@", "f'ca'", { noremap = true, silent = true })
+map("n", "d'", "f'di'", { noremap = true, silent = true })
+map("n", "d@", "f'da'", { noremap = true, silent = true })
+map("n", "v'", "f'vi'", { noremap = true, silent = true })
+map("n", "v@", "f'va'", { noremap = true, silent = true })
+map("n", "y'", "f'yi'", { noremap = true, silent = true })
+map("n", "y@", "f'ya'", { noremap = true, silent = true })
+
+map("n", "c`", "f`ci`", { noremap = true, silent = true })
+map("n", "c¬", "f`ca`", { noremap = true, silent = true })
+map("n", "d`", "f`di`", { noremap = true, silent = true })
+map("n", "d¬", "f`da`", { noremap = true, silent = true })
+map("n", "v`", "f`vi`", { noremap = true, silent = true })
+map("n", "v¬", "f`va`", { noremap = true, silent = true })
+map("n", "y`", "f`yi`", { noremap = true, silent = true })
+map("n", "y¬", "f`ya`", { noremap = true, silent = true })
+
+-- map("n", "<expr>\\d*cq", [[v:count1 . "cq"]], { noremap = true, silent = true })
+  -- map("n", "<expr>\\d*dq", [[v:count1 . "dq"]], { noremap = true, silent = true })
+  -- map("n", "<expr>vq", '<expr>vi"', { noremap = true, silent = true })
+  -- map("n", "<expr>\\d*yq", [[v:count1 . "yq"]], { noremap = true, silent = true })
+
+  -- -- Handle the mapping with a number
+  -- local mappings = { "cq", "dq", "vq", "yq" }
+  -- for _, mapping in ipairs(mappings) do
+  --   map("n", "<expr>" .. [[\d*]] .. mapping, string.format([[v:lua.handle_numbered_mapping(%q, %q)]], mapping), { noremap = true, silent = true })
+  -- end
+
 local keymap = vim.keymap.set
--- fold
-keymap("n", "zj", require("ufo").openAllFolds, { desc = "Open all folds" })
-keymap("n", "zk", require("ufo").closeAllFolds, { desc = "Close all folds" })
-keymap("n", "zh", require("ufo").openFoldsExceptKinds, { desc = "Open folds except kinds" })
-keymap("n", "zg", require("ufo").closeFoldsWith, { desc = "Close folds with" }) -- closeAllFolds == closeFoldsWith(0)
-keymap("n", "zi", function()
-  local winid = require("ufo").peekFoldedLinesUnderCursor()
-  if not winid then
-    vim.lsp.buf.hover()
-  end
-end, { desc = "Hover" })
 
 -- TEXT OBJECTS
 --indentation
@@ -136,6 +139,18 @@ keymap({ "o", "x" }, "am", "<cmd>lua require('various-textobjs').chainMember(fal
 keymap({ "o", "x" }, "gw", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>")
 keymap({ "o", "x" }, "gW", "<cmd>lua require('various-textobjs').restOfWindow()<CR>")
 
+-- fold
+keymap("n", "zj", require("ufo").openAllFolds, { desc = "Open all folds" })
+keymap("n", "zk", require("ufo").closeAllFolds, { desc = "Close all folds" })
+keymap("n", "zh", require("ufo").openFoldsExceptKinds, { desc = "Open folds except kinds" })
+keymap("n", "zg", require("ufo").closeFoldsWith, { desc = "Close folds with" }) -- closeAllFolds == closeFoldsWith(0)
+keymap("n", "zi", function()
+  local winid = require("ufo").peekFoldedLinesUnderCursor()
+  if not winid then
+    vim.lsp.buf.hover()
+  end
+end, { desc = "Hover" })
+
 -- Motion
 require("hop")
 map("n", "f", ":HopChar1CurrentLineAC<cr>", { noremap = true, silent = true })
@@ -170,6 +185,31 @@ local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_p
 
 vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
 vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
+
+-- Buffer Navigation
+map("n", "<TAB>", ":BufferLineCycleNext<cr>", { noremap = true, silent = true })
+map("n", "<S-TAB>", ":BufferLineCyclePrev<cr>", { noremap = true, silent = true })
+
+-- Gitsigns
+map("v", "<leader>hs", ":Gitsigns stage_hunk<cr>", { noremap = true, silent = true })
+map("v", "<leader>hr", ":Gitsigns reset_hunk<cr>", { noremap = true, silent = true })
+map("o", "ih", "<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
+map("x", "ih", "<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
+map("n", "[c", "&diff ? '[c' : ':Gitsigns prev_hunk<cr>'", { expr = true, noremap = true, silent = true })
+map("n", "]c", "&diff ? ']c' : ':Gitsigns next_hunk<cr>'", { expr = true, noremap = true, silent = true })
+
+-- Telescope
+map("i", "<C-h>", ":Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
+map("i", "<C-n>", ":Telescope buffers<cr>", { noremap = true, silent = true })
+
+-- hlslens
+local kopts = { noremap = true, silent = true }
+map("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
 -- Move
 -- map("n", "<C-x>", "<Plug>GoNSMLeft", {})
