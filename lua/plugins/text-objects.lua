@@ -9,7 +9,7 @@ return {
         lookForwardBig = 15,
         useDefaultKeymaps = true,
         -- disabledKeymaps = { "ai", "ii", "aI", "iI" },
-        disabledKeymaps = { "L" },
+        disabledKeymaps = { "L", "r", "R" },
       })
     end,
   },

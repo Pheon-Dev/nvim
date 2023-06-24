@@ -3,7 +3,7 @@ local map = vim.api.nvim_set_keymap
 
 -- Saving and  ESC on insert Mode
 map("i", "jj", "<esc>", { noremap = true, silent = true })
-map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+map("n", ",,", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
 map("n", "Wj", ":vsplit<cr>", { noremap = true, silent = true })
@@ -57,7 +57,7 @@ map("i", "<C-j>", "<C-o>o", { noremap = true, silent = true })
 
 -- quote text objects
 map("n", "cq", 'f"ci"', { noremap = true, silent = true })
-map("n", "cQ", 'f"ca"', { noremap = true, silent = true })
+map("n", "cq", 'f"ca"', { noremap = true, silent = true })
 map("n", "dq", 'f"di"', { noremap = true, silent = true })
 map("n", "dQ", 'f"da"', { noremap = true, silent = true })
 map("n", "vq", 'f"vi"', { noremap = true, silent = true })
@@ -83,18 +83,31 @@ map("n", "v¬", "f`va`", { noremap = true, silent = true })
 map("n", "y`", "f`yi`", { noremap = true, silent = true })
 map("n", "y¬", "f`ya`", { noremap = true, silent = true })
 
--- map("n", "<expr>\\d*cq", [[v:count1 . "cq"]], { noremap = true, silent = true })
-  -- map("n", "<expr>\\d*dq", [[v:count1 . "dq"]], { noremap = true, silent = true })
-  -- map("n", "<expr>vq", '<expr>vi"', { noremap = true, silent = true })
-  -- map("n", "<expr>\\d*yq", [[v:count1 . "yq"]], { noremap = true, silent = true })
+map("n", "dp", "dap", { noremap = true, silent = true })
 
-  -- -- Handle the mapping with a number
-  -- local mappings = { "cq", "dq", "vq", "yq" }
-  -- for _, mapping in ipairs(mappings) do
-  --   map("n", "<expr>" .. [[\d*]] .. mapping, string.format([[v:lua.handle_numbered_mapping(%q, %q)]], mapping), { noremap = true, silent = true })
-  -- end
+-- map("o", "q", ':normal vi"<cr>', {noremap = true, silent = true})
+-- map("o", "nq", ':normal t"llvi"<cr>', {noremap = true, silent = true})
+-- map("o", "Q", ':normal va"<cr>', {noremap = true, silent = true})
+-- map("o", "nQ", ':normal t"llva"<cr>', {noremap = true, silent = true})
+-- map("o", "'", ":normal vi'<cr>", {noremap = true, silent = true})
+-- map("o", "n'", ":normal t'llvi'<cr>", {noremap = true, silent = true})
+-- map("o", "@", ":normal va'<cr>", {noremap = true, silent = true})
+-- map("o", "n@", ":normal t'llva'<cr>", {noremap = true, silent = true})
+-- map("o", "`", ":normal vi`<cr>", {noremap = true, silent = true})
+-- map("o", "n`", ":normal t`llvi`<cr>", {noremap = true, silent = true})
+-- map("o", "¬", ":normal va`<cr>", {noremap = true, silent = true})
+-- map("o", "n¬", ":normal t`llva`<cr>", {noremap = true, silent = true})
 
 local keymap = vim.keymap.set
+
+-- keymap("v", "q", 'i"', {noremap = true, silent = true})
+
+-- keymap({ "o", "x" }, "q", ':normal vi"<cr>', {noremap = true, silent = true})
+
+keymap({ "o", "x" }, "c", ":normal vac<cr>", {noremap = true, silent = true})
+keymap({ "o", "x" }, "f", ":normal vafo0<cr>", {noremap = true, silent = true})
+keymap({ "o", "x" }, "B", ":normal vaBo0<cr>", {noremap = true, silent = true})
+-- keymap({ "o", "x" }, "2q", ':normal f"dlvi"<cr>', {noremap = true, silent = true})
 
 -- TEXT OBJECTS
 --indentation
@@ -102,14 +115,14 @@ keymap({ "o", "x" }, "ii", "<cmd>lua require('various-textobjs').indentation(tru
 keymap({ "o", "x" }, "ai", "<cmd>lua require('various-textobjs').indentation(false, true)<CR>")
 keymap({ "o", "x" }, "iI", "<cmd>lua require('various-textobjs').indentation(true, true)<CR>")
 keymap({ "o", "x" }, "aI", "<cmd>lua require('various-textobjs').indentation(false, false)<CR>")
-keymap({ "o", "x" }, "R", "<cmd>lua require('various-textobjs').restOfIndentation()<CR>")
+keymap({ "o", "x" }, "r", "<cmd>lua require('various-textobjs').restOfIndentation()<CR>")
 -- subwords
 keymap({ "o", "x" }, "iS", "<cmd>lua require('various-textobjs').subword(true)<CR>")
 keymap({ "o", "x" }, "aS", "<cmd>lua require('various-textobjs').subword(false)<CR>")
 -- near closing brackets
 keymap({ "o", "x" }, "%", "<cmd>lua require('various-textobjs').toNextClosingBracket()<CR>")
 -- paragraphs
-keymap({ "o", "x" }, "r", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>")
+keymap({ "o", "x" }, "R", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>")
 -- entire buffer
 keymap({ "o", "x" }, "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>")
 -- near end of line
@@ -175,7 +188,7 @@ local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 -- Repeat movement with ; and ,
 -- ensure ; goes forward and , goes backward, regardless of the last direction
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
-vim.keymap.set({ "n", "x", "o" }, "'", ts_repeat_move.repeat_last_move_previous)
+vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
 
 local gs = require("gitsigns")
 
