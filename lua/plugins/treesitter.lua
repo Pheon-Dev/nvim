@@ -36,6 +36,7 @@ local M = {
           "bash",
           "go",
           "html",
+          "http",
           "javascript",
           "kdl",
           "json",
