@@ -57,7 +57,7 @@ map("i", "<C-j>", "<C-o>o", { noremap = true, silent = true })
 
 -- quote text objects
 map("n", "cq", 'f"ci"', { noremap = true, silent = true })
-map("n", "cq", 'f"ca"', { noremap = true, silent = true })
+map("n", "cQ", 'f"ca"', { noremap = true, silent = true })
 map("n", "dq", 'f"di"', { noremap = true, silent = true })
 map("n", "dQ", 'f"da"', { noremap = true, silent = true })
 map("n", "vq", 'f"vi"', { noremap = true, silent = true })
