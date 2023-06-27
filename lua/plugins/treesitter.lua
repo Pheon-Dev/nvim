@@ -8,11 +8,11 @@ local M = {
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        event = "BufReadPost",
+        -- event = "BufReadPost",
       },
       {
         "RRethy/nvim-treesitter-endwise",
-        event = "BufReadPost",
+        -- event = "BufReadPost",
       },
     },
     config = function()
