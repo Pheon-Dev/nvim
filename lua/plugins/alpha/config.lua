@@ -98,6 +98,13 @@ function M.shortcuts()
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>",
 				keybind_opts
 			)
+			vim.api.nvim_buf_set_keymap(
+				0,
+				"n",
+				";",
+				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lf', direction = 'float'}):toggle()<cr>",
+				keybind_opts
+			)
 			vim.api.nvim_buf_set_keymap(0, "n", "m", ":Mason<CR>", keybind_opts)
 
 			-- Quit
@@ -110,15 +117,16 @@ function M.shortcuts()
 			type = "text",
 			val = {
 				-- "ﯠ Harpoon [h]    פּ Nvim-Tree [e]    鈴 Lazy [z]     Quit [q]",
-				" Lazy [l]    󰺾 Mason [m]    鈴 Lazy [z]     Quit [q]",
+				" Lazy [l]     lf [;]    󰺾 Mason [m]    鈴 Lazy [z]     Quit [q]",
 			},
 			opts = {
 				position = "center",
 				hl = {
 					{ "Constant", 1, 20 },
-					{ "Keyword", 20, 38 },
-					{ "Function", 38, 50 },
-					{ "AlphaQuit", 51, 70 },
+					{ "AlphaDesc", 20, 30 },
+					{ "Function", 31, 50 },
+          { "Keyword", 51, 65 },
+					{ "AlphaQuit", 66, 80 },
 				},
 			},
 		},
@@ -136,7 +144,7 @@ function M.info_text()
 	local ms = (math.floor(lazy_stats.startuptime * 100 + 0.5) / 100)
 	local total_plugins = "  " .. lazy_stats.loaded .. "/" .. lazy_stats.count .. " in " .. ms .. " ms"
 	local version = vim.version()
-	local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
+	local nvim_version_info = "   v" .. version.major .. "." .. version.minor .. "." .. version.patch
 	vim.api.nvim_create_autocmd({ "User" }, {
 		pattern = { "LazyVimStarted" },
 		callback = function()
