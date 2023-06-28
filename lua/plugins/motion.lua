@@ -166,7 +166,7 @@ return {
           -- options used when flash is activated through
           -- a regular search with `/` or `?`
           search = {
-            enabled = true, -- enable flash for search
+            enabled = false, -- enable flash for search
             highlight = { backdrop = false },
             jump = { history = true, register = true, nohlsearch = true },
             search = {
@@ -181,7 +181,8 @@ return {
             enabled = false,
             -- by default all keymaps are enabled, but you can disable some of them,
             -- by removing them from the list.
-            keys = { "f", "F", "t", "T", ";", "," },
+            -- keys = { "f", "F", "t", "T", ";", "," },
+            keys = { "f", "F", "t", "T"},
             search = { wrap = false },
             highlight = { backdrop = true },
             jump = { register = false },
@@ -228,8 +229,6 @@ return {
           motion = false,
         },
       })
-
-      -- to use this, make sure to set `opts.modes.char.enabled = false`
       local Config = require("flash.config")
       local Char = require("flash.plugins.char")
       for _, motion in ipairs({ "f", "t", "F", "T" }) do
