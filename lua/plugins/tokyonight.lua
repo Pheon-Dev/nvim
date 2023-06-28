@@ -53,6 +53,8 @@ return {
 
 			vim.cmd("colorscheme tokyonight")
 
+			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
+
 			-- Alpha
 			vim.api.nvim_set_hl(0, "AlphaKeys", { fg = theme.color43, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "AlphaDesc", { fg = theme.color20, bg = theme.color0 })
@@ -75,6 +77,12 @@ return {
 			vim.api.nvim_set_hl(0, "HlSearchNear", { fg = theme.color89, bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "HlSearchLens", { fg = theme.color89, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "HlSearchLensNear", { fg = theme.color0, bg = theme.color89 })
+
+      -- Flash
+			vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FlashMatch", { fg = theme.color89, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "FlashCurrent", { fg = theme.color100, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "FlashLabel", { fg = theme.color99, bg = theme.color1 })
 
 			-- Winbar
 			-- vim.api.nvim_set_hl(0, "WinBar", { fg = theme.color83, bg = theme.color0 })
@@ -198,7 +206,6 @@ return {
 			-- vim.api.nvim_set_hl(0, "LazyProgressTodo", { bg = theme.color0, fg = theme.color89 })
 
 			-- Telescope
-			local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
 
 			----------------------------------------------------------------------
 			--                              Prompt                              --

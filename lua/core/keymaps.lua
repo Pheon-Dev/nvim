@@ -3,7 +3,7 @@ local map = vim.api.nvim_set_keymap
 
 -- Saving and  ESC on insert Mode
 map("i", "jj", "<esc>", { noremap = true, silent = true })
-map("n", ",,", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+map("n", "'", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
 map("n", "Wj", ":vsplit<cr>", { noremap = true, silent = true })
@@ -164,15 +164,15 @@ keymap("n", "zi", function()
   end
 end, { desc = "Hover" })
 
--- Motion
-require("hop")
-map("n", "f", ":HopChar1CurrentLineAC<cr>", { noremap = true, silent = true })
-map("n", "F", ":HopChar1CurrentLineBC<cr>", { noremap = true, silent = true })
-map("n", "s", ":HopChar1<cr>", { noremap = true, silent = true })
-map("n", "S", ":HopChar2<cr>", { noremap = true, silent = true })
--- map("n", "sw", ":HopWord<cr>", { noremap = true, silent = true })
--- map("n", "sj", ":HopVertical<cr>", { noremap = true, silent = true })
--- map("n", "sp", ":HopPattern<cr>", { noremap = true, silent = true })
+-- -- Motion
+-- require("hop")
+-- map("n", "f", ":HopChar1CurrentLineAC<cr>", { noremap = true, silent = true })
+-- map("n", "F", ":HopChar1CurrentLineBC<cr>", { noremap = true, silent = true })
+-- map("n", "s", ":HopChar1<cr>", { noremap = true, silent = true })
+-- map("n", "S", ":HopChar2<cr>", { noremap = true, silent = true })
+-- -- map("n", "sw", ":HopWord<cr>", { noremap = true, silent = true })
+-- -- map("n", "sj", ":HopVertical<cr>", { noremap = true, silent = true })
+-- -- map("n", "sp", ":HopPattern<cr>", { noremap = true, silent = true })
 
 -- todo-comments
 vim.keymap.set("n", "]t", function()
