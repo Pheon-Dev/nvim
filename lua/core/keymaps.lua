@@ -164,16 +164,6 @@ keymap("n", "zi", function()
   end
 end, { desc = "Hover" })
 
--- -- Motion
--- require("hop")
--- map("n", "f", ":HopChar1CurrentLineAC<cr>", { noremap = true, silent = true })
--- map("n", "F", ":HopChar1CurrentLineBC<cr>", { noremap = true, silent = true })
--- map("n", "s", ":HopChar1<cr>", { noremap = true, silent = true })
--- map("n", "S", ":HopChar2<cr>", { noremap = true, silent = true })
--- -- map("n", "sw", ":HopWord<cr>", { noremap = true, silent = true })
--- -- map("n", "sj", ":HopVertical<cr>", { noremap = true, silent = true })
--- -- map("n", "sp", ":HopPattern<cr>", { noremap = true, silent = true })
-
 -- todo-comments
 vim.keymap.set("n", "]t", function()
   require("todo-comments").jump_next()
