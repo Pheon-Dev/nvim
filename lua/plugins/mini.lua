@@ -11,7 +11,7 @@ return {
     event = "BufReadPre",
     config = function()
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "alpha", "lazy", "NvimTree" },
+        pattern = { "alpha", "lazy", "NvimTree", "toggleterm" },
         callback = function()
           vim.b.miniindentscope_disable = true
         end,
