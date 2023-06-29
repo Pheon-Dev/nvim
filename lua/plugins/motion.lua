@@ -24,7 +24,7 @@ return {
         desc = "Flash Treesitter",
       },
       {
-        "r",
+        "<C-s>",
         mode = "o",
         function()
           -- jump to a remote location to execute the operator
@@ -33,7 +33,7 @@ return {
         desc = "Remote Flash",
       },
       {
-        "R",
+        "<C-S>",
         mode = { "n", "o", "x" },
         function()
           -- show labeled treesitter nodes around the search matches
