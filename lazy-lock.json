@@ -24,7 +24,6 @@
   "guihua.lua": { "branch": "master", "commit": "6f82135529b95a0f12460702bb4043603caceb1d" },
   "harpoon": { "branch": "master", "commit": "1ed1946dd7a89b05a3392ed95f09940e9473d850" },
   "lazy.nvim": { "branch": "main", "commit": "0d61488b89a570415177f75a36ef93616aac6c77" },
-  "lsp-colors.nvim": { "branch": "main", "commit": "750d59b643865b906996028147675e9af216ea95" },
   "lsp-inlayhints.nvim": { "branch": "main", "commit": "d981f65c9ae0b6062176f0accb9c151daeda6f16" },
   "lsp_signature.nvim": { "branch": "master", "commit": "4665921ff8e30601c7c1328625b3abc1427a6143" },
   "lspkind-nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
