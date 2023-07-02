@@ -240,7 +240,3 @@ end, { expr = true, silent = true })
 
 -- Split Join
 vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
-
-vim.keymap.set("n", "<leader>rn", function()
-  return ":IncRename " .. vim.fn.expand("<cword>")
-end, { expr = true })
