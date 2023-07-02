@@ -268,7 +268,7 @@ return {
       })
       local Config = require("flash.config")
       local Char = require("flash.plugins.char")
-      for _, motion in ipairs({ "f", "t", "F", "T" }) do
+      for _, motion in ipairs({ "f", "F", "t", "T" }) do
         vim.keymap.set({ "n", "x", "o" }, motion, function()
           require("flash").jump(Config.get({
             mode = "char",
