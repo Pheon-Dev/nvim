@@ -33,11 +33,6 @@ function M.on_attach(client, buffer)
 
   self:map("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", mode = { "n", "v" }, has = "codeAction" })
 
-  local format = require("plugins.lsp.format").format
-  self:map("<leader>cf", format, { desc = "Format Document", has = "documentFormatting" })
-  self:map("<leader>cf", format, { desc = "Format Range", mode = "v", has = "documentRangeFormatting" })
-  self:map("<leader>cr", M.rename, { expr = true, desc = "Rename", has = "rename" })
-
   require "lsp_signature".on_attach({
     bind = true, -- This is mandatory, otherwise border config won't get registered.
     handler_opts = {
@@ -86,14 +81,6 @@ function M:map(lhs, rhs, opts)
     ---@diagnostic disable-next-line: no-unknown
     { silent = true, buffer = self.buffer, expr = opts.expr, desc = opts.desc }
   )
-end
-
-function M.rename()
-  if pcall(require, "inc_rename") then
-    return ":IncRename " .. vim.fn.expand("<cword>")
-  else
-    vim.lsp.buf.rename()
-  end
 end
 
 function M.diagnostic_goto(next, severity)

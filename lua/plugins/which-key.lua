@@ -90,6 +90,7 @@ return {
     local crates = require("crates")
 
     local mappings = {
+      ["'"] = { ":Alpha<cr>", "Dashboard" },
       [";"] = { toggle_lf, "lf" },
       a = { ":ASToggle<cr>", "Auto Save Toggle" },
       b = { ":Antelope buffers<cr>", "Buffers" },
@@ -118,7 +119,6 @@ return {
           r = { crates.open_repository, "Repository" },
         },
       },
-      d = { ":Alpha<cr>", "Dashboard" },
       e = { ":MurenToggle<cr>", "Muren" },
       f = { ":Telescope find_files initial_mode=insert<cr>", "Find Files" },
       g = {
