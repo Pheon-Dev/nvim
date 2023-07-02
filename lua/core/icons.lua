@@ -246,7 +246,7 @@ else
       Package = "",
       Module = "",
       Namespace = "",
-      Macro = "",
+      Macro = " ",
       Class = "",
       Constructor = "",
       Field = "",

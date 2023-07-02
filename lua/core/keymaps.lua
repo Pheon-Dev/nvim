@@ -3,7 +3,7 @@ local map = vim.api.nvim_set_keymap
 
 -- Saving and  ESC on insert Mode
 map("i", "jj", "<esc>", { noremap = true, silent = true })
-map("n", "'", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
 map("n", "Wj", ":vsplit<cr>", { noremap = true, silent = true })
@@ -104,9 +104,9 @@ local keymap = vim.keymap.set
 
 -- keymap({ "o", "x" }, "q", ':normal vi"<cr>', {noremap = true, silent = true})
 
-keymap({ "o", "x" }, "c", ":normal vac<cr>", {noremap = true, silent = true})
-keymap({ "o", "x" }, "f", ":normal vafo0<cr>", {noremap = true, silent = true})
-keymap({ "o", "x" }, "B", ":normal vaBo0<cr>", {noremap = true, silent = true})
+keymap({ "o", "x" }, "c", ":normal vac<cr>", { noremap = true, silent = true })
+keymap({ "o", "x" }, "f", ":normal vafo0<cr>", { noremap = true, silent = true })
+keymap({ "o", "x" }, "B", ":normal vaBo0<cr>", { noremap = true, silent = true })
 -- keymap({ "o", "x" }, "2q", ':normal f"dlvi"<cr>', {noremap = true, silent = true})
 
 -- TEXT OBJECTS
@@ -178,7 +178,7 @@ local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 -- Repeat movement with ; and ,
 -- ensure ; goes forward and , goes backward, regardless of the last direction
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
-vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+vim.keymap.set({ "n", "x", "o" }, "'", ts_repeat_move.repeat_last_move_previous)
 
 local gs = require("gitsigns")
 
