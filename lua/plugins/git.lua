@@ -79,6 +79,6 @@ return {
 	},
 	{
 		"f-person/git-blame.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 	},
 }

@@ -4,15 +4,15 @@ local M = {
     build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
-    event = "BufReadPost",
+    -- event = "BufReadPre",
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        -- event = "BufReadPost",
+        -- event = "BufReadPre",
       },
       {
         "RRethy/nvim-treesitter-endwise",
-        -- event = "BufReadPost",
+        -- event = "BufReadPre",
       },
     },
     config = function()
