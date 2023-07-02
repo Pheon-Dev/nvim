@@ -50,51 +50,6 @@ function M.buttons()
 			vim.api.nvim_buf_set_keymap(0, "n", "k", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "f", ":Telescope find_files initial_mode=insert<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "s", ":Telescope live_grep<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(
-				0,
-				"n",
-				"t",
-				":TodoTelescope keywords=TODO,FIX,BUG,FIXIT,ISSUE,FIXME,ERROR,WARNING,INFO,HINT,TEST,HACK,PERF,NOTE<CR>",
-				keybind_opts
-			)
-		end,
-	})
-	local buttons_hl = {
-		{ "Comment", 0, 1 },
-		{ "AlphaKeys", 1, 2 },
-		{ "Comment", 2, 8 },
-		{ "AlphaIcon", 25, 30 },
-		{ "AlphaDesc", 30, 40 },
-	}
-	return {
-		{
-			type = "text",
-			val = {
-				"[f]" .. "                      󰈞 " .. " Find File",
-				"[j]" .. "                      פּ " .. " Nvim-Tree",
-				"[k]" .. "                      ﯠ " .. " Harpoon",
-				"[s]" .. "                       " .. " Search",
-				"[t]" .. "                       " .. " TODO",
-			},
-			opts = {
-				position = "center",
-				hl = {
-					buttons_hl,
-					buttons_hl,
-					buttons_hl,
-					buttons_hl,
-					buttons_hl,
-				},
-			},
-		},
-	}
-end
-
-function M.shortcuts()
-	local keybind_opts = { silent = true, noremap = true }
-	vim.api.nvim_create_autocmd({ "User" }, {
-		pattern = { "AlphaReady" },
-		callback = function(_)
 			vim.api.nvim_buf_set_keymap(0, "n", "z", ":Lazy<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(
 				0,
@@ -117,28 +72,44 @@ function M.shortcuts()
 			vim.api.nvim_buf_set_keymap(0, "n", "h", "<cmd>q<CR>", keybind_opts)
 		end,
 	})
+
+	local buttons_hl = {
+					{ "AlphaIcon", 1, 5 },
+					{ "Keyword", 6, 18 },
+					{ "AlphaKeys", 19, 25 },
+          { "AlphaLine", 25, 30 },
+					{ "AlphaIcon", 31, 38 },
+					{ "Keyword", 39, 48 },
+					{ "AlphaKeys", 49, 55 },
+          { "AlphaQuit", 56, 60 },
+	}
 	return {
 		{
 			type = "text",
 			val = {
-				-- "ﯠ Harpoon [h]    פּ Nvim-Tree [e]    鈴 Lazy [z]     Quit [q]",
-				" Lazy [l]     lf [;]    󰺾 Mason [m]    鈴 Lazy [z]     Quit [q]",
+				"                        │                       ",
+				"ﯠ   Harpoon        k    │    פּ   Nvim Tree     j",
+        "󰈞   Find File      f    │       Search        s",
+				"   Lazygit        l    │       lf            ;",
+        "󰺾   Mason          m    │    鈴  Lazy          z",
+        "   TODO           t    │       Quit          h",
+				"                        │                       ",
 			},
 			opts = {
 				position = "center",
 				hl = {
-					{ "Constant", 1, 20 },
-					{ "AlphaDesc", 20, 30 },
-					{ "Function", 31, 50 },
-          { "Keyword", 51, 65 },
-					{ "AlphaQuit", 66, 80 },
+					buttons_hl,
+					buttons_hl,
+					buttons_hl,
+					buttons_hl,
+					buttons_hl,
+					buttons_hl,
+					buttons_hl,
 				},
 			},
 		},
 	}
 end
-
-M.section_shortcuts = { type = "group", val = M.shortcuts }
 
 M.section_buttons = { type = "group", val = M.buttons }
 
@@ -188,11 +159,9 @@ M.config = {
 		M.section_header,
 		{ type = "padding", val = 1 },
 		{ type = "padding", val = 1 },
-		M.section_shortcuts,
+		M.section_buttons,
 		{ type = "padding", val = 1 },
 		M.section_info,
-		{ type = "padding", val = 1 },
-		M.section_buttons,
 	},
 }
 
