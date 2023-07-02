@@ -1,6 +1,8 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "Pheon-Dev/pigeon" },
+  dependencies = {
+    "Pheon-Dev/pigeon",
+  },
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local ok, lualine = pcall(require, "lualine")
@@ -114,12 +116,12 @@ return {
 
     local theme = require("core.colors")
     local my_colors = {
-      n = theme.color37, -- "#7aa2f7",
-      i = theme.color89, -- "#bd93f9",
-      c = theme.color50, -- "#10e070",
-      v = theme.color43, -- "#c66bfe",
-      V = theme.color43, -- "#966bfe",
-      R = theme.color99, -- "#f62bfe"
+      n = theme.color37,   -- "#7aa2f7",
+      i = theme.color89,   -- "#bd93f9",
+      c = theme.color50,   -- "#10e070",
+      v = theme.color43,   -- "#c66bfe",
+      V = theme.color43,   -- "#966bfe",
+      R = theme.color99,   -- "#f62bfe"
     }
 
     local mode = {
@@ -186,20 +188,20 @@ return {
       "filename",
       cond = conditions.buffer_not_empty,
       color = { fg = colors.grey },
-      file_status = true,     -- Displays file status (readonly status, modified status)
-      newfile_status = false, -- Display new file status (new file means no write after created)
-      path = 1,               -- 0: Just the filename
+      file_status = true,       -- Displays file status (readonly status, modified status)
+      newfile_status = false,   -- Display new file status (new file means no write after created)
+      path = 1,                 -- 0: Just the filename
       -- 1: Relative path
       -- 2: Absolute path
       -- 3: Absolute path, with tilde as the home directory
 
-      shorting_target = 40, -- Shortens path to leave 40 spaces in the window
+      shorting_target = 40,   -- Shortens path to leave 40 spaces in the window
       -- for other components. (terrible name, any suggestions?)
       symbols = {
         modified = "", -- Text to show when the file is modified.
         readonly = "", -- Text to show when the file is non-modifiable or readonly.
-        unnamed = "ﲃ", -- Text to show for unnamed buffers.
-        newfile = "", -- Text to show for newly created file before first write
+        unnamed = "ﲃ",  -- Text to show for unnamed buffers.
+        newfile = "",  -- Text to show for newly created file before first write
       },
     })
 
@@ -265,17 +267,6 @@ return {
         return "%="
       end,
     })
-
-    -- ins_right({
-    --   function()
-    --     local enabled = require("pigeon.config").options.cpu.enabled
-    --     local cpu = require("pigeon.cpu")
-    --
-    --
-    --     return enabled and cpu.cpu_load() or ""
-    --   end,
-    --   color = { fg = theme.color20 },
-    -- })
 
     ins_right({
       function()
