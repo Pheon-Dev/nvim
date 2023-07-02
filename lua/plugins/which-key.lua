@@ -87,10 +87,6 @@ return {
       return lf:toggle()
     end
 
-    local blame_line = function()
-      gs.blame_line({ full = true })
-    end
-
     local crates = require("crates")
 
     local mappings = {
@@ -128,7 +124,7 @@ return {
       g = {
         name = "Gitsigns",
         a = { gs.stage_buffer, "Stage Buffer" },
-        b = { blame_line, "Blame Line" },
+        b = { gs.blame_line, "Blame Line" },
         d = { gs.diff_this, "Diff This" },
         g = { gs.toggle_current_line_blame, "Toggle Current Line Blame" },
         j = { gs.next_hunk, "Next Hunk" },
