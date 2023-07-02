@@ -1,7 +1,8 @@
 return {
   {
     "kevinhwang91/nvim-ufo",
-    -- event = "VeryLazy",
+    event = "BufReadPre",
+    dependencies = { "kevinhwang91/promise-async" },
     config = function()
       local ufo = require("ufo")
       local ftMap = {
@@ -91,5 +92,4 @@ return {
       ufo.setFoldVirtTextHandler(bufnr, handler)
     end,
   },
-  "kevinhwang91/promise-async",
 }
