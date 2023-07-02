@@ -58,13 +58,6 @@ function M.buttons()
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>",
 				keybind_opts
 			)
-			vim.api.nvim_buf_set_keymap(
-				0,
-				"n",
-				";",
-				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lf', direction = 'float'}):toggle()<cr>",
-				keybind_opts
-			)
 			vim.api.nvim_buf_set_keymap(0, "n", "m", ":Mason<CR>", keybind_opts)
 
 			-- Quit
@@ -90,15 +83,13 @@ function M.buttons()
 				"                        │                       ",
 				"ﯠ   Harpoon        k    │    פּ   Nvim Tree     j",
         "󰈞   Find File      f    │       Search        s",
-				"   Lazygit        l    │       lf            ;",
         "󰺾   Mason          m    │    鈴  Lazy          z",
-        "   TODO           t    │       Quit          h",
+        "   Lazygit        t    │       Quit          h",
 				"                        │                       ",
 			},
 			opts = {
 				position = "center",
 				hl = {
-					buttons_hl,
 					buttons_hl,
 					buttons_hl,
 					buttons_hl,

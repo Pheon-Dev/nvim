@@ -82,16 +82,10 @@ return {
       return lazygit:toggle()
     end
 
-    local toggle_lf = function()
-      local lf = Terminal:new({ cmd = "lf", direction = "float" })
-      return lf:toggle()
-    end
-
     local crates = require("crates")
 
     local mappings = {
       ["'"] = { ":Alpha<cr>", "Dashboard" },
-      [";"] = { toggle_lf, "lf" },
       a = { ":ASToggle<cr>", "Auto Save Toggle" },
       b = { ":Antelope buffers<cr>", "Buffers" },
       c = {
