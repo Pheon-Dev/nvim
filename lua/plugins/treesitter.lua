@@ -4,15 +4,15 @@ local M = {
     build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
-    -- event = "BufReadPre",
+    event = "BufReadPre",
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        -- event = "BufReadPre",
+        event = "BufReadPre",
       },
       {
         "RRethy/nvim-treesitter-endwise",
-        -- event = "BufReadPre",
+        event = "BufReadPre",
       },
     },
     config = function()
@@ -95,13 +95,13 @@ local M = {
               ["ia"] = "@parameter.inner",
               ["am"] = "@call.outer",
               ["im"] = "@call.inner",
-              ["a/"] = "@comment.outer",
               ["in"] = "@number.inner",
               ["ag"] = "@assignment.outer",
               ["ig"] = "@assignment.inner",
               ["i,"] = "@assignment.lhs",
               ["i."] = "@assignment.rhs",
-              --["ic"] = "@comment.outer",
+              -- ["ic"] = "@comment.outer",
+              -- ["ac"] = "@comment.outer",
               --["afr"] = "@frame.outer",
               --["ifr"] = "@frame.inner",
               --["aat"] = "@attribute.outer",
