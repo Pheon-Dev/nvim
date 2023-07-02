@@ -264,6 +264,13 @@ return {
 
     ins_left({
       function()
+        return '%{&ft == "toggleterm" ? " ".b:toggle_number."" : ""}'
+      end,
+      color = { fg = colors.green },
+    })
+
+    ins_left({
+      function()
         return "%="
       end,
     })
