@@ -110,7 +110,7 @@ return {
     end
 
     local width = math.floor(vim.o.columns * 0.2)
-    local height = math.floor(vim.o.lines * 0.6)
+    local height = math.floor(vim.o.lines * 0.9)
     local gh = vim.api.nvim_list_uis()[1].height
     local gw = vim.api.nvim_list_uis()[1].width
 
@@ -162,7 +162,7 @@ return {
             width = width,
             height = height,
             row = (gh - height) * 0.5,
-            col = (gw - width) * 0.5,
+            col = (gw - width) * 1.0,
           },
         },
       },
