@@ -1,12 +1,8 @@
 return {
-  "nvim-lualine/lualine.nvim",
-  dependencies = {
-    "Pheon-Dev/pigeon",
-  },
+  "Pheon-Dev/lualine.nvim",
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local ok, lualine = pcall(require, "lualine")
-    local pg, pigeon = pcall(require, "pigeon")
     local on, noice = pcall(require, "noice")
 
     if not ok then
@@ -15,10 +11,6 @@ return {
 
     if not on then
       vim.notify("Noice didn't load properly!", "error")
-    end
-
-    if not pg then
-      vim.notify("Pigeon didn't load properly!", "error")
     end
 
     local colors = {
@@ -116,12 +108,12 @@ return {
 
     local theme = require("core.colors")
     local my_colors = {
-      n = theme.color37,   -- "#7aa2f7",
-      i = theme.color89,   -- "#bd93f9",
-      c = theme.color50,   -- "#10e070",
-      v = theme.color43,   -- "#c66bfe",
-      V = theme.color43,   -- "#966bfe",
-      R = theme.color99,   -- "#f62bfe"
+      n = theme.color37, -- "#7aa2f7",
+      i = theme.color89, -- "#bd93f9",
+      c = theme.color50, -- "#10e070",
+      v = theme.color43, -- "#c66bfe",
+      V = theme.color43, -- "#966bfe",
+      R = theme.color99, -- "#f62bfe"
     }
 
     local mode = {
@@ -188,21 +180,26 @@ return {
       "filename",
       cond = conditions.buffer_not_empty,
       color = { fg = colors.grey },
-      file_status = true,       -- Displays file status (readonly status, modified status)
-      newfile_status = false,   -- Display new file status (new file means no write after created)
-      path = 1,                 -- 0: Just the filename
+      file_status = true,     -- Displays file status (readonly status, modified status)
+      newfile_status = false, -- Display new file status (new file means no write after created)
+      path = 1,               -- 0: Just the filename
       -- 1: Relative path
       -- 2: Absolute path
       -- 3: Absolute path, with tilde as the home directory
 
-      shorting_target = 40,   -- Shortens path to leave 40 spaces in the window
+      shorting_target = 40, -- Shortens path to leave 40 spaces in the window
       -- for other components. (terrible name, any suggestions?)
       symbols = {
         modified = "", -- Text to show when the file is modified.
         readonly = "", -- Text to show when the file is non-modifiable or readonly.
-        unnamed = "ﲃ",  -- Text to show for unnamed buffers.
-        newfile = "",  -- Text to show for newly created file before first write
+        unnamed = "ﲃ", -- Text to show for unnamed buffers.
+        newfile = "", -- Text to show for newly created file before first write
       },
+    })
+
+    wins_left({
+      "searchcount",
+      color = { fg = colors.green1 },
     })
 
     wins_left({
@@ -244,15 +241,6 @@ return {
 
     -- Statusline
     ins_left({
-      function()
-        local enabled = require("pigeon.config").options.hostname.enabled
-        local hostname = require("pigeon.hostname").hostname()
-
-        return enabled and hostname or ""
-      end,
-      color = { fg = theme.color20 },
-    })
-    ins_left({
       "filetype",
       color = function()
         return { fg = mode_color[vim.fn.mode()] }
@@ -276,100 +264,61 @@ return {
     })
 
     ins_right({
-      function()
-        local enabled = require("pigeon.config").options.datetime.enabled
-        local datetime = require("pigeon.datetime")
-        local time_enabled = require("pigeon.config").options.datetime.time.enabled
-
-        local time = time_enabled and datetime.current_time() or ""
-
-        return enabled and time or ""
-      end,
-      color = { fg = theme.color20 },
-    })
-
-    ins_right({
-      function()
-        local enabled = require("pigeon.config").options.datetime.enabled
-        local datetime = require("pigeon.datetime")
-        local date_enabled = require("pigeon.config").options.datetime.date.enabled
-
-        local date = date_enabled and datetime.current_date() or ""
-
-        return enabled and date or ""
-      end,
-      color = { fg = theme.color73 },
-    })
-
-    ins_right({
-      function()
-        local enabled = require("pigeon.config").options.datetime.enabled
-        local datetime = require("pigeon.datetime")
-        local day_enabled = require("pigeon.config").options.datetime.day.enabled
-
-        local day = day_enabled and datetime.current_day() or ""
-
-        return enabled and day or ""
-      end,
+      "datetime",
       color = { fg = theme.color74 },
     })
 
     ins_right({
-      function()
-        local enabled = require("pigeon.config").options.battery.enabled
-        local battery = require("pigeon.battery")
-
-        local capacity = battery.battery_capacity()
-        local charge = battery.battery_charge()
-        local status = battery.battery_status()
-
-        if enabled then
-          return status .. capacity .. charge
-        else
-          return ""
-        end
-      end,
+      "battery",
+      show_status_text = false,
+      view = {
+        charge = {
+          zeros = { icon = "󰂎 " },
+          tens = { icon = "󰁺 " },
+          twenties = { icon = "󰁻 " },
+          thirties = { icon = "󰁼 " },
+          forties = { icon = "󰁽 " },
+          fifties = { icon = "󰁾 " },
+          sixties = { icon = "󰁿 " },
+          seventies = { icon = "󰂀 " },
+          eighties = { icon = "󰂁 " },
+          nineties = { icon = "󰂂 " },
+          hundred = { icon = "󰁹 " },
+        },
+        status = {
+          enabled = true,
+          charging = { icon = " 󱐋" },
+          discharging = { icon = " 󱐌" },
+          not_charging = { icon = "  " },
+          full = { icon = "  " },
+          unknown = { icon = " " },
+          critical = { icon = " " },
+          percentage = { icon = " 󰏰" },
+        },
+      },
       color = { fg = colors.orange3 },
     })
 
     ins_right({
-      function()
-        local enabled = require("pigeon.config").options.internet.enabled
-        local internet = require("pigeon.internet")
-
-        local wifi = internet.wifi_status()
-        local signal = internet.bit_rate()
-        local essid = internet.wifi_essid()
-
-        if enabled then
-          return essid .. " " .. wifi .. " " .. signal
-        else
-          return ""
-        end
-      end,
-      color = { fg = theme.color89 },
+      "wifi",
+      status = {
+        connected = "󰤪",
+        disconnected = "󰤫",
+        show = true
+      },
+      essid = {
+        show = true
+      },
+      bit_rate = {
+        unit = "mbps",
+        show = true
+      }
     })
 
     ins_right({
-      function()
-        local enabled = require("pigeon.config").options.ram.enabled
-        local ram = require("pigeon.ram")
-        local perc_enabled = require("pigeon.config").options.ram.show_percentage
-
-        local total_ram = ram.total_ram()
-        local used_ram = ram.used_ram()
-        local perc_ram = ram.perc_ram()
-        local icon = ram.ram_icon
-
-        local result = icon .. " " .. used_ram .. "/" .. total_ram .. " "
-        local perc_result = icon .. " " .. used_ram .. "/" .. total_ram .. " " .. "(" .. perc_ram .. ")"
-
-        if enabled then
-          return perc_enabled and perc_result or result
-        else
-          return ""
-        end
-      end,
+      "ram",
+      icon = "󰍛",
+      show_percentage = false,
       color = { fg = theme.color26 },
     })
 
