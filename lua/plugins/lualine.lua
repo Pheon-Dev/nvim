@@ -265,7 +265,7 @@ return {
 
     ins_right({
       "datetime",
-      color = { fg = theme.color74 },
+      color = "Keyword"
     })
 
     ins_right({
