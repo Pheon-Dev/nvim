@@ -1,16 +1,59 @@
 return {
   {
     "kevinhwang91/nvim-ufo",
-    event = "BufReadPre",
+    event = "VeryLazy",
     dependencies = { "kevinhwang91/promise-async" },
+    keys = {
+      {
+        "zl",
+        mode = { "n" },
+        "za",
+        desc = "Open all folds",
+      },
+      {
+        "zj",
+        mode = { "n" },
+        function() require("ufo").openAllFolds() end,
+        desc = "Open all folds",
+      },
+      {
+        "zk",
+        mode = { "n" },
+        function() require("ufo").closeAllFolds() end,
+        desc = "Close all folds",
+      },
+      {
+        "zh",
+        mode = { "n" },
+        function() require("ufo").openFoldsExceptKinds() end,
+        desc = "Open folds except kinds",
+      },
+      {
+        "zg",
+        mode = { "n" },
+        function() require("ufo").closeFoldsWith() end,
+        desc = "Close folds with",
+      },
+      {
+        "zi",
+        mode = { "n" },
+        function()
+          local winid = require("ufo").peekFoldedLinesUnderCursor()
+          if not winid then
+            vim.lsp.buf.hover()
+          end
+        end,
+        desc = "Hover",
+      }
+    },
     config = function()
       local ufo = require("ufo")
       local ftMap = {
         vim = "indent",
         python = { "indent" },
-        typescript = { "treesitter" },
+        typescript = { "indent" },
         rust = { "indent" },
-        -- go = { "treesitter" },
+        go = { "indent" },
         lua = { "indent" },
         git = "",
       }
@@ -55,9 +98,9 @@ return {
 
         return require("ufo")
             .getFolds(bufnr, "lsp")
-            :catch(function(err)
-              return handleFallbackException(err, "treesitter")
-            end)
+            -- :catch(function(err)
+            --   return handleFallbackException(err, "treesitter")
+            -- end)
             :catch(function(err)
               return handleFallbackException(err, "indent")
             end)
