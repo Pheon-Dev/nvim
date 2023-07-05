@@ -16,7 +16,7 @@
   "crates.nvim": { "branch": "main", "commit": "1dffccc0a95f656ebe00cacb4de282473430c5a1" },
   "dial.nvim": { "branch": "master", "commit": "54b503f906bc9e5ab85288414840a1b86d40769f" },
   "dressing.nvim": { "branch": "master", "commit": "e6eff7a5a950a853c3903d906dbcea03f778db5f" },
-  "flash.nvim": { "branch": "main", "commit": "b4814b28fc2c91d2383311cfb2f3a1fe2778314e" },
+  "flash.nvim": { "branch": "main", "commit": "947170a7abc7e145cc87afd3ecb6aeb281d88a52" },
   "friendly-snippets": { "branch": "main", "commit": "17245edcd1195ad88d60ae13fb1e90d1df9b2fc9" },
   "git-blame.nvim": { "branch": "master", "commit": "93d983806a0c76692bebd6f804c8eaa2a3844452" },
   "gitsigns.nvim": { "branch": "main", "commit": "bb808fc7376ed7bac0fbe8f47b83d4bf01738167" },

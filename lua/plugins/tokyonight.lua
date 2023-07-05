@@ -81,7 +81,7 @@ return {
 
       -- Flash
 			vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "FlashMatch", { fg = theme.color89, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "FlashMatch", { fg = theme.color3, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "FlashCurrent", { fg = theme.color100, bg = theme.color1 })
 			vim.api.nvim_set_hl(0, "FlashLabel", { fg = theme.color99, bg = theme.color1 })
 

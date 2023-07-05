@@ -2,6 +2,7 @@ return {
   -- better vim.notify
   {
     "rcarriga/nvim-notify",
+    event = "VeryLazy",
     -- keys = {
     --   {
     --     "<leader>nc",

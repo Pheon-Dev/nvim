@@ -45,6 +45,7 @@ map("n", "tn", ":tabNext<cr>", { noremap = true, silent = true })
 map("n", "tp", ":tabprevious<cr>", { noremap = true, silent = true })
 map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
 
+-- remap
 map("n", "cc", "0D", { noremap = true, silent = true })
 map("n", "gi", "<C-i>", { noremap = true, silent = true })
 map("n", "go", "<C-o>", { noremap = true, silent = true })

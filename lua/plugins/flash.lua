@@ -277,6 +277,17 @@ return {
               mode = Char.mode(motion),
               max_length = 1,
             },
+            -- when to show jump labels
+            jump_labels = function(motion)
+              -- never show jump labels by default
+              return true
+              -- Always show jump labels for ftFT
+              -- return vim.v.count == 0 and motion:find("[ftFT]")
+              -- Show jump labels for ftFT in operator-pending mode
+              -- return vim.v.count == 0 and motion:find("[ftFT]") and vim.fn.mode(true):find("o")
+            end,
+            highlight = { backdrop = false },
+            jump = { register = true },
           }, Char.motions[motion]))
         end)
       end

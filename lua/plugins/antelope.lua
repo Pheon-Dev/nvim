@@ -58,10 +58,10 @@ return {
 			-- A map of action to key that should be used to invoke it
 			actions = {
 				split = "-",
-				vertsplit = "|",
+				vertsplit = "=",
 				tabsplit = "]",
 				delete = "<Space>",
-				priority = "=",
+				priority = "#",
 			},
 		}
 
