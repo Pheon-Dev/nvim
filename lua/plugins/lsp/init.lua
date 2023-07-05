@@ -1,9 +1,9 @@
 return {
-  {
-    "lvimuser/lsp-inlayhints.nvim",
-    event = "BufReadPre",
-  },
-  { "jose-elias-alvarez/typescript.nvim", event = "BufReadPre" },
+  -- {
+  --   "lvimuser/lsp-inlayhints.nvim",
+  --   event = "BufReadPre",
+  -- },
+  -- { "jose-elias-alvarez/typescript.nvim", event = "BufReadPre" },
   {
     "neovim/nvim-lspconfig",
     -- event = "BufReadPre",
@@ -23,20 +23,20 @@ return {
     end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = "BufReadPre",
-    dependencies = { "mason.nvim" },
-    config = function()
-      local null_ls = require("null-ls")
-
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.stylua,
-          null_ls.builtins.completion.spell,
-          require("typescript.extensions.null-ls.code-actions"),
-        },
-      })
-    end,
+    -- "jose-elias-alvarez/null-ls.nvim",
+    -- event = "BufReadPre",
+    -- dependencies = { "mason.nvim" },
+    -- config = function()
+    --   local null_ls = require("null-ls")
+    --
+    --   null_ls.setup({
+    --     sources = {
+    --       null_ls.builtins.formatting.stylua,
+    --       null_ls.builtins.completion.spell,
+    --       require("typescript.extensions.null-ls.code-actions"),
+    --     },
+    --   })
+    -- end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
