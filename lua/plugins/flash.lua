@@ -197,7 +197,7 @@ return {
           -- options used when flash is activated through
           -- `f`, `F`, `t`, `T`, `;` and `,` motions
           char = {
-            enabled = true,
+            enabled = false,
             -- when to hide flash
             autohide = function(motion)
               -- autohide flash when the operator is `y`
@@ -214,20 +214,21 @@ return {
             end,
             -- When using jump labels, don't use these keys
             -- This allows using those keys directly after the motion
-            label = { exclude = "hjkliardc" },
+            -- label = { exclude = "hjkliardc" },
             -- by default all keymaps are enabled, but you can disable some of them,
             -- by removing them from the list.
             -- If you rather use another key, you can map them
             -- to something else, e.g., { [";"] = "L", [","] = H }
-            keys = { "f", "F", "t", "T" },
+            -- keys = { "f", "F", "t", "T" },
+            keys = { "f", "F" },
             search = { wrap = false },
-            highlight = { backdrop = false },
+            highlight = { backdrop = true },
             jump = { register = false },
           },
           -- options used for treesitter selections
           -- `require("flash").treesitter()`
           treesitter = {
-            labels = "abcdefghijklmnopqrstuvwxyz",
+            labels = "asdfghjklrewquiopytbnvmcxz",
             jump = { pos = "range" },
             highlight = {
               label = { before = true, after = true, style = "inline" },
@@ -266,19 +267,19 @@ return {
           motion = false,
         },
       })
-      -- local Config = require("flash.config")
-      -- local Char = require("flash.plugins.char")
-      -- for _, motion in ipairs({ "f", "F", "t", "T" }) do
-      --   vim.keymap.set({ "n", "x", "o" }, motion, function()
-      --     require("flash").jump(Config.get({
-      --       mode = "char",
-      --       search = {
-      --         mode = Char.mode(motion),
-      --         max_length = 1,
-      --       },
-      --     }, Char.motions[motion]))
-      --   end)
-      -- end
+      local Config = require("flash.config")
+      local Char = require("flash.plugins.char")
+      for _, motion in ipairs({ "f", "F", "t", "T" }) do
+        vim.keymap.set({ "n", "x", "o" }, motion, function()
+          require("flash").jump(Config.get({
+            mode = "char",
+            search = {
+              mode = Char.mode(motion),
+              max_length = 1,
+            },
+          }, Char.motions[motion]))
+        end)
+      end
     end,
   },
   {
