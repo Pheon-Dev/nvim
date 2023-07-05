@@ -74,10 +74,6 @@ return {
 			vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color100 })
 			vim.api.nvim_set_hl(0, "RustToolsInlayHints", { fg = theme.color24 })
 
-			-- Hlslens
-			vim.api.nvim_set_hl(0, "HlSearchNear", { fg = theme.color89, bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "HlSearchLens", { fg = theme.color89, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "HlSearchLensNear", { fg = theme.color0, bg = theme.color89 })
 
       -- Flash
 			vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
