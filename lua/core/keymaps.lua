@@ -6,10 +6,10 @@ map("i", "jj", "<esc>", { noremap = true, silent = true })
 map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
-map("n", "Wj", ":vsplit<cr>", { noremap = true, silent = true })
-map("n", "Wk", ":split<cr>", { noremap = true, silent = true })
-map("n", "Wh", "<C-w>t<C-w>K", { noremap = true, silent = true })
-map("n", "Wl", "<C-w>t<C-w>H", { noremap = true, silent = true })
+map("n", "wv", ":vsplit<cr>", { noremap = true, silent = true })
+map("n", "wb", ":split<cr>", { noremap = true, silent = true })
+map("n", "Wv", "<C-w>t<C-w>K", { noremap = true, silent = true })
+map("n", "Wb", "<C-w>t<C-w>H", { noremap = true, silent = true })
 
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })
 map("n", "<C-j>", "<C-w>j", { noremap = true, silent = false })
@@ -175,15 +175,6 @@ map("n", "]c", "&diff ? ']c' : ':Gitsigns next_hunk<cr>'", { expr = true, norema
 -- Telescope
 map("i", "<C-h>", ":Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
 map("i", "<C-n>", ":Telescope buffers<cr>", { noremap = true, silent = true })
-
--- hlslens
-local kopts = { noremap = true, silent = true }
-map("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "*", [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "#", [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
-map("n", "g#", [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
 -- Move
 -- map("n", "<C-x>", "<Plug>GoNSMLeft", {})
