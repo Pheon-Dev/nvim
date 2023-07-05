@@ -56,7 +56,7 @@ return {
   },
   {
     "williamboman/mason.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     build = "MasonUpdate",
     -- keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     -- ensure_installed = {
