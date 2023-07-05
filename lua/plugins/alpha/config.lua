@@ -58,7 +58,7 @@ function M.buttons()
 				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>",
 				keybind_opts
 			)
-			vim.api.nvim_buf_set_keymap(0, "n", "m", ":Mason<CR>", keybind_opts)
+			-- vim.api.nvim_buf_set_keymap(0, "n", "m", ":Mason<CR>", keybind_opts)
 
 			-- Quit
 			vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q<CR>", keybind_opts)
@@ -66,13 +66,18 @@ function M.buttons()
 		end,
 	})
 
+
+	local button_hl = {
+					{ "AlphaQuit", 1, 60 },
+	}
+
 	local buttons_hl = {
 					{ "AlphaIcon", 1, 5 },
 					{ "Keyword", 6, 18 },
 					{ "AlphaKeys", 19, 25 },
           { "AlphaLine", 25, 30 },
-					{ "AlphaIcon", 31, 38 },
-					{ "Keyword", 39, 48 },
+					{ "AlphaIcon", 31, 37 },
+					{ "Keyword", 38, 48 },
 					{ "AlphaKeys", 49, 55 },
           { "AlphaQuit", 56, 60 },
 	}
@@ -83,8 +88,9 @@ function M.buttons()
 				"                        │                       ",
 				"ﯠ   Harpoon        k    │    פּ   Nvim Tree     j",
         "󰈞   Find File      f    │       Search        s",
-        "󰺾   Mason          m    │    鈴  Lazy          z",
-        "   Lazygit        t    │       Quit          h",
+        "   Lazygit        t    │    鈴  Lazy          z",
+				"                        │                       ",
+        "                        │       Quit          h",
 				"                        │                       ",
 			},
 			opts = {
@@ -95,6 +101,7 @@ function M.buttons()
 					buttons_hl,
 					buttons_hl,
 					buttons_hl,
+					button_hl,
 					buttons_hl,
 				},
 			},
