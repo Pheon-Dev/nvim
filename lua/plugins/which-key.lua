@@ -4,7 +4,6 @@ return {
   config = function()
     -- vim.o.timeout = true
     -- vim.o.timeoutlen = 300
-    local gs = require("gitsigns")
     local rt = require("rust-tools")
     local wk = require("which-key")
 
@@ -115,22 +114,6 @@ return {
       },
       e = { ":MurenToggle<cr>", "Muren" },
       f = { ":Telescope find_files initial_mode=insert<cr>", "Find Files" },
-      g = {
-        name = "Gitsigns",
-        a = { gs.stage_buffer, "Stage Buffer" },
-        b = { gs.blame_line, "Blame Line" },
-        d = { gs.diff_this, "Diff This" },
-        g = { gs.toggle_current_line_blame, "Toggle Current Line Blame" },
-        j = { gs.next_hunk, "Next Hunk" },
-        k = { gs.prev_hunk, "Previous Hunk" },
-        u = { gs.undo_stage_hunk, "Undo Stage Hunk" },
-        p = { gs.preview_hunk, "Preview Hunk" },
-        r = { gs.reset_buffer, "Reset Buffer" },
-        s = { gs.stage_hunk, "Stage Hunk" },
-        t = { gs.reset_hunk, "Reset Hunk" },
-        v = { gs.select_hunk, "Select Hunk" },
-        x = { gs.toggle_deleted, "Toggle Deleted" },
-      },
       h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
       j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
