@@ -33,10 +33,10 @@ return {
       -- Syntax scrolling function: `scroll(lines, move_cursor, time[, easing_function_name])`
       local t = {}
       -- Syntax: t[keys] = {function, {function arguments}}
-      t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
-      t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
-      t["wk"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "450" } }
-      t["wj"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "450" } }
+      t["wk"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
+      t["wj"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
+      t["wu"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "450" } }
+      t["wd"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "450" } }
       t["wy"] = { "scroll", { "-0.10", "false", "100" } }
       t["we"] = { "scroll", { "0.10", "false", "100" } }
       t["wh"] = { "zt", { "250" } }
