@@ -1,16 +1,15 @@
 return {
-  "Pheon-Dev/lualine.nvim",
+  "nvim-lualine/lualine.nvim",
+  dependencies = {
+    "Pheon-Dev/pigeon"
+  },
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local ok, lualine = pcall(require, "lualine")
     local on, noice = pcall(require, "noice")
 
-    if not ok then
-      vim.notify("Lualine didn't load properly!", "error")
-    end
-
-    if not on then
-      vim.notify("Noice didn't load properly!", "error")
+    if not ok or not on then
+      vim.notify("Plugins didn't load properly!", "error")
     end
 
     local colors = {
@@ -55,7 +54,7 @@ return {
     local config = {
       options = {
         icons_enabled = false,
-        disabled_filetypes = { statusline = { "alpha" }, winbar = { "alpha" } },
+        disabled_filetypes = { statusline = { "alpha", "toggleterm" }, tabline = { "alpha" } },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
 
@@ -77,7 +76,7 @@ return {
         refresh = {          -- sets how often lualine should refresh it's contents (in ms)
           statusline = 1000, -- The refresh option sets minimum time that lualine tries
           tabline = 1000,    -- to maintain between refresh. It's not guarantied if situation
-          winbar = 1000      -- arises that lualine needs to refresh itself before this time
+          -- winbar = 1000      -- arises that lualine needs to refresh itself before this time
           -- it'll do it.
 
           -- Also you can force lualine's refresh by calling refresh function
@@ -104,16 +103,7 @@ return {
         lualine_c = {},
         lualine_x = {},
       },
-      winbar = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_y = {},
-        lualine_z = {},
-        lualine_c = {},
-        lualine_x = {},
-      },
       inactive_tabline = {},
-      inactive_winbar = {},
       extensions = {}
     }
 
@@ -208,8 +198,8 @@ return {
 
       tabs_color = {
         -- Same values as the general color option can be used here.
-        active = { fg = colors.purple, bg = colors.bg },    -- Color for active tab.
-        inactive = { fg = colors.bg2, bg = colors.bg },     -- Color for inactive tab.
+        active = { fg = colors.purple, bg = colors.bg }, -- Color for active tab.
+        inactive = { fg = colors.bg2, bg = colors.bg },  -- Color for inactive tab.
       },
 
       fmt = function(name, context)
@@ -265,14 +255,14 @@ return {
       --
       buffers_color = {
         -- Same values as the general color option can be used here.
-        active = { fg = colors.purple, bg = colors.bg },    -- Color for active buffer.
-        inactive = { fg = colors.bg2, bg = colors.bg },     -- Color for inactive buffer.
+        active = { fg = colors.purple, bg = colors.bg }, -- Color for active buffer.
+        inactive = { fg = colors.bg2, bg = colors.bg },  -- Color for inactive buffer.
       },
       --
       symbols = {
-        modified = '',         -- Text to show when the buffer is modified
-        alternate_file = '',   -- Text to show to identify the alternate file
-        directory = '',        -- Text to show when the buffer is a directory
+        modified = '',       -- Text to show when the buffer is modified
+        alternate_file = '', -- Text to show to identify the alternate file
+        directory = '',      -- Text to show when the buffer is a directory
       },
     })
 
@@ -285,58 +275,25 @@ return {
 
     -- wifi
     tab_right({
-      "wifi",
-      status = {
-        connected = "󰤪",
-        disconnected = "󰤫",
-        show = true
-      },
-      essid = {
-        show = true
-      },
-      bit_rate = {
-        unit = "mbps",
-        show = true
-      }
+      function()
+        return require("pigeon.internet").wifi()
+      end,
+      color = { fg = theme.color89 },
     })
 
     -- ram
     tab_right({
-      "ram",
-      icon = "󰍛",
-      show_percentage = false,
+      function()
+        return require("pigeon.ram").ram()
+      end,
       color = { fg = theme.color26 },
     })
 
     -- battery
     tab_right({
-      "battery",
-      show_status_text = false,
-      view = {
-        charge = {
-          zeros = { icon = "󰂎 " },
-          tens = { icon = "󰁺 " },
-          twenties = { icon = "󰁻 " },
-          thirties = { icon = "󰁼 " },
-          forties = { icon = "󰁽 " },
-          fifties = { icon = "󰁾 " },
-          sixties = { icon = "󰁿 " },
-          seventies = { icon = "󰂀 " },
-          eighties = { icon = "󰂁 " },
-          nineties = { icon = "󰂂 " },
-          hundred = { icon = "󰁹 " },
-        },
-        status = {
-          enabled = true,
-          charging = { icon = " 󱐋" },
-          discharging = { icon = " 󱐌" },
-          not_charging = { icon = "  " },
-          full = { icon = "  " },
-          unknown = { icon = " " },
-          critical = { icon = " " },
-          percentage = { icon = " 󰏰" },
-        },
-      },
+      function()
+        return require("pigeon.battery").battery()
+      end,
       color = { fg = colors.orange3 },
     })
 
