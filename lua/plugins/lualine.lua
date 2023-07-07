@@ -20,7 +20,8 @@ return {
       bg3 = "#565f89",
       grey = "#a9a1e1",
       fg = "#bd93f9",
-      yellow = "#f1fa8c",
+      yellow = "#ffff0f",
+      yellow1 = "#f0ff8c",
       cyan = "#008080",
       darkblue = "#081633",
       green = "#82cf00",
@@ -116,11 +117,11 @@ return {
       extensions = {}
     }
 
-    local function ins_left(component)
+    local function sec_left(component)
       table.insert(config.sections.lualine_c, component)
     end
 
-    local function ins_right(component)
+    local function sec_right(component)
       table.insert(config.sections.lualine_x, component)
     end
 
@@ -341,7 +342,7 @@ return {
 
     -- Statusline
     -- mode
-    ins_left({
+    sec_left({
       -- "mode",
       function()
         return mode[vim.fn.mode()]
@@ -354,7 +355,7 @@ return {
     })
 
     -- filetype
-    ins_left({
+    sec_left({
       "filetype",
       icon_only = false,
       icon = { align = "left" },
@@ -365,7 +366,7 @@ return {
     })
 
     -- filename
-    ins_left({
+    sec_left({
       "filename",
       cond = conditions.buffer_not_empty,
       color = { fg = colors.grey },
@@ -387,13 +388,13 @@ return {
     })
 
     -- search count
-    ins_left({
+    sec_left({
       "searchcount",
       color = { fg = colors.green1 },
     })
 
     -- toggleterm
-    ins_left({
+    sec_left({
       function()
         return '%{&ft == "toggleterm" ? " ".b:toggle_number."" : ""}'
       end,
@@ -401,7 +402,7 @@ return {
     })
 
     -- sep
-    ins_left({
+    sec_left({
       function()
         return "%="
       end,
@@ -409,7 +410,7 @@ return {
 
     -- macros etc
     if on then
-      ins_left({
+      sec_left({
         noice.api.statusline.mode.get,
         cond = noice.api.statusline.mode.has,
         color = { fg = colors.orange1 },
@@ -418,7 +419,7 @@ return {
     end
 
     -- diagnosticcs
-    ins_right({
+    sec_right({
       "diagnostics",
       sources = { "nvim_diagnostic" },
       symbols = { error = " ", warn = " ", info = " " },
@@ -431,7 +432,7 @@ return {
     })
 
     -- git diffs
-    ins_right({
+    sec_right({
       "diff",
       symbols = { added = " ", modified = "柳", removed = " " },
       diff_color = {
@@ -443,14 +444,14 @@ return {
       padding = { right = 1, left = 1 },
     })
 
-    -- ins_right({
+    -- sec_right({
     --   function()
     --     return "﯑ %3{codeium#GetStatusString()}"
     --   end,
     --   color = { fg = colors.grey },
     -- })
 
-    ins_right({
+    sec_right({
       function()
         return ""
       end,
@@ -458,7 +459,7 @@ return {
     })
 
     -- branch
-    ins_right({
+    sec_right({
       "branch",
       -- icon = { "", align = "left" },
       color = { bg = colors.yellow, fg = colors.bg },
