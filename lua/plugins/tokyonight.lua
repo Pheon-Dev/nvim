@@ -75,7 +75,7 @@ return {
       vim.api.nvim_set_hl(0, "RustToolsInlayHints", { fg = theme.color24 })
 
       -- Tabline
-      vim.api.nvim_set_hl(0, "Title", { fg = theme.color0, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "Title", { fg = theme.color101, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "TabLineFill", { fg = theme.color0, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "TabLine", { fg = theme.color0, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "TabLineSel", { fg = theme.color0, bg = theme.color0 })
