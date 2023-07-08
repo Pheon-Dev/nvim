@@ -9,7 +9,6 @@ return {
         "s",
         mode = { "n", "x", "o" },
         function()
-          -- default options: exact mode, multi window, all directions, with a backdrop
           require("flash").jump()
         end,
         desc = "Flash",
@@ -18,37 +17,34 @@ return {
         "S",
         mode = { "n", "o", "x" },
         function()
-          -- show labeled treesitter nodes around the cursor
           require("flash").treesitter()
         end,
         desc = "Flash Treesitter",
       },
       {
-        "<C-s>",
+        "r",
         mode = "o",
         function()
-          -- jump to a remote location to execute the operator
           require("flash").remote()
         end,
         desc = "Remote Flash",
       },
       {
-        "<C-S>",
-        mode = { "n", "o", "x" },
+        "R",
+        mode = { "o", "x" },
         function()
-          -- show labeled treesitter nodes around the search matches
           require("flash").treesitter_search()
         end,
-        desc = "Treesitter Search",
+        desc = "Flash Treesitter Search",
       },
-      {
-        "<c-s>",
-        mode = { "c" },
-        function()
-          require("flash").toggle()
-        end,
-        desc = "Toggle Flash Search",
-      },
+      -- {
+      --   "<c-s>",
+      --   mode = { "c" },
+      --   function()
+      --     require("flash").toggle()
+      --   end,
+      --   desc = "Toggle Flash Search",
+      -- },
     },
     config = function()
       require("flash").setup({
@@ -185,7 +181,7 @@ return {
           -- options used when flash is activated through
           -- a regular search with `/` or `?`
           search = {
-            enabled = false, -- enable flash for search
+            enabled = true, -- enable flash for search
             highlight = { backdrop = false },
             jump = { history = true, register = true, nohlsearch = true },
             search = {
@@ -245,7 +241,7 @@ return {
         -- for regular jumps
         prompt = {
           enabled = true,
-          prefix = { { " ", "FlashPromptIcon" } },
+          prefix = { { " :", "FlashPromptIcon" } },
           win_config = {
             relative = "editor",
             width = 1, -- when <=1 it's a percentage of the editor width
@@ -277,17 +273,6 @@ return {
               mode = Char.mode(motion),
               max_length = 1,
             },
-            -- when to show jump labels
-            jump_labels = function(motion)
-              -- never show jump labels by default
-              return true
-              -- Always show jump labels for ftFT
-              -- return vim.v.count == 0 and motion:find("[ftFT]")
-              -- Show jump labels for ftFT in operator-pending mode
-              -- return vim.v.count == 0 and motion:find("[ftFT]") and vim.fn.mode(true):find("o")
-            end,
-            highlight = { backdrop = false },
-            jump = { register = true },
           }, Char.motions[motion]))
         end)
       end
