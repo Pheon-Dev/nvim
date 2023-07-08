@@ -4,9 +4,9 @@ return {
   config = function()
     require("noice").setup({
       cmdline = {
-        enabled = true,     -- enables the Noice cmdline UI
+        enabled = true,         -- enables the Noice cmdline UI
         view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-        opts = {},          -- global options for the cmdline. See section on views
+        opts = {},              -- global options for the cmdline. See section on views
         format = {
           -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
           -- view: (default is cmdline view)
@@ -26,15 +26,15 @@ return {
       messages = {
         -- NOTE: If you enable messages, then the cmdline is enabled automatically.
         -- This is a current Neovim limitation.
-        enabled = true,          -- enables the Noice messages UI
-        view = "notify",         -- default view for messages
-        view_error = "notify",   -- view for errors
-        view_warn = "notify",    -- view for warnings
-        view_history = "messages", -- view for :messages
+        enabled = true,              -- enables the Noice messages UI
+        view = "notify",             -- default view for messages
+        view_error = "notify",       -- view for errors
+        view_warn = "notify",        -- view for warnings
+        view_history = "messages",   -- view for :messages
         view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
       },
       popupmenu = {
-        enabled = true, -- enables the Noice popupmenu UI
+        enabled = true,  -- enables the Noice popupmenu UI
         backend = "nui", -- backend to use to show regular cmdline completions
         -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
         kind_icons = {}, -- set to `false` to disable icons
@@ -109,7 +109,7 @@ return {
         hover = {
           enabled = true,
           view = nil, -- when nil, use defaults from documentation
-          opts = {}, -- merged with defaults from documentation
+          opts = {},  -- merged with defaults from documentation
         },
         signature = {
           enabled = false,
@@ -117,10 +117,10 @@ return {
             enabled = true,
             trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
             luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
-            throttle = 50, -- Debounce lsp signature help request by 50ms
+            throttle = 50,  -- Debounce lsp signature help request by 50ms
           },
-          view = nil, -- when nil, use defaults from documentation
-          opts = {},  -- merged with defaults from documentation
+          view = nil,       -- when nil, use defaults from documentation
+          opts = {},        -- merged with defaults from documentation
         },
         message = {
           -- Messages shown by lsp servers
@@ -142,7 +142,7 @@ return {
       },
       markdown = {
         hover = {
-          ["|(%S-)|"] = vim.cmd.help,                  -- vim help links
+          ["|(%S-)|"] = vim.cmd.help,                       -- vim help links
           ["%[.-%]%((%S-)%)"] = require("noice.util").open, -- markdown links
         },
         highlights = {
@@ -166,13 +166,13 @@ return {
       presets = {
         -- you can enable a preset by setting it to true, or a table that will override the preset config
         -- you can also add custom presets that you can enable/disable with enabled=true
-        bottom_search = false,    -- use a classic bottom cmdline for search
-        command_palette = false,  -- position the cmdline and popupmenu together
+        bottom_search = false,        -- use a classic bottom cmdline for search
+        command_palette = false,      -- position the cmdline and popupmenu together
         long_message_to_split = true, -- long messages will be sent to a split
-        inc_rename = false,       -- enables an input dialog for inc-rename.nvim
-        lsp_doc_border = true,    -- add a border to hover docs and signature help
+        inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true,        -- add a border to hover docs and signature help
       },
-      throttle = 1000 / 30,       -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
+      throttle = 1000 / 30,           -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
       views = {
         cmdline_popup = {
           position = {
@@ -233,8 +233,9 @@ return {
       routes = {
         -- { filter = { event = "msg_show", kind = "", find = "<" },         opts = { skip = true } },
         -- { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
-        { filter = { warning = true, find = "node" }, opts = { skip = true } },
+        { filter = { warning = true, find = "node" },      opts = { skip = true } },
         { filter = { warning = true, find = "clipboard" }, opts = { skip = true } },
+        { filter = { error = true, find = "clipboard:" },  opts = { skip = true } },
       },
       status = {}, --- @see section on statusline components
       format = {}, --- @see section on formatting
