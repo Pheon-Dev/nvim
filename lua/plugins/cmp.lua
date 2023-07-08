@@ -21,7 +21,7 @@ return {
     -- "tamago324/cmp-zsh",
   },
   config = function()
-    vim.g.completeopt = "menu,menuone,noselect,noinsert"
+    -- vim.g.completeopt = "menu,menuone,noselect,noinsert"
 
     require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -35,34 +35,10 @@ return {
     local lspkind = require("lspkind")
     local luasnip = require("luasnip")
     local compare = require("cmp.config.compare")
-    -- local tabnine = require("cmp_tabnine.config")
-
-    cmp.event:on("menu_opened", function()
-      vim.b.copilot_suggestion_hidden = true
-    end)
-
-    cmp.event:on("menu_closed", function()
-      vim.b.copilot_suggestion_hidden = false
-    end)
-
-    -- tabnine:setup({
-    --   max_lines = 1000,
-    --   max_num_results = 3,
-    --   sort = true,
-    --   run_on_every_keystroke = true,
-    --   snippet_placeholder = "..",
-    --   ignored_file_types = {
-    --     -- default is not to ignore
-    --     -- uncomment to ignore in lua:
-    --     -- lua = true
-    --   },
-    --   show_prediction_strength = false,
-    -- })
 
     local source_mapping = {
       luasnip = " snip",
       nvim_lsp = "󰯓 lsp",
-      -- cmp_tabnine = " tab9",
       buffer = "󰓩 buf",
       nvim_lua = " lua",
       orgmode = " org",
@@ -164,9 +140,8 @@ return {
         { name = "nvim_lsp_signature_help" },
         { name = "nvim_lua" },
         { name = "luasnip" },
-        -- { name = "cmp_tabnine" },
         { name = "path" },
-        { name = "cmdline" },
+        -- { name = "cmdline" },
         { name = "crates" },
         { name = "orgmode" },
       }, {
@@ -177,17 +152,6 @@ return {
           lspkind.cmp_format({ with_text = true, maxwidth = 50 })
           vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
           vim_item.menu = source_mapping[entry.source.name]
-          -- if entry.source.name == "cmp_tabnine" then
-          --   local detail = (entry.completion_item.data or {}).detail
-          --   vim_item.kind = ""
-          --   if detail and detail:find(".*%%.*") then
-          --     vim_item.kind = vim_item.kind .. " " .. detail
-          --   end
-          --
-          --   if (entry.completion_item.data or {}).multiline then
-          --     vim_item.kind = vim_item.kind .. " " .. "[ML]"
-          --   end
-          -- end
           local maxwidth = 80
           vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
           return vim_item
@@ -199,13 +163,12 @@ return {
       -- completion = { completeopt = "menu,menuone,noinsert" },
     })
 
-    cmp.setup.cmdline({ "?", "/", ":" }, {
+    cmp.setup.cmdline({ "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
       -- sources = {
       --   { name = "luasnip" },
       --   { name = "nvim_lsp_signature_help" },
       --   { name = "nvim_lsp" },
-      --   { name = "cmp_tabnine" },
       --   { name = "buffer" },
       --   { name = "nvim_lua" },
       --   { name = "path" },
@@ -213,13 +176,16 @@ return {
     })
     cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
-      -- sources = cmp.config.sources({
-      -- 	{ name = "cmdline" },
-      -- 	{ name = "buffer" },
-      -- 	{ name = "cmp_tabnine" },
-      -- }, {
-      -- 	{ name = "path" },
-      -- }),
+      sources = cmp.config.sources({
+      	{ name = "path" },
+      }, {
+      	{
+          name = "cmdline",
+            option = {
+              ignore_cmds = { "Man", "!" }
+            }
+        },
+      }),
       enabled = function()
         -- Set of commands where cmp will be disabled
         local disabled = {
@@ -231,6 +197,15 @@ return {
         -- else call/return cmp.close(), which returns false
         return not disabled[cmd] or cmp.close()
       end
+
+    })
+
+    -- `/` cmdline setup.
+    cmp.setup.cmdline('/', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
     })
     require("luasnip").config.set_config({ history = true, updateevents = "TextChanged,TextChangedI" })
   end,
