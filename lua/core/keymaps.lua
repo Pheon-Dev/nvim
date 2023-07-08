@@ -63,6 +63,7 @@ map("n", "vq", 'f"vi"', { noremap = true, silent = true })
 map("n", "vQ", 'f"va"', { noremap = true, silent = true })
 map("n", "yq", 'f"yi"', { noremap = true, silent = true })
 map("n", "yQ", 'f"ya"', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', 'vq', 'vim.v.count1f"vi"',  { noremap = true, silent = true })
 
 map("n", "c'", "f'ci'", { noremap = true, silent = true })
 map("n", "c@", "f'ca'", { noremap = true, silent = true })
@@ -188,3 +189,7 @@ map("x", "L", "<Plug>GoVSMRight", {})
 
 -- Split Join
 vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', 'gh', '<cmd>lua require("harpoon.ui").nav_file(vim.v.count1)<cr>',  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gn', '<cmd>lua require("harpoon.ui").nav_next()<cr>',  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gm', '<cmd>lua require("harpoon.ui").nav_prev()<cr>',  { noremap = true, silent = true })
