@@ -14,11 +14,7 @@ return {
     "hrsh7th/cmp-nvim-lua",
     "hrsh7th/cmp-cmdline",
     "saadparwaiz1/cmp_luasnip",
-    -- "tzachar/cmp-tabnine",
     "lukas-reineke/cmp-under-comparator",
-    -- "ray-x/cmp-treesitter",
-    -- "f3fora/cmp-spell",
-    -- "tamago324/cmp-zsh",
   },
   config = function()
     -- vim.g.completeopt = "menu,menuone,noselect,noinsert"
@@ -163,17 +159,6 @@ return {
       -- completion = { completeopt = "menu,menuone,noinsert" },
     })
 
-    cmp.setup.cmdline({ "?" }, {
-      mapping = cmp.mapping.preset.cmdline(),
-      -- sources = {
-      --   { name = "luasnip" },
-      --   { name = "nvim_lsp_signature_help" },
-      --   { name = "nvim_lsp" },
-      --   { name = "buffer" },
-      --   { name = "nvim_lua" },
-      --   { name = "path" },
-      -- },
-    })
     cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
@@ -200,8 +185,8 @@ return {
 
     })
 
-    -- `/` cmdline setup.
-    cmp.setup.cmdline('/', {
+    -- `/`, `?` cmdline setup.
+    cmp.setup.cmdline({ "?", "/" }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = 'buffer' }
