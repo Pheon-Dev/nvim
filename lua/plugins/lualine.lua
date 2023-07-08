@@ -186,24 +186,14 @@ return {
     tab_left({
       'tabs',
       max_length = vim.o.columns / 3, -- Maximum width of tabs component.
-      -- Note:
-      -- It can also be a function that returns
-      -- the value of `max_length` dynamically.
       mode = 0, -- 0: Shows tab_nr
-      -- 1: Shows tab_name
-      -- 2: Shows tab_nr + tab_name
-
-      -- Automatically updates active tab color to match color of other components (will be overidden if buffers_color is set)
       use_mode_colors = false,
-
       tabs_color = {
         -- Same values as the general color option can be used here.
         active = { fg = colors.purple, bg = colors.bg }, -- Color for active tab.
         inactive = { fg = colors.bg2, bg = colors.bg },  -- Color for inactive tab.
       },
-
       fmt = function(name, context)
-        -- Show + if buffer is modified in tab
         local buflist = vim.fn.tabpagebuflist(context.tabnr)
         local winnr = vim.fn.tabpagewinnr(context.tabnr)
         local bufnr = buflist[winnr]
@@ -213,10 +203,12 @@ return {
       end
     })
 
+      -- local tab_color = { fg = theme.color3, bg = colors.bg }
+      local tab_color = "Keyword"
     -- datetime
     tab_left({
       "datetime",
-      color = "Keyword"
+      color = tab_color
     })
 
     -- sep
@@ -232,33 +224,11 @@ return {
       show_filename_only = false,     -- Shows shortened relative path when set to false.
       hide_filename_extension = true, -- Hide filename extension when set to true.
       show_modified_status = true,    -- Shows indicator when the buffer is modified.
-      --
       mode = 1,                       -- 0: Shows buffer name
-      --   -- 1: Shows buffer index
-      --   -- 2: Shows buffer name + buffer index
-      --   -- 3: Shows buffer number
-      --   -- 4: Shows buffer name + buffer number
-      --
-      --   max_length = vim.o.columns * 2 / 3, -- Maximum width of buffers component,
-      --   -- it can also be a function that returns
-      --   -- the value of `max_length` dynamically.
-      --   filetype_names = {
-      --     TelescopePrompt = 'Telescope',
-      --     dashboard = 'Dashboard',
-      --     packer = 'Packer',
-      --     fzf = 'FZF',
-      --     alpha = 'Alpha'
-      --   }, -- Shows specific buffer name for that filetype ( { `filetype` = `buffer_name`, ... } )
-      --
-      --   -- Automatically updates active buffer color to match color of other components (will be overidden if buffers_color is set)
-      --   use_mode_colors = false,
-      --
       buffers_color = {
-        -- Same values as the general color option can be used here.
         active = { fg = colors.purple, bg = colors.bg }, -- Color for active buffer.
         inactive = { fg = colors.bg2, bg = colors.bg },  -- Color for inactive buffer.
       },
-      --
       symbols = {
         modified = '',       -- Text to show when the buffer is modified
         alternate_file = '', -- Text to show to identify the alternate file
@@ -270,7 +240,8 @@ return {
     tab_right({
       require("lazy.status").updates,
       cond = require("lazy.status").has_updates,
-      color = { fg = "#ff9e64" },
+      -- color = { fg = "#ff9e64" },
+      color = tab_color
     })
 
     -- wifi
@@ -278,7 +249,8 @@ return {
       function()
         return require("pigeon.internet").wifi()
       end,
-      color = { fg = theme.color89 },
+      color = tab_color
+      -- color = { fg = theme.color89 },
     })
 
     -- ram
@@ -286,7 +258,8 @@ return {
       function()
         return require("pigeon.ram").ram()
       end,
-      color = { fg = theme.color26 },
+      color = tab_color
+      -- color = { fg = theme.color26 },
     })
 
     -- battery
@@ -294,7 +267,8 @@ return {
       function()
         return require("pigeon.battery").battery()
       end,
-      color = { fg = colors.orange3 },
+      -- color = { fg = colors.orange3 },
+      color = tab_color
     })
 
     -- Statusline
