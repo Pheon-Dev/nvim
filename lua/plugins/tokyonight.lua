@@ -71,15 +71,14 @@ return {
 			vim.api.nvim_set_hl(0, "Search", { fg = theme.color1, bg = theme.color89 })
 			-- vim.api.nvim_set_hl(0, "IncSearch", { fg = theme.color89, bg = theme.color0 })
 			vim.api.nvim_set_hl(0, "ColorColumn", { bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color100 })
+			vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color101 })
 			vim.api.nvim_set_hl(0, "RustToolsInlayHints", { fg = theme.color24 })
-
 
       -- Flash
 			vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "FlashMatch", { fg = theme.color3, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "FlashCurrent", { fg = theme.color100, bg = theme.color1 })
-			vim.api.nvim_set_hl(0, "FlashLabel", { fg = theme.color99, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "FlashMatch", { fg = theme.color89, bg = theme.color0 })
+			vim.api.nvim_set_hl(0, "FlashCurrent", { fg = theme.color89, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "FlashLabel", { fg = theme.color101, bg = theme.color0 })
 
 			-- Winbar
 			-- vim.api.nvim_set_hl(0, "WinBar", { fg = theme.color83, bg = theme.color0 })
