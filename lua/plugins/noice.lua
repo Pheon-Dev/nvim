@@ -231,10 +231,10 @@ return {
         },
       },
       routes = {
-        { filter = { event = "msg_show", kind = "", find = "deprecated:", }, opts = { skip = true }, },
-        { filter = { event = "msg_show", kind = "", find = "<" },         opts = { skip = true } },
-        { filter = { event = "msg_show", kind = "", find = "clipboard:" }, opts = { skip = true } },
-        { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
+        -- { filter = { event = "msg_show", kind = "", find = "<" },         opts = { skip = true } },
+        -- { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
+        { filter = { warning = true, find = "node" }, opts = { skip = true } },
+        { filter = { warning = true, find = "clipboard" }, opts = { skip = true } },
       },
       status = {}, --- @see section on statusline components
       format = {}, --- @see section on formatting
