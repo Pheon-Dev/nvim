@@ -76,13 +76,9 @@ return {
 
       -- Flash
 			vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "FlashMatch", { fg = theme.color89, bg = theme.color0 })
-			vim.api.nvim_set_hl(0, "FlashCurrent", { fg = theme.color89, bg = theme.color1 })
+			vim.api.nvim_set_hl(0, "FlashMatch", { bg = theme.color0, fg = theme.color3 })
+			vim.api.nvim_set_hl(0, "FlashCurrent", { bg = theme.color0, fg = theme.color4 })
 			vim.api.nvim_set_hl(0, "FlashLabel", { fg = theme.color101, bg = theme.color0 })
-
-			-- Winbar
-			-- vim.api.nvim_set_hl(0, "WinBar", { fg = theme.color83, bg = theme.color0 })
-			-- vim.api.nvim_set_hl(0, "WinBarNC", { fg = theme.color83, bg = theme.color0 })
 
 			-- Harpoon
 			vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color2, bg = theme.color0 })
