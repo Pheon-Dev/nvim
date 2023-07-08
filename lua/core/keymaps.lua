@@ -114,14 +114,14 @@ keymap({ "o", "x" }, "ii", "<cmd>lua require('various-textobjs').indentation(tru
 keymap({ "o", "x" }, "ai", "<cmd>lua require('various-textobjs').indentation(false, true)<CR>")
 keymap({ "o", "x" }, "iI", "<cmd>lua require('various-textobjs').indentation(true, true)<CR>")
 keymap({ "o", "x" }, "aI", "<cmd>lua require('various-textobjs').indentation(false, false)<CR>")
-keymap({ "o", "x" }, "r", "<cmd>lua require('various-textobjs').restOfIndentation()<CR>")
+-- keymap({ "o", "x" }, "r", "<cmd>lua require('various-textobjs').restOfIndentation()<CR>")
+-- paragraphs
+-- keymap({ "o", "x" }, "R", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>")
 -- subwords
 keymap({ "o", "x" }, "iS", "<cmd>lua require('various-textobjs').subword(true)<CR>")
 keymap({ "o", "x" }, "aS", "<cmd>lua require('various-textobjs').subword(false)<CR>")
 -- near closing brackets
 keymap({ "o", "x" }, "%", "<cmd>lua require('various-textobjs').toNextClosingBracket()<CR>")
--- paragraphs
-keymap({ "o", "x" }, "R", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>")
 -- entire buffer
 keymap({ "o", "x" }, "gG", "<cmd>lua require('various-textobjs').entireBuffer()<CR>")
 -- near end of line
