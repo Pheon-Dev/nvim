@@ -73,8 +73,12 @@ return {
       vim.api.nvim_set_hl(0, "ColorColumn", { bg = theme.color1 })
       vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color101 })
       vim.api.nvim_set_hl(0, "RustToolsInlayHints", { fg = theme.color24 })
-      vim.api.nvim_set_hl(0, "Tabline", { fg = theme.color0 })
-      vim.api.nvim_set_hl(0, "TablineSel", { fg = theme.color0 })
+
+      -- Tabline
+      vim.api.nvim_set_hl(0, "Title", { fg = theme.color0, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "TabLineFill", { fg = theme.color0, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "TabLine", { fg = theme.color0, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "TabLineSel", { fg = theme.color0, bg = theme.color0 })
 
       -- Flash
       vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
