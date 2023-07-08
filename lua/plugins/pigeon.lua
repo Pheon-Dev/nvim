@@ -109,7 +109,7 @@ return {
       },
       ram = {
         enabled = true,
-        show_percentage = true,
+        show_percentage = false,
         icon = "󰍛",
       },
       cpu = {
