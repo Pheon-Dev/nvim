@@ -379,7 +379,13 @@ return {
     sec_right({
       "diagnostics",
       sources = { "nvim_diagnostic" },
-      symbols = { error = " ", warn = " ", info = " " },
+      symbols = {
+        error = " ",
+        warn = " ",
+        info = " ",
+        question = " ",
+        hint = " ",
+      },
       diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },
