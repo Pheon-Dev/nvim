@@ -1,4 +1,7 @@
--- This file is automatically loaded by lazyvim.config.init
+-- Igone TextChangedI,TextChange events
+vim.cmd([[
+  set ei=TextChangedI
+  ]])
 
 local function augroup(name)
   return vim.api.nvim_create_augroup("nvim_" .. name, { clear = true })
