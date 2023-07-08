@@ -90,7 +90,7 @@ function M.buttons()
         "󰈞   Find File      f    │       Search        s",
         "   Lazygit        t    │    鈴  Lazy          z",
 				"                        │                       ",
-        "                        │       Quit          h",
+        "                        ▊       Quit          h",
 				"                        │                       ",
 			},
 			opts = {
