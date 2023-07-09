@@ -1,6 +1,15 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "Pheon-Dev/pigeon" },
+  dependencies = {
+    "Pheon-Dev/pigeon",
+{
+  'linrongbin16/lsp-progress.nvim',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  config = function()
+    require('lsp-progress').setup()
+  end
+}
+  },
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     local ok, lualine = pcall(require, "lualine")
@@ -388,6 +397,11 @@ return {
     ins_right({
       require("lazy.status").updates,
       cond = require("lazy.status").has_updates,
+      color = { fg = "#ff9e64" },
+    })
+
+    ins_right({
+      require("lsp-progress").progress(),
       color = { fg = "#ff9e64" },
     })
 
