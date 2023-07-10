@@ -190,6 +190,40 @@ map("x", "L", "<Plug>GoVSMRight", {})
 -- Split Join
 vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>lua require("harpoon.ui").nav_file(vim.v.count1)<cr>',  { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'gm', '<cmd>lua require("harpoon.ui").nav_next()<cr>',  { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'gn', '<cmd>lua require("harpoon.ui").nav_prev()<cr>',  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>lua require("harpoon.ui").nav_file(vim.v.count1)<cr>',
+  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gm', '<cmd>lua require("harpoon.ui").nav_next()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gn', '<cmd>lua require("harpoon.ui").nav_prev()<cr>', { noremap = true, silent = true })
+
+vim.keymap.set("i", "<C-l>",
+  function()
+    return vim.fn["codeium#Accept"]()
+  end
+  , { expr = true, silent = true, desc = "Accept Suggestion" })
+vim.keymap.set("i", "<C-n>",
+  function()
+    return vim.fn["codeium#CycleCompletions"](1)
+  end,
+  { expr = true, silent = true, desc = "Cycle Completions Forward" })
+vim.keymap.set("i", "<C-p>",
+  function()
+    return vim.fn["codeium#CycleCompletions"](-1)
+  end,
+  { expr = true, silent = true, desc = "Cycle Completions Backward" })
+vim.keymap.set("i", "<C-u>",
+  function()
+    return vim.fn["codeium#Clear"]()
+  end,
+  { expr = true, silent = true, desc = "Clear Completions" })
+
+-- Floaterm
+vim.cmd([[
+  nnoremap   <silent>   <leader>;    :FloatermNew! lf<CR>
+  tnoremap   <silent>   <leader>;    <C-\><C-n>:FloatermNew! lf<CR>
+  nnoremap   <silent>   <leader>f    :FloatermNew! fzf<CR>
+  tnoremap   <silent>   <leader>f    <C-\><C-n>:FloatermNew! fzf<CR>
+  " nnoremap   <silent>   `g    :FloatermNew! rg<CR>
+  " tnoremap   <silent>   `g    <C-\><C-n>:FloatermNew! rg<CR>
+  nnoremap   <silent>   <leader>l    :FloatermNew lazygit<CR>
+  tnoremap   <silent>   <leader>l    <C-\><C-n>:FloatermNew lazygit<CR>
+]])
