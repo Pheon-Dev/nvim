@@ -73,14 +73,27 @@ function M.buttons()
 					{ "AlphaKeys", 49, 55 },
           { "AlphaQuit", 56, 60 },
 	}
+	local leader_btns_hl = {
+					{ "AlphaIcon", 1, 4 },
+					{ "Keyword", 5, 18 },
+					{ "AlphaKeys", 19, 24 },
+          { "AlphaLine", 25, 33 },
+					{ "AlphaIcon", 34, 39 },
+					{ "Keyword", 40, 49 },
+					{ "AlphaKeys", 50, 59 },
+          { "AlphaQuit", 60, 63 },
+	}
 	return {
 		{
 			type = "text",
 			val = {
 				"                        │                       ",
-				"ﯠ   Harpoon        k    │    פּ   Nvim Tree     j",
-        "󰈞   Find File      f    │       Search        s",
-        "鈴  Lazy           z    │                       ",
+				"ﯠ   harpoon        k    │    פּ   nvim-tree     j",
+        "󰈞   find file      f    │       search        s",
+        "鈴  lazy           z    │                       ",
+				"                        │                       ",
+				"   fzf           ␣f    │       terminal     ``",
+        "   lazygit       ␣l    │       lf           ␣;",
 				"                        │                       ",
         "                        ▊       Quit          h",
 				"                        │                       ",
@@ -93,8 +106,11 @@ function M.buttons()
 					buttons_hl,
 					buttons_hl,
 					buttons_hl,
+					leader_btns_hl,
+					leader_btns_hl,
+					leader_btns_hl,
 					button_hl,
-					buttons_hl,
+					leader_btns_hl,
 				},
 			},
 		},
