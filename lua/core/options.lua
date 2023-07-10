@@ -16,26 +16,26 @@ opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep"
 opt.ignorecase = true      -- Ignore case
 opt.inccommand = "nosplit" -- preview incremental substitute
-opt.laststatus = 0 -- 2
-opt.mouse = "a"           -- Enable mouse mode
+opt.laststatus = 0         -- 2
+opt.mouse = "a"            -- Enable mouse mode
 opt.mouse = "nicr"
-opt.number = true         -- Print line number
-opt.pumblend = 0         -- Popup blend 10
-opt.pumheight = 10        -- Maximum number of entries in a popup
-opt.scrolloff = 4         -- Lines of context
+opt.number = true          -- Print line number
+opt.pumblend = 0           -- Popup blend 10
+opt.pumheight = 10         -- Maximum number of entries in a popup
+opt.scrolloff = 4          -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
-opt.shiftround = true     -- Round indent
-opt.shiftwidth = 2        -- Size of an indent
+opt.shiftround = true      -- Round indent
+opt.shiftwidth = 2         -- Size of an indent
 opt.shortmess:append({ W = true, I = true, c = true })
-opt.showmode = false      -- Dont show mode since we have a statusline
-opt.sidescrolloff = 8     -- Columns of context
-opt.signcolumn = "yes"    -- Always show the signcolumn, otherwise it would shift the text each time
-opt.smartcase = true      -- Don't ignore case with capitals
+opt.showmode = false       -- Dont show mode since we have a statusline
+opt.sidescrolloff = 8      -- Columns of context
+opt.signcolumn = "yes"     -- Always show the signcolumn, otherwise it would shift the text each time
+opt.smartcase = true       -- Don't ignore case with capitals
 opt.spelllang = { "en" }
-opt.splitbelow = true     -- Put new windows below current
-opt.splitright = true     -- Put new windows right of current
-opt.tabstop = 2           -- Number of spaces tabs count for
-opt.termguicolors = true  -- True color support
+opt.splitbelow = true      -- Put new windows below current
+opt.splitright = true      -- Put new windows right of current
+opt.tabstop = 2            -- Number of spaces tabs count for
+opt.termguicolors = true   -- True color support
 opt.timeoutlen = 500
 opt.undofile = true
 opt.undolevels = 10000
@@ -58,15 +58,15 @@ opt.softtabstop = 4
 opt.lazyredraw = false
 opt.writebackup = false
 opt.backup = false
-opt.list = true            -- Show some invisible characters (tabs...
-opt.listchars={
-  tab="  ",
-  eol="󰌑",
-  trail="·",
-  extends=">",
-  precedes="<",
-  nbsp="␣",
-  conceal="┊",
+opt.list = true -- Show some invisible characters (tabs...
+opt.listchars = {
+  tab = "  ",
+  eol = "󰌑",
+  trail = "·",
+  extends = ">",
+  precedes = "<",
+  nbsp = "␣",
+  conceal = "┊",
 }
 
 vim.o.showtabline = true
@@ -99,7 +99,7 @@ opt.exrc = true
 opt.foldenable = true
 opt.foldlevel = 99
 opt.foldlevelstart = 99
-opt.foldcolumn = "0" -- '1', '0' is not bad
+opt.foldcolumn = "0"    -- '1', '0' is not bad
 vim.o.foldnestmax = "1" -- '1', '0' is not bad
 
 opt.encoding = "utf-8"
@@ -139,3 +139,29 @@ vim.cmd("syntax enable")
 
 vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
+
+-- Float Term
+vim.g.floaterm_borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
+vim.g.floaterm_width = 0.9  -- default 0.6
+vim.g.floaterm_height = 0.9 -- default 0.6
+vim.g.floaterm_rootmarkers = { "Cargo.toml", "Cargo.toml.lock", "package.json", ".git", ".gitignore",
+  "package-lock.json", "yarn.lock", "tsconfig.json" }
+vim.g.floaterm_opener = "edit"
+vim.g.floaterm_wintype = "float"      -- options split, vsplit
+vim.g.floaterm_title = "$1/$2"        -- default 'floaterm: $1/$2'
+vim.g.floaterm_autoclose = 2          -- defailt 1 options 0-2
+vim.g.floaterm_autohide = 1           -- defailt 1 options 0-2
+vim.g.floaterm_autoinsert = true      -- defailt true
+vim.g.floaterm_titleposition = "left" -- options left, right, center
+vim.g.floaterm_position =
+"center"                              -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
+-- wintype 'float': 'top', 'bottom', 'left', 'right', 'topleft', 'topright', 'bottomleft', 'bottomright', 'center', 'auto'(at the cursor place) default 'center'
+vim.g.floaterm_keymap_toggle = '``'
+vim.g.floaterm_keymap_new = '`n'
+vim.g.floaterm_keymap_next = '`]'
+vim.g.floaterm_keymap_prev = '`['
+vim.g.floaterm_keymap_first = '`h'
+vim.g.floaterm_keymap_last = '`l'
+vim.g.floaterm_keymap_hide = '`k'
+vim.g.floaterm_keymap_show = '`j'
+vim.g.floaterm_keymap_kill = '`;'

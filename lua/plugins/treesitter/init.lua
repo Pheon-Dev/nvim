@@ -160,7 +160,7 @@ local M = {
           "dirvish",
           "fugitive",
           "harpoon",
-          "toggleterm",
+          "flaaterm",
           "NvimTree",
         },
         -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
