@@ -74,13 +74,6 @@ return {
       },
     })
 
-    local Terminal = require("toggleterm.terminal").Terminal
-
-    local toggle_lazygit = function()
-      local lazygit = Terminal:new({ cmd = "lazygit", direction = "float" })
-      return lazygit:toggle()
-    end
-
     local crates = require("crates")
 
     local mappings = {
@@ -113,11 +106,10 @@ return {
         },
       },
       e = { ":MurenToggle<cr>", "Muren" },
-      f = { ":Telescope find_files initial_mode=insert<cr>", "Find Files" },
+      -- f = { ":Telescope find_files initial_mode=insert<cr>", "Find Files" },
       h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
       j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
-      l = { toggle_lazygit, "LazyGit" },
       m = { ":Antelope marks<cr>", "Marks" },
       n = { ":Telescope notify<cr>", "Notifications" },
       o = {

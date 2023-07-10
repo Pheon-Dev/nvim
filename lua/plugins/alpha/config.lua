@@ -51,14 +51,6 @@ function M.buttons()
 			vim.api.nvim_buf_set_keymap(0, "n", "f", ":Telescope find_files initial_mode=insert<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "s", ":Telescope live_grep<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "z", ":Lazy<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(
-				0,
-				"n",
-				"l",
-				":lua require('toggleterm.terminal').Terminal:new({cmd = 'lazygit', direction = 'float'}):toggle()<cr>",
-				keybind_opts
-			)
-			-- vim.api.nvim_buf_set_keymap(0, "n", "m", ":Mason<CR>", keybind_opts)
 
 			-- Quit
 			vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q<CR>", keybind_opts)
@@ -72,8 +64,8 @@ function M.buttons()
 	}
 
 	local buttons_hl = {
-					{ "AlphaIcon", 1, 5 },
-					{ "Keyword", 6, 18 },
+					{ "AlphaIcon", 1, 4 },
+					{ "Keyword", 5, 18 },
 					{ "AlphaKeys", 19, 25 },
           { "AlphaLine", 25, 30 },
 					{ "AlphaIcon", 31, 37 },
@@ -88,7 +80,7 @@ function M.buttons()
 				"                        │                       ",
 				"ﯠ   Harpoon        k    │    פּ   Nvim Tree     j",
         "󰈞   Find File      f    │       Search        s",
-        "   Lazygit        t    │    鈴  Lazy          z",
+        "鈴  Lazy           z    │                       ",
 				"                        │                       ",
         "                        ▊       Quit          h",
 				"                        │                       ",

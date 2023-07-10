@@ -54,7 +54,7 @@ return {
     local config = {
       options = {
         icons_enabled = false,
-        disabled_filetypes = { statusline = { "alpha", "toggleterm" }, tabline = { "alpha" } },
+        disabled_filetypes = { tabline = { "alpha" }, statusline = { "alpha" } },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
 
@@ -332,14 +332,6 @@ return {
       color = { fg = colors.green1 },
     })
 
-    -- toggleterm
-    sec_left({
-      function()
-        return '%{&ft == "toggleterm" ? " ".b:toggle_number."" : ""}'
-      end,
-      color = { fg = colors.green },
-    })
-
     -- sep
     sec_left({
       function()
@@ -389,12 +381,12 @@ return {
       padding = { right = 1, left = 1 },
     })
 
-    -- sec_right({
-    --   function()
-    --     return "﯑ %3{codeium#GetStatusString()}"
-    --   end,
-    --   color = { fg = colors.grey },
-    -- })
+    sec_right({
+      function()
+        return "﯑ %3{codeium#GetStatusString()}"
+      end,
+      color = { fg = colors.grey },
+    })
 
     sec_right({
       function()
