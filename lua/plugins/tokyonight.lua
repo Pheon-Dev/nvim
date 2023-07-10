@@ -64,6 +64,9 @@ return {
       vim.api.nvim_set_hl(0, "AlphaInfo", { fg = theme.color68, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "AlphaLine", { fg = theme.color1, bg = theme.color0 })
 
+      -- Float Term
+      vim.api.nvim_set_hl(0, "FloatermBorder", { fg = theme.color2, bg = theme.color0 })
+
       vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = theme.color1 })
       vim.api.nvim_set_hl(0, "CodeiumSuggestion", { fg = theme.color3 })
 
