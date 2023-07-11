@@ -392,14 +392,14 @@ return {
       function()
         return ""
       end,
-      color = { bg = colors.yellow, fg = colors.bg },
+      color = { fg = colors.yellow, ng = colors.bg },
     })
 
     -- branch
     sec_right({
       "branch",
       -- icon = { "", align = "left" },
-      color = { bg = colors.yellow, fg = colors.bg },
+      color = { fg = colors.yellow, ng = colors.bg },
       padding = { right = 1, left = 0 },
     })
 
