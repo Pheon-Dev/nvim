@@ -206,11 +206,11 @@ vim.keymap.set("i", "<C-u>",
 
 -- Floaterm
 vim.cmd([[
-  nnoremap   <silent>   <leader>j    :FloatermNew! lf<CR>
-  nnoremap   <silent>   <leader>f    :FloatermNew! fzf<CR>
-  nnoremap   <silent>   <leader>s    :FloatermNew! rg<CR>
-  nnoremap   <silent>   <leader>l    :FloatermNew! lazygit<CR>
-  nnoremap   <silent>   <leader>;    :FloatermNew! broot<CR>
+  nnoremap   <silent>   <leader>j    :FloatermNew lf<CR>
+  nnoremap   <silent>   <leader>f    :FloatermNew fzf<CR>
+  nnoremap   <silent>   <leader>s    :FloatermNew rg<CR>
+  nnoremap   <silent>   <leader>l    :FloatermNew lazygit<CR>
+  nnoremap   <silent>   <leader>;    :FloatermNew broot<CR>
   " tnoremap   <silent>   <leader>j    <C-\><C-n>:FloatermNew! lf<CR>
   " tnoremap   <silent>   <leader>f    <C-\><C-n>:FloatermNew! fzf<CR>
   " tnoremap   <silent>   <leader>s    <C-\><C-n>:FloatermNew! rg<CR>
