@@ -29,10 +29,6 @@ map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
 -- Editing Keybindings
 map("n", "U", ":redo<cr>", { noremap = true, silent = true })
 
--- Indenting on Visual Mode
-map("v", "<", "<gv", { noremap = true, silent = true })
-map("v", ">", ">gv", { noremap = true, silent = true })
-
 -- Move to Start/End of Line
 map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
@@ -115,9 +111,9 @@ keymap({ "o", "x" }, "ii", "<cmd>lua require('various-textobjs').indentation(tru
 keymap({ "o", "x" }, "ai", "<cmd>lua require('various-textobjs').indentation(false, true)<CR>")
 keymap({ "o", "x" }, "iI", "<cmd>lua require('various-textobjs').indentation(true, true)<CR>")
 keymap({ "o", "x" }, "aI", "<cmd>lua require('various-textobjs').indentation(false, false)<CR>")
--- keymap({ "o", "x" }, "r", "<cmd>lua require('various-textobjs').restOfIndentation()<CR>")
+keymap({ "o", "x" }, "ri", "<cmd>lua require('various-textobjs').restOfIndentation()<CR>")
 -- paragraphs
--- keymap({ "o", "x" }, "R", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>")
+keymap({ "o", "x" }, "rp", "<cmd>lua require('various-textobjs').restOfParagraph()<CR>")
 -- subwords
 keymap({ "o", "x" }, "iS", "<cmd>lua require('various-textobjs').subword(true)<CR>")
 keymap({ "o", "x" }, "aS", "<cmd>lua require('various-textobjs').subword(false)<CR>")
@@ -173,19 +169,11 @@ map("x", "ih", "<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true 
 map("n", "[c", "&diff ? '[c' : ':Gitsigns prev_hunk<cr>'", { expr = true, noremap = true, silent = true })
 map("n", "]c", "&diff ? ']c' : ':Gitsigns next_hunk<cr>'", { expr = true, noremap = true, silent = true })
 
--- Telescope
-map("i", "<C-h>", ":Telescope find_files hidden=true<cr>", { noremap = true, silent = true })
-map("i", "<C-n>", ":Telescope buffers<cr>", { noremap = true, silent = true })
-
--- Move
--- map("n", "<C-x>", "<Plug>GoNSMLeft", {})
--- map("n", "<S-x>", "<Plug>GoNSMRight", {})
-map("n", "-", "<Plug>GoNSMDown", {})
-map("n", "=", "<Plug>GoNSMUp", {})
-map("x", "H", "<Plug>GoVSMLeft", {})
-map("x", "J", "<Plug>GoVSMDown", {})
-map("x", "K", "<Plug>GoVSMUp", {})
-map("x", "L", "<Plug>GoVSMRight", {})
+-- Indenting on Visual Mode
+map("v", "H", "<gv", { noremap = true, silent = true })
+map("v", "L", ">gv", { noremap = true, silent = true })
+map("x", "J", ":move '>+1<cr>gv-gv", { noremap = true, silent = true })
+map("x", "K", ":move '<-2<cr>gv-gv", { noremap = true, silent = true })
 
 -- Split Join
 vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
