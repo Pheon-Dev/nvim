@@ -2,6 +2,7 @@ return {
   -- better vim.notify
   {
     "rcarriga/nvim-notify",
+    enabled = true,
     event = "VeryLazy",
     config = function()
       require("notify").setup({
@@ -62,6 +63,5 @@ return {
   "nvim-tree/nvim-web-devicons",
 
   -- ui components
-  "MunifTanjim/nui.nvim",
   "nvim-lua/popup.nvim",
 }
