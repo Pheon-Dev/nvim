@@ -46,8 +46,18 @@ function M.buttons()
 	vim.api.nvim_create_autocmd({ "User" }, {
 		pattern = { "AlphaReady" },
 		callback = function(_)
+      -- Harpoon
 			vim.api.nvim_buf_set_keymap(0, "n", "k", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
+
+      -- Lazy
 			vim.api.nvim_buf_set_keymap(0, "n", "z", ":Lazy<CR>", keybind_opts)
+
+      -- Floaterm
+			vim.api.nvim_buf_set_keymap(0, "n", "j", ":FloatermNew lf<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "f", ":FloatermNew fzf<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "s", ":FloatermNew rg<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "l", ":FloatermNew lazygit<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "t", ":FloatermNew<CR>", keybind_opts)
 
 			-- Quit
 			vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q<CR>", keybind_opts)
@@ -76,9 +86,9 @@ function M.buttons()
 			type = "text",
 			val = {
 				"                        │                       ",
-				"   fzf           ␣f    │       terminal     ␣`",
-        "   lazygit       ␣l    │       lf           ␣;",
-        "鈴  lazy           z    │       search       ␣s",
+				"   fzf            f    │       terminal      t",
+        "   lazygit        l    │       lf            j",
+        "鈴  lazy           z    │       search        s",
 				"ﯠ   harpoon        k    ▊       Quit          h",
 				"                        │                       ",
 			},
