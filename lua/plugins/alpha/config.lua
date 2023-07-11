@@ -46,10 +46,7 @@ function M.buttons()
 	vim.api.nvim_create_autocmd({ "User" }, {
 		pattern = { "AlphaReady" },
 		callback = function(_)
-			vim.api.nvim_buf_set_keymap(0, "n", "j", ":NvimTreeToggle<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "k", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "f", ":Telescope find_files initial_mode=insert<cr>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "s", ":Telescope live_grep<cr>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "z", ":Lazy<CR>", keybind_opts)
 
 			-- Quit
@@ -58,44 +55,31 @@ function M.buttons()
 		end,
 	})
 
-
-	local button_hl = {
-					{ "AlphaQuit", 1, 60 },
-	}
-
 	local buttons_hl = {
 					{ "AlphaIcon", 1, 4 },
 					{ "Keyword", 5, 18 },
 					{ "AlphaKeys", 19, 25 },
-          { "AlphaLine", 25, 30 },
-					{ "AlphaIcon", 31, 37 },
-					{ "Keyword", 38, 48 },
-					{ "AlphaKeys", 49, 55 },
-          { "AlphaQuit", 56, 60 },
+          { "AlphaLine", 25, 32 },
+					{ "AlphaIcon", 32, 38 },
+					{ "Keyword", 38, 50 },
+					{ "AlphaKeys", 51, 55 },
+          { "AlphaKeys", 56, 60 },
 	}
-	local leader_btns_hl = {
+	local quit_hl = {
 					{ "AlphaIcon", 1, 4 },
 					{ "Keyword", 5, 18 },
 					{ "AlphaKeys", 19, 24 },
-          { "AlphaLine", 25, 33 },
-					{ "AlphaIcon", 34, 39 },
-					{ "Keyword", 40, 49 },
-					{ "AlphaKeys", 50, 59 },
-          { "AlphaQuit", 60, 63 },
+          { "AlphaQuit", 25, 63 },
 	}
 	return {
 		{
 			type = "text",
 			val = {
 				"                        │                       ",
-				"ﯠ   harpoon        k    │    פּ   nvim-tree     j",
-        "󰈞   find file      f    │       search        s",
-        "鈴  lazy           z    │                       ",
-				"                        │                       ",
-				"   fzf           ␣f    │       terminal     ``",
+				"   fzf           ␣f    │       terminal     ␣`",
         "   lazygit       ␣l    │       lf           ␣;",
-				"                        │                       ",
-        "                        ▊       Quit          h",
+        "鈴  lazy           z    │       search       ␣s",
+				"ﯠ   harpoon        k    ▊       Quit          h",
 				"                        │                       ",
 			},
 			opts = {
@@ -105,12 +89,8 @@ function M.buttons()
 					buttons_hl,
 					buttons_hl,
 					buttons_hl,
+					quit_hl,
 					buttons_hl,
-					leader_btns_hl,
-					leader_btns_hl,
-					leader_btns_hl,
-					button_hl,
-					leader_btns_hl,
 				},
 			},
 		},
