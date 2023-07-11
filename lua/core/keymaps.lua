@@ -204,15 +204,13 @@ vim.keymap.set("i", "<C-u>",
   end,
   { expr = true, silent = true, desc = "Clear Completions" })
 
--- Floaterm
-vim.cmd([[
-  nnoremap   <silent>   <leader>j    :FloatermNew lf<CR>
-  nnoremap   <silent>   <leader>f    :FloatermNew fzf<CR>
-  nnoremap   <silent>   <leader>s    :FloatermNew rg<CR>
-  nnoremap   <silent>   <leader>l    :FloatermNew lazygit<CR>
-  nnoremap   <silent>   <leader>;    :FloatermNew broot<CR>
-  " tnoremap   <silent>   <leader>j    <C-\><C-n>:FloatermNew! lf<CR>
-  " tnoremap   <silent>   <leader>f    <C-\><C-n>:FloatermNew! fzf<CR>
-  " tnoremap   <silent>   <leader>s    <C-\><C-n>:FloatermNew! rg<CR>
-  " tnoremap   <silent>   <leader>l    <C-\><C-n>:FloatermNew lazygit<CR>
-]])
+-- Fzf and Floaterm
+local keybind_opts = { silent = true, noremap = true }
+
+map("n", "<leader>f", ":call fzf#run(fzf#wrap({'source': 'fd --type file --hidden --strip-cwd-prefix --exclude $IGNORE'}))<CR>", keybind_opts)
+
+map("n", "<leader>s", ":FloatermNew rg<CR>", keybind_opts)
+map("n", "<leader>j", ":FloatermNew lf<CR>", keybind_opts)
+map("n", "<leader>l", ":FloatermNew lazygit<CR>", keybind_opts)
+map("n", "<leader>;", ":FloatermNew broot<CR>", keybind_opts)
+map("n", "<leader>t", ":FloatermNew<CR>", keybind_opts)

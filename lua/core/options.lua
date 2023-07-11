@@ -163,3 +163,10 @@ vim.g.floaterm_keymap_last = '`l'
 vim.g.floaterm_keymap_hide = '`k'
 vim.g.floaterm_keymap_show = '`j'
 vim.g.floaterm_keymap_kill = '`;'
+
+vim.g.fzf_layout = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
+vim.g.fzf_action = {
+  ['ctrl-t'] = 'tab split',
+  ['ctrl-x'] = 'split',
+  ['ctrl-v'] = 'vsplit',
+}
