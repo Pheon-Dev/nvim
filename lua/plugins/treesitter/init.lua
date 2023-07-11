@@ -33,6 +33,7 @@ local M = {
           "tsx",
           "typescript",
           "vim",
+          "hjson",
           "yaml",
         },
         highlight = {

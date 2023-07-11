@@ -1,0 +1,11 @@
+{
+	verbs: [
+		{
+			invocation: terminal
+			key: ctrl-l
+			execution: "echo {line} {file}"
+			leave_broot: true
+			apply_to: file
+		}
+	]
+}
