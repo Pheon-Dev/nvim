@@ -152,7 +152,7 @@ return {
         p = { ":RustParentModule<cr>", "Parent Module" },
         r = { ":RustRunnables<cr>", "Runnables" },
       },
-      s = { ":Telescope live_grep<cr>", "Live Grep" },
+      -- s = { ":Telescope live_grep<cr>", "Live Grep" },
       t = {
         name = "TODO | Typescript",
         q = { ":TodoQuickFix<cr>", "TODO QuickFix" },
