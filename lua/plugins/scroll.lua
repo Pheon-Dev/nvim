@@ -1,6 +1,7 @@
 return {
   {
     "karb94/neoscroll.nvim",
+    enabled = true,
     event = "VeryLazy",
     config = function()
       local ok, neoscroll = pcall(require, "neoscroll")
