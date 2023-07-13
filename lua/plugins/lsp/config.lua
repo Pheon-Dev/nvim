@@ -74,54 +74,6 @@ function M.lsp_config(plugin)
   }
   capabilities.offsetEncoding = { "utf-16" }
   require("lspconfig").clangd.setup({ capabilities = capabilities })
-
-  -- require("typescript").setup({
-  --   disable_commands = false,     -- prevent the plugin from creating Vim commands
-  --   debug = true,                 -- enable debug logging for commands
-  --   go_to_source_definition = {
-  --     fallback = true,            -- fall back to standard LSP definition on failure
-  --   },
-  --   server = {
-  --     -- pass options to lspconfig's setup method
-  --     capabilities = capabilities,
-  --     on_attach = on_attach,
-  --     flags = lsp_flags,
-  --     root_dir = util.root_pattern(".git"),
-  --     cmd = { "typescript-language-server", "--stdio" },
-  --     filetypes = {
-  --       "javascript",
-  --       "javascriptreact",
-  --       "javascript.jsx",
-  --       "typescript",
-  --       "typescriptreact",
-  --       "typescript.tsx",
-  --     },
-  --     settings = {
-  --       typescript = {
-  --         inlayHints = {
-  --           includeInlayParameterNameHints = "all",
-  --           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-  --           includeInlayFunctionParameterTypeHints = true,
-  --           includeInlayVariableTypeHints = true,
-  --           includeInlayPropertyDeclarationTypeHints = true,
-  --           includeInlayFunctionLikeReturnTypeHints = true,
-  --           includeInlayEnumMemberValueHints = true,
-  --         },
-  --       },
-  --       javascript = {
-  --         inlayHints = {
-  --           includeInlayParameterNameHints = "all",
-  --           includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-  --           includeInlayFunctionParameterTypeHints = true,
-  --           includeInlayVariableTypeHints = true,
-  --           includeInlayPropertyDeclarationTypeHints = true,
-  --           includeInlayFunctionLikeReturnTypeHints = true,
-  --           includeInlayEnumMemberValueHints = true,
-  --         },
-  --       },
-  --     },
-  --   },
-  -- })
 end
 
 return M

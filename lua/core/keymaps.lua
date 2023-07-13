@@ -185,7 +185,4 @@ map("n", "<leader>s", ":FloatermNew rg<CR>", keybind_opts)
 map("n", "<leader>j", ":FloatermNew lf<CR>", keybind_opts)
 map("n", "<leader>l", ":FloatermNew lazygit<CR>", keybind_opts)
 map("n", "<leader>;", ":FloatermNew broot<CR>", keybind_opts)
-map("n", "<leader>t", ":FloatermNew<CR>", keybind_opts)
-
-vim.keymap.set("n", "<c-n>", "<Plug>(YankyCycleForward)")
-vim.keymap.set("n", "<c-p>", "<Plug>(YankyCycleBackward)")
+-- map("n", "<leader>t", ":FloatermNew<CR>", keybind_opts)
