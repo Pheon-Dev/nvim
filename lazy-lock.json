@@ -1,5 +1,4 @@
 {
-  "BufferTabs.nvim": { "branch": "main", "commit": "e7ee78a2b828e150bf33315a1c74a5e0f6adb6fd" },
   "Comment.nvim": { "branch": "master", "commit": "e51f2b142d88bb666dcaa77d93a07f4b419aca70" },
   "LuaSnip": { "branch": "master", "commit": "500981ff6cefc7343e3959ef0f939bd0bfd49ba9" },
   "alpha-nvim": { "branch": "main", "commit": "9e33db324b8bb7a147bce9ea5496686ee859461d" },

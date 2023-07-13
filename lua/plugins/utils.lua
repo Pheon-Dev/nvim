@@ -54,43 +54,6 @@ return {
     end,
   },
   {
-    'tomiis4/BufferTabs.nvim',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
-    event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      require('buffertabs').setup({
-        ---@type 'none'|'single'|'double'|'rounded'|'solid'|'shadow'|table
-        border = 'rounded',
-
-        ---@type boolean
-        icons = true,
-
-        ---@type string
-        hl_group = 'Keyword',
-
-        ---@type string
-        hl_group_inactive = 'Comment',
-
-        ---@type table[]
-        exclude = {},
-
-        ---@type boolean
-        show_all = false,
-
-        ---@type 'row'|'column'
-        display = 'column',
-
-        ---@type 'left'|'right'|'center'
-        horizontal = 'right',
-
-        ---@type 'top'|'bottom'|'center'
-        vertical = 'bottom',
-      })
-    end
-  },
-  {
     "Exafunction/codeium.vim",
     event = { "BufReadPost", "BufNewFile" },
     enabled = true,
