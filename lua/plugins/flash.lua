@@ -1,7 +1,7 @@
 return {
   {
     "folke/flash.nvim",
-    event = "BufReadPre",
+    event = { "BufReadPost", "BufNewFile" },
     ---@type Flash.Config
     opts = {},
     keys = {
@@ -280,6 +280,6 @@ return {
   },
   {
     "chaoren/vim-wordmotion",
-    event = "BufReadPre",
+    event = { "BufReadPost", "BufNewFile" },
   },
 }

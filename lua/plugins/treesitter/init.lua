@@ -4,10 +4,13 @@ local M = {
     build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
-    event = "BufReadPre",
+    event = { "BufReadPost", "BufNewFile" },
     dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
-      enabled = true,
+      {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        enabled = true
+      },
+
     },
     config = function()
       local textobjects = require("plugins.treesitter.text-objects").textobjects
@@ -56,7 +59,7 @@ local M = {
         autopairs = { enable = true },
         indent = { enable = true },
         textobjects = textobjects,
-
+        refactor = {},
         endwise = {
           enable = false,
         },
@@ -66,7 +69,7 @@ local M = {
   },
   {
     "windwp/nvim-ts-autotag",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       local filetypes = {
         "html",
@@ -120,8 +123,10 @@ local M = {
   {
     "chrisgrieser/nvim-various-textobjs",
     enabled = true,
-    event = "BufReadPre",
-    opts = { useDefaultKeymaps = true },
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      useDefaultKeymaps = true,
+    },
     config = function()
       require("various-textobjs").setup({
         lookForwardSmall = 5,
@@ -129,9 +134,9 @@ local M = {
         useDefaultKeymaps = true,
         -- disabledKeymaps = { "ai", "ii", "aI", "iI" },
         disabledKeymaps = {
-          "L", -- vu
-          "r", -- ri
-          "R", -- rp
+          "L",  -- vu
+          "r",  -- ri
+          "R",  -- rp
           "in", -- ir
           "il",
           "ai",
@@ -154,12 +159,34 @@ local M = {
   },
   {
     "wellle/targets.vim",
-    event = "BufReadPost",
+    event = { "BufReadPost", "BufNewFile" },
     enabled = true,
   },
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    enabled = true,
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require 'treesitter-context'.setup {
+        enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
+        max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
+        min_window_height = 0,    -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+        line_numbers = true,
+        multiline_threshold = 20, -- Maximum number of lines to collapse for a single context line
+        trim_scope = 'outer',     -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+        mode = 'cursor',          -- Line used to calculate context. Choices: 'cursor', 'topline'
+        -- Separator between context and content. Should be a single character string, like '-'.
+        -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+        separator = nil,
+        zindex = 20,     -- The Z-index of the context window
+        on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+      }
+    end
+  },
+  {
     "RRethy/vim-illuminate",
-    event = "BufReadPost",
+    enabled = true,
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       -- default configuration
       require("illuminate").configure({
@@ -181,6 +208,7 @@ local M = {
           "fugitive",
           "harpoon",
           "flaaterm",
+          "NvimTree",
         },
         -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
         filetypes_allowlist = {},

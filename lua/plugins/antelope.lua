@@ -1,6 +1,7 @@
 return {
 	"Pheon-Dev/antelope",
-	event = "BufReadPre",
+  event = { "BufReadPost", "BufNewFile" },
+  enabled = true,
 	config = function()
 		local antelope = require("antelope")
 
