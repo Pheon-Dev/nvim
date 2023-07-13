@@ -49,6 +49,9 @@ function M.buttons()
       -- Harpoon
 			vim.api.nvim_buf_set_keymap(0, "n", "k", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
 
+      -- NvimTree
+			vim.api.nvim_buf_set_keymap(0, "n", "d", ":NvimTreeToggle<CR>", keybind_opts)
+
       -- Lazy
 			vim.api.nvim_buf_set_keymap(0, "n", "z", ":Lazy<CR>", keybind_opts)
 
@@ -91,6 +94,7 @@ function M.buttons()
         "   lazygit        l    │       lf            j",
         "鈴  lazy           z    │       search        s",
 				"ﯠ   harpoon        k    │    פּ   broot         ;",
+				"   nvim-tree      d    │                       ",
 				"                        │                       ",
 				"                        ▊       Quit          h",
 				"                        │                       ",
@@ -98,6 +102,7 @@ function M.buttons()
 			opts = {
 				position = "center",
 				hl = {
+					buttons_hl,
 					buttons_hl,
 					buttons_hl,
 					buttons_hl,

@@ -1,10 +1,11 @@
 return {
   "folke/which-key.nvim",
-  event = "BufReadPre",
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     -- vim.o.timeout = true
     -- vim.o.timeoutlen = 300
-    local rt = require("rust-tools")
+    local ok, rt = pcall(require, "rust-tools")
+    if not ok then return end
     local wk = require("which-key")
 
     wk.setup({
@@ -74,7 +75,8 @@ return {
       },
     })
 
-    local crates = require("crates")
+    local oc, crates = pcall(require, "crates")
+    if not oc then return end
 
     local mappings = {
       ["'"] = { ":Alpha<cr>", "Dashboard" },
@@ -105,6 +107,7 @@ return {
           r = { crates.open_repository, "Repository" },
         },
       },
+      d = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
       e = { ":MurenToggle<cr>", "Muren" },
       h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
