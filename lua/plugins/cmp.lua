@@ -1,6 +1,7 @@
 return {
   "hrsh7th/nvim-cmp",
   -- event = "VeryLazy",
+  enabled = true,
   event = "InsertEnter",
   dependencies = {
     {

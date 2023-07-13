@@ -2,6 +2,7 @@ return {
   {
     "folke/todo-comments.nvim",
     event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
     config = function()
       require("todo-comments").setup({
         signs = true,  -- show icons in the signs column
@@ -73,6 +74,7 @@ return {
   {
     "numToStr/Comment.nvim",
     event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
     config = function()
       require("Comment").setup({
         ---Add a space b/w comment and the line

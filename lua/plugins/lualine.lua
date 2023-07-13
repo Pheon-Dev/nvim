@@ -1,5 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
+  enabled = true,
   dependencies = {
     "Pheon-Dev/pigeon"
   },
@@ -324,10 +325,10 @@ return {
       -- 3: Absolute path, with tilde as the home directory
 
       shorting_target = 40, -- Shortens path to leave 40 spaces in the window
-      -- for other components. (terrible name, any suggestions?)
       symbols = {
-        modified = "", -- Text to show when the file is modified.
+        -- for other components. (terrible name, any suggestions?)
         readonly = "", -- Text to show when the file is non-modifiable or readonly.
+        modified = "", -- Text to show when the file is modified.
         unnamed = "ﲃ", -- Text to show for unnamed buffers.
         newfile = "", -- Text to show for newly created file before first write
       },
