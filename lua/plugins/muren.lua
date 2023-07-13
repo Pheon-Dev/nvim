@@ -1,6 +1,6 @@
 return {
 	"AckslD/muren.nvim",
-	event = "BufReadPre",
+  event = { "BufReadPost", "BufNewFile" },
 	config = function()
 		require("muren").setup({
 			-- general

@@ -2,7 +2,7 @@ return {
   "gbprod/yanky.nvim",
   enabled = true,
   -- event = "VeryLazy",
-  event = "BufReadPre",
+  event = { "BufReadPost", "BufNewFile" },
   opts = {
     ring = {
       history_length = 100,

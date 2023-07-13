@@ -1,7 +1,7 @@
 return {
   {
     "lewis6991/gitsigns.nvim",
-    event = "BufReadPre",
+    event = { "BufReadPost", "BufNewFile" },
     keys = {
       {
         "<leader>ga",
@@ -193,6 +193,6 @@ return {
   },
   {
     "f-person/git-blame.nvim",
-    event = "BufReadPre",
+    event = { "BufReadPost", "BufNewFile" },
   },
 }

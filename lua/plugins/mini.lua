@@ -1,17 +1,17 @@
 return {
   {
     "echasnovski/mini.pairs",
-    event = "BufReadPre",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("mini.pairs").setup()
     end,
   },
   {
     "echasnovski/mini.indentscope",
-    event = "BufReadPre",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "alpha", "lazy", "floaterm" },
+        pattern = { "alpha", "lazy", "floaterm", "NvimTree" },
         callback = function()
           vim.b.miniindentscope_disable = true
         end,

@@ -1,6 +1,7 @@
 return {
   "m4xshen/hardtime.nvim",
-  event = "BufReadPre",
+  event = { "BufReadPost", "BufNewFile" },
+  enabled = true,
   config = function()
     local config = {
       max_time = 1000,
@@ -49,7 +50,7 @@ return {
         ["<LEFT>"] = { "", "i" },
         ["<RIGHT>"] = { "", "i" }
       },
-      disabled_filetypes = { "qf", "netrw", "lazy", "mason" },
+      disabled_filetypes = { "qf", "netrw", "lazy", "mason", "NvimTree" },
     }
     require("hardtime").setup(config)
   end

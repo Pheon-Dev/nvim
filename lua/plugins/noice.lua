@@ -1,6 +1,7 @@
 return {
   "folke/noice.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  event = { "BufReadPost", "BufNewFile" },
   enabled = true,
   dependencies = {
     "MunifTanjim/nui.nvim",
@@ -238,7 +239,7 @@ return {
       routes = {
         -- { filter = { event = "msg_show", kind = "", find = "<" },         opts = { skip = true } },
         -- { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
-        { filter = { warning = true, find = "node" },      opts = { skip = true } },
+        { filter = { warning = true, find = "node" }, opts = { skip = true } },
       },
       status = {}, --- @see section on statusline components
       format = {}, --- @see section on formatting
