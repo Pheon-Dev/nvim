@@ -109,7 +109,7 @@ return {
       h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
       m = { ":Antelope marks<cr>", "Marks" },
-      n = { ":Telescope notify<cr>", "Notifications" },
+      n = { ":Telescope notify initial_mode=normal<cr>", "Notifications" },
       o = {
         name = "Others",
         c = {
@@ -117,7 +117,6 @@ return {
           "Command History",
         },
         m = { ":Mason<cr>", "Mason" },
-        i = { ":lua require('lsp-inlayhints').toggle()<cr>", "Inlayhints" },
         t = { ":Telescope help_tags previewer=false initial_mode=insert<cr>", "Help Tags" },
         h = { ":Telescope harpoon marks initial_mode=normal previewer=false<cr>", "Harpoon" },
         x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
@@ -150,17 +149,22 @@ return {
         p = { ":RustParentModule<cr>", "Parent Module" },
         r = { ":RustRunnables<cr>", "Runnables" },
       },
-      -- s = { ":Telescope live_grep<cr>", "Live Grep" },
       t = {
-        name = "TODO | Typescript",
+        name = "TODO | Trouble | Tabs | TST",
         q = { ":TodoQuickFix<cr>", "TODO QuickFix" },
-        s = { ":TodoTelescope<cr>", "TODO Telescope" },
-        t = { ":TodoTrouble<cr>", "TODO Trouble" },
-        a = { ":TypescriptAddMissingImports<cr>", "Add Missing Imports" },
-        o = { ":TypescriptOrganizeImports<cr>", "Organise Imports" },
-        r = { ":TypescriptRemoveUnused<cr>", "Remove Unused" },
+        l = { ":TodoTelescope<cr>", "TODO Telescope" },
+        r = { ":TodoTrouble<cr>", "TODO Trouble" },
         p = { ":Antelope tabpages<cr>", "tabs" },
-        f = { ":TypescriptFixAll<cr>", "Fix All" },
+        t = {
+          name = "Typescript",
+          o = { ":TSToolsOrganizeImports<cr>", "Organize Imports" },
+          s = { ":TSToolsSortImports<cr>", "Sort Imports" },
+          r = { ":TSToolsRemoveUnusedImports<cr>", "Remove Unused Imports" },
+          x = { ":TSToolsRemoveUnused<cr>", "Remove Unused Statements" },
+          a = { ":TSToolsAddMissingImports<cr>", "Add Missing Imports" },
+          f = { ":TSToolsFixAll<cr>", "Fix All" },
+          d = { ":TSToolsGoToSourceDefinition<cr>", "Go To Source Definition" },
+        }
       },
       w = {
         name = "Windows",
