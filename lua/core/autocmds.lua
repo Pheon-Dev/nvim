@@ -90,16 +90,16 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
-local format_sync_grp = vim.api.nvim_create_augroup("format_sync_grp", { clear = true })
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*.go",
-	callback = function()
-		require("go.format").goimport()
-	end,
-	group = format_sync_grp,
-})
-
+-- local format_sync_grp = vim.api.nvim_create_augroup("format_sync_grp", { clear = true })
+--
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*.go",
+-- 	callback = function()
+-- 		require("go.format").goimport()
+-- 	end,
+-- 	group = format_sync_grp,
+-- })
+--
 -- vim.cmd("autocmd!")
 -- vim.cmd("autocmd Insertleave * set nopaste")
 -- vim.cmd('autocmd VimEnter * :silent exec "!kill -s SIGNWINCH $PPID"')
