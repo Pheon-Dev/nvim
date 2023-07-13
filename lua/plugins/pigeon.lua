@@ -3,7 +3,7 @@ return {
   config = function()
     require("pigeon").setup({
       enabled = true,
-      os = "linux",         -- windows, osx
+      os = "linux",            -- windows, osx
       plugin_manager = "lazy", -- packer, paq, vim-plug
       hostname = {
         enabled = false,
@@ -21,17 +21,17 @@ return {
           enabled = true,
           format = "%H:%M",
           posttext = "",
-          icon = " ",
+          icon = "",
         },
         day = {
-          enabled = false,
-          format = "%A",
-          icon = " ",
+          enabled = true,
+          format = "%A, %d %B %Y",
+          icon = "",
         },
         date = {
           enabled = true,
           format = "%Y-%m-%d",
-          icon = " ",
+          icon = "",
         },
       },
       battery = {

@@ -3,7 +3,7 @@ return {
   dependencies = {
     "Pheon-Dev/pigeon"
   },
-  event = { "BufReadPre", "BufNewFile" },
+  event = { "BufReadPost", "BufNewFile" },
   config = function()
     local ok, lualine = pcall(require, "lualine")
     local on, noice = pcall(require, "noice")
@@ -186,7 +186,16 @@ return {
 
     -- datetime
     tab_left({
-      "datetime",
+      function()
+        return require("pigeon.datetime").current_time()
+      end,
+      color = "Title"
+    })
+
+    tab_left({
+      function()
+        return require("pigeon.datetime").current_day()
+      end,
       color = tab_color
     })
 
