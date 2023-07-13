@@ -2,7 +2,8 @@ return {
   {
     "karb94/neoscroll.nvim",
     enabled = true,
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
+    -- event = "VeryLazy",
     config = function()
       local ok, neoscroll = pcall(require, "neoscroll")
 
@@ -10,22 +11,24 @@ return {
         return
       end
 
-      local p = require("ufo")
+      local ok, p = pcall(require, "ufo")
+      if not ok then return end
+
       neoscroll.setup({
         -- All these keys will be mapped to their corresponding default scrolling animation
-        hide_cursor = true,      -- Hide cursor while scrolling
-        stop_eof = true,         -- Stop at <EOF> when scrolling downwards
+        hide_cursor = true,          -- Hide cursor while scrolling
+        stop_eof = true,             -- Stop at <EOF> when scrolling downwards
         use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
-        respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
         cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-        easing_function = "cubic", -- quadratic, cubic, quartic, quintic, circular, sine
-        pre_hook = function() -- Function to run before the scrolling animation starts
+        easing_function = "cubic",   -- quadratic, cubic, quartic, quintic, circular, sine
+        pre_hook = function()        -- Function to run before the scrolling animation starts
           p.disable()
-            -- vim.cmd [[TSBufToggle highlight]]
+          -- vim.cmd [[TSBufToggle highlight]]
         end,
         post_hook = function() -- Function to run after the scrolling animation ends
           p.enable()
-            -- vim.cmd [[TSBufToggle highlight]]
+          -- vim.cmd [[TSBufToggle highlight]]
         end,
         performance_mode = false, -- Disable "Performance Mode" on all buffers.
       })
@@ -46,41 +49,42 @@ return {
       require("neoscroll.config").set_mappings(t)
     end,
   },
-  -- {
-  -- 	"lewis6991/satellite.nvim",
-  -- 	event = "BufReadPre",
-  -- 	config = function()
-  -- 		require("satellite").setup({
-  -- 			current_only = false,
-  -- 			winblend = 50,
-  -- 			zindex = 40,
-  -- 			excluded_filetypes = {},
-  -- 			width = 2,
-  -- 			handlers = {
-  -- 				search = {
-  -- 					enable = true,
-  -- 				},
-  -- 				diagnostic = {
-  -- 					enable = true,
-  -- 					signs = { "-", "=", "≡" },
-  -- 					min_severity = vim.diagnostic.severity.HINT,
-  -- 				},
-  -- 				gitsigns = {
-  -- 					enable = true,
-  -- 					signs = { -- can only be a single character (multibyte is okay)
-  -- 						add = "│",
-  -- 						change = "│",
-  -- 						delete = "-",
-  -- 					},
-  -- 				},
-  -- 				marks = {
-  -- 					enable = true,
-  -- 					show_builtins = false, -- shows the builtin marks like [ ] < >
-  -- 				},
-  -- 			},
-  -- 		})
-  -- 	end,
-  -- },
+  {
+    "lewis6991/satellite.nvim",
+    enabled = true,
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require("satellite").setup({
+        current_only = false,
+        winblend = 50,
+        zindex = 40,
+        excluded_filetypes = {},
+        width = 2,
+        handlers = {
+          search = {
+            enable = true,
+          },
+          diagnostic = {
+            enable = true,
+            signs = { "-", "=", "≡" },
+            min_severity = vim.diagnostic.severity.HINT,
+          },
+          gitsigns = {
+            enable = true,
+            signs = { -- can only be a single character (multibyte is okay)
+              add = "│",
+              change = "│",
+              delete = "-",
+            },
+          },
+          marks = {
+            enable = true,
+            show_builtins = true, -- shows the builtin marks like [ ] < >
+          },
+        },
+      })
+    end,
+  },
 }
 
 -- The :SatelliteDisable command disables scrollbars.
