@@ -112,7 +112,7 @@ require("lazy").setup({
   change_detection = {
     -- automatically check for config file changes and reload the ui
     enabled = true,
-    notify = true, -- get a notification when changes are found
+    notify = false, -- get a notification when changes are found
   },
   performance = {
     cache = {
