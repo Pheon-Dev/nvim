@@ -1,7 +1,11 @@
 -- Igone TextChangedI,TextChange events
--- vim.cmd([[
---   set ei=TextChangedI
---   ]])
+vim.cmd([[
+  " set ei=TextChangedI
+  autocmd User targets#mappings#user call targets#mappings#extend({
+    " \ 'b': {},
+    " \ 'B': {},
+    \ })
+  ]])
 
 local function augroup(name)
   return vim.api.nvim_create_augroup("nvim_" .. name, { clear = true })

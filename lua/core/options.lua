@@ -93,6 +93,8 @@ vim.o.showtabline = true
 -- vim.g.loaded_shada_plugin = 1
 -- vim.g.rainbow_active = 1
 
+vim.g.move_map_keys = 0
+
 opt.exrc = true
 opt.foldenable = true
 opt.foldlevel = 99

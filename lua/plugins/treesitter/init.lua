@@ -7,6 +7,7 @@ local M = {
     event = "BufReadPre",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
+      enabled = true,
     },
     config = function()
       local textobjects = require("plugins.treesitter.text-objects").textobjects
@@ -118,6 +119,7 @@ local M = {
   },
   {
     "chrisgrieser/nvim-various-textobjs",
+    enabled = true,
     event = "BufReadPre",
     opts = { useDefaultKeymaps = true },
     config = function()
@@ -126,17 +128,34 @@ local M = {
         lookForwardBig = 15,
         useDefaultKeymaps = true,
         -- disabledKeymaps = { "ai", "ii", "aI", "iI" },
-        disabledKeymaps = { "L", "r", "R" },
+        disabledKeymaps = {
+          "L", -- vu
+          "r", -- ri
+          "R", -- rp
+          "in", -- ir
+          "il",
+          "ai",
+          "ii",
+          -- "aI",
+          -- "iI",
+          "an", -- deprecated
+        },
       })
     end,
   },
   {
     "glts/vim-textobj-comment",
+    enabled = true,
     keys = {
       { "ic", mode = { "o", "x" }, desc = "Select comment block" },
       { "ac", mode = { "o", "x" }, desc = "Select comment block" },
     },
     dependencies = { "kana/vim-textobj-user" },
+  },
+  {
+    "wellle/targets.vim",
+    event = "BufReadPost",
+    enabled = true,
   },
   {
     "RRethy/vim-illuminate",
