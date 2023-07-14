@@ -46,6 +46,16 @@ return {
     enabled = true,
   },
   {
+    "tpope/vim-repeat",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+  },
+  {
+    "svermeulen/vim-easyclip",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+  },
+  {
     "norcalli/nvim-colorizer.lua",
     event = { "BufReadPost", "BufNewFile" },
     enabled = true,

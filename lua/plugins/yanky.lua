@@ -1,6 +1,6 @@
 return {
   "gbprod/yanky.nvim",
-  enabled = true,
+  enabled = false,
   -- event = "VeryLazy",
   event = { "BufReadPost", "BufNewFile" },
   opts = {
