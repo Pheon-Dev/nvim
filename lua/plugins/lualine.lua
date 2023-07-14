@@ -188,14 +188,16 @@ return {
     -- datetime
     tab_left({
       function()
-        return require("pigeon.datetime").current_time()
+        local enabled = require("pigeon.config").options.datetime.time.enabled
+        return enabled and require("pigeon.datetime").current_time() or ""
       end,
-      color = "Title"
+      color = tab_color
     })
 
     tab_left({
       function()
-        return require("pigeon.datetime").current_day()
+        local enabled = require("pigeon.config").options.datetime.day.enabled
+        return enabled and require("pigeon.datetime").current_day() or ""
       end,
       color = tab_color
     })
@@ -236,7 +238,8 @@ return {
     -- wifi
     tab_right({
       function()
-        return require("pigeon.internet").wifi()
+        local enabled = require("pigeon.config").options.internet.enabled
+        return enabled and require("pigeon.internet").wifi() or ""
       end,
       color = tab_color
       -- color = { fg = theme.color89 },
@@ -245,7 +248,8 @@ return {
     -- ram
     tab_right({
       function()
-        return require("pigeon.ram").ram()
+        local enabled = require("pigeon.config").options.ram.enabled
+        return enabled and require("pigeon.ram").ram() or ""
       end,
       color = tab_color
       -- color = { fg = theme.color26 },
@@ -254,7 +258,8 @@ return {
     -- battery
     tab_right({
       function()
-        return require("pigeon.battery").battery()
+        local enabled = require("pigeon.config").options.battery.enabled
+        return enabled and require("pigeon.battery").battery() or ""
       end,
       -- color = { fg = colors.orange3 },
       color = tab_color
@@ -409,14 +414,16 @@ return {
       function()
         return ""
       end,
-      color = { fg = colors.yellow, bg = colors.bg },
+      color = "Comment"
+      -- color = { fg = colors.yellow, bg = colors.bg },
     })
 
     -- branch
     sec_right({
       "branch",
       -- icon = { "", align = "left" },
-      color = { fg = colors.yellow, ng = colors.bg },
+      -- color = { fg = colors.yellow, ng = colors.bg },
+      color = "Comment",
       padding = { right = 1, left = 0 },
     })
 
