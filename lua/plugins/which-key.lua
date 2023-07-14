@@ -80,7 +80,7 @@ return {
     if not oc then return end
 
     local mappings = {
-      ["'"] = { ":Alpha<cr>", "Dashboard" },
+      -- ["'"] = { ":Alpha<cr>", "Dashboard" },
       a = { ":ASToggle<cr>", "Auto Save Toggle" },
       b = { ":Antelope buffers<cr>", "Buffers" },
       c = {
@@ -108,9 +108,10 @@ return {
           r = { crates.open_repository, "Repository" },
         },
       },
-      d = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
+      d = { ":Alpha<cr>", "Dashboard" },
       e = { ":MurenToggle<cr>", "Muren" },
       h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
+      j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
       m = { ":Antelope marks<cr>", "Marks" },
       n = { ":Telescope notify initial_mode=normal<cr>", "Notifications" },
@@ -133,6 +134,7 @@ return {
         i = { ":PigeonToggleInternet<cr>", "Toggle Internet Module" },
         y = { ":PigeonToggleDay<cr>", "Toggle Day Submodule" },
         e = { ":PigeonToggleDate<cr>", "Toggle Date Submodule" },
+        r = { ":PigeonToggleRam<cr>", "Toggle RAM Submodule" },
         t = { ":PigeonToggleTime<cr>", "Toggle Time Submodule" },
       },
       q = { ":bd<cr>", "Close Buffer" },

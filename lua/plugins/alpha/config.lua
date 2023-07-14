@@ -50,17 +50,17 @@ function M.buttons()
 			vim.api.nvim_buf_set_keymap(0, "n", "k", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
 
       -- NvimTree
-			vim.api.nvim_buf_set_keymap(0, "n", "d", ":NvimTreeToggle<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "j", ":NvimTreeToggle<CR>", keybind_opts)
 
       -- Lazy
 			vim.api.nvim_buf_set_keymap(0, "n", "z", ":Lazy<CR>", keybind_opts)
 
       -- Floaterm
-			vim.api.nvim_buf_set_keymap(0, "n", "j", ":FloatermNew lf<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", ";", ":FloatermNew lf<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "f", ":FloatermNew fzf<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "s", ":FloatermNew rg<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "l", ":FloatermNew lazygit<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", ";", ":FloatermNew broot<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "'", ":FloatermNew broot<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "t", ":FloatermNew<CR>", keybind_opts)
 
 			-- Quit
@@ -91,10 +91,10 @@ function M.buttons()
 			val = {
 				"                        │                       ",
 				"   fzf            f    │       terminal      t",
-        "   lazygit        l    │       lf            j",
+        "   lazygit        l    │       lf            ;",
         "鈴  lazy           z    │       search        s",
-				"ﯠ   harpoon        k    │    פּ   broot         ;",
-				"   nvim-tree      d    │                       ",
+				"ﯠ   harpoon        k    │    פּ   broot         '",
+				"   nvim-tree      j    │                       ",
 				"                        │                       ",
 				"                        ▊       Quit          h",
 				"                        │                       ",
@@ -121,7 +121,7 @@ M.section_buttons = { type = "group", val = M.buttons }
 
 function M.info_text()
 	---@diagnostic disable-next-line:undefined-field
-	local datetime = os.date(" %Y-%m-%d   %A")
+	local datetime = os.date(" %A, %d %B %Y")
 	local lazy_stats = require("lazy").stats()
 	local ms = (math.floor(lazy_stats.startuptime * 100 + 0.5) / 100)
 	local total_plugins = "  " .. lazy_stats.loaded .. "/" .. lazy_stats.count .. " in " .. ms .. " ms"

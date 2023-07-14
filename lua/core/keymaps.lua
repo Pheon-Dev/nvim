@@ -182,7 +182,11 @@ local keybind_opts = { silent = true, noremap = true }
 map("n", "<leader>f", ":call fzf#run(fzf#wrap({'source': 'fd --type file --hidden --strip-cwd-prefix --exclude $IGNORE'}))<CR>", keybind_opts)
 
 map("n", "<leader>s", ":FloatermNew rg<CR>", keybind_opts)
-map("n", "<leader>j", ":FloatermNew lf<CR>", keybind_opts)
+map("n", "<leader>;", ":FloatermNew lf<CR>", keybind_opts)
 map("n", "<leader>l", ":FloatermNew lazygit<CR>", keybind_opts)
-map("n", "<leader>;", ":FloatermNew broot<CR>", keybind_opts)
+map("n", "<leader>'", ":FloatermNew broot<CR>", keybind_opts)
 -- map("n", "<leader>t", ":FloatermNew<CR>", keybind_opts)
+
+-- map("n", "x", "<Plug>MoveMotionPlug", {})
+-- map("x", "x", "<Plug>MoveMotionXPlug", {})
+-- map("x", "xx", "<Plug>MoveMotionLinePlug", {})
