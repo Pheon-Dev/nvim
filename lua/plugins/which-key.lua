@@ -117,7 +117,7 @@ return {
         i = { dap.step_into, "Step Into Code" },
         o = { dap.step_over, "Step Over Code" },
         r = { dap.repl.open, "Step Over Code" },
-        t = { dapui.toggle, "Toggle UI" },
+        d = { dapui.toggle, "Toggle UI" },
       },
       e = { ":MurenToggle<cr>", "Muren" },
       h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
