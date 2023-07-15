@@ -4,6 +4,15 @@ local util = require("lspconfig.util")
 local servers = {
 	gopls = {},
 	clangd = {},
+  lua_ls = {
+    settings = {
+      lua = {
+        completion = {
+          callSnippet = "Replace",
+        },
+      }
+    }
+  },
 	-- codelldb = {},
 	-- bashls = {},
 	-- cssls = {},
