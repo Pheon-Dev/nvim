@@ -78,6 +78,8 @@ return {
 
     local oc, crates = pcall(require, "crates")
     if not oc then return end
+    
+    local dap, dapui = require("dap"), require("dapui")
 
     local mappings = {
       -- ["'"] = { ":Alpha<cr>", "Dashboard" },
@@ -108,7 +110,15 @@ return {
           r = { crates.open_repository, "Repository" },
         },
       },
-      d = { ":Alpha<cr>", "Dashboard" },
+      d = {
+        name = "DAP",
+        b = { dap.toggle_breakpoint, "Toggle Breakpoint" },
+        c = { dap.continue, "Launch debug and resume execution" },
+        i = { dap.step_into, "Step Into Code" },
+        o = { dap.step_over, "Step Over Code" },
+        r = { dap.repl.open, "Step Over Code" },
+        t = { dapui.toggle, "Toggle UI" },
+      },
       e = { ":MurenToggle<cr>", "Muren" },
       h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
       j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
