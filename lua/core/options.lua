@@ -123,6 +123,8 @@ vim.g.codeium_disable_bindings = 1
 vim.g.gitblame_highlight_group = "GitBlame"
 vim.g.gitblame_highlight_group = "Blame"
 
+vim.g.rustfmt_autosave = 1
+
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")
 vim.cmd("set nu rnu")
@@ -174,27 +176,27 @@ vim.g.fzf_action = {
   ['ctrl-v'] = 'vsplit',
 }
 
--- Easyclip
-vim.g.EasyClipAutoFormat = 0
-vim.g.EasyClipYankHistorySize = 50
-vim.g.EasyClipShareYanks = 0
-vim.g.EasyClipShowYanksWidth = 80
-vim.g.EasyClipShareYanksFile = ".easyclip"
-vim.g.EasyClipShareYanksDirectory = "$HOME"
-
--- vim.g.EasyClipCopyEnabled = 1
--- vim.g.EasyClipCopyExplicitRegisterToDefault = 0
--- vim.g.EasyClipAlwaysMoveCursorToEndOfPaste = 1
--- vim.g.EasyClipPasteEnabled = 1
--- vim.g.EasyClipUseYanksClipboard = 1
--- vim.g.EasyClipCopyCommand = 'xclip -selection clipboard'
--- vim.g.EasyClipPasteCommand = 'xclip -selection clipboard -o'
--- vim.g.EasyClipShareYanksCommand = 'xclip -selection clipboard -o'
--- vim.g.EasyClipCopyPasteIgnoreList = { "fugitive://.*", "git://.*", "ssh://.*" }
-
-vim.g.EasyClipUseYankDefaults = 1
-vim.g.EasyClipUsePasteDefaults = 1
-vim.g.EasyClipEnableBlackHoleRedirect = 1
-vim.g.EasyClipUsePasteToggleDefaults = 1
-vim.g.EasyClipUseSubstituteDefaults = 0
-vim.g.EasyClipUseCutDefaults = 0
+-- -- Easyclip
+-- vim.g.EasyClipAutoFormat = 0
+-- vim.g.EasyClipYankHistorySize = 50
+-- vim.g.EasyClipShareYanks = 0
+-- vim.g.EasyClipShowYanksWidth = 80
+-- vim.g.EasyClipShareYanksFile = ".easyclip"
+-- vim.g.EasyClipShareYanksDirectory = "$HOME"
+--
+-- -- vim.g.EasyClipCopyEnabled = 1
+-- -- vim.g.EasyClipCopyExplicitRegisterToDefault = 0
+-- -- vim.g.EasyClipAlwaysMoveCursorToEndOfPaste = 1
+-- -- vim.g.EasyClipPasteEnabled = 1
+-- -- vim.g.EasyClipUseYanksClipboard = 1
+-- -- vim.g.EasyClipCopyCommand = 'xclip -selection clipboard'
+-- -- vim.g.EasyClipPasteCommand = 'xclip -selection clipboard -o'
+-- -- vim.g.EasyClipShareYanksCommand = 'xclip -selection clipboard -o'
+-- -- vim.g.EasyClipCopyPasteIgnoreList = { "fugitive://.*", "git://.*", "ssh://.*" }
+--
+-- vim.g.EasyClipUseYankDefaults = 1
+-- vim.g.EasyClipUsePasteDefaults = 1
+-- vim.g.EasyClipEnableBlackHoleRedirect = 1
+-- vim.g.EasyClipUsePasteToggleDefaults = 1
+-- vim.g.EasyClipUseSubstituteDefaults = 0
+-- vim.g.EasyClipUseCutDefaults = 0

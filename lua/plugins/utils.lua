@@ -53,7 +53,7 @@ return {
   {
     "svermeulen/vim-easyclip",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
   },
   {
     "norcalli/nvim-colorizer.lua",
