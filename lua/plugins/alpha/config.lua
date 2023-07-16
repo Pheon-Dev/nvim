@@ -94,7 +94,7 @@ function M.buttons()
         "   lazygit        l    │       lf            ;",
         "鈴  lazy           z    │       search        s",
 				"ﯠ   harpoon        k    │    פּ   broot         '",
-				"   nvim-tree      j    │                       ",
+				"   nvim-tree      j    │                       ",
 				"                        │                       ",
 				"                        ▊       Quit          h",
 				"                        │                       ",
