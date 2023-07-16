@@ -2,7 +2,8 @@ return {
   "nvim-lualine/lualine.nvim",
   enabled = true,
   dependencies = {
-    "Pheon-Dev/pigeon"
+    "Pheon-Dev/pigeon",
+    "Exafunction/codeium.vim",
   },
   event = { "BufReadPost", "BufNewFile" },
   config = function()
