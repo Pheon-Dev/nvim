@@ -192,11 +192,13 @@ return {
       },
       w = {
         name = "Windows",
-        e = { ":WinShift<cr><esc>:WindowsEqualize<cr>", "Window Shift" },
-        h = { ":WinShift left<cr><esc>:WindowsEqualize<cr>", "Shift Left" },
-        j = { ":WinShift down<cr><esc>:WindowsEqualize<cr>", "Shift Down" },
-        k = { ":WinShift up<cr><esc>:WindowsEqualize<cr>", "Shift Up" },
-        l = { ":WinShift right<cr><esc>:WindowsEqualize<cr>", "Shift Right" },
+        w = { ":WinShift<cr>", "Move Window" },
+        q = { ":WindowsEqualize<cr>", "Equalize Windows" },
+        e = { ":WindowsToggleAutowidth<cr>", "Windows Auto Width" },
+        h = { ":WinShift left<cr><esc>:WindowsMaximize<cr>", "Shift Left" },
+        j = { ":WinShift down<cr><esc>:WindowsMaximize<cr>", "Shift Down" },
+        k = { ":WinShift up<cr><esc>:WindowsMaximize<cr>", "Shift Up" },
+        l = { ":WinShift right<cr><esc>:WindowsMaximize<cr>", "Shift Right" },
       },
       x = {
         name = "Trouble",

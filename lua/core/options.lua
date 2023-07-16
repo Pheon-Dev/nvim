@@ -69,6 +69,10 @@ opt.listchars = {
   conceal = "┊",
 }
 
+opt.winwidth = 10
+opt.winminwidth = 10
+opt.equalalways = false
+
 vim.o.showtabline = true
 
 -- vim.g.loaded_gzip = 1

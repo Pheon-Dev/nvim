@@ -6,15 +6,17 @@ map("i", "jj", "<esc>", { noremap = true, silent = true })
 map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
-map("n", "wv", ":vsplit<cr>", { noremap = true, silent = true })
-map("n", "wb", ":split<cr>", { noremap = true, silent = true })
-map("n", "Wv", "<C-w>t<C-w>K", { noremap = true, silent = true })
-map("n", "Wb", "<C-w>t<C-w>H", { noremap = true, silent = true })
+map("n", "wv", ":vsplit<cr><esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
+map("n", "wb", ":split<cr><esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
 
-map("n", "<C-h>", "<C-w>h", { noremap = true, silent = false })
-map("n", "<C-j>", "<C-w>j", { noremap = true, silent = false })
-map("n", "<C-k>", "<C-w>k", { noremap = true, silent = false })
-map("n", "<C-l>", "<C-w>l", { noremap = true, silent = false })
+-- map("n", "wn", "<C-w>w<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
+map("n", "<C-h>", "<C-w>h<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
+map("n", "<C-j>", "<C-w>j<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
+map("n", "<C-k>", "<C-w>k<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
+map("n", "<C-l>", "<C-w>l<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
+
+-- map("n", "wb", "<C-w>t<C-w>K", { noremap = true, silent = true })
+-- map("n", "wv", "<C-w>t<C-w>H", { noremap = true, silent = true })
 
 map("n", ">", ":vertical resize +3<cr>", { noremap = true, silent = true })
 map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
