@@ -7,7 +7,7 @@ return {
       max_time = 1000,
       max_count = 5,
       disable_mouse = true,
-      hint = true,
+      hint = false,
       notification = false,
       allow_different_key = false,
       resetting_keys = {
