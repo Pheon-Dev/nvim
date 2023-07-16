@@ -32,15 +32,9 @@ map("n", "L", "$", { noremap = true, silent = true })
 
 -- Tabs
 map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
-map("n", "tn", ":tabNext<cr>", { noremap = true, silent = true })
-map("n", "tp", ":tabprevious<cr>", { noremap = true, silent = true })
+map("n", "t]", ":tabNext<cr>", { noremap = true, silent = true })
+map("n", "t[", ":tabprevious<cr>", { noremap = true, silent = true })
 -- map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
-
-map("n", "tj", ":MindOpenMain<cr>", { noremap = true, silent = true })
-map("n", "th", ":MindClose<cr>", { noremap = true, silent = true })
-map("n", "tk", ":MindOpenProject<cr>", { noremap = true, silent = true })
-map("n", "ts", ":MindOpenSmartProject<cr>", { noremap = true, silent = true })
-map("n", "tr", ":MindReloadState<cr>", { noremap = true, silent = true })
 
 -- remap
 map("n", "cc", "0D", { noremap = true, silent = true })
