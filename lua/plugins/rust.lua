@@ -165,13 +165,16 @@ return {
   {
     "rust-lang/rust.vim",
     event = { "BufRead *.rs", "BufReadPost" },
-    config = function ()
-      --
+    config = function()
+      vim.g.rustfmt_autosave = 1
     end
   },
   {
     "simrat39/rust-tools.nvim",
     event = { "BufRead *.rs", "BufReadPre" },
+    dependencies = {
+      "neovim/nvim-lspconfig",
+    },
     config = function()
       local rt = require("rust-tools")
 
