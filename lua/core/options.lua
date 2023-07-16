@@ -123,8 +123,9 @@ vim.g.codeium_disable_bindings = 1
 vim.g.gitblame_highlight_group = "GitBlame"
 vim.g.gitblame_highlight_group = "Blame"
 
-vim.g.rustfmt_autosave = 1
+vim.g.virtcolumn_char = "┊" -- char to display the line
 
+vim.cmd("set colorcolumn=80")
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")
 vim.cmd("set nu rnu")
@@ -158,21 +159,21 @@ vim.g.floaterm_titleposition = "left" -- options left, right, center
 vim.g.floaterm_position =
 "center"                              -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
 -- wintype 'float': 'top', 'bottom', 'left', 'right', 'topleft', 'topright', 'bottomleft', 'bottomright', 'center', 'auto'(at the cursor place) default 'center'
-vim.g.floaterm_keymap_toggle = '<leader>`'
-vim.g.floaterm_keymap_new = '``'
-vim.g.floaterm_keymap_next = '`]'
-vim.g.floaterm_keymap_prev = '`['
-vim.g.floaterm_keymap_first = '`h'
-vim.g.floaterm_keymap_last = '`l'
-vim.g.floaterm_keymap_hide = '`k'
-vim.g.floaterm_keymap_show = '`j'
-vim.g.floaterm_keymap_kill = '`;'
+vim.g.floaterm_keymap_toggle = '``'
+vim.g.floaterm_keymap_new = '`n'
+vim.g.floaterm_keymap_next = '`j'
+vim.g.floaterm_keymap_prev = '`k'
+-- vim.g.floaterm_keymap_first = '`h'
+-- vim.g.floaterm_keymap_last = '`l'
+vim.g.floaterm_keymap_hide = '`h'
+vim.g.floaterm_keymap_show = '`l'
+vim.g.floaterm_keymap_kill = "`;"
 
 -- FZF
 vim.g.fzf_layout = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
 vim.g.fzf_action = {
   ['ctrl-t'] = 'tab split',
-  ['ctrl-x'] = 'split',
+  ['ctrl-b'] = 'split',
   ['ctrl-v'] = 'vsplit',
 }
 
