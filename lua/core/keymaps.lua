@@ -6,17 +6,15 @@ map("i", "jj", "<esc>", { noremap = true, silent = true })
 map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
-map("n", "wv", ":vsplit<cr><esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
-map("n", "wb", ":split<cr><esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
+-- map("n", "<C-l>", "<C-w>p", { noremap = true, silent = true })
+map("n", "<A-n>", "<C-w>w", { noremap = true, silent = true })
+map("n", "<A-x>", "<C-w>x", { noremap = true, silent = true })
 
--- map("n", "wn", "<C-w>w<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
-map("n", "<C-h>", "<C-w>h<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
-map("n", "<C-j>", "<C-w>j<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
-map("n", "<C-k>", "<C-w>k<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
-map("n", "<C-l>", "<C-w>l<esc>:WindowsMaximize<cr>", { noremap = true, silent = true })
+map("n", "<A-V>", ":vsplit<cr>", { noremap = true, silent = true })
+map("n", "<A-B>", ":split<cr>", { noremap = true, silent = true })
 
--- map("n", "wb", "<C-w>t<C-w>K", { noremap = true, silent = true })
--- map("n", "wv", "<C-w>t<C-w>H", { noremap = true, silent = true })
+map("n", "<A-J>", "<C-w>t<C-w>K", { noremap = true, silent = true })
+map("n", "<A-K>", "<C-w>t<C-w>H", { noremap = true, silent = true })
 
 map("n", ">", ":vertical resize +3<cr>", { noremap = true, silent = true })
 map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
@@ -105,7 +103,7 @@ vim.keymap.set("n", "dsi", function()
 	-- delete surrounding lines
 	local endBorderLn = vim.api.nvim_buf_get_mark(0, ">")[1] + 1
 	local startBorderLn = vim.api.nvim_buf_get_mark(0, "<")[1] - 1
-	vim.cmd(tostring(endBorderLn) .. " delete") -- delete end first so line index is not shifted
+  vim.cmd(tostring(endBorderLn) .. " delete") -- delete end first so line index is not shifted
 	vim.cmd(tostring(startBorderLn) .. " delete")
 end, { desc = "Delete surrounding indentation" })
 
@@ -133,15 +131,16 @@ map("n", "<S-TAB>", ":bprevious<cr>", { noremap = true, silent = true })
 -- Indenting on Visual Mode
 map("n", "-", "<Plug>GoNSMDown", {})
 map("n", "=", "<Plug>GoNSMUp", {})
-map("v", "H", "<gv", { noremap = true, silent = true })
-map("v", "L", ">gv", { noremap = true, silent = true })
--- map("x", "J", ":move '>+1<cr>gv-gv", { noremap = true, silent = true })
--- map("x", "K", ":move '<-2<cr>gv-gv", { noremap = true, silent = true })
 
 map("x", "H", "<Plug>GoVSMLeft", {})
 map("x", "J", "<Plug>GoVSMDown", {})
 map("x", "K", "<Plug>GoVSMUp", {})
 map("x", "L", "<Plug>GoVSMRight", {})
+
+-- map("v", "H", "<gv", { noremap = true, silent = true })
+-- map("v", "L", ">gv", { noremap = true, silent = true })
+-- map("x", "J", ":move '>+1<cr>gv-gv", { noremap = true, silent = true })
+-- map("x", "K", ":move '<-2<cr>gv-gv", { noremap = true, silent = true })
 
 -- Split Join
 vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
@@ -175,9 +174,10 @@ vim.keymap.set("i", "<C-u>",
 -- Fzf and Floaterm
 local keybind_opts = { silent = true, noremap = true }
 
-map("n", "<leader>f", ":call fzf#run(fzf#wrap({'source': 'fd --type file --hidden --strip-cwd-prefix --exclude $IGNORE'}))<CR>", keybind_opts)
+-- map("n", "<leader>f", ":call fzf#run(fzf#wrap({'source': 'fd --type file --hidden --strip-cwd-prefix --exclude $IGNORE'}))<CR>", keybind_opts)
 
 map("n", "<leader>s", ":FloatermNew rg<CR>", keybind_opts)
+map("n", "<leader>f", ":FloatermNew fzf<CR>", keybind_opts)
 map("n", "<leader>;", ":FloatermNew lf<CR>", keybind_opts)
 map("n", "<leader>l", ":FloatermNew lazygit<CR>", keybind_opts)
 map("n", "<leader>'", ":FloatermNew broot<CR>", keybind_opts)

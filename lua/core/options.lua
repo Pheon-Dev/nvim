@@ -69,11 +69,7 @@ opt.listchars = {
   conceal = "┊",
 }
 
-opt.winwidth = 10
-opt.winminwidth = 10
-opt.equalalways = false
-
-vim.o.showtabline = true
+vim.o.showtabline = 0
 
 -- vim.g.loaded_gzip = 1
 -- vim.g.loaded_zip = 1
@@ -104,7 +100,7 @@ opt.foldenable = true
 opt.foldlevel = 99
 opt.foldlevelstart = 99
 opt.foldcolumn = "0"    -- '1', '0' is not bad
-vim.o.foldnestmax = "1" -- '1', '0' is not bad
+vim.o.foldnestmax = 1 -- '1', '0' is not bad
 
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"

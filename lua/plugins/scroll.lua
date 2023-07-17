@@ -10,9 +10,10 @@ return {
       if not ok then
         return
       end
-
+      -- local ot, ts_ctx = require("treesitter-context")
       local ok, p = pcall(require, "ufo")
       if not ok then return end
+      -- if not ot then return end
 
       neoscroll.setup({
         -- All these keys will be mapped to their corresponding default scrolling animation
@@ -24,27 +25,32 @@ return {
         easing_function = "cubic",   -- quadratic, cubic, quartic, quintic, circular, sine
         pre_hook = function()        -- Function to run before the scrolling animation starts
           p.disable()
+          -- ts_ctx.disable()
           -- vim.cmd [[TSBufToggle highlight]]
         end,
         post_hook = function() -- Function to run after the scrolling animation ends
           p.enable()
+          -- ts_ctx.enable()
           -- vim.cmd [[TSBufToggle highlight]]
         end,
         performance_mode = false, -- Disable "Performance Mode" on all buffers.
       })
 
       -- Syntax scrolling function: `scroll(lines, move_cursor, time[, easing_function_name])`
-      local t = {}
+      local t    = {}
       -- Syntax: t[keys] = {function, {function arguments}}
-      t["wk"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
-      t["wj"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
-      t["wu"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "450" } }
-      t["wd"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "450" } }
-      t["wy"] = { "scroll", { "-0.10", "false", "100" } }
-      t["we"] = { "scroll", { "0.10", "false", "100" } }
-      t["wh"] = { "zt", { "250" } }
-      t["ww"] = { "zz", { "250" } }
-      t["wl"] = { "zb", { "250" } }
+      t['<C-u>'] = { 'scroll', { '-vim.wo.scroll', 'true', '250' } }
+      t['<C-d>'] = { 'scroll', { 'vim.wo.scroll', 'true', '250' } }
+      t['<C-b>'] = { 'scroll', { '-vim.api.nvim_win_get_height(0)', 'true', '450' } }
+      t['<C-f>'] = { 'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '450' } }
+      t['<C-k>'] = { 'scroll', { '-vim.api.nvim_win_get_height(0)', 'true', '300' } }
+      t['<C-j>'] = { 'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '300' } }
+      t['<C-y>'] = { 'scroll', { '-0.10', 'false', '100' } }
+      t['<C-e>'] = { 'scroll', { '0.10', 'false', '100' } }
+      t['<C-h>'] = { 'zt', { '250' } }
+      t['zz'] = { 'zz', { '250' } }
+      t['<C-c>'] = { 'zz', { '250' } }
+      t['<C-l>'] = { 'zb', { '250' } }
 
       require("neoscroll.config").set_mappings(t)
     end,

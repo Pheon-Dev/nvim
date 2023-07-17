@@ -190,16 +190,6 @@ return {
           n = { ":MindOpenSmartProject<cr>", "Open Smart Project" },
           m = { ":MindReloadState<cr>", "Reload State" },
       },
-      w = {
-        name = "Windows",
-        w = { ":WinShift<cr>", "Move Window" },
-        q = { ":WindowsEqualize<cr>", "Equalize Windows" },
-        e = { ":WindowsToggleAutowidth<cr>", "Windows Auto Width" },
-        h = { ":WinShift left<cr><esc>:WindowsMaximize<cr>", "Shift Left" },
-        j = { ":WinShift down<cr><esc>:WindowsMaximize<cr>", "Shift Down" },
-        k = { ":WinShift up<cr><esc>:WindowsMaximize<cr>", "Shift Up" },
-        l = { ":WinShift right<cr><esc>:WindowsMaximize<cr>", "Shift Right" },
-      },
       x = {
         name = "Trouble",
         x = { ":TroubleToggle<cr>", "Toggle" },

@@ -20,7 +20,7 @@ return {
   {
     "junegunn/fzf",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
     -- event = "VeryLazy",
   },
   {
@@ -43,12 +43,12 @@ return {
   {
     "tpope/vim-surround",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
   },
   {
     "tpope/vim-repeat",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
   },
   {
     "svermeulen/vim-easyclip",
@@ -63,7 +63,7 @@ return {
   {
     "mg979/vim-visual-multi",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
   },
   {
     "norcalli/nvim-colorizer.lua",
