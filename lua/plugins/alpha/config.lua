@@ -60,7 +60,7 @@ function M.buttons()
 			vim.api.nvim_buf_set_keymap(0, "n", "f", ":FloatermNew fzf<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "s", ":FloatermNew rg<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "l", ":FloatermNew lazygit<CR>", keybind_opts)
-			vim.api.nvim_buf_set_keymap(0, "n", "'", ":FloatermNew broot<CR>", keybind_opts)
+			vim.api.nvim_buf_set_keymap(0, "n", "b", ":FloatermNew broot<CR>", keybind_opts)
 			vim.api.nvim_buf_set_keymap(0, "n", "t", ":FloatermNew<CR>", keybind_opts)
 
 			-- Quit
@@ -93,7 +93,7 @@ function M.buttons()
 				"   fzf            f    │       terminal      t",
         "   lazygit        l    │       lf            ;",
         "鈴  lazy           z    │       search        s",
-				"ﯠ   harpoon        k    │    פּ   broot         '",
+				"ﯠ   harpoon        k    │    פּ   broot         b",
 				"   nvim-tree      j    │                       ",
 				"                        │                       ",
 				"                        ▊       Quit          h",
