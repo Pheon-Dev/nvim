@@ -70,6 +70,7 @@ local M = {
   },
   {
     "windwp/nvim-ts-autotag",
+    enabled = true,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       local filetypes = {
