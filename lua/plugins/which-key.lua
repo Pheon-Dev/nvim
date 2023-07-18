@@ -119,7 +119,6 @@ return {
         r = { dap.repl.open, "Step Over Code" },
         d = { dapui.toggle, "Toggle UI" },
       },
-      e = { ":MurenToggle<cr>", "Muren" },
       h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
       j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
