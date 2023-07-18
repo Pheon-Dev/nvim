@@ -50,7 +50,15 @@ return {
         ["<LEFT>"] = { "", "i" },
         ["<RIGHT>"] = { "", "i" }
       },
-      disabled_filetypes = { "qf", "netrw", "lazy", "mason", "NvimTree" },
+      disabled_filetypes = {
+        "qf",
+        "netrw",
+        "lazy",
+        "mason",
+        "NvimTree",
+        "help",
+        "floaterm",
+      },
     }
     require("hardtime").setup(config)
   end
