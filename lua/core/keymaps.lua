@@ -90,21 +90,21 @@ keymap({ "o", "x" }, "am", "<cmd>lua require('various-textobjs').chainMember(fal
 keymap({ "o", "x" }, "gw", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>")
 keymap({ "o", "x" }, "gW", "<cmd>lua require('various-textobjs').restOfWindow()<CR>")
 vim.keymap.set("n", "dsi", function()
-	-- select inner indentation
-	require("various-textobjs").indentation(true, true)
+  -- select inner indentation
+  require("various-textobjs").indentation(true, true)
 
-	-- plugin only switches to visual mode when textobj found
-	local notOnIndentedLine = vim.fn.mode():find("V") == nil
-	if notOnIndentedLine then return end
+  -- plugin only switches to visual mode when textobj found
+  local notOnIndentedLine = vim.fn.mode():find("V") == nil
+  if notOnIndentedLine then return end
 
-	-- dedent indentation
-	vim.cmd.normal { "<" , bang = true }
+  -- dedent indentation
+  vim.cmd.normal { "<", bang = true }
 
-	-- delete surrounding lines
-	local endBorderLn = vim.api.nvim_buf_get_mark(0, ">")[1] + 1
-	local startBorderLn = vim.api.nvim_buf_get_mark(0, "<")[1] - 1
+  -- delete surrounding lines
+  local endBorderLn = vim.api.nvim_buf_get_mark(0, ">")[1] + 1
+  local startBorderLn = vim.api.nvim_buf_get_mark(0, "<")[1] - 1
   vim.cmd(tostring(endBorderLn) .. " delete") -- delete end first so line index is not shifted
-	vim.cmd(tostring(startBorderLn) .. " delete")
+  vim.cmd(tostring(startBorderLn) .. " delete")
 end, { desc = "Delete surrounding indentation" })
 
 -- todo-comments
@@ -181,7 +181,10 @@ map("n", "<leader>f", ":FloatermNew fzf<CR>", keybind_opts)
 map("n", "<leader>;", ":FloatermNew lf<CR>", keybind_opts)
 map("n", "<leader>l", ":FloatermNew lazygit<CR>", keybind_opts)
 map("n", "<leader>'", ":FloatermNew broot<CR>", keybind_opts)
--- map("n", "<leader>t", ":FloatermNew<CR>", keybind_opts)
+-- map("n", "<C-n>", ":FloatermNew<CR>", keybind_opts)
+
+map("n", "<leader>e", ":MurenToggle<cr>", keybind_opts)
+map("v", "<leader>e", ":MurenToggle<cr>", keybind_opts)
 
 -- map("n", "x", "<Plug>MoveMotionPlug", {})
 -- map("x", "x", "<Plug>MoveMotionXPlug", {})
