@@ -31,8 +31,8 @@ return {
 			show_icons = true,
 			show_current = false, -- Include current buffer in the list
 			show_modified = true, -- Show buffer modified indicator
-			modified_icon = "⬤", -- Character to use as modified indicator
-			grayout_current = true, -- Wheter to gray out current buffer entry
+			modified_icon = "", -- Character to use as modified indicator
+			grayout_current = true, -- Whether to gray out current buffer entry
 			force_delete = {}, -- List of filetypes / buftypes to use
 			-- 'bdelete!' on, e.g. { 'terminal' }
 			filter = nil, -- Function taking bufnr as parameter,
