@@ -1,7 +1,7 @@
 return {
   "Pocco81/auto-save.nvim",
   event = { "BufReadPost", "BufNewFile" },
-  enabled = true,
+  enabled = false,
   config = function()
     require("auto-save").setup({
       enabled = true,        -- start auto-save when the plugin is loaded (i.e. when your package manager loads it)
@@ -16,6 +16,7 @@ return {
       -- function that determines whether to save the current buffer or not
       -- return true: if buffer is ok to be saved
       -- return false: if it's not ok to be saved
+
       condition = function(buf)
         local fn = vim.fn
         local utils = require("auto-save.utils.data")
