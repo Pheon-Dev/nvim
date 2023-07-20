@@ -52,7 +52,7 @@ return {
         labels = "asdfghjklqwertyuiopzxcvbnm",
         search = {
           -- search/jump in all windows
-          multi_window = true,
+          multi_window = false,
           -- search direction
           forward = true,
           -- when `false`, find only matches in the given direction
@@ -69,12 +69,13 @@ return {
           --   end,
           mode = "exact",
           -- behave like `incsearch`
-          incremental = false,
+          incremental = true,
           -- Excluded filetypes and custom window filters
           ---@type (string|fun(win:window))[]
           exclude = {
             "notify",
             "cmp_menu",
+            "alpha",
             "noice",
             "flash_prompt",
             function(win)
