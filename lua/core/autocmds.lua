@@ -1,10 +1,10 @@
 -- Igone TextChangedI,TextChange events
 vim.cmd([[
   " set ei=TextChangedI
-  autocmd User targets#mappings#user call targets#mappings#extend({
-    " \ 'b': {},
-    " \ 'B': {},
-    \ })
+  " autocmd User targets#mappings#user call targets#mappings#extend({
+  " \ 'b': {},
+  " \ 'B': {},
+  " \ })
   ]])
 
 local function augroup(name)
