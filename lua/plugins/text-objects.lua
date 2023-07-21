@@ -1,18 +1,52 @@
-local M = {}
+local M = {
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    enabled = true
+  },
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    enabled = true,
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      useDefaultKeymaps = true,
+    },
+    config = function()
+      require("various-textobjs").setup({
+        lookForwardSmall = 5,
+        lookForwardBig = 15,
+        useDefaultKeymaps = true,
+        -- disabledKeymaps = { "ai", "ii", "aI", "iI" },
+        disabledKeymaps = {
+          "L",  -- vu
+          "r",  -- ri
+          "R",  -- rp
+          "in", -- ir
+          "il",
+          "ai",
+          "ii",
+          -- "aI",
+          -- "iI",
+          "an", -- deprecated
+        },
+      })
+    end,
+  },
+  {
+    "glts/vim-textobj-comment",
+    enabled = true,
+    keys = {
+      { "ic", mode = { "o", "x" }, desc = "Select comment block" },
+      { "ac", mode = { "o", "x" }, desc = "Select comment block" },
+    },
+    dependencies = { "kana/vim-textobj-user" },
+  },
+  {
+    "wellle/targets.vim",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+  },
 
-local function starts_with(str, start)
-  return str:sub(1, #start) == start
-end
-
-local function treesitter_selection_mode(info)
-  -- * query_string: eg '@function.inner'
-  -- * method: eg 'v' or 'o'
-  --print(info['method'])		-- visual, operator-pending
-  if starts_with(info["query_string"], "@function.") then
-    return "V"
-  end
-  return "v"
-end
+}
 
 M.textobjects = {
   select = {
