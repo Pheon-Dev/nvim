@@ -1,6 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  -- event = "VeryLazy",
+  event = { "BufReadPost", "BufNewFile" },
+  enabled = true,
   cmd = "NvimTreeToggle",
   config = function()
     local ok, _ = pcall(require, "nvim-tree")
@@ -110,7 +111,7 @@ return {
     end
 
     local width = math.floor(vim.o.columns * 0.2)
-    local height = math.floor(vim.o.lines * 0.6)
+    local height = math.floor(vim.o.lines * 0.90)
     local gh = vim.api.nvim_list_uis()[1].height
     local gw = vim.api.nvim_list_uis()[1].width
 
@@ -162,7 +163,7 @@ return {
             width = width,
             height = height,
             row = (gh - height) * 0.5,
-            col = (gw - width) * 0.5,
+            col = (gw - width) * 0.95,
           },
         },
       },
@@ -215,8 +216,8 @@ return {
               open = "",
               symlink = "",
               symlink_open = "",
-              arrow_open = "", -- ○
-              arrow_closed = "", -- ●
+              arrow_open = "", -- ○
+              arrow_closed = "", -- ●
             },
             git = {
               unstaged = "∗",

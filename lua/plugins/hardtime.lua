@@ -1,27 +1,65 @@
 return {
-	"m4xshen/hardtime.nvim",
-	event = "BufReadPre",
-	opts = {},
-	config = function()
-		require("hardtime").setup({
-			max_time = 1000,
-			max_count = 5,
-			disable_mouse = true,
-			hint = true,
-			allow_different_key = false,
-      resetting_keys = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "c", "d", "x", "X", "p", "P" },
-			-- restricted_keys = { "h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>" },
-			restricted_keys = { "h", "j", "k", "l" },
-			hint_keys = { "^", "$", "a", "i", "d", "y", "c", "l" },
-			-- disabled_keys = { "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>" },
-			disabled_filetypes = {
+  "m4xshen/hardtime.nvim",
+  event = { "BufReadPost", "BufNewFile" },
+  enabled = true,
+  config = function()
+    local config = {
+      max_time = 1000,
+      max_count = 5,
+      disable_mouse = true,
+      hint = false,
+      notification = false,
+      allow_different_key = false,
+      resetting_keys = {
+        ["1"] = { "n", "x" },
+        ["2"] = { "n", "x" },
+        ["3"] = { "n", "x" },
+        ["4"] = { "n", "x" },
+        ["5"] = { "n", "x" },
+        ["6"] = { "n", "x" },
+        ["7"] = { "n", "x" },
+        ["8"] = { "n", "x" },
+        ["9"] = { "n", "x" },
+        ["c"] = { "n" },
+        ["C"] = { "n" },
+        ["d"] = { "n" },
+        ["x"] = { "n" },
+        ["X"] = { "n" },
+        ["y"] = { "n" },
+        ["Y"] = { "n" },
+        ["p"] = { "n" },
+        ["P"] = { "n" },
+      },
+      restricted_keys = {
+        ["h"] = { "n", "x" },
+        ["j"] = { "n", "x" },
+        ["k"] = { "n", "x" },
+        ["l"] = { "n", "x" },
+        ["-"] = { "n", "x" },
+        ["+"] = { "n", "x" },
+        ["gj"] = { "n", "x" },
+        ["gk"] = { "n", "x" },
+        ["<CR>"] = { "n", "x" },
+        ["<C-M>"] = { "n", "x" },
+        ["<C-N>"] = { "n", "x" },
+        ["<C-P>"] = { "n", "x" },
+      },
+      disabled_keys = {
+        ["<UP>"] = { "", "i" },
+        ["<DOWN>"] = { "", "i" },
+        ["<LEFT>"] = { "", "i" },
+        ["<RIGHT>"] = { "", "i" }
+      },
+      disabled_filetypes = {
         "qf",
         "netrw",
-        "NvimTree",
         "lazy",
         "mason",
-        "harpoon",
+        "NvimTree",
+        "help",
+        "floaterm",
       },
-		})
-	end,
+    }
+    require("hardtime").setup(config)
+  end
 }

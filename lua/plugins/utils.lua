@@ -1,58 +1,171 @@
 return {
   "nvim-lua/plenary.nvim",
-
-  "Pheon-Dev/harpoon",
-  -- "ThePrimeagen/harpoon",
   {
-    "booperlv/nvim-gomove",
-    event = "BufReadPre",
-    config = function()
-      require("gomove").setup({
-        -- whether or not to map default key bindings, (true/false)
-        map_defaults = false,
-        -- whether or not to reindent lines moved vertically (true/false)
-        reindent = true,
-        -- whether or not to undojoin same direction moves (true/false)
-        undojoin = true,
-        -- whether to not to move past end column when moving blocks horizontally, (true/false)
-        move_past_end_col = false,
-      })
-    end,
-  },
-  { "kevinhwang91/nvim-hlslens", config = true },
-
-  -- { "ckipp01/stylua-nvim" },
-
-  {
-    "kylechui/nvim-surround",
-    config = function()
-      require("nvim-surround").setup()
-
---           Old text                    Command         New text
--- --------------------------------------------------------------------------------
---     surr*ound_words             ysiw)           (surround_words)
---     *make strings               ys$"            "make strings"
---     [delete ar*ound me!]        ds]             delete around me!
---     remove <b>HTML t*ags</b>    dst             remove HTML tags
---     'change quot*es'            cs'"            "change quotes"
---     <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
---     delete(functi*on calls)     dsf             function calls
-
-    end,
+    "junegunn/fzf",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
+    -- event = "VeryLazy",
   },
   {
-    "xiyaowong/virtcolumn.nvim",
-    event = "BufReadPre",
+    "voldikss/vim-floaterm",
+    event = "VeryLazy",
+    enabled = true,
+  },
+  {
+    "Pheon-Dev/harpoon",
+    -- "ThePrimeagen/harpoon",
+    enabled = true,
   },
   {
     "utilyre/sentiment.nvim",
-    event = "BufReadPre",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
     config = function()
       require("sentiment").setup({})
     end,
   },
   {
-    "mg979/vim-visual-multi",
-    event = "BufReadPre",
+    "tpope/vim-surround",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
   },
+  {
+    "tpope/vim-repeat",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
+  },
+  {
+    "svermeulen/vim-easyclip",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
+  },
+  {
+    "xiyaowong/virtcolumn.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+  },
+  {
+    "mg979/vim-visual-multi",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+    config = function()
+      require("colorizer").setup()
+    end,
+  },
+  {
+    "Exafunction/codeium.vim",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+    config = function()
+    end,
+  },
+  {
+    "rcarriga/nvim-notify",
+    enabled = true,
+    event = "VeryLazy",
+    config = function()
+      require("notify").setup({
+        background_colour = "Normal",
+        fps = 30,
+        icons = {
+          DEBUG = "",
+          ERROR = "",
+          INFO = "",
+          TRACE = "✎",
+          WARN = "",
+        },
+        level = 2,
+        -- minimum_width = 50,
+        render = "minimal", -- compact, minimal, simple, default
+        stages = "slide",
+        top_down = true,
+        timeout = 3000,
+        max_height = function()
+          return math.floor(vim.o.lines * 0.75)
+        end,
+        max_width = function()
+          return math.floor(vim.o.columns * 0.35)
+        end,
+      })
+    end,
+  },
+
+  {
+    'Wansmer/treesj',
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+    -- keys = { '<space>m', '<space>j', '<space>s' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      local tsj = require('treesj')
+
+      local langs = { --[[ configuration for languages ]] }
+
+      tsj.setup({
+        -- Use default keymaps
+        -- (<space>m - toggle, <space>j - join, <space>s - split)
+        use_default_keymaps = false,
+
+        -- Node with syntax error will not be formatted
+        check_syntax_error = true,
+
+        -- If line after join will be longer than max value,
+        -- node will not be formatted
+        max_join_length = 120,
+
+        -- hold|start|end:
+        -- hold - cursor follows the node/place on which it was called
+        -- start - cursor jumps to the first symbol of the node being formatted
+        -- end - cursor jumps to the last symbol of the node being formatted
+        cursor_behavior = 'hold',
+
+        -- Notify about possible problems or not
+        notify = true,
+        langs = langs,
+
+        -- Use `dot` for repeat action
+        dot_repeat = true,
+      })
+    end,
+  },
+
+  -- better vim.ui
+
+  {
+    "stevearc/dressing.nvim",
+    init = function()
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.ui.select = function(...)
+        require("lazy").load({ plugins = { "dressing.nvim" } })
+        return vim.ui.select(...)
+      end
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.ui.input = function(...)
+        require("lazy").load({ plugins = { "dressing.nvim" } })
+        return vim.ui.input(...)
+      end
+    end,
+    config = function()
+      require("dressing").setup {
+        input = {
+          override = function(conf)
+            conf.col = -1
+            conf.row = 0
+            return conf
+          end,
+        },
+      }
+    end
+  },
+
+  -- icons
+  "nvim-tree/nvim-web-devicons",
+
+  -- ui components
+  "nvim-lua/popup.nvim",
 }

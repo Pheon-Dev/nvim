@@ -1,22 +1,17 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "Pheon-Dev/pigeon" },
-  event = { "BufReadPre", "BufNewFile" },
+  enabled = true,
+  dependencies = {
+    "Pheon-Dev/pigeon",
+    "Exafunction/codeium.vim",
+  },
+  event = { "BufReadPost", "BufNewFile" },
   config = function()
     local ok, lualine = pcall(require, "lualine")
-    local pg, pigeon = pcall(require, "pigeon")
     local on, noice = pcall(require, "noice")
 
-    if not ok then
-      vim.notify("Lualine didn't load properly!", "error")
-    end
-
-    if not on then
-      vim.notify("Noice didn't load properly!", "error")
-    end
-
-    if not pg then
-      vim.notify("Pigeon didn't load properly!", "error")
+    if not ok or not on then
+      vim.notify("Plugins didn't load properly!", "error")
     end
 
     local colors = {
@@ -26,7 +21,8 @@ return {
       bg3 = "#565f89",
       grey = "#a9a1e1",
       fg = "#bd93f9",
-      yellow = "#f1fa8c",
+      yellow = "#ffff0f",
+      yellow1 = "#f0ff8c",
       cyan = "#008080",
       darkblue = "#081633",
       green = "#82cf00",
@@ -59,31 +55,40 @@ return {
     -- Config
     local config = {
       options = {
-        icons_enabled = true,
-        globalstatus = true,
-        disabled_filetypes = { statusline = { "alpha" }, winbar = { "alpha" } },
-        component_separators = "",
+        icons_enabled = false,
+        disabled_filetypes = { tabline = { "alpha" }, statusline = { "alpha" } },
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+
+        ignore_focus = {}, -- If current filetype is in this list it'll
+        -- always be drawn as inactive statusline
+        -- and the last window will be drawn as active statusline.
+        -- for example if you don't want statusline of
+        -- your file tree / sidebar window to have active
+        -- statusline you can add their filetypes here.
+
+        always_divide_middle = true, -- When set to true, left sections i.e. 'a','b' and 'c'
+        -- can't take over the entire statusline even
+        -- if neither of 'x', 'y' or 'z' are present.
+
+        globalstatus = true, -- enable global statusline (have a single statusline
+        -- at bottom of neovim instead of one for  every window).
+        -- This feature is only available in neovim 0.7 and higher.
+
+        refresh = {          -- sets how often lualine should refresh it's contents (in ms)
+          statusline = 1000, -- The refresh option sets minimum time that lualine tries
+          tabline = 1000,    -- to maintain between refresh. It's not guarantied if situation
+          -- winbar = 1000      -- arises that lualine needs to refresh itself before this time
+          -- it'll do it.
+
+          -- Also you can force lualine's refresh by calling refresh function
+          -- like require('lualine').refresh()
+        },
         theme = {
           normal = { c = { fg = colors.fg, bg = colors.bg } },
         },
       },
       statusline = {},
-      winbar = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_y = {},
-        lualine_z = {},
-        lualine_c = {},
-        lualine_x = {},
-      },
-      inactive_winbar = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_y = {},
-        lualine_z = {},
-        lualine_c = {},
-        lualine_x = {},
-      },
       sections = {
         lualine_a = {},
         lualine_b = {},
@@ -92,27 +97,35 @@ return {
         lualine_c = {},
         lualine_x = {},
       },
+      tabline = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_y = {},
+        lualine_z = {},
+        lualine_c = {},
+        lualine_x = {},
+      },
+      inactive_tabline = {},
+      extensions = {}
     }
 
-    local function wins_left(component)
-      table.insert(config.winbar.lualine_c, component)
-      table.insert(config.inactive_winbar.lualine_c, component)
-    end
-
-    local function wins_right(component)
-      table.insert(config.winbar.lualine_x, component)
-      table.insert(config.inactive_winbar.lualine_x, component)
-    end
-
-    local function ins_left(component)
+    local function sec_left(component)
       table.insert(config.sections.lualine_c, component)
     end
 
-    local function ins_right(component)
+    local function sec_right(component)
       table.insert(config.sections.lualine_x, component)
     end
 
-    local theme = require("config.colors")
+    local function tab_left(component)
+      table.insert(config.tabline.lualine_c, component)
+    end
+
+    local function tab_right(component)
+      table.insert(config.tabline.lualine_x, component)
+    end
+
+    local theme = require("core.colors")
     local my_colors = {
       n = theme.color37, -- "#7aa2f7",
       i = theme.color89, -- "#bd93f9",
@@ -170,19 +183,143 @@ return {
       gui = "bold",
     }
 
-    --[[ WINBAR ]]
-    wins_left({
+    -- Tabline
+    local tab_color = "Keyword"
+
+    -- datetime
+    tab_left({
+      function()
+        local enabled = require("pigeon.config").options.datetime.time.enabled
+        return enabled and require("pigeon.datetime").current_time() or ""
+      end,
+      color = tab_color
+    })
+
+    tab_left({
+      function()
+        local enabled = require("pigeon.config").options.datetime.day.enabled
+        return enabled and require("pigeon.datetime").current_day() or ""
+      end,
+      color = tab_color
+    })
+
+    -- sep
+    tab_left({
+      function()
+        return "%="
+      end,
+    })
+
+    -- buffers
+    tab_left({
+      'buffers',
+      show_filename_only = false,     -- Shows shortened relative path when set to false.
+      hide_filename_extension = true, -- Hide filename extension when set to true.
+      show_modified_status = true,    -- Shows indicator when the buffer is modified.
+      mode = 1,                       -- 0: Shows buffer name
+      buffers_color = {
+        active = "Keyword",           -- Color for active buffer.
+        inactive = "Comment",         -- Color for inactive buffer.
+      },
+      symbols = {
+        modified = '',       -- Text to show when the buffer is modified
+        alternate_file = '', -- Text to show to identify the alternate file
+        directory = '',      -- Text to show when the buffer is a directory
+      },
+    })
+
+    -- lazy updates
+    tab_right({
+      require("lazy.status").updates,
+      cond = require("lazy.status").has_updates,
+      -- color = { fg = "#ff9e64" },
+      color = tab_color
+    })
+
+    -- wifi
+    tab_right({
+      function()
+        local enabled = require("pigeon.config").options.internet.enabled
+        return enabled and require("pigeon.internet").wifi() or ""
+      end,
+      color = tab_color
+      -- color = { fg = theme.color89 },
+    })
+
+    -- ram
+    tab_right({
+      function()
+        local enabled = require("pigeon.config").options.ram.enabled
+        return enabled and require("pigeon.ram").ram() or ""
+      end,
+      color = tab_color
+      -- color = { fg = theme.color26 },
+    })
+
+    -- battery
+    tab_right({
+      function()
+        local enabled = require("pigeon.config").options.battery.enabled
+        return enabled and require("pigeon.battery").battery() or ""
+      end,
+      -- color = { fg = colors.orange3 },
+      color = tab_color
+    })
+
+    -- sep
+    tab_right({
+      function()
+        return "|"
+      end,
+      color = tab_color
+    })
+
+    -- tabs
+    tab_right({
+      'tabs',
+      max_length = vim.o.columns / 3, -- Maximum width of tabs component.
+      mode = 0,                       -- 0: Shows tab_nr
+      use_mode_colors = false,
+      tabs_color = {
+        -- Same values as the general color option can be used here.
+        active = "Keyword",   -- Color for active tab.
+        inactive = "Comment", -- Color for inactive tab.
+      },
+      fmt = function(name, context)
+        local buflist = vim.fn.tabpagebuflist(context.tabnr)
+        local winnr = vim.fn.tabpagewinnr(context.tabnr)
+        local bufnr = buflist[winnr]
+        local mod = vim.fn.getbufvar(bufnr, '&mod')
+
+        return name .. (mod == 1 and ' +' or '')
+      end
+    })
+
+    -- Statusline
+    -- mode
+    sec_left({
+      -- "mode",
       function()
         return mode[vim.fn.mode()]
       end,
       -- "mode",
       color = function()
-        return { fg = mode_color[vim.fn.mode()] }
+        return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
       end,
       -- padding = { right = 1, left = 3 },
     })
 
-    wins_left({
+    -- filetype
+    sec_left({
+      "filetype",
+      color = function()
+        return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
+      end,
+      -- padding = { right = 1, left = 3 },
+    })
+
+    -- filename
+    sec_left({
       "filename",
       cond = conditions.buffer_not_empty,
       color = { fg = colors.grey },
@@ -194,34 +331,59 @@ return {
       -- 3: Absolute path, with tilde as the home directory
 
       shorting_target = 40, -- Shortens path to leave 40 spaces in the window
-      -- for other components. (terrible name, any suggestions?)
       symbols = {
-        modified = "", -- Text to show when the file is modified.
+        -- for other components. (terrible name, any suggestions?)
         readonly = "", -- Text to show when the file is non-modifiable or readonly.
+        modified = "", -- Text to show when the file is modified.
         unnamed = "ﲃ", -- Text to show for unnamed buffers.
         newfile = "", -- Text to show for newly created file before first write
       },
     })
 
-    wins_left({
+    -- search count
+    sec_left({
+      "searchcount",
+      color = { fg = colors.green1 },
+    })
+
+    -- sep
+    sec_left({
       function()
         return "%="
       end,
     })
 
-    wins_right({
+    -- macros etc
+    if on then
+      sec_left({
+        noice.api.statusline.mode.get,
+        cond = noice.api.statusline.mode.has,
+        color = { fg = colors.orange1 },
+        padding = { right = 1, left = 1 },
+      })
+    end
+
+    -- diagnosticcs
+    sec_right({
       "diagnostics",
       sources = { "nvim_diagnostic" },
-      symbols = { error = " ", warn = " ", info = " " },
+      symbols = {
+        error = " ",
+        warn = " ",
+        info = " ",
+        question = " ",
+        hint = " ",
+      },
       diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },
         color_info = { fg = colors.cyan },
       },
-      padding = { right = 1, left = 2 },
+      padding = { right = 1, left = 1 },
     })
 
-    wins_right({
+    -- git diffs
+    sec_right({
       "diff",
       symbols = { added = " ", modified = "柳", removed = " " },
       diff_color = {
@@ -230,178 +392,40 @@ return {
         removed = { fg = colors.red },
       },
       cond = conditions.hide_in_width,
-      padding = { right = 2, left = 1 },
+      padding = { right = 1, left = 1 },
     })
 
-    wins_right({
-      function()
-        return "  "
-      end,
-    })
-
-    -- Statusline
-    ins_left({
-      function()
-        local enabled = require("pigeon.config").options.hostname.enabled
-        local hostname = require("pigeon.hostname").hostname()
-
-        return enabled and hostname or ""
-      end,
-      color = { fg = theme.color20 },
-    })
-    ins_left({
-      "filetype",
-      color = function()
-        return { fg = mode_color[vim.fn.mode()] }
-      end,
-      icon_only = false,
-      icon = { align = "left" },
-      padding = { right = 1, left = 3 },
-    })
-
-    ins_left({
-      function()
-        return "%="
-      end,
-    })
-
-    -- ins_right({
-    --   function()
-    --     local enabled = require("pigeon.config").options.cpu.enabled
-    --     local cpu = require("pigeon.cpu")
-    --
-    --
-    --     return enabled and cpu.cpu_load() or ""
-    --   end,
-    --   color = { fg = theme.color20 },
-    -- })
-
-    ins_right({
-      function()
-        local enabled = require("pigeon.config").options.datetime.enabled
-        local datetime = require("pigeon.datetime")
-        local time_enabled = require("pigeon.config").options.datetime.time.enabled
-
-        local time = time_enabled and datetime.current_time() or ""
-
-        return enabled and time or ""
-      end,
-      color = { fg = theme.color20 },
-    })
-
-    ins_right({
-      function()
-        local enabled = require("pigeon.config").options.datetime.enabled
-        local datetime = require("pigeon.datetime")
-        local date_enabled = require("pigeon.config").options.datetime.date.enabled
-
-        local date = date_enabled and datetime.current_date() or ""
-
-        return enabled and date or ""
-      end,
-      color = { fg = theme.color73 },
-    })
-
-    ins_right({
-      function()
-        local enabled = require("pigeon.config").options.datetime.enabled
-        local datetime = require("pigeon.datetime")
-        local day_enabled = require("pigeon.config").options.datetime.day.enabled
-
-        local day = day_enabled and datetime.current_day() or ""
-
-        return enabled and day or ""
-      end,
-      color = { fg = theme.color74 },
-    })
-
-    ins_right({
-      function()
-        local enabled = require("pigeon.config").options.battery.enabled
-        local battery = require("pigeon.battery")
-
-        local capacity = battery.battery_capacity()
-        local charge = battery.battery_charge()
-        local status = battery.battery_status()
-
-        if enabled then
-          return status .. capacity .. charge
-        else
-          return ""
-        end
-      end,
-      color = { fg = colors.orange3 },
-    })
-
-    ins_right({
-      function()
-        local enabled = require("pigeon.config").options.internet.enabled
-        local internet = require("pigeon.internet")
-
-        local wifi = internet.wifi_status()
-        local signal = internet.bit_rate()
-        local essid = internet.wifi_essid()
-
-        if enabled then
-          return essid .. " " .. wifi .. " " .. signal
-        else
-          return ""
-        end
-      end,
-      color = { fg = theme.color89 },
-    })
-
-    ins_right({
-      function()
-        local enabled = require("pigeon.config").options.ram.enabled
-        local ram = require("pigeon.ram")
-        local perc_enabled = require("pigeon.config").options.ram.show_percentage
-
-        local total_ram = ram.total_ram()
-        local used_ram = ram.used_ram()
-        local perc_ram = ram.perc_ram()
-        local icon = ram.ram_icon
-
-        local result = icon .. " " .. used_ram .. "/" .. total_ram .. " "
-        local perc_result = icon .. " " .. used_ram .. "/" .. total_ram .. " " .. "(" .. perc_ram .. ")"
-
-        if enabled then
-          return perc_enabled and perc_result or result
-        else
-          return ""
-        end
-      end,
-      color = { fg = theme.color26 },
-    })
-
-
-    if on then
-      ins_left({
-        noice.api.statusline.mode.get,
-        cond = noice.api.statusline.mode.has,
-        color = { fg = colors.orange1 },
-        padding = { right = 1, left = 1 },
-      })
-    end
-
-    ins_right({
-      require("lazy.status").updates,
-      cond = require("lazy.status").has_updates,
-      color = { fg = "#ff9e64" },
-    })
-
-    ins_right({
+    sec_right({
       function()
         return "﯑ %3{codeium#GetStatusString()}"
       end,
       color = { fg = colors.grey },
     })
+    sec_right({
+      "filesize",
+      cond = conditions.buffer_not_empty,
+      color = { fg = colors.bg3 },
+    })
 
-    ins_right({
+    sec_right({
+      "location",
+      color = { fg = colors.bg3 },
+    })
+    sec_right({
+      function()
+        return ""
+      end,
+      color = "Comment"
+      -- color = { fg = colors.yellow, bg = colors.bg },
+    })
+
+    -- branch
+    sec_right({
       "branch",
-      icon = { "", align = "left" },
-      color = { fg = colors.yellow },
-      padding = { right = 1, left = 1 },
+      -- icon = { "", align = "left" },
+      -- color = { fg = colors.yellow, ng = colors.bg },
+      color = "Comment",
+      padding = { right = 1, left = 0 },
     })
 
     lualine.setup(config)

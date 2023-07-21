@@ -6,7 +6,7 @@ return {
 	-- },
 	{
 		"folke/trouble.nvim",
-		event = "BufReadPre",
+		-- event = "BufReadPre",
 		cmd = { "TroubleToggle", "Trouble" },
 		config = function()
 			require("trouble").setup({

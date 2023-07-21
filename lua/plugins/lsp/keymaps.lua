@@ -12,18 +12,18 @@ function M.on_attach(client, buffer)
   self:map("gI", "Telescope lsp_implementations", { desc = "Goto Implementation" })
   self:map("gt", "Telescope lsp_type_definitions", { desc = "Goto Type Definition" })
   self:map("K", vim.lsp.buf.hover, { desc = "Hover" })
-  self:map("[d", M.diagnostic_goto(true), { desc = "Next Diagnostic" })
-  self:map("]d", M.diagnostic_goto(false), { desc = "Prev Diagnostic" })
-  self:map("]e", M.diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
-  self:map("[e", M.diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
-  self:map("]w", M.diagnostic_goto(true, "WARNING"), { desc = "Next Warning" })
-  self:map("[w", M.diagnostic_goto(false, "WARNING"), { desc = "Prev Warning" })
+  self:map("]d", M.diagnostic_goto(true), { desc = "Next Diagnostic" })
+  self:map("[d", M.diagnostic_goto(false), { desc = "Prev Diagnostic" })
+  -- self:map("]e", M.diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+  -- self:map("[e", M.diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+  -- self:map("]w", M.diagnostic_goto(true, "WARNING"), { desc = "Next Warning" })
+  -- self:map("[w", M.diagnostic_goto(false, "WARNING"), { desc = "Prev Warning" })
 
 	vim.api.nvim_buf_set_option(buffer, "formatexpr", "v:lua.vim.lsp.formatexpr()")
 	vim.api.nvim_buf_set_option(buffer, "omnifunc", "v:lua.vim.lsp.omnifunc")
 	vim.api.nvim_buf_set_option(buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
 
-  vim.keymap.set({ 'n' }, '<C-s>', function()
+  vim.keymap.set({ 'n' }, '<C-g>', function()
     require('lsp_signature').toggle_float_win()
   end, { silent = true, noremap = true, desc = 'toggle signature' })
 
@@ -33,38 +33,13 @@ function M.on_attach(client, buffer)
 
   self:map("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", mode = { "n", "v" }, has = "codeAction" })
 
-  local format = require("plugins.lsp.format").format
-  self:map("<leader>cf", format, { desc = "Format Document", has = "documentFormatting" })
-  self:map("<leader>cf", format, { desc = "Format Range", mode = "v", has = "documentRangeFormatting" })
-  self:map("<leader>cr", M.rename, { expr = true, desc = "Rename", has = "rename" })
-
   require "lsp_signature".on_attach({
     bind = true, -- This is mandatory, otherwise border config won't get registered.
     handler_opts = {
       border = "rounded"
     }
   }, buffer)
-
-  if client.name == "tsserver" and pcall(require, "typescript") then
-    self:map("<leader>co", "TypescriptOrganizeImports", { desc = "Organize Imports" })
-    self:map("<leader>cR", "TypescriptRenameFile", { desc = "Rename File" })
-  end
 end
-
-vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = "LspAttach_inlayhints",
-  callback = function(args)
-    if not (args.data and args.data.client_id) then
-      return
-    end
-
-    local bufnr = args.buf
-    local force = true
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    require("lsp-inlayhints").on_attach(client, bufnr, force)
-  end,
-})
 
 function M.new(client, buffer)
   return setmetatable({ client = client, buffer = buffer }, { __index = M })
@@ -86,14 +61,6 @@ function M:map(lhs, rhs, opts)
     ---@diagnostic disable-next-line: no-unknown
     { silent = true, buffer = self.buffer, expr = opts.expr, desc = opts.desc }
   )
-end
-
-function M.rename()
-  if pcall(require, "inc_rename") then
-    return ":IncRename " .. vim.fn.expand("<cword>")
-  else
-    vim.lsp.buf.rename()
-  end
 end
 
 function M.diagnostic_goto(next, severity)

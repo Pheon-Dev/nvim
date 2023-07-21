@@ -1,7 +1,87 @@
-return {
+local M = {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    enabled = true,
+    build = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
+    event = { "BufReadPost", "BufNewFile" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
+    config = function()
+      local function starts_with(str, start)
+        return str:sub(1, #start) == start
+      end
+
+      local function treesitter_selection_mode(info)
+        -- * query_string: eg '@function.inner'
+        -- * method: eg 'v' or 'o'
+        --print(info['method'])		-- visual, operator-pending
+        if starts_with(info["query_string"], "@function.") then
+          return "V"
+        end
+        return "v"
+      end
+
+      local textobjects = require("plugins.text-objects").textobjects
+
+      require("nvim-treesitter.configs").setup({
+        sync_install = false,
+        ensure_installed = {
+          "bash",
+          "go",
+          "html",
+          "http",
+          "javascript",
+          "kdl",
+          "json",
+          "lua",
+          "markdown",
+          "markdown_inline",
+          "norg",
+          "org",
+          "python",
+          "query",
+          "regex",
+          "rust",
+          "tsx",
+          "typescript",
+          "vim",
+          "hjson",
+          "yaml",
+        },
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+        -- matchup = {
+        --   enable = true, -- mandatory, false will disable the whole extension
+        -- },
+        autotag = { enable = true },
+        rainbow = {
+          enable = true,
+          -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+          extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+          max_file_lines = nil, -- Do not enable for files with more than n lines, int
+          -- colors = {}, -- table of hex strings
+          -- termcolors = {} -- table of colour name strings
+        },
+        autopairs = { enable = true },
+        indent = { enable = true },
+        textobjects = textobjects,
+        refactor = {},
+        endwise = {
+          enable = false,
+        },
+        context_commentstring = { enable = true },
+      })
+    end,
+  },
   {
     "windwp/nvim-ts-autotag",
-    event = { "BufReadPre", "BufNewFile" },
+    enabled = true,
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       local filetypes = {
         "html",
@@ -53,258 +133,30 @@ return {
     end,
   },
   {
-    "ckolkey/ts-node-action",
-    dependencies = { "nvim-treesitter" },
-    event = "BufReadPost",
-    config = true,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    event = "BufReadPost",
-    dependencies = {
-      {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-      },
-      "RRethy/nvim-treesitter-endwise",
-    },
+    "nvim-treesitter/nvim-treesitter-context",
+    enabled = true,
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
-      local function starts_with(str, start)
-        return str:sub(1, #start) == start
-      end
-
-      local function treesitter_selection_mode(info)
-        -- * query_string: eg '@function.inner'
-        -- * method: eg 'v' or 'o'
-        --print(info['method'])		-- visual, operator-pending
-        if starts_with(info["query_string"], "@function.") then
-          return "V"
-        end
-        return "v"
-      end
-
-      require("nvim-treesitter.configs").setup({
-        sync_install = false,
-        ensure_installed = {
-          "bash",
-          "go",
-          "help",
-          "html",
-          "javascript",
-          "kdl",
-          "json",
-          "lua",
-          "markdown",
-          "markdown_inline",
-          "norg",
-          "org",
-          "python",
-          "query",
-          "regex",
-          "rust",
-          "tsx",
-          "typescript",
-          "vim",
-          "yaml",
-        },
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        -- matchup = {
-        --   enable = true, -- mandatory, false will disable the whole extension
-        -- },
-        autotag = { enable = true },
-        rainbow = {
-          enable = true,
-          -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-          extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-          max_file_lines = nil, -- Do not enable for files with more than n lines, int
-          -- colors = {}, -- table of hex strings
-          -- termcolors = {} -- table of colour name strings
-        },
-        autopairs = { enable = true },
-        indent = { enable = true },
-        textobjects = {
-          select = {
-            enable = true,
-
-            -- Automatically jump forward to textobj, similar to targets.vim
-            lookahead = true,
-
-            keymaps = {
-              -- You can use the capture groups defined in textobjects.scm
-              ["af"] = "@function.outer",
-              ["if"] = "@function.inner",
-              ["al"] = "@class.outer",
-              ["il"] = { query = "@class.inner", desc = "Select inner part of a class region" }, -- You can optionally set descriptions to the mappings (used in the desc parameter of nvim_buf_set_keymap) which plugins like which-key display
-              -- ["ab"] = "@block.outer",
-              -- ["ib"] = "@block.inner",
-              ["ad"] = "@conditional.outer",
-              ["id"] = "@conditional.inner",
-              ["ao"] = "@loop.outer",
-              ["io"] = "@loop.inner",
-              ["aa"] = "@parameter.outer",
-              ["ia"] = "@parameter.inner",
-              ["am"] = "@call.outer",
-              ["im"] = "@call.inner",
-              ["a/"] = "@comment.outer",
-              ["in"] = "@number.inner",
-              ["ag"] = "@assignment.outer",
-              ["ig"] = "@assignment.inner",
-              ["i,"] = "@assignment.lhs",
-              ["i."] = "@assignment.rhs",
-              --["ic"] = "@comment.outer",
-              --["afr"] = "@frame.outer",
-              --["ifr"] = "@frame.inner",
-              --["aat"] = "@attribute.outer",
-              --["iat"] = "@attribute.inner",
-              --["asc"] = "@scopename.inner",
-              --["isc"] = "@scopename.inner",
-              ["as"] = { query = "@scope", query_group = "locals" },
-              ["is"] = "@statement.outer",
-              ["ar"] = { query = "@start", query_group = "aerial" },
-            },
-            -- You can choose the select mode (default is charwise 'v')
-            --
-            -- Can also be a function which gets passed a table with the keys
-            -- * query_string: eg '@function.inner'
-            -- * method: eg 'v' or 'o'
-            -- and should return the mode ('v', 'V', or '<c-v>') or a table
-            -- mapping query_strings to modes.
-            selection_modes = treesitter_selection_mode,
-            -- selection_modes = { ["@function.outer"] = "V" },
-            -- if you set this to `true` (default is `false`) then any textobject is
-            -- extended to include preceding or succeeding whitespace. succeeding
-            -- whitespace has priority in order to act similarly to eg the built-in
-            -- `ap`.
-            --
-            -- can also be a function which gets passed a table with the keys
-            -- * query_string: eg '@function.inner'
-            -- * selection_mode: eg 'v'
-            -- and should return true of false
-            include_surrounding_whitespace = false
-          },
-          swap = {
-            enable = true,
-            swap_next = {
-              [")f"] = "@function.outer",
-              [")c"] = "@comment.outer",
-              [")a"] = "@parameter.inner",
-              [")b"] = "@block.outer",
-              [")l"] = "@class.outer",
-              [")s"] = "@statement.outer",
-            },
-            swap_previous = {
-              ["(f"] = "@function.outer",
-              ["(c"] = "@comment.outer",
-              ["(a"] = "@parameter.inner",
-              ["(b"] = "@block.outer",
-              ["(l"] = "@class.outer",
-              ["(s"] = "@statement.outer",
-            },
-          },
-          move = {
-            enable = true,
-            set_jumps = true, -- whether to set jumps in the jumplist
-            goto_next_start = {
-              ["]f"] = "@function.outer",
-              ["]m"] = "@call.outer",
-              ["]d"] = "@conditional.outer",
-              ["]o"] = "@loop.outer",
-              ["]s"] = "@statement.outer",
-              ["]a"] = "@parameter.outer",
-              ["]c"] = "@comment.outer",
-              ["]b"] = "@block.outer",
-              ["]n"] = "@number.inner",
-              ["]l"] = { query = "@class.outer", desc = "next class start" },
-              ["]]f"] = "@function.inner",
-              ["]]m"] = "@call.inner",
-              ["]]d"] = "@conditional.inner",
-              ["]]o"] = "@loop.inner",
-              ["]]a"] = "@parameter.inner",
-              ["]]b"] = "@block.inner",
-              ["]]l"] = { query = "@class.inner", desc = "next class start" },
-            },
-            goto_next_end = {
-              ["]F"] = "@function.outer",
-              ["]M"] = "@call.outer",
-              ["]D"] = "@conditional.outer",
-              ["]O"] = "@loop.outer",
-              ["]S"] = "@statement.outer",
-              ["]A"] = "@parameter.outer",
-              ["]C"] = "@comment.outer",
-              ["]B"] = "@block.outer",
-              ["]L"] = "@class.outer",
-              ["]N"] = "@number.inner",
-              ["]]F"] = "@function.inner",
-              ["]]M"] = "@call.inner",
-              ["]]D"] = "@conditional.inner",
-              ["]]O"] = "@loop.inner",
-              ["]]A"] = "@parameter.inner",
-              ["]]B"] = "@block.inner",
-              ["]]L"] = "@class.inner",
-            },
-            goto_previous_start = {
-              ["[f"] = "@function.outer",
-              ["[m"] = "@call.outer",
-              ["[d"] = "@conditional.outer",
-              ["[o"] = "@loop.outer",
-              ["[s"] = "@statement.outer",
-              ["[a"] = "@parameter.outer",
-              ["[c"] = "@comment.outer",
-              ["[b"] = "@block.outer",
-              ["[l"] = "@class.outer",
-              ["[n"] = "@number.inner",
-              ["[[f"] = "@function.inner",
-              ["[[m"] = "@call.inner",
-              ["[[d"] = "@conditional.inner",
-              ["[[o"] = "@loop.inner",
-              ["[[a"] = "@parameter.inner",
-              ["[[b"] = "@block.inner",
-              ["[[l"] = "@class.inner",
-            },
-            goto_previous_end = {
-              ["[F"] = "@function.outer",
-              ["[M"] = "@call.outer",
-              ["[D"] = "@conditional.outer",
-              ["[O"] = "@loop.outer",
-              ["[S"] = "@statement.outer",
-              ["[A"] = "@parameter.outer",
-              ["[C"] = "@comment.outer",
-              ["[B"] = "@block.outer",
-              ["[L"] = "@class.outer",
-              ["[N"] = "@number.inner",
-              ["[[F"] = "@function.inner",
-              ["[[M"] = "@call.inner",
-              ["[[D"] = "@conditional.inner",
-              ["[[O"] = "@loop.inner",
-              ["[[A"] = "@parameter.inner",
-              ["[[B"] = "@block.inner",
-              ["[[L"] = "@class.inner",
-            },
-          },
-          lsp_interop = {
-            enable = true,
-            floating_preview_opts = { border = "rounded" },
-            peek_definition_code = {
-              ["<C-t>"] = "@function.outer",
-              ["<leader>df"] = "@function.outer",
-              ["<leader>dF"] = "@class.outer",
-            },
-          },
-        },
-
-        endwise = {
-          enable = true,
-        },
-        -- context_commentstring = { enable = true },
-      })
-    end,
+      require 'treesitter-context'.setup {
+        enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
+        max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
+        min_window_height = 0,    -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+        line_numbers = true,
+        multiline_threshold = 20, -- Maximum number of lines to collapse for a single context line
+        trim_scope = 'outer',     -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+        mode = 'cursor',          -- Line used to calculate context. Choices: 'cursor', 'topline'
+        -- Separator between context and content. Should be a single character string, like '-'.
+        -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+        separator = nil,
+        zindex = 20,     -- The Z-index of the context window
+        on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+      }
+    end
   },
   {
     "RRethy/vim-illuminate",
-    event = "BufReadPost",
+    enabled = true,
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       -- default configuration
       require("illuminate").configure({
@@ -325,7 +177,7 @@ return {
           "dirvish",
           "fugitive",
           "harpoon",
-          "toggleterm",
+          "flaaterm",
           "NvimTree",
         },
         -- filetypes_allowlist: filetypes to illuminate, this is overriden by filetypes_denylist
@@ -375,3 +227,5 @@ return {
     },
   },
 }
+
+return { M }

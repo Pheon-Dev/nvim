@@ -1,6 +1,7 @@
 return {
 	"Pheon-Dev/antelope",
-	event = "BufReadPre",
+  event = { "BufReadPost", "BufNewFile" },
+  enabled = true,
 	config = function()
 		local antelope = require("antelope")
 
@@ -30,8 +31,8 @@ return {
 			show_icons = true,
 			show_current = false, -- Include current buffer in the list
 			show_modified = true, -- Show buffer modified indicator
-			modified_icon = "⬤", -- Character to use as modified indicator
-			grayout_current = true, -- Wheter to gray out current buffer entry
+			modified_icon = "", -- Character to use as modified indicator
+			grayout_current = true, -- Whether to gray out current buffer entry
 			force_delete = {}, -- List of filetypes / buftypes to use
 			-- 'bdelete!' on, e.g. { 'terminal' }
 			filter = nil, -- Function taking bufnr as parameter,
@@ -58,10 +59,10 @@ return {
 			-- A map of action to key that should be used to invoke it
 			actions = {
 				split = "-",
-				vertsplit = "|",
+				vertsplit = "=",
 				tabsplit = "]",
 				delete = "<Space>",
-				priority = "=",
+				priority = "#",
 			},
 		}
 
