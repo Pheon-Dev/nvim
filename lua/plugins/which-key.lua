@@ -78,7 +78,7 @@ return {
 
     local oc, crates = pcall(require, "crates")
     if not oc then return end
-    
+
     local dap, dapui = require("dap"), require("dapui")
 
     local mappings = {
@@ -180,14 +180,6 @@ return {
           f = { ":TSToolsFixAll<cr>", "Fix All" },
           d = { ":TSToolsGoToSourceDefinition<cr>", "Go To Source Definition" },
         }
-      },
-      v = {
-        name = "Mind",
-          v = { ":MindOpenMain<cr>", "Open Main" },
-          c = { ":MindClose<cr>", "Close" },
-          b = { ":MindOpenProject<cr>", "Open Project" },
-          n = { ":MindOpenSmartProject<cr>", "Open Smart Project" },
-          m = { ":MindReloadState<cr>", "Reload State" },
       },
       x = {
         name = "Trouble",
