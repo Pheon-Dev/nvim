@@ -1,0 +1,13 @@
+lua-language-server
+plugin
+swap-pane
+LuaFormatter
+
+node_modules
+package-lock.json
+package.json
+sessions
+lua/config-old
+lua/core-old
+lua/options-old
+lua/plugin-old
