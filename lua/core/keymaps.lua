@@ -120,23 +120,6 @@ end, { desc = "Previous todo comment" })
 map("n", "<TAB>", ":bnext<cr>", { noremap = true, silent = true })
 map("n", "<S-TAB>", ":bprevious<cr>", { noremap = true, silent = true })
 
--- Gitsigns
--- map("v", "<leader>hs", ":Gitsigns stage_hunk<cr>", { noremap = true, silent = true })
--- map("v", "<leader>hr", ":Gitsigns reset_hunk<cr>", { noremap = true, silent = true })
--- map("o", "ih", "<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
--- map("x", "ih", "<C-U>Gitsigns select_hunk<CR>", { noremap = true, silent = true })
--- map("n", "[c", "&diff ? '[c' : ':Gitsigns prev_hunk<cr>'", { expr = true, noremap = true, silent = true })
--- map("n", "]c", "&diff ? ']c' : ':Gitsigns next_hunk<cr>'", { expr = true, noremap = true, silent = true })
-
--- Indenting on Visual Mode
-map("n", "-", "<Plug>GoNSMDown", {})
-map("n", "=", "<Plug>GoNSMUp", {})
-
-map("x", "H", "<Plug>GoVSMLeft", {})
-map("x", "J", "<Plug>GoVSMDown", {})
-map("x", "K", "<Plug>GoVSMUp", {})
-map("x", "L", "<Plug>GoVSMRight", {})
-
 -- map("v", "H", "<gv", { noremap = true, silent = true })
 -- map("v", "L", ">gv", { noremap = true, silent = true })
 -- map("x", "J", ":move '>+1<cr>gv-gv", { noremap = true, silent = true })
@@ -185,7 +168,3 @@ map("n", "<leader>'", ":FloatermNew broot<CR>", keybind_opts)
 
 map("n", "<leader>e", ":MurenToggle<cr>", keybind_opts)
 map("v", "<leader>e", ":MurenToggle<cr>", keybind_opts)
-
--- map("n", "x", "<Plug>MoveMotionPlug", {})
--- map("x", "x", "<Plug>MoveMotionXPlug", {})
--- map("x", "xx", "<Plug>MoveMotionLinePlug", {})

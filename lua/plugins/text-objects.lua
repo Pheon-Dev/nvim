@@ -38,6 +38,7 @@ local M = {
       { "ic", mode = { "o", "x" }, desc = "Select comment block" },
       { "ac", mode = { "o", "x" }, desc = "Select comment block" },
     },
+    -- https://github.com/kana/vim-textobj-user/wiki
     dependencies = { "kana/vim-textobj-user" },
   },
   {
