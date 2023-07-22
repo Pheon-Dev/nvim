@@ -181,6 +181,7 @@ return {
           d = { ":TSToolsGoToSourceDefinition<cr>", "Go To Source Definition" },
         }
       },
+      x = { "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", "Quickfix All Diagnostics" },
       y = { ":Telescope yank_history previewer=false initial_mode=normal<cr>", "Yank History" },
       z = { ":Lazy<cr>", "Lazy" },
     }
