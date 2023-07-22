@@ -7,6 +7,16 @@ return {
     -- event = "VeryLazy",
   },
   {
+    'kevinhwang91/nvim-fundo',
+    dependencies = 'kevinhwang91/promise-async',
+    run = function()
+      require('fundo').install()
+    end,
+    config = function()
+      require('fundo').setup()
+    end
+  },
+  {
     "voldikss/vim-floaterm",
     event = "VeryLazy",
     enabled = true,
