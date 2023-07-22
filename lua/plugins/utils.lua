@@ -3,7 +3,7 @@ return {
   {
     "junegunn/fzf",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
+    enabled = true,
     -- event = "VeryLazy",
   },
   {

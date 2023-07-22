@@ -49,6 +49,9 @@ map("n", "_", "<Plug>(dial-decrement)", { noremap = true, silent = true })
 -- map("n", "+", "<C-a>", { noremap = true, silent = true })
 -- map("n", "_", "<C-x>", { noremap = true, silent = true })
 
+-- Diagnostics
+-- map("n", "<C-x>", "<cmd>lua require('diaglist').open_buffer_diagnostics()<cr>", { noremap = true, silent = true })
+map("n", "<C-x>", "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", { noremap = true, silent = true })
 
 -- TEXT OBJECTS
 local keymap = vim.keymap.set

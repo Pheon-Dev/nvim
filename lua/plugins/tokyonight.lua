@@ -85,9 +85,15 @@ return {
 
       -- Flash
       vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "FlashMatch", { bg = theme.color0, fg = theme.color3 })
+      vim.api.nvim_set_hl(0, "FlashMatch", { bg = theme.color0, fg = theme.color4 })
       vim.api.nvim_set_hl(0, "FlashCurrent", { bg = theme.color0, fg = theme.color4 })
       vim.api.nvim_set_hl(0, "FlashLabel", { fg = theme.color101, bg = theme.color0 })
+
+      -- BQF
+      vim.api.nvim_set_hl(0, "BqfPreviewBorder", { fg = theme.color2, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "BqfPreviewTitle", { fg = theme.color101, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "BqfPreviewThumb", { fg = theme.color99, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "BqfPreviewRange", { fg = theme.color0, bg = theme.color89 })
 
       -- Harpoon
       vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color2, bg = theme.color0 })

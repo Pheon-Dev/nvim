@@ -181,15 +181,6 @@ return {
           d = { ":TSToolsGoToSourceDefinition<cr>", "Go To Source Definition" },
         }
       },
-      x = {
-        name = "Trouble",
-        x = { ":TroubleToggle<cr>", "Toggle" },
-        w = { ":TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
-        d = { ":TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
-        q = { ":TroubleToggle quickfix<cr>", "Quick Fix" },
-        s = { ":TroubleToggle lsp_references<cr>", "LSP References" },
-        l = { ":TroubleToggle loclist<cr>", "Loclist" },
-      },
       y = { ":Telescope yank_history previewer=false initial_mode=normal<cr>", "Yank History" },
       z = { ":Lazy<cr>", "Lazy" },
     }
