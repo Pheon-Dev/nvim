@@ -27,12 +27,12 @@ return {
   {
     "tpope/vim-surround",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
+    enabled = true,
   },
   {
     "tpope/vim-repeat",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
+    enabled = true,
   },
   {
     "svermeulen/vim-easyclip",
