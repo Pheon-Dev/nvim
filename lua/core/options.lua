@@ -125,9 +125,7 @@ vim.g.codeium_disable_bindings = 1
 vim.g.gitblame_highlight_group = "GitBlame"
 vim.g.gitblame_highlight_group = "Blame"
 
-vim.g.virtcolumn_char = "┊" -- char to display the line
-
-vim.cmd("set colorcolumn=80")
+-- vim.cmd("set colorcolumn=80")
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")
 vim.cmd("set nu rnu")
