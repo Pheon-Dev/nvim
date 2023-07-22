@@ -102,6 +102,8 @@ opt.foldlevelstart = 99
 opt.foldcolumn = "0"    -- '1', '0' is not bad
 vim.o.foldnestmax = 1 -- '1', '0' is not bad
 
+vim.o.undofile = true
+
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 
