@@ -27,8 +27,6 @@ map("n", "U", ":redo<cr>", { noremap = true, silent = true })
 -- Move to Start/End of Line
 map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
--- map("n", "+", "<C-a>", { noremap = true, silent = true })
--- map("n", "_", "<C-x>", { noremap = true, silent = true })
 
 -- Tabs
 map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
@@ -44,6 +42,13 @@ map("n", "go", "<C-o>", { noremap = true, silent = true })
 -- map("i", "<A-o>", "<C-o>", { noremap = true, silent = true })
 map("i", "<C-k>", "<C-o>O", { noremap = true, silent = true })
 map("i", "<C-j>", "<C-o>o", { noremap = true, silent = true })
+
+-- Dial
+map("n", "+", "<Plug>(dial-increment)", { noremap = true, silent = true })
+map("n", "_", "<Plug>(dial-decrement)", { noremap = true, silent = true })
+-- map("n", "+", "<C-a>", { noremap = true, silent = true })
+-- map("n", "_", "<C-x>", { noremap = true, silent = true })
+
 
 -- TEXT OBJECTS
 local keymap = vim.keymap.set
