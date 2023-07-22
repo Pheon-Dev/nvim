@@ -1,24 +1,22 @@
 return {
   {
+    "onsails/diaglist.nvim",
+    event = { "BufNewFile", "BufReadPost" },
+    enabled = true,
+    config = function()
+      require("diaglist").init({
+        -- optional settings
+        -- below are defaults
+        debug = false,
+
+        -- increase for noisy servers
+        debounce_ms = 150,
+      })
+    end
+  },
+  {
     "kevinhwang91/nvim-bqf",
     enabled = true,
-    dependencies = {
-      {
-        "onsails/diaglist.nvim",
-        event = { "BufNewFile", "BufReadPost" },
-        enabled = true,
-        config = function()
-          require("diaglist").init({
-            -- optional settings
-            -- below are defaults
-            debug = false,
-
-            -- increase for noisy servers
-            debounce_ms = 150,
-          })
-        end
-      },
-    },
     event = { "BufNewFile", "BufReadPost" },
     config = function()
       local fn = vim.fn
