@@ -127,12 +127,12 @@ return {
 
     local theme = require("core.colors")
     local my_colors = {
-      n = theme.color37, -- "#7aa2f7",
-      i = theme.color89, -- "#bd93f9",
-      c = theme.color50, -- "#10e070",
-      v = theme.color43, -- "#c66bfe",
-      V = theme.color43, -- "#966bfe",
-      R = theme.color99, -- "#f62bfe"
+      n = theme.color37,
+      i = theme.color16,
+      c = theme.color89,
+      v = theme.color27,
+      V = theme.color27,
+      R = theme.color99,
     }
 
     local mode = {
@@ -186,15 +186,28 @@ return {
     -- Tabline
     local tab_color = "Keyword"
 
-    -- datetime
+    -- mode
     tab_left({
+      -- "mode",
       function()
-        local enabled = require("pigeon.config").options.datetime.time.enabled
-        return enabled and require("pigeon.datetime").current_time() or ""
+        return mode[vim.fn.mode()]
       end,
-      color = tab_color
+      -- "mode",
+      color = function()
+        return { fg = mode_color[vim.fn.mode()], bg = colors.bg }
+      end,
+      -- padding = { right = 1, left = 3 },
     })
 
+    -- -- datetime
+    -- tab_left({
+    --   function()
+    --     local enabled = require("pigeon.config").options.datetime.time.enabled
+    --     return enabled and require("pigeon.datetime").current_time() or ""
+    --   end,
+    --   color = tab_color
+    -- })
+    --
     tab_left({
       function()
         local enabled = require("pigeon.config").options.datetime.day.enabled
@@ -296,28 +309,24 @@ return {
     })
 
     -- Statusline
-    -- mode
     sec_left({
-      -- "mode",
       function()
-        return mode[vim.fn.mode()]
+        local enabled = require("pigeon.config").options.datetime.time.enabled
+        return enabled and require("pigeon.datetime").current_time() or ""
       end,
-      -- "mode",
       color = function()
-        return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
+        return "Title"
       end,
-      -- padding = { right = 1, left = 3 },
     })
-
-    -- filetype
-    sec_left({
-      "filetype",
-      color = function()
-        return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
-      end,
-      -- padding = { right = 1, left = 3 },
-    })
-
+    -- -- filetype
+    -- sec_left({
+    --   "filetype",
+    --   color = function()
+    --     return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
+    --   end,
+    --   -- padding = { right = 1, left = 3 },
+    -- })
+    --
     -- filename
     sec_left({
       "filename",
