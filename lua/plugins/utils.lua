@@ -65,7 +65,6 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     enabled = true,
     config = function()
-      -- lua, default settings
       require("better_escape").setup {
         mapping = { "jj" },         -- a table with mappings to use
         timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
@@ -85,7 +84,8 @@ return {
   },
   {
     "norcalli/nvim-colorizer.lua",
-    event = { "BufReadPost", "BufNewFile" },
+    -- event = { "BufReadPost", "BufNewFile" },
+    event = "VeryLazy",
     enabled = true,
     config = function()
       require("colorizer").setup()
