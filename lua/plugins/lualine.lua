@@ -241,6 +241,43 @@ return {
       },
     })
 
+    -- sep
+    tab_left({
+      function()
+        return "["
+      end,
+      color = "Comment"
+    })
+
+    -- tabs
+    tab_left({
+      'tabs',
+      max_length = vim.o.columns / 3, -- Maximum width of tabs component.
+      mode = 0,                       -- 0: Shows tab_nr
+      use_mode_colors = false,
+      tabs_color = {
+        -- Same values as the general color option can be used here.
+        active = "Keyword",   -- Color for active tab.
+        inactive = "Comment", -- Color for inactive tab.
+      },
+      fmt = function(name, context)
+        local buflist = vim.fn.tabpagebuflist(context.tabnr)
+        local winnr = vim.fn.tabpagewinnr(context.tabnr)
+        local bufnr = buflist[winnr]
+        local mod = vim.fn.getbufvar(bufnr, '&mod')
+
+        return name .. (mod == 1 and ' +' or '')
+      end
+    })
+
+    -- sep
+    tab_left({
+      function()
+        return "]"
+      end,
+      color = "Comment"
+    })
+
     -- lazy updates
     tab_right({
       require("lazy.status").updates,
@@ -277,35 +314,6 @@ return {
       end,
       -- color = { fg = colors.orange3 },
       color = tab_color
-    })
-
-    -- sep
-    tab_right({
-      function()
-        return "|"
-      end,
-      color = tab_color
-    })
-
-    -- tabs
-    tab_right({
-      'tabs',
-      max_length = vim.o.columns / 3, -- Maximum width of tabs component.
-      mode = 0,                       -- 0: Shows tab_nr
-      use_mode_colors = false,
-      tabs_color = {
-        -- Same values as the general color option can be used here.
-        active = "Keyword",   -- Color for active tab.
-        inactive = "Comment", -- Color for inactive tab.
-      },
-      fmt = function(name, context)
-        local buflist = vim.fn.tabpagebuflist(context.tabnr)
-        local winnr = vim.fn.tabpagewinnr(context.tabnr)
-        local bufnr = buflist[winnr]
-        local mod = vim.fn.getbufvar(bufnr, '&mod')
-
-        return name .. (mod == 1 and ' +' or '')
-      end
     })
 
     -- Statusline
