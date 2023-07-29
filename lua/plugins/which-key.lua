@@ -169,7 +169,6 @@ return {
         q = { ":TodoQuickFix<cr>", "TODO QuickFix" },
         l = { ":TodoTelescope<cr>", "TODO Telescope" },
         r = { ":TodoTrouble<cr>", "TODO Trouble" },
-        p = { ":Antelope tabpages<cr>", "tabs" },
         t = {
           name = "Typescript",
           o = { ":TSToolsOrganizeImports<cr>", "Organize Imports" },
