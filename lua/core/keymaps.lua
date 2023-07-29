@@ -35,10 +35,13 @@ map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
 
 -- Tabs
-map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
-map("n", "t]", ":tabNext<cr>", { noremap = true, silent = true })
-map("n", "t[", ":tabprevious<cr>", { noremap = true, silent = true })
--- map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
+map("n", "tn", ":tabnew<cr>", { noremap = true, silent = true })
+map("n", "tp", ":tabclose<cr>", { noremap = true, silent = true })
+map("n", "tj", ":tabnext<cr>", { noremap = true, silent = true })
+map("n", "tk", ":tabprevious<cr>", { noremap = true, silent = true })
+map("n", "th", ":tabfirst<cr>", { noremap = true, silent = true })
+map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
+map("n", "tt", ":Antelope tabpages<cr>", { noremap = true, silent = true })
 
 -- remap
 map("n", "cc", "0D", { noremap = true, silent = true })
