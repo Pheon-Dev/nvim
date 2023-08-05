@@ -306,8 +306,4 @@ return {
       -- end
     end,
   },
-  {
-    "chaoren/vim-wordmotion",
-    event = { "BufReadPost", "BufNewFile" },
-  },
 }

@@ -7,15 +7,19 @@ return {
     -- event = "VeryLazy",
   },
   {
-    'kevinhwang91/nvim-fundo',
-    dependencies = 'kevinhwang91/promise-async',
-    run = function()
-      require('fundo').install()
-    end,
-    config = function()
-      require('fundo').setup()
-    end
+    "chaoren/vim-wordmotion",
+    event = { "BufReadPost", "BufNewFile" },
   },
+  -- {
+  --   'kevinhwang91/nvim-fundo',
+  --   dependencies = 'kevinhwang91/promise-async',
+  --   run = function()
+  --     require('fundo').install()
+  --   end,
+  --   config = function()
+  --     require('fundo').setup()
+  --   end
+  -- },
   {
     "voldikss/vim-floaterm",
     event = "VeryLazy",
@@ -44,11 +48,11 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     enabled = true,
   },
-  {
-    "svermeulen/vim-easyclip",
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
-  },
+  -- {
+  --   "svermeulen/vim-easyclip",
+  --   event = { "BufReadPost", "BufNewFile" },
+  --   enabled = false,
+  -- },
   {
     "lukas-reineke/virt-column.nvim",
     event = { "BufReadPost", "BufNewFile" },
@@ -60,28 +64,28 @@ return {
       })
     end
   },
-  {
-    "max397574/better-escape.nvim",
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
-    config = function()
-      require("better_escape").setup {
-        mapping = { "jj" },         -- a table with mappings to use
-        timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
-        clear_empty_lines = false,  -- clear line after escaping if there is only whitespace
-        keys = "<Esc>",             -- keys used for escaping, if it is a function will use the result everytime
-        -- example(recommended)
-        -- keys = function()
-        --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
-        -- end,
-      }
-    end,
-  },
-  {
-    "mg979/vim-visual-multi",
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
-  },
+  -- {
+  --   "max397574/better-escape.nvim",
+  --   event = { "BufReadPost", "BufNewFile" },
+  --   enabled = true,
+  --   config = function()
+  --     require("better_escape").setup {
+  --       mapping = { "jj" },         -- a table with mappings to use
+  --       timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
+  --       clear_empty_lines = false,  -- clear line after escaping if there is only whitespace
+  --       keys = "<Esc>",             -- keys used for escaping, if it is a function will use the result everytime
+  --       -- example(recommended)
+  --       -- keys = function()
+  --       --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
+  --       -- end,
+  --     }
+  --   end,
+  -- },
+  -- {
+  --   "mg979/vim-visual-multi",
+  --   event = { "BufReadPost", "BufNewFile" },
+  --   enabled = false,
+  -- },
   {
     "norcalli/nvim-colorizer.lua",
     -- event = { "BufReadPost", "BufNewFile" },
