@@ -1,5 +1,6 @@
 return {
   "Pheon-Dev/pigeon",
+      enabled = false,
   config = function()
     require("pigeon").setup({
       enabled = true,

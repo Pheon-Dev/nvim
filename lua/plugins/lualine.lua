@@ -56,7 +56,8 @@ return {
     local config = {
       options = {
         icons_enabled = false,
-        disabled_filetypes = { tabline = { "alpha" }, statusline = { "alpha" } },
+        -- disabled_filetypes = { tabline = { "alpha" }, statusline = { "alpha" } },
+        disabled_filetypes = { statusline = { "alpha" } },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
 
@@ -77,7 +78,7 @@ return {
 
         refresh = {          -- sets how often lualine should refresh it's contents (in ms)
           statusline = 1000, -- The refresh option sets minimum time that lualine tries
-          tabline = 1000,    -- to maintain between refresh. It's not guarantied if situation
+          -- tabline = 1000,    -- to maintain between refresh. It's not guarantied if situation
           -- winbar = 1000      -- arises that lualine needs to refresh itself before this time
           -- it'll do it.
 
@@ -97,15 +98,15 @@ return {
         lualine_c = {},
         lualine_x = {},
       },
-      tabline = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_y = {},
-        lualine_z = {},
-        lualine_c = {},
-        lualine_x = {},
-      },
-      inactive_tabline = {},
+      -- tabline = {
+      --   lualine_a = {},
+      --   lualine_b = {},
+      --   lualine_y = {},
+      --   lualine_z = {},
+      --   lualine_c = {},
+      --   lualine_x = {},
+      -- },
+      -- inactive_tabline = {},
       extensions = {}
     }
 
@@ -117,13 +118,13 @@ return {
       table.insert(config.sections.lualine_x, component)
     end
 
-    local function tab_left(component)
-      table.insert(config.tabline.lualine_c, component)
-    end
-
-    local function tab_right(component)
-      table.insert(config.tabline.lualine_x, component)
-    end
+    -- local function tab_left(component)
+    --   table.insert(config.tabline.lualine_c, component)
+    -- end
+    --
+    -- local function tab_right(component)
+    --   table.insert(config.tabline.lualine_x, component)
+    -- end
 
     local theme = require("core.colors")
     local my_colors = {
@@ -184,10 +185,65 @@ return {
     }
 
     -- Tabline
-    local tab_color = "Keyword"
+    -- local tab_color = "Keyword"
 
+    -- -- datetime
+    -- tab_left({
+    --   function()
+    --     local enabled = require("pigeon.config").options.datetime.time.enabled
+    --     return enabled and require("pigeon.datetime").current_time() or ""
+    --   end,
+    --   color = tab_color
+    -- })
+    --
+    -- tab_left({
+    --   function()
+    --     local enabled = require("pigeon.config").options.datetime.day.enabled
+    --     return enabled and require("pigeon.datetime").current_day() or ""
+    --   end,
+    --   color = tab_color
+    -- })
+
+    -- sep
+    -- tab_left({
+    --   function()
+    --     return "%="
+    --   end,
+    -- })
+
+    -- -- wifi
+    -- tab_right({
+    --   function()
+    --     local enabled = require("pigeon.config").options.internet.enabled
+    --     return enabled and require("pigeon.internet").wifi() or ""
+    --   end,
+    --   color = tab_color
+    --   -- color = { fg = theme.color89 },
+    -- })
+    --
+    -- -- ram
+    -- tab_right({
+    --   function()
+    --     local enabled = require("pigeon.config").options.ram.enabled
+    --     return enabled and require("pigeon.ram").ram() or ""
+    --   end,
+    --   color = tab_color
+    --   -- color = { fg = theme.color26 },
+    -- })
+    --
+    -- -- battery
+    -- tab_right({
+    --   function()
+    --     local enabled = require("pigeon.config").options.battery.enabled
+    --     return enabled and require("pigeon.battery").battery() or ""
+    --   end,
+    --   -- color = { fg = colors.orange3 },
+    --   color = tab_color
+    -- })
+
+    -- -- Statusline
     -- mode
-    tab_left({
+    sec_left({
       -- "mode",
       function()
         return mode[vim.fn.mode()]
@@ -199,133 +255,15 @@ return {
       -- padding = { right = 1, left = 3 },
     })
 
-    -- -- datetime
-    -- tab_left({
+    -- sec_left({
     --   function()
     --     local enabled = require("pigeon.config").options.datetime.time.enabled
     --     return enabled and require("pigeon.datetime").current_time() or ""
     --   end,
-    --   color = tab_color
+    --   color = function()
+    --     return "Title"
+    --   end,
     -- })
-    --
-    tab_left({
-      function()
-        local enabled = require("pigeon.config").options.datetime.day.enabled
-        return enabled and require("pigeon.datetime").current_day() or ""
-      end,
-      color = tab_color
-    })
-
-    -- sep
-    tab_left({
-      function()
-        return "%="
-      end,
-    })
-
-    -- buffers
-    tab_left({
-      'buffers',
-      show_filename_only = false,     -- Shows shortened relative path when set to false.
-      hide_filename_extension = true, -- Hide filename extension when set to true.
-      show_modified_status = true,    -- Shows indicator when the buffer is modified.
-      mode = 1,                       -- 0: Shows buffer name
-      buffers_color = {
-        active = "Keyword",           -- Color for active buffer.
-        inactive = "Comment",         -- Color for inactive buffer.
-      },
-      symbols = {
-        modified = '',       -- Text to show when the buffer is modified
-        alternate_file = '', -- Text to show to identify the alternate file
-        directory = '',      -- Text to show when the buffer is a directory
-      },
-    })
-
-    -- sep
-    tab_left({
-      function()
-        return "["
-      end,
-      color = "Comment"
-    })
-
-    -- tabs
-    tab_left({
-      'tabs',
-      max_length = vim.o.columns / 3, -- Maximum width of tabs component.
-      mode = 0,                       -- 0: Shows tab_nr
-      use_mode_colors = false,
-      tabs_color = {
-        -- Same values as the general color option can be used here.
-        active = "Keyword",   -- Color for active tab.
-        inactive = "Comment", -- Color for inactive tab.
-      },
-      fmt = function(name, context)
-        local buflist = vim.fn.tabpagebuflist(context.tabnr)
-        local winnr = vim.fn.tabpagewinnr(context.tabnr)
-        local bufnr = buflist[winnr]
-        local mod = vim.fn.getbufvar(bufnr, '&mod')
-
-        return name .. (mod == 1 and ' +' or '')
-      end
-    })
-
-    -- sep
-    tab_left({
-      function()
-        return "]"
-      end,
-      color = "Comment"
-    })
-
-    -- lazy updates
-    tab_right({
-      require("lazy.status").updates,
-      cond = require("lazy.status").has_updates,
-      -- color = { fg = "#ff9e64" },
-      color = tab_color
-    })
-
-    -- wifi
-    tab_right({
-      function()
-        local enabled = require("pigeon.config").options.internet.enabled
-        return enabled and require("pigeon.internet").wifi() or ""
-      end,
-      color = tab_color
-      -- color = { fg = theme.color89 },
-    })
-
-    -- ram
-    tab_right({
-      function()
-        local enabled = require("pigeon.config").options.ram.enabled
-        return enabled and require("pigeon.ram").ram() or ""
-      end,
-      color = tab_color
-      -- color = { fg = theme.color26 },
-    })
-
-    -- battery
-    tab_right({
-      function()
-        local enabled = require("pigeon.config").options.battery.enabled
-        return enabled and require("pigeon.battery").battery() or ""
-      end,
-      -- color = { fg = colors.orange3 },
-      color = tab_color
-    })
-
-    -- Statusline
-    sec_left({
-      function()
-        local enabled = require("pigeon.config").options.datetime.time.enabled
-        return enabled and require("pigeon.datetime").current_time() or ""
-      end,
-      color = function()
-        return "Title"
-      end,
-    })
     -- -- filetype
     -- sec_left({
     --   "filetype",
@@ -363,13 +301,6 @@ return {
       color = { fg = colors.green1 },
     })
 
-    -- sep
-    sec_left({
-      function()
-        return "%="
-      end,
-    })
-
     -- macros etc
     if on then
       sec_left({
@@ -379,6 +310,75 @@ return {
         padding = { right = 1, left = 1 },
       })
     end
+
+    -- sep
+    sec_left({
+      function()
+        return "%="
+      end,
+    })
+
+    -- buffers
+    sec_left({
+      'buffers',
+      show_filename_only = false,     -- Shows shortened relative path when set to false.
+      hide_filename_extension = true, -- Hide filename extension when set to true.
+      show_modified_status = true,    -- Shows indicator when the buffer is modified.
+      mode = 1,                       -- 0: Shows buffer name
+      buffers_color = {
+        active = "Keyword",           -- Color for active buffer.
+        inactive = "Comment",         -- Color for inactive buffer.
+      },
+      symbols = {
+        modified = '',       -- Text to show when the buffer is modified
+        alternate_file = '', -- Text to show to identify the alternate file
+        directory = '',      -- Text to show when the buffer is a directory
+      },
+    })
+
+    -- sep
+    sec_left({
+      function()
+        return "["
+      end,
+      color = "Comment"
+    })
+
+    -- tabs
+    sec_left({
+      'tabs',
+      max_length = vim.o.columns / 3, -- Maximum width of tabs component.
+      mode = 0,                       -- 0: Shows tab_nr
+      use_mode_colors = false,
+      tabs_color = {
+        -- Same values as the general color option can be used here.
+        active = "Keyword",   -- Color for active tab.
+        inactive = "Comment", -- Color for inactive tab.
+      },
+      fmt = function(name, context)
+        local buflist = vim.fn.tabpagebuflist(context.tabnr)
+        local winnr = vim.fn.tabpagewinnr(context.tabnr)
+        local bufnr = buflist[winnr]
+        local mod = vim.fn.getbufvar(bufnr, '&mod')
+
+        return name .. (mod == 1 and ' +' or '')
+      end
+    })
+
+    -- sep
+    sec_left({
+      function()
+        return "]"
+      end,
+      color = "Comment"
+    })
+
+    -- lazy updates
+    sec_right({
+      require("lazy.status").updates,
+      cond = require("lazy.status").has_updates,
+      color = { fg = "#ff9e64" },
+    })
 
     -- diagnosticcs
     sec_right({
