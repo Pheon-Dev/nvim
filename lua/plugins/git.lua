@@ -1,6 +1,7 @@
 return {
   {
     "lewis6991/gitsigns.nvim",
+    enabled = true,
     event = { "BufReadPost", "BufNewFile" },
     keys = {
       {
@@ -193,6 +194,7 @@ return {
   },
   {
     "f-person/git-blame.nvim",
+    enabled = true,
     event = { "BufReadPost", "BufNewFile" },
   },
 }

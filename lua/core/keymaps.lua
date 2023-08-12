@@ -35,16 +35,16 @@ map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
 
 -- Tabs
-map("n", "tn", ":tabnew<cr>", { noremap = true, silent = true })
-map("n", "tp", ":tabclose<cr>", { noremap = true, silent = true })
+map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
+map("n", "th", ":tabclose<cr>", { noremap = true, silent = true })
 map("n", "tj", ":tabnext<cr>", { noremap = true, silent = true })
 map("n", "tk", ":tabprevious<cr>", { noremap = true, silent = true })
-map("n", "th", ":tabfirst<cr>", { noremap = true, silent = true })
-map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
-map("n", "tt", ":Antelope tabpages<cr>", { noremap = true, silent = true })
+-- map("n", "th", ":tabfirst<cr>", { noremap = true, silent = true })
+-- map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
 
 -- remap
-map("n", "cc", "0D", { noremap = true, silent = true })
+-- map("n", "cc", "0D", { noremap = true, silent = true })
+map("n", "X", "v0c", { noremap = true, silent = true })
 map("n", "gi", "<C-i>", { noremap = true, silent = true })
 map("n", "go", "<C-o>", { noremap = true, silent = true })
 
@@ -92,7 +92,7 @@ keymap({ "o", "x" }, "ak", "<cmd>lua require('various-textobjs').key(false)<CR>"
 -- url
 keymap({ "o", "x" }, "vu", "<cmd>lua require('various-textobjs').url()<CR>")
 -- diagnostic
-keymap({ "o", "x" }, "?", "<cmd>lua require('various-textobjs').diagnostic()<CR>")
+keymap({ "o", "x" }, "!", "<cmd>lua require('various-textobjs').diagnostic()<CR>")
 -- fold
 keymap({ "o", "x" }, "iz", "<cmd>lua require('various-textobjs').closedFold(true)<CR>")
 keymap({ "o", "x" }, "az", "<cmd>lua require('various-textobjs').closedFold(false)<CR>")

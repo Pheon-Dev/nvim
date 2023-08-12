@@ -54,7 +54,7 @@ return {
   },
   {
     "lewis6991/satellite.nvim",
-    enabled = true,
+    enabled = false,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("satellite").setup({

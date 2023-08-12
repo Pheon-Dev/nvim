@@ -73,6 +73,7 @@ return {
       vim.api.nvim_set_hl(0, "Visual", { bg = theme.color61 })
       vim.api.nvim_set_hl(0, "Search", { fg = theme.color1, bg = theme.color89 })
       -- vim.api.nvim_set_hl(0, "IncSearch", { fg = theme.color89, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "VirtColumn", { fg = theme.color1 })
       vim.api.nvim_set_hl(0, "ColorColumn", { bg = theme.color1 })
       -- vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color101 })
       vim.api.nvim_set_hl(0, "Title", { link = "Keyword" })
