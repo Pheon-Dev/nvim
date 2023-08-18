@@ -128,7 +128,6 @@ return {
       root_dirs = {},
       prefer_startup_root = false,
       reload_on_bufenter = false,
-      remove_keymaps = false,
       select_prompts = false,
       update_cwd = false,
       update_focused_file = {

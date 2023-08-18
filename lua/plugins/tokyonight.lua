@@ -2,6 +2,7 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = false,
+    enabled = true,
     priority = 1000,
     config = function()
       vim.g.style = "storm" -- night, day, night, moon
