@@ -67,7 +67,7 @@ return {
   {
     'tomiis4/BufferTabs.nvim',
     dependencies = {
-      'nvim-tree/nvim-web-devicons',   -- optional
+      'nvim-tree/nvim-web-devicons', -- optional
     },
     lazy = false,
     enabled = false,
@@ -125,12 +125,12 @@ return {
   --   enabled = false,
   -- },
   {
-    "norcalli/nvim-colorizer.lua",
-    -- event = { "BufReadPost", "BufNewFile" },
-    event = "VeryLazy",
+    "brenoprata10/nvim-highlight-colors",
+    event = { "BufReadPost", "BufNewFile" },
+    -- event = "VeryLazy",
     enabled = true,
     config = function()
-      require("colorizer").setup()
+      require('nvim-highlight-colors').setup {}
     end,
   },
   {

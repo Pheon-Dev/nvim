@@ -90,10 +90,10 @@ function M.buttons()
 			type = "text",
 			val = {
 				"                        │                       ",
-				"   fzf            f    │       terminal      t",
+				"   fzf            f    │       terminal      t",
         "   lazygit        l    │       lf            ;",
         "鈴  lazy           z    │       search        s",
-				"   harpoon        k    │       broot         b",
+				"ﯠ   harpoon        k    │    פּ   broot         b",
 				"   nvim-tree      j    │                       ",
 				"                        │                       ",
 				"                        ▊       Quit          h",
