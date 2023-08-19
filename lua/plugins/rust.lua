@@ -178,18 +178,13 @@ return {
     config = function()
       local rt = require("rust-tools")
 
-      local capabilities =
-          require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-      capabilities.textDocument.foldingRange = {
-        dynamicRegistration = false,
-        lineFoldingOnly = true,
-      }
-
-      local on_attach = require("util").on_attach(function(client, buffer)
-        require("plugins.lsp.format").on_attach(client, buffer)
-        require("plugins.lsp.keymaps").on_attach(client, buffer)
-      end)
+      -- local capabilities =
+      --     require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+      --
+      -- capabilities.textDocument.foldingRange = {
+      --   dynamicRegistration = false,
+      --   lineFoldingOnly = true,
+      -- }
 
       local opts = {
         tools = {
@@ -354,8 +349,8 @@ return {
           -- standalone file support
           -- setting it to false may improve startup time
           standalone = false,
-          capabilities = capabilities,
-          on_attach = on_attach,
+          -- capabilities = capabilities,
+          -- on_attach = on_attach,
         }, -- rust-analyzer options
 
         -- debugging stuff

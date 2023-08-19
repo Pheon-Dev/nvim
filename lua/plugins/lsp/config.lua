@@ -5,7 +5,6 @@ function M.lsp_config(plugin)
       require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
   local on_attach = require("util").on_attach(function(client, buffer)
-    require("plugins.lsp.format").on_attach(client, buffer)
     require("plugins.lsp.keymaps").on_attach(client, buffer)
   end)
   local lsp_flags = {
@@ -46,7 +45,6 @@ function M.lsp_config(plugin)
   end
   -- setup formatting and keymaps
   require("util").on_attach(function(client, buffer)
-    require("plugins.lsp.format").on_attach(client, buffer)
     require("plugins.lsp.keymaps").on_attach(client, buffer)
   end)
 

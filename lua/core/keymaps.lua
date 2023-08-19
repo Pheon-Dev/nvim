@@ -4,7 +4,8 @@ local map = vim.api.nvim_set_keymap
 -- unused C-n, C-j, C-k, C-l, C-h, C-a, C-x, C-z, C-c, C-v
 -- Saving and  ESC on insert Mode
 map("i", "jj", "<esc>", { noremap = true, silent = true })
-map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+-- map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+map("n", ",", "<esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
 -- map("n", "<C-l>", "<C-w>p", { noremap = true, silent = true })
