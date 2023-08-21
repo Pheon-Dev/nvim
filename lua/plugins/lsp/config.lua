@@ -1,12 +1,17 @@
 local M = {}
 
 function M.lsp_config(plugin)
+  local lspconfig = require("lspconfig")
   local capabilities =
       require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+  local ih = require("inlay-hints")
+
   local on_attach = require("util").on_attach(function(client, buffer)
     require("plugins.lsp.keymaps").on_attach(client, buffer)
+    ih.on_attach(client, buffer)
   end)
+
   local lsp_flags = {
     debounce_text_changes = 150,
   }
@@ -47,31 +52,6 @@ function M.lsp_config(plugin)
   require("util").on_attach(function(client, buffer)
     require("plugins.lsp.keymaps").on_attach(client, buffer)
   end)
-
-  local nvim_lsp = require('lspconfig')
-  local util = require("lspconfig.util")
-
-  -- GoLang
-  nvim_lsp['gopls'].setup {
-    cmd = { 'gopls' },
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-      gopls = {
-        experimentalPostfixCompletions = true,
-        analyses = {
-          unusedparams = true,
-          shadow = true,
-        },
-        staticcheck = true,
-      },
-    },
-    init_options = {
-      usePlaceholders = true,
-    }
-  }
-  capabilities.offsetEncoding = { "utf-16" }
-  require("lspconfig").clangd.setup({ capabilities = capabilities })
 end
 
 return M
