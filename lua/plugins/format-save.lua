@@ -51,6 +51,9 @@ return {
         exclude_path_patterns = {
           "/node_modules/",
           ".local/share/nvim/lazy",
+          "/target",
+          ".config/rofi",
+          ".config/hypr",
         },
         formatter_by_ft = {
           css = formatters.lsp,
