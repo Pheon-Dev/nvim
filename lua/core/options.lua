@@ -99,7 +99,7 @@ opt.exrc = true
 opt.foldenable = true
 opt.foldlevel = 99
 opt.foldlevelstart = 99
-opt.foldcolumn = "0"    -- '1', '0' is not bad
+opt.foldcolumn = "0"  -- '1', '0' is not bad
 vim.o.foldnestmax = 1 -- '1', '0' is not bad
 
 vim.o.undofile = true
@@ -159,15 +159,15 @@ vim.g.floaterm_titleposition = "left" -- options left, right, center
 vim.g.floaterm_position =
 "center"                              -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
 -- wintype 'float': 'top', 'bottom', 'left', 'right', 'topleft', 'topright', 'bottomleft', 'bottomright', 'center', 'auto'(at the cursor place) default 'center'
-vim.g.floaterm_keymap_toggle = '``'
-vim.g.floaterm_keymap_new = '`n'
-vim.g.floaterm_keymap_next = '`j'
-vim.g.floaterm_keymap_prev = '`k'
--- vim.g.floaterm_keymap_first = '`h'
--- vim.g.floaterm_keymap_last = '`l'
-vim.g.floaterm_keymap_hide = '`h'
-vim.g.floaterm_keymap_show = '`l'
-vim.g.floaterm_keymap_kill = "`;"
+vim.g.floaterm_keymap_toggle = '`'
+-- vim.g.floaterm_keymap_new = '`n'
+-- vim.g.floaterm_keymap_next = '`j'
+-- vim.g.floaterm_keymap_prev = '`k'
+-- -- vim.g.floaterm_keymap_first = '`h'
+-- -- vim.g.floaterm_keymap_last = '`l'
+-- vim.g.floaterm_keymap_hide = '`h'
+-- vim.g.floaterm_keymap_show = '`l'
+-- vim.g.floaterm_keymap_kill = "`;"
 
 -- FZF
 vim.g.fzf_layout = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
