@@ -5,11 +5,11 @@ function M.lsp_config(plugin)
   local capabilities =
       require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-  local ih = require("inlay-hints")
+  -- local ih = require("inlay-hints")
 
   local on_attach = require("util").on_attach(function(client, buffer)
     require("plugins.lsp.keymaps").on_attach(client, buffer)
-    ih.on_attach(client, buffer)
+    -- ih.on_attach(client, buffer)
   end)
 
   local lsp_flags = {
