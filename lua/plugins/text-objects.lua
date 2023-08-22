@@ -1,3 +1,4 @@
+-- https://github.com/andrewferrier/textobj-diagnostic.nvim
 local M = {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
