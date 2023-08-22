@@ -55,7 +55,7 @@ return {
     -- Config
     local config = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         -- disabled_filetypes = { tabline = { "alpha" }, statusline = { "alpha" } },
         disabled_filetypes = { statusline = { "alpha", "NvimTree", "floaterm" } },
         component_separators = { left = '', right = '' },
@@ -98,15 +98,6 @@ return {
         lualine_c = {},
         lualine_x = {},
       },
-      -- tabline = {
-      --   lualine_a = {},
-      --   lualine_b = {},
-      --   lualine_y = {},
-      --   lualine_z = {},
-      --   lualine_c = {},
-      --   lualine_x = {},
-      -- },
-      -- inactive_tabline = {},
       extensions = {}
     }
 
@@ -117,14 +108,6 @@ return {
     local function sec_right(component)
       table.insert(config.sections.lualine_x, component)
     end
-
-    -- local function tab_left(component)
-    --   table.insert(config.tabline.lualine_c, component)
-    -- end
-    --
-    -- local function tab_right(component)
-    --   table.insert(config.tabline.lualine_x, component)
-    -- end
 
     local theme = require("core.colors")
     local my_colors = {
@@ -184,120 +167,6 @@ return {
       gui = "bold",
     }
 
-    -- Tabline
-    -- local tab_color = "Keyword"
-
-    -- -- datetime
-    -- tab_left({
-    --   function()
-    --     local enabled = require("pigeon.config").options.datetime.time.enabled
-    --     return enabled and require("pigeon.datetime").current_time() or ""
-    --   end,
-    --   color = tab_color
-    -- })
-    --
-    -- tab_left({
-    --   function()
-    --     local enabled = require("pigeon.config").options.datetime.day.enabled
-    --     return enabled and require("pigeon.datetime").current_day() or ""
-    --   end,
-    --   color = tab_color
-    -- })
-
-    -- -- sep
-    -- tab_left({
-    --   function()
-    --     return "%="
-    --   end,
-    -- })
-    --
-    -- -- buffers
-    -- tab_left({
-    --   'buffers',
-    --   show_filename_only = false,     -- Shows shortened relative path when set to false.
-    --   hide_filename_extension = true, -- Hide filename extension when set to true.
-    --   show_modified_status = true,    -- Shows indicator when the buffer is modified.
-    --   mode = 1,                       -- 0: Shows buffer name
-    --   buffers_color = {
-    --     active = "Keyword",           -- Color for active buffer.
-    --     inactive = "Comment",         -- Color for inactive buffer.
-    --   },
-    --   symbols = {
-    --     modified = '',       -- Text to show when the buffer is modified
-    --     alternate_file = '', -- Text to show to identify the alternate file
-    --     directory = '',      -- Text to show when the buffer is a directory
-    --   },
-    -- })
-    --
-    -- -- sep
-    -- tab_left({
-    --   function()
-    --     return "["
-    --   end,
-    --   color = "Comment"
-    -- })
-    --
-    -- -- tabs
-    -- tab_left({
-    --   'tabs',
-    --   max_length = vim.o.columns / 3, -- Maximum width of tabs component.
-    --   mode = 0,                       -- 0: Shows tab_nr
-    --   use_mode_colors = false,
-    --   tabs_color = {
-    --     -- Same values as the general color option can be used here.
-    --     active = "Keyword",   -- Color for active tab.
-    --     inactive = "Comment", -- Color for inactive tab.
-    --   },
-    --   fmt = function(name, context)
-    --     local buflist = vim.fn.tabpagebuflist(context.tabnr)
-    --     local winnr = vim.fn.tabpagewinnr(context.tabnr)
-    --     local bufnr = buflist[winnr]
-    --     local mod = vim.fn.getbufvar(bufnr, '&mod')
-    --
-    --     return name .. (mod == 1 and ' +' or '')
-    --   end
-    -- })
-    --
-    -- -- sep
-    -- tab_left({
-    --   function()
-    --     return "]"
-    --   end,
-    --   color = "Comment"
-    -- })
-
-    -- -- wifi
-    -- tab_right({
-    --   function()
-    --     local enabled = require("pigeon.config").options.internet.enabled
-    --     return enabled and require("pigeon.internet").wifi() or ""
-    --   end,
-    --   color = tab_color
-    --   -- color = { fg = theme.color89 },
-    -- })
-    --
-    -- -- ram
-    -- tab_right({
-    --   function()
-    --     local enabled = require("pigeon.config").options.ram.enabled
-    --     return enabled and require("pigeon.ram").ram() or ""
-    --   end,
-    --   color = tab_color
-    --   -- color = { fg = theme.color26 },
-    -- })
-    --
-    -- -- battery
-    -- tab_right({
-    --   function()
-    --     local enabled = require("pigeon.config").options.battery.enabled
-    --     return enabled and require("pigeon.battery").battery() or ""
-    --   end,
-    --   -- color = { fg = colors.orange3 },
-    --   color = tab_color
-    -- })
-
-    -- -- Statusline
-    -- mode
     sec_left({
       -- "mode",
       function()
@@ -308,33 +177,6 @@ return {
         return { fg = mode_color[vim.fn.mode()], bg = colors.bg }
       end,
       -- padding = { right = 1, left = 3 },
-    })
-
-    -- sec_left({
-    --   function()
-    --     local enabled = require("pigeon.config").options.datetime.time.enabled
-    --     return enabled and require("pigeon.datetime").current_time() or ""
-    --   end,
-    --   color = function()
-    --     return "Title"
-    --   end,
-    -- })
-    -- filetype
-    -- sec_left({
-    --   "filetype",
-    --   color = function()
-    --     return { bg = mode_color[vim.fn.mode()], fg = colors.bg }
-    --   end,
-    --   -- padding = { right = 1, left = 3 },
-    -- })
-
-    -- buffers
-    sec_left({
-      function()
-        local buffers = require("antelope.buffers").buffers()
-        return "[ " .. buffers .. " ]"
-      end,
-      color = "Keyword",
     })
 
     -- filename
@@ -357,6 +199,19 @@ return {
         unnamed = "ﲃ", -- Text to show for unnamed buffers.
         newfile = "", -- Text to show for newly created file before first write
       },
+    })
+
+    -- git diffs
+    sec_left({
+      "diff",
+      symbols = { added = " ", modified = "柳", removed = " " },
+      diff_color = {
+        added = { fg = colors.green },
+        modified = { fg = colors.orange },
+        removed = { fg = colors.red },
+      },
+      cond = conditions.hide_in_width,
+      padding = { right = 1, left = 1 },
     })
 
     -- search count
@@ -408,49 +263,26 @@ return {
       padding = { right = 1, left = 1 },
     })
 
-    -- git diffs
+    -- buffers
     sec_right({
-      "diff",
-      symbols = { added = " ", modified = "柳", removed = " " },
-      diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
-      },
-      cond = conditions.hide_in_width,
-      padding = { right = 1, left = 1 },
+      function()
+        local buffers = require("antelope.buffers").buffers()
+        return "  " .. buffers
+      end,
+      color = "Keyword",
     })
 
     sec_right({
       function()
-        return "﯑ %3{codeium#GetStatusString()}"
+        return "﯑" .. "%3{codeium#GetStatusString()} "
       end,
       color = { fg = colors.grey },
-    })
-
-    -- sec_right({
-    --   "filesize",
-    --   cond = conditions.buffer_not_empty,
-    --   color = { fg = colors.bg3 },
-    -- })
-    --
-    -- sec_right({
-    --   "location",
-    --   color = { fg = colors.bg3 },
-    -- })
-
-    sec_right({
-      function()
-        return ""
-      end,
-      color = "Comment"
-      -- color = { fg = colors.yellow, bg = colors.bg },
     })
 
     -- branch
     sec_right({
       "branch",
-      -- icon = { "", align = "left" },
+      icon = { "", align = "left" },
       -- color = { fg = colors.yellow, ng = colors.bg },
       color = "Comment",
       padding = { right = 1, left = 0 },
