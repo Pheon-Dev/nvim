@@ -20,6 +20,7 @@ return {
   {
     "simrat39/inlay-hints.nvim",
     event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
     config = function()
       require("inlay-hints").setup({
         only_current_line = false,

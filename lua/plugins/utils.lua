@@ -122,7 +122,7 @@ return {
   {
     "mg979/vim-visual-multi",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
+    enabled = true,
   },
   -- {
   --   "smoka7/multicursors.nvim",

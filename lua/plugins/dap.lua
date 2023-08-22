@@ -2,6 +2,7 @@ return {
   {
     "mfussenegger/nvim-dap",
     event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
     dependencies = {
       "rcarriga/nvim-dap-ui",
     },
@@ -109,6 +110,7 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
     config = function()
       require("dapui").setup()
     end
@@ -116,6 +118,7 @@ return {
   {
     "leoluz/nvim-dap-go",
     event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
     config = function()
       require('dap-go').setup {
         -- Additional dap configurations can be added.
@@ -152,6 +155,7 @@ return {
   {
     "theHamsta/nvim-dap-virtual-text",
     event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
     config = function()
       require("nvim-dap-virtual-text").setup {
         enabled = true,                     -- enable this plugin (the default)

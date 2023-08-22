@@ -84,7 +84,7 @@ local servers = {
           globals = { "vim" },
         },
         hint = {
-          enable = true,
+          enable = false,
         },
       },
     },

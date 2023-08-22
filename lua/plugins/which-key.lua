@@ -171,7 +171,7 @@ return {
         }
       },
       x = { "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", "Quickfix All Diagnostics" },
-      y = { ":Telescope yank_history previewer=false initial_mode=normal<cr>", "Yank History" },
+      y = { ":Telescope yank_history theme=ivy previewer=false initial_mode=normal<cr>", "Yank History" },
       z = { ":Lazy<cr>", "Lazy" },
     }
 
