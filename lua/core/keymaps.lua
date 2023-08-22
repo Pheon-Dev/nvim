@@ -34,8 +34,8 @@ map("n", "U", ":redo<cr>", { noremap = true, silent = true })
 -- Move to Start/End of Line
 map("n", "<C-k>", "-", { noremap = true, silent = true })
 map("n", "<C-j>", "+", { noremap = true, silent = true })
-map("n", "<C-h>", "^", { noremap = true, silent = true })
-map("n", "<C-l>", "$", { noremap = true, silent = true })
+map("n", "H", "^", { noremap = true, silent = true })
+map("n", "L", "$", { noremap = true, silent = true })
 
 -- Tabs
 map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
