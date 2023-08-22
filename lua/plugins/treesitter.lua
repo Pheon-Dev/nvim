@@ -8,6 +8,7 @@ local M = {
     event = { "BufReadPost", "BufNewFile" },
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
+      'JoosepAlviste/nvim-ts-context-commentstring',
     },
     config = function()
       local function starts_with(str, start)
