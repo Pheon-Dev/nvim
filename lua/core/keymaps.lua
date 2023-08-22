@@ -4,8 +4,8 @@ local map = vim.api.nvim_set_keymap
 -- unused C-n, C-j, C-k, C-l, C-h, C-a, C-x, C-z, C-c, C-v
 -- Saving and  ESC on insert Mode
 map("i", "jj", "<esc>", { noremap = true, silent = true })
--- map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
-map("n", ",", "<esc>:w! | noh<cr>", { noremap = true, silent = true })
+map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+-- map("n", ",", "<esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
 -- map("n", "<C-l>", "<C-w>p", { noremap = true, silent = true })
@@ -32,6 +32,8 @@ map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
 map("n", "U", ":redo<cr>", { noremap = true, silent = true })
 
 -- Move to Start/End of Line
+map("n", "<C-k>", "-", { noremap = true, silent = true })
+map("n", "<C-j>", "+", { noremap = true, silent = true })
 map("n", "H", "^", { noremap = true, silent = true })
 map("n", "L", "$", { noremap = true, silent = true })
 
