@@ -34,8 +34,8 @@ map("n", "U", ":redo<cr>", { noremap = true, silent = true })
 -- Move to Start/End of Line
 map("n", "<C-k>", "-", { noremap = true, silent = true })
 map("n", "<C-j>", "+", { noremap = true, silent = true })
-map("n", "H", "^", { noremap = true, silent = true })
-map("n", "L", "$", { noremap = true, silent = true })
+map("n", "<C-h>", "^", { noremap = true, silent = true })
+map("n", "<C-l>", "$", { noremap = true, silent = true })
 
 -- Tabs
 map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
@@ -54,6 +54,8 @@ map("n", "go", "<C-o>", { noremap = true, silent = true })
 -- map("i", "<A-o>", "<C-o>", { noremap = true, silent = true })
 map("i", "<C-k>", "<C-o>O", { noremap = true, silent = true })
 map("i", "<C-j>", "<C-o>o", { noremap = true, silent = true })
+map("i", "<C-l>", "<C-o>A", { noremap = true, silent = true })
+map("i", "<C-h>", "<C-o>I", { noremap = true, silent = true })
 
 -- Dial
 map("n", "+", "<Plug>(dial-increment)", { noremap = true, silent = true })
@@ -149,7 +151,7 @@ vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>lua require("harpoon.ui")
 vim.api.nvim_set_keymap('n', 'gm', '<cmd>lua require("harpoon.ui").nav_next()<cr>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gn', '<cmd>lua require("harpoon.ui").nav_prev()<cr>', { noremap = true, silent = true })
 
-vim.keymap.set("i", "<C-l>",
+vim.keymap.set("i", "<C-a>",
   function()
     return vim.fn["codeium#Accept"]()
   end
