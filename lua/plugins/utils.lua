@@ -39,9 +39,14 @@ return {
     end,
   },
   {
-    "tpope/vim-surround",
+    "kylechui/nvim-surround",
     event = { "BufReadPost", "BufNewFile" },
+    dependencies = { "roobert/surround-ui.nvim" },
     enabled = true,
+    config = function()
+      require("nvim-surround").setup({})
+      require("surround-ui").setup({ root_key = "S" })
+    end,
   },
   {
     "tpope/vim-repeat",
