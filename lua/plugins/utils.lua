@@ -41,11 +41,11 @@ return {
   {
     "kylechui/nvim-surround",
     event = { "BufReadPost", "BufNewFile" },
-    dependencies = { "roobert/surround-ui.nvim" },
+    -- dependencies = { "roobert/surround-ui.nvim" },
     enabled = true,
     config = function()
       require("nvim-surround").setup({})
-      require("surround-ui").setup({ root_key = "S" })
+      -- require("surround-ui").setup({ root_key = "S" })
     end,
   },
   {
@@ -61,7 +61,7 @@ return {
   {
     "lukas-reineke/virt-column.nvim",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
     config = function()
       require("virt-column").setup({
         char = "┊",
@@ -166,7 +166,8 @@ return {
   {
     "rcarriga/nvim-notify",
     enabled = true,
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
+    -- event = "VeryLazy",
     config = function()
       require("notify").setup({
         background_colour = "Normal",

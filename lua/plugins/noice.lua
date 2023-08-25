@@ -237,7 +237,16 @@ return {
         },
       },
       routes = {
-        -- { filter = { event = "msg_show", kind = "", find = "<" },         opts = { skip = true } },
+        -- { filter = { event = "msg_show", kind = "search_count" }, opts = { skip = true }, },
+        {
+          view = "split",
+          filter = {
+            event = "msg_show",
+            -- kind = { "Notifications", "history" },
+            kind = "history",
+            min_height = 20
+          },
+        },
         -- { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
         { filter = { warning = true, find = "node" }, opts = { skip = true } },
       },
