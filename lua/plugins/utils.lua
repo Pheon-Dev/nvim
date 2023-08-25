@@ -7,10 +7,6 @@ return {
     -- event = "VeryLazy",
   },
   {
-    "chaoren/vim-wordmotion",
-    event = { "BufReadPost", "BufNewFile" },
-  },
-  {
     "monaqa/dial.nvim",
     -- stylua: ignore
     event = { "BufReadPost", "BufNewFile" },
