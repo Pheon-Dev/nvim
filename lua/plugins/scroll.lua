@@ -11,9 +11,6 @@ return {
         return
       end
       -- local ot, ts_ctx = require("treesitter-context")
-      local ok, p = pcall(require, "ufo")
-      if not ok then return end
-      -- if not ot then return end
 
       neoscroll.setup({
         -- All these keys will be mapped to their corresponding default scrolling animation
@@ -24,12 +21,10 @@ return {
         cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
         easing_function = "cubic",   -- quadratic, cubic, quartic, quintic, circular, sine
         pre_hook = function()        -- Function to run before the scrolling animation starts
-          p.disable()
           -- ts_ctx.disable()
           -- vim.cmd [[TSBufToggle highlight]]
         end,
         post_hook = function() -- Function to run after the scrolling animation ends
-          p.enable()
           -- ts_ctx.enable()
           -- vim.cmd [[TSBufToggle highlight]]
         end,

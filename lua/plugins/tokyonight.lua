@@ -185,7 +185,8 @@ return {
 
       -- Fold
       -- TODO: hover highlights
-      vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93 })
+      vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93, fg = theme.color26 })
+      vim.api.nvim_set_hl(0, "FoldColumn", { bg = theme.color19, fg = theme.color99 })
       -- vim.api.nvim_set_hl(0, "UfoFoldedFg", { fg = theme.color93, bg = theme.color0 })
       -- vim.api.nvim_set_hl(0, "UfoFoldedBg", { fg = theme.color93, bg = theme.color0 })
       -- vim.api.nvim_set_hl(0, "UfoPreviewSbar", { fg = theme.color93, bg = theme.color0 })
