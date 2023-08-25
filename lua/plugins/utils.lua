@@ -53,100 +53,11 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     enabled = true,
   },
-  -- {
-  --   "svermeulen/vim-easyclip",
-  --   event = { "BufReadPost", "BufNewFile" },
-  --   enabled = false,
-  -- },
-  {
-    "lukas-reineke/virt-column.nvim",
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
-    config = function()
-      require("virt-column").setup({
-        char = "┊",
-        virtcolumn = "80",
-      })
-    end
-  },
-  {
-    'tomiis4/BufferTabs.nvim',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
-    lazy = false,
-    enabled = false,
-    config = function()
-      require('buffertabs').setup({
-        ---@type 'none'|'single'|'double'|'rounded'|'solid'|'shadow'|table
-        border = 'rounded',
-
-        ---@type boolean
-        icons = true,
-
-        ---@type string
-        hl_group = 'Keyword',
-
-        ---@type string
-        hl_group_inactive = 'Comment',
-
-        ---@type table[]
-        exclude = {},
-
-        ---@type boolean
-        show_all = false,
-
-        ---@type 'row'|'column'
-        display = 'column',
-
-        ---@type 'left'|'right'|'center'
-        horizontal = 'right',
-
-        ---@type 'top'|'bottom'|'center'
-        vertical = 'bottom',
-      })
-    end
-  },
-  -- {
-  --   "max397574/better-escape.nvim",
-  --   event = { "BufReadPost", "BufNewFile" },
-  --   enabled = true,
-  --   config = function()
-  --     require("better_escape").setup {
-  --       mapping = { "jj" },         -- a table with mappings to use
-  --       timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
-  --       clear_empty_lines = false,  -- clear line after escaping if there is only whitespace
-  --       keys = "<Esc>",             -- keys used for escaping, if it is a function will use the result everytime
-  --       -- example(recommended)
-  --       -- keys = function()
-  --       --   return vim.api.nvim_win_get_cursor(0)[2] > 1 and '<esc>l' or '<esc>'
-  --       -- end,
-  --     }
-  --   end,
-  -- },
   {
     "mg979/vim-visual-multi",
     event = { "BufReadPost", "BufNewFile" },
     enabled = true,
   },
-  -- {
-  --   "smoka7/multicursors.nvim",
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     'nvim-treesitter/nvim-treesitter',
-  --     'smoka7/hydra.nvim',
-  --   },
-  --   opts = {},
-  --   cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
-  --   keys = {
-  --     {
-  --       mode = { 'v', 'n' },
-  --       '<C-n>',
-  --       '<cmd>MCstart<cr>',
-  --       desc = 'Create a selection for selected text or word under the cursor',
-  --     },
-  --   },
-  -- },
   {
     "brenoprata10/nvim-highlight-colors",
     event = { "BufReadPost", "BufNewFile" },
