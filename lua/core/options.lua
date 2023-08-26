@@ -85,18 +85,18 @@ vim.opt.fillchars = { eob = "-", fold = " " }
 --
 -- vim.opt.viewoptions:remove("options")
 
--- -- opt.exrc = true
+-- -- -- opt.exrc = true
 -- opt.foldenable = true
 -- opt.foldlevel = 99
 -- opt.foldlevelstart = 99
 -- opt.foldcolumn = "0"  -- '1', '0' is not bad
 -- vim.o.foldnestmax = 3 -- '1', '0' is not bad
-vim.o.foldmethod = "manual"
+-- vim.o.foldmethod = "manual"
 
 vim.cmd([[
   set nofoldenable
   set foldlevel=99
-  " set fillchars=fold:
+  set fillchars=fold:
   set foldtext=CustomFoldText()
   setlocal foldmethod=expr
   setlocal foldexpr=GetPotionFold(v:lnum)
