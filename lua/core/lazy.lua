@@ -32,19 +32,19 @@ require("lazy").setup({
     -- increase downloads a lot.
     filter = true,
   },
-  dev = {
-    -- directory where you store your local plugin projects
-    path = "~/projects",
-    ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
-    patterns = {},    -- For example {"folke"}
-    fallback = false, -- Fallback to git when local plugin doesn't exist
-  },
+  -- dev = {
+  --   -- directory where you store your local plugin projects
+  --   path = "~/projects",
+  --   ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
+  --   patterns = {},    -- For example {"folke"}
+  --   fallback = false, -- Fallback to git when local plugin doesn't exist
+  -- },
   ui = {
     -- a number <1 is a percentage., >1 is a fixed size
     size = { width = 0.8, height = 0.8 },
     wrap = true, -- wrap the lines in the ui
     -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
-    border = "none",
+    border = "single",
     title = nil, ---@type string only works when border is not "none"
     title_pos = "center", ---@type "center" | "left" | "right"
     icons = {
