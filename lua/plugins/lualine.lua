@@ -14,8 +14,15 @@ return {
       vim.notify("Plugins didn't load properly!", "error")
     end
 
-    local colors = {
-      bg = "#21222c",
+    local latte = require("catppuccin.palettes").get_palette "latte"
+    local frappe = require("catppuccin.palettes").get_palette "frappe"
+    local macchiato = require("catppuccin.palettes").get_palette "macchiato"
+    local mocha = require("catppuccin.palettes").get_palette "mocha"
+
+    local colors = macchiato
+
+    local csolors = {
+      bg = "#24273A",
       bg1 = "#282a36",
       bg2 = "#44475a",
       bg3 = "#565f89",
@@ -60,7 +67,7 @@ return {
         disabled_filetypes = { statusline = { "alpha", "NvimTree", "floaterm" } },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        theme = 'tokyonight',
+        theme = 'catppuccin',
 
         ignore_focus = {}, -- If current filetype is in this list it'll
         -- always be drawn as inactive statusline

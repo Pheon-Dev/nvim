@@ -61,7 +61,7 @@ function M.buttons()
       vim.api.nvim_buf_set_keymap(0, "n", "s", ":FloatermNew rg<CR>", keybind_opts)
       vim.api.nvim_buf_set_keymap(0, "n", "l", ":FloatermNew lazygit<CR>", keybind_opts)
       -- vim.api.nvim_buf_set_keymap(0, "n", "b", ":FloatermNew broot<CR>", keybind_opts)
-      vim.api.nvim_buf_set_keymap(0, "n", "`", ":FloatermNew<CR>", keybind_opts)
+      vim.api.nvim_buf_set_keymap(0, "n", "t", ":FloatermNew<CR>", keybind_opts)
 
       -- Quit
       vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q<CR>", keybind_opts)
@@ -90,7 +90,7 @@ function M.buttons()
       type = "text",
       val = {
         "                        │                       ",
-        "   fzf            f    │       terminal      `",
+        "   fzf            f    │       terminal      t",
         "   lazygit        l    │       lf            ;",
         "鈴  lazy           z    │       search        s",
         "ﯠ   harpoon        k    │    פּ   nvim-tree     j",
@@ -140,7 +140,7 @@ M.section_info = {
     return M.info_text()
   end,
   opts = {
-    hl = "AlphaInfo",
+    hl = "Comment",
     position = "center",
   },
 }
