@@ -10,6 +10,7 @@ return {
     "monaqa/dial.nvim",
     -- stylua: ignore
     event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
     keys = {
       -- { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
       -- { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
@@ -92,8 +93,8 @@ return {
   {
     "rcarriga/nvim-notify",
     enabled = true,
-    -- event = { "BufReadPost", "BufNewFile" },
-    event = "VeryLazy",
+    event = { "BufReadPost", "BufNewFile" },
+    -- event = "VeryLazy",
     config = function()
       require("notify").setup({
         background_colour = "Normal",
@@ -124,8 +125,8 @@ return {
   {
     'Wansmer/treesj',
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
-    -- keys = { '<space>m', '<space>j', '<space>s' },
+    enabled = false,
+    -- keys = { '<splitjoin>m', '<space>j', '<space>s' },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       local tsj = require('treesj')
