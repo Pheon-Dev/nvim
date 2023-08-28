@@ -46,11 +46,6 @@ local M = {
       -- vim.api.nvim_set_hl(0, "Title", { fg = theme.color101, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "RustToolsInlayHints", { fg = theme.color24 })
 
-      -- Tabline
-      vim.api.nvim_set_hl(0, "TabLineFill", { fg = theme.color0, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "TabLine", { fg = theme.color0, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "TabLineSel", { fg = theme.color0, bg = theme.color0 })
-
       -- Flash
       vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "FlashMatch", { bg = theme.color0, fg = theme.color4 })
@@ -138,9 +133,7 @@ local M = {
       vim.api.nvim_set_hl(0, "NotifyDEBUGBody", { bg = theme.color0 })
       vim.api.nvim_set_hl(0, "NotifyTRACEBody", { bg = theme.color0 })
 
-      -- Blankline
-      vim.api.nvim_set_hl(0, "IndentBlanklineChar", { fg = theme.color59 })
-      vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = theme.color2 })
+      -- Indent
       vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = theme.color24 })
 
       -- Yanky
@@ -151,14 +144,6 @@ local M = {
       -- TODO: hover highlights
       vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93, fg = theme.color26 })
       vim.api.nvim_set_hl(0, "FoldColumn", { bg = theme.color19, fg = theme.color99 })
-      -- vim.api.nvim_set_hl(0, "UfoFoldedFg", { fg = theme.color93, bg = theme.color0 })
-      -- vim.api.nvim_set_hl(0, "UfoFoldedBg", { fg = theme.color93, bg = theme.color0 })
-      -- vim.api.nvim_set_hl(0, "UfoPreviewSbar", { fg = theme.color93, bg = theme.color0 })
-      -- vim.api.nvim_set_hl(0, "UfoPreviewThumb", { bg = theme.color0, bg = theme.color0 })
-      -- vim.api.nvim_set_hl(0, "UfoPreviewWinBar", { fg = theme.color93, bg = theme.color0 })
-      -- vim.api.nvim_set_hl(0, "UfoPreviewCursorLine", { fg = theme.color93, bg = theme.color0 })
-      -- vim.api.nvim_set_hl(0, "UfoFoldedEllipsis", { fg = theme.color93, bg = theme.color0 })
-      -- vim.api.nvim_set_hl(0, "UfoCursorFoldedLine", { fg = theme.color93, bg = theme.color0 })
 
       -- GitSigns
       vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = theme.color7 })
@@ -182,7 +167,7 @@ local M = {
       vim.api.nvim_set_hl(0, "AntelopeHandleTabpage", { fg = theme.color7, bg = theme.color0 })
 
       -- Mason
-      vim.api.nvim_set_hl(0, "MasonNormal", { bg = theme.color1 })
+      vim.api.nvim_set_hl(0, "MasonNormal", { bg = theme.color0 })
 
       -- Lazy
       vim.api.nvim_set_hl(0, "LazyNormal", { bg = theme.color0 })

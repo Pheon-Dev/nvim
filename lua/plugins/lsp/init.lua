@@ -23,11 +23,16 @@ return {
       require("mason-lspconfig").setup({
         automatic_installation = true,
         ensure_installed = {
-          "rust_analyzer",
+          "rust-analyzer",
           "clangd",
+          "codelldb",
+          "prettierd",
+          "shfmt",
           "gopls",
+          "goimports-reviser",
           "bash-language-server",
           "lua-language-server",
+          "prisma-language-server",
           "typescript-language-server",
         },
       })
@@ -39,6 +44,7 @@ return {
     config = function()
       require("mason").setup({
         ui = {
+          border = "rounded",
           icons = {
             package_installed = "✔",
             package_pending = "➜",
