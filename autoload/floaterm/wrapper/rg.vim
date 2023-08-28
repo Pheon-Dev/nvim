@@ -6,7 +6,7 @@
 " ============================================================================
 
 if executable('bat')
-  let s:viewer = 'bat --style=plain --theme=Dracula --pager=never --color=always {1} --highlight-line {2}'
+  let s:viewer = 'bat --style=plain --theme=TwoDark --pager=never --color=always {1} --highlight-line {2}'
 elseif executable('batcat')
   let s:viewer = 'batcat --style=numbers --color=always --highlight-line {2}'
 else

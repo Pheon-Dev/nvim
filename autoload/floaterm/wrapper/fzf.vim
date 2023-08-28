@@ -10,7 +10,7 @@ function! floaterm#wrapper#fzf#(cmd, jobopts, config) abort
   let cmd = a:cmd
   if cmd !~ '--preview'
     if executable('bat')
-      let cmd .= ' --preview ' . shellescape('( [[ -f {} ]] && (bat --style=plain --color=always --theme=Dracula --pager=never {} || cat {})) || ([[ -d {} ]] && (exa --icons -T --color=always --group-directories-first {} || tree -C {})) || echo {} 2> /dev/null | head -200')
+      let cmd .= ' --preview ' . shellescape('( [[ -f {} ]] && (bat --style=plain --color=always --theme=TwoDark --pager=never {} || cat {})) || ([[ -d {} ]] && (exa --icons -T --color=always --group-directories-first {} || tree -C {})) || echo {} 2> /dev/null | head -200')
     else
       let cmd .= ' --preview ' . shellescape('cat -n {}')
     endif
