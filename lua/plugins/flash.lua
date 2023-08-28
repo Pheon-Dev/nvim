@@ -214,7 +214,7 @@ return {
             -- show jump labels
             jump_labels = true,
             -- set to `false` to use the current line only
-            multi_line = false,
+            multi_line = true,
             -- When using jump labels, don't use these keys
             -- This allows using those keys directly after the motion
             -- label = { exclude = "hjkliardc" },
@@ -239,7 +239,7 @@ return {
               }
             end,
             search = { wrap = false },
-            highlight = { backdrop = false },
+            highlight = { backdrop = true },
             jump = { register = false },
           },
           -- options used for treesitter selections
