@@ -23,10 +23,10 @@ map("n", "<A-B>", ":split<cr>", { noremap = true, silent = true })
 map("n", "<leader>wb", "<C-w>t<C-w>K", { noremap = true, silent = true })
 map("n", "<leader>wv", "<C-w>t<C-w>H", { noremap = true, silent = true })
 
-map("n", ">", ":vertical resize +3<cr>", { noremap = true, silent = true })
-map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
-map("n", "(", ":resize +3<cr>", { noremap = true, silent = true })
-map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
+-- map("n", ">", ":vertical resize +3<cr>", { noremap = true, silent = true })
+-- map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
+-- map("n", "(", ":resize +3<cr>", { noremap = true, silent = true })
+-- map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
 
 -- Editing Keybindings
 map("n", "U", ":redo<cr>", { noremap = true, silent = true })
