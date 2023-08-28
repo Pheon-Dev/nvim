@@ -76,6 +76,13 @@ return {
     end,
   },
   {
+    "lambdalisue/suda.vim",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+    config = function()
+    end,
+  },
+  {
     "Exafunction/codeium.vim",
     event = { "BufReadPost", "BufNewFile" },
     enabled = true,
@@ -85,8 +92,8 @@ return {
   {
     "rcarriga/nvim-notify",
     enabled = true,
-    event = { "BufReadPost", "BufNewFile" },
-    -- event = "VeryLazy",
+    -- event = { "BufReadPost", "BufNewFile" },
+    event = "VeryLazy",
     config = function()
       require("notify").setup({
         background_colour = "Normal",
