@@ -60,6 +60,7 @@ return {
         disabled_filetypes = { statusline = { "alpha", "NvimTree", "floaterm" } },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
+        theme = 'tokyonight',
 
         ignore_focus = {}, -- If current filetype is in this list it'll
         -- always be drawn as inactive statusline
