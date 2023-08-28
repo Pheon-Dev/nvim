@@ -242,7 +242,7 @@ vim.g.floaterm_titleposition = "left" -- options left, right, center
 vim.g.floaterm_position =
 "center"                              -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
 -- wintype 'float': 'top', 'bottom', 'left', 'right', 'topleft', 'topright', 'bottomleft', 'bottomright', 'center', 'auto'(at the cursor place) default 'center'
-vim.g.floaterm_keymap_toggle = '`'
+vim.g.floaterm_keymap_toggle = '<leader>`'
 -- vim.g.floaterm_keymap_new = '`n'
 -- vim.g.floaterm_keymap_next = '`j'
 -- vim.g.floaterm_keymap_prev = '`k'
