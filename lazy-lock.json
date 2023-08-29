@@ -60,7 +60,6 @@
   "sentiment.nvim": { "branch": "main", "commit": "54a6db15b630eccfa98c32a76baf90f21c6f1e40" },
   "suda.vim": { "branch": "master", "commit": "8b0fc3711760195aba104e2d190cff9af8267052" },
   "targets.vim": { "branch": "master", "commit": "4a5e9c09ec2ba63c8cd16b433453e41c22efab22" },
-  "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
   "todo-comments.nvim": { "branch": "main", "commit": "8febc60a76feefd8203077ef78b6a262ea1a41f9" },
   "typescript-tools.nvim": { "branch": "master", "commit": "7f17e00ebc484c7fddbfb17044360f5d8ec08b24" },
   "vim-floaterm": { "branch": "master", "commit": "3bf0beb10a5a6f7a878195c93711515f2b7bdc99" },

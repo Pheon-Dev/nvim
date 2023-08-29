@@ -36,7 +36,7 @@ return {
       icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
-        group = "+",      -- symbol prepended to a group
+        group = "+", -- symbol prepended to a group
       },
       popup_mappings = {
         scroll_down = "<c-d>", -- binding to scroll down inside the popup
@@ -123,16 +123,11 @@ return {
       j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
       m = { ":Antelope marks<cr>", "Marks" },
-      n = { ":Telescope notify initial_mode=normal<cr>", "Notifications" },
+      -- n = { ":Telescope notify initial_mode=normal<cr>", "Notifications" },
+      n = { ":messages<cr>", "Messages" },
       o = {
         name = "Others",
-        c = {
-          ":Telescope command_history previewer=false initial_mode=normal<cr>",
-          "Command History",
-        },
         m = { ":Mason<cr>", "Mason" },
-        t = { ":Telescope help_tags previewer=false initial_mode=insert<cr>", "Help Tags" },
-        h = { ":Telescope harpoon marks initial_mode=normal previewer=false<cr>", "Harpoon" },
         x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
       },
       p = { ":Antelope tabpages<cr>", "Toggle Tabapages" },
@@ -157,7 +152,6 @@ return {
       t = {
         name = "TODO | Trouble | Tabs | TST",
         q = { ":TodoQuickFix<cr>", "TODO QuickFix" },
-        l = { ":TodoTelescope<cr>", "TODO Telescope" },
         r = { ":TodoTrouble<cr>", "TODO Trouble" },
         t = {
           name = "Typescript",
@@ -171,7 +165,7 @@ return {
         }
       },
       x = { "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", "Quickfix All Diagnostics" },
-      y = { ":Telescope yank_history theme=ivy previewer=false initial_mode=normal<cr>", "Yank History" },
+      -- y = { ":Telescope yank_history theme=ivy previewer=false initial_mode=normal<cr>", "Yank History" },
       z = { ":Lazy<cr>", "Lazy" },
     }
 
