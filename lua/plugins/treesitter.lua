@@ -190,6 +190,7 @@ local M = {
           "dirvish",
           "fugitive",
           "harpoon",
+          "buffalo",
           "flaaterm",
           "NvimTree",
         },

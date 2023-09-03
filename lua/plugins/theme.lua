@@ -67,10 +67,15 @@ local M = {
       vim.api.nvim_set_hl(0, "HarpoonNumberInactive", { fg = theme.color3, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = theme.color0 })
 
-      -- vim.api.nvim_set_hl(0, "HarpoonInactive", { link = "Tabline" })
-      -- vim.api.nvim_set_hl(0, "HarpoonActive", { link = "TablineSel" })
-      -- vim.api.nvim_set_hl(0, "HarpoonNumberActive", { link = "TablineSel" })
-      -- vim.api.nvim_set_hl(0, "HarpoonNumberInactive", { link = "Tabline" })
+      -- Buffalo
+      vim.api.nvim_set_hl(0, "BuffaloBorder", { fg = theme.color2, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "Buffalo", { fg = theme.color3, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "BuffaloInactive", { fg = theme.color3, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "BuffaloActive", { fg = theme.color101, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "BuffaloNumberActive", { fg = theme.color4, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "BuffaloNumberInactive", { fg = theme.color3, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "BuffaloWindow", { bg = theme.color0 })
+
 
       -- CMP
       -- vim.api.nvim_set_hl(0, "PmenuThumb", { fg = theme.color59, bg = theme.color59 })
@@ -167,6 +172,7 @@ local M = {
       vim.api.nvim_set_hl(0, "AntelopeHandleTabpage", { fg = theme.color7, bg = theme.color0 })
 
       -- Mason
+      vim.api.nvim_set_hl(0, "TreesitterContext", { bg = theme.color01 })
       vim.api.nvim_set_hl(0, "MasonNormal", { bg = theme.color0 })
 
       -- Lazy

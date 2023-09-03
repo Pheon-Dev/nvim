@@ -45,6 +45,7 @@ map("n", "tt", ":tabnew<cr>", { noremap = true, silent = true })
 map("n", "th", ":tabclose<cr>", { noremap = true, silent = true })
 map("n", "tj", ":tabnext<cr>", { noremap = true, silent = true })
 map("n", "tk", ":tabprevious<cr>", { noremap = true, silent = true })
+-- map("n", "ts", ":tabs<cr>", { noremap = true, silent = true })
 -- map("n", "th", ":tabfirst<cr>", { noremap = true, silent = true })
 -- map("n", "tl", ":tablast<cr>", { noremap = true, silent = true })
 

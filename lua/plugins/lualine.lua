@@ -2,7 +2,6 @@ return {
   "nvim-lualine/lualine.nvim",
   enabled = true,
   dependencies = {
-    -- "Pheon-Dev/pigeon",
     "Exafunction/codeium.vim",
   },
   event = { "BufReadPost", "BufNewFile" },
@@ -14,36 +13,12 @@ return {
       vim.notify("Plugins didn't load properly!", "error")
     end
 
-    local latte = require("catppuccin.palettes").get_palette "latte"
-    local frappe = require("catppuccin.palettes").get_palette "frappe"
-    local macchiato = require("catppuccin.palettes").get_palette "macchiato"
+    -- local latte = require("catppuccin.palettes").get_palette "latte"
+    -- local frappe = require("catppuccin.palettes").get_palette "frappe"
+    -- local macchiato = require("catppuccin.palettes").get_palette "macchiato"
     local mocha = require("catppuccin.palettes").get_palette "mocha"
 
-    local colors = macchiato
-
-    local csolors = {
-      bg = "#24273A",
-      bg1 = "#282a36",
-      bg2 = "#44475a",
-      bg3 = "#565f89",
-      grey = "#a9a1e1",
-      fg = "#bd93f9",
-      yellow = "#ffff0f",
-      yellow1 = "#f0ff8c",
-      cyan = "#008080",
-      darkblue = "#081633",
-      green = "#82cf00",
-      green1 = "#A9FF68",
-      orange2 = "#c03000",
-      orange1 = "#ff7222",
-      orange3 = "#ff9e64",
-      orange = "#FF8800",
-      violet = "#a9a1e1",
-      magenta = "#c678dd",
-      blue = "#51afef",
-      red = "#ec5f67",
-      purple = "#6272a4",
-    }
+    local colors = mocha
 
     local conditions = {
       buffer_not_empty = function()
@@ -67,31 +42,11 @@ return {
         disabled_filetypes = { statusline = { "alpha", "NvimTree", "floaterm" } },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        theme = 'catppuccin',
-
-        ignore_focus = {}, -- If current filetype is in this list it'll
-        -- always be drawn as inactive statusline
-        -- and the last window will be drawn as active statusline.
-        -- for example if you don't want statusline of
-        -- your file tree / sidebar window to have active
-        -- statusline you can add their filetypes here.
-
+        ignore_focus = {},           -- If current filetype is in this list it'll
         always_divide_middle = true, -- When set to true, left sections i.e. 'a','b' and 'c'
-        -- can't take over the entire statusline even
-        -- if neither of 'x', 'y' or 'z' are present.
-
-        globalstatus = true, -- enable global statusline (have a single statusline
-        -- at bottom of neovim instead of one for  every window).
-        -- This feature is only available in neovim 0.7 and higher.
-
-        refresh = {          -- sets how often lualine should refresh it's contents (in ms)
-          statusline = 1000, -- The refresh option sets minimum time that lualine tries
-          -- tabline = 1000,    -- to maintain between refresh. It's not guarantied if situation
-          -- winbar = 1000      -- arises that lualine needs to refresh itself before this time
-          -- it'll do it.
-
-          -- Also you can force lualine's refresh by calling refresh function
-          -- like require('lualine').refresh()
+        globalstatus = true,         -- enable global statusline (have a single statusline
+        refresh = {                  -- sets how often lualine should refresh it's contents (in ms)
+          statusline = 1000,         -- The refresh option sets minimum time that lualine tries
         },
         theme = {
           normal = { c = { fg = colors.fg, bg = colors.bg } },
@@ -240,7 +195,7 @@ return {
       sec_left({
         noice.api.statusline.mode.get,
         cond = noice.api.statusline.mode.has,
-        color = { fg = colors.orange1 },
+        color = { fg = "#ff9e64" },
         padding = { right = 1, left = 1 },
       })
     end
@@ -271,14 +226,38 @@ return {
       padding = { right = 1, left = 1 },
     })
 
+    -- tabs
+    sec_right({
+      function()
+        local tabpages = require("buffalo").tabpages()
+        return "  " .. tabpages
+      end,
+      color = "Comment",
+    })
+
     -- buffers
     sec_right({
       function()
-        local buffers = require("antelope.buffers").buffers()
-        return "  " .. buffers
+        local buffers = require("buffalo").buffers()
+        return "  " .. buffers
       end,
       color = "Keyword",
     })
+
+    -- volume
+    -- sec_right({
+    --   function()
+    --     local enabled = require("pigeon.config").options.volume.enabled
+    --     local volume = require("pigeon.volume").volume()
+    --
+    --     if enabled then
+    --       return volume
+    --     else
+    --       return ""
+    --     end
+    --   end,
+    --   color = "Keyword",
+    -- })
 
     sec_right({
       function()

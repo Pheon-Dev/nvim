@@ -38,6 +38,91 @@ return {
     "Pheon-Dev/harpoon",
     -- "ThePrimeagen/harpoon",
     enabled = true,
+    config = function()
+      local opts = { noremap = true }
+      local map = vim.keymap.set
+      -- Setup
+      -- Navigate buffers bypassing the menu
+      local harpoon = require("harpoon.ui")
+      local keys = 'hjklasdfgn'
+      for i = 1, #keys do
+        local key = keys:sub(i, i)
+        map(
+          'n',
+          string.format('<C-%s>', key),
+          function() harpoon.nav_file(i) end,
+          opts
+        )
+      end
+      -- Just the menu
+      -- map({ 't', 'n' }, '<C-Space>', harpoon.toggle_quick_menu, opts)
+      -- -- Open menu and search
+      -- map({ 't', 'n' }, '<C-M>', function()
+      --   harpoon.toggle_quick_menu()
+      --   -- wait for the menu to open
+      --   vim.defer_fn(function()
+      --     vim.fn.feedkeys('/')
+      --   end, 50)
+      -- end, opts)
+      -- Next/Prev
+      -- map('n', '<M-l>', harpoon.nav_next, opts)
+      -- map('n', '<M-h>', harpoon.nav_prev, opts)
+    end
+  },
+  {
+    "Pheon-Dev/buffalo-nvim",
+    enabled = true,
+    -- event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      local opts = { noremap = true }
+      local map = vim.keymap.set
+      -- Setup
+      require("buffalo").setup({
+        select_menu_item_commands = {
+          edit = {
+            key = "l",
+            command = "edit"
+          },
+          v = {
+            key = "<C-v>",
+            command = "vsplit"
+          },
+          h = {
+            key = "<C-h>",
+            command = "split"
+          }
+        },
+        focus_alternate_buffer = false,
+        short_file_names = true,
+        short_term_names = true,
+        loop_nav = false,
+      })
+      -- Navigate buffers bypassing the menu
+      local buffalo = require("buffalo.ui")
+      local keys = '1234567890'
+      for i = 1, #keys do
+        local key = keys:sub(i, i)
+        map(
+          'n',
+          string.format('<M-%s>', key),
+          function() buffalo.nav_file(i) end,
+          opts
+        )
+      end
+      -- Just the menu
+      map({ 't', 'n' }, '<M-Space>', buffalo.toggle_quick_menu, opts)
+      -- Open menu and search
+      map({ 't', 'n' }, '<M-m>', function()
+        buffalo.toggle_quick_menu()
+        -- wait for the menu to open
+        vim.defer_fn(function()
+          vim.fn.feedkeys('/')
+        end, 50)
+      end, opts)
+      -- Next/Prev
+      map('n', '<C-j>', buffalo.nav_next, opts)
+      map('n', '<C-k>', buffalo.nav_prev, opts)
+    end
   },
   {
     "utilyre/sentiment.nvim",
@@ -74,6 +159,13 @@ return {
     enabled = true,
     config = function()
       require('nvim-highlight-colors').setup {}
+    end,
+  },
+  {
+    "chaoren/vim-wordmotion",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+    config = function()
     end,
   },
   {
