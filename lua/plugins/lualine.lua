@@ -230,16 +230,16 @@ return {
     sec_right({
       function()
         local tabpages = require("buffalo").tabpages()
-        return "  " .. tabpages
+        return " 󰓩 " .. tabpages
       end,
-      color = "Comment",
+      color = { fg = colors.grey },
     })
 
     -- buffers
     sec_right({
       function()
         local buffers = require("buffalo").buffers()
-        return "  " .. buffers
+        return "󱂬 " .. buffers
       end,
       color = "Keyword",
     })
