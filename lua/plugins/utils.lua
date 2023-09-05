@@ -78,50 +78,66 @@ return {
       local map = vim.keymap.set
       -- Setup
       require("buffalo").setup({
-        select_menu_item_commands = {
+        tab_commands = {
+          select = {
+            key = "l",
+            command = "tabnext"
+          },
+          accept = {
+            key = "<CR>",
+            command = "tabnext"
+          },
+          close = {
+            key = "x",
+            command = "tabclose"
+          },
+          new = {
+            key = "n",
+            command = "tabnew"
+          }
+        },
+        buffer_commands = {
+          enter = {
+            key = "<CR>",
+            command = "edit"
+          },
           edit = {
             key = "l",
             command = "edit"
           },
-          v = {
-            key = "<C-v>",
+          vsplit = {
+            key = "v",
             command = "vsplit"
           },
-          h = {
-            key = "<C-h>",
+          split = {
+            key = "b",
             command = "split"
           }
         },
-        focus_alternate_buffer = false,
-        short_file_names = true,
-        short_term_names = true,
-        loop_nav = false,
+        cycle_nav = true,
+        exit_menu = "h",
+        borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+        go_to = {
+          enabled = true,
+          go_to_tab = "<leader>%s",
+          go_to_buffer = "<M-%s>",
+        },
+        filter = {
+          enabled = true,
+          filter_tabs = "<M-t>",
+          filter_buffers = "<M-b>",
+        },
       })
-      -- Navigate buffers bypassing the menu
+
       local buffalo = require("buffalo.ui")
-      local keys = '1234567890'
-      for i = 1, #keys do
-        local key = keys:sub(i, i)
-        map(
-          'n',
-          string.format('<M-%s>', key),
-          function() buffalo.nav_file(i) end,
-          opts
-        )
-      end
-      -- Just the menu
-      map({ 't', 'n' }, '<M-Space>', buffalo.toggle_quick_menu, opts)
-      -- Open menu and search
-      map({ 't', 'n' }, '<M-m>', function()
-        buffalo.toggle_quick_menu()
-        -- wait for the menu to open
-        vim.defer_fn(function()
-          vim.fn.feedkeys('/')
-        end, 50)
-      end, opts)
-      -- Next/Prev
-      map('n', '<C-j>', buffalo.nav_next, opts)
-      map('n', '<C-k>', buffalo.nav_prev, opts)
+
+      map({ 't', 'n' }, '<M-Space>', buffalo.toggle_buf_menu, opts)
+      map({ 't', 'n' }, '<C-Space>', buffalo.toggle_tab_menu, opts)
+
+      map('n', '<C-j>', buffalo.nav_buf_next, opts)
+      map('n', '<C-k>', buffalo.nav_buf_prev, opts)
+      map('n', '<C-n>', buffalo.nav_tab_next, opts)
+      map('n', '<C-p>', buffalo.nav_tab_prev, opts)
     end
   },
   {
