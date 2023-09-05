@@ -131,7 +131,7 @@ return {
         x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
       },
       -- p = { ":Antelope tabpages<cr>", "Toggle Tabapages" },
-      p = { ":lua require('buffalo.ui').toggle_tab_menu()<cr>", "Buffalo Tabapages" },
+      -- p = { ":lua require('buffalo.ui').toggle_tab_menu()<cr>", "Buffalo Tabapages" },
       q = { ":bd<cr>", "Close Buffer" },
       r = {
         name = "Rust",

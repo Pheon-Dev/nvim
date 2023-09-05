@@ -69,12 +69,12 @@ local M = {
 
       -- Buffalo
       vim.api.nvim_set_hl(0, "BuffaloBorder", { fg = theme.color2, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "Buffalo", { fg = theme.color3, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "BuffaloInactive", { fg = theme.color3, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "BuffaloActive", { fg = theme.color101, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "BuffaloNumberActive", { fg = theme.color4, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "BuffaloNumberInactive", { fg = theme.color3, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "BuffaloWindow", { bg = theme.color0 })
+      -- vim.api.nvim_set_hl(0, "Buffalo", { fg = theme.color3, bg = theme.color0 })
+      -- vim.api.nvim_set_hl(0, "BuffaloInactive", { fg = theme.color3, bg = theme.color0 })
+      -- vim.api.nvim_set_hl(0, "BuffaloActive", { fg = theme.color101, bg = theme.color0 })
+      -- vim.api.nvim_set_hl(0, "BuffaloNumberActive", { fg = theme.color4, bg = theme.color0 })
+      -- vim.api.nvim_set_hl(0, "BuffaloNumberInactive", { fg = theme.color3, bg = theme.color0 })
 
 
       -- CMP
