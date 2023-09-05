@@ -124,7 +124,7 @@ return {
       k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
       m = { ":Antelope marks<cr>", "Marks" },
       -- n = { ":Telescope notify initial_mode=normal<cr>", "Notifications" },
-      n = { ":messages<cr>", "Messages" },
+      n = { ":Noice<cr>", "Messages" },
       o = {
         name = "Others",
         m = { ":Mason<cr>", "Mason" },
