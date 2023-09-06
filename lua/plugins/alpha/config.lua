@@ -37,7 +37,7 @@ M.section_header = {
   },
   opts = {
     position = "center",
-    hl = "Comment",
+    hl = "AlphaHeader",
   },
 }
 

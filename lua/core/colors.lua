@@ -27,6 +27,7 @@ local theme = {
   color68 = "#828bb8",
   color26 = "#737aa2",
   color3 = "#6272a4",
+  color03 = "#51afef",
   color62 = "#3d59a1",
   color70 = "#3e68d7",
   color67 = "#c8d3f5",
