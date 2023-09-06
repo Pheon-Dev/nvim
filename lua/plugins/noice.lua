@@ -239,7 +239,7 @@ return {
       routes = {
         -- { filter = { event = "msg_show", kind = "search_count" }, opts = { skip = true }, },
         {
-          view = "split",
+          view = "popup",
           filter = {
             event = "msg_show",
             -- kind = { "Notifications", "history" },
