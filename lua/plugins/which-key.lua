@@ -84,7 +84,7 @@ return {
     local mappings = {
       -- ["'"] = { ":Alpha<cr>", "Dashboard" },
       a = { ":ASToggle<cr>", "Auto Save Toggle" },
-      b = { ":Antelope buffers<cr>", "Buffers" },
+      -- b = { ":Antelope buffers<cr>", "Buffers" },
       c = {
         name = "Crates",
         t = { crates.toggle, "Toggle" },
