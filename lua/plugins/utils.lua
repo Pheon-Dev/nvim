@@ -55,7 +55,7 @@ return {
         )
       end
       -- Just the menu
-      -- map({ 't', 'n' }, '<C-Space>', harpoon.toggle_quick_menu, opts)
+      -- map({ 't', 'n' }, '<S-Space>', harpoon.toggle_quick_menu, opts)
       -- -- Open menu and search
       -- map({ 't', 'n' }, '<C-M>', function()
       --   harpoon.toggle_quick_menu()
@@ -114,9 +114,10 @@ return {
             command = "split"
           }
         },
-        cycle_nav = true,
-        exit_menu = "h",
-        borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+        general_commands = {
+          cycle = false,
+          exit_menu = "h",
+        },
         go_to = {
           enabled = true,
           go_to_tab = "<leader>%s",
@@ -127,6 +128,13 @@ return {
           filter_tabs = "<M-t>",
           filter_buffers = "<M-b>",
         },
+        ui = {
+          width = 60,
+          height = 10,
+          row = 2,
+          col = 2,
+          borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+        }
       })
 
       local buffalo = require("buffalo.ui")
