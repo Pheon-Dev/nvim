@@ -35,26 +35,26 @@ return {
           yaml = formatters.lsp,
 
           -- Add your own shell formatters:
-          myfiletype = formatters.shell({ cmd = { "myformatter", "%" } }),
+          -- myfiletype = formatters.shell({ cmd = { "myformatter", "%" } }),
 
-          -- Add lazy formatter that will only run when formatting:
-          my_custom_formatter = function()
-            if vim.api.nvim_buf_get_name(0):match("/README.md$") then
-              return formatters.prettierd
-            else
-              return formatters.lsp()
-            end
-          end,
-
-          -- Add custom formatter
-          filetype1 = formatters.remove_trailing_whitespace,
-          filetype2 = formatters.custom({
-            format = function(lines)
-              return vim.tbl_map(function(line)
-                return line:gsub("true", "false")
-              end, lines)
-            end
-          }),
+          -- -- Add lazy formatter that will only run when formatting:
+          -- my_custom_formatter = function()
+          --   if vim.api.nvim_buf_get_name(0):match("/README.md$") then
+          --     return formatters.prettierd
+          --   else
+          --     return formatters.lsp()
+          --   end
+          -- end,
+          --
+          -- -- Add custom formatter
+          -- filetype1 = formatters.remove_trailing_whitespace,
+          -- filetype2 = formatters.custom({
+          --   format = function(lines)
+          --     return vim.tbl_map(function(line)
+          --       return line:gsub("true", "false")
+          --     end, lines)
+          --   end
+          -- }),
 
           -- Concatenate formatters
           python = {
