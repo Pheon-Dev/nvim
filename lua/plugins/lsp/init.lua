@@ -29,6 +29,7 @@ return {
           "prettierd",
           "shfmt",
           "gopls",
+          "lua_ls",
           "goimports-reviser",
           "bash-language-server",
           "lua-language-server",
