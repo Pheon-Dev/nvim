@@ -72,7 +72,7 @@ return {
   {
     "Pheon-Dev/buffalo-nvim",
     enabled = true,
-    -- event = { "BufReadPost", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
       local opts = { noremap = true }
       local map = vim.keymap.set
@@ -94,6 +94,10 @@ return {
           new = {
             key = "n",
             command = "tabnew"
+          },
+          only = {
+            key = "o",
+            command = "tabonly"
           }
         },
         buffer_commands = {
