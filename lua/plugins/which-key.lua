@@ -151,9 +151,8 @@ return {
         r = { ":RustRunnables<cr>", "Runnables" },
       },
       t = {
-        name = "TODO | Trouble | Tabs | TST",
+        name = "TODO | TS",
         q = { ":TodoQuickFix<cr>", "TODO QuickFix" },
-        r = { ":TodoTrouble<cr>", "TODO Trouble" },
         t = {
           name = "Typescript",
           o = { ":TSToolsOrganizeImports<cr>", "Organize Imports" },
