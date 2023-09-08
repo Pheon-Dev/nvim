@@ -1,5 +1,5 @@
 local theme = require("core.colors")
-require("core.fold")
+vim.o.foldnestmax = 1 -- '1', '0' is not bade.fold")
 -- This file is automatically loaded by plugins.config
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -72,6 +72,13 @@ opt.listchars = {
 }
 
 vim.o.showtabline = 0
+
+-- require("cor
+opt.exrc = true
+opt.foldenable = true
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldcolumn = "0" -- '1', '0' is not bad
 
 -- vim.g.loaded_gzip = 1
 -- vim.g.loaded_zip = 1

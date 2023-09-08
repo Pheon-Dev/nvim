@@ -56,7 +56,7 @@ map("n", "gi", "<C-i>", { noremap = true, silent = true })
 map("n", "go", "<C-o>", { noremap = true, silent = true })
 
 -- Fold
-map("n", "zl", "za", { noremap = true, silent = true })
+-- map("n", "zl", "za", { noremap = true, silent = true })
 
 -- map("i", "<A-o>", "<C-o>", { noremap = true, silent = true })
 map("i", "<C-k>", "<C-o>O", { noremap = true, silent = true })
