@@ -194,7 +194,7 @@ return {
   },
   {
     "f-person/git-blame.nvim",
-    enabled = false,
+    enabled = true,
     event = { "BufReadPost", "BufNewFile" },
   },
 }
