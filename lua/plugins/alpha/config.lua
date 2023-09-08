@@ -72,18 +72,15 @@ function M.buttons()
   local buttons_hl = {
     { "AlphaIcon", 1,  4 },
     { "Keyword",   5,  18 },
-    { "AlphaKeys", 19, 25 },
-    { "AlphaLine", 25, 32 },
+    { "AlphaKeys", 19, 23 },
+    { "AlphaLine", 23, 32 },
     { "AlphaIcon", 32, 38 },
     { "Keyword",   38, 50 },
     { "AlphaKeys", 51, 55 },
     { "AlphaKeys", 56, 60 },
   }
   local quit_hl = {
-    { "AlphaIcon", 1,  4 },
-    { "Keyword",   5,  18 },
-    { "AlphaKeys", 19, 24 },
-    { "AlphaQuit", 25, 63 },
+    { "AlphaQuit", 0, 63 },
   }
   return {
     {
