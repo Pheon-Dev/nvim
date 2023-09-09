@@ -20,7 +20,7 @@ local M = {
       -- Alpha
       vim.api.nvim_set_hl(0, "AlphaKeys", { fg = theme.color2, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "AlphaDesc", { fg = theme.color37, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "AlphaIcon", { fg = theme.color37, bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "AlphaIcon", { fg = theme.color34, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "AlphaQuit", { fg = theme.color16, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "AlphaFoot", { fg = theme.color3, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "AlphaInfo", { fg = theme.color68, bg = theme.color0 })

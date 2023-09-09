@@ -50,18 +50,18 @@ function M.buttons()
       vim.api.nvim_buf_set_keymap(0, "n", "k", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", keybind_opts)
 
       -- NvimTree
-      vim.api.nvim_buf_set_keymap(0, "n", "j", ":NvimTreeToggle<CR>", keybind_opts)
+      -- vim.api.nvim_buf_set_keymap(0, "n", "j", ":NvimTreeToggle<CR>", keybind_opts)
 
       -- Lazy
       vim.api.nvim_buf_set_keymap(0, "n", "z", ":Lazy<CR>", keybind_opts)
 
       -- Floaterm
-      vim.api.nvim_buf_set_keymap(0, "n", ";", ":FloatermNew lf<CR>", keybind_opts)
+      vim.api.nvim_buf_set_keymap(0, "n", "j", ":Lf<CR>", keybind_opts)
       vim.api.nvim_buf_set_keymap(0, "n", "f", ":FloatermNew fzf<CR>", keybind_opts)
       vim.api.nvim_buf_set_keymap(0, "n", "s", ":FloatermNew rg<CR>", keybind_opts)
       vim.api.nvim_buf_set_keymap(0, "n", "l", ":FloatermNew lazygit<CR>", keybind_opts)
       -- vim.api.nvim_buf_set_keymap(0, "n", "b", ":FloatermNew broot<CR>", keybind_opts)
-      vim.api.nvim_buf_set_keymap(0, "n", "t", ":FloatermNew<CR>", keybind_opts)
+      vim.api.nvim_buf_set_keymap(0, "n", "`", ":FloatermNew<CR>", keybind_opts)
 
       -- Quit
       vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>q<CR>", keybind_opts)
@@ -70,8 +70,8 @@ function M.buttons()
   })
 
   local buttons_hl = {
-    { "AlphaIcon", 1,  4 },
-    { "Keyword",   5,  18 },
+    { "AlphaIcon", 0,  3 },
+    { "Keyword",   3,  18 },
     { "AlphaKeys", 19, 23 },
     { "AlphaLine", 23, 32 },
     { "AlphaIcon", 32, 38 },
@@ -87,12 +87,12 @@ function M.buttons()
       type = "text",
       val = {
         "                        │                       ",
-        "   fzf            f    │       terminal      t",
-        "   lazygit        l    │       lf            ;",
+        "   fzf            f    │       terminal      `",
+        "   lazygit        l    │       lf            j",
         "鈴  lazy           z    │       search        s",
-        "ﯠ   harpoon        k    │    פּ   nvim-tree     j",
+        "ﯠ   harpoon        k    │                       ",
         "                        │                       ",
-        "                        ▊       Quit          h",
+        "                        ▊       Quit          q",
         "                        │                       ",
       },
       opts = {

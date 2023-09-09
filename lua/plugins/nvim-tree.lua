@@ -1,7 +1,7 @@
 return {
   "nvim-tree/nvim-tree.lua",
   event = { "BufReadPost", "BufNewFile" },
-  enabled = true,
+  enabled = false,
   cmd = "NvimTreeToggle",
   config = function()
     local ok, _ = pcall(require, "nvim-tree")

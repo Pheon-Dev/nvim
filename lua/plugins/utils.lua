@@ -1,10 +1,32 @@
 return {
   "nvim-lua/plenary.nvim",
+  "nvim-tree/nvim-web-devicons",
+  "nvim-lua/popup.nvim",
   {
-    "junegunn/fzf",
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
-    -- event = "VeryLazy",
+    "stevearc/dressing.nvim",
+    init = function()
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.ui.select = function(...)
+        require("lazy").load({ plugins = { "dressing.nvim" } })
+        return vim.ui.select(...)
+      end
+      ---@diagnostic disable-next-line: duplicate-set-field
+      vim.ui.input = function(...)
+        require("lazy").load({ plugins = { "dressing.nvim" } })
+        return vim.ui.input(...)
+      end
+    end,
+    config = function()
+      require("dressing").setup {
+        input = {
+          override = function(conf)
+            conf.col = -1
+            conf.row = 0
+            return conf
+          end,
+        },
+      }
+    end
   },
   {
     "monaqa/dial.nvim",
@@ -30,7 +52,31 @@ return {
     end,
   },
   {
+    "xiyaowong/virtcolumn.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+  },
+  {
+    'kevinhwang91/nvim-fundo',
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+    dependencies = 'kevinhwang91/promise-async',
+    build = function() require('fundo').install() end,
+    config = function() require('fundo').setup() end,
+  },
+  {
     "voldikss/vim-floaterm",
+    event = "VeryLazy",
+    enabled = true,
+  },
+  {
+    "junegunn/fzf",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
+  },
+  {
+    "ptzz/lf.vim",
+    dependencies = "voldikss/vim-floaterm",
     event = "VeryLazy",
     enabled = true,
   },
@@ -54,9 +100,16 @@ return {
           opts
         )
       end
-      -- Just the menu
-      -- map({ 't', 'n' }, '<S-Space>', harpoon.toggle_quick_menu, opts)
-      -- -- Open menu and search
+      map({ 't', 'n' }, '<leader>k', harpoon.toggle_quick_menu, opts)
+      vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>lua require("harpoon.ui").nav_file(vim.v.count1)<cr>',
+        { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>lua require("harpoon.ui").nav_next()<cr>',
+        { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<C-h>', '<cmd>lua require("harpoon.ui").nav_prev()<cr>',
+        { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>lua require("harpoon.ui").nav_prev()<cr>',
+        { noremap = true, silent = true })
+
       -- map({ 't', 'n' }, '<C-M>', function()
       --   harpoon.toggle_quick_menu()
       --   -- wait for the menu to open
@@ -281,38 +334,4 @@ return {
     end,
   },
 
-  -- better vim.ui
-
-  {
-    "stevearc/dressing.nvim",
-    init = function()
-      ---@diagnostic disable-next-line: duplicate-set-field
-      vim.ui.select = function(...)
-        require("lazy").load({ plugins = { "dressing.nvim" } })
-        return vim.ui.select(...)
-      end
-      ---@diagnostic disable-next-line: duplicate-set-field
-      vim.ui.input = function(...)
-        require("lazy").load({ plugins = { "dressing.nvim" } })
-        return vim.ui.input(...)
-      end
-    end,
-    config = function()
-      require("dressing").setup {
-        input = {
-          override = function(conf)
-            conf.col = -1
-            conf.row = 0
-            return conf
-          end,
-        },
-      }
-    end
-  },
-
-  -- icons
-  "nvim-tree/nvim-web-devicons",
-
-  -- ui components
-  "nvim-lua/popup.nvim",
 }

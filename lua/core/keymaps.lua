@@ -52,8 +52,8 @@ map("n", "tk", ":tabprevious<cr>", { noremap = true, silent = true })
 -- remap
 -- map("n", "cc", "0D", { noremap = true, silent = true })
 map("n", "X", "v0c", { noremap = true, silent = true })
-map("n", "gi", "<C-i>", { noremap = true, silent = true })
-map("n", "go", "<C-o>", { noremap = true, silent = true })
+-- map("n", "gi", "<C-i>", { noremap = true, silent = true })
+-- map("n", "go", "<C-o>", { noremap = true, silent = true })
 
 -- Fold
 -- map("n", "zl", "za", { noremap = true, silent = true })
@@ -153,11 +153,6 @@ map("n", "<S-TAB>", ":bprevious<cr>", { noremap = true, silent = true })
 -- Split Join
 vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>lua require("harpoon.ui").nav_file(vim.v.count1)<cr>',
-  { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'gm', '<cmd>lua require("harpoon.ui").nav_next()<cr>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'gn', '<cmd>lua require("harpoon.ui").nav_prev()<cr>', { noremap = true, silent = true })
-
 vim.keymap.set("i", "<C-a>",
   function()
     return vim.fn["codeium#Accept"]()
@@ -186,7 +181,7 @@ local keybind_opts = { silent = true, noremap = true }
 
 map("n", "<leader>s", ":FloatermNew rg<CR>", keybind_opts)
 map("n", "<leader>f", ":FloatermNew fzf<CR>", keybind_opts)
-map("n", "<leader>;", ":FloatermNew lf<CR>", keybind_opts)
+map("n", "<leader>j", ":Lf<CR>", keybind_opts)
 map("n", "<leader>l", ":FloatermNew lazygit<CR>", keybind_opts)
 -- map("n", "<leader>'", ":FloatermNew broot<CR>", keybind_opts)
 map("n", "<leader>'", ":FloatermNew --height=0.4 --width=0.6 --name=toipe --position=bottom --autoclose=2 toipe<CR>",

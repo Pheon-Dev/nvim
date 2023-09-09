@@ -16,7 +16,7 @@ return {
         always_scroll = false,    -- Scroll the cursor even when the window hasn't scrolled.
         centered = true,          -- Keep cursor centered in window when using window scrolling.
         disabled = false,         -- Disables the plugin.
-        default_delay = 7,        -- The default delay (in ms) between each line when scrolling.
+        default_delay = 1,        -- The default delay (in ms) between each line when scrolling.
         hide_cursor = true,       -- Hide the cursor while scrolling. Requires enabling termguicolors!
         horizontal_scroll = true, -- Enable smooth horizontal scrolling when view shifts left or right.
         max_length = -1,          -- Maximum length (in ms) of a command. The line delay will be
@@ -68,8 +68,8 @@ return {
       -- Screen scrolling:
       vim.keymap.set('n', 'zz', "<Cmd>lua Scroll('zz', 0, 1)<CR>")
       vim.keymap.set('n', 'zt', "<Cmd>lua Scroll('zt', 0, 1)<CR>")
-      vim.keymap.set('n', '<C-l>', "<Cmd>lua Scroll('zb', 0, 1)<CR>")
-      vim.keymap.set('n', '<C-h>', "<Cmd>lua Scroll('zt', 0, 1)<CR>")
+      -- vim.keymap.set('n', '<C-l>', "<Cmd>lua Scroll('zb', 0, 1)<CR>")
+      -- vim.keymap.set('n', '<C-h>', "<Cmd>lua Scroll('zt', 0, 1)<CR>")
       vim.keymap.set('n', 'zb', "<Cmd>lua Scroll('zb', 0, 1)<CR>")
       vim.keymap.set('n', 'z.', "<Cmd>lua Scroll('z.', 0, 1)<CR>")
       vim.keymap.set('n', 'z<CR>', "<Cmd>lua Scroll('zt^', 0, 1)<CR>")
@@ -79,13 +79,13 @@ return {
       vim.keymap.set('n', '<C-y>', "<Cmd>lua Scroll('<C-y>', 0, 1)<CR>")
       vim.keymap.set('n', '<C-e>', "<Cmd>lua Scroll('<C-e>', 0, 1)<CR>")
 
-      -- Horizontal screen scrolling:
-      vim.keymap.set('n', 'zH', "<Cmd>lua Scroll('zH')<CR>")
-      vim.keymap.set('n', 'zL', "<Cmd>lua Scroll('zL')<CR>")
-      vim.keymap.set('n', 'zs', "<Cmd>lua Scroll('zs')<CR>")
-      vim.keymap.set('n', 'ze', "<Cmd>lua Scroll('ze')<CR>")
-      vim.keymap.set('n', 'zh', "<Cmd>lua Scroll('zh', 0, 1)<CR>")
-      vim.keymap.set('n', 'zl', "<Cmd>lua Scroll('zl', 0, 1)<CR>")
+      -- -- Horizontal screen scrolling:
+      -- vim.keymap.set('n', 'zH', "<Cmd>lua Scroll('zH')<CR>")
+      -- vim.keymap.set('n', 'zL', "<Cmd>lua Scroll('zL')<CR>")
+      -- vim.keymap.set('n', 'zs', "<Cmd>lua Scroll('zs')<CR>")
+      -- vim.keymap.set('n', 'ze', "<Cmd>lua Scroll('ze')<CR>")
+      -- vim.keymap.set('n', 'zh', "<Cmd>lua Scroll('zh', 0, 1)<CR>")
+      -- vim.keymap.set('n', 'zl', "<Cmd>lua Scroll('zl', 0, 1)<CR>")
 
       -- EXTENDED_KEYMAPS:
 

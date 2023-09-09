@@ -1,7 +1,7 @@
 return {
   "folke/neodev.nvim",
   enabled = true,
-  -- event = { "BufReadPost", "BufNewFile" },
+  event = { "BufReadPost", "BufNewFile" },
   opts = {
     debug = true,
     experimental = {
@@ -9,4 +9,3 @@ return {
     },
   },
 }
-
