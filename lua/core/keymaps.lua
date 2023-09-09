@@ -181,8 +181,8 @@ local keybind_opts = { silent = true, noremap = true }
 
 map("n", "<leader>s", ":FloatermNew rg<CR>", keybind_opts)
 map("n", "<leader>f", ":FloatermNew fzf<CR>", keybind_opts)
-map("n", "<leader>j", ":Lf<CR>", keybind_opts)
-map("n", "<leader>l", ":FloatermNew lazygit<CR>", keybind_opts)
+map("n", "<leader>l", ":Lf<CR>", keybind_opts)
+-- map("n", "<leader>l", ":FloatermNew lazygit<CR>", keybind_opts)
 -- map("n", "<leader>'", ":FloatermNew broot<CR>", keybind_opts)
 map("n", "<leader>'", ":FloatermNew --height=0.4 --width=0.6 --name=toipe --position=bottom --autoclose=2 toipe<CR>",
   keybind_opts)

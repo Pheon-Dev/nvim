@@ -107,7 +107,7 @@ return {
         { noremap = true, silent = true })
       vim.api.nvim_set_keymap('n', '<C-h>', '<cmd>lua require("harpoon.ui").nav_prev()<cr>',
         { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>lua require("harpoon.ui").nav_prev()<cr>',
+      vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>lua require("harpoon.mark").add_file()<cr>',
         { noremap = true, silent = true })
 
       -- map({ 't', 'n' }, '<C-M>', function()
@@ -176,12 +176,12 @@ return {
           exit_menu = "h",
         },
         go_to = {
-          enabled = true,
+          enabled = false,
           go_to_tab = "<leader>%s",
           go_to_buffer = "<M-%s>",
         },
         filter = {
-          enabled = true,
+          enabled = false,
           filter_tabs = "<M-t>",
           filter_buffers = "<M-b>",
         },
@@ -196,13 +196,14 @@ return {
 
       local buffalo = require("buffalo.ui")
 
-      map({ 't', 'n' }, '<M-Space>', buffalo.toggle_buf_menu, opts)
-      map({ 't', 'n' }, '<C-Space>', buffalo.toggle_tab_menu, opts)
+      map({ 't', 'n' }, '<leader>j', buffalo.toggle_buf_menu, opts)
+      -- map({ 't', 'n' }, '<M-Space>', buffalo.toggle_buf_menu, opts)
+      -- map({ 't', 'n' }, '<C-Space>', buffalo.toggle_tab_menu, opts)
 
-      map('n', '<C-j>', buffalo.nav_buf_next, opts)
+      -- map('n', '<C-j>', buffalo.nav_buf_next, opts)
       map('n', '<C-k>', buffalo.nav_buf_prev, opts)
       map('n', '<C-n>', buffalo.nav_tab_next, opts)
-      map('n', '<C-p>', buffalo.nav_tab_prev, opts)
+      -- map('n', '<C-p>', buffalo.nav_tab_prev, opts)
     end
   },
   {
