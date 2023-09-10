@@ -18,15 +18,7 @@ local M = {
       local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
 
       -- Alpha
-      vim.api.nvim_set_hl(0, "AlphaKeys", { fg = theme.color2, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "AlphaDesc", { fg = theme.color37, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "AlphaIcon", { fg = theme.color34, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "AlphaQuit", { fg = theme.color16, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "AlphaFoot", { fg = theme.color3, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "AlphaInfo", { fg = theme.color68, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "AlphaLine", { fg = theme.color1, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "AlphaHeader", { fg = theme.color37, bg = theme.color0 })
-      vim.api.nvim_set_hl(0, "AlphaButtons", { bg = theme.color0 })
+      vim.api.nvim_set_hl(0, "DashboardIcon", { fg = theme.color2, bg = theme.color0 })
       vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = theme.color0 })
       vim.api.nvim_set_hl(0, "NvimTreeNormalFloat", { bg = theme.color0 })
 
