@@ -4,7 +4,8 @@ local g = vim.g
 g.mapleader = " "
 g.maplocalleader = " "
 
-o.autowrite = true           -- Enable auto write
+-- o.autowrite = true           -- Enable auto write
+o.autowriteall = true        -- Enable auto write
 o.clipboard = "unnamedplus"  -- Sync with system clipboard
 o.completeo = "menu,menuone,noselect"
 o.conceallevel = 0           -- Hide * markup for bold and italic 3
@@ -116,6 +117,9 @@ vim.opt.listchars = {
   nbsp = "␣",
   conceal = "┊",
 }
+-- {tab = "••"|">~",eol = "↴"|"¶"|"$", nbsp = "␣"|"%", space = "_" }
+-- opt.listchars = { tab = [[→→]], trail = "•", extends = "»", precedes = "«" }
+
 vim.opt.whichwrap:append("<,>,[,],h,l")
 if vim.fn.has("nvim-0.9.0") == 1 then
   o.splitkeep = "screen"
@@ -128,6 +132,8 @@ g.codeium_disable_bindings = 1
 
 g.gitblame_highlight_group = "GitBlame"
 g.gitblame_highlight_group = "Blame"
+
+
 
 g.virtcolumn_char = "┊" -- char to display the line
 vim.cmd("set colorcolumn=80")
