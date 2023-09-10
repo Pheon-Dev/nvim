@@ -39,7 +39,7 @@ return {
       options = {
         icons_enabled = true,
         -- disabled_filetypes = { tabline = { "alpha" }, statusline = { "alpha" } },
-        disabled_filetypes = { statusline = { "alpha", "NvimTree", "floaterm" } },
+        disabled_filetypes = { statusline = { "dashboard", "NvimTree", "floaterm" } },
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         ignore_focus = {},           -- If current filetype is in this list it'll

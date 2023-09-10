@@ -83,7 +83,7 @@ return {
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "alpha", "lazy", "floaterm", "NvimTree" },
+        pattern = { "dashboard", "lazy", "floaterm", "NvimTree" },
         callback = function()
           vim.b.miniindentscope_disable = true
         end,

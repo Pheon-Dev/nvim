@@ -19,6 +19,14 @@ local M = {
 
       -- Alpha
       vim.api.nvim_set_hl(0, "DashboardIcon", { fg = theme.color2, bg = theme.color0 })
+      -- General
+      -- DashboardHeader DashboardFooter
+      -- Hyper theme
+      -- DashboardProjectTitle DashboardProjectTitleIcon DashboardProjectIcon
+      -- DashboardMruTitle DashboardMruIcon DashboardFiles DashboardShotCutIcon
+      -- Doome theme
+      -- DashboardDesc DashboardKey DashboardIcon DashboardShotCut
+
       vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = theme.color0 })
       vim.api.nvim_set_hl(0, "NvimTreeNormalFloat", { bg = theme.color0 })
 

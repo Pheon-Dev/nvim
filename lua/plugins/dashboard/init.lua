@@ -17,6 +17,9 @@ return {
         config = {
           header = config.header,
           shortcut = config.shortcut,
+          footer = config.footer,
+          project = config.project,
+          mru = config.mru,
         },                   --  config used for theme
         hide = {
           statusline = true, -- hide statusline default is true

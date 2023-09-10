@@ -77,7 +77,7 @@ return {
           exclude = {
             "notify",
             "cmp_menu",
-            "alpha",
+            "dashboard",
             "noice",
             "flash_prompt",
             function(win)

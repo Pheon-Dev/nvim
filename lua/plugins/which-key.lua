@@ -72,7 +72,7 @@ return {
       -- Disabled by deafult for Telescope
       disable = {
         buftypes = {},
-        filetypes = { "TelescopePrompt", "lazy", "alpha" },
+        filetypes = { "TelescopePrompt", "lazy", "bashboard" },
       },
     })
 

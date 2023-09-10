@@ -34,7 +34,7 @@ M.header = {
 M.shortcut = {
   -- {
   --   desc = '󰊳 Update',
-  -- icon_hl = '@variable',
+  --   icon_hl = 'DashboardIcon',
   --   group = '@property',
   --   action = 'Lazy update',
   --   key = 'u'
@@ -42,7 +42,7 @@ M.shortcut = {
   {
     icon = "鈴",
     icon_hl = 'DashboardIcon',
-    desc = 'Lazy',
+    desc = 'Lazy ',
     group = 'Number',
     action = 'Lazy',
     key = 'z'
@@ -50,7 +50,7 @@ M.shortcut = {
   {
     icon = ' ',
     icon_hl = 'DashboardIcon',
-    desc = 'Lf',
+    desc = 'Lf ',
     group = '@property',
     action = 'FloatermNew lf',
     key = 'l'
@@ -58,7 +58,7 @@ M.shortcut = {
   {
     icon = 'ﯠ ',
     icon_hl = 'DashboardIcon',
-    desc = 'Harpoon',
+    desc = 'Harpoon ',
     group = '@function',
     action = "lua require('harpoon.ui').toggle_quick_menu()",
     key = 'k'
@@ -66,7 +66,7 @@ M.shortcut = {
   {
     icon = ' ',
     icon_hl = 'DashboardIcon',
-    desc = 'Files',
+    desc = 'Files ',
     group = 'Label',
     action = 'FloatermNew fzf',
     key = 'f',
@@ -74,7 +74,7 @@ M.shortcut = {
   {
     icon = ' ',
     icon_hl = 'DashboardIcon',
-    desc = 'Search',
+    desc = 'Search ',
     group = 'DiagnosticHint',
     action = 'FloatermNew rg',
     key = 's',
@@ -82,26 +82,28 @@ M.shortcut = {
   {
     icon = ' ',
     icon_hl = 'DashboardIcon',
-    desc = 'Terminal',
+    desc = 'Terminal ',
     group = '@string',
     action = 'FloatermNew',
     key = '`',
   },
-  {
-    icon = ' ',
-    icon_hl = 'DashboardIcon',
-    desc = 'Lazygit',
-    group = 'DiagnosticInfo',
-    action = 'FloatermNew lazygit',
-    key = 'g',
-  },
+  -- {
+  --   icon = ' ',
+  --   icon_hl = 'DashboardIcon',
+  --   desc = 'Lazygit',
+  --   group = 'DiagnosticInfo',
+  --   action = 'FloatermNew lazygit',
+  --   key = 'g',
+  -- },
   {
     icon = ' ',
-    desc = 'Quit',
+    desc = 'Quit ',
     group = 'DiagnosticError',
     action = 'q',
     key = 'h',
   },
 }
-
+M.footer = {}
+M.project = { enable = false, limit = 8, icon = 'your icon', label = '', action = 'FloatermNew fzf' }
+M.mru = { limit = 5, icon = ' ', label = 'Recent Files', }
 return M
