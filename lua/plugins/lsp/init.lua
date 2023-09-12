@@ -2,6 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     -- event = "BufReadPre",
+    enabled = true,
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "onsails/lspkind-nvim",
@@ -19,6 +20,7 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    enabled = true,
     config = function()
       require("mason-lspconfig").setup({
         automatic_installation = true,
@@ -42,6 +44,7 @@ return {
   {
     "williamboman/mason.nvim",
     build = "MasonUpdate",
+    enabled = true,
     config = function()
       require("mason").setup({
         ui = {

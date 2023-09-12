@@ -57,9 +57,15 @@ return {
     enabled = true,
   },
   {
+    "lukas-reineke/virt-column.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = false,
+    config = function() require('virt-column').setup() end,
+  },
+  {
     'kevinhwang91/nvim-fundo',
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
     dependencies = 'kevinhwang91/promise-async',
     build = function() require('fundo').install() end,
     config = function() require('fundo').setup() end,
@@ -196,7 +202,7 @@ return {
 
       local buffalo = require("buffalo.ui")
 
-      map({ 't', 'n' }, '<leader>j', buffalo.toggle_buf_menu, opts)
+      map({ 't', 'n' }, '<leader>b', buffalo.toggle_buf_menu, opts)
       -- map({ 't', 'n' }, '<M-Space>', buffalo.toggle_buf_menu, opts)
       -- map({ 't', 'n' }, '<C-Space>', buffalo.toggle_tab_menu, opts)
 
@@ -218,7 +224,7 @@ return {
     "kylechui/nvim-surround",
     event = { "BufReadPost", "BufNewFile" },
     -- dependencies = { "roobert/surround-ui.nvim" },
-    enabled = true,
+    enabled = false,
     config = function()
       require("nvim-surround").setup({})
       -- require("surround-ui").setup({ root_key = "S" })
@@ -227,12 +233,12 @@ return {
   {
     "tpope/vim-repeat",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
   },
   {
     "mg979/vim-visual-multi",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
   },
   {
     "brenoprata10/nvim-highlight-colors",

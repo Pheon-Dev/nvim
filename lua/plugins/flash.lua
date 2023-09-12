@@ -2,6 +2,7 @@ return {
   {
     "folke/flash.nvim",
     event = { "BufReadPost", "BufNewFile" },
+    enabled = true,
     ---@type Flash.Config
     opts = {},
     keys = {

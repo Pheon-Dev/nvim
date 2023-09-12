@@ -33,7 +33,8 @@ M.header = {
 
 M.shortcut = {
   -- {
-  --   desc = '󰊳 Update',
+  --   icon = '󰊳 ',
+  --   desc = 'Updates',
   --   icon_hl = 'DashboardIcon',
   --   group = '@property',
   --   action = 'Lazy update',
@@ -42,23 +43,31 @@ M.shortcut = {
   {
     icon = "鈴",
     icon_hl = 'DashboardIcon',
-    desc = 'Lazy ',
+    desc = 'lazy',
     group = 'Number',
     action = 'Lazy',
     key = 'z'
   },
   {
-    icon = ' ',
+    icon = 'פּ ',
     icon_hl = 'DashboardIcon',
-    desc = 'Lf ',
-    group = '@property',
-    action = 'FloatermNew lf',
-    key = 'l'
+    desc = 'nt',
+    group = '@integer',
+    action = 'NvimTreeToggle',
+    key = 'j'
   },
+  -- {
+  --   icon = ' ',
+  --   icon_hl = 'DashboardIcon',
+  --   desc = 'lf',
+  --   group = '@property',
+  --   action = 'FloatermNew lf',
+  --   key = 'l'
+  -- },
   {
     icon = 'ﯠ ',
     icon_hl = 'DashboardIcon',
-    desc = 'Harpoon ',
+    desc = 'harp',
     group = '@function',
     action = "lua require('harpoon.ui').toggle_quick_menu()",
     key = 'k'
@@ -66,7 +75,7 @@ M.shortcut = {
   {
     icon = ' ',
     icon_hl = 'DashboardIcon',
-    desc = 'Files ',
+    desc = 'fzf',
     group = 'Label',
     action = 'FloatermNew fzf',
     key = 'f',
@@ -74,7 +83,7 @@ M.shortcut = {
   {
     icon = ' ',
     icon_hl = 'DashboardIcon',
-    desc = 'Search ',
+    desc = 'rg',
     group = 'DiagnosticHint',
     action = 'FloatermNew rg',
     key = 's',
@@ -82,22 +91,22 @@ M.shortcut = {
   {
     icon = ' ',
     icon_hl = 'DashboardIcon',
-    desc = 'Terminal ',
+    desc = 'ft',
     group = '@string',
     action = 'FloatermNew',
-    key = '`',
+    key = 't',
   },
-  -- {
-  --   icon = ' ',
-  --   icon_hl = 'DashboardIcon',
-  --   desc = 'Lazygit',
-  --   group = 'DiagnosticInfo',
-  --   action = 'FloatermNew lazygit',
-  --   key = 'g',
-  -- },
+  {
+    icon = ' ',
+    icon_hl = 'DashboardIcon',
+    desc = 'lg',
+    group = 'DiagnosticInfo',
+    action = 'FloatermNew lazygit',
+    key = 'l',
+  },
   {
     icon = ' ',
-    desc = 'Quit ',
+    desc = '',
     group = 'DiagnosticError',
     action = 'q',
     key = 'h',

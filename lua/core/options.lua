@@ -4,8 +4,8 @@ local g = vim.g
 g.mapleader = " "
 g.maplocalleader = " "
 
--- o.autowrite = true           -- Enable auto write
-o.autowriteall = true        -- Enable auto write
+o.autowrite = true           -- Enable auto write
+-- o.autowriteall = true        -- Enable auto write
 o.clipboard = "unnamedplus"  -- Sync with system clipboard
 o.completeo = "menu,menuone,noselect"
 o.conceallevel = 0           -- Hide * markup for bold and italic 3
