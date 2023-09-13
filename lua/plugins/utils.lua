@@ -54,12 +54,12 @@ return {
   {
     "xiyaowong/virtcolumn.nvim",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = false,
   },
   {
     "lukas-reineke/virt-column.nvim",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
+    enabled = true,
     config = function() require('virt-column').setup() end,
   },
   {
@@ -84,7 +84,7 @@ return {
     "ptzz/lf.vim",
     dependencies = "voldikss/vim-floaterm",
     event = "VeryLazy",
-    enabled = true,
+    enabled = false,
   },
   {
     "Pheon-Dev/harpoon",
@@ -96,6 +96,16 @@ return {
       -- Setup
       -- Navigate buffers bypassing the menu
       local harpoon = require("harpoon.ui")
+      local keys = 'hjklasdfgn'
+      for i = 1, #keys do
+        local key = keys:sub(i, i)
+        map(
+          'n',
+          string.format('<C-%s>', key),
+          function() harpoon.nav_file(i) end,
+          opts
+        )
+      end
       map({ 't', 'n' }, '<leader>k', harpoon.toggle_quick_menu, opts)
       vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>lua require("harpoon.ui").nav_file(vim.v.count1)<cr>',
         { noremap = true, silent = true })
@@ -214,7 +224,7 @@ return {
     "kylechui/nvim-surround",
     event = { "BufReadPost", "BufNewFile" },
     -- dependencies = { "roobert/surround-ui.nvim" },
-    enabled = false,
+    enabled = true,
     config = function()
       require("nvim-surround").setup({})
       -- require("surround-ui").setup({ root_key = "S" })
@@ -223,7 +233,7 @@ return {
   {
     "tpope/vim-repeat",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
+    enabled = true,
   },
   {
     "mg979/vim-visual-multi",
