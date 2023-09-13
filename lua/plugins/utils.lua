@@ -96,16 +96,6 @@ return {
       -- Setup
       -- Navigate buffers bypassing the menu
       local harpoon = require("harpoon.ui")
-      local keys = 'hjklasdfgn'
-      for i = 1, #keys do
-        local key = keys:sub(i, i)
-        map(
-          'n',
-          string.format('<C-%s>', key),
-          function() harpoon.nav_file(i) end,
-          opts
-        )
-      end
       map({ 't', 'n' }, '<leader>k', harpoon.toggle_quick_menu, opts)
       vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>lua require("harpoon.ui").nav_file(vim.v.count1)<cr>',
         { noremap = true, silent = true })

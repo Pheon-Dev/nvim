@@ -121,7 +121,7 @@ return {
       -- },
       -- h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
       j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
-      -- k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
+      k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
       m = { ":Antelope marks<cr>", "Marks" },
       -- n = { ":Telescope notify initial_mode=normal<cr>", "Notifications" },
       n = {
