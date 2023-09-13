@@ -1,6 +1,7 @@
 return {
   {
     "echasnovski/mini.pairs",
+    enabled = true,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("mini.pairs").setup()
@@ -8,6 +9,7 @@ return {
   },
   {
     "echasnovski/mini.splitjoin",
+    enabled = true,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("mini.splitjoin").setup({
@@ -50,6 +52,7 @@ return {
   },
   {
     "echasnovski/mini.move",
+    enabled = true,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       -- No need to copy this inside `setup()`. Will be used automatically.
@@ -80,10 +83,11 @@ return {
   },
   {
     "echasnovski/mini.indentscope",
+    enabled = true,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = { "dashboard", "lazy", "floaterm", "NvimTree" },
+        pattern = { "dashboard", "lazy", "floaterm", "NvimTree", "muren", "buffalo" },
         callback = function()
           vim.b.miniindentscope_disable = true
         end,
