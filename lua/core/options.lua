@@ -17,7 +17,7 @@ o.grepformat = "%f:%l:%c:%m"
 o.grepprg = "rg --vimgrep"
 o.ignorecase = true      -- Ignore case
 o.inccommand = "nosplit" -- preview incremental substitute
-o.laststatus = 0         -- 2
+o.laststatus = 2         -- 2
 o.mouse = "a"            -- Enable mouse mode
 o.mouse = "nicr"
 o.number = true          -- Print line number
@@ -41,7 +41,7 @@ o.updatetime = 300               -- Save swap file and trigger CursorHold
 o.wildmode = "longest:full,full" -- Command-line completion mode
 o.winminwidth = 5                -- Minimum window width
 o.hidden = true
-o.wrap = false
+o.wrap = true
 o.relativenumber = true
 o.autoindent = true
 o.ai = true
@@ -56,14 +56,12 @@ o.softtabstop = 4
 o.lazyredraw = false
 o.writebackup = false
 o.backup = false
-o.list = true -- Show some invisible characters (tabs...
+o.list = true
 
 o.showtabline = 0
 
-o.foldnestmax = 1 -- '1', '0' is not bade.fold")
--- This file is automatically loaded by plugins.config
-
 -- require("core.fold")
+o.foldnestmax = 1 -- '1', '0' is not bad fold
 o.exrc = true
 o.foldenable = true
 o.foldlevel = 99
@@ -95,7 +93,6 @@ g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
 
 g.move_map_keys = 0
-
 
 o.encoding = "utf-8"
 o.fileencoding = "utf-8"
@@ -173,16 +170,8 @@ g.floaterm_autoinsert = true      -- defailt true
 g.floaterm_titleposition = "left" -- options left, right, center
 g.floaterm_position =
 "center"                          -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
--- wintype 'float': 'top', 'bottom', 'left', 'right', 'topleft', 'topright', 'bottomleft', 'bottomright', 'center', 'auto'(at the cursor place) default 'center'
+
 g.floaterm_keymap_toggle = '<leader>`'
--- g.floaterm_keymap_new = '`n'
--- g.floaterm_keymap_next = '`j'
--- g.floaterm_keymap_prev = '`k'
--- -- g.floaterm_keymap_first = '`h'
--- -- g.floaterm_keymap_last = '`l'
--- g.floaterm_keymap_hide = '`h'
--- g.floaterm_keymap_show = '`l'
--- g.floaterm_keymap_kill = "`;"
 
 -- FZF
 g.fzf_layout = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
@@ -191,28 +180,3 @@ g.fzf_action = {
   ['ctrl-b'] = 'split',
   ['ctrl-v'] = 'vsplit',
 }
-
--- -- Easyclip
--- g.EasyClipAutoFormat = 0
--- g.EasyClipYankHistorySize = 50
--- g.EasyClipShareYanks = 0
--- g.EasyClipShowYanksWidth = 80
--- g.EasyClipShareYanksFile = ".easyclip"
--- g.EasyClipShareYanksDirectory = "$HOME"
---
--- -- g.EasyClipCopyEnabled = 1
--- -- g.EasyClipCopyExplicitRegisterToDefault = 0
--- -- g.EasyClipAlwaysMoveCursorToEndOfPaste = 1
--- -- g.EasyClipPasteEnabled = 1
--- -- g.EasyClipUseYanksClipboard = 1
--- -- g.EasyClipCopyCommand = 'xclip -selection clipboard'
--- -- g.EasyClipPasteCommand = 'xclip -selection clipboard -o'
--- -- g.EasyClipShareYanksCommand = 'xclip -selection clipboard -o'
--- -- g.EasyClipCopyPasteIgnoreList = { "fugitive://.*", "git://.*", "ssh://.*" }
---
--- g.EasyClipUseYankDefaults = 1
--- g.EasyClipUsePasteDefaults = 1
--- g.EasyClipEnableBlackHoleRedirect = 1
--- g.EasyClipUsePasteToggleDefaults = 1
--- g.EasyClipUseSubstituteDefaults = 0
--- g.EasyClipUseCutDefaults = 0
