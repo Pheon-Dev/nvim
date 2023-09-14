@@ -52,11 +52,6 @@ return {
     end,
   },
   {
-    "xiyaowong/virtcolumn.nvim",
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
-  },
-  {
     "lukas-reineke/virt-column.nvim",
     event = { "BufReadPost", "BufNewFile" },
     enabled = true,
@@ -84,7 +79,7 @@ return {
     "ptzz/lf.vim",
     dependencies = "voldikss/vim-floaterm",
     event = "VeryLazy",
-    enabled = false,
+    enabled = true,
   },
   {
     "Pheon-Dev/harpoon",
@@ -106,15 +101,15 @@ return {
           opts
         )
       end
-      map({ 't', 'n' }, '<leader>k', harpoon.toggle_quick_menu, opts)
-      vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>lua require("harpoon.ui").nav_file(vim.v.count1)<cr>',
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>lua require("harpoon.ui").nav_next()<cr>',
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<C-h>', '<cmd>lua require("harpoon.ui").nav_prev()<cr>',
-        { noremap = true, silent = true })
-      vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>lua require("harpoon.mark").add_file()<cr>',
-        { noremap = true, silent = true })
+      -- map({ 't', 'n' }, '<leader>k', harpoon.toggle_quick_menu, opts)
+      -- vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>lua require("harpoon.ui").nav_file(vim.v.count1)<cr>',
+      --   { noremap = true, silent = true })
+      -- vim.api.nvim_set_keymap('n', '<C-l>', '<cmd>lua require("harpoon.ui").nav_next()<cr>',
+      --   { noremap = true, silent = true })
+      -- vim.api.nvim_set_keymap('n', '<C-h>', '<cmd>lua require("harpoon.ui").nav_prev()<cr>',
+      --   { noremap = true, silent = true })
+      -- vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>lua require("harpoon.mark").add_file()<cr>',
+      --   { noremap = true, silent = true })
 
       -- map({ 't', 'n' }, '<C-M>', function()
       --   harpoon.toggle_quick_menu()
@@ -236,11 +231,6 @@ return {
     enabled = true,
   },
   {
-    "mg979/vim-visual-multi",
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
-  },
-  {
     "brenoprata10/nvim-highlight-colors",
     event = { "BufReadPost", "BufNewFile" },
     -- event = "VeryLazy",
@@ -301,44 +291,4 @@ return {
       })
     end,
   },
-
-  {
-    'Wansmer/treesj',
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
-    -- keys = { '<splitjoin>m', '<space>j', '<space>s' },
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    config = function()
-      local tsj = require('treesj')
-
-      local langs = { --[[ configuration for languages ]] }
-
-      tsj.setup({
-        -- Use default keymaps
-        -- (<space>m - toggle, <space>j - join, <space>s - split)
-        use_default_keymaps = false,
-
-        -- Node with syntax error will not be formatted
-        check_syntax_error = true,
-
-        -- If line after join will be longer than max value,
-        -- node will not be formatted
-        max_join_length = 120,
-
-        -- hold|start|end:
-        -- hold - cursor follows the node/place on which it was called
-        -- start - cursor jumps to the first symbol of the node being formatted
-        -- end - cursor jumps to the last symbol of the node being formatted
-        cursor_behavior = 'hold',
-
-        -- Notify about possible problems or not
-        notify = true,
-        langs = langs,
-
-        -- Use `dot` for repeat action
-        dot_repeat = true,
-      })
-    end,
-  },
-
 }
