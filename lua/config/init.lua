@@ -23,6 +23,7 @@ M.enable = {
     suda = true,
     codeium = true,
     notify = true,
+    hl_chunk = true,
   },
   flash = true,
   typescript_tools = true,
@@ -55,10 +56,10 @@ M.enable = {
     targets = true,
   },
   mini = {
-    indentscope = true,
+    indentscope = false,
     move = true,
     pairs = false,
-    splitjoin = false,
+    splitjoin = true,
   },
   cmp = true,
   comments = {
