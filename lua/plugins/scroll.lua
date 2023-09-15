@@ -68,8 +68,8 @@ return {
       -- Screen scrolling:
       vim.keymap.set('n', 'zz', "<Cmd>lua Scroll('zz', 0, 1)<CR>")
       vim.keymap.set('n', 'zt', "<Cmd>lua Scroll('zt', 0, 1)<CR>")
-      -- vim.keymap.set('n', '<C-l>', "<Cmd>lua Scroll('zb', 0, 1)<CR>")
-      -- vim.keymap.set('n', '<C-h>', "<Cmd>lua Scroll('zt', 0, 1)<CR>")
+      vim.keymap.set('n', '<C-l>', "<Cmd>lua Scroll('zb', 0, 1)<CR>")
+      vim.keymap.set('n', '<C-h>', "<Cmd>lua Scroll('zt', 0, 1)<CR>")
       vim.keymap.set('n', 'zb', "<Cmd>lua Scroll('zb', 0, 1)<CR>")
       vim.keymap.set('n', 'z.', "<Cmd>lua Scroll('z.', 0, 1)<CR>")
       vim.keymap.set('n', 'z<CR>', "<Cmd>lua Scroll('zt^', 0, 1)<CR>")
