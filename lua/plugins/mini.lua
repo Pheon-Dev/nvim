@@ -1,7 +1,7 @@
 return {
   {
     "echasnovski/mini.pairs",
-    enabled = true,
+    enabled = false,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("mini.pairs").setup()

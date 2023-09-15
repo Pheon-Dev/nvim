@@ -92,6 +92,14 @@ local M = {
     end,
   },
   {
+    'altermo/ultimate-autopair.nvim',
+    event = { 'InsertEnter', 'CmdlineEnter' },
+    branch = 'v0.6',
+    opts = {
+      --Config goes here
+    },
+  },
+  {
     "windwp/nvim-ts-autotag",
     enabled = true,
     event = { "BufReadPost", "BufNewFile" },
