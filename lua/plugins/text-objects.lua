@@ -24,8 +24,8 @@ local M = {
           "R",  -- rp
           "in", -- ir
           "il",
-          "ai",
-          "ii",
+          -- "ai",
+          -- "ii",
           -- "aI",
           -- "iI",
           "an", -- deprecated
