@@ -1,12 +1,3 @@
--- Igone TextChangedI,TextChange events
-vim.cmd([[
-  " set ei=TextChangedI
-  " autocmd User targets#mappings#user call targets#mappings#extend({
-  " \ 'b': {},
-  " \ 'B': {},
-  " \ })
-  ]])
-
 local function augroup(name)
   return vim.api.nvim_create_augroup("nvim_" .. name, { clear = true })
 end
@@ -90,39 +81,3 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
--- local format_sync_grp = vim.api.nvim_create_augroup("format_sync_grp", { clear = true })
---
--- vim.api.nvim_create_autocmd("BufWritePre", {
--- 	pattern = "*.go",
--- 	callback = function()
--- 		require("go.format").goimport()
--- 	end,
--- 	group = format_sync_grp,
--- })
---
--- vim.cmd("autocmd!")
--- vim.cmd("autocmd Insertleave * set nopaste")
--- vim.cmd('autocmd VimEnter * :silent exec "!kill -s SIGNWINCH $PPID"')
--- vim.cmd("autocmd FileType coffee setlocal shiftwidth=2 tabstop=2")
--- vim.cmd("autocmd FileType ruby setlocal shiftwidth=2 tabstop=2")
--- vim.cmd("autocmd FileType yaml setlocal shiftwidth=2 tabstop=2")
--- vim.cmd("autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart")
--- vim.cmd("autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear")
--- vim.cmd("au BufnewFile,BufRead term:* setf Terminal")
--- vim.cmd("au BufnewFile,BufRead *.lua setf lua")
--- vim.cmd("au BufnewFile,BufRead *.js setf javascript")
--- -- vim.cmd("au BufnewFile,BufRead *.jsx setf javascript")
--- vim.cmd("au BufnewFile,BufRead *.jsx setf javascriptreact")
--- vim.cmd("au BufnewFile,BufRead *.es6 setf javascript")
--- vim.cmd("au BufnewFile,BufRead *.rs setf rust")
--- vim.cmd("au BufnewFile,BufRead *.go setf go")
--- vim.cmd("au BufnewFile,BufRead *.html setf html")
--- vim.cmd("au BufnewFile,BufRead *.ts setf typescript")
--- vim.cmd("au BufnewFile,BufRead *.tsx setf typescriptreact")
--- vim.cmd("au BufnewFile,BufRead *.md set filetype=markdown")
--- vim.cmd("au BufnewFile,BufRead *.mdx set filetype=markdown")
--- vim.cmd("au BufnewFile,BufRead *.flow set filetype=javascript")
--- vim.cmd("au BufnewFile,BufRead *.fish set filetype=fish")
--- vim.cmd("au BufnewFile,BufRead *.norg set filetype=norg")
--- vim.cmd("au BufnewFile,BufRead *.sh set filetype=bash")
--- vim.cmd("au BufnewFile,BufRead *.zsh set filetype=bash")

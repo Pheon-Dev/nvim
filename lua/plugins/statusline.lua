@@ -190,14 +190,12 @@ return {
       })
 
       -- macros etc
-      if on then
-        sec_left({
-          noice.api.statusline.mode.get,
-          cond = noice.api.statusline.mode.has,
-          color = { fg = "#ff9e64" },
-          padding = { right = 1, left = 1 },
-        })
-      end
+      sec_left({
+        noice.api.statusline.mode.get,
+        cond = noice.api.statusline.mode.has,
+        color = { fg = "#ff9e64" },
+        padding = { right = 1, left = 1 },
+      })
 
       -- lazy updates
       sec_right({
@@ -225,15 +223,15 @@ return {
         padding = { right = 1, left = 1 },
       })
 
-      -- tabs
-      sec_right({
-        function()
-          local tabpages = require("buffalo").tabpages()
-          return " 󰓩 " .. tabpages
-        end,
-        color = { fg = colors.grey },
-      })
-
+      -- -- tabs
+      -- sec_right({
+      --   function()
+      --     local tabpages = require("buffalo").tabpages()
+      --     return " 󰓩 " .. tabpages
+      --   end,
+      --   color = { fg = colors.grey },
+      -- })
+      --
       -- buffers
       sec_right({
         function()

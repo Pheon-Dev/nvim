@@ -52,32 +52,41 @@ return {
     end,
   },
   {
-    "lukas-reineke/virt-column.nvim",
+    "folke/neodev.nvim",
+    enabled = false,
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
-    config = function() require('virt-column').setup() end,
+    opts = {
+      debug = true,
+      experimental = {
+        pathStrict = true,
+      },
+    },
   },
   {
-    'kevinhwang91/nvim-fundo',
+    "lukas-reineke/virt-column.nvim",
+    dependencies = {
+      "m4xshen/smartcolumn.nvim",
+    },
     event = { "BufReadPost", "BufNewFile" },
-    enabled = false,
-    dependencies = 'kevinhwang91/promise-async',
-    build = function() require('fundo').install() end,
-    config = function() require('fundo').setup() end,
+    enabled = true,
+    config = function()
+      require('virt-column').setup({
+        char = '┊',
+      })
+      require('smartcolumn').setup()
+      vim.api.nvim_create_autocmd({ "BufEnter", "CursorMoved", "CursorMovedI", "WinScrolled" }, {
+        callback = function()
+          vim.cmd("VirtColumnRefresh")
+        end
+      })
+    end,
+  },
+  {
+    "m4xshen/smartcolumn.nvim",
+    opts = {}
   },
   {
     "voldikss/vim-floaterm",
-    event = "VeryLazy",
-    enabled = true,
-  },
-  {
-    "junegunn/fzf",
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
-  },
-  {
-    "ptzz/lf.vim",
-    dependencies = "voldikss/vim-floaterm",
     event = "VeryLazy",
     enabled = true,
   },
