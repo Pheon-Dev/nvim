@@ -1,9 +1,20 @@
+local enable = require("config").enable.utils
 return {
-  "nvim-lua/plenary.nvim",
-  "nvim-tree/nvim-web-devicons",
-  "nvim-lua/popup.nvim",
+  {
+    "nvim-lua/plenary.nvim",
+    enabled = enable.plenary,
+  },
+  {
+    "nvim-tree/nvim-web-devicons",
+    enabled = enable.dev_icons,
+  },
+  {
+    "nvim-lua/popup.nvim",
+    enabled = enable.popup,
+  },
   {
     "stevearc/dressing.nvim",
+    enabled = enable.dressing,
     init = function()
       ---@diagnostic disable-next-line: duplicate-set-field
       vim.ui.select = function(...)
@@ -27,7 +38,7 @@ return {
     "monaqa/dial.nvim",
     -- stylua: ignore
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = enable.dial,
     keys = {
       -- { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
       -- { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
@@ -48,7 +59,7 @@ return {
   },
   {
     "folke/neodev.nvim",
-    enabled = true,
+    enabled = enable.neodev,
     event = { "BufReadPost", "BufNewFile" },
     opts = {
       debug = true,
@@ -60,7 +71,7 @@ return {
   -- Lua
   {
     'abecodes/tabout.nvim',
-    enabled = true,
+    enabled = enable.tabout,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require('tabout').setup {
@@ -93,7 +104,7 @@ return {
       "m4xshen/smartcolumn.nvim",
     },
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = enable.virt_column,
     config = function()
       require('virt-column').setup({
         char = '┊',
@@ -113,12 +124,12 @@ return {
   {
     "voldikss/vim-floaterm",
     event = "VeryLazy",
-    enabled = true,
+    enabled = enable.floaterm,
   },
   {
     "Pheon-Dev/harpoon",
     -- "ThePrimeagen/harpoon",
-    enabled = true,
+    enabled = enable.harpoon,
     config = function()
       local opts = { noremap = true }
       local map = vim.keymap.set
@@ -159,7 +170,7 @@ return {
   },
   {
     "Pheon-Dev/buffalo-nvim",
-    enabled = true,
+    enabled = enable.buffalo,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       local opts = { noremap = true }
@@ -244,7 +255,7 @@ return {
   {
     "utilyre/sentiment.nvim",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = enable.sentiment,
     config = function()
       require("sentiment").setup({})
     end,
@@ -253,7 +264,7 @@ return {
     "kylechui/nvim-surround",
     event = { "BufReadPost", "BufNewFile" },
     -- dependencies = { "roobert/surround-ui.nvim" },
-    enabled = true,
+    enabled = enable.surround,
     config = function()
       require("nvim-surround").setup({})
       -- require("surround-ui").setup({ root_key = "S" })
@@ -262,13 +273,13 @@ return {
   {
     "tpope/vim-repeat",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = enable.vim_repeat,
   },
   {
     "brenoprata10/nvim-highlight-colors",
     event = { "BufReadPost", "BufNewFile" },
     -- event = "VeryLazy",
-    enabled = true,
+    enabled = enable.highlight_colors,
     config = function()
       require('nvim-highlight-colors').setup {}
     end,
@@ -276,27 +287,27 @@ return {
   {
     "chaoren/vim-wordmotion",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = enable.word_motion,
     config = function()
     end,
   },
   {
     "lambdalisue/suda.vim",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = enable.suda,
     config = function()
     end,
   },
   {
     "Exafunction/codeium.vim",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = enable.codeium,
     config = function()
     end,
   },
   {
     "rcarriga/nvim-notify",
-    enabled = true,
+    enabled = enable.notify,
     event = { "BufReadPost", "BufNewFile" },
     -- event = "VeryLazy",
     config = function()

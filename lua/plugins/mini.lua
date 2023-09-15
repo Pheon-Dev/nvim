@@ -1,7 +1,8 @@
+local enable = require("config").enable.mini
 return {
   {
     "echasnovski/mini.pairs",
-    enabled = false,
+    enabled = enable.pairs,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("mini.pairs").setup()
@@ -9,7 +10,7 @@ return {
   },
   {
     "echasnovski/mini.splitjoin",
-    enabled = true,
+    enabled = enable.splitjoin,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require("mini.splitjoin").setup({
@@ -52,7 +53,7 @@ return {
   },
   {
     "echasnovski/mini.move",
-    enabled = true,
+    enabled = enable.move,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       -- No need to copy this inside `setup()`. Will be used automatically.
@@ -83,7 +84,7 @@ return {
   },
   {
     "echasnovski/mini.indentscope",
-    enabled = true,
+    enabled = enable.indentscope,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       vim.api.nvim_create_autocmd("FileType", {

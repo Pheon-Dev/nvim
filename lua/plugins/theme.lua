@@ -1,9 +1,10 @@
+local enable = require("config").enable.theme
 local M = {
   {
     "catppuccin/nvim",
     name = "catppuccin",
     lazy = false,
-    enabled = true,
+    enabled = enable,
     priority = 1000,
     config = function()
       local theme = require("core.colors")

@@ -1,9 +1,10 @@
+local enable = require("config").enable.scroll
 return {
   {
     'declancm/cinnamon.nvim',
     event = { "BufReadPost", "BufNewFile" },
     -- event = "VeryLazy",
-    enabled = true,
+    enabled = enable,
     config = function()
       require('cinnamon').setup {
         -- KEYMAPS:

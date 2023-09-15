@@ -1,7 +1,8 @@
+local enable = require("config").enable.ts
 local M = {
   {
     "nvim-treesitter/nvim-treesitter",
-    enabled = true,
+    enabled = enable.treesitter,
     build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
@@ -101,7 +102,7 @@ local M = {
   },
   {
     "windwp/nvim-ts-autotag",
-    enabled = true,
+    enabled = enable.autotag,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       local filetypes = {
@@ -155,7 +156,7 @@ local M = {
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
-    enabled = true,
+    enabled = enable.context,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       require 'treesitter-context'.setup {
@@ -176,7 +177,7 @@ local M = {
   },
   {
     "RRethy/vim-illuminate",
-    enabled = true,
+    enabled = enable.illuminate,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       -- default configuration

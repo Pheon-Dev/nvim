@@ -1,8 +1,9 @@
+local enable = require("config").enable.flash
 return {
   {
     "folke/flash.nvim",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = enable,
     ---@type Flash.Config
     opts = {},
     keys = {

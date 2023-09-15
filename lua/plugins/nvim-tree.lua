@@ -1,7 +1,8 @@
+local enable = require("config").enable.nvim_tree
 return {
   "nvim-tree/nvim-tree.lua",
   event = { "BufReadPost", "BufNewFile" },
-  enabled = true,
+  enabled = enable,
   cmd = "NvimTreeToggle",
   config = function()
     local ok, _ = pcall(require, "nvim-tree")

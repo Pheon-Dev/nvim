@@ -1,6 +1,7 @@
+local enable = require("config").enable.typescript_tools
 return {
   "pmizio/typescript-tools.nvim",
-  enabled = true,
+  enabled = enable,
   event = { "BufReadPost", "BufNewFile" },
   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   config = function()

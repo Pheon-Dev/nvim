@@ -1,5 +1,7 @@
+local enable = require("config").enable.muren
 return {
   "AckslD/muren.nvim",
+  enable = enable,
   event = { "BufReadPost", "BufNewFile" },
   config = function()
     require("muren").setup({

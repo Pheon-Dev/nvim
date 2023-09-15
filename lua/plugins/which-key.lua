@@ -1,6 +1,8 @@
+local enable = require("config").enable.which_key
+
 return {
   "folke/which-key.nvim",
-  enabled = true,
+  enabled = enable,
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     -- vim.o.timeout = true

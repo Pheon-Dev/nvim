@@ -1,8 +1,9 @@
+local enable = require("config").enable.lsp
 return {
   {
     "neovim/nvim-lspconfig",
     -- event = "BufReadPre",
-    enabled = true,
+    enabled = enable.lspconfig,
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "onsails/lspkind-nvim",
@@ -20,7 +21,7 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    enabled = true,
+    enabled = enable.mason_lspconfig,
     config = function()
       require("mason-lspconfig").setup({
         automatic_installation = true,
@@ -44,7 +45,7 @@ return {
   {
     "williamboman/mason.nvim",
     build = "MasonUpdate",
-    enabled = true,
+    enabled = enable.mason,
     config = function()
       require("mason").setup({
         ui = {
@@ -60,7 +61,7 @@ return {
   },
   {
     'nvimdev/lspsaga.nvim',
-    enabled = false,
+    enabled = enable.lspsaga,
     config = function()
       require('lspsaga').setup({})
     end,
@@ -69,4 +70,12 @@ return {
       'nvim-tree/nvim-web-devicons',
     }
   },
+  {
+    "elentok/format-on-save.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    enabled = enable.format_on_save,
+    config = function()
+      require("plugins.lsp.format")
+    end,
+  }
 }

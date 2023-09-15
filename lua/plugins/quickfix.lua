@@ -1,8 +1,9 @@
+local enable = require("config").enable.quickfix
 return {
   {
     "onsails/diaglist.nvim",
     event = { "BufNewFile", "BufReadPost" },
-    enabled = true,
+    enabled = enable.diaglist,
     config = function()
       require("diaglist").init({
         -- optional settings
@@ -16,7 +17,7 @@ return {
   },
   {
     "kevinhwang91/nvim-bqf",
-    enabled = true,
+    enabled = enable.bqf,
     event = { "BufNewFile", "BufReadPost" },
     config = function()
       local fn = vim.fn

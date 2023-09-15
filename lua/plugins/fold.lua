@@ -1,7 +1,8 @@
+local enable = require("config").enable.fold
 return {
   {
     "kevinhwang91/nvim-ufo",
-    enabled = true,
+    enabled = enable,
     event = { "BufReadPost", "BufNewFile" },
     -- event = "VeryLazy",
     dependencies = { "kevinhwang91/promise-async" },

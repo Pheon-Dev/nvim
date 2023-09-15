@@ -1,7 +1,8 @@
+local enable = require("config").enable.cmp
 return {
   "hrsh7th/nvim-cmp",
   -- event = "VeryLazy",
-  enabled = true,
+  enabled = enable,
   event = "InsertEnter",
   dependencies = {
     {

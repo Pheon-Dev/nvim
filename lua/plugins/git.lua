@@ -1,7 +1,8 @@
+local enable = require("config").enable.git
 return {
   {
     "lewis6991/gitsigns.nvim",
-    enabled = true,
+    enabled = enable.git_signs,
     event = { "BufReadPost", "BufNewFile" },
     keys = {
       {
@@ -194,7 +195,7 @@ return {
   },
   {
     "f-person/git-blame.nvim",
-    enabled = false,
+    enabled = enable.git_blame,
     event = { "BufReadPost", "BufNewFile" },
   },
 }

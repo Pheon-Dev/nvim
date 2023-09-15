@@ -1,0 +1,82 @@
+local M = {}
+
+M.enable = {
+  lualine = true,
+  theme = true,
+  utils = {
+    dial = true,
+    dressing = true,
+    plenary = true,
+    dev_icons = true,
+    harpoon = true,
+    popup = true,
+    virt_column = true,
+    buffalo = true,
+    sentiment = true,
+    surround = true,
+    vim_repeat = true,
+    highlight_colors = true,
+    tabout = true,
+    word_motion = true,
+    neodev = true,
+    floaterm = true,
+    suda = true,
+    codeium = true,
+    notify = true,
+  },
+  flash = true,
+  typescript_tools = true,
+  noice = true,
+  yanky = true,
+  muren = true,
+  ts = {
+    treesitter = true,
+    autotag = true,
+    context = true,
+    illuminate = true,
+  },
+  which_key = true,
+  nvim_tree = true,
+  quickfix = {
+    diaglist = true,
+    bqf = true,
+  },
+  scroll = true,
+  rust = {
+    rust_tools = true,
+    rust_vim = true,
+    crates = true,
+  },
+  go = true,
+  text_objects = {
+    treesitter = true,
+    various = true,
+    comment = true,
+    targets = true,
+  },
+  mini = {
+    indentscope = true,
+    move = true,
+    pairs = false,
+    splitjoin = false,
+  },
+  cmp = true,
+  comments = {
+    todo_comments = true,
+    comment = true,
+  },
+  git = {
+    git_signs = true,
+    git_blame = false,
+  },
+  lsp = {
+    mason = true,
+    mason_lspconfig = true,
+    lspconfig = true,
+    lspsaga = false,
+    format_on_save = true,
+  },
+  fold = false,
+}
+
+return M

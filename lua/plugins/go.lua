@@ -1,7 +1,8 @@
+local enable = require("config").enable.go
 return {
   {
     "ray-x/go.nvim",
-    enabled = true,
+    enabled = enable,
     dependencies = { -- optional packages
       "ray-x/guihua.lua",
       "neovim/nvim-lspconfig",

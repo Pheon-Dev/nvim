@@ -1,6 +1,7 @@
+local enable = require("config").enable.yanky
 return {
   "gbprod/yanky.nvim",
-  enabled = true,
+  enabled = enable,
   -- event = "VeryLazy",
   event = { "BufReadPost", "BufNewFile" },
   opts = {

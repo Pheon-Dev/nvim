@@ -1,6 +1,8 @@
+local enable = require("config").enable.rust
 return {
   {
     "saecki/crates.nvim",
+    enabled = enable.crates,
     event = { "BufRead Cargo.toml", "BufReadPost" },
     dependencies = { { "nvim-lua/plenary.nvim" } },
     config = function()
@@ -164,6 +166,7 @@ return {
   },
   {
     "rust-lang/rust.vim",
+    enabled = enable.rust_vim,
     event = { "BufRead *.rs", "BufReadPost" },
     config = function()
       vim.g.rustfmt_autosave = 1
@@ -171,6 +174,7 @@ return {
   },
   {
     "simrat39/rust-tools.nvim",
+    enabled = enable.rust_tools,
     event = { "BufRead *.rs", "BufReadPre" },
     dependencies = {
       "neovim/nvim-lspconfig",

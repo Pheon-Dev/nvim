@@ -1,10 +1,8 @@
+local enable = require("config").enable.lualine
 return {
   {
     "nvim-lualine/lualine.nvim",
-    enabled = true,
-    dependencies = {
-      "Exafunction/codeium.vim",
-    },
+    enabled = enable,
     event = { "BufReadPost", "BufNewFile" },
     config = function()
       local lualine = require("lualine")

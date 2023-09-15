@@ -1,12 +1,13 @@
 -- https://github.com/andrewferrier/textobj-diagnostic.nvim
+local enable = require("config").enable.text_objects
 local M = {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    enabled = true
+    enabled = enable.treesitter,
   },
   {
     "chrisgrieser/nvim-various-textobjs",
-    enabled = true,
+    enabled = enable.various,
     event = { "BufReadPost", "BufNewFile" },
     opts = {
       useDefaultKeymaps = true,
@@ -34,7 +35,7 @@ local M = {
   },
   {
     "glts/vim-textobj-comment",
-    enabled = true,
+    enabled = enable.comment,
     keys = {
       { "ic", mode = { "o", "x" }, desc = "Select comment block" },
       { "ac", mode = { "o", "x" }, desc = "Select comment block" },
@@ -45,7 +46,7 @@ local M = {
   {
     "wellle/targets.vim",
     event = { "BufReadPost", "BufNewFile" },
-    enabled = true,
+    enabled = enable.targets,
   },
 
 }

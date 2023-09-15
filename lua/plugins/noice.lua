@@ -1,8 +1,9 @@
+local enable = require("config").enable.noice
 return {
   "folke/noice.nvim",
   -- event = "VeryLazy",
   event = { "BufReadPost", "BufNewFile" },
-  enabled = true,
+  enabled = enable,
   dependencies = {
     "MunifTanjim/nui.nvim",
     enabled = true,
