@@ -1,57 +1,38 @@
--- https://github.com/andrewferrier/textobj-diagnostic.nvim
-local enable = require("config").enable.text_objects
-local M = {
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    enabled = enable.treesitter,
-  },
-  {
-    "chrisgrieser/nvim-various-textobjs",
-    enabled = enable.various,
-    event = { "BufReadPost", "BufNewFile" },
-    opts = {
-      useDefaultKeymaps = true,
-    },
-    config = function()
-      require("various-textobjs").setup({
-        lookForwardSmall = 5,
-        lookForwardBig = 15,
-        useDefaultKeymaps = true,
-        -- disabledKeymaps = { "ai", "ii", "aI", "iI" },
-        disabledKeymaps = {
-          "L",  -- vu
-          "r",  -- ri
-          "R",  -- rp
-          "in", -- ir
-          "il",
-          -- "ai",
-          -- "ii",
-          -- "aI",
-          -- "iI",
-          "an", -- deprecated
-        },
-      })
-    end,
-  },
-  {
-    "glts/vim-textobj-comment",
-    enabled = enable.comment,
-    keys = {
-      { "ic", mode = { "o", "x" }, desc = "Select comment block" },
-      { "ac", mode = { "o", "x" }, desc = "Select comment block" },
-    },
-    -- https://github.com/kana/vim-textobj-user/wiki
-    dependencies = { "kana/vim-textobj-user" },
-  },
-  {
-    "wellle/targets.vim",
-    event = { "BufReadPost", "BufNewFile" },
-    enabled = enable.targets,
-  },
+local M = {}
 
+M.various_opts = {
+  useDefaultKeymaps = true,
 }
 
-M.textobjects = {
+M.various_config = function()
+  require("various-textobjs").setup({
+    lookForwardSmall = 5,
+    lookForwardBig = 15,
+    useDefaultKeymaps = true,
+    -- disabledKeymaps = { "ai", "ii", "aI", "iI" },
+    disabledKeymaps = {
+      "L",  -- vu
+      "r",  -- ri
+      "R",  -- rp
+      "in", -- ir
+      "il",
+      -- "ai",
+      -- "ii",
+      -- "aI",
+      -- "iI",
+      "an", -- deprecated
+    },
+  })
+end
+
+M.comment_keys = {
+  { "ic", mode = { "o", "x" }, desc = "Select comment block" },
+  { "ac", mode = { "o", "x" }, desc = "Select comment block" },
+}
+
+M.comment_dependencies = { "kana/vim-textobj-user" }
+
+M.treesitter_textobjects = {
   select = {
     enable = true,
 
