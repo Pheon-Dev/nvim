@@ -15,7 +15,7 @@ function M.lsp_config(plugin)
   end
 
   local on_attach = onAttach(function(client, buffer)
-    require("plugins.lsp.keymaps").on_attach(client, buffer)
+    require("config.lsp.keymaps").on_attach(client, buffer)
   end)
   -- vim.api.nvim_create_autocmd('LspAttach', {
   --   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -54,7 +54,7 @@ function M.lsp_config(plugin)
   --   }
 
   ---@type lspconfig.options
-  local servers = plugin.servers or require("plugins.lsp.servers")
+  local servers = plugin.servers or require("config.lsp.servers")
   -- local coq = require("coq")
   for server, opts in pairs(servers) do
     local hl_name = "FloatBorder"

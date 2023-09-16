@@ -1,13 +1,11 @@
 local M = {}
 
 M.enable = {
-  lsp = {
-    mason = true,
-    mason_lspconfig = true,
-    lspconfig = true,
-    lspsaga = false,
-    format_on_save = true,
-  },
+  mason = true,
+  mason_lspconfig = true,
+  lspconfig = true,
+  lspsaga = false,
+  format_on_save = true,
   dial = true,
   quickfix = true,
   cmp = true,
