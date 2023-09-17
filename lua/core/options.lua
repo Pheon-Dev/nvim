@@ -171,7 +171,7 @@ g.floaterm_titleposition = "left" -- options left, right, center
 g.floaterm_position =
 "center"                          -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
 
-g.floaterm_keymap_toggle = '<leader>`'
+g.floaterm_keymap_toggle = '<M-i>'
 
 -- FZF
 g.fzf_layout = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
