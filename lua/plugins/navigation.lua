@@ -1,5 +1,12 @@
 local enable = require("config").enable
 
+local buffalo = require("config.navigation.buffalo")
+local flash = require("config.navigation.flash")
+local harpoon = require("config.navigation.harpoon")
+local tabout = require("config.navigation.tabout")
+local nvim_tree = require("config.navigation.nvim-tree")
+local which_key = require("config.navigation.which-key")
+
 local default_event = require("config.event").default
 
 local M = {
@@ -7,7 +14,7 @@ local M = {
     'abecodes/tabout.nvim',
     enabled = enable.tabout,
     event = default_event,
-    config = require("config.tabout").config,
+    config = tabout.config,
     wants = { 'nvim-treesitter' },
     after = { 'nvim-cmp' }
   },
@@ -15,18 +22,18 @@ local M = {
     "folke/which-key.nvim",
     enabled = enable.which_key,
     event = default_event,
-    config = require("config.which-key").config,
+    config = which_key.config,
   },
   {
     "Pheon-Dev/harpoon",
     enabled = enable.harpoon,
-    config = require("config.harpoon").config,
+    config = harpoon.config,
   },
   {
     "Pheon-Dev/buffalo-nvim",
     enabled = enable.buffalo,
     event = default_event,
-    config = require("config.buffalo").config,
+    config = buffalo.config,
   },
   {
     "kylechui/nvim-surround",
@@ -43,16 +50,16 @@ local M = {
     "folke/flash.nvim",
     event = default_event,
     enabled = enable.flash,
-    opts = require("config.flash").opts,
-    keys = require("config.flash").keys,
-    config = require("config.flash").config,
+    opts = flash.opts,
+    keys = flash.keys,
+    config = flash.config,
   },
   {
     "nvim-tree/nvim-tree.lua",
     enable = enable.nvim_tree,
     event = default_event,
-    cmd = require("config.nvim-tree").cmd,
-    config = require("config.nvim-tree").config,
+    cmd = nvim_tree.cmd,
+    config = nvim_tree.config,
   },
 }
 

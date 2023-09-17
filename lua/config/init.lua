@@ -53,6 +53,7 @@ M.enable = {
   fold = true,
   floaterm = true,
   suda = true,
+  diaglist = true,
   codeium = true,
   notify = true,
   hl_chunk = true,

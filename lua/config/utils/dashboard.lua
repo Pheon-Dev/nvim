@@ -133,7 +133,7 @@ M.shortcut = {
     desc = 'ft',
     group = '@string',
     action = 'FloatermNew',
-    key = 't',
+    key = 'i',
   },
   {
     icon = ' ',

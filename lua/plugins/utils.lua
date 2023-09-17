@@ -1,7 +1,16 @@
 local enable = require("config").enable
 
+local theme = require("config.utils.theme")
+local scroll = require("config.utils.scroll")
+local dashboard = require("config.utils.dashboard")
+local lualine = require("config.utils.lualine")
+local cmp = require("config.utils.cmp")
+local yanky = require("config.utils.yanky")
+local dial = require("config.utils.dial")
+
 local default_event = require("config.event").default
 local vim_enter_event = require("config.event").enter.vim
+local insert_enter_event = require("config.event").enter.insert
 
 local M = {
   {
@@ -10,45 +19,52 @@ local M = {
   },
   {
     "catppuccin/nvim",
-    name = require("config.theme").name,
-    lazy = require("config.theme").lazy,
+    name = theme.name,
+    lazy = theme.lazy,
     enabled = enable.theme,
-    priority = require("config.theme").priority,
-    config = require("config.theme").config,
+    priority = theme.priority,
+    config = theme.config,
   },
   {
     'glepnir/dashboard-nvim',
     enabled = enable.dashboard,
     event = vim_enter_event,
-    config = require("config.dashboard").config,
-    dependencies = require("config.dashboard").dependencies,
+    config = dashboard.config,
+    dependencies = dashboard.dependencies,
   },
   {
     "nvim-lualine/lualine.nvim",
     enabled = enable.lualine,
     event = default_event,
-    config = require("config.lualine").config
+    config = lualine.config
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    enabled = enable.cmp,
+    event = insert_enter_event,
+    dependencies = cmp.dependencies,
+    config = cmp.config,
   },
   {
     "monaqa/dial.nvim",
     event = default_event,
     enabled = enable.dial,
-    keys = require("config.dial").keys,
-    config = require("config.dial").config,
+    keys = dial.keys,
+    config = dial.config,
   },
   {
     'declancm/cinnamon.nvim',
     event = default_event,
     enabled = enable.scroll,
-    config = require("config.scroll").config,
+    config = scroll.config,
   },
   {
     "gbprod/yanky.nvim",
     enabled = enable.yanky,
     event = default_event,
-    opts = require("config.yanky").opts,
-    keys = require("config.yanky").keys,
-    config = require("config.yanky").config,
+    opts = yanky.opts,
+    keys = yanky.keys,
+    config = yanky.config,
   },
   {
     "tpope/vim-repeat",

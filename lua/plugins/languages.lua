@@ -1,5 +1,10 @@
 local enable = require("config").enable
 
+local rust = require("config.languages.rust")
+local go = require("config.languages.go")
+local lua = require("config.languages.lua")
+local typescript = require("config.languages.typescript")
+
 local default_event = require("config.event").default
 
 local M = {
@@ -7,43 +12,43 @@ local M = {
     "folke/neodev.nvim",
     enabled = enable.neodev,
     event = default_event,
-    opts = require("config.neodev").opts,
+    opts = lua.neodev_opts,
   },
   {
     "pmizio/typescript-tools.nvim",
     enabled = enable.typescript,
     event = default_event,
-    dependencies = require("config.typescript").dependencies,
-    config = require("config.typescript").config,
+    dependencies = typescript.dependencies,
+    config = typescript.config,
   },
   {
     "saecki/crates.nvim",
     enabled = enable.crates,
-    event = require("config.rust").crates_event,
+    event = rust.crates_event,
     dependencies = { { "nvim-lua/plenary.nvim" } },
-    config = require("config.rust").crates_config,
+    config = rust.crates_config,
   },
   {
     "rust-lang/rust.vim",
     enabled = enable.rust_vim,
-    event = require("config.rust").rust_vim_event,
-    config = require("config.rust").rust_vim_config,
+    event = rust.rust_vim_event,
+    config = rust.rust_vim_config,
   },
   {
     "simrat39/rust-tools.nvim",
     enabled = enable.rust_tools,
-    event = require("config.rust").rust_tools_event,
-    dependencies = require("config.rust").rust_tools_dependencies,
-    config = require("config.rust").rust_tools_config,
+    event = rust.rust_tools_event,
+    dependencies = rust.rust_tools_dependencies,
+    config = rust.rust_tools_config,
   },
   {
     "ray-x/go.nvim",
     enabled = enable.go,
-    dependencies = require("config.go").dependencies,
-    config = require("config.go").config,
+    dependencies = go.dependencies,
+    config = go.config,
     -- event = cmd_enter_event,
-    -- ft = require("config.go").ft,
-    -- build = require("config.go").build,
+    -- ft = go.ft,
+    -- build = go.build,
   },
 }
 

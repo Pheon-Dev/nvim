@@ -2,7 +2,6 @@ local enable = require("config").enable
 
 local default_event = require("config.event").default
 local lazy_event = require("config.event").lazy
-local insert_enter_event = require("config.event").enter.insert
 
 local M = {
   {
@@ -17,13 +16,6 @@ local M = {
     "voldikss/vim-floaterm",
     event = lazy_event,
     enabled = enable.floaterm,
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    enabled = enable.cmp,
-    event = insert_enter_event,
-    dependencies = require("config.cmp").dependencies,
-    config = require("config.cmp").config,
   },
   {
     "lambdalisue/suda.vim",

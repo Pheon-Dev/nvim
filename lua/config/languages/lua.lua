@@ -1,6 +1,6 @@
 local M = {}
 
-M.opts = {
+M.neodev_opts = {
   debug = true,
   experimental = {
     pathStrict = true,

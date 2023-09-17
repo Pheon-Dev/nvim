@@ -92,6 +92,12 @@ end
 
 M.autopair_branch = 'v0.6'
 
+M.autopair_config = function()
+  require("ultimate-autopair").setup({
+    --
+  })
+end
+
 M.autotag_config = function()
   local filetypes = {
     "html",
