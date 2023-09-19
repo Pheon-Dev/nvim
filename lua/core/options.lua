@@ -132,8 +132,8 @@ g.gitblame_highlight_group = "Blame"
 
 
 
-g.virtcolumn_char = "┊" -- char to display the line
-vim.cmd("set colorcolumn=80")
+-- g.virtcolumn_char = "┊" -- char to display the line
+-- vim.cmd("set colorcolumn=80")
 
 vim.cmd("set t_BE=")
 vim.cmd("set nosc noru nosm")

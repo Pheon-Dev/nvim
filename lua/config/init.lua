@@ -38,7 +38,6 @@ M.enable = {
   dev_icons = true,
   harpoon = true,
   popup = true,
-  virt_column = true,
   muren = true,
   nvim_tree = true,
   buffalo = true,
