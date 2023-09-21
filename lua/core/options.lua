@@ -130,7 +130,7 @@ g.codeium_disable_bindings = 1
 g.gitblame_highlight_group = "GitBlame"
 g.gitblame_highlight_group = "Blame"
 
-
+vim.cmd("let g:Hexokinase_highlighters = ['backgroundfull']") -- sign_column
 
 -- g.virtcolumn_char = "┊" -- char to display the line
 -- vim.cmd("set colorcolumn=80")

@@ -10,10 +10,11 @@ local M = {
     config = true,
   },
   {
-    "brenoprata10/nvim-highlight-colors",
+    -- "brenoprata10/nvim-highlight-colors",
+    "RRethy/vim-hexokinase",
     event = default_event,
     enabled = enable.highlight_colors,
-    config = true,
+    -- config = true,
   },
   {
     "shellRaining/hlchunk.nvim",
