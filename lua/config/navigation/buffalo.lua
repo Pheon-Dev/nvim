@@ -70,13 +70,13 @@ M.config = function()
 
   local buffalo = require("buffalo.ui")
 
-  map({ 't', 'n' }, '<leader>b', buffalo.toggle_buf_menu, { desc = 'Toggle Buffer Menu', noremap = opts.noremap })
-  -- map({ 't', 'n' }, '<M-Space>', buffalo.toggle_buf_menu, opts)
-  -- map({ 't', 'n' }, '<C-Space>', buffalo.toggle_tab_menu, opts)
+  -- map({ 't', 'n' }, '<leader>b', buffalo.toggle_buf_menu, { desc = 'Toggle Buffer Menu', noremap = opts.noremap })
+  map({ 't', 'n' }, '<M-Space>', buffalo.toggle_buf_menu, opts)
+  map({ 't', 'n' }, '<C-Space>', buffalo.toggle_tab_menu, opts)
 
-  -- map('n', '<C-j>', buffalo.nav_buf_next, opts)
+  map('n', '<C-j>', buffalo.nav_buf_next, opts)
   map('n', '<C-k>', buffalo.nav_buf_prev, opts)
   map('n', '<C-n>', buffalo.nav_tab_next, opts)
-  -- map('n', '<C-p>', buffalo.nav_tab_prev, opts)
+  map('n', '<C-p>', buffalo.nav_tab_prev, opts)
 end
 return M

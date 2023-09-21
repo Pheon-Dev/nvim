@@ -216,15 +216,15 @@ M.config = function()
     padding = { right = 1, left = 1 },
   })
 
-  -- -- tabs
-  -- sec_right({
-  --   function()
-  --     local tabpages = require("buffalo").tabpages()
-  --     return " 󰓩 " .. tabpages
-  --   end,
-  --   color = { fg = colors.grey },
-  -- })
-  --
+  -- tabs
+  sec_right({
+    function()
+      local tabpages = require("buffalo").tabpages()
+      return " 󰓩 " .. tabpages
+    end,
+    color = { fg = colors.grey },
+  })
+
   -- buffers
   sec_right({
     function()
