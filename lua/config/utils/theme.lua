@@ -20,6 +20,7 @@ M.config = function()
 
   -- Alpha
   vim.api.nvim_set_hl(0, "DashboardIcon", { fg = theme.color75, bg = theme.color0 })
+  -- vim.api.nvim_set_hl(0, "DashboardHeader", { fg = theme.color3, bg = theme.color0 })
   -- General
   -- DashboardHeader DashboardFooter
   -- Hyper theme
