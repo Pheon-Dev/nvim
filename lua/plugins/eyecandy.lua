@@ -14,6 +14,11 @@ local M = {
     config = dressing.config,
   },
   {
+    'psliwka/vim-smoothie',
+    event = default_event,
+    enabled = enable.scroll,
+  },
+  {
     "rcarriga/nvim-notify",
     enabled = enable.notify,
     event = default_event,

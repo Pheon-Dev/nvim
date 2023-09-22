@@ -1,7 +1,6 @@
 local enable = require("config").enable
 
 local theme = require("config.utils.theme")
-local scroll = require("config.utils.scroll")
 local dashboard = require("config.utils.dashboard")
 local lualine = require("config.utils.lualine")
 local cmp = require("config.utils.cmp")
@@ -51,12 +50,6 @@ local M = {
     enabled = enable.dial,
     keys = dial.keys,
     config = dial.config,
-  },
-  {
-    'declancm/cinnamon.nvim',
-    event = default_event,
-    enabled = enable.scroll,
-    config = scroll.config,
   },
   {
     "gbprod/yanky.nvim",
