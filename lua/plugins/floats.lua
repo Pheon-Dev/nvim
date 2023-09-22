@@ -24,7 +24,7 @@ local M = {
   },
   {
     "AckslD/muren.nvim",
-    enable = enable.muren,
+    enabled = enable.muren,
     event = default_event,
     config = require("config.muren").config,
   },
