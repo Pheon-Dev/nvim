@@ -7,7 +7,7 @@ M.config = function()
 
   if not has_dashboard then return end
   dashboard.setup({
-    -- theme = 'hyper',            --  theme is doom and hyper default is hyper
+    -- theme = 'hyper',             --  theme is doom and hyper default is hyper
     disable_move = false,       --  default is false disable move keymap for hyper
     shortcut_type = "letter",   --  shorcut type 'letter' or 'number'
     change_to_vcs_root = false, -- default is false,for open file in hyper mru. it will change to the root of vcs
