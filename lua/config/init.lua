@@ -23,6 +23,7 @@ M.enable = {
   which_key = true,
   typescript = true,
   scroll = true,
+  navigator = false,
   indentscope = false,
   move = true,
   pairs = false,

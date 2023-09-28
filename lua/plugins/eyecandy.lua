@@ -3,6 +3,7 @@ local enable = require("config").enable
 local dressing = require("config.eyecandy.dressing")
 local noice = require("config.eyecandy.noicey")
 local notify = require("config.eyecandy.notify")
+local scroll = require("config.eyecandy.scroll")
 
 local default_event = require("config.event").default
 
@@ -14,9 +15,10 @@ local M = {
     config = dressing.config,
   },
   {
-    'psliwka/vim-smoothie',
+    'declancm/cinnamon.nvim',
     event = default_event,
     enabled = enable.scroll,
+    config = scroll.config
   },
   {
     "rcarriga/nvim-notify",

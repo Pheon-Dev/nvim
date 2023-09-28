@@ -4,6 +4,7 @@ local buffalo = require("config.navigation.buffalo")
 local flash = require("config.navigation.flash")
 local harpoon = require("config.navigation.harpoon")
 local tabout = require("config.navigation.tabout")
+local navigator = require("config.navigation.navigator")
 local nvim_tree = require("config.navigation.nvim-tree")
 local which_key = require("config.navigation.which-key")
 
@@ -61,6 +62,12 @@ local M = {
     cmd = nvim_tree.cmd,
     config = nvim_tree.config,
   },
+  {
+    'numToStr/Navigator.nvim',
+    event = default_event,
+    enabled = enable.navigator,
+    config = navigator.config,
+  }
 }
 
 return M

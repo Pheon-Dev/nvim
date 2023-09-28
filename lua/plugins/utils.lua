@@ -69,6 +69,15 @@ local M = {
     event = default_event,
     enabled = enable.codeium,
   },
+  {
+    "NStefan002/mdmaker.nvim",
+    event = default_event,
+    config = function()
+      require('mdmaker').setup({
+        -- your config
+      })
+    end
+  },
 }
 
 return M
