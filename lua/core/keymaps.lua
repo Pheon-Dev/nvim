@@ -64,8 +64,8 @@ map("i", "<C-l>", "<C-o>A", { noremap = true, silent = true })
 map("i", "<C-h>", "<C-o>I", { noremap = true, silent = true })
 
 -- Dial
-map("n", "+", "<Plug>(dial-increment)", { noremap = true, silent = true })
-map("n", "_", "<Plug>(dial-decrement)", { noremap = true, silent = true })
+-- map("n", "+", "<Plug>(dial-increment)", { noremap = true, silent = true })
+-- map("n", "_", "<Plug>(dial-decrement)", { noremap = true, silent = true })
 -- map("n", "+", "<C-a>", { noremap = true, silent = true })
 -- map("n", "_", "<C-x>", { noremap = true, silent = true })
 
@@ -152,7 +152,7 @@ map("n", "<S-TAB>", ":bprevious<cr>", { noremap = true, silent = true })
 -- Split Join
 vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
 
-vim.keymap.set("i", "<C-a>",
+vim.keymap.set("i", "<C-e>",
   function()
     return vim.fn["codeium#Accept"]()
   end

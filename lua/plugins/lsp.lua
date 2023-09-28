@@ -24,7 +24,8 @@ local M = {
   {
     'nvimdev/lspsaga.nvim',
     enabled = enable.lspsaga,
-    config = require("config.lsp").lspsaga_config,
+    event = default_event,
+    -- config = require("config.lsp").lspsaga_config,
     dependencies = require("config.lsp").lspsaga_dependencies,
   },
   {

@@ -12,8 +12,8 @@ M.config = function()
       up = 'K',
 
       -- Move current line in Normal mode
-      line_left = '<',
-      line_right = '>',
+      line_left = '_',
+      line_right = '+',
       line_down = '-',
       line_up = '=',
     },

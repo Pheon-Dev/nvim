@@ -91,7 +91,7 @@ M.shortcut = {
     icon = ' ', -- פּ
     group = 'DashboardIcon',
     desc = '',
-    icon_hl = '@integer',
+    icon_hl = '@string',
     action = 'NvimTreeToggle',
     key = 'j'
   },
@@ -131,7 +131,7 @@ M.shortcut = {
     icon = ' ',
     group = 'DashboardIcon',
     desc = '',
-    icon_hl = '@string',
+    icon_hl = '@property',
     action = 'FloatermNew',
     key = 'i',
   },

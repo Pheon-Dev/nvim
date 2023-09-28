@@ -45,13 +45,13 @@ function M.lsp_config(plugin)
   --     end, opts)
   --   end,
   -- })
-  --   local lsp_flags = {
-  --     debounce_text_changes = 150,
-  --   }
-  --   capabilities.textDocument.foldingRange = {
-  --     dynamicRegistration = false,
-  --     lineFoldingOnly = true,
-  --   }
+  local lsp_flags = {
+    debounce_text_changes = 150,
+  }
+  capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+  }
 
   ---@type lspconfig.options
   local servers = plugin.servers or require("config.lsp.servers")

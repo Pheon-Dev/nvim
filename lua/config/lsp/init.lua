@@ -13,6 +13,7 @@ M.lspconfig_config = function(plugin)
   -- diagnostics
   require("config.lsp.diagnostics")
 
+  require("config.lsp.lspsaga").config()
   -- lspconfig
   require("config.lsp.config").lsp_config(plugin)
 end
@@ -50,10 +51,6 @@ M.mason_config = function()
       },
     },
   })
-end
-
-M.lspsaga_config = function()
-  require('lspsaga').setup({})
 end
 
 M.lspsaga_dependencies = {
