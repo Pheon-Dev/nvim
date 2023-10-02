@@ -69,6 +69,12 @@ local M = {
     event = default_event,
     enabled = enable.codeium,
   },
+  {
+    'willothy/wezterm.nvim',
+    event = default_event,
+    enabled = enable.wezterm,
+    config = true
+  },
 }
 
 return M
