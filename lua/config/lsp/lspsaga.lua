@@ -53,9 +53,9 @@ M.config = function()
   })
   local signs = {
     Error = ' ',
-    Warn = ' ',
+    Warn = '',
     Info = ' ',
-    Hint = 'ﴞ ',
+    Hint = ' ',
     Question = ' ',
   }
   for type, icon in pairs(signs) do

@@ -1,11 +1,9 @@
 local M = {}
 
 M.dependencies = {
-  {
-    "L3MON4D3/LuaSnip",
-    dependencies = { "rafamadriz/friendly-snippets" },
-  },
-  { "hrsh7th/cmp-nvim-lsp-signature-help" },
+  "L3MON4D3/LuaSnip",
+  "rafamadriz/friendly-snippets",
+  "hrsh7th/cmp-nvim-lsp-signature-help",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-buffer",
   "hrsh7th/cmp-path",

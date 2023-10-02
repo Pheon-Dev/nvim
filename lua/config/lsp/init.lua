@@ -11,7 +11,7 @@ M.lspconfig_servers = nil
 
 M.lspconfig_config = function(plugin)
   -- diagnostics
-  require("config.lsp.diagnostics")
+  -- require("config.lsp.diagnostics")
 
   require("config.lsp.lspsaga").config()
   -- lspconfig

@@ -5,6 +5,7 @@ M.enable = {
   mason_lspconfig = true,
   lspconfig = true,
   lspsaga = true,
+  wezterm = true,
   format_on_save = true,
   dial = true,
   quickfix = true,
