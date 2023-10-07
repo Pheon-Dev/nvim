@@ -10,11 +10,6 @@ local M = {
     keys = require("config.git").keys,
     config = require("config.git").config,
   },
-  {
-    "f-person/git-blame.nvim",
-    enabled = enable.git_blame,
-    event = default_event,
-  },
 }
 
 return M

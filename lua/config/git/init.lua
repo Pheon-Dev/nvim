@@ -26,7 +26,7 @@ M.keys = {
     desc = "Diff This",
   },
   {
-    "<leader>gg",
+    "<leader>gl",
     mode = { "n" },
     function()
       require("gitsigns").toggle_current_line_blame()

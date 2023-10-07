@@ -33,7 +33,6 @@ M.enable = {
   flash = false,
   git_signs = true,
   go = true,
-  git_blame = false,
   plenary = true,
   todo_comments = true,
   comment = true,

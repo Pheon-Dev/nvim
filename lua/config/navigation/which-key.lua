@@ -81,39 +81,19 @@ M.config = function()
 
   local mappings = {
     -- ["'"] = { ":Alpha<cr>", "Dashboard" },
-    a = { ":ASToggle<cr>", "Auto Save Toggle" },
+    -- a = { ":ASToggle<cr>", "Auto Save Toggle" },
     -- b = { ":Antelope buffers<cr>", "Buffers" },
-    c = {
-      name = "Crates",
-      t = { crates.toggle, "Toggle" },
-      r = { crates.reload, "Reload" },
-      v = { crates.show_versions_popup, "Show Versions Popup" },
-      f = { crates.show_features_popup, "Show Features Popup" },
-      d = { crates.show_dependencies_popup, "Show Dependencies Popup" },
-      u = {
-        name = "Update",
-        u = { crates.update_crate, "Update Crate" },
-        a = { crates.update_all_crates, "Update All Crates" },
-      },
-      g = {
-        name = "Upgrade",
-        g = { crates.upgrade_crate, "Upgrade Crate" },
-        a = { crates.upgrade_all_crates, "Upgrade All Crates" },
-      },
-      o = {
-        name = "Open",
-        c = { crates.open_crates_io, "Crates IO" },
-        h = { crates.open_homepage, "Home Page" },
-        d = { crates.open_documentation, "Documentation" },
-        r = { crates.open_repository, "Repository" },
-      },
-    },
     h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
     j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
     k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
-    m = { ":Antelope marks<cr>", "Marks" },
+    l = {
+      name = "LSP",
+      n = { ":Noice<cr>", "Noice Notification" },
+      m = { ":messages<cr>", "Messages" },
+    },
+    -- m = { ":Antelope marks<cr>", "Marks" },
     n = {
-      name = "Others",
+      name = "Notifications",
       n = { ":Noice<cr>", "Noice Notification" },
       m = { ":messages<cr>", "Messages" },
     },
@@ -128,7 +108,32 @@ M.config = function()
     r = {
       name = "Rust",
       a = { rt.code_action_group.code_action_group, "Code Action Group" },
-      c = { ":RustOpenCargo<cr>", "Open Cargo" },
+      o = { ":RustOpenCargo<cr>", "Open Cargo" },
+      c = {
+        name = "Crates",
+        t = { crates.toggle, "Toggle" },
+        r = { crates.reload, "Reload" },
+        v = { crates.show_versions_popup, "Show Versions Popup" },
+        f = { crates.show_features_popup, "Show Features Popup" },
+        d = { crates.show_dependencies_popup, "Show Dependencies Popup" },
+        u = {
+          name = "Update",
+          u = { crates.update_crate, "Update Crate" },
+          a = { crates.update_all_crates, "Update All Crates" },
+        },
+        g = {
+          name = "Upgrade",
+          g = { crates.upgrade_crate, "Upgrade Crate" },
+          a = { crates.upgrade_all_crates, "Upgrade All Crates" },
+        },
+        o = {
+          name = "Open",
+          c = { crates.open_crates_io, "Crates IO" },
+          h = { crates.open_homepage, "Home Page" },
+          d = { crates.open_documentation, "Documentation" },
+          r = { crates.open_repository, "Repository" },
+        },
+      },
       h = { rt.hover_actions.hover_actions, "Hover Actions" },
       i = {
         name = "Inlayhints",
