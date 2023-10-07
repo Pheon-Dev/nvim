@@ -3,24 +3,39 @@ local M = {}
 M.lspconfig_dependencies = {
   "hrsh7th/cmp-nvim-lsp",
   "onsails/lspkind-nvim",
-  -- "folke/lsp-colors.nvim",
+  'VonHeikemen/lsp-zero.nvim',
+  'neovim/nvim-lspconfig',
   "mason.nvim",
 }
 
 M.lspconfig_servers = nil
 
 M.lspconfig_config = function(plugin)
-  -- diagnostics
-  -- require("config.lsp.diagnostics")
+  local lsp_zero = require('lsp-zero')
 
-  require("config.lsp.lspsaga").config()
-  -- lspconfig
+  lsp_zero.on_attach(function(client, buffer)
+    lsp_zero.default_keymaps({ buffer = buffer })
+  end)
+
   require("config.lsp.config").lsp_config(plugin)
+
+  -- require("config.lsp.diagnostics")
+  require("config.lsp.lspsaga").config()
+  local conf = require('config.lsp.servers')
+  local lsp = require("lspconfig")
+
+  lsp.lua_ls.setup(conf.lua_ls)
+  lsp.rust_analyzer.setup(conf.rust_analyzer)
+  lsp.clangd.setup(conf.clangd)
+  lsp.gopls.setup(conf.gopls)
+  lsp.tsserver.setup(conf.tsserver)
 end
 
 M.mason_lspconfig_config = function()
+  local lsp_zero = require('lsp-zero')
   require("mason-lspconfig").setup({
     automatic_installation = true,
+    handlers = { lsp_zero.default_setup },
     ensure_installed = {
       "rust-analyzer",
       "clangd",

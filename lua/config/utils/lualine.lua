@@ -172,7 +172,7 @@ M.config = function()
   -- search count
   sec_left({
     "searchcount",
-    color = { fg = colors.green1 },
+    color = { fg = colors.green },
   })
 
   -- sep
@@ -202,11 +202,11 @@ M.config = function()
     "diagnostics",
     sources = { "nvim_diagnostic" },
     symbols = {
-      error = " ",
-      warn = " ",
-      info = " ",
-      question = " ",
-      hint = " ",
+      error = ' ',
+      warn = ' ',
+      info = ' ',
+      hint = 'ﴞ ',
+      question = ' ',
     },
     diagnostics_color = {
       color_error = { fg = colors.red },

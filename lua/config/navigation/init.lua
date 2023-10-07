@@ -9,5 +9,6 @@ M.nvim_tree = config.nvim_tree
 M.tabout = config.tabout
 M.which_key = config.which_key
 M.navigator = config.navigator
+M.zero = config.zero
 
 return M

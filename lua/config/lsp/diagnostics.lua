@@ -5,10 +5,10 @@ end
 
 local icons = {
   [vim.diagnostic.severity.ERROR] = "",
-  [vim.diagnostic.severity.WARN] = "",
+  [vim.diagnostic.severity.WARN] = "",
   [vim.diagnostic.severity.INFO] = "",
-  [vim.diagnostic.severity.HINT] = "",
-  -- [vim.diagnostic.severity.QUESTION] = "",
+  [vim.diagnostic.severity.HINT] = "ﴞ",
+  [vim.diagnostic.severity.QUESTION] = "",
   -- Error = ' ',
   -- Warn = ' ',
   -- Info = ' ',
@@ -63,18 +63,18 @@ vim.diagnostic.config({
 })
 
 _G.LspDiagnosticsShowPopup = function(opts)
+  local diag = require("lspsaga.diagnostic")
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  local bufnr = vim.api.nvim_get_current_buf()
+  local entrys = vim.diagnostic.get(bufnr, { lnum = line - 1, col = col })
+  local res = {}
+  for _, v in pairs(entrys) do
+    if v.col <= col and (v.end_col and v.end_col > col or true) then
+      res[#v - 1] = v
+      return diag:render_diagnostic_window(res)
+    end
+  end
   return vim.diagnostic.open_float({ bufnr = 0, scope = "cursor" })
-  -- local diag = require("lspsaga.diagnostic")
-  -- local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  -- local bufnr = vim.api.nvim_get_current_buf()
-  -- local entrys = vim.diagnostic.get(bufnr, { lnum = line - 1 })
-  -- local res = {}
-  -- for _, v in pairs(entrys) do
-  --   if v.col <= col and (v.end_col and v.end_col > col or true) then
-  --     res[#res + 1] = v
-  --     return diag:render_diagnostic_window(v)
-  --   end
-  -- end
 end
 
 -- Show diagnostics in a pop-up window on hover

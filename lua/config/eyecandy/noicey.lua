@@ -7,9 +7,9 @@ M.dependencies = {
 M.config = function()
   require("noice").setup({
     cmdline = {
-      enabled = true,         -- enables the Noice cmdline UI
-      view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-      opts = {},              -- global options for the cmdline. See section on views
+      enabled = true,   -- enables the Noice cmdline UI
+      view = "cmdline", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom 'cmdline_popup'
+      opts = {},        -- global options for the cmdline. See section on views
       format = {
         -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
         -- view: (default is cmdline view)
@@ -169,8 +169,8 @@ M.config = function()
     presets = {
       -- you can enable a preset by setting it to true, or a table that will override the preset config
       -- you can also add custom presets that you can enable/disable with enabled=true
-      bottom_search = false,        -- use a classic bottom cmdline for search
-      command_palette = false,      -- position the cmdline and popupmenu together
+      bottom_search = true,         -- use a classic bottom cmdline for search
+      command_palette = true,       -- position the cmdline and popupmenu together
       long_message_to_split = true, -- long messages will be sent to a split
       inc_rename = false,           -- enables an input dialog for inc-rename.nvim
       lsp_doc_border = true,        -- add a border to hover docs and signature help

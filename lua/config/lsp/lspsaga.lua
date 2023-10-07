@@ -2,6 +2,34 @@ local M = {}
 
 M.config = function()
   require('lspsaga').setup({
+    defintion = {
+      height = 0.5,
+      width = 0.6,
+      keys = {
+        edit = 'l',
+        vsplit = 'v',
+        split = 'b',
+        tabe = 't',
+        quit = { 'q', '<ESC>' },
+        close = 'x',
+      },
+    },
+    outline = {
+      win_position = 'right',
+      win_width = 30,
+      auto_preview = true,
+      detail = true,
+      auto_close = true,
+      close_after_jump = false,
+      layout = 'normal',
+      max_height = 0.5,
+      left_width = 0.3,
+      keys = {
+        toggle_or_jump = 'l',
+        quit = { 'q', '<ESC>', 'h' },
+        jump = 'o',
+      }
+    },
     ui = {
       border = "rounded",
       devicon = true,
@@ -52,9 +80,9 @@ M.config = function()
       silent = false,
       keys = {
         vsplit = "v",
-        split = "h",
-        shuttle = '[w]',
-        toggle_or_open = 'o',
+        split = "b",
+        shuttle = 'w',
+        toggle_or_open = 'l',
         quit = 'q',
         close = 'x',
         tabe = 't',
@@ -84,9 +112,9 @@ M.config = function()
   })
   local signs = {
     Error = ' ',
-    Warn = '',
+    Warn = '',
     Info = ' ',
-    Hint = ' ',
+    Hint = 'ﴞ ',
     Question = ' ',
   }
   for type, icon in pairs(signs) do
@@ -142,6 +170,23 @@ M.config = function()
       end,
     },
   })
+  local map = vim.api.nvim_set_keymap
+
+  map("n", "<leader>ia", ":Lspsaga code_action<cr>", { desc = "Hover Doc", silent = true })
+  map("n", "<leader>if", ":Lspsaga finder<cr>", { desc = "Finder", silent = true })
+  map("n", "<leader>ir", ":Lspsaga rename<cr>", { desc = "Rename", silent = true })
+  map("n", "<leader>io", ":Lspsaga outline<cr>", { desc = "Outline", silent = true })
+  map("n", "<leader>ip", ":Lspsaga peek_definition<cr>", { desc = "Peek Definition", silent = true })
+  map("n", "<leader>it", ":Lspsaga peek_type_definition<cr>", { desc = "Peek Type Definition", silent = true })
+  map("n", "<leader>ig", ":Lspsaga goto_type_definition<cr>", { desc = "Goto Type Definition", silent = true })
+  map("n", "K", ":Lspsaga hover_doc<cr>", { desc = "Hover Doc", silent = true })
+  map("n", "]d", ":Lspsaga diagnostic_jump_prev<cr>", { desc = "Previous Diagnostic", silent = true })
+  map("n", "[d", ":Lspsaga diagnostic_jump_next<cr>", { desc = "Next Diagnostic", silent = true })
+
+  -- map("n", "<leader>id", function()
+  --   return vim.diagnostic.open_float
+  -- end, { desc = "Line Diagnostics" })
+  map("n", "<leader>il", ":LspInfo<cr>", { desc = "Lsp Info", silent = true })
 end
 
 return M

@@ -2,16 +2,12 @@ local M = {}
 
 function M.on_attach(client, buffer)
   local self = M.new(client, buffer)
+  -- local lsp_zero = require('lsp-zero')
+  --
+  -- lsp_zero.default_keymaps({ buffer = buffer })
 
   self:map("<leader>id", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
   self:map("<leader>il", "LspInfo", { desc = "Lsp Info" })
-  self:map("<leader>ia", "Lspsaga code_action", { desc = "Hover Doc" })
-  self:map("<leader>if", "Lspsaga finder", { desc = "Finder" })
-  self:map("<leader>ir", "Lspsaga rename", { desc = "Rename" })
-  self:map("<leader>io", "Lspsaga outline", { desc = "Outline" })
-  self:map("K", "Lspsaga hover_doc", { desc = "Hover Doc" })
-  self:map("]d", "Lspsaga diagnostic_jump_prev", { desc = "Previous Diagnostic" })
-  self:map("[d", "Lspsaga diagnostic_jump_next", { desc = "Next Diagnostic" })
   -- self:map("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", mode = { "n", "v" }, has = "codeAction" })
   -- vim.keymap.set("n", "[e", function()
   --   require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
@@ -25,9 +21,9 @@ function M.on_attach(client, buffer)
   -- self:map("]w", M.diagnostic_goto(true, "WARNING"), { desc = "Next Warning" })
   -- self:map("[w", M.diagnostic_goto(false, "WARNING"), { desc = "Prev Warning" })
 
-  vim.api.nvim_buf_set_option(buffer, "formatexpr", "v:lua.vim.lsp.formatexpr()")
-  vim.api.nvim_buf_set_option(buffer, "omnifunc", "v:lua.vim.lsp.omnifunc")
-  vim.api.nvim_buf_set_option(buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
+  -- vim.api.nvim_buf_set_option(buffer, "formatexpr", "v:lua.vim.lsp.formatexpr()")
+  -- vim.api.nvim_buf_set_option(buffer, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  -- vim.api.nvim_buf_set_option(buffer, "tagfunc", "v:lua.vim.lsp.tagfunc")
 end
 
 function M.new(client, buffer)
