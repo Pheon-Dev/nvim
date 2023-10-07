@@ -86,11 +86,6 @@ M.config = function()
     h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
     j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
     k = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon" },
-    l = {
-      name = "LSP",
-      n = { ":Noice<cr>", "Noice Notification" },
-      m = { ":messages<cr>", "Messages" },
-    },
     -- m = { ":Antelope marks<cr>", "Marks" },
     n = {
       name = "Notifications",

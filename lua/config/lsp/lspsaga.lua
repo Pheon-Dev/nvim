@@ -9,7 +9,7 @@ M.config = function()
       expand = '⊟',
       code_action = "",
       actionfix = " ",
-      lines = { "╭", "─", "╮", "│", "╯", "─", "╰", "│", },
+      lines = { "╰", "├", "│", "─", "╭", },
       kind = {},
       imp_sign = "󰳛",
     },
@@ -30,11 +30,42 @@ M.config = function()
         exec = '<CR>'
       }
     },
+    rename = {
+      in_select = true,
+      auto_save = false,
+      project_max_width = 0.5,
+      project_max_height = 0.5,
+      keys = {
+        quit = { 'q', '<ESC>' },
+        exec = '<CR>',
+        select = 'x'
+      },
+    },
+    finder = {
+      max_height = 0.6,
+      max_width = 0.6,
+      right_width = 0.3,
+      default = 'ref+imp',
+      methods = {},
+      layout = 'float',
+      filter = {},
+      silent = false,
+      keys = {
+        vsplit = "v",
+        split = "h",
+        shuttle = '[w]',
+        toggle_or_open = 'o',
+        quit = 'q',
+        close = 'x',
+        tabe = 't',
+        tabnew = 'T',
+      }
+    },
     diagnostic = {
       show_code_action = true,
       jump_num_shortcut = true,
-      max_width = 0.80,
-      max_height = 0.8,
+      max_width = 0.6,
+      max_height = 0.6,
       text_hl_follow = true,
       border_follow = true,
       extend_relatedInformation = false,
