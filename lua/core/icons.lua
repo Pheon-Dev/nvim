@@ -59,6 +59,7 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
       OpenFolder = "",
       empty_open = "",
     },
+    symbols = { added = " ", modified = " ", removed = " ", renamed = " ", ignored = " " },
     ui = {
       ArrowClosed = "",
       ArrowOpen = "",
@@ -68,7 +69,7 @@ if vim.fn.has("mac") == 1 or vim.g.use_nerd_icons then
       BigUnfilledCircle = "",
       Close = "",
       NewFile = "",
-      Search = "",
+      Search = "  ",
       Lightbulb = "",
       Project = "",
       Dashboard = "",

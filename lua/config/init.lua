@@ -31,6 +31,7 @@ M.enable = {
   splitjoin = true,
   dressing = true,
   flash = true,
+  wilder = true,
   git_signs = true,
   go = true,
   plenary = true,

@@ -28,17 +28,20 @@ M.config = function()
   local config = {
     options = {
       icons_enabled = true,
-      -- disabled_filetypes = { tabline = { "alpha" }, statusline = { "alpha" } },
       disabled_filetypes = {
-        statusline = { "dashboard", "NvimTree", "floaterm" }
+        statusline = {
+          "dashboard",
+          "NvimTree",
+          "floaterm"
+        }
       },
       component_separators = { left = '', right = '' },
       section_separators = { left = '', right = '' },
-      ignore_focus = {},           -- If current filetype is in this list it'll
-      always_divide_middle = true, -- When set to true, left sections i.e. 'a','b' and 'c'
-      globalstatus = true,         -- enable global statusline (have a single statusline
-      refresh = {                  -- sets how often lualine should refresh it's contents (in ms)
-        statusline = 1000,         -- The refresh option sets minimum time that lualine tries
+      ignore_focus = {},
+      always_divide_middle = true,
+      globalstatus = true,
+      refresh = {
+        statusline = 1000,
       },
       theme = {
         normal = { c = { fg = colors.fg, bg = colors.bg } },
@@ -159,7 +162,7 @@ M.config = function()
   -- git diffs
   sec_left({
     "diff",
-    symbols = { added = " ", modified = "柳", removed = " " },
+    symbols = { added = " ", modified = " ", removed = " ", renamed = " ", ignored = " " },
     diff_color = {
       added = { fg = colors.green },
       modified = { fg = colors.orange },
@@ -205,7 +208,7 @@ M.config = function()
       error = ' ',
       warn = ' ',
       info = ' ',
-      hint = 'ﴞ ',
+      hint = '󰠠 ',
       question = ' ',
     },
     diagnostics_color = {
@@ -216,14 +219,14 @@ M.config = function()
     padding = { right = 1, left = 1 },
   })
 
-  -- tabs
-  sec_right({
-    function()
-      local tabpages = require("buffalo").tabpages()
-      return " 󰓩 " .. tabpages
-    end,
-    color = { fg = colors.grey },
-  })
+  -- -- tabs
+  -- sec_right({
+  --   function()
+  --     local tabpages = require("buffalo").tabpages()
+  --     return " 󰓩 " .. tabpages
+  --   end,
+  --   color = { fg = colors.grey },
+  -- })
 
   -- buffers
   sec_right({

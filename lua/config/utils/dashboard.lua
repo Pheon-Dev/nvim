@@ -88,7 +88,7 @@ M.shortcut = {
     key = 'z'
   },
   {
-    icon = ' ', -- פּ
+    icon = '󱁕 ', -- פּ
     group = 'DashboardIcon',
     desc = '',
     icon_hl = '@string',
@@ -104,7 +104,7 @@ M.shortcut = {
   --   key = 'l'
   -- },
   {
-    icon = 'ﯠ ',
+    icon = '󱡅 ',
     group = 'DashboardIcon',
     desc = '',
     icon_hl = '@function',
@@ -112,7 +112,7 @@ M.shortcut = {
     key = 'k'
   },
   {
-    icon = ' ',
+    icon = '󰱽 ',
     group = 'DashboardIcon',
     desc = '',
     icon_hl = 'Label',
@@ -120,7 +120,7 @@ M.shortcut = {
     key = 'f',
   },
   {
-    icon = ' ',
+    icon = '󰺯 ',
     group = 'DashboardIcon',
     desc = '',
     icon_hl = 'DiagnosticHint',
@@ -128,7 +128,7 @@ M.shortcut = {
     key = 's',
   },
   {
-    icon = ' ',
+    icon = ' ',
     group = 'DashboardIcon',
     desc = '',
     icon_hl = '@property',
@@ -136,7 +136,7 @@ M.shortcut = {
     key = 'i',
   },
   {
-    icon = ' ',
+    icon = ' ',
     group = 'DashboardIcon',
     desc = '',
     icon_hl = 'DiagnosticInfo',
@@ -144,7 +144,7 @@ M.shortcut = {
     key = 'l',
   },
   {
-    icon = ' ',
+    icon = '󰟿 ',
     desc = '',
     group = 'DiagnosticError',
     icon_hl = 'DiagnosticError',

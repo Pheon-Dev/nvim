@@ -12,6 +12,7 @@ format_on_save.setup({
   formatter_by_ft = {
     css = formatters.lsp,
     html = formatters.lsp,
+    vim = formatters.lsp,
     java = formatters.lsp,
     javascript = formatters.lsp,
     json = formatters.lsp,

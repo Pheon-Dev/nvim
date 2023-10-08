@@ -114,7 +114,7 @@ M.config = function()
     Error = ' ',
     Warn = '',
     Info = ' ',
-    Hint = 'ﴞ ',
+    Hint = '󰠠 ',
     Question = ' ',
   }
   for type, icon in pairs(signs) do

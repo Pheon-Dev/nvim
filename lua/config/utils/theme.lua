@@ -150,6 +150,20 @@ M.config = function()
   vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color2, bg = theme.color0 })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = theme.color0 })
 
+  -- Wilder
+  vim.api.nvim_set_hl(0, "WildBorder", { fg = theme.color2, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WildMenu", { fg = theme.color06, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WildStatus", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WildSelected", { bg = theme.color1 })
+  vim.api.nvim_set_hl(0, "WilderPopupMenuSelectedAccent", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WilderWildmenuSelectedAccent", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WilderPopup", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WilderPopupMenuAccent", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WilderGradient1", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WilderGradient2", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WilderGradient3", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WilderGradient4", { bg = theme.color0 })
+
   -- Noice
   vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color0 })
   vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color0 })

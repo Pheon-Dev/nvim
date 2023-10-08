@@ -9,5 +9,6 @@ M.scroll = config.scroll
 M.theme = config.theme
 M.yanky = config.yanky
 M.dial = config.dial
+M.wilder = config.wilder
 
 return M

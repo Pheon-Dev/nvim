@@ -6,9 +6,11 @@ local lualine = require("config.utils.lualine")
 local cmp = require("config.utils.cmp")
 local yanky = require("config.utils.yanky")
 local dial = require("config.utils.dial")
+local wilder = require("config.utils.wilder")
 
 local default_event = require("config.event").default
 local vim_enter_event = require("config.event").enter.vim
+local cmd_enter_event = require("config.event").enter.cmd
 local insert_enter_event = require("config.event").enter.insert
 
 local M = {
@@ -74,6 +76,14 @@ local M = {
     event = default_event,
     enabled = enable.wezterm,
     config = true
+  },
+  {
+    'gelguy/wilder.nvim',
+    event = cmd_enter_event,
+    enabled = enable.wilder,
+    dependencies = wilder.dependencies,
+    config = wilder.config,
+    build = ":UpdateRemotePlugins",
   },
 }
 
