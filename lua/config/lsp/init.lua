@@ -21,14 +21,14 @@ M.lspconfig_config = function(plugin)
 
   -- require("config.lsp.diagnostics")
   require("config.lsp.lspsaga").config()
-  local conf = require('config.lsp.servers')
+  local server = require('config.lsp.servers')
   local lsp = require("lspconfig")
 
-  lsp.lua_ls.setup(conf.lua_ls)
-  lsp.rust_analyzer.setup(conf.rust_analyzer)
-  lsp.clangd.setup(conf.clangd)
-  lsp.gopls.setup(conf.gopls)
-  lsp.tsserver.setup(conf.tsserver)
+  lsp.lua_ls.setup(server.lua_ls)
+  lsp.rust_analyzer.setup(server.rust_analyzer)
+  lsp.clangd.setup(server.clangd)
+  lsp.gopls.setup(server.gopls)
+  lsp.tsserver.setup(server.tsserver)
 end
 
 M.mason_lspconfig_config = function()
