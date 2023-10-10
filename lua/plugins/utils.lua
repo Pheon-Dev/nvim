@@ -6,12 +6,33 @@ local lualine = require("config.utils.lualine")
 local cmp = require("config.utils.cmp")
 local yanky = require("config.utils.yanky")
 local dial = require("config.utils.dial")
+local muren = require("config.utils.muren")
+local fold = require("config.utils.fold")
 
+local lazy_event = require("config.event").lazy
 local default_event = require("config.event").default
 local vim_enter_event = require("config.event").enter.vim
 local insert_enter_event = require("config.event").enter.insert
 
 local M = {
+  {
+    "nvim-lua/plenary.nvim",
+    enabled = enable.plenary,
+  },
+  {
+    "nvim-lua/popup.nvim",
+    enabled = enable.popup,
+  },
+  {
+    "voldikss/vim-floaterm",
+    event = lazy_event,
+    enabled = enable.floaterm,
+  },
+  {
+    "lambdalisue/suda.vim",
+    event = default_event,
+    enabled = enable.suda,
+  },
   {
     "nvim-tree/nvim-web-devicons",
     enabled = enable.dev_icons,
@@ -70,9 +91,18 @@ local M = {
     enabled = enable.codeium,
   },
   {
+    "AckslD/muren.nvim",
+    enabled = enable.muren,
     event = default_event,
+    config = muren.config,
   },
   {
+    "kevinhwang91/nvim-ufo",
+    enabled = enable.fold,
+    event = default_event,
+    dependencies = fold.dependencies,
+    keys = fold.keys,
+    config = fold.config,
   },
 }
 

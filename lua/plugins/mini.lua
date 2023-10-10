@@ -1,5 +1,7 @@
 local enable = require("config").enable
 
+local move = require("config.utils.move")
+
 local default_event = require("config.event").default
 
 local M = {
@@ -19,7 +21,7 @@ local M = {
     "echasnovski/mini.move",
     enabled = enable.move,
     event = default_event,
-    config = require("config.move").config,
+    config = move.config,
   },
 }
 

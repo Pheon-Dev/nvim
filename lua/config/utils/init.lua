@@ -9,5 +9,9 @@ M.scroll = config.scroll
 M.theme = config.theme
 M.yanky = config.yanky
 M.dial = config.dial
+M.fold = config.fold
+M.muren = config.muren
+M.move = config.move
+M.hl_chunk = config.hl_chunk
 
 return M

@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local default_event = require("config.event").default
+local hl_chunk = require("config.utils.hl_chunk")
 
 local M = {
   {
@@ -20,7 +21,7 @@ local M = {
     "shellRaining/hlchunk.nvim",
     event = default_event,
     enabled = enable.hl_chunk,
-    config = require("config.hl_chunk").config,
+    config = hl_chunk.config,
   },
 }
 
