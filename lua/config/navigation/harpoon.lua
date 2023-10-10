@@ -1,15 +1,5 @@
 local M = {}
 
-local theme = require("core.colors")
-
-vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color2, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "Harpoon", { fg = theme.color3, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "HarpoonInactive", { fg = theme.color3, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "HarpoonActive", { fg = theme.color101, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "HarpoonNumberActive", { fg = theme.color4, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "HarpoonNumberInactive", { fg = theme.color3, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = theme.color0 })
-
 M.config = function()
   local opts = { noremap = true }
   local map = vim.keymap.set
@@ -46,6 +36,15 @@ M.config = function()
   -- Next/Prev
   -- map('n', '<M-l>', harpoon.nav_next, opts)
   -- map('n', '<M-h>', harpoon.nav_prev, opts)
+  local theme = require("core.colors")
+
+  vim.api.nvim_set_hl(0, "HarpoonBorder", { fg = theme.color2, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "Harpoon", { fg = theme.color3, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "HarpoonInactive", { fg = theme.color3, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "HarpoonActive", { fg = theme.color101, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "HarpoonNumberActive", { fg = theme.color4, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "HarpoonNumberInactive", { fg = theme.color3, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "HarpoonWindow", { bg = theme.color0 })
 end
 
 return M

@@ -4,21 +4,6 @@ M.dependencies = {
   "MunifTanjim/nui.nvim",
 }
 
-local theme = require("core.colors")
-
-vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color0 })
-
--- vim.api.nvim_set_hl(0, "NoiceMini", { bg = theme.color3 })
-vim.api.nvim_set_hl(0, "NoicePopup", { bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoicePopupmenuBorder", { fg = theme.color2, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoicePopupBorder", { fg = theme.color2, bg = theme.color0 })
-
-vim.api.nvim_set_hl(0, "NoiceCmdline", { bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = theme.color2, bg = theme.color0 })
-vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = theme.color2, bg = theme.color0 })
-
 M.config = function()
   require("noice").setup({
     cmdline = {
@@ -265,6 +250,20 @@ M.config = function()
     status = {}, --- @see section on statusline components
     format = {}, --- @see section on formatting
   })
+  local theme = require("core.colors")
+
+  vim.api.nvim_set_hl(0, "NoiceConfirm", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "NoiceConfirmBorder", { fg = theme.color2, bg = theme.color0 })
+
+  -- vim.api.nvim_set_hl(0, "NoiceMini", { bg = theme.color3 })
+  vim.api.nvim_set_hl(0, "NoicePopup", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "NoicePopupmenuBorder", { fg = theme.color2, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "NoicePopupBorder", { fg = theme.color2, bg = theme.color0 })
+
+  vim.api.nvim_set_hl(0, "NoiceCmdline", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "NoiceCmdlinePopup", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { fg = theme.color2, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorderSearch", { fg = theme.color2, bg = theme.color0 })
 end
 
 return M

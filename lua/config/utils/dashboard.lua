@@ -1,17 +1,5 @@
 local M = {}
 
-local theme = require("core.colors")
-
-vim.api.nvim_set_hl(0, "DashboardIcon", { fg = theme.color75, bg = theme.color0 })
--- vim.api.nvim_set_hl(0, "DashboardHeader", { fg = theme.color3, bg = theme.color0 })
--- General
--- DashboardHeader DashboardFooter
--- Hyper theme
--- DashboardProjectTitle DashboardProjectTitleIcon DashboardProjectIcon
--- DashboardMruTitle DashboardMruIcon DashboardFiles DashboardShotCutIcon
--- Doome theme
--- DashboardDesc DashboardKey DashboardIcon DashboardShotCut
-
 M.dependencies = { { 'nvim-tree/nvim-web-devicons' } }
 
 M.config = function()
@@ -52,6 +40,17 @@ M.config = function()
       end,
     })
   end
+  local theme = require("core.colors")
+
+  vim.api.nvim_set_hl(0, "DashboardIcon", { fg = theme.color75, bg = theme.color0 })
+  -- vim.api.nvim_set_hl(0, "DashboardHeader", { fg = theme.color3, bg = theme.color0 })
+  -- General
+  -- DashboardHeader DashboardFooter
+  -- Hyper theme
+  -- DashboardProjectTitle DashboardProjectTitleIcon DashboardProjectIcon
+  -- DashboardMruTitle DashboardMruIcon DashboardFiles DashboardShotCutIcon
+  -- Doome theme
+  -- DashboardDesc DashboardKey DashboardIcon DashboardShotCut
 end
 
 M.confirm_key = "l"
