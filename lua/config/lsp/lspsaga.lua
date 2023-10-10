@@ -1,5 +1,11 @@
 local M = {}
 
+
+M.dependencies = {
+  'nvim-treesitter/nvim-treesitter',
+  'nvim-tree/nvim-web-devicons',
+}
+
 M.config = function()
   require('lspsaga').setup({
     defintion = {
