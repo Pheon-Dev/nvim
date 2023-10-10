@@ -231,7 +231,7 @@ M.config = function()
   -- buffers
   sec_right({
     function()
-      local buffers = require("buffalo").buffers()
+      local buffers = require("antelope.buffers").buffers()
       return "󱂬 " .. buffers
     end,
     color = "Keyword",
