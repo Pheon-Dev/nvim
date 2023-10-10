@@ -1,36 +1,18 @@
 local M = {}
 
-M.various_opts = {
-  useDefaultKeymaps = true,
-}
-
-M.various_config = function()
-  require("various-textobjs").setup({
-    lookForwardSmall = 5,
-    lookForwardBig = 15,
-    useDefaultKeymaps = true,
-    -- disabledKeymaps = { "ai", "ii", "aI", "iI" },
-    disabledKeymaps = {
-      "L",  -- vu
-      "r",  -- ri
-      "R",  -- rp
-      "in", -- ir
-      "il",
-      -- "ai",
-      -- "ii",
-      -- "aI",
-      -- "iI",
-      "an", -- deprecated
-    },
-  })
+local function starts_with(str, start)
+  return str:sub(1, #start) == start
 end
 
-M.comment_keys = {
-  { "ic", mode = { "o", "x" }, desc = "Select comment block" },
-  { "ac", mode = { "o", "x" }, desc = "Select comment block" },
-}
-
-M.comment_dependencies = { "kana/vim-textobj-user" }
+local function treesitter_selection_mode(info)
+  -- * query_string: eg '@function.inner'
+  -- * method: eg 'v' or 'o'
+  --print(info['method'])		-- visual, operator-pending
+  if starts_with(info["query_string"], "@function.") then
+    return "V"
+  end
+  return "v"
+end
 
 M.treesitter_textobjects = {
   select = {

@@ -1,5 +1,8 @@
 local enable = require("config").enable
 
+local various = require("config.text-objects.various_text_objects")
+local comment = require("config.text-objects.comment_text_objects")
+
 local default_event = require("config.event").default
 
 local M = {
@@ -11,14 +14,14 @@ local M = {
     "chrisgrieser/nvim-various-textobjs",
     enabled = enable.various_textobjects,
     event = default_event,
-    opts = require("config.text-objects").various_opts,
-    config = require("config.text-objects").various_config,
+    opts = various.opts,
+    config = various.config,
   },
   {
     "glts/vim-textobj-comment",
-    enabled = enable.comment_textobjects,
-    keys = require("config.text-objects").comment_keys,
-    dependencies = require("config.text-objects").comment_dependencies,
+    enabled = enable.textobjects,
+    keys = comment.keys,
+    dependencies = comment.dependencies,
   },
   {
     "wellle/targets.vim",
