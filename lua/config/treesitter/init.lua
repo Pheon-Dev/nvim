@@ -10,21 +10,7 @@ M.treesitter_dependencies = {
 }
 
 M.treesitter_config = function()
-  local function starts_with(str, start)
-    return str:sub(1, #start) == start
-  end
-
-  local function treesitter_selection_mode(info)
-    -- * query_string: eg '@function.inner'
-    -- * method: eg 'v' or 'o'
-    --print(info['method'])		-- visual, operator-pending
-    if starts_with(info["query_string"], "@function.") then
-      return "V"
-    end
-    return "v"
-  end
-
-  local textobjects = require("config.text-objects").treesitter_textobjects
+  local textobjects = require("config.text-objects.treesitter_text_objects").treesitter_textobjects
 
   require("nvim-treesitter.configs").setup({
     sync_install = false,
