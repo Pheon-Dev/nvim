@@ -1,5 +1,12 @@
 local M = {}
 
+local theme = require("core.colors")
+
+vim.api.nvim_set_hl(0, "BqfPreviewBorder", { fg = theme.color2, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "BqfPreviewTitle", { fg = theme.color101, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "BqfPreviewThumb", { fg = theme.color99, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "BqfPreviewRange", { fg = theme.color0, bg = theme.color89 })
+
 M.config = function()
   local fn = vim.fn
 

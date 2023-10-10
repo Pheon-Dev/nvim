@@ -134,6 +134,8 @@ M.autotag_config = function()
   })
 end
 
+local theme = require("core.colors")
+vim.api.nvim_set_hl(0, "TreesitterContext", { bg = theme.color01 })
 M.treesitter_context_config = function()
   require 'treesitter-context'.setup {
     enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -150,6 +152,12 @@ M.treesitter_context_config = function()
     on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
   }
 end
+
+-- Illuminate
+vim.api.nvim_set_hl(0, "IlluminatedWordText", { fg = theme.color99, bg = theme.color1 })
+vim.api.nvim_set_hl(0, "IlluminatedWordRead", { fg = theme.color99, bg = theme.color1 })
+vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { fg = theme.color89, bg = theme.color1 })
+
 
 M.illuminate_config = function()
   -- default configuration

@@ -1,5 +1,19 @@
 local M = {}
 
+local theme = require("core.colors")
+
+vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = theme.color7 })
+vim.api.nvim_set_hl(0, "GitSignsAddNr", { fg = theme.color7 })
+vim.api.nvim_set_hl(0, "GitSignsAddLn", { fg = theme.color7 })
+vim.api.nvim_set_hl(0, "GitSignsChange", { fg = theme.color99 })
+vim.api.nvim_set_hl(0, "GitSignsChangeNr", { fg = theme.color99 })
+vim.api.nvim_set_hl(0, "GitSignsChangeLn", { fg = theme.color99 })
+vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = theme.color16 })
+vim.api.nvim_set_hl(0, "GitSignsDeleteNr", { fg = theme.color16 })
+vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { fg = theme.color16 })
+vim.api.nvim_set_hl(0, "Blame", { fg = theme.color3, bg = theme.color1 })
+vim.api.nvim_set_hl(0, "GitBlame", { fg = theme.color68, bg = theme.color1 })
+
 M.keys = {
   {
     "<leader>ga",

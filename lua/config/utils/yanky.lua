@@ -1,5 +1,10 @@
 local M = {}
 
+local theme = require("core.colors")
+
+vim.api.nvim_set_hl(0, "YankyYanked", { bg = theme.color1 })
+vim.api.nvim_set_hl(0, "YankyPut", { bg = theme.color4 })
+
 M.opts = {
   ring = {
     history_length = 100,

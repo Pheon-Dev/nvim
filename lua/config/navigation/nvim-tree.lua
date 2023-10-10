@@ -1,5 +1,10 @@
 local M = {}
 
+local theme = require("core.colors")
+
+vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = theme.color0 })
+vim.api.nvim_set_hl(0, "NvimTreeNormalFloat", { bg = theme.color0 })
+
 M.cmd = "NvimTreeToggle"
 
 M.config = function()

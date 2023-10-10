@@ -1,5 +1,9 @@
 local M = {}
 
+local theme = require("core.colors")
+
+vim.api.nvim_set_hl(0, "RustToolsInlayHints", { fg = theme.color24 })
+
 M.crates_event = { "BufRead Cargo.toml", "BufReadPost" }
 
 M.crates_dependencies = { { "nvim-lua/plenary.nvim" } }

@@ -1,5 +1,12 @@
 local M = {}
 
+local theme = require("core.colors")
+
+vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "FlashMatch", { bg = theme.color0, fg = theme.color4 })
+vim.api.nvim_set_hl(0, "FlashCurrent", { bg = theme.color0, fg = theme.color4 })
+vim.api.nvim_set_hl(0, "FlashLabel", { fg = theme.color101, bg = theme.color0 })
+
 ---@type Flash.Config
 M.opts = {}
 

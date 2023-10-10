@@ -1,5 +1,10 @@
 local M = {}
 
+local theme = require("core.colors")
+-- TODO: hover highlights
+vim.api.nvim_set_hl(0, "Folded", { bg = theme.color93, fg = theme.color26 })
+vim.api.nvim_set_hl(0, "FoldColumn", { bg = theme.color19, fg = theme.color99 })
+
 M.dependencies = { "kevinhwang91/promise-async" }
 
 M.keys = {

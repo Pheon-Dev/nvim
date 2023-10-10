@@ -1,5 +1,14 @@
 local M = {}
 
+local theme = require("core.colors")
+
+vim.api.nvim_set_hl(0, "AntelopeBorder", { fg = theme.color2, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "AntelopeMarkLocation", { fg = theme.color4 })
+vim.api.nvim_set_hl(0, "AntelopeHandleMarkLocal", { fg = theme.color7, bg = theme.color0 })
+
+vim.api.nvim_set_hl(0, "AntelopeMark", { fg = theme.color23, bg = theme.color0 })
+vim.api.nvim_set_hl(0, "AntelopeHandleTabpage", { fg = theme.color7, bg = theme.color0 })
+
 M.config = function()
   local antelope = require("antelope")
 
