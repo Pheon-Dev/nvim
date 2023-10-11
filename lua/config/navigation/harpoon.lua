@@ -1,12 +1,36 @@
 local M = {}
 
 M.config = function()
+  local function augroup(name)
+    return vim.api.nvim_create_augroup("nvim_" .. name, { clear = true })
+  end
+
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'harpoon',
+    callback = function()
+      vim.api.nvim_buf_set_keymap(
+        0,
+        "n",
+        "h",
+        "<Cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>",
+        { silent = true }
+      )
+      vim.api.nvim_buf_set_keymap(
+        0,
+        "n",
+        "l",
+        "<Cmd>lua require('harpoon.ui').select_menu_item()<CR>",
+        {}
+      )
+    end,
+  })
+
   local opts = { noremap = true }
   local map = vim.keymap.set
   -- Setup
   -- Navigate buffers bypassing the menu
   local harpoon = require("harpoon.ui")
-  local keys = 'hjklasdfgn'
+  local keys = '123456789'
   for i = 1, #keys do
     local key = keys:sub(i, i)
     map(

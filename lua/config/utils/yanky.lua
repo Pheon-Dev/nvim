@@ -59,6 +59,16 @@ M.keys = {
 }
 
 M.config = function()
+  local function augroup(name)
+    return vim.api.nvim_create_augroup("nvim_" .. name, { clear = true })
+  end
+
+  vim.api.nvim_create_autocmd("TextYankPost", {
+    group = augroup("highlight_yank"),
+    callback = function()
+      vim.highlight.on_yank()
+    end,
+  })
   local theme = require("core.colors")
   require("yanky").setup({})
   vim.api.nvim_set_hl(0, "YankyYanked", { bg = theme.color65 })

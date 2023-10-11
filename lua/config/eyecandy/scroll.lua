@@ -1,6 +1,23 @@
 local M = {}
 
 M.config = function()
+  local function augroup(name)
+    return vim.api.nvim_create_augroup("nvim_" .. name, { clear = true })
+  end
+
+  vim.api.nvim_create_autocmd("InsertEnter", {
+    group = augroup("cinnamon_unroll"),
+    callback = function()
+      require('cinnamon.config').disabled = not require('cinnamon.config').disabled
+    end,
+  })
+
+  vim.api.nvim_create_autocmd("InsertLeave", {
+    group = augroup("cinnamon_roll"),
+    callback = function()
+      require('cinnamon.config').disabled = not require('cinnamon.config').disabled
+    end,
+  })
   require('cinnamon').setup {
     -- KEYMAPS:
     default_keymaps = false,  -- Create default keymaps.
@@ -86,14 +103,14 @@ M.config = function()
   -- EXTENDED_KEYMAPS:
 
   -- Up/down movements:
-  vim.keymap.set({ 'n', 'x' }, 'k', "<Cmd>lua Scroll('k', 0, 1)<CR>")
-  vim.keymap.set({ 'n', 'x' }, 'j', "<Cmd>lua Scroll('j', 0, 1)<CR>")
+  vim.keymap.set({ 'n', 'x' }, 'k', "<Cmd>lua Scroll('k', 0, 1)<CR>", { silent = true })
+  vim.keymap.set({ 'n', 'x' }, 'j', "<Cmd>lua Scroll('j', 0, 1)<CR>", { silent = true })
   vim.keymap.set({ 'n', 'x' }, '<Up>', "<Cmd>lua Scroll('k', 0, 1)<CR>")
   vim.keymap.set({ 'n', 'x' }, '<Down>', "<Cmd>lua Scroll('j', 0, 1)<CR>")
 
   -- Left/right movements:
-  vim.keymap.set({ 'n', 'x' }, 'h', "<Cmd>lua Scroll('h', 0, 1)<CR>")
-  vim.keymap.set({ 'n', 'x' }, 'l', "<Cmd>lua Scroll('l', 0, 1)<CR>")
+  vim.keymap.set({ 'n', 'x' }, 'h', "<Cmd>lua Scroll('h', 0, 1)<CR>", { silent = true })
+  vim.keymap.set({ 'n', 'x' }, 'l', "<Cmd>lua Scroll('l', 0, 1)<CR>", { silent = true })
   vim.keymap.set({ 'n', 'x' }, '<Left>', "<Cmd>lua Scroll('h', 0, 1)<CR>")
   vim.keymap.set({ 'n', 'x' }, '<Right>', "<Cmd>lua Scroll('l', 0, 1)<CR>")
 

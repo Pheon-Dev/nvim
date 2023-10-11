@@ -39,7 +39,7 @@ M.config = function()
       section_separators = { left = '', right = '' },
       ignore_focus = {},
       always_divide_middle = true,
-      globalstatus = true,
+      globalstatus = false,
       refresh = {
         statusline = 1000,
       },
@@ -232,7 +232,7 @@ M.config = function()
   sec_right({
     function()
       local buffers = require("antelope.buffers").buffers()
-      return "󱂬 " .. buffers
+      return " " .. buffers -- 󱂬
     end,
     color = "Keyword",
   })

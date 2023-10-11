@@ -1,7 +1,6 @@
 local enable = require("config").enable
 
 local default_event = require("config.event").default
-local hl_chunk = require("config.utils.hl_chunk")
 
 local M = {
   {
@@ -16,12 +15,6 @@ local M = {
     event = default_event,
     enabled = enable.highlight_colors,
     -- config = true,
-  },
-  {
-    "shellRaining/hlchunk.nvim",
-    event = default_event,
-    enabled = enable.hl_chunk,
-    config = hl_chunk.config,
   },
 }
 

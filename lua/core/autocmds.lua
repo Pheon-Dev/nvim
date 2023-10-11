@@ -8,14 +8,6 @@ vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
   command = "checktime",
 })
 
--- Highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-  group = augroup("highlight_yank"),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   group = augroup("resize_splits"),
@@ -35,6 +27,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end,
 })
+
 
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {

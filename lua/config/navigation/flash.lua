@@ -9,7 +9,6 @@ M.keys = {
     mode = { "n", "x", "o" },
     function()
       require("flash").jump({
-        --
       })
     end,
     desc = "Flash",
@@ -38,14 +37,14 @@ M.keys = {
     end,
     desc = "Flash Treesitter Search",
   },
-  -- {
-  --   "<c-s>",
-  --   mode = { "c" },
-  --   function()
-  --     require("flash").toggle()
-  --   end,
-  --   desc = "Toggle Flash Search",
-  -- },
+  {
+    "<c-s>",
+    mode = { "c" },
+    function()
+      require("flash").toggle()
+    end,
+    desc = "Toggle Flash Search",
+  },
 }
 
 M.config = function()
@@ -106,7 +105,7 @@ M.config = function()
       -- clear highlight after jump
       nohlsearch = false,
       -- automatically jump when there is only one match
-      autojump = false,
+      autojump = true,
       -- You can force inclusive/exclusive jumps by setting the
       -- `inclusive` option. By default it will be automatically
       -- set based on the mode.
@@ -214,7 +213,7 @@ M.config = function()
         -- show jump labels
         jump_labels = true,
         -- set to `false` to use the current line only
-        multi_line = true,
+        multi_line = false,
         -- When using jump labels, don't use these keys
         -- This allows using those keys directly after the motion
         -- label = { exclude = "hjkliardc" },
@@ -239,7 +238,7 @@ M.config = function()
           }
         end,
         search = { wrap = false },
-        highlight = { backdrop = true },
+        highlight = { backdrop = false },
         jump = { register = false },
       },
       -- options used for treesitter selections
@@ -309,7 +308,7 @@ M.config = function()
   vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = theme.color3, bg = theme.color0 })
   vim.api.nvim_set_hl(0, "FlashMatch", { bg = theme.color0, fg = theme.color4 })
   vim.api.nvim_set_hl(0, "FlashCurrent", { bg = theme.color0, fg = theme.color4 })
-  vim.api.nvim_set_hl(0, "FlashLabel", { fg = theme.color101, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "FlashLabel", { fg = theme.color101 })
 end
 
 return M

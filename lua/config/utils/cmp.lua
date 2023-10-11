@@ -157,17 +157,19 @@ M.config = function()
   })
 
   cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = "path" },
-    }, {
+    -- mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources(
       {
-        name = "cmdline",
-        option = {
-          ignore_cmds = { "Man", "!" }
-        }
+        { name = "path" },
       },
-    }),
+      {
+        {
+          name = "cmdline",
+          option = {
+            ignore_cmds = { "Man", "!" }
+          }
+        },
+      }),
     enabled = function()
       -- Set of commands where cmp will be disabled
       local disabled = {
@@ -184,7 +186,7 @@ M.config = function()
 
   -- `/`, `?` cmdline setup.
   cmp.setup.cmdline({ "?", "/" }, {
-    mapping = cmp.mapping.preset.cmdline(),
+    -- mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' }
     }

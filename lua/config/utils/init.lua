@@ -12,6 +12,6 @@ M.dial = config.dial
 M.fold = config.fold
 M.muren = config.muren
 M.move = config.move
-M.hl_chunk = config.hl_chunk
+M.indentscope = config.indentscope
 
 return M

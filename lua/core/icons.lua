@@ -271,7 +271,7 @@ else
       Array = "",
       Object = "",
     },
-    File = " 🧻 ",
+    File = " 🧻⦂ ",
     Module = " ",
     Namespace = " ",
     Package = " ",

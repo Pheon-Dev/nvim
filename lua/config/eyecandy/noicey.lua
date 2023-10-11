@@ -19,9 +19,9 @@ M.config = function()
         cmdline = { pattern = "^:", icon = "❯", lang = "vim" },
         search_down = { kind = "search", pattern = "^/", icon = "", lang = "regex" },
         search_up = { kind = "search", pattern = "^%?", icon = "", lang = "regex" },
-        filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
+        filter = { pattern = "^:%s*!", icon = "", lang = "bash" },
         lua = { pattern = "^:%s*lua%s+", icon = "", lang = "lua" },
-        help = { pattern = "^:%s*he?l?p?%s+", icon = "?" },
+        help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
         input = {}, -- Used by input()
         -- lua = false, -- to disable a format, set to `false`
       },
@@ -33,14 +33,20 @@ M.config = function()
       view = "notify",             -- default view for messages
       view_error = "notify",       -- view for errors
       view_warn = "notify",        -- view for warnings
-      view_history = "popup",      -- view for :messages
+      view_history = "messages",   -- view for :messages
       view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
     },
     popupmenu = {
       enabled = true,  -- enables the Noice popupmenu UI
-      backend = "nui", -- backend to use to show regular cmdline completions
+      backend = "cmp", -- backend to use to show regular cmdline completions `nui|cmp`
       -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
       kind_icons = {}, -- set to `false` to disable icons
+    },
+    redirect = {
+      view = "popup",
+      filter = {
+        event = "msg_show",
+      }
     },
     -- You can add any custom commands below that will be available with `:Noice command`
     commands = {
@@ -164,7 +170,7 @@ M.config = function()
       -- noice tries to move out of the way of existing floating windows.
       enabled = true, -- you can disable this behaviour here
       -- add any filetypes here, that shouldn't trigger smart move.
-      excluded_filetypes = { "cmp_menu", "cmp_docs", "notify" },
+      excluded_filetypes = { "cmp_menu", "cmp_docs", "notify", "muren", "floaterm", "harpoon", "NvimTree" },
     },
     presets = {
       -- you can enable a preset by setting it to true, or a table that will override the preset config
@@ -215,6 +221,9 @@ M.config = function()
         },
       },
       popupmenu = {
+        enabled = false,
+        backend = "cmp", -- nui
+        kind_icons = {},
         relative = "editor",
         position = {
           row = 8,

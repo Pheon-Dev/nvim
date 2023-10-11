@@ -8,6 +8,7 @@ local nvim_tree = require("config.navigation.nvim-tree")
 local which_key = require("config.navigation.which-key")
 
 local default_event = require("config.event").default
+local lazy_event = require("config.event").lazy
 
 local M = {
   {
@@ -17,8 +18,9 @@ local M = {
     config = which_key.config,
   },
   {
-    "Pheon-Dev/harpoon",
+    "ThePrimeagen/harpoon",
     enabled = enable.harpoon,
+    -- event = lazy_event,
     config = harpoon.config,
   },
   {
