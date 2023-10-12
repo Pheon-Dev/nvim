@@ -139,7 +139,7 @@ M.shortcut = {
     key = 's',
   },
   {
-    icon = ' ',
+    icon = ' ',
     group = 'DashboardIcon',
     desc = '',
     icon_hl = '@property',
