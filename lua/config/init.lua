@@ -18,6 +18,7 @@ M.enable = {
   context = false,
   illuminate = true,
   theme = true,
+  neorg = true,
   dashboard = true,
   yanky = true,
   which_key = true,
