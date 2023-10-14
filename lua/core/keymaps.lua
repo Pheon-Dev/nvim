@@ -81,7 +81,7 @@ map("n", "<S-TAB>", ":bprevious<cr>", { noremap = true, silent = true })
 -- Split Join
 vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
 
-vim.keymap.set("i", "<C-e>",
+vim.keymap.set("i", "<C-c>",
   function()
     return vim.fn["codeium#Accept"]()
   end
