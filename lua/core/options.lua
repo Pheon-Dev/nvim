@@ -3,6 +3,15 @@ local g = vim.g
 
 g.mapleader = " "
 g.maplocalleader = " "
+-- Enable LazyVim auto format
+g.autoformat = true
+
+-- LazyVim root dir detection
+-- Each entry can be:
+-- * the name of a detector function like `lsp` or `cwd`
+-- * a pattern or array of patterns like `.git` or `lua`.
+-- * a function with signature `function(buf) -> string|string[]`
+g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
 o.autowrite = true           -- Enable auto write
 -- o.autowriteall = true        -- Enable auto write
@@ -17,11 +26,11 @@ o.grepformat = "%f:%l:%c:%m"
 o.grepprg = "rg --vimgrep"
 o.ignorecase = true      -- Ignore case
 o.inccommand = "nosplit" -- preview incremental substitute
-o.laststatus = 2         -- 2
+o.laststatus = 3         -- 2
 o.mouse = "a"            -- Enable mouse mode
-o.mouse = "nicr"
+-- o.mouse = "nicr"
 o.number = true          -- Print line number
-o.pumblend = 0           -- Popup blend 10
+o.pumblend = 10          -- Popup blend 10
 o.pumheight = 10         -- Maximum number of entries in a popup
 o.scrolloff = 4          -- Lines of context
 o.shiftround = true      -- Round indent
@@ -59,6 +68,10 @@ o.backup = false
 o.list = true
 
 o.showtabline = 0
+
+if vim.fn.has("nvim-0.10") == 1 then
+  o.smoothscroll = true
+end
 
 -- require("core.fold")
 o.foldnestmax = 1 -- '1', '0' is not bad fold
