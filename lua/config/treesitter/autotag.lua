@@ -9,6 +9,7 @@ M.config = function()
     "typescriptreact",
     "svelte",
     "vue",
+    "java",
     "tsx",
     "jsx",
     "rescript",
