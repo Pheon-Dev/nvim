@@ -166,29 +166,37 @@ vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
 
 -- Lf
-g.lf_map_keys = 0
-g.lf_command_override = 'lf -command "set ratios 1:1"'
+g.lf_map_keys            = 0
+g.lf_command_override    = 'lf -command "set ratios 1:1"'
 -- Float Term
-g.floaterm_borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
-g.floaterm_width = 0.9  -- default 0.6
-g.floaterm_height = 0.9 -- default 0.6
-g.floaterm_rootmarkers = { "Cargo.toml", "Cargo.toml.lock", "package.json", ".git", ".gitignore",
+g.floaterm_borderchars   = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
+g.floaterm_width         = 0.9 -- default 0.6
+g.floaterm_height        = 0.9 -- default 0.6
+g.floaterm_rootmarkers   = { "Cargo.toml", "Cargo.toml.lock", "package.json", ".git", ".gitignore",
   "package-lock.json", "yarn.lock", "tsconfig.json" }
-g.floaterm_opener = "edit"
-g.floaterm_wintype = "float"      -- options split, vsplit
-g.floaterm_title = "$1/$2"        -- default 'floaterm: $1/$2'
-g.floaterm_autoclose = 2          -- defailt 1 options 0-2
-g.floaterm_autohide = 1           -- defailt 1 options 0-2
-g.floaterm_autoinsert = true      -- defailt true
-g.floaterm_titleposition = "left" -- options left, right, center
-g.floaterm_position =
-"center"                          -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
+g.floaterm_opener        = "edit"
+g.floaterm_wintype       = "float" -- options split, vsplit
+g.floaterm_title         = "$1/$2" -- default 'floaterm: $1/$2'
+g.floaterm_autoclose     = 2       -- defailt 1 options 0-2
+g.floaterm_autohide      = 1       -- defailt 1 options 0-2
+g.floaterm_autoinsert    = true    -- defailt true
+g.floaterm_titleposition = "left"  -- options left, right, center
+g.floaterm_position      =
+"center"                           -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
 
-g.floaterm_keymap_toggle = '<M-i>'
+g.floaterm_keymap_toggle = '<M-`>'
+g.floaterm_keymap_new    = "``"
+g.floaterm_keymap_prev   = "`p"
+g.floaterm_keymap_next   = "`n"
+g.floaterm_keymap_first  = "`h"
+g.floaterm_keymap_last   = "`l"
+g.floaterm_keymap_hide   = "`j"
+g.floaterm_keymap_show   = "`k"
+g.floaterm_keymap_kill   = "`;"
 
 -- FZF
-g.fzf_layout = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
-g.fzf_action = {
+g.fzf_layout             = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
+g.fzf_action             = {
   ['ctrl-t'] = 'tab split',
   ['ctrl-b'] = 'split',
   ['ctrl-v'] = 'vsplit',
