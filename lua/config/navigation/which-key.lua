@@ -3,8 +3,8 @@ local M = {}
 M.config = function()
   -- vim.o.timeout = true
   -- vim.o.timeoutlen = 300
-  local ok, rt = pcall(require, "rust-tools")
-  if not ok then return end
+  -- local ok, rt = pcall(require, "rust-tools")
+  -- if not ok then return end
   local wk = require("which-key")
 
   wk.setup({
@@ -74,8 +74,8 @@ M.config = function()
     },
   })
 
-  local oc, crates = pcall(require, "crates")
-  if not oc then return end
+  -- local oc, crates = pcall(require, "crates")
+  -- if not oc then return end
 
   -- local dap, dapui = require("dap"), require("dapui")
 
@@ -102,34 +102,34 @@ M.config = function()
     q = { ":bd<cr>", "Close Buffer" },
     r = {
       name = "Rust",
-      a = { rt.code_action_group.code_action_group, "Code Action Group" },
+      -- a = { rt.code_action_group.code_action_group, "Code Action Group" },
       o = { ":RustOpenCargo<cr>", "Open Cargo" },
-      c = {
-        name = "Crates",
-        t = { crates.toggle, "Toggle" },
-        r = { crates.reload, "Reload" },
-        v = { crates.show_versions_popup, "Show Versions Popup" },
-        f = { crates.show_features_popup, "Show Features Popup" },
-        d = { crates.show_dependencies_popup, "Show Dependencies Popup" },
-        u = {
-          name = "Update",
-          u = { crates.update_crate, "Update Crate" },
-          a = { crates.update_all_crates, "Update All Crates" },
-        },
-        g = {
-          name = "Upgrade",
-          g = { crates.upgrade_crate, "Upgrade Crate" },
-          a = { crates.upgrade_all_crates, "Upgrade All Crates" },
-        },
-        o = {
-          name = "Open",
-          c = { crates.open_crates_io, "Crates IO" },
-          h = { crates.open_homepage, "Home Page" },
-          d = { crates.open_documentation, "Documentation" },
-          r = { crates.open_repository, "Repository" },
-        },
-      },
-      h = { rt.hover_actions.hover_actions, "Hover Actions" },
+      -- c = {
+      --   name = "Crates",
+      --   t = { crates.toggle, "Toggle" },
+      --   r = { crates.reload, "Reload" },
+      --   v = { crates.show_versions_popup, "Show Versions Popup" },
+      --   f = { crates.show_features_popup, "Show Features Popup" },
+      --   d = { crates.show_dependencies_popup, "Show Dependencies Popup" },
+      --   u = {
+      --     name = "Update",
+      --     u = { crates.update_crate, "Update Crate" },
+      --     a = { crates.update_all_crates, "Update All Crates" },
+      --   },
+      --   g = {
+      --     name = "Upgrade",
+      --     g = { crates.upgrade_crate, "Upgrade Crate" },
+      --     a = { crates.upgrade_all_crates, "Upgrade All Crates" },
+      --   },
+      --   o = {
+      --     name = "Open",
+      --     c = { crates.open_crates_io, "Crates IO" },
+      --     h = { crates.open_homepage, "Home Page" },
+      --     d = { crates.open_documentation, "Documentation" },
+      --     r = { crates.open_repository, "Repository" },
+      --   },
+      -- },
+      -- h = { rt.hover_actions.hover_actions, "Hover Actions" },
       i = {
         name = "Inlayhints",
         e = { ":RustEnableInlayHints<cr>", "Enable" },
