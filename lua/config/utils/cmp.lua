@@ -181,7 +181,6 @@ M.config = function()
       -- else call/return cmp.close(), which returns false
       return not disabled[cmd] or cmp.close()
     end
-
   })
 
   -- `/`, `?` cmdline setup.

@@ -2,6 +2,7 @@ local M = {}
 
 M.dependencies = {
   "MunifTanjim/nui.nvim",
+  "rcarriga/nvim-notify",
 }
 
 M.config = function()
@@ -37,8 +38,8 @@ M.config = function()
       view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
     },
     popupmenu = {
-      enabled = true,  -- enables the Noice popupmenu UI
-      backend = "cmp", -- backend to use to show regular cmdline completions `nui|cmp`
+      enabled = false, -- enables the Noice popupmenu UI
+      backend = "nui", -- backend to use to show regular cmdline completions `nui|cmp`
       -- Icons for completion item kinds (see defaults at noice.config.icons.kinds)
       kind_icons = {}, -- set to `false` to disable icons
     },
@@ -184,6 +185,8 @@ M.config = function()
     throttle = 1000 / 30,           -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
     views = {
       cmdline_popup = {
+        -- view = "popupmenu",
+        -- zindex = 200,
         position = {
           row = 5,
           col = "50%",
@@ -221,25 +224,84 @@ M.config = function()
         },
       },
       popupmenu = {
-        enabled = false,
-        backend = "cmp", -- nui
+        enabled = true,
+        backend = "nui", -- nui/cmp
         kind_icons = {},
         relative = "editor",
+        -- zindex = 65,
+        -- position = "auto",
         position = {
           row = 8,
           col = "50%",
         },
         size = {
-          width = 60,
-          height = 10,
+          width = 60,  -- "auto"
+          height = 10, -- "auto"
+          max_height = 20,
+          -- min_width = 10,
         },
         border = {
           style = "rounded",
           -- padding = { -1, 1 },
         },
         win_options = {
-          winhighlight = { Normal = "NoiceCmdlinePopup", FloatBorder = "NoiceCmdlinePopupBorder" },
+          winbar = "",
+          foldenable = false,
+          cursorline = true,
+          cursorlineopt = "line",
+          winhighlight = {
+            Normal = "NoicePopupmenu",             -- change to NormalFloat to make it look like other floats
+            FloatBorder = "NoicePopupmenuBorder",  -- border highlight
+            CursorLine = "NoicePopupmenuSelected", -- used for highlighting the selected item
+            PmenuMatch = "NoicePopupmenuMatch",    -- used to highlight the part of the item that matches the input
+          },
         },
+      },
+      virtualtext = {
+        backend = "virtualtext",
+        format = { "{message}" },
+        hl_group = "NoiceVirtualText",
+      },
+      notify = {
+        backend = "notify",
+        fallback = "mini",
+        format = "notify",
+        replace = false,
+        merge = false,
+      },
+      split = {
+        backend = "split",
+        enter = false,
+        relative = "editor",
+        position = "bottom",
+        size = "20%",
+        close = {
+          keys = { "q" },
+        },
+        win_options = {
+          winhighlight = { Normal = "NoiceSplit", FloatBorder = "NoiceSplitBorder" },
+          wrap = true,
+        },
+      },
+      cmdline_output = {
+        format = "details",
+        view = "split",
+      },
+      messages = {
+        --[[ view = "split",
+        enter = true, ]]
+        -- NOTE: If you enable messages, then the cmdline is enabled automatically.
+        -- This is a current Neovim limitation.
+        enabled = true,              -- enables the Noice messages UI
+        view = "notify",             -- default view for messages
+        view_error = "notify",       -- view for errors
+        view_warn = "notify",        -- view for warnings
+        view_history = "messages",   -- view for :messages
+        view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+      },
+      vsplit = {
+        view = "split",
+        position = "right",
       },
     },
     routes = {
@@ -257,7 +319,134 @@ M.config = function()
       { filter = { warning = true, find = "node" }, opts = { skip = true } },
     },
     status = {}, --- @see section on statusline components
-    format = {}, --- @see section on formatting
+    format = {
+      ---@type table<string, NoiceFormat>
+      builtin = {
+        default = { "{level} ", "{title} ", "{message}" },
+        notify = { "{message}" },
+        details = {
+          "{level} ",
+          "{date} ",
+          "{event}",
+          { "{kind}", before = { ".", hl_group = "NoiceFormatKind" } },
+          " ",
+          "{title} ",
+          "{cmdline} ",
+          "{message}",
+        },
+        telescope = {
+          "{level} ",
+          "{date} ",
+          "{title} ",
+          "{message}",
+        },
+        telescope_preview = {
+          "{level} ",
+          "{date} ",
+          "{event}",
+          { "{kind}", before = { ".", hl_group = "NoiceFormatKind" } },
+          "\n",
+          "{title}\n",
+          "\n",
+          "{message}",
+        },
+        lsp_progress = {
+          {
+            "{progress} ",
+            key = "progress.percentage",
+            contents = {
+              { "{data.progress.message} " },
+            },
+          },
+          "({data.progress.percentage}%) ",
+          { "{spinner} ",              hl_group = "NoiceLspProgressSpinner" },
+          { "{data.progress.title} ",  hl_group = "NoiceLspProgressTitle" },
+          { "{data.progress.client} ", hl_group = "NoiceLspProgressClient" },
+        },
+        lsp_progress_done = {
+          { "✔ ", hl_group = "NoiceLspProgressSpinner" },
+          { "{data.progress.title} ", hl_group = "NoiceLspProgressTitle" },
+          { "{data.progress.client} ", hl_group = "NoiceLspProgressClient" },
+        },
+      },
+
+      ---@class NoiceFormatOptions
+      defaults = {
+        ---@class NoiceFormatOptions.debug
+        debug = {
+          enabled = true,
+        },
+        ---@class NoiceFormatOptions.cmdline
+        cmdline = {},
+        ---@class NoiceFormatOptions.level
+        level = {
+          hl_group = {
+            trace = "NoiceFormatLevelTrace",
+            debug = "NoiceFormatLevelDebug",
+            info = "NoiceFormatLevelInfo",
+            warn = "NoiceFormatLevelWarn",
+            error = "NoiceFormatLevelError",
+            off = "NoiceFormatLevelOff",
+          },
+          icons = { error = " ", warn = " ", info = " " },
+        },
+        ---@class NoiceFormatOptions.progress
+        progress = {
+          ---@type NoiceFormat
+          contents = {},
+          width = 20,
+          align = "right",
+          key = "progress", -- key in message.opts For example: "progress.percentage"
+          hl_group = "NoiceFormatProgressTodo",
+          hl_group_done = "NoiceFormatProgressDone",
+        },
+        ---@class NoiceFormatOptions.text
+        text = {
+          text = nil,
+          hl_group = nil,
+        },
+        ---@class NoiceFormatOptions.spinner
+        spinner = {
+          ---@type Spinner
+          name = "dots",
+          hl_group = nil,
+        },
+        ---@class NoiceFormatOptions.data
+        data = {
+          key = nil,      -- Key in the message.opts object.
+          hl_group = nil, -- Optional hl_group
+        },
+        ---@class NoiceFormatOptions.title
+        title = {
+          hl_group = "NoiceFormatTitle",
+        },
+        ---@class NoiceFormatOptions.event
+        event = {
+          hl_group = "NoiceFormatEvent",
+        },
+        ---@class NoiceFormatOptions.kind
+        kind = {
+          hl_group = "NoiceFormatKind",
+        },
+        ---@class NoiceFormatOptions.date
+        date = {
+          format = "%X", --- @see https://www.lua.org/pil/22.1.html
+          hl_group = "NoiceFormatDate",
+        },
+        ---@class NoiceFormatOptions.message
+        message = {
+          hl_group = nil, -- if set, then the hl_group will be used instead of the message highlights
+        },
+        ---@class NoiceFormatOptions.confirm
+        confirm = {
+          hl_group = {
+            choice = "NoiceFormatConfirm",
+            default_choice = "NoiceFormatConfirmDefault",
+          },
+        },
+      }
+    },
+
   })
   local theme = require("core.colors")
 
