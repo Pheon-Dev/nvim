@@ -1,6 +1,7 @@
 local M = {}
 
-M.dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+-- M.dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+M.dependencies = {}
 
 M.config = function()
   local has_dashboard, dashboard = pcall(require, "dashboard")
@@ -103,7 +104,8 @@ M.shortcut = {
     group = 'DashboardIcon',
     desc = '',
     icon_hl = '@string',
-    action = 'NvimTreeToggle',
+    -- action = 'NvimTreeToggle',
+    action = 'Oil',
     key = 'j'
   },
   -- {
