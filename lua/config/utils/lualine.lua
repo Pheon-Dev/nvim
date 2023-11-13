@@ -252,12 +252,12 @@ M.config = function()
   --   color = "Keyword",
   -- })
 
-  sec_right({
-    function()
-      return "﯑ " .. "%3{codeium#GetStatusString()} "
-    end,
-    color = { fg = colors.grey },
-  })
+  -- sec_right({
+  --   function()
+  --     return "﯑ " .. "%3{codeium#GetStatusString()} "
+  --   end,
+  --   color = { fg = colors.grey },
+  -- })
 
   -- branch
   sec_right({

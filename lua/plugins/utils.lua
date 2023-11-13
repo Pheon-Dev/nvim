@@ -91,11 +91,6 @@ local M = {
     enabled = enable.vim_repeat,
   },
   {
-    "Exafunction/codeium.vim",
-    event = default_event,
-    enabled = enable.codeium,
-  },
-  {
     "AckslD/muren.nvim",
     enabled = enable.muren,
     event = default_event,

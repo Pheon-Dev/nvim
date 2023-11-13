@@ -11,6 +11,9 @@ M.config = function()
       "/target",
       ".config/rofi",
       ".config/hypr",
+      ".config/waybar",
+      "/Videos",
+      "/etc",
     },
     formatter_by_ft = {
       css = formatters.lsp,

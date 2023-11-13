@@ -4,6 +4,8 @@ M.default = { "BufReadPost", "BufNewFile" }
 
 M.lazy = "VeryLazy"
 
+M.attach = "LspAttach"
+
 M.enter = {
   insert = "InsertEnter",
   vim = "VimEnter",
