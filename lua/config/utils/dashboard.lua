@@ -99,7 +99,7 @@ M.shortcut = {
     action = 'Lazy',
     key = 'z'
   },
-  {
+  --[[ {
     icon = '󱁕 ', -- פּ
     group = 'DashboardIcon',
     desc = '',
@@ -107,15 +107,15 @@ M.shortcut = {
     -- action = 'NvimTreeToggle',
     action = 'Oil',
     key = 'j'
+  }, ]]
+  {
+    icon = ' ',
+    group = 'DashboardIcon',
+    desc = '',
+    icon_hl = '@property',
+    action = 'FloatermNew lf',
+    key = 'j'
   },
-  -- {
-  --   icon = ' ',
-  --   group = 'DashboardIcon',
-  --   desc = '',
-  --   icon_hl = '@property',
-  --   action = 'FloatermNew lf',
-  --   key = 'l'
-  -- },
   {
     icon = '󱡅 ',
     group = 'DashboardIcon',
