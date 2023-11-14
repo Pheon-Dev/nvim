@@ -3,6 +3,7 @@ local M = {}
 M.config = function()
   local format_on_save = require("format-on-save")
   local formatters = require("format-on-save.formatters")
+  local vim_notify = require("format-on-save.error-notifiers.vim-notify")
 
   format_on_save.setup({
     exclude_path_patterns = {
@@ -12,9 +13,13 @@ M.config = function()
       ".config/rofi",
       ".config/hypr",
       ".config/waybar",
+      ".config/zsh",
+      ".config/nvim/oil/",
       "/Videos",
       "/etc",
     },
+    error_notifier = vim_notify,
+    stderr_loglevel = vim.log.levels.OFF,
     formatter_by_ft = {
       css = formatters.lsp,
       html = formatters.lsp,
