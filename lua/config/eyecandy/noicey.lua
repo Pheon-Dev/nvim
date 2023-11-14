@@ -316,6 +316,7 @@ M.config = function()
         },
       },
       -- { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
+      { filter = { find = "UndefinedParserError" }, opts = { skip = true } },
       { filter = { warning = true, find = "node" }, opts = { skip = true } },
     },
     status = {}, --- @see section on statusline components
