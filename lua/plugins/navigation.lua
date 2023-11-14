@@ -65,8 +65,8 @@ local M = {
   {
     'stevearc/oil.nvim',
     enable = enable.oil,
-    event = lazy_event,
-    -- event = default_event,
+    -- event = lazy_event,
+    event = default_event,
     dependencies = oil.dependencies,
     config = oil.config,
   },
