@@ -10,10 +10,10 @@ M.config = function()
     -- Id is automatically added at the beginning, and name at the end
     -- See :help oil-columns
     columns = {
-      "icon",
-      -- "permissions",
-      -- "size",
+      "size",
+      "permissions",
       -- "mtime",
+      "icon",
     },
     -- Buffer-local options to use for oil buffers
     buf_options = {
@@ -65,7 +65,7 @@ M.config = function()
       ["~"] = "actions.tcd",
       ["gs"] = "actions.change_sort",
       ["gx"] = "actions.open_external",
-      ["g."] = "actions.toggle_hidden",
+      ["."] = "actions.toggle_hidden",
       ["g\\"] = "actions.toggle_trash",
     },
     -- Set to false to disable all of the above keymaps
