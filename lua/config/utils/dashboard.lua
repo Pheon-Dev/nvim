@@ -168,9 +168,9 @@ M.shortcut = {
 M.footer = {}
 M.project = { enable = false, limit = 8, icon = 'your icon', label = '', action = 'FloatermNew fzf' }
 M.mru = {
-  limit = 5,
-  icon = ' ',
-  label = 'Recent Files',
+  limit = 3,
+  icon = '↘',
+  label = '',
 }
 
 return M
