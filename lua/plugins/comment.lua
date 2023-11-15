@@ -14,7 +14,7 @@ local M = {
   },
   {
     "numToStr/Comment.nvim",
-    lazy = false,
+    -- lazy = false,
     event = default_event,
     enabled = enable.comment,
     dependencies = comment.dependencies,
