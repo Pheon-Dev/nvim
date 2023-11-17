@@ -8,6 +8,7 @@ local yanky = require("config.utils.yanky")
 local dial = require("config.utils.dial")
 local muren = require("config.utils.muren")
 local fold = require("config.utils.fold")
+local fundo = require("config.utils.fundo")
 
 local lazy_event = require("config.event").lazy
 local default_event = require("config.event").default
@@ -103,6 +104,14 @@ local M = {
     dependencies = fold.dependencies,
     keys = fold.keys,
     config = fold.config,
+  },
+  {
+    'kevinhwang91/nvim-fundo',
+    enabled = enable.fundo,
+    event = default_event,
+    dependencies = fundo.dependencies,
+    build = fundo.build,
+    config = fundo.config,
   },
 }
 
