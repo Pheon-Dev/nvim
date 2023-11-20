@@ -6,7 +6,6 @@ end
 
 M.dependencies = {
   "nvim-treesitter/nvim-treesitter-textobjects",
-  'JoosepAlviste/nvim-ts-context-commentstring',
 }
 
 M.config = function()
@@ -72,7 +71,6 @@ M.config = function()
     endwise = {
       enable = false,
     },
-    context_commentstring = { enable = true },
   })
 end
 
