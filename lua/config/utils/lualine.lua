@@ -1,3 +1,5 @@
+local enable = require("config").enable
+
 local M = {}
 M.config = function()
   local lualine = require("lualine")
@@ -252,12 +254,14 @@ M.config = function()
   --   color = "Keyword",
   -- })
 
-  sec_right({
-    function()
-      return "﯑ " .. "%3{codeium#GetStatusString()} "
-    end,
-    color = { fg = colors.grey },
-  })
+  if enable.codeium then
+    sec_right({
+      function()
+        return "﯑ " .. "%3{codeium#GetStatusString()} "
+      end,
+      color = { fg = colors.grey },
+    })
+  end
 
   -- branch
   sec_right({
