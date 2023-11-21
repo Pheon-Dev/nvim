@@ -61,6 +61,7 @@ M.enable = {
   codeium = true,
   neodev = false,
   copilot = false, -- R
+  bracketed = true,
   copilot_cmp = false,
   nvim_tree = false,
   navigator = false,
