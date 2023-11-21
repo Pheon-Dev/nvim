@@ -1,3 +1,5 @@
+local enable = require("config").enable
+
 vim.g.mapleader = " "
 local map = vim.api.nvim_set_keymap
 
@@ -12,16 +14,11 @@ map("n", ",", "<esc>:lua require('format-on-save').format()<cr><esc>:w! | noh<cr
 -- map("n", "<A-n>", "<C-w>w", { noremap = true, silent = true })
 map("n", "<A-x>", "<C-w>x", { noremap = true, silent = true })
 
-map("n", "<A-H>", "<C-w>h", { noremap = true, silent = true })
-map("n", "<A-J>", "<C-w>j", { noremap = true, silent = true })
-map("n", "<A-K>", "<C-w>k", { noremap = true, silent = true })
-map("n", "<A-L>", "<C-w>l", { noremap = true, silent = true })
-
 map("n", "<A-V>", ":vsplit<cr>", { noremap = true, silent = true })
 map("n", "<A-B>", ":split<cr>", { noremap = true, silent = true })
 
-map("n", "<leader>wb", "<C-w>t<C-w>K", { noremap = true, silent = true })
-map("n", "<leader>wv", "<C-w>t<C-w>H", { noremap = true, silent = true })
+map("n", "<A-J>", "<C-w>t<C-w>K", { noremap = true, silent = true, desc = "Switch Vertical" })
+map("n", "<A-K>", "<C-w>t<C-w>H", { noremap = true, silent = true, desc = "Switch Horizontal" })
 
 map("n", "<leader>wr", ":SudaRead<cr>", { noremap = true, silent = true })
 map("n", "<leader>ww", ":SudaWrite<cr>", { noremap = true, silent = true })
@@ -79,29 +76,31 @@ map("n", "<S-TAB>", ":bprevious<cr>", { noremap = true, silent = true })
 -- map("x", "J", ":move '>+1<cr>gv-gv", { noremap = true, silent = true })
 -- map("x", "K", ":move '<-2<cr>gv-gv", { noremap = true, silent = true })
 
--- Split Join
-vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
+if enable.codeium then
+  -- Split Join
+  vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
 
-vim.keymap.set("i", "<C-c>",
-  function()
-    return vim.fn["codeium#Accept"]()
-  end
-  , { expr = true, silent = true, desc = "Accept Suggestion" })
-vim.keymap.set("i", "<C-n>",
-  function()
-    return vim.fn["codeium#CycleCompletions"](1)
-  end,
-  { expr = true, silent = true, desc = "Cycle Completions Forward" })
-vim.keymap.set("i", "<C-p>",
-  function()
-    return vim.fn["codeium#CycleCompletions"](-1)
-  end,
-  { expr = true, silent = true, desc = "Cycle Completions Backward" })
-vim.keymap.set("i", "<C-u>",
-  function()
-    return vim.fn["codeium#Clear"]()
-  end,
-  { expr = true, silent = true, desc = "Clear Completions" })
+  vim.keymap.set("i", "<C-c>",
+    function()
+      return vim.fn["codeium#Accept"]()
+    end
+    , { expr = true, silent = true, desc = "Accept Suggestion" })
+  vim.keymap.set("i", "<C-n>",
+    function()
+      return vim.fn["codeium#CycleCompletions"](1)
+    end,
+    { expr = true, silent = true, desc = "Cycle Completions Forward" })
+  vim.keymap.set("i", "<C-p>",
+    function()
+      return vim.fn["codeium#CycleCompletions"](-1)
+    end,
+    { expr = true, silent = true, desc = "Cycle Completions Backward" })
+  vim.keymap.set("i", "<C-u>",
+    function()
+      return vim.fn["codeium#Clear"]()
+    end,
+    { expr = true, silent = true, desc = "Clear Completions" })
+end
 
 -- Fzf and Floaterm
 local keybind_opts = { silent = true, noremap = true }
