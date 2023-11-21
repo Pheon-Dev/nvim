@@ -111,6 +111,7 @@ M.config = function()
       ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
       ["<C-e>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
       ["<C-y>"] = cmp.config.disable,
+      -- ["<C-x>"] = cmp.mapping.abort(),
       ["<C-x>"] = cmp.mapping({
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
