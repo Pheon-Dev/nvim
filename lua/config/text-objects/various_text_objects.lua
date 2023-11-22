@@ -67,7 +67,7 @@ M.config = function()
   -- window
   keymap({ "o", "x" }, "gw", "<cmd>lua require('various-textobjs').visibleInWindow()<CR>")
   keymap({ "o", "x" }, "gW", "<cmd>lua require('various-textobjs').restOfWindow()<CR>")
-  vim.keymap.set("n", "dsi", function()
+  --[[ vim.keymap.set("n", "dsi", function()
     -- select inner indentation
     require("various-textobjs").indentation(true, true)
 
@@ -83,7 +83,7 @@ M.config = function()
     local startBorderLn = vim.api.nvim_buf_get_mark(0, "<")[1] - 1
     vim.cmd(tostring(endBorderLn) .. " delete") -- delete end first so line index is not shifted
     vim.cmd(tostring(startBorderLn) .. " delete")
-  end, { desc = "Delete surrounding indentation" })
+  end, { desc = "Delete surrounding indentation" }) ]]
 end
 
 return M
