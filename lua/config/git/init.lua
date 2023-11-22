@@ -100,22 +100,26 @@ M.keys = {
 }
 
 M.config = function()
-  local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+  local enable = require("config").enable
+  local enabled = enable.treesitter_textobjects
+  if enabled then
+    local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 
-  -- Repeat movement with ; and ,
-  -- ensure ; goes forward and , goes backward, regardless of the last direction
-  vim.keymap.set({ "n", "x", "o" }, "'", ts_repeat_move.repeat_last_move_next)
-  vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_previous)
+    -- Repeat movement with ; and ,
+    -- ensure ; goes forward and , goes backward, regardless of the last direction
+    vim.keymap.set({ "n", "x", "o" }, "'", ts_repeat_move.repeat_last_move_next)
+    vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_previous)
 
 
-  local gs = require("gitsigns")
+    local gs = require("gitsigns")
 
-  -- make sure forward function comes first
-  local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
-  -- Or, use `make_repeatable_move` or `set_last_move` functions for more control. See the code for instructions.
+    -- make sure forward function comes first
+    local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
+    -- Or, use `make_repeatable_move` or `set_last_move` functions for more control. See the code for instructions.
 
-  vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
-  vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
+    vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
+    vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
+  end
   require("gitsigns").setup({
     signs = {
       add = {
