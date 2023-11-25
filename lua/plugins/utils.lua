@@ -58,7 +58,8 @@ local M = {
   {
     "nvim-lualine/lualine.nvim",
     enabled = enable.lualine,
-    event = default_event,
+    event = lazy_event,
+    -- event = default_event,
     config = lualine.config
   },
   {
