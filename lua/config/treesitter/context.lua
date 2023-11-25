@@ -1,5 +1,11 @@
 local M = {}
 
+M.keys = {
+  { '[k', function()
+    require('treesitter-context').go_to_context()
+  end }
+}
+
 M.config = function()
   require 'treesitter-context'.setup {
     enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
