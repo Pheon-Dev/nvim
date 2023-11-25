@@ -35,6 +35,7 @@ local M = {
     "nvim-treesitter/nvim-treesitter-context",
     enabled = enable.context,
     event = default_event,
+    keys = context.keys,
     config = context.config,
   },
   {
