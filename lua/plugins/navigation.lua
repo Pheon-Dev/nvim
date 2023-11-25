@@ -1,7 +1,6 @@
 local enable = require("config").enable
 
 local buffalo = require("config.navigation.buffalo")
-local flash = require("config.navigation.flash")
 local oil = require("config.navigation.oil")
 local harpoon = require("config.navigation.harpoon")
 local antelope = require("config.navigation.antelope")
@@ -15,7 +14,8 @@ local M = {
   {
     "folke/which-key.nvim",
     enabled = enable.which_key,
-    event = default_event,
+    event = lazy_event,
+    -- event = default_event,
     config = which_key.config,
   },
   {
@@ -35,25 +35,6 @@ local M = {
     enabled = enable.buffalo,
     event = default_event,
     config = buffalo.config,
-  },
-  {
-    "kylechui/nvim-surround",
-    event = default_event,
-    enabled = enable.surround,
-    config = true,
-  },
-  {
-    "chaoren/vim-wordmotion",
-    event = default_event,
-    enabled = enable.word_motion,
-  },
-  {
-    "folke/flash.nvim",
-    event = default_event,
-    enabled = enable.flash,
-    opts = flash.opts,
-    keys = flash.keys,
-    config = flash.config,
   },
   {
     "nvim-tree/nvim-tree.lua",
