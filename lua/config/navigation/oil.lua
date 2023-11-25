@@ -10,8 +10,8 @@ M.config = function()
     -- Id is automatically added at the beginning, and name at the end
     -- See :help oil-columns
     columns = {
-      "size",
-      "permissions",
+      -- "size",
+      -- "permissions",
       -- "mtime",
       "icon",
     },
