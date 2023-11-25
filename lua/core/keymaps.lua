@@ -85,12 +85,12 @@ if enable.codeium then
       return vim.fn["codeium#Accept"]()
     end
     , { expr = true, silent = true, desc = "Accept Suggestion" })
-  vim.keymap.set("i", "<C-n>",
+  vim.keymap.set("i", "<C-]>",
     function()
       return vim.fn["codeium#CycleCompletions"](1)
     end,
     { expr = true, silent = true, desc = "Cycle Completions Forward" })
-  vim.keymap.set("i", "<C-p>",
+  vim.keymap.set("i", "<C-[>",
     function()
       return vim.fn["codeium#CycleCompletions"](-1)
     end,
