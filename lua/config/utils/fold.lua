@@ -42,7 +42,7 @@ M.keys = {
         vim.lsp.buf.hover()
       end
     end,
-    desc = "Hover",
+    desc = "Preview fold",
   }
 }
 
