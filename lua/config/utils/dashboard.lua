@@ -84,6 +84,14 @@ M.header = {
 
 M.shortcut = {
   {
+    icon = ' ',
+    group = 'DashboardIcon',
+    desc = '',
+    icon_hl = '@property',
+    action = 'FloatermNew lf',
+    key = 'j'
+  },
+  --[[ {
     icon = '󰏇 ', -- פּ 󱁕
     group = 'DashboardIcon',
     desc = '',
@@ -91,7 +99,7 @@ M.shortcut = {
     -- action = 'NvimTreeToggle',
     action = 'Oil',
     key = 'j'
-  },
+  }, ]]
   {
     icon = '󱡅 ',
     group = 'DashboardIcon',
@@ -107,14 +115,6 @@ M.shortcut = {
     icon_hl = 'DiagnosticInfo',
     action = 'FloatermNew lazygit',
     key = 'l',
-  },
-  {
-    icon = ' ',
-    group = 'DashboardIcon',
-    desc = '',
-    icon_hl = '@property',
-    action = 'FloatermNew lf',
-    key = ';'
   },
   -- {
   --   icon = '󰊳 ',
