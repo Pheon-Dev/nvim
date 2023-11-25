@@ -8,6 +8,7 @@ local hlslens = require("config.eyecandy.hlslens")
 local hlargs = require("config.eyecandy.hlargs")
 
 local default_event = require("config.event").default
+local lazy_event = require("config.event").lazy
 
 local M = {
   {
@@ -30,7 +31,8 @@ local M = {
   },
   {
     "folke/noice.nvim",
-    event = default_event,
+    -- event = default_event,
+    event = lazy_event,
     enabled = enable.noice,
     dependencies = noice.dependencies,
     config = noice.config,

@@ -4,13 +4,15 @@ local copilot = require("config.ai.copilot")
 local cmp = require("config.ai.cmp")
 
 local default_event = require("config.event").default
+local lazy_event = require("config.event").lazy
 local attach_event = require("config.event").attach
 local insert_enter_event = require("config.event").enter.insert
 
 local M = {
   {
     "Exafunction/codeium.vim",
-    event = default_event,
+    -- event = default_event,
+    event = lazy_event,
     enabled = enable.codeium,
   },
   {
