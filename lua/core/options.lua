@@ -201,3 +201,4 @@ g.fzf_action             = {
   ['ctrl-b'] = 'split',
   ['ctrl-v'] = 'vsplit',
 }
+
