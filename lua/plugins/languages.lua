@@ -4,6 +4,7 @@ local rust = require("config.languages.rust")
 local go = require("config.languages.go")
 local lua = require("config.languages.lua")
 local typescript = require("config.languages.typescript")
+local tsc = require("config.languages.tsc")
 
 local default_event = require("config.event").default
 
@@ -20,6 +21,13 @@ local M = {
     event = default_event,
     dependencies = typescript.dependencies,
     config = typescript.config,
+  },
+  {
+    "dmmulroy/tsc.nvim",
+    enabled = enable.typescript,
+    event = default_event,
+    -- dependencies = tsc.dependencies,
+    config = tsc.config,
   },
   {
     "saecki/crates.nvim",
