@@ -151,7 +151,7 @@ M.config = function()
       { name = "crates",                 group_index = 2 },
       { name = "orgmode",                group_index = 2 },
       { name = "nvim_lsp_signature_help" },
-      -- { name = "cmdline",               group_index = 1 },
+      { name = "cmdline",                group_index = 1 },
     }, {
       { name = "buffer", keyword_length = 3 },
     }),
@@ -172,7 +172,7 @@ M.config = function()
   })
 
   cmp.setup.cmdline(':', {
-    -- mapping = cmp.mapping.preset.cmdline(),
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources(
       {
         { name = "path" },
@@ -200,7 +200,7 @@ M.config = function()
 
   -- `/`, `?` cmdline setup.
   cmp.setup.cmdline({ "?", "/" }, {
-    -- mapping = cmp.mapping.preset.cmdline(),
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' }
     }
