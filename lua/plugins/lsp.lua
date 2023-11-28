@@ -3,7 +3,6 @@ local enable = require("config").enable
 local lspsaga = require("config.lsp.lspsaga")
 local lspconfig = require("config.lsp.lspconfig")
 local zero = require("config.lsp.zero")
-local format = require("config.lsp.format")
 local mason = require("config.lsp.mason")
 
 local default_event = require("config.event").default
@@ -31,14 +30,8 @@ local M = {
     'nvimdev/lspsaga.nvim',
     enabled = enable.lspsaga,
     event = default_event,
-    -- config = lspsaga.config,
+    config = lspsaga.config,
     dependencies = lspsaga.dependencies,
-  },
-  {
-    "elentok/format-on-save.nvim",
-    event = default_event,
-    enabled = enable.format_on_save,
-    config = format.config,
   },
   {
     'VonHeikemen/lsp-zero.nvim',
