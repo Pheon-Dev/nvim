@@ -57,11 +57,10 @@ M.enable = {
   treesitter_textobjects = true,
   various_textobjects = true,
   comment_textobjects = true,
-  codeium = true,
   bracketed = true,
-
+  dashboard = true,
+  codeium = true,
   copilot = false,
-  dashboard = false,
   copilot_cmp = false,
   neodev = false,
   nvim_tree = false,
