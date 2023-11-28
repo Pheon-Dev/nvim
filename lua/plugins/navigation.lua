@@ -14,8 +14,8 @@ local M = {
   {
     "folke/which-key.nvim",
     enabled = enable.which_key,
-    event = lazy_event,
-    -- event = default_event,
+    -- event = lazy_event,
+    event = default_event,
     config = which_key.config,
   },
   {
@@ -46,8 +46,8 @@ local M = {
   {
     'stevearc/oil.nvim',
     enable = enable.oil,
-    event = lazy_event,
-    -- event = default_event,
+    -- event = lazy_event,
+    event = default_event,
     dependencies = oil.dependencies,
     config = oil.config,
   },

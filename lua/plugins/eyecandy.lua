@@ -31,8 +31,8 @@ local M = {
   },
   {
     "folke/noice.nvim",
-    -- event = default_event,
-    event = lazy_event,
+    event = default_event,
+    -- event = lazy_event,
     enabled = enable.noice,
     dependencies = noice.dependencies,
     config = noice.config,
