@@ -51,7 +51,6 @@ M.enable = {
   diaglist = true,
   notify = true,
   fundo = true,
-  hlslens = true,
   hlargs = true,
   targets = true,
   treesitter_textobjects = true,
@@ -60,13 +59,6 @@ M.enable = {
   bracketed = true,
   dashboard = true,
   codeium = true,
-  copilot = false,
-  copilot_cmp = false,
-  neodev = false,
-  nvim_tree = false,
-  navigator = false,
-  pairs = false,
-  buffalo = false,
 }
 
 return M
