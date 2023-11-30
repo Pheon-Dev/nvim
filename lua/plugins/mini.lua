@@ -3,6 +3,7 @@ local enable = require("config").enable
 local move = require("config.utils.move")
 local indentscope = require("config.utils.indentscope")
 local bracketed = require("config.utils.bracketed")
+local animate = require("config.utils.animate")
 
 local default_event = require("config.event").default
 
@@ -30,6 +31,12 @@ local M = {
     enabled = enable.bracketed,
     event = default_event,
     config = bracketed.config,
+  },
+  {
+    "echasnovski/mini.animate",
+    enabled = enable.animate,
+    event = default_event,
+    config = animate.config,
   },
 }
 
