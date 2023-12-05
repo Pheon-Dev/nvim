@@ -10,31 +10,32 @@ local default_event = require("config.event").default
 local M = {
   {
     "neovim/nvim-lspconfig",
-    enabled = enable.lspconfig,
+    enabled = enable.lsp,
     dependencies = lspconfig.dependencies,
     servers = lspconfig.servers,
     config = lspconfig.config,
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    enabled = enable.mason_lspconfig,
+    enabled = enable.lsp,
     config = mason.mason_lspconfig,
   },
   {
     "williamboman/mason.nvim",
     build = mason.build,
-    enabled = enable.mason,
+    enabled = enable.lsp,
     config = mason.config,
   },
   {
     'nvimdev/lspsaga.nvim',
-    enabled = enable.lspsaga,
+    enabled = enable.lsp,
     event = default_event,
     config = lspsaga.config,
     dependencies = lspsaga.dependencies,
   },
   {
     'VonHeikemen/lsp-zero.nvim',
+    enabled = enable.lsp,
     branch = zero.branch,
   },
 }
