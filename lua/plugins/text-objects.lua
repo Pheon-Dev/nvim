@@ -3,6 +3,7 @@ local enable = require("config").enable
 local various = require("config.text-objects.various_text_objects")
 local comment = require("config.text-objects.comment_text_objects")
 local archer = require("config.text-objects.archer_text_objects")
+local unit = require("config.text-objects.unit_text_objects")
 
 local default_event = require("config.event").default
 
@@ -35,6 +36,12 @@ local M = {
     event = default_event,
     dependencies = archer.dependencies,
     config = archer.config,
+  },
+  {
+    'David-Kunz/treesitter-unit',
+    enabled = enable.unit_textobjects,
+    event = default_event,
+    config = unit.config,
   }
 }
 
