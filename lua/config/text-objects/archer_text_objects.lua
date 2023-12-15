@@ -6,10 +6,10 @@ M.config = function()
   require("archer").config({
     mappings = {
       space = {
-        --[[ before = "[<space>",
-        after = "]<space>", ]]
-        before = "<S-CR>",
-        after = "<CR>",
+        before = "[<space>",
+        after = "]<space>",
+        -- before = "<S-CR>",
+        -- after = "<CR>",
       },
       ending = {
         period = {
@@ -32,8 +32,8 @@ M.config = function()
     },
     textobj = {
       next_obj = {
-        i_next = "in",
-        a_next = "an",
+        i_next = "iN",
+        a_next = "aN",
       },
       -- i_ i. i: i, i; i| i/ i\ i* i+ i- i#
       -- a_ a. a: a, a; a| a/ a\ a* a+ a- a#
