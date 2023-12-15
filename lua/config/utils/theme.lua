@@ -75,6 +75,12 @@ M.config = function()
   -- vim.cmd("colorscheme catppuccin-frappe")
 
   -- local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
+  vim.api.nvim_set_hl(0, "WinBar", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "WinBarNC", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "SagaWinbarSep", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "SagaWinbarFolder", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "SagaWinbarFileName", { bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "SagaWinbarFolderName", { bg = theme.color0 })
 
   -- Float Term
   vim.api.nvim_set_hl(0, "FloatermBorder", { fg = theme.color2, bg = theme.color0 })

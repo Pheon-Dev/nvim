@@ -11,17 +11,22 @@ map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap 
 -- Windows
 -- map("n", "<C-l>", "<C-w>p", { noremap = true, silent = true })
 -- map("n", "<A-n>", "<C-w>w", { noremap = true, silent = true })
+map("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
+map("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
+map("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
+map("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
 map("n", "<A-x>", "<C-w>x", { noremap = true, silent = true })
 
-map("n", "<A-V>", ":vsplit<cr>", { noremap = true, silent = true })
-map("n", "<A-B>", ":split<cr>", { noremap = true, silent = true })
+map("n", "<A-v>", ":vsplit<cr>", { noremap = true, silent = true })
+map("n", "<A-b>", ":split<cr>", { noremap = true, silent = true })
 
-map("n", "<A-J>", "<C-w>t<C-w>K", { noremap = true, silent = true, desc = "Switch Vertical" })
-map("n", "<A-K>", "<C-w>t<C-w>H", { noremap = true, silent = true, desc = "Switch Horizontal" })
+map("n", "<A-V>", "<C-w>t<C-w>K", { noremap = true, silent = true, desc = "Switch Vertical" })
+map("n", "<A-B>", "<C-w>t<C-w>H", { noremap = true, silent = true, desc = "Switch Horizontal" })
 
 map("n", "<leader>wr", ":SudaRead<cr>", { noremap = true, silent = true })
 map("n", "<leader>ww", ":SudaWrite<cr>", { noremap = true, silent = true })
 
+map("n", "<A-n>", ":w ++p ", { noremap = true, silent = true })
 -- map("n", ">", ":vertical resize +3<cr>", { noremap = true, silent = true })
 -- map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
 -- map("n", "(", ":resize +3<cr>", { noremap = true, silent = true })
@@ -52,6 +57,8 @@ map("n", "tk", ":tabprevious<cr>", { noremap = true, silent = true })
 -- remap
 -- map("n", "cc", "0D", { noremap = true, silent = true })
 map("n", "X", "v0c", { noremap = true, silent = true })
+-- map("n", ";", ":", { noremap = true, silent = true })
+-- vim.cmd("nnoremap ; :")
 -- map("n", "gi", "<C-i>", { noremap = true, silent = true })
 -- map("n", "go", "<C-o>", { noremap = true, silent = true })
 

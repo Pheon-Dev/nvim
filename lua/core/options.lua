@@ -16,7 +16,7 @@ g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 o.autowrite = true           -- Enable auto write
 -- o.autowriteall = true        -- Enable auto write
 o.clipboard = "unnamedplus"  -- Sync with system clipboard
-o.completeo = "menu,menuone,noselect"
+o.completeopt = "menu,menuone,noselect"
 o.conceallevel = 0           -- Hide * markup for bold and italic 3
 o.confirm = true             -- Confirm to save changes before exiting modified buffer
 o.cursorline = true          -- Enable highlighting of the current line
@@ -201,4 +201,3 @@ g.fzf_action             = {
   ['ctrl-b'] = 'split',
   ['ctrl-v'] = 'vsplit',
 }
-
