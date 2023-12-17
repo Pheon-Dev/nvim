@@ -18,19 +18,20 @@ map("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
 map("n", "<A-x>", "<C-w>x", { noremap = true, silent = true })
 
 map("n", "<A-v>", ":vsplit<cr>", { noremap = true, silent = true })
+map("n", "<A-n>", ":vsplit<cr>", { noremap = true, silent = true })
 map("n", "<A-b>", ":split<cr>", { noremap = true, silent = true })
 
 map("n", "<A-V>", "<C-w>t<C-w>K", { noremap = true, silent = true, desc = "Switch Vertical" })
 map("n", "<A-B>", "<C-w>t<C-w>H", { noremap = true, silent = true, desc = "Switch Horizontal" })
 
-map("n", "<leader>wr", ":SudaRead<cr>", { noremap = true, silent = true })
-map("n", "<leader>ww", ":SudaWrite<cr>", { noremap = true, silent = true })
-
-map("n", "<A-n>", ":w ++p ", { noremap = true, silent = true })
+map("n", "<A-a>", ":w ++p ", { noremap = true, silent = true })
 -- map("n", ">", ":vertical resize +3<cr>", { noremap = true, silent = true })
 -- map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
 -- map("n", "(", ":resize +3<cr>", { noremap = true, silent = true })
 -- map("n", ")", ":resize -3<cr>", { noremap = true, silent = true })
+
+map("n", "<leader>wr", ":SudaRead<cr>", { noremap = true, silent = true })
+map("n", "<leader>ww", ":SudaWrite<cr>", { noremap = true, silent = true })
 
 -- Editing Keybindings
 map("n", "U", ":redo<cr>", { noremap = true, silent = true })
