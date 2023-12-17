@@ -88,7 +88,7 @@ M.shortcut = {
     group = 'DashboardIcon',
     desc = '',
     icon_hl = '@function',
-    action = "lua require('harpoon.ui').toggle_quick_menu()",
+    action = "lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())",
     key = 'k'
   },
   {

@@ -16,6 +16,7 @@ local M = {
   },
   {
     "ThePrimeagen/harpoon",
+    branch = harpoon.branch,
     enabled = enable.harpoon,
     config = harpoon.config,
   },
