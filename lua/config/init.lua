@@ -51,6 +51,7 @@ M.enable = {
   fundo = true,
   hlargs = true,
   targets = true,
+  eyeliner = true,
   treesitter_textobjects = true,
   various_textobjects = true,
   comment_textobjects = true,

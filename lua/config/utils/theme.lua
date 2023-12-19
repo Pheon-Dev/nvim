@@ -82,6 +82,10 @@ M.config = function()
   vim.api.nvim_set_hl(0, "SagaWinbarFileName", { bg = theme.color0 })
   vim.api.nvim_set_hl(0, "SagaWinbarFolderName", { bg = theme.color0 })
 
+  -- Eyeliner
+  -- vim.api.nvim_set_hl(0, 'EyelinerPrimary', { bold = true, underline = true })
+  -- vim.api.nvim_set_hl(0, 'EyelinerSecondary', { underline = true })
+
   -- Float Term
   vim.api.nvim_set_hl(0, "FloatermBorder", { fg = theme.color2, bg = theme.color0 })
 
