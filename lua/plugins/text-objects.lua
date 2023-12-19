@@ -6,6 +6,7 @@ local archer = require("config.text-objects.archer_text_objects")
 local unit = require("config.text-objects.unit_text_objects")
 
 local default_event = require("config.event").default
+local lazy_event = require("config.event").lazy
 
 local M = {
   {
@@ -42,7 +43,7 @@ local M = {
     enabled = enable.unit_textobjects,
     event = default_event,
     config = unit.config,
-  }
+  },
 }
 
 return M

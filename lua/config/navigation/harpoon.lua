@@ -5,7 +5,15 @@ M.branch = "harpoon2"
 M.config = function()
   local harpoon = require("harpoon")
 
-  harpoon:setup()
+  harpoon:setup({
+    settings = {
+      save_on_toggle = false,
+      sync_on_ui_close = false,
+      key = function()
+        return vim.loop.cwd()
+      end,
+    },
+  })
 
   vim.keymap.set("n", "<leader>h", function() harpoon:list():append() end)
   vim.keymap.set("n", "<leader>k", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
