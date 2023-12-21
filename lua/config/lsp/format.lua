@@ -12,6 +12,7 @@ M.config = function()
       ".config/rofi",
       ".config/hypr",
       ".config/zsh",
+      ".config/kanata",
       "oil",
     },
     formatter_by_ft = {
