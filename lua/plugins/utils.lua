@@ -9,6 +9,7 @@ local dial = require("config.utils.dial")
 local muren = require("config.utils.muren")
 local fold = require("config.utils.fold")
 local fundo = require("config.utils.fundo")
+local hardtime = require("config.utils.hardtime")
 
 local lazy_event = require("config.event").lazy
 local default_event = require("config.event").default
@@ -112,6 +113,13 @@ local M = {
     dependencies = fundo.dependencies,
     build = fundo.build,
     config = fundo.config,
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    enabled = enable.hardtime,
+    event = default_event,
+    dependencies = hardtime.dependencies,
+    config = hardtime.config,
   },
 }
 

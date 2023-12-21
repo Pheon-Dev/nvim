@@ -13,6 +13,7 @@ M.fold = config.fold
 M.muren = config.muren
 M.move = config.move
 M.fundo = config.fundo
+M.hardtime = config.hardtime
 M.bracketed = config.bracketed
 M.animate = config.animate
 M.indentscope = config.indentscope
