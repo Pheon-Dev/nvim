@@ -73,7 +73,7 @@ M.config = function()
   }
 
   antelope.tabpages(tab_options)
-  antelope.marks(mark_options)
+  -- antelope.marks(mark_options)
   antelope.buffers(buffer_options)
 
   local theme = require("core.colors")
