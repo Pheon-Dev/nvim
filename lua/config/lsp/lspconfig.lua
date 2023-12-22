@@ -21,6 +21,14 @@ M.config = function(plugin)
 
   local server = require('config.lsp.servers')
   local lsp = require("lspconfig")
+  local ui = require("lspconfig.ui.windows")
+
+  ui.default_options.border = "rounded"
+  --[[ ui.default_options.borderchars = {
+    prompt = { '─', '│', ' ', '│', '╭', '╮', '│', '│' },
+    results = { '─', '│', '─', '│', '├', '┤', '╯', '╰' },
+    preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
+  } ]]
 
   lsp.lua_ls.setup(server.lua_ls)
   lsp.rust_analyzer.setup(server.rust_analyzer)
