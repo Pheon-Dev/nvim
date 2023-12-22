@@ -80,11 +80,8 @@ M.config = function()
   -- local dap, dapui = require("dap"), require("dapui")
 
   local mappings = {
-    -- ["'"] = { ":Alpha<cr>", "Dashboard" },
-    -- a = { ":ASToggle<cr>", "Auto Save Toggle" },
     b = { ":Antelope buffers<cr>", "Buffers" },
-    -- h = { ":lua require('harpoon.mark').add_file()<cr>", "Harpoon Mark File" },
-    -- j = { ":NvimTreeToggle<cr>", "Nvim-Tree" },
+    -- h = { ":lua require('harpoon').list():append()<cr>", "Harpoon Mark File" },
     j = { ":Oil<cr>", "Oil" },
     -- k = { ":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<cr>", "Harpoon" },
     m = { ":Antelope marks<cr>", "Marks" },
@@ -99,7 +96,6 @@ M.config = function()
       x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
     },
     p = { ":Antelope tabpages<cr>", "Toggle Tabapages" },
-    -- p = { ":lua require('buffalo.ui').toggle_tab_menu()<cr>", "Buffalo Tabapages" },
     q = { ":bd<cr>", "Close Buffer" },
     r = {
       name = "Rust",
@@ -158,7 +154,6 @@ M.config = function()
       }
     },
     x = { "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", "Quickfix All Diagnostics" },
-    -- y = { ":Telescope yank_history theme=ivy previewer=false initial_mode=normal<cr>", "Yank History" },
     z = { ":Lazy<cr>", "Lazy" },
   }
 
