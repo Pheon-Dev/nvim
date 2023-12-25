@@ -46,6 +46,7 @@ M.config = function()
       basic = true,
       ---Extra mapping; `gco`, `gcO`, `gcA`
       extra = true,
+      extended = true,
     },
     ---Function to call after (un)comment
     post_hook = nil,
