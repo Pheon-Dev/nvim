@@ -12,6 +12,7 @@ M.config = function()
       ".config/rofi",
       ".config/hypr",
       ".config/zsh",
+      ".config/alacritty",
       ".config/kanata",
       "oil",
     },
