@@ -10,6 +10,7 @@ local muren = require("config.utils.muren")
 local fold = require("config.utils.fold")
 local fundo = require("config.utils.fundo")
 local hardtime = require("config.utils.hardtime")
+local marks = require("config.utils.marks")
 
 local lazy_event = require("config.event").lazy
 local default_event = require("config.event").default
@@ -36,6 +37,12 @@ local M = {
     "lambdalisue/suda.vim",
     event = default_event,
     enabled = enable.suda,
+  },
+  {
+    "chentoast/marks.nvim",
+    event = default_event,
+    enabled = enable.marks,
+    config = marks.config
   },
   {
     "nvim-tree/nvim-web-devicons",
