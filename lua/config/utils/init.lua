@@ -12,6 +12,7 @@ M.dial = config.dial
 M.fold = config.fold
 M.muren = config.muren
 M.move = config.move
+M.comment = config.comment
 M.fundo = config.fundo
 M.hardtime = config.hardtime
 M.marks = config.marks

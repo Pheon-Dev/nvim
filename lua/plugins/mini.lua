@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local move = require("config.utils.move")
+local comment = require("config.utils.comment")
 local indentscope = require("config.utils.indentscope")
 local bracketed = require("config.utils.bracketed")
 local animate = require("config.utils.animate")
@@ -13,6 +14,13 @@ local M = {
     enabled = enable.splitjoin,
     event = default_event,
     config = true,
+  },
+  {
+    "echasnovski/mini.comment",
+    enabled = enable.comment,
+    event = default_event,
+    config = true,
+    -- config = comment.config,
   },
   {
     "echasnovski/mini.move",

@@ -9,14 +9,16 @@ local M = {
   {
     "folke/todo-comments.nvim",
     event = default_event,
-    enabled = enable.todo_comments,
+    -- enabled = enable.todo_comments,
+    enabled = false,
     config = todo.config
   },
   {
     "numToStr/Comment.nvim",
     -- lazy = false,
     event = default_event,
-    enabled = enable.comment,
+    -- enabled = enable.comment,
+    enabled = false,
     dependencies = comment.dependencies,
     config = comment.config,
   },
