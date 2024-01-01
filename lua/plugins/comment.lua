@@ -9,8 +9,7 @@ local M = {
   {
     "folke/todo-comments.nvim",
     event = default_event,
-    -- enabled = enable.todo_comments,
-    enabled = false,
+    enabled = enable.todo_comments,
     config = todo.config
   },
   {
