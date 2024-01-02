@@ -11,3 +11,4 @@ lua/config-old
 lua/core-old
 lua/options-old
 lua/plugin-old
+.vim-bookmarks
