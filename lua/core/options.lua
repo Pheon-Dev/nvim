@@ -166,38 +166,55 @@ vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
 
 -- lf
-g.lf_map_keys            = 0
-g.lf_command_override    = 'lf -command "set ratios 1:1"'
+g.lf_map_keys                      = 0
+g.lf_command_override              = 'lf -command "set ratios 1:1"'
 -- float term
-g.floaterm_borderchars   = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
-g.floaterm_width         = 0.9 -- default 0.6
-g.floaterm_height        = 0.9 -- default 0.6
-g.floaterm_rootmarkers   = { "cargo.toml", "cargo.toml.lock", "package.json", ".git", ".gitignore",
+g.floaterm_borderchars             = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
+g.floaterm_width                   = 0.9 -- default 0.6
+g.floaterm_height                  = 0.9 -- default 0.6
+g.floaterm_rootmarkers             = { "cargo.toml", "cargo.toml.lock", "package.json", ".git", ".gitignore",
   "package-lock.json", "yarn.lock", "tsconfig.json" }
-g.floaterm_opener        = "edit"
-g.floaterm_wintype       = "float" -- options split, vsplit
-g.floaterm_title         = "$1/$2" -- default 'floaterm: $1/$2'
-g.floaterm_autoclose     = 2       -- defailt 1 options 0-2
-g.floaterm_autohide      = 1       -- defailt 1 options 0-2
-g.floaterm_autoinsert    = true    -- defailt true
-g.floaterm_titleposition = "left"  -- options left, right, center
-g.floaterm_position      =
-"center"                           -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
+g.floaterm_opener                  = "edit"
+g.floaterm_wintype                 = "float" -- options split, vsplit
+g.floaterm_title                   = "$1/$2" -- default 'floaterm: $1/$2'
+g.floaterm_autoclose               = 2       -- defailt 1 options 0-2
+g.floaterm_autohide                = 1       -- defailt 1 options 0-2
+g.floaterm_autoinsert              = true    -- defailt true
+g.floaterm_titleposition           = "left"  -- options left, right, center
+g.floaterm_position                =
+"center"                                     -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
 
-g.floaterm_keymap_toggle = '<m-`>'
-g.floaterm_keymap_new    = "``"
-g.floaterm_keymap_prev   = "`p"
-g.floaterm_keymap_next   = "`n"
-g.floaterm_keymap_first  = "`h"
-g.floaterm_keymap_last   = "`l"
-g.floaterm_keymap_hide   = "`j"
-g.floaterm_keymap_show   = "`k"
-g.floaterm_keymap_kill   = "`;"
+g.floaterm_keymap_toggle           = '<m-`>'
+g.floaterm_keymap_new              = "``"
+g.floaterm_keymap_prev             = "`p"
+g.floaterm_keymap_next             = "`n"
+g.floaterm_keymap_first            = "`h"
+g.floaterm_keymap_last             = "`l"
+g.floaterm_keymap_hide             = "`j"
+g.floaterm_keymap_show             = "`k"
+g.floaterm_keymap_kill             = "`;"
 
 -- FZF
-g.fzf_layout             = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
-g.fzf_action             = {
+g.fzf_layout                       = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
+g.fzf_action                       = {
   ['ctrl-t'] = 'tab split',
   ['ctrl-b'] = 'split',
   ['ctrl-v'] = 'vsplit',
 }
+
+g.bookmark_no_default_key_mappings = 1
+g.bookmark_sign                    = ''
+g.bookmark_annotation_sign         = ''
+g.bookmark_save_per_working_dir    = 0
+g.bookmark_auto_save               = 1
+g.bookmark_manage_per_buffer       = 0
+-- g.bookmark_auto_save_file = '$HOME' .. '/.vim-bookmarks'
+g.bookmark_auto_close              = 0
+g.bookmark_highlight_lines         = 0
+g.bookmark_show_warning            = 1
+g.bookmark_show_toggle_warning     = 1
+g.bookmark_center                  = 0
+g.bookmark_no_default_key_mappings = 0
+g.bookmark_location_list           = 0
+g.bookmark_disable_ctrlp           = 0
+g.bookmark_display_annotation      = 0
