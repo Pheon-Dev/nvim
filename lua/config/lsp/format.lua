@@ -14,6 +14,8 @@ M.config = function()
       ".config/zsh",
       ".config/alacritty",
       ".config/kanata",
+      ".config/st",
+      ".config/dwm",
       "oil",
     },
     formatter_by_ft = {
@@ -109,12 +111,6 @@ M.config = function()
     -- To prevent that set `run_with_sh` to `false`.
     run_with_sh = false,
   })
-  local map = vim.api.nvim_set_keymap
-
-  -- Saving and  ESC on insert Mode
-  map("n", "<C-Space>", "<esc>:lua require('format-on-save').format()<cr><esc>:w! | noh<cr>",
-    { noremap = true, silent = true })
-  -- map("n", ",", "<esc>:lua require('format-on-save').restore_cursors()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 end
 
 return M

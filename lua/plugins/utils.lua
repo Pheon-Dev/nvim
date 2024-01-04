@@ -41,7 +41,7 @@ local M = {
   {
     "MattesGroeger/vim-bookmarks",
     event = default_event,
-    enabled = enable.marks,
+    enabled = enable.bookmarks,
     config = bookmarks.config
   },
   {

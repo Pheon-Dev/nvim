@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local oil = require("config.navigation.oil")
+local arrow = require("config.navigation.arrow")
 local harpoon = require("config.navigation.harpoon")
 local antelope = require("config.navigation.antelope")
 local which_key = require("config.navigation.which-key")
@@ -19,6 +20,12 @@ local M = {
     branch = harpoon.branch,
     enabled = enable.harpoon,
     config = harpoon.config,
+  },
+  {
+    "otavioschwanck/arrow.nvim",
+    enabled = enable.arrow,
+    -- event = lazy_event,
+    config = arrow.config,
   },
   {
     "Pheon-Dev/antelope",
