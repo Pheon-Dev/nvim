@@ -11,13 +11,14 @@ M.yanky = config.yanky
 M.dial = config.dial
 M.fold = config.fold
 M.muren = config.muren
+M.substitute = config.substitute
 M.move = config.move
 M.comment = config.comment
 M.fundo = config.fundo
-M.hardtime = config.hardtime
 M.marks = config.marks
 M.bracketed = config.bracketed
 M.animate = config.animate
+M.notify = config.notify
 M.indentscope = config.indentscope
 
 return M

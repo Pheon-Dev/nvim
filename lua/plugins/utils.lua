@@ -7,9 +7,9 @@ local cmp = require("config.utils.cmp")
 local yanky = require("config.utils.yanky")
 local dial = require("config.utils.dial")
 local muren = require("config.utils.muren")
+local substitute = require("config.utils.substitute")
 local fold = require("config.utils.fold")
 local fundo = require("config.utils.fundo")
-local hardtime = require("config.utils.hardtime")
 local bookmarks = require("config.utils.bookmarks")
 
 local lazy_event = require("config.event").lazy
@@ -122,11 +122,10 @@ local M = {
     config = fundo.config,
   },
   {
-    "m4xshen/hardtime.nvim",
-    enabled = enable.hardtime,
+    "otavioschwanck/cool-substitute.nvim",
     event = default_event,
-    dependencies = hardtime.dependencies,
-    config = hardtime.config,
+    enabled = enable.substitute,
+    config = substitute.config
   },
 }
 
