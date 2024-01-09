@@ -1,8 +1,8 @@
 local enable = require("config").enable
 
 local flash = require("config.motion.flash")
-local scope = require("config.motion.scope")
-local tshjkl = require("lua.config.motion.tshjkl")
+local eyeliner = require("config.motion.eyeliner")
+local tshjkl = require("config.motion.tshjkl")
 local spider = require("config.motion.spider")
 
 local default_event = require("config.event").default
@@ -27,9 +27,8 @@ local M = {
   {
     'jinh0/eyeliner.nvim',
     event = read_pre_event,
-    -- event = default_event,
-    enabled = enable.scope,
-    config = scope.config,
+    enabled = enable.eyeliner,
+    config = eyeliner.config,
   },
   {
     'gsuuon/tshjkl.nvim',
