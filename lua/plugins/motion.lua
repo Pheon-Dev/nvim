@@ -1,9 +1,12 @@
 local enable = require("config").enable
 
 local flash = require("config.motion.flash")
-local eyeliner = require("config.motion.eyeliner")
+local scope = require("config.motion.scope")
+local tshjkl = require("lua.config.motion.tshjkl")
+local spider = require("config.motion.spider")
 
 local default_event = require("config.event").default
+local read_pre_event = require("config.event").read.pre
 local lazy_event = require("config.event").lazy
 
 local M = {
@@ -12,11 +15,6 @@ local M = {
     event = default_event,
     enabled = enable.surround,
     config = true,
-  },
-  {
-    "chaoren/vim-wordmotion",
-    event = default_event,
-    enabled = enable.word_motion,
   },
   {
     "folke/flash.nvim",
@@ -28,9 +26,22 @@ local M = {
   },
   {
     'jinh0/eyeliner.nvim',
+    event = read_pre_event,
+    -- event = default_event,
+    enabled = enable.scope,
+    config = scope.config,
+  },
+  {
+    'gsuuon/tshjkl.nvim',
     event = default_event,
-    enabled = enable.eyeliner,
-    config = eyeliner.config,
+    enabled = enable.tshjkl,
+    config = tshjkl.config,
+  },
+  {
+    'chrisgrieser/nvim-spider',
+    event = default_event,
+    enabled = enable.spider,
+    config = spider.config,
   }
 }
 

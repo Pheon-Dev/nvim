@@ -2,6 +2,11 @@ local M = {}
 
 M.default = { "BufReadPost", "BufNewFile" }
 
+M.read = {
+  pre = "BufReadPre",
+  post = "BufReadPost",
+}
+
 M.lazy = "VeryLazy"
 
 M.attach = "LspAttach"

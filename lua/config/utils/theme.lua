@@ -9,70 +9,10 @@ M.priority = 1000
 M.config = function()
   local theme = require("core.colors")
 
-  require("catppuccin").setup({
-    -- flavour = "mocha", -- latte, frappe, macchiato, mocha
-    -- -- background = {     -- :h background
-    -- --   light = "latte",
-    -- --   dark = "mocha",
-    -- -- },
-    -- transparent_background = false, -- disables setting the background color.
-    -- show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
-    -- term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
-    -- dim_inactive = {
-    --   enabled = false,              -- dims the background color of inactive window
-    --   shade = "dark",
-    --   percentage = 0.15,            -- percentage of the shade to apply to the inactive window
-    -- },
-    -- no_italic = false,              -- Force no italic
-    -- no_bold = false,                -- Force no bold
-    -- no_underline = false,           -- Force no underline
-    -- styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
-    --   comments = { "italic" },      -- Change the style of comments
-    --   conditionals = { "italic" },
-    --   loops = {},
-    --   functions = {},
-    --   keywords = {},
-    --   strings = {},
-    --   variables = {},
-    --   numbers = {},
-    --   booleans = {},
-    --   properties = {},
-    --   types = {},
-    --   operators = {},
-    -- },
-    -- color_overrides = {},
-    -- custom_highlights = function(colors)
-    --   return {
-    --     -- Comment = { fg = colors.flamingo },
-    --     -- TabLineSel = { bg = colors.pink },
-    --     -- CmpBorder = { fg = colors.surface2 },
-    --     -- Pmenu = { bg = colors.none },
-    --   }
-    -- end,
-    -- integrations = {
-    --   cmp = true,
-    --   gitsigns = true,
-    --   nvimtree = true,
-    --   treesitter = true,
-    --   notify = true,
-    --   mini = true,
-    --   dashboard = true,
-    --   harpoon = true,
-    --   noice = true,
-    --   ufo = true,
-    --   treesitter_context = false,
-    --   which_key = true,
-    --   -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-    -- },
-  })
+  require("catppuccin").setup({})
 
   -- setup must be called before loading
-  vim.cmd.colorscheme("catppuccin")
-
-  -- vim.cmd("colorscheme catppuccin-mocha")
-  -- vim.cmd("colorscheme catppuccin-macchiato")
-  -- vim.cmd("colorscheme catppuccin-latte")
-  -- vim.cmd("colorscheme catppuccin-frappe")
+  vim.cmd.colorscheme("catppuccin-mocha")
 
   -- local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
   vim.api.nvim_set_hl(0, "WinBar", { bg = theme.color0 })
@@ -82,9 +22,11 @@ M.config = function()
   vim.api.nvim_set_hl(0, "SagaWinbarFileName", { bg = theme.color0 })
   vim.api.nvim_set_hl(0, "SagaWinbarFolderName", { bg = theme.color0 })
 
-  -- Eyeliner
+  -- Scope
   -- vim.api.nvim_set_hl(0, 'EyelinerPrimary', { bold = true, underline = true })
   -- vim.api.nvim_set_hl(0, 'EyelinerSecondary', { underline = true })
+  vim.api.nvim_set_hl(0, 'QuickScopePrimary', { bold = true, underline = false, fg = theme.color101 })
+  vim.api.nvim_set_hl(0, 'QuickScopeSecondary', { underline = true })
 
   -- Float Term
   vim.api.nvim_set_hl(0, "FloatermBorder", { fg = theme.color2, bg = theme.color0 })
