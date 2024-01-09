@@ -218,11 +218,3 @@ g.bookmark_no_default_key_mappings = 0
 g.bookmark_location_list           = 0
 g.bookmark_disable_ctrlp           = 0
 g.bookmark_display_annotation      = 0
-
--- Trigger a highlight in the appropriate direction when pressing these keys:
-g.qs_highlight_on_keys             = { 'f', 'F', 't', 'T' }
-g.qs_lazy_highlight                = 1
-g.qs_delay                         = 0
-
--- Trigger a highlight only when pressing f and F.
-g.qs_highlight_on_keys             = { 'f', 'F' }
