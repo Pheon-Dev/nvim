@@ -8,8 +8,8 @@ M.config = function()
   }
   vim.keymap.set("i", "<C-f>", "<Esc>l<cmd>lua require('spider').motion('w')<CR>i")
   vim.keymap.set("i", "<C-b>", "<Esc><cmd>lua require('spider').motion('b')<CR>i")
-  vim.keymap.set("i", "<C-u>", "<Esc>k<CR>i")
-  vim.keymap.set("i", "<C-d>", "<Esc>j<CR>i")
+  -- vim.keymap.set("i", "<C-u>", "<Esc>k<CR>i")
+  -- vim.keymap.set("i", "<C-d>", "<Esc>j<CR>i")
 
   vim.keymap.set("o", "w", "<cmd>lua require('spider').motion('w')<CR>")
   -- vim.keymap.set("n", "cw", "ce", { remap = true })
