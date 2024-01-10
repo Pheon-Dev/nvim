@@ -1,8 +1,11 @@
 local M = {}
 
+M.init = function()
+  vim.o.timeout = true
+  vim.o.timeoutlen = 600
+end
+
 M.config = function()
-  -- vim.o.timeout = true
-  -- vim.o.timeoutlen = 300
   local ok, rt = pcall(require, "rust-tools")
   if not ok then return end
   local wk = require("which-key")
