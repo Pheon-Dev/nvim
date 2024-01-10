@@ -101,7 +101,8 @@ M.keys = {
 
 M.config = function()
   local enable = require("config").enable
-  local enabled = enable.treesitter_textobjects
+  local enabled = false
+  -- local enabled = enable.treesitter_textobjects
   if enabled then
     local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 
