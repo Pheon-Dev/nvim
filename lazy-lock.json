@@ -74,7 +74,7 @@
   "tsc.nvim": { "branch": "main", "commit": "a8f26d3d6a0faf533afb840816a6d9ac6a1fcbea" },
   "tshjkl.nvim": { "branch": "main", "commit": "7eec523ad5ba46ff47dbd553ac9ad25a8a650fcd" },
   "typescript-tools.nvim": { "branch": "master", "commit": "13d9dda2fc1ff82ca5a8ced0e1b46e93debac792" },
-  "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "f7461bb113f0aa1ae3b498ae34f5a216050ec548" },
+  "ultimate-autopair.nvim": { "branch": "v0.6", "commit": "7e28167b8c7e45ffceca3f10e8ef4d6dcd503393" },
   "vim-bookmarks": { "branch": "master", "commit": "9cc5fa7ecc23b052bd524d07c85356c64b92aeef" },
   "vim-floaterm": { "branch": "master", "commit": "3f01a623376957437f9376327637491b74719e38" },
   "vim-hexokinase": { "branch": "master", "commit": "62324b43ea858e268fb70665f7d012ae67690f43" },
