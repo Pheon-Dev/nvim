@@ -4,7 +4,6 @@ M.cmd = { "ConformInfo" }
 
 M.keys = {
   {
-    -- Customize or remove this keymap to your liking
     ",",
     function()
       vim.cmd(":w!")
@@ -21,8 +20,14 @@ M.opts = {
   -- Define your formatters
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "isort", "black" },
-    javascript = { { "prettierd", "prettier" } },
+    -- python = { "isort", "black" },
+    -- python = { { "isort", "black" } },
+    json = { "prettierd" },
+    css = { "prettierd" },
+    javascript = { "prettierd" },
+    javascriptreact = { "prettierd" },
+    typescript = { "prettierd" },
+    typescriptreact = { "prettierd" },
   },
   -- Set up format-on-save
   format_on_save = { timeout_ms = 500, lsp_fallback = true },

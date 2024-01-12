@@ -5,6 +5,7 @@ local M = {}
 M.dashboard = config.dashboard
 M.cmp = config.cmp
 M.lualine = config.lualine
+M.hardtime = config.hardtime
 M.scroll = config.scroll
 M.theme = config.theme
 M.yanky = config.yanky
