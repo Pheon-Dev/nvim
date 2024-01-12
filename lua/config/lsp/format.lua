@@ -1,116 +1,83 @@
 local M = {}
 
-M.config = function()
-  local format_on_save = require("format-on-save")
-  local formatters = require("format-on-save.formatters")
+M.cmd = { "ConformInfo" }
 
-  format_on_save.setup({
-    exclude_path_patterns = {
-      "/node_modules/",
-      ".local/share/nvim/lazy",
-      "/target",
-      ".config/rofi",
-      ".config/hypr",
-      ".config/zsh",
-      ".config/alacritty",
-      ".config/kanata",
-      ".config/st",
-      ".config/dwm",
-      "oil",
+M.keys = {
+  {
+    -- Customize or remove this keymap to your liking
+    ",",
+    function()
+      vim.cmd(":w!")
+      vim.cmd(":noh")
+      require("conform").format({ async = true, lsp_fallback = true })
+    end,
+    mode = "",
+    desc = "Format buffer",
+  },
+}
+
+-- Everything in opts will be passed to setup()
+M.opts = {
+  -- Define your formatters
+  formatters_by_ft = {
+    lua = { "stylua" },
+    python = { "isort", "black" },
+    javascript = { { "prettierd", "prettier" } },
+  },
+  -- Set up format-on-save
+  format_on_save = { timeout_ms = 500, lsp_fallback = true },
+  -- Customize formatters
+  formatters = {
+    shfmt = {
+      prepend_args = { "-i", "2" },
     },
-    formatter_by_ft = {
-      css = formatters.lsp,
-      html = formatters.lsp,
-      java = formatters.lsp,
-      javascript = formatters.lsp,
-      json = formatters.lsp,
-      lua = formatters.lsp,
-      markdown = formatters.prettierd,
-      openscad = formatters.lsp,
-      -- python = formatters.black,
-      rust = formatters.lsp,
-      scad = formatters.lsp,
-      scss = formatters.lsp,
-      sh = formatters.shfmt,
-      terraform = formatters.lsp,
-      typescript = formatters.prettierd,
-      typescriptreact = formatters.prettierd,
-      yaml = formatters.lsp,
+  },
+}
 
-      -- Add your own shell formatters:
-      -- myfiletype = formatters.shell({ cmd = { "myformatter", "%" } }),
+M.init = function()
+  -- If you want the formatexpr, here is the place to set it
+  vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+end
 
-      -- -- Add lazy formatter that will only run when formatting:
-      -- my_custom_formatter = function()
-      --   if vim.api.nvim_buf_get_name(0):match("/README.md$") then
-      --     return formatters.prettierd
-      --   else
-      --     return formatters.lsp()
-      --   end
-      -- end,
-      --
-      -- -- Add custom formatter
-      -- filetype1 = formatters.remove_trailing_whitespace,
-      -- filetype2 = formatters.custom({
-      --   format = function(lines)
-      --     return vim.tbl_map(function(line)
-      --       return line:gsub("true", "false")
-      --     end, lines)
-      --   end
-      -- }),
-
-      -- Concatenate formatters
-      python = {
-        formatters.remove_trailing_whitespace,
-        formatters.shell({ cmd = "tidy-imports" }),
-        formatters.black,
-        formatters.ruff,
-      },
-
-      -- Use a tempfile instead of stdin
-      go = {
-        formatters.shell({
-          cmd = { "goimports-reviser", "-rm-unused", "-set-alias", "-format", "%" },
-          tempfile = function()
-            return vim.fn.expand("%") .. '.formatter-temp'
-          end
-        }),
-        formatters.shell({ cmd = { "gofmt" } }),
-      },
-
-      -- Add conditional formatter that only runs if a certain file exists
-      -- in one of the parent directories.
-      -- javascript = {
-      --   formatters.if_file_exists({
-      --     pattern = ".eslintrc.*",
-      --     formatter = formatters.eslint_d_fix)
-      --   }),
-      --   formatters.if_file_exists({
-      --     pattern = { ".prettierrc", ".prettierrc.*", "prettier.config.*" },
-      --     formatter = formatters.prettierd,
-      --   }),
-      --   -- By default it stops at the git repo root (or "/" if git repo not found)
-      --   -- but it can be customized with the `stop_path` option:
-      --   formatters.if_file_exists({
-      --     pattern = ".prettierrc",
-      --     formatter = formatters.prettierd,
-      --     stop_path = function()
-      --       return "/my/custom/stop/path"
-      --     end
-      --   }),
-      -- },
-    },
-
-    -- Optional: fallback formatter to use when no formatters match the current filetype
-    fallback_formatter = {
-      formatters.remove_trailing_whitespace,
-      formatters.prettierd,
-    },
-
-    -- By default, all shell commands are prefixed with "sh -c" (see PR #3)
-    -- To prevent that set `run_with_sh` to `false`.
-    run_with_sh = false,
+M.config_conform = function()
+  require("conform").setup({
+    format_on_save = function(bufnr)
+      -- Disable with a global or buffer-local variable
+      if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+        return
+      end
+      return { timeout_ms = 500, lsp_fallback = true }
+    end,
   })
+
+  vim.api.nvim_create_user_command("FormatDisable", function(args)
+    if args.bang then
+      -- FormatDisable! will disable formatting just for this buffer
+      vim.b.disable_autoformat = true
+    else
+      vim.g.disable_autoformat = true
+    end
+  end, {
+    desc = "Disable autoformat-on-save",
+    bang = true,
+  })
+  vim.api.nvim_create_user_command("FormatEnable", function()
+    vim.b.disable_autoformat = false
+    vim.g.disable_autoformat = false
+  end, {
+    desc = "Re-enable autoformat-on-save",
+  })
+  vim.api.nvim_create_user_command("Format", function(args)
+    local range = nil
+    if args.count ~= -1 then
+      local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+      range = {
+        start = { args.line1, 0 },
+        ["end"] = { args.line2, end_line:len() },
+      }
+    end
+    require("conform").format({ async = true, lsp_fallback = true, range = range })
+  end, { range = true })
 end
 
 return M

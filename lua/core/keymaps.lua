@@ -5,10 +5,10 @@ local map = vim.api.nvim_set_keymap
 
 -- Saving and  ESC on insert Mode
 map("i", "jj", "<esc>", { noremap = true, silent = true })
--- map("n", ",", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
-map("n", ",", "<esc>:lua require('format-on-save').format()<cr><esc>:w! | noh<cr>",
-  { noremap = true, silent = true })
--- map("n", ",", "<esc>:w! | noh<cr>", { noremap = true, silent = true })
+map("i", "<esc>", "<esc>", { noremap = true, silent = true })
+map("i", "'", ",", { noremap = true, silent = true })
+map("n", "<A-s>", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+-- map("n", "<A-s>", "<esc>:lua require('format-on-save').format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
 -- map("n", "<C-l>", "<C-w>p", { noremap = true, silent = true })
@@ -93,26 +93,18 @@ if enable.codeium then
   -- Split Join
   vim.keymap.set("n", "gs", ":TSJToggle<cr>", { noremap = true, silent = true })
 
-  vim.keymap.set("i", "<C-c>",
-    function()
-      return vim.fn["codeium#Accept"]()
-    end
-    , { expr = true, silent = true, desc = "Accept Suggestion" })
-  vim.keymap.set("i", "<C-]>",
-    function()
-      return vim.fn["codeium#CycleCompletions"](1)
-    end,
-    { expr = true, silent = true, desc = "Cycle Completions Forward" })
-  vim.keymap.set("i", "<C-[>",
-    function()
-      return vim.fn["codeium#CycleCompletions"](-1)
-    end,
-    { expr = true, silent = true, desc = "Cycle Completions Backward" })
-  vim.keymap.set("i", "<C-u>",
-    function()
-      return vim.fn["codeium#Clear"]()
-    end,
-    { expr = true, silent = true, desc = "Clear Completions" })
+  vim.keymap.set("i", "<C-c>", function()
+    return vim.fn["codeium#Accept"]()
+  end, { expr = true, silent = true, desc = "Accept Suggestion" })
+  vim.keymap.set("i", "<C-]>", function()
+    return vim.fn["codeium#CycleCompletions"](1)
+  end, { expr = true, silent = true, desc = "Cycle Completions Forward" })
+  vim.keymap.set("i", "<C-[>", function()
+    return vim.fn["codeium#CycleCompletions"](-1)
+  end, { expr = true, silent = true, desc = "Cycle Completions Backward" })
+  vim.keymap.set("i", "<C-u>", function()
+    return vim.fn["codeium#Clear"]()
+  end, { expr = true, silent = true, desc = "Clear Completions" })
 end
 
 -- Fzf and Floaterm

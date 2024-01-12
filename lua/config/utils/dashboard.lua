@@ -75,13 +75,12 @@ M.shortcut = {
     key = 'j'
   },
   --[[ {
-    icon = '󰏇 ', -- פּ 󱁕
+    icon = ' ',
     group = 'DashboardIcon',
     desc = '',
     icon_hl = '@string',
-    -- action = 'NvimTreeToggle',
-    action = 'Oil',
-    key = 'j'
+    action = 'BookmarkShowAll',
+    key = 'k'
   }, ]]
   --[[ {
     icon = '󱡅 ',
@@ -99,14 +98,14 @@ M.shortcut = {
     action = 'FloatermNew lazygit',
     key = 'l',
   },
-  -- {
-  --   icon = '󰊳 ',
-  --   desc = 'Updates',
-  --   group = 'DashboardIcon',
-  --   icon_hl = '@property',
-  --   action = 'Lazy update',
-  --   key = 'u'
-  -- },
+  {
+    icon = '󰊳 ',
+    desc = '',
+    group = 'DashboardIcon',
+    icon_hl = '@property',
+    action = 'Lazy update',
+    key = 'u'
+  },
   {
     icon = '󰱽 ',
     group = 'DashboardIcon',

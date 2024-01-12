@@ -7,6 +7,7 @@ local zero = require("config.lsp.zero")
 local mason = require("config.lsp.mason")
 
 local default_event = require("config.event").default
+local lazy_event = require("config.event").lazy
 
 local M = {
   {
@@ -28,22 +29,25 @@ local M = {
     config = mason.config,
   },
   {
-    'nvimdev/lspsaga.nvim',
+    "nvimdev/lspsaga.nvim",
     enabled = enable.lsp,
     event = default_event,
     config = lspsaga.config,
     dependencies = lspsaga.dependencies,
   },
   {
-    'VonHeikemen/lsp-zero.nvim',
+    "VonHeikemen/lsp-zero.nvim",
     enabled = enable.lsp,
     branch = zero.branch,
   },
   {
-    "elentok/format-on-save.nvim",
+    "stevearc/conform.nvim",
     event = default_event,
     enabled = enable.lsp,
-    config = format.config,
+    keys = format.keys,
+    cmd = format.cmd,
+    init = format.init,
+    opts = format.opts,
   },
 }
 
