@@ -23,6 +23,7 @@ M.opts = {
     -- python = { "isort", "black" },
     -- python = { { "isort", "black" } },
     json = { "prettierd" },
+    rust = { "rustfmt" },
     css = { "prettierd" },
     javascript = { "prettierd" },
     javascriptreact = { "prettierd" },
