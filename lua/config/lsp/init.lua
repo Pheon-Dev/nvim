@@ -7,7 +7,6 @@ M.mason_lspconfig = config.mason_lspconfig
 M.mason = config.mason
 M.lspsaga = config.lspsaga
 M.format = config.format
-M.lint = config.lint
 M.zero = config.zero
 
 return M

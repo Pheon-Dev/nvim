@@ -2,7 +2,6 @@ local enable = require("config").enable
 
 local lspsaga = require("config.lsp.lspsaga")
 local format = require("config.lsp.format")
-local lint = require("config.lsp.lint")
 local lspconfig = require("config.lsp.lspconfig")
 local zero = require("config.lsp.zero")
 local mason = require("config.lsp.mason")
@@ -40,11 +39,6 @@ local M = {
     "VonHeikemen/lsp-zero.nvim",
     enabled = enable.lsp,
     branch = zero.branch,
-  },
-  {
-    "mfussenegger/nvim-lint",
-    enabled = enable.lsp,
-    config = lint.config,
   },
   {
     "stevearc/conform.nvim",
