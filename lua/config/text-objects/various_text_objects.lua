@@ -11,9 +11,9 @@ M.config = function()
     useDefaultKeymaps = true,
     -- disabledKeymaps = { "ai", "ii", "aI", "iI" },
     disabledKeymaps = {
-      "L",  -- vu
-      "r",  -- ri
-      "R",  -- rp
+      "L", -- vu
+      "r", -- ri
+      "R", -- rp
       "in", -- ir
       "il",
       -- "ai",

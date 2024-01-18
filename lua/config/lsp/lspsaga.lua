@@ -1,54 +1,54 @@
 local M = {}
 
 M.dependencies = {
-  'nvim-treesitter/nvim-treesitter',
-  'nvim-tree/nvim-web-devicons',
+  "nvim-treesitter/nvim-treesitter",
+  "nvim-tree/nvim-web-devicons",
 }
 
 M.config = function()
-  require('lspsaga').setup({
+  require("lspsaga").setup({
     defintion = {
       height = 0.5,
       width = 0.6,
       keys = {
-        edit = 'l',
-        vsplit = 'v',
-        split = 'b',
-        tabe = 't',
-        quit = { 'q', '<ESC>' },
-        close = 'x',
+        edit = "l",
+        vsplit = "v",
+        split = "b",
+        tabe = "t",
+        quit = { "q", "<ESC>" },
+        close = "x",
       },
     },
     outline = {
-      win_position = 'right',
+      win_position = "right",
       win_width = 30,
       auto_preview = true,
       detail = true,
       auto_close = true,
       close_after_jump = false,
-      layout = 'normal',
+      layout = "normal",
       max_height = 0.5,
       left_width = 0.3,
       keys = {
-        toggle_or_jump = 'l',
-        quit = { 'q', '<ESC>', 'h' },
-        jump = 'o',
-      }
+        toggle_or_jump = "l",
+        quit = { "q", "<ESC>", "h" },
+        jump = "o",
+      },
     },
     ui = {
       border = "rounded",
       devicon = true,
       title = true,
-      expand = '⊟',
-      code_action = "",
+      expand = "⊟",
+      code_action = "",
       actionfix = " ",
-      lines = { "╰", "├", "│", "─", "╭", },
+      lines = { "╰", "├", "│", "─", "╭" },
       kind = {},
       imp_sign = "󰳛",
     },
     symbol_in_winbar = {
       enable = true,
-      separator = '  ',
+      separator = "  ",
       show_file = true,
       folded_level = 1,
       color_mode = true,
@@ -59,9 +59,9 @@ M.config = function()
       show_server_name = false,
       extend_gitsigns = false,
       keys = {
-        quit = { 'q', '<ESC>' },
-        exec = '<CR>'
-      }
+        quit = { "q", "<ESC>" },
+        exec = "<CR>",
+      },
     },
     rename = {
       in_select = true,
@@ -69,30 +69,30 @@ M.config = function()
       project_max_width = 0.5,
       project_max_height = 0.5,
       keys = {
-        quit = { 'q', '<ESC>' },
-        exec = '<CR>',
-        select = 'x'
+        quit = { "q", "<ESC>" },
+        exec = "<CR>",
+        select = "x",
       },
     },
     finder = {
       max_height = 0.6,
       max_width = 0.6,
       right_width = 0.3,
-      default = 'ref+imp',
+      default = "ref+imp",
       methods = {},
-      layout = 'float',
+      layout = "float",
       filter = {},
       silent = false,
       keys = {
         vsplit = "v",
         split = "b",
-        shuttle = 'w',
-        toggle_or_open = 'l',
-        quit = 'q',
-        close = 'x',
-        tabe = 't',
-        tabnew = 'T',
-      }
+        shuttle = "w",
+        toggle_or_open = "l",
+        quit = "q",
+        close = "x",
+        tabe = "t",
+        tabnew = "T",
+      },
     },
     diagnostic = {
       show_code_action = true,
@@ -102,28 +102,28 @@ M.config = function()
       text_hl_follow = true,
       border_follow = true,
       extend_relatedInformation = false,
-      show_layout = 'float',
+      show_layout = "float",
       show_normal_height = 10,
       max_show_width = 0.9,
       max_show_height = 0.6,
       diagnostic_only_current = true,
       keys = {
-        quit = { 'q', '<ESC>' },
+        quit = { "q", "<ESC>" },
         exec_action = "o",
-        toggle_or_jump = '<CR>',
-        quit_in_show = { 'q', '<ESC>' },
-      }
+        toggle_or_jump = "<CR>",
+        quit_in_show = { "q", "<ESC>" },
+      },
     },
   })
   local signs = {
-    Error = '',
-    Warn = '',
-    Info = '',
-    Hint = '󰠠',
-    Question = '',
+    Error = "",
+    Warn = "",
+    Info = "",
+    Hint = "󰠠",
+    Question = "",
   }
   for type, icon in pairs(signs) do
-    local hl = 'DiagnosticSign' .. type
+    local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
 
@@ -161,8 +161,8 @@ M.config = function()
         user_data = diagnostic.user_data or {}
         user_data = user_data.lsp or user_data.null_ls or user_data
         local code = (
-        -- TODO: symbol is specific to pylint (will be removed)
-          diagnostic.symbol
+                    -- TODO: symbol is specific to pylint (will be removed)
+diagnostic.symbol
           or diagnostic.code
           or user_data.symbol
           or user_data.code
