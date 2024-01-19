@@ -8,7 +8,7 @@ M.config = function()
   -- local latte = require("catppuccin.palettes").get_palette "latte"
   -- local frappe = require("catppuccin.palettes").get_palette "frappe"
   -- local macchiato = require("catppuccin.palettes").get_palette "macchiato"
-  local mocha = require("catppuccin.palettes").get_palette "mocha"
+  local mocha = require("catppuccin.palettes").get_palette("mocha")
 
   local colors = mocha
 
@@ -34,11 +34,11 @@ M.config = function()
         statusline = {
           "dashboard",
           "NvimTree",
-          "floaterm"
-        }
+          "floaterm",
+        },
       },
-      component_separators = { left = '', right = '' },
-      section_separators = { left = '', right = '' },
+      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
       ignore_focus = {},
       always_divide_middle = true,
       globalstatus = false,
@@ -58,7 +58,7 @@ M.config = function()
       lualine_c = {},
       lualine_x = {},
     },
-    extensions = {}
+    extensions = {},
   }
 
   local function sec_left(component)
@@ -144,9 +144,9 @@ M.config = function()
     "filename",
     cond = conditions.buffer_not_empty,
     color = { fg = colors.grey },
-    file_status = true,     -- Displays file status (readonly status, modified status)
+    file_status = true, -- Displays file status (readonly status, modified status)
     newfile_status = false, -- Display new file status (new file means no write after created)
-    path = 1,               -- 0: Just the filename
+    path = 1, -- 0: Just the filename
     -- 1: Relative path
     -- 2: Absolute path
     -- 3: Absolute path, with tilde as the home directory
@@ -207,11 +207,11 @@ M.config = function()
     "diagnostics",
     sources = { "nvim_diagnostic" },
     symbols = {
-      error = ' ',
-      warn = ' ',
-      info = ' ',
-      hint = '󰠠 ',
-      question = ' ',
+      error = " ",
+      warn = " ",
+      info = " ",
+      hint = "󰠠 ",
+      question = " ",
     },
     diagnostics_color = {
       color_error = { fg = colors.red },
@@ -242,7 +242,7 @@ M.config = function()
   -- arrow
   sec_right({
     function()
-      local statusline = require('arrow.statusline')
+      local statusline = require("arrow.statusline")
       -- statusline.is_on_arrow_file()               -- return nil if current file is not on arrow.  Return the index if it is.
       -- statusline.text_for_statusline() -- return the text to be shown in the statusline (the index if is on arrow or "" if not)
       statusline.text_for_statusline_with_icons() -- Same, but with an bow and arrow icon ;D

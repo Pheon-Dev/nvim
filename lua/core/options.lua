@@ -13,42 +13,42 @@ g.autoformat = true
 -- * a function with signature `function(buf) -> string|string[]`
 g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
-o.autowrite = true           -- Enable auto write
+o.autowrite = true -- Enable auto write
 -- o.autowriteall = true        -- Enable auto write
-o.clipboard = "unnamedplus"  -- Sync with system clipboard
+o.clipboard = "unnamedplus" -- Sync with system clipboard
 o.completeopt = "menu,menuone,noselect"
-o.conceallevel = 0           -- Hide * markup for bold and italic 3
-o.confirm = true             -- Confirm to save changes before exiting modified buffer
-o.cursorline = true          -- Enable highlighting of the current line
-o.expandtab = true           -- Use spaces instead of tabs
+o.conceallevel = 0 -- Hide * markup for bold and italic 3
+o.confirm = true -- Confirm to save changes before exiting modified buffer
+o.cursorline = true -- Enable highlighting of the current line
+o.expandtab = true -- Use spaces instead of tabs
 o.formatoptions = "jcroqlnt" -- tcqj
 o.grepformat = "%f:%l:%c:%m"
 o.grepprg = "rg --vimgrep"
-o.ignorecase = true      -- Ignore case
+o.ignorecase = true -- Ignore case
 o.inccommand = "nosplit" -- preview incremental substitute
-o.laststatus = 3         -- 2
-o.mouse = "a"            -- Enable mouse mode
+o.laststatus = 2 -- 3
+o.mouse = "a" -- Enable mouse mode
 -- o.mouse = "nicr"
-o.number = true          -- Print line number
-o.pumblend = 10          -- Popup blend 10
-o.pumheight = 10         -- Maximum number of entries in a popup
-o.scrolloff = 4          -- Lines of context
-o.shiftround = true      -- Round indent
-o.shiftwidth = 2         -- Size of an indent
-o.showmode = false       -- Dont show mode since we have a statusline
-o.sidescrolloff = 8      -- Columns of context
-o.signcolumn = "yes"     -- Always show the signcolumn, otherwise it would shift the text each time
-o.smartcase = true       -- Don't ignore case with capitals
-o.splitbelow = true      -- Put new windows below current
-o.splitright = true      -- Put new windows right of current
-o.tabstop = 2            -- Number of spaces tabs count for
-o.termguicolors = true   -- True color support
+o.number = true -- Print line number
+o.pumblend = 10 -- Popup blend 10
+o.pumheight = 10 -- Maximum number of entries in a popup
+o.scrolloff = 4 -- Lines of context
+o.shiftround = true -- Round indent
+o.shiftwidth = 2 -- Size of an indent
+o.showmode = false -- Dont show mode since we have a statusline
+o.sidescrolloff = 8 -- Columns of context
+o.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+o.smartcase = true -- Don't ignore case with capitals
+o.splitbelow = true -- Put new windows below current
+o.splitright = true -- Put new windows right of current
+o.tabstop = 2 -- Number of spaces tabs count for
+o.termguicolors = true -- True color support
 o.timeoutlen = 500
 o.undofile = true
 o.undolevels = 10000
-o.updatetime = 300               -- Save swap file and trigger CursorHold
+o.updatetime = 300 -- Save swap file and trigger CursorHold
 o.wildmode = "longest:full,full" -- Command-line completion mode
-o.winminwidth = 5                -- Minimum window width
+o.winminwidth = 5 -- Minimum window width
 o.hidden = true
 o.wrap = true
 o.relativenumber = true
@@ -166,55 +166,62 @@ vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
 
 -- lf
-g.lf_map_keys                      = 0
-g.lf_command_override              = 'lf -command "set ratios 1:1"'
+g.lf_map_keys = 0
+g.lf_command_override = 'lf -command "set ratios 1:1"'
 -- float term
-g.floaterm_borderchars             = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
-g.floaterm_width                   = 0.9 -- default 0.6
-g.floaterm_height                  = 0.9 -- default 0.6
-g.floaterm_rootmarkers             = { "cargo.toml", "cargo.toml.lock", "package.json", ".git", ".gitignore",
-  "package-lock.json", "yarn.lock", "tsconfig.json" }
-g.floaterm_opener                  = "edit"
-g.floaterm_wintype                 = "float" -- options split, vsplit
-g.floaterm_title                   = "$1/$2" -- default 'floaterm: $1/$2'
-g.floaterm_autoclose               = 2       -- defailt 1 options 0-2
-g.floaterm_autohide                = 1       -- defailt 1 options 0-2
-g.floaterm_autoinsert              = true    -- defailt true
-g.floaterm_titleposition           = "left"  -- options left, right, center
-g.floaterm_position                =
-"center"                                     -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
+g.floaterm_borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" }
+g.floaterm_width = 0.9 -- default 0.6
+g.floaterm_height = 0.9 -- default 0.6
+g.floaterm_rootmarkers = {
+  "cargo.toml",
+  "cargo.toml.lock",
+  "package.json",
+  ".git",
+  ".gitignore",
+  "package-lock.json",
+  "yarn.lock",
+  "tsconfig.json",
+}
+g.floaterm_opener = "edit"
+g.floaterm_wintype = "float" -- options split, vsplit
+g.floaterm_title = "$1/$2" -- default 'floaterm: $1/$2'
+g.floaterm_autoclose = 2 -- defailt 1 options 0-2
+g.floaterm_autohide = 1 -- defailt 1 options 0-2
+g.floaterm_autoinsert = true -- defailt true
+g.floaterm_titleposition = "left" -- options left, right, center
+g.floaterm_position = "center" -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
 
-g.floaterm_keymap_toggle           = '<m-`>'
-g.floaterm_keymap_new              = "``"
-g.floaterm_keymap_prev             = "`p"
-g.floaterm_keymap_next             = "`n"
-g.floaterm_keymap_first            = "`h"
-g.floaterm_keymap_last             = "`l"
-g.floaterm_keymap_hide             = "`j"
-g.floaterm_keymap_show             = "`k"
-g.floaterm_keymap_kill             = "`;"
+g.floaterm_keymap_toggle = "<m-`>"
+g.floaterm_keymap_new = "``"
+g.floaterm_keymap_prev = "`p"
+g.floaterm_keymap_next = "`n"
+g.floaterm_keymap_first = "`h"
+g.floaterm_keymap_last = "`l"
+g.floaterm_keymap_hide = "`j"
+g.floaterm_keymap_show = "`k"
+g.floaterm_keymap_kill = "`;"
 
 -- FZF
-g.fzf_layout                       = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
-g.fzf_action                       = {
-  ['ctrl-t'] = 'tab split',
-  ['ctrl-b'] = 'split',
-  ['ctrl-v'] = 'vsplit',
+g.fzf_layout = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
+g.fzf_action = {
+  ["ctrl-t"] = "tab split",
+  ["ctrl-b"] = "split",
+  ["ctrl-v"] = "vsplit",
 }
 
 g.bookmark_no_default_key_mappings = 1
-g.bookmark_sign                    = ''
-g.bookmark_annotation_sign         = ''
-g.bookmark_save_per_working_dir    = 1
-g.bookmark_auto_save               = 1
-g.bookmark_manage_per_buffer       = 0
+g.bookmark_sign = ""
+g.bookmark_annotation_sign = ""
+g.bookmark_save_per_working_dir = 1
+g.bookmark_auto_save = 1
+g.bookmark_manage_per_buffer = 0
 -- g.bookmark_auto_save_file = '$HOME' .. '/.vim-bookmarks'
-g.bookmark_auto_close              = 0
-g.bookmark_highlight_lines         = 0
-g.bookmark_show_warning            = 1
-g.bookmark_show_toggle_warning     = 1
-g.bookmark_center                  = 0
+g.bookmark_auto_close = 0
+g.bookmark_highlight_lines = 0
+g.bookmark_show_warning = 1
+g.bookmark_show_toggle_warning = 1
+g.bookmark_center = 0
 g.bookmark_no_default_key_mappings = 0
-g.bookmark_location_list           = 0
-g.bookmark_disable_ctrlp           = 0
-g.bookmark_display_annotation      = 0
+g.bookmark_location_list = 0
+g.bookmark_disable_ctrlp = 0
+g.bookmark_display_annotation = 0
