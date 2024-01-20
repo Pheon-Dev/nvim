@@ -35,6 +35,11 @@ local M = {
     enabled = enable.tshjkl,
     config = tshjkl.config,
   },
+  {
+    "chaoren/vim-wordmotion",
+    event = default_event,
+    enabled = enable.wordmotion,
+  },
 }
 
 return M

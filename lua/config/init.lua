@@ -50,6 +50,7 @@ M.enable = {
   tshjkl = true,
   eyeliner = true,
   hardtime = true,
+  wordmotion = true,
   treesitter_textobjects = true,
   various_textobjects = true,
   comment_textobjects = true,
