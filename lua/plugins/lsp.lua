@@ -2,6 +2,7 @@ local enable = require("config").enable
 
 local lspsaga = require("config.lsp.lspsaga")
 local format = require("config.lsp.format")
+local signature = require("config.lsp.signature")
 local lspconfig = require("config.lsp.lspconfig")
 local zero = require("config.lsp.zero")
 local mason = require("config.lsp.mason")
@@ -49,6 +50,12 @@ local M = {
     init = format.init,
     config = format.config,
     opts = format.opts,
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = default_event,
+    opts = signature.opts,
+    config = signature.config,
   },
 }
 

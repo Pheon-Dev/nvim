@@ -37,16 +37,23 @@ M.config = function()
 
   local source_mapping = {
     -- copilot = " pilot",
-    luasnip = " snip",
-    nvim_lsp = "󰯓 lsp",
-    buffer = "󰓩 buf",
-    nvim_lua = " lua",
-    orgmode = " org",
-    cmdline = " cmd",
-    crates = " cr8",
-    nvim_lsp_signature_help = "󰏚 sign",
-    path = "󰙅 path",
+    luasnip = "   snip",
+    nvim_lsp = " 󰯓  lsp",
+    buffer = " 󰓩  buf",
+    nvim_lua = "   lua",
+    orgmode = "   org",
+    cmdline = "  cmd",
+    crates = "   cr8",
+    -- nvim_lsp_signature_help = " 󰏚  sign",
+    path = " 󰙅  path",
   }
+  local a = 12
+  local b = 10
+
+  function add(a, b)
+    return a + b
+  end
+  -- add(a, b)
 
   local function border(hl_name)
     return {
@@ -80,13 +87,12 @@ M.config = function()
     },
     enabled = function()
       -- disable completion in comments
-      local context = require 'cmp.config.context'
+      local context = require("cmp.config.context")
       -- keep command mode completion enabled when cursor is in a comment
-      if vim.api.nvim_get_mode().mode == 'c' then
+      if vim.api.nvim_get_mode().mode == "c" then
         return true
       else
-        return not context.in_treesitter_capture("comment")
-            and not context.in_syntax_group("Comment")
+        return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
       end
     end,
     sorting = {
@@ -143,15 +149,15 @@ M.config = function()
     },
     sources = cmp.config.sources({
       -- { name = "copilot",                group_index = 2 },
-      { name = "nvim_lsp",               group_index = 2 },
-      { name = "buffer",                 group_index = 2 },
-      { name = "nvim_lua",               group_index = 2 },
-      { name = "luasnip",                group_index = 2 },
-      { name = "path",                   group_index = 2 },
-      { name = "crates",                 group_index = 2 },
-      { name = "orgmode",                group_index = 2 },
-      { name = "nvim_lsp_signature_help" },
-      { name = "cmdline",                group_index = 1 },
+      { name = "nvim_lsp", group_index = 2 },
+      { name = "buffer", group_index = 2 },
+      { name = "nvim_lua", group_index = 2 },
+      { name = "luasnip", group_index = 2 },
+      { name = "path", group_index = 2 },
+      { name = "crates", group_index = 2 },
+      { name = "orgmode", group_index = 2 },
+      -- { name = "nvim_lsp_signature_help" },
+      { name = "cmdline", group_index = 1 },
     }, {
       { name = "buffer", keyword_length = 3 },
     }),
@@ -171,39 +177,37 @@ M.config = function()
     -- completion = { completeopt = "menu,menuone,noinsert" },
   })
 
-  cmp.setup.cmdline(':', {
+  cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources(
+    sources = cmp.config.sources({
+      { name = "path" },
+    }, {
       {
-        { name = "path" },
-      },
-      {
-        {
-          name = "cmdline",
-          option = {
-            ignore_cmds = { "Man", "!" }
-          }
+        name = "cmdline",
+        option = {
+          ignore_cmds = { "Man", "!" },
         },
-      }),
+      },
+    }),
     enabled = function()
       -- Set of commands where cmp will be disabled
       local disabled = {
-        IncRename = true
+        IncRename = true,
       }
       -- Get first word of cmdline
       local cmd = vim.fn.getcmdline():match("%S+")
       -- Return true if cmd isn't disabled
       -- else call/return cmp.close(), which returns false
       return not disabled[cmd] or cmp.close()
-    end
+    end,
   })
 
   -- `/`, `?` cmdline setup.
   cmp.setup.cmdline({ "?", "/" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'buffer' }
-    }
+      { name = "buffer" },
+    },
   })
   require("luasnip").config.set_config({ history = true, updateevents = "TextChanged,TextChangedI" })
 
