@@ -47,13 +47,6 @@ M.config = function()
     -- nvim_lsp_signature_help = " 󰏚  sign",
     path = " 󰙅  path",
   }
-  local a = 12
-  local b = 10
-
-  function add(a, b)
-    return a + b
-  end
-  -- add(a, b)
 
   local function border(hl_name)
     return {
