@@ -58,6 +58,7 @@ M.enable = {
   bracketed = true,
   substitute = true,
   dashboard = true,
+  arrow = true,
   codeium = true,
 }
 

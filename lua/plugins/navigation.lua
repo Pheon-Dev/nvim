@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local oil = require("config.navigation.oil")
+local arrow = require("config.navigation.arrow")
 local antelope = require("config.navigation.antelope")
 local which_key = require("config.navigation.which-key")
 
@@ -21,11 +22,18 @@ local M = {
     config = antelope.config,
   },
   {
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
     enable = enable.oil,
     event = default_event,
     dependencies = oil.dependencies,
     config = oil.config,
+  },
+  {
+    "otavioschwanck/arrow.nvim",
+    enable = enable.arrow,
+    event = "VeryLazy",
+    opts = arrow.opts,
+    config = arrow.config,
   },
 }
 
