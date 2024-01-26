@@ -20,7 +20,6 @@ map("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
 map("n", "<A-x>", "<C-w>x", { noremap = true, silent = true })
 
 map("n", "<A-v>", ":vsplit<cr>", { noremap = true, silent = true })
-map("n", "<A-n>", ":vsplit<cr>", { noremap = true, silent = true })
 map("n", "<A-b>", ":split<cr>", { noremap = true, silent = true })
 
 map("n", "<A-V>", "<C-w>t<C-w>K", { noremap = true, silent = true, desc = "Switch Vertical" })

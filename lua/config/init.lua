@@ -49,8 +49,8 @@ M.enable = {
   targets = true,
   tshjkl = true,
   eyeliner = true,
-  hardtime = true,
   wordmotion = true,
+  hurl = true,
   treesitter_textobjects = true,
   various_textobjects = true,
   comment_textobjects = true,
@@ -58,7 +58,6 @@ M.enable = {
   bracketed = true,
   substitute = true,
   dashboard = true,
-  arrow = true,
   codeium = true,
 }
 

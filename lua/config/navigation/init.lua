@@ -4,7 +4,6 @@ local M = {}
 
 M.antelope = config.antelope
 M.oil = config.oil
-M.arrow = config.arrow
 M.which_key = config.which_key
 
 return M

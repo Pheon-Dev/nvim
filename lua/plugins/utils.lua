@@ -3,7 +3,6 @@ local enable = require("config").enable
 local theme = require("config.utils.theme")
 local dashboard = require("config.utils.dashboard")
 local lualine = require("config.utils.lualine")
-local hardtime = require("config.utils.hardtime")
 local cmp = require("config.utils.cmp")
 local yanky = require("config.utils.yanky")
 local dial = require("config.utils.dial")
@@ -69,12 +68,6 @@ local M = {
     enabled = enable.lualine,
     event = default_event,
     config = lualine.config,
-  },
-  {
-    "m4xshen/hardtime.nvim",
-    enabled = enable.hardtime,
-    event = default_event,
-    config = hardtime.config,
   },
   {
     "hrsh7th/nvim-cmp",
