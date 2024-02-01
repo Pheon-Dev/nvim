@@ -37,9 +37,9 @@ M.config = function()
   -- vim.api.nvim_set_hl(0, "IncSearch", { fg = theme.color89, bg = theme.color0 })
   vim.api.nvim_set_hl(0, "VirtColumn", { fg = theme.color1 })
   vim.api.nvim_set_hl(0, "ColorColumn", { bg = theme.color1 })
-  -- vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color101 })
+  vim.api.nvim_set_hl(0, "CursorLineNR", { fg = theme.color20 })
   vim.api.nvim_set_hl(0, "Title", { link = "Keyword" })
-  vim.api.nvim_set_hl(0, "CursorLineNR", { link = "Title" })
+  -- vim.api.nvim_set_hl(0, "CursorLineNR", { link = "Title" })
   -- vim.api.nvim_set_hl(0, "Title", { fg = theme.color101, bg = theme.color0 })
 
   -- CMP
