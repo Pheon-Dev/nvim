@@ -6,7 +6,7 @@ local map = vim.api.nvim_set_keymap
 -- Saving and  ESC on insert Mode
 map("i", "jj", "<esc>", { noremap = true, silent = true })
 map("i", "<esc>", "<esc>", { noremap = true, silent = true })
-map("i", "'", ",", { noremap = true, silent = true })
+-- map("i", "'", ",", { noremap = true, silent = true })
 map("n", "<A-s>", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 -- map("n", "<A-s>", "<esc>:lua require('format-on-save').format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 

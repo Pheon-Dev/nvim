@@ -4,7 +4,7 @@ M.cmd = { "ConformInfo" }
 
 M.keys = {
   {
-    ",",
+    "A-s",
     function()
       vim.cmd(":w!")
       vim.cmd(":noh")
