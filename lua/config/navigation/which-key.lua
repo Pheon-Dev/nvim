@@ -7,7 +7,9 @@ end
 
 M.config = function()
   local ok, rt = pcall(require, "rust-tools")
-  if not ok then return end
+  if not ok then
+    return
+  end
   local wk = require("which-key")
 
   wk.setup({
@@ -41,26 +43,26 @@ M.config = function()
     },
     popup_mappings = {
       scroll_down = "<c-d>", -- binding to scroll down inside the popup
-      scroll_up = "<c-u>",   -- binding to scroll up inside the popup
+      scroll_up = "<c-u>", -- binding to scroll up inside the popup
     },
     window = {
-      border = "single",        -- none, single, double, shadow
-      position = "bottom",      -- bottom, top
-      margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]
+      border = "single", -- none, single, double, shadow
+      position = "bottom", -- bottom, top
+      margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
       padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
       winblend = 0,
     },
     layout = {
-      height = { min = 4, max = 25 },                                             -- min and max height of the columns
-      width = { min = 20, max = 50 },                                             -- min and max width of the columns
-      spacing = 3,                                                                -- spacing between columns
-      align = "left",                                                             -- align columns left, center or right
+      height = { min = 4, max = 25 }, -- min and max height of the columns
+      width = { min = 20, max = 50 }, -- min and max width of the columns
+      spacing = 3, -- spacing between columns
+      align = "left", -- align columns left, center or right
     },
-    ignore_missing = false,                                                       -- enable this to hide mappings for which you didn't specify a label
+    ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
     hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-    show_help = true,                                                             -- show help message on the command line when the popup is visible
-    show_keys = true,                                                             -- show the currently pressed key and its label as a message in the command line
-    triggers = "auto",                                                            -- automatically setup triggers
+    show_help = true, -- show help message on the command line when the popup is visible
+    show_keys = true, -- show the currently pressed key and its label as a message in the command line
+    triggers = "auto", -- automatically setup triggers
     -- triggers = {"<leader>"} -- or specify a list manually
     triggers_blacklist = {
       -- list of mode / prefixes that should never be hooked by WhichKey
@@ -78,7 +80,9 @@ M.config = function()
   })
 
   local oc, crates = pcall(require, "crates")
-  if not oc then return end
+  if not oc then
+    return
+  end
 
   -- local dap, dapui = require("dap"), require("dapui")
 
@@ -87,18 +91,14 @@ M.config = function()
     -- h = { ":lua require('harpoon').list():append()<cr>", "Harpoon Mark File" },
     j = { ":Oil<cr>", "Oil" },
     -- k = { ":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<cr>", "Harpoon" },
-    m = { ":Antelope marks<cr>", "Marks" },
+    -- m = { ":Antelope marks<cr>", "Marks" },
     n = {
       name = "Notifications",
       n = { ":Noice<cr>", "Noice Notification" },
       m = { ":messages<cr>", "Messages" },
     },
-    o = {
-      name = "Others",
-      m = { ":Mason<cr>", "Mason" },
-      x = { ":lua require('harpoon.mark').clear_all()<cr>", "Clear All Marks" },
-    },
-    p = { ":Antelope tabpages<cr>", "Toggle Tabapages" },
+    m = { ":Mason<cr>", "Mason" },
+    -- p = { ":Antelope tabpages<cr>", "Toggle Tabapages" },
     q = { ":bd<cr>", "Close Buffer" },
     r = {
       name = "Rust",
@@ -154,7 +154,7 @@ M.config = function()
         a = { ":TSToolsAddMissingImports<cr>", "Add Missing Imports" },
         f = { ":TSToolsFixAll<cr>", "Fix All" },
         d = { ":TSToolsGoToSourceDefinition<cr>", "Go To Source Definition" },
-      }
+      },
     },
     x = { "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", "Quickfix All Diagnostics" },
     z = { ":Lazy<cr>", "Lazy" },
