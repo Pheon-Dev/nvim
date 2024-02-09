@@ -12,25 +12,33 @@ M.keys = {
   {
     "zj",
     mode = { "n" },
-    function() require("ufo").openAllFolds() end,
+    function()
+      require("ufo").openAllFolds()
+    end,
     desc = "Open all folds",
   },
   {
     "zk",
     mode = { "n" },
-    function() require("ufo").closeAllFolds() end,
+    function()
+      require("ufo").closeAllFolds()
+    end,
     desc = "Close all folds",
   },
   {
     "zh",
     mode = { "n" },
-    function() require("ufo").openFoldsExceptKinds() end,
+    function()
+      require("ufo").openFoldsExceptKinds()
+    end,
     desc = "Open folds except kinds",
   },
   {
     "zg",
     mode = { "n" },
-    function() require("ufo").closeFoldsWith() end,
+    function()
+      require("ufo").closeFoldsWith()
+    end,
     desc = "Close folds with",
   },
   {
@@ -43,7 +51,7 @@ M.keys = {
       end
     end,
     desc = "Preview fold",
-  }
+  },
 }
 
 M.config = function()
@@ -60,7 +68,7 @@ M.config = function()
 
   local handler = function(virtText, lnum, endLnum, width, truncate, ctx)
     local newVirtText = {}
-    local suffix = ("  %d "):format(endLnum - lnum)
+    local suffix = (" ➜ %d "):format(endLnum - lnum)
     local sufWidth = vim.fn.strdisplaywidth(suffix)
     local targetWidth = width - sufWidth
     local curWidth = 0
@@ -97,13 +105,15 @@ M.config = function()
     end
 
     return require("ufo")
-        .getFolds(bufnr, "lsp")
-        -- :catch(function(err)
-        --   return handleFallbackException(err, "treesitter")
-        -- end)
-        :catch(function(err)
+      .getFolds(bufnr, "lsp")
+      -- :catch(function(err)
+      --   return handleFallbackException(err, "treesitter")
+      -- end)
+      :catch(
+        function(err)
           return handleFallbackException(err, "indent")
-        end)
+        end
+      )
   end
 
   ufo.setup({

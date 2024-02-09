@@ -120,6 +120,14 @@ M.shortcut = {
     key = "s",
   },
   {
+    icon = " ",
+    group = "DashboardIcon",
+    desc = "",
+    icon_hl = "DiagnosticHint",
+    action = "FloatermNew broot",
+    key = "c",
+  },
+  {
     icon = " ",
     group = "DashboardIcon",
     desc = "",
@@ -128,7 +136,7 @@ M.shortcut = {
     key = "t",
   },
   {
-    icon = "鈴",
+    icon = "ℤ",
     group = "DashboardIcon",
     desc = "",
     icon_hl = "Number",

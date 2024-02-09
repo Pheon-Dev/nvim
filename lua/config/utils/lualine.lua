@@ -154,9 +154,9 @@ M.config = function()
     shorting_target = 40, -- Shortens path to leave 40 spaces in the window
     symbols = {
       -- for other components. (terrible name, any suggestions?)
-      readonly = "", -- Text to show when the file is non-modifiable or readonly.
+      readonly = "", -- Text to show when the file is non-modifiable or readonly.
       modified = "", -- Text to show when the file is modified.
-      unnamed = "ﲃ", -- Text to show for unnamed buffers.
+      unnamed = "", -- Text to show for unnamed buffers.
       newfile = "", -- Text to show for newly created file before first write
     },
   })
@@ -164,7 +164,7 @@ M.config = function()
   -- git diffs
   sec_left({
     "diff",
-    symbols = { added = " ", modified = " ", removed = " ", renamed = " ", ignored = " " },
+    symbols = { added = " ", modified = " ", removed = " ", renamed = " ", ignored = " " },
     diff_color = {
       added = { fg = colors.green },
       modified = { fg = colors.orange },

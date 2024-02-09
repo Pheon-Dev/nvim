@@ -152,13 +152,13 @@ else
     documents = {
       File = " ",
       Files = " ",
-      Folder = " ",
       OpenFolder = " ",
+      Folder = " ",
     },
     git = {
       Add = " ",
-      Mod = " ",
-      Remove = " ",
+      Mod = "",
+      Remove = "  ",
       Ignore = " ",
       Rename = " ➜ ",
       Diff = " ",
