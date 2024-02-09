@@ -149,7 +149,7 @@ M.treesitter_textobjects = {
     -- * query_string: eg '@function.inner'
     -- * selection_mode: eg 'v'
     -- and should return true of false
-    include_surrounding_whitespace = false
+    include_surrounding_whitespace = false,
   },
   swap = {
     enable = true,
@@ -179,7 +179,7 @@ M.treesitter_textobjects = {
     goto_previous_end = goto_previous_end,
   },
   lsp_interop = {
-    enable = true,
+    enable = false,
     floating_preview_opts = { border = "rounded" },
     peek_definition_code = {
       ["<C-t>"] = "@function.outer",
