@@ -11,6 +11,7 @@ M.enable = {
   rust_tools = true,
   rust_vim = true,
   crates = true,
+  just = true,
   autotag = true,
   context = true,
   illuminate = true,
