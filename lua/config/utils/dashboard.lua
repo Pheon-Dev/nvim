@@ -125,7 +125,7 @@ M.shortcut = {
     desc = "",
     icon_hl = "@property",
     action = "FloatermNew",
-    key = "`",
+    key = "t",
   },
   {
     icon = "鈴",
