@@ -2,6 +2,7 @@ local M = {}
 
 M.enable = {
   lsp = true,
+  mind = true,
   dial = true,
   quickfix = true,
   cmp = true,

@@ -2,6 +2,7 @@ local enable = require("config").enable
 
 local theme = require("config.utils.theme")
 local dashboard = require("config.utils.dashboard")
+local mind = require("config.utils.mind")
 local lualine = require("config.utils.lualine")
 local cmp = require("config.utils.cmp")
 local yanky = require("config.utils.yanky")
@@ -126,6 +127,14 @@ local M = {
     event = default_event,
     enabled = enable.substitute,
     config = substitute.config,
+  },
+  {
+    "phaazon/mind.nvim",
+    event = default_event,
+    enabled = enable.mind,
+    config = mind.config,
+    branch = mind.branch,
+    dependencies = mind.dependencies,
   },
 }
 

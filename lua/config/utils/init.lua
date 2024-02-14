@@ -3,6 +3,7 @@ local config = require("config.utils")
 local M = {}
 
 M.dashboard = config.dashboard
+M.mind = config.mind
 M.cmp = config.cmp
 M.lualine = config.lualine
 M.scroll = config.scroll
