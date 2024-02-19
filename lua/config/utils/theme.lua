@@ -29,6 +29,10 @@ M.config = function()
   -- Float Term
   vim.api.nvim_set_hl(0, "FloatermBorder", { fg = theme.color2, bg = theme.color0 })
 
+  vim.api.nvim_set_hl(0, "WinSeparator", { fg = theme.color2, bg = theme.color0 })
+  -- vim.api.nvim_set_hl(0, "CustomContextVt", { fg = theme.color2, bg = theme.color0 })
+  vim.api.nvim_set_hl(0, "CustomContextVt", { link = "Comment" })
+
   vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = theme.color1 })
   vim.api.nvim_set_hl(0, "CodeiumSuggestion", { fg = theme.color3 })
 

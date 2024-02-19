@@ -9,6 +9,8 @@ M.read = {
 
 M.lazy = "VeryLazy"
 
+M.new = "WinNew"
+
 M.attach = "LspAttach"
 
 M.enter = {

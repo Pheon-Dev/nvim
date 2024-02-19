@@ -5,8 +5,11 @@ local noice = require("config.eyecandy.noicey")
 local notify = require("config.eyecandy.notify")
 local hlargs = require("config.eyecandy.hlargs")
 local windows = require("config.eyecandy.windows")
+local winsep = require("config.eyecandy.winsep")
+local context = require("config.eyecandy.context")
 
 local default_event = require("config.event").default
+local new_event = require("config.event").default
 
 local M = {
   {
@@ -19,7 +22,7 @@ local M = {
     "rcarriga/nvim-notify",
     enabled = enable.notify,
     event = default_event,
-    config = notify.config
+    config = notify.config,
   },
   {
     "folke/noice.nvim",
@@ -30,18 +33,30 @@ local M = {
     config = noice.config,
   },
   {
-    'm-demare/hlargs.nvim',
+    "m-demare/hlargs.nvim",
     enabled = enable.hlargs,
     event = default_event,
     dependencies = hlargs.dependencies,
-    config = hlargs.config
+    config = hlargs.config,
   },
   {
     "anuvyklack/windows.nvim",
     enabled = enable.windows,
     event = default_event,
     dependencies = windows.dependencies,
-    config = windows.config
+    config = windows.config,
+  },
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    enabled = enable.winsep,
+    event = new_event,
+    config = winsep.config,
+  },
+  {
+    "andersevenrud/nvim_context_vt",
+    enabled = enable.context,
+    event = default_event,
+    config = context.config,
   },
 }
 
