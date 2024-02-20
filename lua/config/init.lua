@@ -5,7 +5,6 @@ M.enable = {
   mind = true,
   dial = true,
   winsep = true,
-  biscuit = true,
   quickfix = true,
   cmp = true,
   noice = true,
