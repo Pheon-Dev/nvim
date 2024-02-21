@@ -4,7 +4,6 @@ M.enable = {
   lsp = true,
   mind = true,
   dial = true,
-  winsep = true,
   quickfix = true,
   cmp = true,
   noice = true,

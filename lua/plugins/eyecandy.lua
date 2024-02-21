@@ -5,7 +5,6 @@ local noice = require("config.eyecandy.noicey")
 local notify = require("config.eyecandy.notify")
 local hlargs = require("config.eyecandy.hlargs")
 local windows = require("config.eyecandy.windows")
-local winsep = require("config.eyecandy.winsep")
 local context = require("config.eyecandy.context")
 
 local default_event = require("config.event").default
@@ -45,12 +44,6 @@ local M = {
     event = default_event,
     dependencies = windows.dependencies,
     config = windows.config,
-  },
-  {
-    "nvim-zh/colorful-winsep.nvim",
-    enabled = enable.winsep,
-    event = new_event,
-    config = winsep.config,
   },
   {
     "andersevenrud/nvim_context_vt",

@@ -8,7 +8,6 @@ M.notify = config.notify
 M.scroll = config.scroll
 M.hlargs = config.hlargs
 M.windows = config.windows
-M.winsep = config.winsep
 M.context = config.context
 
 return M
