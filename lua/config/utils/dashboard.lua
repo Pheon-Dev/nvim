@@ -136,7 +136,7 @@ M.shortcut = {
     key = "t",
   },
   {
-    icon = "ℤ",
+    icon = "󰒲 ",
     group = "DashboardIcon",
     desc = "",
     icon_hl = "Number",
