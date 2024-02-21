@@ -33,6 +33,17 @@ M.config = function()
     fg = theme.color2,
     bg = theme.color0,
   })
+
+  vim.api.nvim_set_hl(0, "StatusLineNC", {
+    fg = theme.color2,
+    bg = theme.color0,
+  })
+
+  --[[ vim.api.nvim_set_hl(0, "StatusLine", {
+    fg = theme.color2,
+    bg = theme.color0,
+  }) ]]
+
   vim.api.nvim_set_hl(0, "CustomContextVt", { link = "Comment" })
 
   vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = theme.color1 })
