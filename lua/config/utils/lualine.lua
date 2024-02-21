@@ -33,7 +33,6 @@ M.config = function()
       disabled_filetypes = {
         statusline = {
           "dashboard",
-          "NvimTree",
           "floaterm",
         },
       },
@@ -58,11 +57,20 @@ M.config = function()
       lualine_c = {},
       lualine_x = {},
     },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_y = {},
+      lualine_z = {},
+      lualine_c = {},
+      lualine_x = {},
+    },
     extensions = {},
   }
 
   local function sec_left(component)
     table.insert(config.sections.lualine_c, component)
+    table.insert(config.inactive_sections.lualine_c, component)
   end
 
   local function sec_right(component)
@@ -143,7 +151,7 @@ M.config = function()
   sec_left({
     "filename",
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.grey },
+    color = { fg = colors.fg },
     file_status = true, -- Displays file status (readonly status, modified status)
     newfile_status = false, -- Display new file status (new file means no write after created)
     path = 1, -- 0: Just the filename
