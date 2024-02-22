@@ -1,6 +1,7 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
   "LuaSnip": { "branch": "master", "commit": "f3b3d3446bcbfa62d638b1903ff00a78b2b730a1" },
+  "accidentslipt": { "branch": "main", "commit": "2ba82c44f7e1520afdb1938fd8657a9e85d0f25e" },
   "animation.nvim": { "branch": "main", "commit": "fb77091ab72ec9971aee0562e7081182527aaa6a" },
   "antelope": { "branch": "main", "commit": "3e73948cb13dff202141615b1e3e908767f97a5b" },
   "archer.nvim": { "branch": "master", "commit": "3dcf662f4b762973df910411b3da180e623f8249" },
