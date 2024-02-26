@@ -5,6 +5,7 @@ M.enable = {
   mind = true,
   dial = true,
   sep = true,
+  project = true,
   quickfix = true,
   cmp = true,
   noice = true,

@@ -4,6 +4,7 @@ local M = {}
 
 M.dashboard = config.dashboard
 M.mind = config.mind
+M.project = config.project
 M.cmp = config.cmp
 M.lualine = config.lualine
 M.scroll = config.scroll

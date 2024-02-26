@@ -155,7 +155,7 @@ M.shortcut = {
 
 M.footer = {}
 
-M.project = { enable = false, limit = 8, icon = "your icon", label = "", action = "FloatermNew fzf" }
+M.project = { enable = true, limit = 8, icon = "your icon", label = "", action = "FloatermNew fzf" }
 
 M.mru = { limit = 8, icon = "↘", label = "" }
 
