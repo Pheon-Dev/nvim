@@ -13,6 +13,26 @@ g.autoformat = true
 -- * a function with signature `function(buf) -> string|string[]`
 g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
+-- vim.o.guifont = "Maple Mono:h11"
+-- vim.o.guifont = "Maple Mono"
+vim.opt.linespace = 0
+vim.g.neovide_scale_factor = 0.8
+
+vim.g.neovide_padding_top = 2
+vim.g.neovide_padding_bottom = 0
+vim.g.neovide_padding_right = 2
+vim.g.neovide_padding_left = 2
+
+vim.g.neovide_floating_shadow = true
+vim.g.neovide_floating_z_height = 10
+vim.g.neovide_light_angle_degrees = 45
+vim.g.neovide_light_radius = 5
+
+vim.g.neovide_floating_blur_amount_x = 2.0
+vim.g.neovide_floating_blur_amount_y = 2.0
+
+vim.g.neovide_window_blurred = true
+vim.g.neovide_transparency = 0.9
 o.autowrite = true -- Enable auto write
 -- o.autowriteall = true        -- Enable auto write
 o.clipboard = "unnamedplus" -- Sync with system clipboard

@@ -12,6 +12,7 @@ local substitute = require("config.utils.substitute")
 local fold = require("config.utils.fold")
 local fundo = require("config.utils.fundo")
 local bookmarks = require("config.utils.bookmarks")
+local project = require("config.utils.project")
 
 local lazy_event = require("config.event").lazy
 local default_event = require("config.event").default
@@ -135,6 +136,12 @@ local M = {
     config = mind.config,
     branch = mind.branch,
     dependencies = mind.dependencies,
+  },
+  {
+    "ahmedkhalf/project.nvim",
+    event = default_event,
+    enabled = enable.project,
+    config = project.config,
   },
 }
 
