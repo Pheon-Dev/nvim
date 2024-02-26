@@ -47,7 +47,7 @@ M.config = function()
       imp_sign = "󰳛",
     },
     symbol_in_winbar = {
-      enable = true,
+      enable = false,
       separator = "  ",
       show_file = true,
       folded_level = 1,
