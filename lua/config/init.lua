@@ -2,10 +2,8 @@ local M = {}
 
 M.enable = {
   lsp = true,
-  mind = true,
   dial = true,
   sep = true,
-  project = true,
   quickfix = true,
   cmp = true,
   noice = true,
@@ -48,7 +46,6 @@ M.enable = {
   suda = true,
   diaglist = true,
   notify = true,
-  fundo = true,
   hlargs = true,
   targets = true,
   tshjkl = true,
@@ -60,7 +57,6 @@ M.enable = {
   comment_textobjects = true,
   archer_textobjects = true,
   bracketed = true,
-  substitute = true,
   dashboard = true,
   codeium = true,
 }

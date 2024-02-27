@@ -79,14 +79,14 @@ M.shortcut = {
     action = 'BookmarkShowAll',
     key = 'k'
   }, ]]
-  --[[ {
-    icon = '󱡅 ',
-    group = 'DashboardIcon',
-    desc = '',
-    icon_hl = '@function',
+  {
+    icon = "󱡅 ",
+    group = "DashboardIcon",
+    desc = "",
+    icon_hl = "@function",
     action = "lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())",
-    key = 'k'
-  }, ]]
+    key = "k",
+  },
   {
     icon = " ",
     group = "DashboardIcon",
@@ -155,7 +155,7 @@ M.shortcut = {
 
 M.footer = {}
 
-M.project = { enable = true, limit = 8, icon = "your icon", label = "", action = "FloatermNew fzf" }
+M.project = { enable = false, limit = 8, icon = "your icon", label = "", action = "FloatermNew fzf" }
 
 M.mru = { limit = 8, icon = "↘", label = "" }
 
