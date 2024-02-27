@@ -97,15 +97,7 @@ M.config = function()
       n = { ":Noice<cr>", "Noice Notification" },
       m = { ":messages<cr>", "Messages" },
     },
-    m = {
-      name = "Mind | Mason",
-      c = { ":MindClose<cr>", "Close" },
-      m = { ":MindOpenMain<cr>", "Main" },
-      p = { ":MindOpenProject<cr>", "Project" },
-      r = { ":MindReloadState<cr>", "Reload" },
-      s = { ":MindOpenSmartProject<cr>", "Smart Project" },
-      o = { ":Mason<cr>", "Mason" },
-    },
+    M = { ":Mason<cr>", "Mason" },
     -- p = { ":Antelope tabpages<cr>", "Toggle Tabapages" },
     q = { ":bd<cr>", "Close Buffer" },
     r = {
