@@ -2,7 +2,7 @@ local M = {}
 
 M.config = function()
   local utils = require("tsc.utils")
-  require('tsc').setup({
+  require("tsc").setup({
     auto_open_qflist = true,
     auto_close_qflist = false,
     auto_focus_qflist = false,
@@ -14,7 +14,7 @@ M.config = function()
       project = function()
         return utils.find_nearest_tsconfig()
       end,
-      watch = false,
+      watch = true,
       build = true,
     },
     hide_progress_notifications_from_history = true,

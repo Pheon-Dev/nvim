@@ -144,20 +144,18 @@ M.config = function()
     },
     t = {
       name = "TODO | TS",
+      o = { ":TSToolsOrganizeImports<cr>", "Organize Imports" },
+      s = { ":TSToolsSortImports<cr>", "Sort Imports" },
+      r = { ":TSToolsRemoveUnusedImports<cr>", "Remove Unused Imports" },
+      x = { ":TSToolsRemoveUnused<cr>", "Remove Unused Statements" },
+      a = { ":TSToolsAddMissingImports<cr>", "Add Missing Imports" },
+      f = { ":TSToolsFixAll<cr>", "Fix All" },
+      d = { ":TSToolsGoToSourceDefinition<cr>", "Go To Source Definition" },
+      c = { ":TSC<cr>", "TSC" },
       q = { ":TodoQuickFix<cr>", "TODO QuickFix" },
-      t = {
-        name = "Typescript",
-        o = { ":TSToolsOrganizeImports<cr>", "Organize Imports" },
-        s = { ":TSToolsSortImports<cr>", "Sort Imports" },
-        r = { ":TSToolsRemoveUnusedImports<cr>", "Remove Unused Imports" },
-        x = { ":TSToolsRemoveUnused<cr>", "Remove Unused Statements" },
-        a = { ":TSToolsAddMissingImports<cr>", "Add Missing Imports" },
-        f = { ":TSToolsFixAll<cr>", "Fix All" },
-        d = { ":TSToolsGoToSourceDefinition<cr>", "Go To Source Definition" },
-      },
     },
     x = { "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", "Quickfix All Diagnostics" },
-    z = { ":Lazy<cr>", "Lazy" },
+    y = { ":TodoQuickFix<cr>", "TODO QuickFix" },
   }
 
   local opts = {
