@@ -1,10 +1,12 @@
 local enable = require("config").enable
 
 local oil = require("config.navigation.oil")
+local tmux = require("config.navigation.tmux")
 local antelope = require("config.navigation.antelope")
 local which_key = require("config.navigation.which-key")
 
 local default_event = require("config.event").default
+local lazy_event = require("config.event").lazy
 
 local M = {
   {
@@ -26,6 +28,12 @@ local M = {
     event = default_event,
     dependencies = oil.dependencies,
     config = oil.config,
+  },
+  {
+    "numToStr/Navigator.nvim",
+    enable = enable.tmux,
+    event = lazy_event,
+    config = tmux.config,
   },
 }
 

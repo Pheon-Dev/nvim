@@ -7,17 +7,22 @@ local map = vim.api.nvim_set_keymap
 map("i", "jj", "<esc>", { noremap = true, silent = true })
 map("i", "<esc>", "<esc>", { noremap = true, silent = true })
 -- map("i", "'", ",", { noremap = true, silent = true })
-map("n", "<A-s>", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
+map("n", "<C-s>", "<esc>:lua vim.lsp.buf.format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 -- map("n", "<A-s>", "<esc>:lua require('format-on-save').format()<cr><esc>:w! | noh<cr>", { noremap = true, silent = true })
 
 -- Windows
 -- map("n", "<C-l>", "<C-w>p", { noremap = true, silent = true })
 -- map("n", "<A-n>", "<C-w>w", { noremap = true, silent = true })
-map("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
+--[[ map("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
 map("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
 map("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
-map("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
+map("n", "<A-j>", "<C-w>j", { noremap = true, silent = true }) ]]
 map("n", "<A-x>", "<C-w>x", { noremap = true, silent = true })
+
+--[[ map("n", "<A-l>", "<cmd>lua require('tmux').move_right()<cr>", { noremap = true, silent = true })
+map("n", "<A-h>", "<cmd>lua require('tmux').move_left()<cr>", { noremap = true, silent = true })
+map("n", "<A-k>", "<cmd>lua require('tmux').move_up()<cr>", { noremap = true, silent = true })
+map("n", "<A-j>", "<cmd>lua require('tmux').move_down()<cr>", { noremap = true, silent = true }) ]]
 
 map("n", "<A-v>", ":vsplit<cr>", { noremap = true, silent = true })
 map("n", "<A-b>", ":split<cr>", { noremap = true, silent = true })

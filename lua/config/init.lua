@@ -48,6 +48,7 @@ M.enable = {
   notify = true,
   hlargs = true,
   targets = true,
+  tmux = true,
   tshjkl = true,
   eyeliner = true,
   wordmotion = true,
