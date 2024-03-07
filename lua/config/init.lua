@@ -49,6 +49,7 @@ M.enable = {
   hlargs = true,
   targets = true,
   tmux = true,
+  before = true,
   tshjkl = true,
   eyeliner = true,
   wordmotion = true,
