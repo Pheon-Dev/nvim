@@ -39,7 +39,7 @@ local M = {
   {
     "bloznelis/before.nvim",
     enable = enable.before,
-    event = lazy_event,
+    event = default_event,
     config = before.config,
   },
 }
