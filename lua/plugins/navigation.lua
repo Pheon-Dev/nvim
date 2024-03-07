@@ -2,6 +2,7 @@ local enable = require("config").enable
 
 local oil = require("config.navigation.oil")
 local tmux = require("config.navigation.tmux")
+local before = require("config.navigation.before")
 local antelope = require("config.navigation.antelope")
 local which_key = require("config.navigation.which-key")
 
@@ -34,6 +35,12 @@ local M = {
     enable = enable.tmux,
     event = lazy_event,
     config = tmux.config,
+  },
+  {
+    "bloznelis/before.nvim",
+    enable = enable.before,
+    event = lazy_event,
+    config = before.config,
   },
 }
 
