@@ -213,15 +213,15 @@ g.floaterm_autoinsert = true -- defailt true
 g.floaterm_titleposition = "left" -- options left, right, center
 g.floaterm_position = "center" -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
 
-g.floaterm_keymap_toggle = "tt"
-g.floaterm_keymap_new = "tn"
-g.floaterm_keymap_prev = "tj"
-g.floaterm_keymap_next = "tk"
-g.floaterm_keymap_first = "th"
-g.floaterm_keymap_last = "tl"
+g.floaterm_keymap_toggle = "<C-t>t"
+g.floaterm_keymap_new = "<C-t>n"
+g.floaterm_keymap_prev = "<C-t>j"
+g.floaterm_keymap_next = "<C-t>k"
+g.floaterm_keymap_first = "<C-t>h"
+g.floaterm_keymap_last = "<C-t>l"
 -- g.floaterm_keymap_hide = "tj"
 -- g.floaterm_keymap_show = "tk"
-g.floaterm_keymap_kill = "tx"
+g.floaterm_keymap_kill = "<C-t>x"
 
 -- FZF
 g.fzf_layout = { window = { width = 0.9, height = 0.9, yoffset = 0.5 } }
