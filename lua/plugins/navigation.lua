@@ -39,10 +39,10 @@ local M = {
     config = tmux.config,
   },
   {
-    "bloznelis/before.nvim",
+    --[[ "bloznelis/before.nvim",
     enable = enable.before,
     event = default_event,
-    config = before.config,
+    config = before.config, ]]
   },
   {
     "otavioschwanck/arrow.nvim",
