@@ -2,7 +2,6 @@ local enable = require("config").enable
 
 local oil = require("config.navigation.oil")
 local tmux = require("config.navigation.tmux")
-local before = require("config.navigation.before")
 local arrow = require("config.navigation.arrow")
 local cliff = require("config.navigation.cliff")
 local antelope = require("config.navigation.antelope")
@@ -37,12 +36,6 @@ local M = {
     enable = enable.tmux,
     event = lazy_event,
     config = tmux.config,
-  },
-  {
-    --[[ "bloznelis/before.nvim",
-    enable = enable.before,
-    event = default_event,
-    config = before.config, ]]
   },
   {
     "otavioschwanck/arrow.nvim",

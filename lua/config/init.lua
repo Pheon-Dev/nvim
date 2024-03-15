@@ -49,7 +49,6 @@ M.enable = {
   hlargs = true,
   targets = true,
   tmux = true,
-  before = false,
   tshjkl = true,
   arrow = true,
   cliff = true,
