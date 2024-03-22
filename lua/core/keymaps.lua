@@ -24,13 +24,13 @@ map("n", "<A-h>", "<cmd>lua require('tmux').move_left()<cr>", { noremap = true, 
 map("n", "<A-k>", "<cmd>lua require('tmux').move_up()<cr>", { noremap = true, silent = true })
 map("n", "<A-j>", "<cmd>lua require('tmux').move_down()<cr>", { noremap = true, silent = true }) ]]
 
-map("n", "<leader>V", ":vsplit<cr>", { noremap = true, silent = true })
-map("n", "<leader>v", ":split<cr>", { noremap = true, silent = true })
+map("n", "<leader>wv", ":vsplit<cr>", { noremap = true, silent = true })
+map("n", "<leader>wb", ":split<cr>", { noremap = true, silent = true })
 
 map("n", "<A-y>", "<C-w>t<C-w>K", { noremap = true, silent = true, desc = "Switch Vertical" })
 map("n", "<A-t>", "<C-w>t<C-w>H", { noremap = true, silent = true, desc = "Switch Horizontal" })
 
-map("n", "<A-a>", ":w ++p ", { noremap = true, silent = true })
+map("n", "<leader>wa", ":w ++p ", { noremap = true, silent = true })
 -- map("n", ">", ":vertical resize +3<cr>", { noremap = true, silent = true })
 -- map("n", "<", ":vertical resize -3<cr>", { noremap = true, silent = true })
 -- map("n", "(", ":resize +3<cr>", { noremap = true, silent = true })
