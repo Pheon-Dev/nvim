@@ -3,7 +3,7 @@ local enable = require("config").enable
 local oil = require("config.navigation.oil")
 local tmux = require("config.navigation.tmux")
 local arrow = require("config.navigation.arrow")
-local cliff = require("config.navigation.cliff")
+local before = require("config.navigation.before")
 local antelope = require("config.navigation.antelope")
 local which_key = require("config.navigation.which-key")
 
@@ -44,10 +44,9 @@ local M = {
     config = arrow.config,
   },
   {
-    "Rentib/cliff.nvim",
-    enable = enable.cliff,
+    "bloznelis/before.nvim",
     event = default_event,
-    config = cliff.config,
+    config = before.config,
   },
 }
 
