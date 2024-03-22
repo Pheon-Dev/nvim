@@ -7,6 +7,7 @@ local cmp = require("config.utils.cmp")
 local yanky = require("config.utils.yanky")
 local dial = require("config.utils.dial")
 local muren = require("config.utils.muren")
+local cool_substitute = require("config.utils.cool-substitute")
 local fold = require("config.utils.fold")
 local bookmarks = require("config.utils.bookmarks")
 
@@ -102,6 +103,12 @@ local M = {
     enabled = enable.muren,
     event = default_event,
     config = muren.config,
+  },
+  {
+    "otavioschwanck/cool-substitute.nvim",
+    enabled = enable.cool_substitute,
+    event = default_event,
+    config = cool_substitute.config,
   },
   {
     "kevinhwang91/nvim-ufo",

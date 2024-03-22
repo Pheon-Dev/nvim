@@ -195,6 +195,20 @@ M.config = function()
     end,
   })
 
+  -- cool-substitute
+  sec_left({
+    function()
+      local sub = require("cool-substitute.status")
+      -- sub.status_with_icons -- return status with icons (nerdfonts)
+      -- sub.status_no_icons   -- return status without icons
+      -- sub.status_color()    -- return the color depending on the status of editing
+      return sub.status_with_icons()
+    end,
+    color = function()
+      return { fg = require("cool-substitute.status").status_color() }
+    end,
+  })
+
   -- macros etc
   sec_left({
     noice.api.statusline.mode.get,
