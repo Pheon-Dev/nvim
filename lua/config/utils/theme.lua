@@ -9,7 +9,24 @@ M.priority = 1000
 M.config = function()
   local theme = require("core.colors")
 
-  require("catppuccin").setup({})
+  require("catppuccin").setup({
+    integrations = {
+      cmp = true,
+      gitsigns = true,
+      ufo = true,
+      treesitter = true,
+      noice = false,
+      lsp_saga = false,
+      mini = {
+        enabled = true,
+        indentscope_color = "",
+      },
+      illuminate = {
+        enabled = true,
+        lsp = false,
+      },
+    },
+  })
 
   -- setup must be called before loading
   vim.cmd.colorscheme("catppuccin-mocha")

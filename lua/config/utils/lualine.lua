@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local M = {}
+
 M.config = function()
   local lualine = require("lualine")
   local noice = require("noice")
@@ -11,6 +12,7 @@ M.config = function()
   local mocha = require("catppuccin.palettes").get_palette("mocha")
 
   local colors = mocha
+  local theme = require("core.colors")
 
   local conditions = {
     buffer_not_empty = function()
@@ -44,8 +46,10 @@ M.config = function()
       refresh = {
         statusline = 1000,
       },
+      -- nightfly, palenight
+      -- theme = "catppuccin",
       theme = {
-        normal = { c = { fg = colors.fg, bg = colors.bg } },
+        normal = { c = { fg = colors.fg, bg = theme.color01 } },
       },
     },
     statusline = {},
@@ -77,7 +81,6 @@ M.config = function()
     table.insert(config.sections.lualine_x, component)
   end
 
-  local theme = require("core.colors")
   local my_colors = {
     n = theme.color37,
     i = theme.color16,
@@ -136,17 +139,16 @@ M.config = function()
   }
 
   sec_left({
-    -- "mode",
-    function()
+    "mode",
+    --[[ function()
       return mode[vim.fn.mode()]
-    end,
+    end, ]]
     -- "mode",
     color = function()
-      return { fg = mode_color[vim.fn.mode()], bg = colors.bg }
+      return { bg = mode_color[vim.fn.mode()], fg = theme.color0 }
     end,
     -- padding = { right = 1, left = 3 },
   })
-
   -- filename
   sec_left({
     "filename",
@@ -172,7 +174,8 @@ M.config = function()
   -- git diffs
   sec_left({
     "diff",
-    symbols = { added = " ", modified = " ", removed = " ", renamed = " ", ignored = " " },
+    -- symbols = { added = " ", modified = " ", removed = " ", renamed = " ", ignored = " " },
+    symbols = { added = " + ", modified = " ~ ", removed = " - ", renamed = " → ", ignored = " / " },
     diff_color = {
       added = { fg = colors.green },
       modified = { fg = colors.orange },
@@ -229,11 +232,16 @@ M.config = function()
     "diagnostics",
     sources = { "nvim_diagnostic" },
     symbols = {
-      error = " ",
+      --[[ error = " ",
       warn = " ",
       info = " ",
       hint = "󰠠 ",
-      question = " ",
+      question = " ", ]]
+      error = "x ",
+      warn = "! ",
+      info = "i ",
+      hint = "h ",
+      question = "? ",
     },
     diagnostics_color = {
       color_error = { fg = colors.red },
@@ -256,9 +264,9 @@ M.config = function()
   sec_right({
     function()
       local buffers = require("antelope.buffers").buffers()
-      return " " .. buffers -- 󱂬
+      return "󱂬 " .. buffers -- 󱂬 
     end,
-    color = "Keyword",
+    -- color = "Keyword",
   })
 
   -- volume
@@ -303,10 +311,11 @@ M.config = function()
     "branch",
     icon = { "", align = "left" },
     -- color = { fg = colors.yellow, ng = colors.bg },
-    color = "Comment",
+    -- color = "Comment",
     padding = { right = 1, left = 0 },
   })
 
   lualine.setup(config)
 end
+
 return M

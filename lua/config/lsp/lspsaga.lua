@@ -43,7 +43,8 @@ M.config = function()
       code_action = " ",
       actionfix = " ",
       lines = { "╰", "├", "│", "─", "╭" },
-      kind = {},
+      -- kind = {},
+      kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
       imp_sign = "󰳛",
     },
     symbol_in_winbar = {
