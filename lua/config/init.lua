@@ -52,6 +52,7 @@ M.enable = {
   tshjkl = true,
   arrow = true,
   before = true,
+  camelsnek = true,
   cool_substitute = true,
   eyeliner = true,
   wordmotion = true,

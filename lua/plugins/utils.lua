@@ -118,6 +118,11 @@ local M = {
     keys = fold.keys,
     config = fold.config,
   },
+  {
+    "nicwest/vim-camelsnek",
+    enabled = enable.camelsnek,
+    event = default_event,
+  },
 }
 
 return M

@@ -247,3 +247,7 @@ g.bookmark_no_default_key_mappings = 0
 g.bookmark_location_list = 0
 g.bookmark_disable_ctrlp = 0
 g.bookmark_display_annotation = 0
+
+-- g.camelsnek_alternative_camel_commands = 1
+-- g.camelsnek_i_am_an_old_fart_with_no_sense_of_humour_or_internet_culture = 0
+-- g.camelsnek_no_fun_allowed = 0
