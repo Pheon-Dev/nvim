@@ -63,7 +63,7 @@ map("n", "tk", ":tabprevious<cr>", { noremap = true, silent = true }) ]]
 
 -- remap
 -- map("n", "cc", "0D", { noremap = true, silent = true })
-map("n", "X", "v0c", { noremap = true, silent = true })
+-- map("n", "X", "v0c", { noremap = true, silent = true })
 -- map("n", ";", ":", { noremap = true, silent = true })
 -- vim.cmd("nnoremap ; :")
 -- map("n", "gi", "<C-i>", { noremap = true, silent = true })

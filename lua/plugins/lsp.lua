@@ -1,7 +1,6 @@
 local enable = require("config").enable
 
 local lspsaga = require("config.lsp.lspsaga")
-local garbage = require("config.lsp.garbage")
 local format = require("config.lsp.format")
 local lspconfig = require("config.lsp.lspconfig")
 local zero = require("config.lsp.zero")
@@ -50,13 +49,6 @@ local M = {
     init = format.init,
     config = format.config,
     opts = format.opts,
-  },
-  {
-    "zeioth/garbage-day.nvim",
-    enabled = enable.lsp,
-    event = lazy_event,
-    dependencies = garbage.dependencies,
-    opts = garbage.opts,
   },
 }
 
