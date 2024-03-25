@@ -83,7 +83,7 @@ M.config = function()
 
   local my_colors = {
     n = theme.color37,
-    i = theme.color16,
+    i = theme.color101,
     c = theme.color89,
     v = theme.color27,
     V = theme.color27,
