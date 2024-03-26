@@ -3,6 +3,7 @@ local enable = require("config").enable
 local flash = require("config.motion.flash")
 local eyeliner = require("config.motion.eyeliner")
 local tshjkl = require("config.motion.tshjkl")
+local surround = require("config.motion.surround")
 
 local default_event = require("config.event").default
 local read_pre_event = require("config.event").read.pre
@@ -13,7 +14,8 @@ local M = {
     "kylechui/nvim-surround",
     event = default_event,
     enabled = enable.surround,
-    config = true,
+    -- version = surround.version,
+    config = surround.config,
   },
   {
     "folke/flash.nvim",
