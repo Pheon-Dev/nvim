@@ -117,11 +117,16 @@ M.config = function()
     },
   })
   local signs = {
-    Error = "",
+    --[[ Error = "",
     Warn = "",
     Info = "",
     Hint = "󰠠",
-    Question = "",
+    Question = "", ]]
+    Error = "x",
+    Warn = "!",
+    Info = "i",
+    Hint = "*",
+    Question = "?",
   }
   for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
@@ -189,6 +194,30 @@ diagnostic.symbol
   map("n", "]d", ":Lspsaga diagnostic_jump_next<cr>", { desc = "Next Diagnostic", silent = true })
   map("n", "[d", ":Lspsaga diagnostic_jump_prev<cr>", { desc = "Previous Diagnostic", silent = true })
 
+  vim.keymap.set("n", "[e", function()
+    vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
+  end)
+  vim.keymap.set("n", "]e", function()
+    vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
+  end)
+  vim.keymap.set("n", "[r", function()
+    vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.HINT })
+  end)
+  vim.keymap.set("n", "]r", function()
+    vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.HINT })
+  end)
+  vim.keymap.set("n", "[w", function()
+    vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })
+  end)
+  vim.keymap.set("n", "]w", function()
+    vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })
+  end)
+  vim.keymap.set("n", "[W", function()
+    vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.INFO })
+  end)
+  vim.keymap.set("n", "]W", function()
+    vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.INFO })
+  end)
   -- map("n", "<leader>id", function()
   --   return vim.diagnostic.open_float
   -- end, { desc = "Line Diagnostics" })

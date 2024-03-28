@@ -3,21 +3,21 @@ local M = {}
 M.dependencies = {
   "hrsh7th/cmp-nvim-lsp",
   "onsails/lspkind-nvim",
-  'VonHeikemen/lsp-zero.nvim',
-  'neovim/nvim-lspconfig',
+  "VonHeikemen/lsp-zero.nvim",
+  "neovim/nvim-lspconfig",
   "mason.nvim",
 }
 
 M.servers = nil
 
 M.config = function(plugin)
-  local lsp_zero = require('lsp-zero')
+  local lsp_zero = require("lsp-zero")
 
   lsp_zero.on_attach(function(client, buffer)
     lsp_zero.default_keymaps({ buffer = buffer })
   end)
 
-  local server = require('config.lsp.servers')
+  local server = require("config.lsp.servers")
   local lsp = require("lspconfig")
   local ui = require("lspconfig.ui.windows")
 
@@ -29,16 +29,23 @@ M.config = function(plugin)
   lsp.gopls.setup(server.gopls)
   lsp.tsserver.setup(server.tsserver)
   local function lspSymbol(name, icon)
-    vim.fn.sign_define(
-      "DiagnosticSign" .. name,
-      { text = icon, numhl = "DiagnosticDefault" .. name }
-    )
+    vim.fn.sign_define("DiagnosticSign" .. name, { text = icon, numhl = "DiagnosticDefault" .. name })
   end
-  lspSymbol("Error", "")
-  lspSymbol("Information", "")
-  lspSymbol("Hint", "")
-  lspSymbol("Info", "")
-  lspSymbol("Warning", "")
+  --[[ error = " ",
+      warn = " ",
+      info = " ",
+      hint = "󰠠 ",
+      question = " ",
+      error = "x ",
+      warn = "! ",
+      info = "i ",
+      hint = "* ",
+      question = "? ", ]]
+  lspSymbol("Error", "x")
+  lspSymbol("Information", "i")
+  lspSymbol("Hint", "*")
+  lspSymbol("Info", "i")
+  lspSymbol("Warning", "!")
   require("config.lsp.lspsaga").config()
 end
 

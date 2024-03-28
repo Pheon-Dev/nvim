@@ -240,7 +240,7 @@ M.config = function()
       error = "x ",
       warn = "! ",
       info = "i ",
-      hint = "h ",
+      hint = "* ",
       question = "? ",
     },
     diagnostics_color = {
