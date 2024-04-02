@@ -1,7 +1,7 @@
 local M = {}
 
 M.dependencies = {
-  "hrsh7th/cmp-nvim-lsp",
+  -- "hrsh7th/cmp-nvim-lsp",
   "onsails/lspkind-nvim",
   "VonHeikemen/lsp-zero.nvim",
   "neovim/nvim-lspconfig",
