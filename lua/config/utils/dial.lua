@@ -5,8 +5,22 @@ M.dependencies = {}
 M.event = { "BufReadPost", "BufNewFile" }
 
 M.keys = {
-  { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
-  { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
+  {
+    "<A-a>",
+    function()
+      return require("dial.map").inc_normal()
+    end,
+    expr = true,
+    desc = "Increment",
+  },
+  {
+    "<A-x>",
+    function()
+      return require("dial.map").dec_normal()
+    end,
+    expr = true,
+    desc = "Decrement",
+  },
 }
 
 M.config = function()
