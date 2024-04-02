@@ -20,7 +20,6 @@ end
 -- after installing missing plugins
 load("options")
 
-
 require("lazy.view.config").keys.profile_sort = "<C-t>"
 -- require("lazy.view.config").commands.home.key = "h"
 -- require("lazy.view.config").commands.install.key = "i"
