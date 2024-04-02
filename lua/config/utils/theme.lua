@@ -61,7 +61,24 @@ M.config = function()
     bg = theme.color0,
   }) ]]
 
+  -- GitSigns
+
+  vim.api.nvim_set_hl(0, "GitSignsChangeLnInline", { fg = theme.color99 })
+  vim.api.nvim_set_hl(0, "GitSignsAddLnInline", { fg = theme.color89 })
+  vim.api.nvim_set_hl(0, "GitSignsDeleteLnInline", { fg = theme.color16 })
+  vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = theme.color7 })
+  vim.api.nvim_set_hl(0, "GitSignsAddNr", { fg = theme.color7 })
+  vim.api.nvim_set_hl(0, "GitSignsAddLn", { fg = theme.color7 })
+  vim.api.nvim_set_hl(0, "GitSignsChange", { fg = theme.color99 })
+  vim.api.nvim_set_hl(0, "GitSignsChangeNr", { fg = theme.color99 })
+  vim.api.nvim_set_hl(0, "GitSignsChangeLn", { fg = theme.color99 })
+  vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = theme.color16 })
+  vim.api.nvim_set_hl(0, "GitSignsDeleteNr", { fg = theme.color16 })
+  vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { fg = theme.color16 })
+  -- vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = theme.color05, bg = theme.color1 })
+  vim.api.nvim_set_hl(0, "GitBlame", { fg = theme.color68, bg = theme.color101 })
   vim.api.nvim_set_hl(0, "CustomContextVt", { link = "Comment" })
+  vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { link = "Comment" })
 
   vim.api.nvim_set_hl(0, "LspSignatureActiveParameter", { bg = theme.color1 })
   vim.api.nvim_set_hl(0, "CodeiumSuggestion", { fg = theme.color3 })
