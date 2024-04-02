@@ -167,13 +167,13 @@ M.config = function()
       interval = 1000,
       follow_files = true,
     },
-    --[[ attach_to_untracked = true,
-    current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
+    attach_to_untracked = true,
+    current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
     current_line_blame_opts = {
       virt_text = true,
-      virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-      delay = 1000,
-      ignore_whitespace = false,
+      virt_text_pos = "right_align", -- 'eol' | 'overlay' | 'right_align'
+      delay = 500,
+      ignore_whitespace = true,
     },
     current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
     sign_priority = 6,
@@ -190,25 +190,8 @@ M.config = function()
     },
     yadm = {
       enable = false,
-    }, ]]
+    },
   })
-
-  local theme = require("core.colors")
-
-  vim.api.nvim_set_hl(0, "GitSignsChangeLnInline", { fg = theme.color99 })
-  vim.api.nvim_set_hl(0, "GitSignsAddLnInline", { fg = theme.color89 })
-  vim.api.nvim_set_hl(0, "GitSignsDeleteLnInline", { fg = theme.color16 })
-  vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = theme.color7 })
-  vim.api.nvim_set_hl(0, "GitSignsAddNr", { fg = theme.color7 })
-  vim.api.nvim_set_hl(0, "GitSignsAddLn", { fg = theme.color7 })
-  vim.api.nvim_set_hl(0, "GitSignsChange", { fg = theme.color99 })
-  vim.api.nvim_set_hl(0, "GitSignsChangeNr", { fg = theme.color99 })
-  vim.api.nvim_set_hl(0, "GitSignsChangeLn", { fg = theme.color99 })
-  vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = theme.color16 })
-  vim.api.nvim_set_hl(0, "GitSignsDeleteNr", { fg = theme.color16 })
-  vim.api.nvim_set_hl(0, "GitSignsDeleteLn", { fg = theme.color16 })
-  vim.api.nvim_set_hl(0, "Blame", { fg = theme.color3, bg = theme.color1 })
-  vim.api.nvim_set_hl(0, "GitBlame", { fg = theme.color68, bg = theme.color1 })
 end
 
 return M
