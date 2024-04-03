@@ -13,7 +13,7 @@ M.opts = {
     },
     telescope = {
       use_default_mappings = true, -- if default mappings should be used
-      mappings = nil,              -- nil to use default mappings or no mappings (see `use_default_mappings`)
+      mappings = nil, -- nil to use default mappings or no mappings (see `use_default_mappings`)
     },
   },
   system_clipboard = {
@@ -37,11 +37,11 @@ M.keys = {
     desc =
     "Paste from Yanky"
   },
-  { "y",  "<Plug>(YankyYank)",                     mode = { "n", "x" } },
-  { "p",  "<Plug>(YankyPutAfter)",                 mode = { "n", "x" } },
-  { "P",  "<Plug>(YankyPutBefore)",                mode = { "n", "x" } },
-  { "gp", "<Plug>(YankyGPutAfter)",                mode = { "n", "x" } },
-  { "gP", "<Plug>(YankyGPutBefore)",               mode = { "n", "x" } },
+  { "y", "<Plug>(YankyYank)", mode = { "n", "x" } },
+  { "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
+  { "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
+  { "gp", "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
+  { "gP", "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
   { "[y", "<Plug>(YankyCycleForward)" },
   { "]y", "<Plug>(YankyCycleBackward)" },
   { "]p", "<Plug>(YankyPutIndentAfterLinewise)" },
@@ -73,6 +73,10 @@ M.config = function()
   require("yanky").setup({})
   vim.api.nvim_set_hl(0, "YankyYanked", { bg = theme.color65 })
   vim.api.nvim_set_hl(0, "YankyPut", { bg = theme.color93 })
+end
+
+M.yankbank_config = function()
+  require("yankbank").setup()
 end
 
 return M

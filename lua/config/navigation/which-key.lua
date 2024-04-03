@@ -150,12 +150,12 @@ M.config = function()
       x = { ":TSToolsRemoveUnused<cr>", "Remove Unused Statements" },
       a = { ":TSToolsAddMissingImports<cr>", "Add Missing Imports" },
       f = { ":TSToolsFixAll<cr>", "Fix All" },
-      d = { ":TSToolsGoToSourceDefinition<cr>", "Go To Source Definition" },
+      i = { ":TSToolsGoToSourceDefinition<cr>", "Go To Source Definition" },
       c = { ":TSC<cr>", "TSC" },
-      q = { ":TodoQuickFix<cr>", "TODO QuickFix" },
+      d = { ":TodoQuickFix<cr>", "TODO QuickFix" },
     },
     x = { "<cmd>lua require('diaglist').open_all_diagnostics()<cr>", "Quickfix All Diagnostics" },
-    y = { ":TodoQuickFix<cr>", "TODO QuickFix" },
+    y = { ":YankBank<cr>", "YankBank" },
   }
 
   local opts = {
