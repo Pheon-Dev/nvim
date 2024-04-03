@@ -94,6 +94,12 @@ local M = {
     config = yanky.config,
   },
   {
+    "ptdewey/yankbank-nvim",
+    enabled = enable.yanky,
+    event = default_event,
+    config = yanky.yankbank_config,
+  },
+  {
     "tpope/vim-repeat",
     event = default_event,
     enabled = enable.vim_repeat,

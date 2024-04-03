@@ -48,6 +48,7 @@
   "mini.move": { "branch": "main", "commit": "251d541a8ab745e81295a53c128829cb2bff18e3" },
   "mini.splitjoin": { "branch": "main", "commit": "a6b043b4afb075058a8c49325ff22e07f0e96170" },
   "muren.nvim": { "branch": "main", "commit": "818c09097dba1322b2ca099e35f7471feccfef93" },
+  "neocodeium": { "branch": "main", "commit": "2704dd7c90905110d3c3bcb170881b49a76aeee9" },
   "noice.nvim": { "branch": "main", "commit": "0cbe3f88d038320bdbda3c4c5c95f43a13c3aa12" },
   "nui.nvim": { "branch": "main", "commit": "cbd2668414331c10039278f558630ed19b93e69b" },
   "nvim-bqf": { "branch": "main", "commit": "52703d7adc3be3f7c09eea9a80c5b8caa615fb25" },
@@ -91,5 +92,5 @@
   "vim-wordmotion": { "branch": "master", "commit": "81d9bd298376ab0dc465c85d55afa4cb8d5f47a1" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" },
   "windows.nvim": { "branch": "main", "commit": "c7492552b23d0ab30325e90b56066ec51242adc8" },
-  "yanky.nvim": { "branch": "main", "commit": "7c5cbf0122ff2dfbb6a92f14885894f65949cc8b" }
+  "yankbank-nvim": { "branch": "main", "commit": "5ec28cb3a14c9891a6236fb324f045c4f7165e68" }
 }
