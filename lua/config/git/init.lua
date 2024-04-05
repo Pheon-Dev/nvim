@@ -159,7 +159,7 @@ M.config = function()
         linehl = "GitSignsAddLn",
       },
     },
-    signcolumn = true,
+    signcolumn = false,
     numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
     linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
     word_diff = true, -- Toggle with `:Gitsigns toggle_word_diff`

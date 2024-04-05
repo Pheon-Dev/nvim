@@ -64,6 +64,7 @@ M.enable = {
   bracketed = true,
   dashboard = true,
   codeium = true,
+  modes = true,
 }
 
 return M

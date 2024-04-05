@@ -63,8 +63,8 @@ M.config = function()
 
   -- GitSigns
 
+  vim.api.nvim_set_hl(0, "GitSignsAddLnInline", { fg = theme.colour7 })
   vim.api.nvim_set_hl(0, "GitSignsChangeLnInline", { fg = theme.color99 })
-  vim.api.nvim_set_hl(0, "GitSignsAddLnInline", { fg = theme.color89 })
   vim.api.nvim_set_hl(0, "GitSignsDeleteLnInline", { fg = theme.color16 })
   vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = theme.color7 })
   vim.api.nvim_set_hl(0, "GitSignsAddNr", { fg = theme.color7 })
