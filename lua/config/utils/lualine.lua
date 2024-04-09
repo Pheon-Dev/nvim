@@ -284,7 +284,7 @@ M.config = function()
   --   color = "Keyword",
   -- })
 
-  if enable.codeium then
+  if enable.arrow then
     sec_right({
       function()
         local statusline = require("arrow.statusline")
