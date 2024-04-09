@@ -7,7 +7,6 @@ local zero = require("config.lsp.zero")
 local mason = require("config.lsp.mason")
 
 local default_event = require("config.event").default
-local lazy_event = require("config.event").lazy
 
 local M = {
   {

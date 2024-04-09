@@ -7,7 +7,6 @@ local surround = require("config.motion.surround")
 
 local default_event = require("config.event").default
 local read_pre_event = require("config.event").read.pre
-local lazy_event = require("config.event").lazy
 
 local M = {
   {

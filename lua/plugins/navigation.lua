@@ -40,7 +40,7 @@ local M = {
   {
     "otavioschwanck/arrow.nvim",
     enable = enable.arrow,
-    event = lazy_event,
+    event = default_event,
     config = arrow.config,
   },
   {

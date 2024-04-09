@@ -5,7 +5,6 @@ local comment = require("config.text-objects.comment_text_objects")
 local archer = require("config.text-objects.archer_text_objects")
 
 local default_event = require("config.event").default
-local lazy_event = require("config.event").lazy
 
 local M = {
   {

@@ -28,8 +28,7 @@ local M = {
   },
   {
     "voldikss/vim-floaterm",
-    event = lazy_event,
-    -- event = default_event,
+    event = vim_enter_event,
     enabled = enable.floaterm,
   },
   {
