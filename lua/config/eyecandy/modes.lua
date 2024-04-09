@@ -11,7 +11,6 @@ M.config = function()
       delete = theme.color16,
       insert = theme.color101,
       visual = theme.color27,
-      replace = theme.color99,
     },
 
     -- Set opacity for cursorline and number background
