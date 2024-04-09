@@ -62,7 +62,7 @@ M.enable = {
   comment_textobjects = true,
   archer_textobjects = true,
   bracketed = true,
-  dashboard = true,
+  dashboard = false,
   codeium = true,
   modes = true,
 }

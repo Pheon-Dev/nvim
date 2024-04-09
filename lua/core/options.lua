@@ -124,20 +124,17 @@ o.foldcolumn = "0" -- '1', '0' is not bad
 -- g.loaded_spellfile_plugin = 1
 -- g.loaded_shada_plugin = 1
 -- g.rainbow_active = 1
+
 g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
-
 g.move_map_keys = 0
-
 o.encoding = "utf-8"
 o.fileencoding = "utf-8"
-
 o.backspace = "start,eol,indent"
 o.shell = "zsh"
 o.backupskip = "/tmp/*,/private/tmp/*"
 g.python3_host_prog = "/usr/bin/python"
-
-vim.opt.shortmess:append({ W = true, I = true, c = true })
+--[[ vim.opt.shortmess:append({ W = true, I = true, c = true }) ]]
 vim.opt.spelllang = { "en" }
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 vim.opt.listchars = {
@@ -149,22 +146,22 @@ vim.opt.listchars = {
   nbsp = "␣",
   conceal = "┊",
 }
+
 -- {tab = "••"|">~",eol = "↴"|"¶"|"$", nbsp = "␣"|"%", space = "_" }
 -- opt.listchars = { tab = [[→→]], trail = "•", extends = "»", precedes = "«" }
 
 vim.opt.whichwrap:append("<,>,[,],h,l")
 if vim.fn.has("nvim-0.9.0") == 1 then
   o.splitkeep = "screen"
-  vim.opt.shortmess:append({ C = true })
+  vim.opt.shortmess:append({ W = true, C = true })
+  -- vim.opt.shortmess:append({ W = true, I = true, C = true })
 end
 
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 0
 g.codeium_disable_bindings = 1
-
 g.gitblame_highlight_group = "GitBlame"
 g.gitblame_highlight_group = "Blame"
-
 vim.cmd("let g:Hexokinase_highlighters = ['backgroundfull']") -- sign_column
 
 -- g.virtcolumn_char = "┊" -- char to display the line
@@ -181,9 +178,7 @@ vim.cmd("filetype plugin indent on")
 -- vim.cmd("if !1 | finish | endif")
 vim.cmd("set nocompatible")
 vim.cmd("syntax enable")
-
 -- vim.cmd("let g:deoplete#enable_at_startup=1")
-
 vim.cmd("let g:go_def_mode='gopls'")
 vim.cmd("let g:go_info_mode='gopls'")
 
