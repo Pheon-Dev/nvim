@@ -70,10 +70,11 @@ local M = {
   {
     "hrsh7th/nvim-cmp",
     enabled = enable.cmp,
-    event = {
+    --[[ event = {
       insert_enter_event,
       cmd_enter_event,
-    },
+    }, ]]
+    event = default_event,
     dependencies = cmp.dependencies,
     config = cmp.config,
   },
