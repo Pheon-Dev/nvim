@@ -106,8 +106,8 @@ M.treesitter_textobjects = {
       -- ["il"] = { query = "@class.inner", desc = "Select inner part of a class region" }, -- You can optionally set descriptions to the mappings (used in the desc parameter of nvim_buf_set_keymap) which plugins like which-key display
       -- ["ab"] = "@block.outer",
       -- ["ib"] = "@block.inner",
-      ["al"] = "@conditional.outer",
-      ["il"] = "@conditional.inner",
+      -- ["al"] = "@conditional.outer",
+      -- ["il"] = "@conditional.inner",
       ["ao"] = "@loop.outer",
       ["io"] = "@loop.inner",
       ["aa"] = "@parameter.outer",
@@ -152,7 +152,7 @@ M.treesitter_textobjects = {
     include_surrounding_whitespace = false,
   },
   swap = {
-    enable = true,
+    enable = false,
     swap_next = {
       [")f"] = "@function.outer",
       [")c"] = "@comment.outer",
