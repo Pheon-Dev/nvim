@@ -26,7 +26,7 @@ function! s:fzf_callback(job, data, event, opener) abort
   if filereadable(s:fzf_tmpfile)
     let filenames = readfile(s:fzf_tmpfile)
     if !empty(filenames)
-      if has('nvim')
+      if has('$EDITOR')
         call floaterm#window#hide(bufnr('%'))
       endif
       let locations = []
