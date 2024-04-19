@@ -63,7 +63,7 @@ M.enable = {
   archer_textobjects = true,
   bracketed = true,
   dashboard = false,
-  codeium = false,
+  codeium = true,
   neocodeium = true,
   modes = true,
 }

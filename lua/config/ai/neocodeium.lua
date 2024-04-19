@@ -1,7 +1,9 @@
 local M = {}
-local api = vim.api
 
 M.config = function()
+  if vim.fn.has("nvim-0.10.0") == 0 then
+    return {}
+  end
   local neocodeium = require("neocodeium")
   -- NeoCodeium Configuration
   neocodeium.setup({
@@ -49,13 +51,13 @@ M.config = function()
   vim.keymap.set("i", "<A-c>", function()
     require("neocodeium").accept_line()
   end)
-  vim.keymap.set("i", "<A-n>", function()
+  vim.keymap.set("i", "<A-f>", function()
     require("neocodeium").cycle_or_complete()
   end)
-  vim.keymap.set("i", "<A-p>", function()
+  vim.keymap.set("i", "<A-b>", function()
     require("neocodeium").cycle_or_complete(-1)
   end)
-  vim.keymap.set("i", "<A-u>", function()
+  vim.keymap.set("i", "<A-x>", function()
     require("neocodeium").clear()
   end)
 end

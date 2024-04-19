@@ -297,7 +297,7 @@ M.config = function()
     })
   end
 
-  if enable.codeium then
+  if vim.fn.has("nvim-0.10.0") == 0 and enable.codeium then
     sec_right({
       function()
         return "﯑ " .. "%3{codeium#GetStatusString()} "
