@@ -1,6 +1,11 @@
 local enable = require("config").enable
 
+local neocodeium = require("config.ai.neocodeium")
+
 local default_event = require("config.event").default
+local lazy_event = require("config.event").lazy
+local insert_enter_event = require("config.event").enter.insert
+local cmd_enter_event = require("config.event").enter.cmd
 
 local M = {
   {
@@ -10,30 +15,9 @@ local M = {
   },
   {
     "monkoose/neocodeium",
-    event = "VeryLazy",
-    enabled = false,
-    config = function()
-      local neocodeium = require("neocodeium")
-      neocodeium.setup()
-      vim.keymap.set("i", "<A-c>", function()
-        require("neocodeium").accept()
-      end)
-      vim.keymap.set("i", "<A-w>", function()
-        require("neocodeium").accept_word()
-      end)
-      vim.keymap.set("i", "<A-a>", function()
-        require("neocodeium").accept_line()
-      end)
-      vim.keymap.set("i", "<A-e>", function()
-        require("neocodeium").cycle_or_complete()
-      end)
-      vim.keymap.set("i", "<A-r>", function()
-        require("neocodeium").cycle_or_complete(-1)
-      end)
-      vim.keymap.set("i", "<A-c>", function()
-        require("neocodeium").clear()
-      end)
-    end,
+    event = lazy_event,
+    enabled = enable.neocodeium,
+    config = neocodeium.config,
   },
 }
 

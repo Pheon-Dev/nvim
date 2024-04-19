@@ -1,7 +1,7 @@
--- local plugin = require("config.ai.plugin")
+local config = require("config.ai")
 
-local M
+local M = {}
 
--- M.plugin = plugin.config
+M.neocodeium = config.neocodeium
 
 return M

@@ -15,7 +15,6 @@ local lazy_event = require("config.event").lazy
 local default_event = require("config.event").default
 local vim_enter_event = require("config.event").enter.vim
 local cmd_enter_event = require("config.event").enter.cmd
-local insert_enter_event = require("config.event").enter.insert
 
 local M = {
   {
