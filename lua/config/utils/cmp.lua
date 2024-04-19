@@ -62,6 +62,10 @@ M.config = function()
   end
 
   cmp.setup({
+    completion = {
+      autocomplete = false,
+      -- completeopt = "menu,menuone,noinsert",
+    },
     preselect = cmp.PreselectMode.None,
     window = {
       completion = {
@@ -167,7 +171,6 @@ M.config = function()
     experimental = {
       ghost_text = false,
     },
-    -- completion = { completeopt = "menu,menuone,noinsert" },
   })
 
   cmp.setup.cmdline(":", {
