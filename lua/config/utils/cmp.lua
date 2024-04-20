@@ -62,10 +62,10 @@ M.config = function()
   end
 
   cmp.setup({
-    completion = {
+    --[[ completion = {
       autocomplete = false,
       -- completeopt = "menu,menuone,noinsert",
-    },
+    }, ]]
     preselect = cmp.PreselectMode.None,
     window = {
       completion = {
