@@ -171,20 +171,6 @@ M.config = function()
     },
   })
 
-  -- git diffs
-  sec_left({
-    "diff",
-    -- symbols = { added = " ", modified = " ", removed = " ", renamed = " ", ignored = " " },
-    symbols = { added = " + ", modified = " ~ ", removed = " - ", renamed = " → ", ignored = " / " },
-    diff_color = {
-      added = { fg = colors.green },
-      modified = { fg = colors.orange },
-      removed = { fg = colors.red },
-    },
-    cond = conditions.hide_in_width,
-    padding = { right = 1, left = 1 },
-  })
-
   sec_left({
     "git_prompt_string",
     trim_prompt_prefix = true, -- remove whitespace from beginning of prompt prefix
@@ -197,13 +183,27 @@ M.config = function()
       diverged_format = nil,
       no_upstream_remote_format = nil,
       color_disabled = false,
-      color_clean = { fg = vim.g.terminal_color_2 or "DarkGreen" },
-      color_delta = { fg = vim.g.terminal_color_3 or "DarkYellow" },
-      color_dirty = { fg = vim.g.terminal_color_1 or "DarkRed" },
-      color_untracked = { fg = vim.g.terminal_color_5 or "DarkMagenta" },
-      color_no_upstream = { fg = vim.g.terminal_color_8 or "DarkGray" },
-      color_merging = { fg = vim.g.terminal_color_4 or "DarkBlue" },
+      color_clean = { fg = colors.green or "DarkGreen" },
+      color_delta = { fg = colors.yellow or "DarkYellow" },
+      color_dirty = { fg = colors.red or "DarkRed" },
+      color_untracked = { fg = colors.magenta or "DarkMagenta" },
+      color_no_upstream = { fg = colors.grey or "DarkGray" },
+      color_merging = { fg = colors.blue or "DarkBlue" },
     },
+  })
+
+  -- git diffs
+  sec_left({
+    "diff",
+    -- symbols = { added = " ", modified = " ", removed = " ", renamed = " ", ignored = " " },
+    symbols = { added = " + ", modified = " ~ ", removed = " - ", renamed = " → ", ignored = " / " },
+    diff_color = {
+      added = { fg = colors.green },
+      modified = { fg = colors.orange },
+      removed = { fg = colors.red },
+    },
+    cond = conditions.hide_in_width,
+    padding = { right = 1, left = 1 },
   })
 
   -- search count
@@ -327,14 +327,18 @@ M.config = function()
     })
   end
 
-  -- branch
+  --[[ -- branch
   sec_right({
-    "branch",
-    icon = { "", align = "left" },
+    -- "branch",
+    -- icon = { "", align = "left" },
     -- color = { fg = colors.yellow, ng = colors.bg },
     -- color = "Comment",
+    function()
+      return ""
+    end,
     padding = { right = 1, left = 0 },
   })
+]]
 
   lualine.setup(config)
 end
