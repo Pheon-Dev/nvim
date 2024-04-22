@@ -14,8 +14,8 @@ local M = {
   },
   {
     "mikesmithgh/git-prompt-string-lualine.nvim",
-    enabled = true,
-    lazy = true,
+    enabled = enable.git_signs,
+    event = default_event,
   },
 }
 
