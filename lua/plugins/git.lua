@@ -12,6 +12,11 @@ local M = {
     keys = git.keys,
     config = git.config,
   },
+  {
+    "mikesmithgh/git-prompt-string-lualine.nvim",
+    enabled = true,
+    lazy = true,
+  },
 }
 
 return M

@@ -185,6 +185,27 @@ M.config = function()
     padding = { right = 1, left = 1 },
   })
 
+  sec_left({
+    "git_prompt_string",
+    trim_prompt_prefix = true, -- remove whitespace from beginning of prompt prefix
+    -- git-prompt-string configuration options, see https://github.com/mikesmithgh/git-prompt-string?tab=readme-ov-file#configuration-options
+    prompt_config = {
+      prompt_prefix = nil,
+      prompt_suffix = nil,
+      ahead_format = nil,
+      behind_format = nil,
+      diverged_format = nil,
+      no_upstream_remote_format = nil,
+      color_disabled = false,
+      color_clean = { fg = vim.g.terminal_color_2 or "DarkGreen" },
+      color_delta = { fg = vim.g.terminal_color_3 or "DarkYellow" },
+      color_dirty = { fg = vim.g.terminal_color_1 or "DarkRed" },
+      color_untracked = { fg = vim.g.terminal_color_5 or "DarkMagenta" },
+      color_no_upstream = { fg = vim.g.terminal_color_8 or "DarkGray" },
+      color_merging = { fg = vim.g.terminal_color_4 or "DarkBlue" },
+    },
+  })
+
   -- search count
   sec_left({
     "searchcount",
