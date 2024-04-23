@@ -171,27 +171,6 @@ M.config = function()
     },
   })
 
-  sec_left({
-    "git_prompt_string",
-    trim_prompt_prefix = true, -- remove whitespace from beginning of prompt prefix
-    -- git-prompt-string configuration options, see https://github.com/mikesmithgh/git-prompt-string?tab=readme-ov-file#configuration-options
-    prompt_config = {
-      prompt_prefix = nil,
-      prompt_suffix = nil,
-      ahead_format = nil,
-      behind_format = nil,
-      diverged_format = nil,
-      no_upstream_remote_format = nil,
-      color_disabled = false,
-      color_clean = { fg = colors.green or "DarkGreen" },
-      color_delta = { fg = colors.yellow or "DarkYellow" },
-      color_dirty = { fg = colors.red or "DarkRed" },
-      color_untracked = { fg = colors.magenta or "DarkMagenta" },
-      color_no_upstream = { fg = colors.grey or "DarkGray" },
-      color_merging = { fg = colors.blue or "DarkBlue" },
-    },
-  })
-
   -- git diffs
   sec_left({
     "diff",
@@ -339,6 +318,27 @@ M.config = function()
     padding = { right = 1, left = 0 },
   })
 ]]
+
+  sec_right({
+    "git_prompt_string",
+    trim_prompt_prefix = true, -- remove whitespace from beginning of prompt prefix
+    -- git-prompt-string configuration options, see https://github.com/mikesmithgh/git-prompt-string?tab=readme-ov-file#configuration-options
+    prompt_config = {
+      prompt_prefix = nil,
+      prompt_suffix = nil,
+      ahead_format = nil,
+      behind_format = nil,
+      diverged_format = nil,
+      no_upstream_remote_format = nil,
+      color_disabled = false,
+      color_clean = { fg = colors.green or "DarkGreen" },
+      color_delta = { fg = colors.yellow or "DarkYellow" },
+      color_dirty = { fg = colors.red or "DarkRed" },
+      color_untracked = { fg = colors.magenta or "DarkMagenta" },
+      color_no_upstream = { fg = colors.grey or "DarkGray" },
+      color_merging = { fg = colors.blue or "DarkBlue" },
+    },
+  })
 
   lualine.setup(config)
 end
