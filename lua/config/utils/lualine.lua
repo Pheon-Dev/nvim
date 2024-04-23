@@ -57,9 +57,18 @@ M.config = function()
       lualine_a = {},
       lualine_b = {},
       lualine_y = {},
-      lualine_z = {},
       lualine_c = {},
-      lualine_x = {},
+      lualine_x = {
+        {
+          function()
+            return "  "
+          end,
+          -- color = "Comment",
+          color = { fg = colors.green, bg = theme.color01 },
+          on_click = require("mpv").toggle_player,
+        },
+        "g:mpv_title",
+      },
     },
     inactive_sections = {
       lualine_a = {},
@@ -88,30 +97,6 @@ M.config = function()
     v = theme.color27,
     V = theme.color27,
     R = theme.color99,
-  }
-
-  local mode = {
-    n = "",
-    i = "",
-    ic = "",
-    v = "",
-    V = "",
-    s = "",
-    S = "",
-    r = "",
-    R = "",
-    Rv = "",
-    rm = "",
-    c = "",
-    cv = "",
-    ce = "",
-    t = "",
-    no = "",
-    gui = "",
-    [""] = "",
-    [""] = "",
-    ["r?"] = "",
-    ["!"] = "",
   }
 
   local mode_color = {
@@ -305,6 +290,17 @@ M.config = function()
       color = { fg = colors.grey },
     })
   end
+
+  --[[ sec_right({
+    "g:mpv_title",
+    {
+      function()
+        return "  "
+      end,
+      color = "green",
+      on_click = require("mpv").toggle_player,
+    },
+  }) ]]
 
   --[[ -- branch
   sec_right({

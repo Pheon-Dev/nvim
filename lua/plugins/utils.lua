@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local theme = require("config.utils.theme")
+local music = require("config.utils.music")
 local dashboard = require("config.utils.dashboard")
 local lualine = require("config.utils.lualine")
 local cmp = require("config.utils.cmp")
@@ -127,6 +128,12 @@ local M = {
     "nicwest/vim-camelsnek",
     enabled = enable.camelsnek,
     event = default_event,
+  },
+  {
+    "tamton-aquib/mpv.nvim",
+    enabled = enable.music,
+    event = default_event,
+    config = music.config,
   },
 }
 

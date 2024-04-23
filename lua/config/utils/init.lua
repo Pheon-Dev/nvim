@@ -19,5 +19,6 @@ M.bracketed = config.bracketed
 M.animate = config.animate
 M.notify = config.notify
 M.indentscope = config.indentscope
+M.music = config.music
 
 return M

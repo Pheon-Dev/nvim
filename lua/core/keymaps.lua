@@ -125,3 +125,5 @@ map("n", "<leader>u", ":Lazy update<CR>", keybind_opts)
 map("n", "<leader>e", ":MurenToggle<cr>", keybind_opts)
 map("v", "<leader>e", ":MurenToggle<cr>", keybind_opts)
 -- map("n", "<leader>n", ":lua require('notify')._print_history()<cr>", keybind_opts)
+
+map("n", "<leader>v", ":MpvToggle<cr>", keybind_opts)
