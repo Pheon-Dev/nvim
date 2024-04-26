@@ -2,6 +2,7 @@ local enable = require("config").enable
 
 local theme = require("config.utils.theme")
 local music = require("config.utils.music")
+local persistence = require("config.utils.persistence")
 local dashboard = require("config.utils.dashboard")
 local lualine = require("config.utils.lualine")
 local cmp = require("config.utils.cmp")
@@ -134,6 +135,12 @@ local M = {
     enabled = enable.music,
     event = default_event,
     config = music.config,
+  },
+  {
+    "folke/persistence.nvim",
+    enabled = enable.persistence,
+    event = default_event,
+    opts = persistence.opts,
   },
 }
 

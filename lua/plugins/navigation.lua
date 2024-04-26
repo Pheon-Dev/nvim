@@ -9,6 +9,7 @@ local which_key = require("config.navigation.which-key")
 
 local default_event = require("config.event").default
 local lazy_event = require("config.event").lazy
+local vim_enter_event = require("config.event").enter.vim
 
 local M = {
   {
@@ -21,7 +22,7 @@ local M = {
   {
     "Pheon-Dev/antelope",
     enabled = enable.antelope,
-    event = default_event,
+    event = vim_enter_event,
     config = antelope.config,
   },
   {
@@ -37,12 +38,12 @@ local M = {
     event = lazy_event,
     config = tmux.config,
   },
-  {
+  --[[ {
     "otavioschwanck/arrow.nvim",
     enable = enable.arrow,
     event = default_event,
     config = arrow.config,
-  },
+  }, ]]
   {
     "bloznelis/before.nvim",
     event = default_event,

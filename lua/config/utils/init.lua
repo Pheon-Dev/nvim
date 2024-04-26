@@ -3,6 +3,7 @@ local config = require("config.utils")
 local M = {}
 
 M.dashboard = config.dashboard
+M.persistence = config.persistence
 M.cool_substitute = config.cool_substitute
 M.cmp = config.cmp
 M.lualine = config.lualine
