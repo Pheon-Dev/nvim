@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local theme = require("config.utils.theme")
+local abstract_autocmds = require("config.utils.abstract_autocmds")
 local music = require("config.utils.music")
 local persistence = require("config.utils.persistence")
 local dashboard = require("config.utils.dashboard")
@@ -141,6 +142,12 @@ local M = {
     enabled = enable.persistence,
     event = default_event,
     opts = persistence.opts,
+  },
+  {
+    "Abstract-IDE/abstract-autocmds",
+    lazy = false,
+    event = default_event,
+    config = abstract_autocmds.config,
   },
 }
 
