@@ -7,6 +7,7 @@ M.dashboard = config.dashboard
 M.abstract_autocmds = config.abstract_autocmds
 M.persistence = config.persistence
 M.cool_substitute = config.cool_substitute
+M.hardtime = config.hardtime
 M.cmp = config.cmp
 M.lualine = config.lualine
 M.scroll = config.scroll

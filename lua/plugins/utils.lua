@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local theme = require("config.utils.theme")
+local hardtime = require("config.utils.hardtime")
 local abstract_autocmds = require("config.utils.abstract_autocmds")
 local music = require("config.utils.music")
 local persistence = require("config.utils.persistence")
@@ -148,6 +149,13 @@ local M = {
     lazy = false,
     event = default_event,
     config = abstract_autocmds.config,
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = hardtime.dependencies,
+    enabled = enable.hardtime,
+    event = default_event,
+    config = hardtime.config,
   },
 }
 
