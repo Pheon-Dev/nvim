@@ -4,6 +4,7 @@ local move = require("config.utils.move")
 local indentscope = require("config.utils.indentscope")
 local bracketed = require("config.utils.bracketed")
 local animate = require("config.utils.animate")
+local files = require("config.utils.files")
 
 local default_event = require("config.event").default
 
@@ -43,6 +44,12 @@ local M = {
     enabled = enable.animate,
     event = default_event,
     config = animate.config,
+  },
+  {
+    "echasnovski/mini.files",
+    enabled = enable.files,
+    event = default_event,
+    config = files.config,
   },
 }
 

@@ -2,6 +2,7 @@ local config = require("config.utils")
 
 local M = {}
 
+M.files = config.files
 M.dashboard = config.dashboard
 M.abstract_autocmds = config.abstract_autocmds
 M.persistence = config.persistence
