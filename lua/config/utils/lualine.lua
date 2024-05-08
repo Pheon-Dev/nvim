@@ -183,7 +183,7 @@ M.config = function()
     end,
   })
 
-  -- cool-substitute
+  --[[ -- cool-substitute
   sec_left({
     function()
       local sub = require("cool-substitute.status")
@@ -195,7 +195,7 @@ M.config = function()
     color = function()
       return { fg = require("cool-substitute.status").status_color() }
     end,
-  })
+  }) ]]
 
   -- macros etc
   sec_left({

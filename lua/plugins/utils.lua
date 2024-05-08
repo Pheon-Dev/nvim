@@ -147,6 +147,7 @@ local M = {
   {
     "Abstract-IDE/abstract-autocmds",
     lazy = false,
+    enabled = enable.abstract_autocmds,
     event = default_event,
     config = abstract_autocmds.config,
   },
