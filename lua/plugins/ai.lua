@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local neocodeium = require("config.ai.neocodeium")
+local neoai = require("config.ai.neoai")
 
 local default_event = require("config.event").default
 local lazy_event = require("config.event").lazy
@@ -30,6 +31,14 @@ local M = {
       end
     end,
     config = neocodeium.config,
+  },
+  {
+    "Bryley/neoai.nvim",
+    event = default_event,
+    enabled = enable.neoai,
+    dependencies = neoai.dependencies,
+    keys = neoai.keys,
+    config = neoai.config,
   },
 }
 
