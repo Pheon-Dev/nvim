@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local dressing = require("config.eyecandy.dressing")
+local satellite = require("config.eyecandy.satellite")
 local noice = require("config.eyecandy.noicey")
 local notify = require("config.eyecandy.notify")
 local hlargs = require("config.eyecandy.hlargs")
@@ -13,6 +14,13 @@ local default_event = require("config.event").default
 local new_event = require("config.event").default
 
 local M = {
+  {
+    "lewis6991/satellite.nvim",
+    enabled = enable.satellite,
+    event = default_event,
+    init = satellite.init,
+    config = satellite.config,
+  },
   {
     "stevearc/dressing.nvim",
     enabled = enable.dressing,
