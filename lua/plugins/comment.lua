@@ -10,15 +10,20 @@ local M = {
     "folke/todo-comments.nvim",
     event = default_event,
     enabled = enable.todo_comments,
-    config = todo.config
+    config = todo.config,
   },
   {
     "numToStr/Comment.nvim",
-    -- lazy = false,
     event = default_event,
     enabled = enable.comment,
     dependencies = comment.dependencies,
     config = comment.config,
+  },
+  {
+    "folke/ts-comments.nvim",
+    opts = comment.opts,
+    event = default_event,
+    enabled = enable.comments,
   },
 }
 

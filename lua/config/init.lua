@@ -1,7 +1,6 @@
 local M = {}
 
 M.enable = {
-  satellite = true,
   lsp = true,
   neoai = false,
   hardtime = true,

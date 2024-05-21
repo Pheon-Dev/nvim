@@ -1,13 +1,59 @@
 local M = {}
+
 M.dependencies = {
-  'JoosepAlviste/nvim-ts-context-commentstring',
+  "JoosepAlviste/nvim-ts-context-commentstring",
 }
 
+M.opts = {
+  lang = {
+    astro = "<!-- %s -->",
+    c = "// %s",
+    cpp = "// %s",
+    css = "/* %s */",
+    gleam = "// %s",
+    glimmer = "{{! %s }}",
+    graphql = "# %s",
+    handlebars = "{{! %s }}",
+    hcl = "# %s",
+    html = "<!-- %s -->",
+    ini = "; %s",
+    php = "// %s",
+    rego = "# %s",
+    rescript = "// %s",
+    sql = "-- %s",
+    svelte = "<!-- %s -->",
+    terraform = "# %s",
+    tsx = {
+      _ = "// %s",
+      call_expression = "// %s",
+      comment = "// %s",
+      jsx_attribute = "// %s",
+      jsx_element = "{/* %s */}",
+      jsx_fragment = "{/* %s */}",
+      spread_element = "// %s",
+      statement_block = "// %s",
+    },
+    javascript = {
+      _ = "// %s",
+      call_expression = "// %s",
+      comment = "// %s",
+      jsx_attribute = "// %s",
+      jsx_element = "{/* %s */}",
+      jsx_fragment = "{/* %s */}",
+      spread_element = "// %s",
+      statement_block = "// %s",
+    },
+    twig = "{# %s #}",
+    typescript = "// %s",
+    vim = '" %s',
+    vue = "<!-- %s -->",
+  },
+}
 M.config = function()
   vim.g.skip_ts_context_commentstring_module = true
-  require('ts_context_commentstring').setup {
+  require("ts_context_commentstring").setup({
     enable_autocmd = false,
-  }
+  })
 
   require("Comment").setup({
     ---Add a space b/w comment and the line
@@ -19,14 +65,14 @@ M.config = function()
     ---LHS of toggle mappings in NORMAL mode
     toggler = {
       ---Line-comment toggle keymap
-      line = "gcc",
+      line = "gcl",
       ---Block-comment toggle keymap
       block = "gbc",
     },
     ---LHS of operator-pending mappings in NORMAL and VISUAL mode
     opleader = {
       ---Line-comment keymap
-      line = "gc",
+      line = "gl",
       ---Block-comment keymap
       block = "gb",
     },
@@ -52,7 +98,7 @@ M.config = function()
     post_hook = nil,
     ---Function to call before (un)comment
     -- pre_hook = nil,
-    pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+    pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
     -- pre_hook = function(ctx)
     -- 	local U = require("Comment.utils")
     --

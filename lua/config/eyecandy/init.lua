@@ -3,7 +3,6 @@ local config = require("config.eyecandy")
 local M = {}
 
 M.dressing = config.dressing
-M.satellite = config.satellite
 M.noicey = config.noicey
 M.notify = config.notify
 M.scroll = config.scroll
