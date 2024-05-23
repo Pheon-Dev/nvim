@@ -1,21 +1,15 @@
 local enable = require("config").enable
 
 local theme = require("config.utils.theme")
-local hardtime = require("config.utils.hardtime")
-local abstract_autocmds = require("config.utils.abstract_autocmds")
-local music = require("config.utils.music")
 local persistence = require("config.utils.persistence")
-local dashboard = require("config.utils.dashboard")
 local lualine = require("config.utils.lualine")
 local cmp = require("config.utils.cmp")
 local yanky = require("config.utils.yanky")
 local dial = require("config.utils.dial")
 local muren = require("config.utils.muren")
-local cool_substitute = require("config.utils.cool-substitute")
 local fold = require("config.utils.fold")
 local bookmarks = require("config.utils.bookmarks")
 
-local lazy_event = require("config.event").lazy
 local default_event = require("config.event").default
 local vim_enter_event = require("config.event").enter.vim
 local cmd_enter_event = require("config.event").enter.cmd
@@ -58,13 +52,6 @@ local M = {
     config = theme.config,
   },
   {
-    "glepnir/dashboard-nvim",
-    enabled = enable.dashboard,
-    event = vim_enter_event,
-    config = dashboard.config,
-    dependencies = dashboard.dependencies,
-  },
-  {
     "nvim-lualine/lualine.nvim",
     enabled = enable.lualine,
     event = default_event,
@@ -97,12 +84,6 @@ local M = {
     config = yanky.config,
   },
   {
-    "ptdewey/yankbank-nvim",
-    enabled = enable.yanky,
-    event = default_event,
-    config = yanky.yankbank_config,
-  },
-  {
     "tpope/vim-repeat",
     event = default_event,
     enabled = enable.vim_repeat,
@@ -114,12 +95,6 @@ local M = {
     config = muren.config,
   },
   {
-    "otavioschwanck/cool-substitute.nvim",
-    enabled = enable.cool_substitute,
-    event = default_event,
-    config = cool_substitute.config,
-  },
-  {
     "kevinhwang91/nvim-ufo",
     enabled = enable.fold,
     event = default_event,
@@ -128,35 +103,10 @@ local M = {
     config = fold.config,
   },
   {
-    "nicwest/vim-camelsnek",
-    enabled = enable.camelsnek,
-    event = default_event,
-  },
-  {
-    "tamton-aquib/mpv.nvim",
-    enabled = enable.music,
-    event = default_event,
-    config = music.config,
-  },
-  {
     "folke/persistence.nvim",
     enabled = enable.persistence,
     event = default_event,
     opts = persistence.opts,
-  },
-  {
-    "Abstract-IDE/abstract-autocmds",
-    lazy = false,
-    enabled = enable.abstract_autocmds,
-    event = default_event,
-    config = abstract_autocmds.config,
-  },
-  {
-    "m4xshen/hardtime.nvim",
-    dependencies = hardtime.dependencies,
-    enabled = enable.hardtime,
-    event = default_event,
-    config = hardtime.config,
   },
 }
 

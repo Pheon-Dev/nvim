@@ -46,7 +46,7 @@ M.config = function()
     -- matchup = {
     --   enable = true, -- mandatory, false will disable the whole extension
     -- },
-    autotag = { enable = true },
+    -- autotag = { enable = true },
     rainbow = {
       enable = true,
       -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for

@@ -6,11 +6,8 @@ local notify = require("config.eyecandy.notify")
 local hlargs = require("config.eyecandy.hlargs")
 local windows = require("config.eyecandy.windows")
 local context = require("config.eyecandy.context")
-local sep = require("config.eyecandy.sep")
-local modes = require("config.eyecandy.modes")
 
 local default_event = require("config.event").default
-local new_event = require("config.event").default
 
 local M = {
   {
@@ -52,19 +49,6 @@ local M = {
     enabled = enable.context,
     event = default_event,
     config = context.config,
-  },
-  {
-    "SomesOver/accidentslipt",
-    enabled = enable.sep,
-    event = new_event,
-    config = sep.config,
-  },
-  {
-    "mvllow/modes.nvim",
-    enabled = enable.modes,
-    event = default_event,
-    config = modes.config,
-    tag = modes.tag,
   },
 }
 

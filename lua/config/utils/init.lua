@@ -2,12 +2,7 @@ local config = require("config.utils")
 
 local M = {}
 
-M.files = config.files
-M.dashboard = config.dashboard
-M.abstract_autocmds = config.abstract_autocmds
 M.persistence = config.persistence
-M.cool_substitute = config.cool_substitute
-M.hardtime = config.hardtime
 M.cmp = config.cmp
 M.lualine = config.lualine
 M.scroll = config.scroll
@@ -23,6 +18,5 @@ M.bracketed = config.bracketed
 M.animate = config.animate
 M.notify = config.notify
 M.indentscope = config.indentscope
-M.music = config.music
 
 return M

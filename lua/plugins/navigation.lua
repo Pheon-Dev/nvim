@@ -38,12 +38,6 @@ local M = {
     event = lazy_event,
     config = tmux.config,
   },
-  --[[ {
-    "otavioschwanck/arrow.nvim",
-    enable = enable.arrow,
-    event = default_event,
-    config = arrow.config,
-  }, ]]
   {
     "bloznelis/before.nvim",
     event = default_event,

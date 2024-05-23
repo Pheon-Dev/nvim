@@ -5,7 +5,6 @@ local context = require("config.treesitter.context")
 local autopair = require("config.treesitter.autopair")
 local autotag = require("config.treesitter.autotag")
 local illuminate = require("config.treesitter.illuminate")
-local just = require("config.treesitter.just")
 
 local default_event = require("config.event").default
 local insert_enter_event = require("config.event").enter.insert
@@ -45,13 +44,6 @@ local M = {
     event = default_event,
     config = illuminate.config,
     keys = illuminate.keys,
-  },
-  {
-    "NoahTheDuke/vim-just",
-    enabled = enable.just,
-    event = default_event,
-    -- config = just.config,
-    ft = just.ft,
   },
 }
 

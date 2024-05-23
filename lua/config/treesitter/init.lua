@@ -7,6 +7,5 @@ M.context = config.context
 M.autopair = config.autopair
 M.autotag = config.autotag
 M.illuminate = config.illuminate
-M.just = config.just
 
 return M

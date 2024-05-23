@@ -9,6 +9,5 @@ M.scroll = config.scroll
 M.hlargs = config.hlargs
 M.windows = config.windows
 M.context = config.context
-M.sep = config.sep
 
 return M

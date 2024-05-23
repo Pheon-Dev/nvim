@@ -58,17 +58,7 @@ M.config = function()
       lualine_b = {},
       lualine_y = {},
       lualine_c = {},
-      lualine_x = {
-        {
-          function()
-            return "  "
-          end,
-          -- color = "Comment",
-          color = { fg = colors.green, bg = theme.color01 },
-          on_click = require("mpv").toggle_player,
-        },
-        "g:mpv_title",
-      },
+      lualine_x = {},
     },
     inactive_sections = {
       lualine_a = {},
