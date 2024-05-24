@@ -30,13 +30,15 @@ local mappings = {
 }
 
 local textobj = {
-  next_obj = {
+  next_obj = false,
+  --[[ next_obj = {
     i_next = "in",
     a_next = "an",
-  },
+  }, ]]
   -- i_ i. i: i, i; i| i/ i\ i* i+ i- i#
   -- a_ a. a: a, a; a| a/ a\ a* a+ a- a#
   in_chars = { "_", ".", ":", ",", ";", "|", "/", "\\", "*", "+", "-", "#" },
+  line = false,
   --[[ line = {
     i_line = "il",
     a_line = "al",
@@ -51,13 +53,13 @@ local textobj = {
     a_block = "az",
   },
   context = { "ix", "ax" }, -- n lines from above and below.
-  last_changed = { "ic", "ac" }, -- last pasted or changed text.
+  last_changed = { "iC", "aC" }, -- last pasted or changed text.
 }
 
 M.config = function()
   require("archer").config({
     mappings = mappings,
-    textobj = false, -- false, textobj
+    textobj = textobj, -- false, textobj
   })
 end
 
