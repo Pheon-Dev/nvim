@@ -62,7 +62,7 @@ local M = {
     enabled = enable.cmp,
     event = {
       -- insert_enter_event,
-      cmd_enter_event,
+      -- cmd_enter_event,
       default_event,
     },
     dependencies = cmp.dependencies,

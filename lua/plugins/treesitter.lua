@@ -21,7 +21,8 @@ local M = {
   },
   {
     "altermo/ultimate-autopair.nvim",
-    event = { insert_enter_event, cmd_enter_event },
+    -- event = { insert_enter_event, cmd_enter_event },
+    event = default_event,
     branch = autopair.branch,
     config = autopair.config,
   },
