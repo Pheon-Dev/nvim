@@ -15,7 +15,6 @@ M.enable = {
   context = true,
   illuminate = true,
   theme = true,
-  files = false,
   oil = true,
   yanky = true,
   which_key = true,
@@ -50,7 +49,6 @@ M.enable = {
   tmux = true,
   tshjkl = true,
   before = true,
-  camelsnek = true,
   eyeliner = true,
   wordmotion = true,
   treesitter_textobjects = true,
@@ -60,7 +58,6 @@ M.enable = {
   bracketed = true,
   codeium = true,
   neocodeium = true,
-  modes = true,
 }
 
 return M
