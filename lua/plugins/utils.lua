@@ -4,7 +4,7 @@ local theme = require("config.utils.theme")
 local persistence = require("config.utils.persistence")
 local lualine = require("config.utils.lualine")
 local cmp = require("config.utils.cmp")
-local yanky = require("config.utils.yanky")
+local yank = require("config.utils.yank")
 local dial = require("config.utils.dial")
 local muren = require("config.utils.muren")
 local fold = require("config.utils.fold")
@@ -76,12 +76,10 @@ local M = {
     config = dial.config,
   },
   {
-    "gbprod/yanky.nvim",
-    enabled = enable.yanky,
+    "tenxsoydev/karen-yank.nvim",
+    enabled = enable.yank,
     event = default_event,
-    opts = yanky.opts,
-    keys = yanky.keys,
-    config = yanky.config,
+    config = true,
   },
   {
     "tpope/vim-repeat",
