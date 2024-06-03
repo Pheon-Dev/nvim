@@ -8,21 +8,21 @@ M.dependencies = {
 M.config = function()
   require("noice").setup({
     cmdline = {
-      enabled = true,   -- enables the Noice cmdline UI
+      enabled = true, -- enables the Noice cmdline UI
       view = "cmdline", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom 'cmdline_popup'
-      opts = {},        -- global options for the cmdline. See section on views
+      opts = {}, -- global options for the cmdline. See section on views
       format = {
         -- conceal: (default=true) This will hide the text in the cmdline that matches the pattern.
         -- view: (default is cmdline view)
         -- opts: any options passed to the view
         -- icon_hl_group: optional hl_group for the icon
         -- title: set to anything or empty string to hide
-        cmdline = { pattern = "^:", icon = "❯", lang = "vim" },
-        search_down = { kind = "search", pattern = "^/", icon = "", lang = "regex" },
-        search_up = { kind = "search", pattern = "^%?", icon = "", lang = "regex" },
-        filter = { pattern = "^:%s*!", icon = "", lang = "bash" },
-        lua = { pattern = "^:%s*lua%s+", icon = "", lang = "lua" },
-        help = { pattern = "^:%s*he?l?p?%s+", icon = "" },
+        cmdline = { pattern = "^:", icon = "command ❯", lang = "vim" },
+        search_down = { kind = "search", pattern = "^/", icon = "search down ", lang = "regex" },
+        search_up = { kind = "search", pattern = "^%?", icon = "search up ", lang = "regex" },
+        filter = { pattern = "^:%s*!", icon = "shell ", lang = "bash" },
+        lua = { pattern = "^:%s*lua%s+", icon = "lua ", lang = "lua" },
+        help = { pattern = "^:%s*he?l?p?%s+", icon = "search " },
         input = {}, -- Used by input()
         -- lua = false, -- to disable a format, set to `false`
       },
@@ -30,11 +30,11 @@ M.config = function()
     messages = {
       -- NOTE: If you enable messages, then the cmdline is enabled automatically.
       -- This is a current Neovim limitation.
-      enabled = true,              -- enables the Noice messages UI
-      view = "notify",             -- default view for messages
-      view_error = "notify",       -- view for errors
-      view_warn = "notify",        -- view for warnings
-      view_history = "messages",   -- view for :messages
+      enabled = true, -- enables the Noice messages UI
+      view = "notify", -- default view for messages
+      view_error = "notify", -- view for errors
+      view_warn = "notify", -- view for warnings
+      view_history = "messages", -- view for :messages
       view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
     },
     popupmenu = {
@@ -47,7 +47,7 @@ M.config = function()
       view = "popup",
       filter = {
         event = "msg_show",
-      }
+      },
     },
     -- You can add any custom commands below that will be available with `:Noice command`
     commands = {
@@ -61,7 +61,7 @@ M.config = function()
             { error = true },
             { warning = true },
             { event = "msg_show", kind = { "" } },
-            { event = "lsp",      kind = "message" },
+            { event = "lsp", kind = "message" },
           },
         },
       },
@@ -75,7 +75,7 @@ M.config = function()
             { error = true },
             { warning = true },
             { event = "msg_show", kind = { "" } },
-            { event = "lsp",      kind = "message" },
+            { event = "lsp", kind = "message" },
           },
         },
         filter_opts = { count = 1 },
@@ -119,7 +119,7 @@ M.config = function()
       hover = {
         enabled = true,
         view = nil, -- when nil, use defaults from documentation
-        opts = {},  -- merged with defaults from documentation
+        opts = {}, -- merged with defaults from documentation
       },
       signature = {
         enabled = true,
@@ -127,10 +127,10 @@ M.config = function()
           enabled = true,
           trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
           luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
-          throttle = 50,  -- Debounce lsp signature help request by 50ms
+          throttle = 50, -- Debounce lsp signature help request by 50ms
         },
-        view = nil,       -- when nil, use defaults from documentation
-        opts = {},        -- merged with defaults from documentation
+        view = nil, -- when nil, use defaults from documentation
+        opts = {}, -- merged with defaults from documentation
       },
       message = {
         -- Messages shown by lsp servers
@@ -152,7 +152,7 @@ M.config = function()
     },
     markdown = {
       hover = {
-        ["|(%S-)|"] = vim.cmd.help,                       -- vim help links
+        ["|(%S-)|"] = vim.cmd.help, -- vim help links
         ["%[.-%]%((%S-)%)"] = require("noice.util").open, -- markdown links
       },
       highlights = {
@@ -176,13 +176,13 @@ M.config = function()
     presets = {
       -- you can enable a preset by setting it to true, or a table that will override the preset config
       -- you can also add custom presets that you can enable/disable with enabled=true
-      bottom_search = true,         -- use a classic bottom cmdline for search
-      command_palette = true,       -- position the cmdline and popupmenu together
+      bottom_search = true, -- use a classic bottom cmdline for search
+      command_palette = true, -- position the cmdline and popupmenu together
       long_message_to_split = true, -- long messages will be sent to a split
-      inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-      lsp_doc_border = true,        -- add a border to hover docs and signature help
+      inc_rename = false, -- enables an input dialog for inc-rename.nvim
+      lsp_doc_border = true, -- add a border to hover docs and signature help
     },
-    throttle = 1000 / 30,           -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
+    throttle = 1000 / 30, -- how frequently does Noice need to check for ui updates? This has no effect when in blocking mode.
     views = {
       cmdline_popup = {
         -- view = "popupmenu",
@@ -235,7 +235,7 @@ M.config = function()
           col = "50%",
         },
         size = {
-          width = 60,  -- "auto"
+          width = 60, -- "auto"
           height = 10, -- "auto"
           max_height = 20,
           -- min_width = 10,
@@ -250,10 +250,10 @@ M.config = function()
           cursorline = true,
           cursorlineopt = "line",
           winhighlight = {
-            Normal = "NoicePopupmenu",             -- change to NormalFloat to make it look like other floats
-            FloatBorder = "NoicePopupmenuBorder",  -- border highlight
+            Normal = "NoicePopupmenu", -- change to NormalFloat to make it look like other floats
+            FloatBorder = "NoicePopupmenuBorder", -- border highlight
             CursorLine = "NoicePopupmenuSelected", -- used for highlighting the selected item
-            PmenuMatch = "NoicePopupmenuMatch",    -- used to highlight the part of the item that matches the input
+            PmenuMatch = "NoicePopupmenuMatch", -- used to highlight the part of the item that matches the input
           },
         },
       },
@@ -292,11 +292,11 @@ M.config = function()
         enter = true, ]]
         -- NOTE: If you enable messages, then the cmdline is enabled automatically.
         -- This is a current Neovim limitation.
-        enabled = true,              -- enables the Noice messages UI
-        view = "notify",             -- default view for messages
-        view_error = "notify",       -- view for errors
-        view_warn = "notify",        -- view for warnings
-        view_history = "messages",   -- view for :messages
+        enabled = true, -- enables the Noice messages UI
+        view = "notify", -- default view for messages
+        view_error = "notify", -- view for errors
+        view_warn = "notify", -- view for warnings
+        view_history = "messages", -- view for :messages
         view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
       },
       vsplit = {
@@ -312,7 +312,7 @@ M.config = function()
           event = "msg_show",
           -- kind = { "Notifications", "history" },
           kind = "history",
-          min_height = 20
+          min_height = 20,
         },
       },
       -- { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
@@ -360,8 +360,8 @@ M.config = function()
             },
           },
           "({data.progress.percentage}%) ",
-          { "{spinner} ",              hl_group = "NoiceLspProgressSpinner" },
-          { "{data.progress.title} ",  hl_group = "NoiceLspProgressTitle" },
+          { "{spinner} ", hl_group = "NoiceLspProgressSpinner" },
+          { "{data.progress.title} ", hl_group = "NoiceLspProgressTitle" },
           { "{data.progress.client} ", hl_group = "NoiceLspProgressClient" },
         },
         lsp_progress_done = {
@@ -414,7 +414,7 @@ M.config = function()
         },
         ---@class NoiceFormatOptions.data
         data = {
-          key = nil,      -- Key in the message.opts object.
+          key = nil, -- Key in the message.opts object.
           hl_group = nil, -- Optional hl_group
         },
         ---@class NoiceFormatOptions.title
@@ -445,9 +445,8 @@ M.config = function()
             default_choice = "NoiceFormatConfirmDefault",
           },
         },
-      }
+      },
     },
-
   })
   local theme = require("core.colors")
 
