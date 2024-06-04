@@ -4,7 +4,6 @@ local theme = require("config.utils.theme")
 local persistence = require("config.utils.persistence")
 local lualine = require("config.utils.lualine")
 local cmp = require("config.utils.cmp")
-local yank = require("config.utils.yank")
 local dial = require("config.utils.dial")
 local muren = require("config.utils.muren")
 local fold = require("config.utils.fold")
@@ -12,7 +11,6 @@ local bookmarks = require("config.utils.bookmarks")
 
 local default_event = require("config.event").default
 local vim_enter_event = require("config.event").enter.vim
-local cmd_enter_event = require("config.event").enter.cmd
 
 local M = {
   {

@@ -7,7 +7,6 @@ M.cmp = config.cmp
 M.lualine = config.lualine
 M.scroll = config.scroll
 M.theme = config.theme
-M.yank = config.yank
 M.dial = config.dial
 M.fold = config.fold
 M.muren = config.muren
