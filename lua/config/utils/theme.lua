@@ -94,11 +94,17 @@ M.config = function()
   -- vim.api.nvim_set_hl(0, "Title", { fg = theme.color101, bg = theme.color0 })
 
   -- CMP
-  -- vim.api.nvim_set_hl(0, "PmenuThumb", { fg = theme.color59, bg = theme.color59 })
   vim.api.nvim_set_hl(0, "CmpPmenu", { bg = theme.color0 })
   vim.api.nvim_set_hl(0, "PmenuSel", { bg = theme.color1 })
   vim.api.nvim_set_hl(0, "CmpBorder", { fg = theme.color2, bg = theme.color0 })
   vim.api.nvim_set_hl(0, "CmpDocBorder", { fg = theme.color2, bg = theme.color0 })
+  -- vim.api.nvim_set_hl(0, "Pmenu", { bg = theme.color1 })
+  -- vim.api.nvim_set_hl(0, "PmenuExtra", { fg = theme.color2, bg = theme.color1 })
+  -- vim.api.nvim_set_hl(0, "PmenuKind", { fg = theme.color2, bg = theme.color1 })
+  -- vim.api.nvim_set_hl(0, "PmenuKindSel", { fg = theme.color2, bg = theme.color1 })
+  -- vim.api.nvim_set_hl(0, "PmenuExtraSel", { fg = theme.color2, bg = theme.color1 })
+  -- vim.api.nvim_set_hl(0, "PmenuSbar", { fg = theme.color89, bg = theme.color1 })
+  -- vim.api.nvim_set_hl(0, "PmenuThumb", { fg = theme.color99, bg = theme.color1 })
 
   -- Popup
   vim.api.nvim_set_hl(0, "FloatBorder", { fg = theme.color2, bg = theme.color0 })
