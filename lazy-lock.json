@@ -66,6 +66,7 @@
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
   "promise-async": { "branch": "main", "commit": "93540c168c5ed2b030ec3e6c40ab8bbb85e36355" },
+  "rabbit.nvim": { "branch": "main", "commit": "0f057d1a3a9a3265ac57d56defd7c116b7cfd39f" },
   "rust-tools.nvim": { "branch": "master", "commit": "676187908a1ce35ffcd727c654ed68d851299d3e" },
   "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
   "sentiment.nvim": { "branch": "main", "commit": "ecde8d877881bb78fdb90060c0991e76770dbdbc" },

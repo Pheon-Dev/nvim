@@ -49,6 +49,7 @@ M.enable = {
   tmux = true,
   tshjkl = true,
   before = true,
+  rabbit = true,
   eyeliner = true,
   wordmotion = true,
   treesitter_textobjects = true,
