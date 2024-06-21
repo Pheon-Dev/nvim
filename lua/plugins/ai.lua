@@ -18,13 +18,7 @@ local M = {
   {
     "monkoose/neocodeium",
     event = lazy_event,
-    enabled = function()
-      if vim.fn.has("nvim-0.10.0") == 1 then
-        return true
-      else
-        return false
-      end
-    end,
+    enabled = true,
     config = neocodeium.config,
   },
 }
