@@ -100,65 +100,16 @@ M.keys = {
 }
 
 M.config = function()
-  local enable = require("config").enable
-  local enabled = false
-  -- local enabled = enable.treesitter_textobjects
-  if enabled then
-    local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
-
-    -- Repeat movement with ; and ,
-    -- ensure ; goes forward and , goes backward, regardless of the last direction
-    vim.keymap.set({ "n", "x", "o" }, "'", ts_repeat_move.repeat_last_move_next)
-    vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_previous)
-
-    local gs = require("gitsigns")
-
-    -- make sure forward function comes first
-    local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
-    -- Or, use `make_repeatable_move` or `set_last_move` functions for more control. See the code for instructions.
-
-    vim.keymap.set({ "n", "x", "o" }, "]h", next_hunk_repeat)
-    vim.keymap.set({ "n", "x", "o" }, "[h", prev_hunk_repeat)
-  end
   require("gitsigns").setup({
     signs = {
-      add = {
-        hl = "GitSignsAdd",
-        text = "│",
-        numhl = "GitSignsAddNr",
-        linehl = "GitSignsAddLn",
-      },
-      change = {
-        hl = "GitSignsChange",
-        text = "│",
-        numhl = "GitSignsChangeNr",
-        linehl = "GitSignsChangeLn",
-      },
-      delete = {
-        hl = "GitSignsDelete",
-        text = "-",
-        numhl = "GitSignsDeleteNr",
-        linehl = "GitSignsDeleteLn",
-      },
-      topdelete = {
-        hl = "GitSignsDelete",
-        text = "-",
-        numhl = "GitSignsDeleteNr",
-        linehl = "GitSignsDeleteLn",
-      },
-      changedelete = {
-        hl = "GitSignsChange",
-        text = "│",
-        numhl = "GitSignsChangeNr",
-        linehl = "GitSignsChangeLn",
-      },
-      untracked = {
-        hl = "GitSignsAdd",
-        text = "│",
-        numhl = "GitSignsAddNr",
-        linehl = "GitSignsAddLn",
-      },
+      add = { text = "┃" },
+      change = { text = "┃" },
+      delete = { text = "_" },
+      topdelete = { text = "‾" },
+      changedelete = { text = "~" },
+      untracked = { text = "┆" },
     },
+    auto_attach = true,
     signcolumn = false,
     numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
     linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
@@ -188,9 +139,9 @@ M.config = function()
       row = 0,
       col = 1,
     },
-    yadm = {
+    --[[ yadm = {
       enable = false,
-    },
+    }, ]]
   })
 end
 
