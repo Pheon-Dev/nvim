@@ -92,21 +92,22 @@ map("n", "<S-TAB>", ":bprevious<cr>", { noremap = true, silent = true })
 -- map("x", "J", ":move '>+1<cr>gv-gv", { noremap = true, silent = true })
 -- map("x", "K", ":move '<-2<cr>gv-gv", { noremap = true, silent = true })
 
-if vim.fn.has("nvim-0.10.0") == 0 and enable.codeium then
-  -- if enable.codeium then
-  vim.keymap.set("i", "<A-c>", function()
-    return vim.fn["codeium#Accept"]()
-  end, { expr = true, silent = true, desc = "Accept Suggestion" })
-  vim.keymap.set("i", "<A-f>", function()
-    return vim.fn["codeium#CycleCompletions"](1)
-  end, { expr = true, silent = true, desc = "Cycle Completions Forward" })
-  vim.keymap.set("i", "<A-b>", function()
-    return vim.fn["codeium#CycleCompletions"](-1)
-  end, { expr = true, silent = true, desc = "Cycle Completions Backward" })
-  vim.keymap.set("i", "<A-x>", function()
-    return vim.fn["codeium#Clear"]()
-  end, { expr = true, silent = true, desc = "Clear Completions" })
-end
+-- if enable.codeium then
+vim.keymap.set("i", "<A-a>", function()
+  return vim.fn["codeium#Accept"]()
+end, { expr = true, silent = true, desc = "Accept Suggestion" })
+vim.keymap.set("i", "<A-c>", function()
+  return vim.fn["codeium#Accept"]()
+end, { expr = true, silent = true, desc = "Accept Suggestion" })
+vim.keymap.set("i", "<A-f>", function()
+  return vim.fn["codeium#CycleCompletions"](1)
+end, { expr = true, silent = true, desc = "Cycle Completions Forward" })
+vim.keymap.set("i", "<A-b>", function()
+  return vim.fn["codeium#CycleCompletions"](-1)
+end, { expr = true, silent = true, desc = "Cycle Completions Backward" })
+vim.keymap.set("i", "<A-x>", function()
+  return vim.fn["codeium#Clear"]()
+end, { expr = true, silent = true, desc = "Clear Completions" })
 
 -- Fzf and Floaterm
 local keybind_opts = { silent = true, noremap = true }
