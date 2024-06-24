@@ -7,18 +7,12 @@ local M = {
   {
     "Exafunction/codeium.vim",
     event = default_event,
-    enabled = function()
-      if vim.fn.has("nvim-0.10.0") == 1 then
-        return false
-      else
-        return true
-      end
-    end,
+    enabled = true,
   },
   {
     "monkoose/neocodeium",
     event = lazy_event,
-    enabled = true,
+    enabled = false,
     config = neocodeium.config,
   },
 }
