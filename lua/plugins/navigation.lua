@@ -2,7 +2,6 @@ local enable = require("config").enable
 
 local oil = require("config.navigation.oil")
 local tmux = require("config.navigation.tmux")
-local rabbit = require("config.navigation.rabbit")
 local before = require("config.navigation.before")
 local antelope = require("config.navigation.antelope")
 local which_key = require("config.navigation.which-key")
@@ -43,12 +42,6 @@ local M = {
     enable = enable.before,
     event = default_event,
     config = before.config,
-  },
-  {
-    "voxelprismatic/rabbit.nvim",
-    enable = enable.rabbit,
-    event = default_event,
-    config = rabbit.config,
   },
 }
 

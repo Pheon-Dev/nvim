@@ -49,7 +49,6 @@ M.enable = {
   tmux = true,
   tshjkl = true,
   before = true,
-  rabbit = true,
   eyeliner = true,
   wordmotion = true,
   treesitter_textobjects = true,
@@ -58,7 +57,7 @@ M.enable = {
   archer_textobjects = false,
   bracketed = true,
   codeium = true,
-  neocodeium = true,
+  del = true,
 }
 
 return M

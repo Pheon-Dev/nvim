@@ -101,7 +101,6 @@ M.config = function()
     M = { ":Mason<cr>", "Mason" },
     -- p = { ":Antelope tabpages<cr>", "Toggle Tabapages" },
     q = { ":bd<cr>", "Close Buffer" },
-    r = { ":Rabbit<cr>", "Rabbit" },
     R = {
       name = "Rust",
       a = { rt.code_action_group.code_action_group, "Code Action Group" },
