@@ -149,7 +149,7 @@ M.crates_config = function()
         jump_back = { "<c-o>", "<C-RightMouse>" },
       },
     },
-    src = {
+    --[[ src = {
       insert_closing_quote = true,
       text = {
         prerelease = "  pre-release ",
@@ -159,7 +159,7 @@ M.crates_config = function()
         enabled = false,
         name = "Crates",
       },
-    },
+    }, ]]
     null_ls = {
       enabled = false,
       name = "Crates",
