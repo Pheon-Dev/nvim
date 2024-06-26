@@ -1,8 +1,51 @@
+local u = require("config.util")
+
 local M = {}
 
 M.dependencies = {
   "MunifTanjim/nui.nvim",
   "rcarriga/nvim-notify",
+}
+
+---@param bufnr number
+local function highlightsInStacktrace(bufnr)
+  vim.defer_fn(function()
+    if not vim.api.nvim_buf_is_valid(bufnr) then
+      return
+    end
+    vim.api.nvim_buf_call(bufnr, function()
+      vim.fn.matchadd("WarningMsg", [[[^/]\+\.lua:\d\+\ze:]]) -- files with error
+      vim.fn.matchadd("WarningMsg", [[E\d\+]]) -- vim error codes
+    end)
+  end, 1)
+end
+
+M.init = function()
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "noice",
+    callback = function(ctx)
+      highlightsInStacktrace(ctx.buf)
+      -- do not let noice override my versions of the mappings
+      vim.defer_fn(function()
+        pcall(vim.keymap.del, "n", "K", { buffer = ctx.buf })
+        pcall(vim.keymap.del, "n", "gx", { buffer = ctx.buf })
+      end, 1)
+    end,
+  })
+  u.colorschemeMod("NoiceCmdline", { link = "NormalFloat" })
+end
+
+M.keys = {
+  {
+    "<Esc>",
+    function()
+      vim.snippet.stop()
+      vim.cmd.NoiceDismiss()
+    end,
+    desc = "󰎟 Clear Notifications & Snippet",
+  },
+  { "<A-0>", vim.cmd.NoiceHistory, mode = { "n", "x", "i" }, desc = "󰎟 Noice Log" },
+  { "<A-9>", vim.cmd.NoiceLast, mode = { "n", "x", "i" }, desc = "󰎟 Noice Last" },
 }
 
 M.config = function()
@@ -52,9 +95,11 @@ M.config = function()
     -- You can add any custom commands below that will be available with `:Noice command`
     commands = {
       history = {
-        -- options for the message history that you get with `:Noice`
+        filter_opts = { reverse = true }, -- show newest entries first
+        -- https://github.com/folke/noice.nvim#-formatting
+        opts = { format = { "{title} ", "{cmdline} ", "{message}" } },
+        -- opts = { enter = true, format = "details" },
         view = "split",
-        opts = { enter = true, format = "details" },
         filter = {
           any = {
             { event = "notify" },
@@ -68,7 +113,8 @@ M.config = function()
       -- :Noice last
       last = {
         view = "popup",
-        opts = { enter = true, format = "details" },
+        opts = { format = { "{title} ", "{cmdline} ", "{message}" } },
+        -- opts = { enter = true, format = "details" },
         filter = {
           any = {
             { event = "notify" },
@@ -118,6 +164,9 @@ M.config = function()
       },
       hover = {
         enabled = false,
+        border = { style = vim.g.borderStyle },
+        size = { max_width = 80 },
+        win_options = { scrolloff = 4, wrap = true },
         view = nil, -- when nil, use defaults from documentation
         opts = {}, -- merged with defaults from documentation
       },
@@ -187,6 +236,7 @@ M.config = function()
       cmdline_popup = {
         -- view = "popupmenu",
         -- zindex = 200,
+        border = { style = vim.g.borderStyle },
         position = {
           row = 5,
           col = "50%",
@@ -212,7 +262,11 @@ M.config = function()
         border = {
           style = "none",
         },
-        zindex = 60,
+        -- zindex = 60,
+        -- timeout = 3000,
+        zindex = 4, -- lower, so it does not cover nvim-notify (zindex 50)
+        -- position = { col = -3 }, -- to the left to avoid collision with scrollbar
+        format = { "{title} ", "{message}" }, -- leave out "{level}"
         win_options = {
           winblend = 30,
           winhighlight = {
@@ -222,6 +276,12 @@ M.config = function()
             Search = "",
           },
         },
+      },
+      popup = {
+        border = { style = vim.g.borderStyle },
+        size = { width = 90, height = 25 },
+        win_options = { scrolloff = 8, wrap = true, concealcursor = "nv" },
+        close = { keys = { "q", "<D-w>", "<D-9>", "<D-0>" } },
       },
       popupmenu = {
         enabled = true,
@@ -276,11 +336,12 @@ M.config = function()
         position = "bottom",
         size = "20%",
         close = {
-          keys = { "q" },
+          keys = { "q", "<A-w>", "<A-9>", "<A-0>" },
         },
         win_options = {
           winhighlight = { Normal = "NoiceSplit", FloatBorder = "NoiceSplitBorder" },
           wrap = true,
+          scrolloff = 6,
         },
       },
       cmdline_output = {
@@ -318,6 +379,68 @@ M.config = function()
       -- { filter = { event = "msg_show", kind = "", find = "plugins/" },  opts = { skip = true } },
       { filter = { find = "UndefinedParserError" }, opts = { skip = true } },
       { filter = { warning = true, find = "node" }, opts = { skip = true } },
+      -- REDIRECT TO POPUP
+      {
+        filter = {
+          min_height = 10,
+          ["not"] = {
+            cond = function(msg)
+              local title = (msg.opts and msg.opts.title) or ""
+              return title:find("Commit Preview") or title:find("tinygit") or title:find("Changed Files")
+            end,
+          },
+        },
+        view = "popup",
+      },
+      -- output from `:Inspect`
+      { filter = { event = "msg_show", find = "Treesitter.*- @" }, view = "popup" },
+
+      -----------------------------------------------------------------------------
+      -- REDIRECT TO MINI
+
+      -- write/deletion messages
+      { filter = { event = "msg_show", find = "%d+B written$" }, view = "mini" },
+      { filter = { event = "msg_show", find = "%d+L, %d+B$" }, view = "mini" },
+      { filter = { event = "msg_show", find = "%-%-No lines in buffer%-%-" }, view = "mini" },
+
+      -- search pattern not found
+      { filter = { event = "msg_show", find = "^E486: Pattern not found" }, view = "mini" },
+
+      -- Word added to spellfile via `zg`
+      { filter = { event = "msg_show", find = "^Word .*%.add$" }, view = "mini" },
+
+      { -- Mason
+        filter = {
+          event = "notify",
+          cond = function(msg)
+            return msg.opts and (msg.opts.title or ""):find("mason")
+          end,
+        },
+        view = "mini",
+      },
+
+      -- nvim-treesitter
+      { filter = { event = "msg_show", find = "^%[nvim%-treesitter%]" }, view = "mini" },
+      { filter = { event = "notify", find = "All parsers are up%-to%-date" }, view = "mini" },
+
+      -----------------------------------------------------------------------------
+      -- SKIP
+
+      -- FIX LSP bugs?
+      { filter = { event = "msg_show", find = "lsp_signature? handler RPC" }, skip = true },
+      {
+        filter = { event = "msg_show", find = "^%s*at process.processTicksAndRejections" },
+        skip = true,
+      },
+
+      -- code actions
+      { filter = { event = "notify", find = "No code actions available" }, skip = true },
+
+      -- unneeded info on search patterns
+      { filter = { event = "msg_show", find = "^[/?]." }, skip = true },
+
+      -- E211 no longer needed, since auto-closing deleted buffers
+      { filter = { event = "msg_show", find = "E211: File .* no longer available" }, skip = true },
     },
     status = {}, --- @see section on statusline components
     format = {
