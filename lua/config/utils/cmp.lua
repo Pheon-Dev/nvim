@@ -47,6 +47,7 @@ M.config = function()
   local lspkind = require("lspkind")
   local luasnip = require("luasnip")
   local compare = require("cmp.config.compare")
+  local suggestion = require("supermaven-nvim.completion_preview")
 
   lspkind.init({
     symbol_map = {
@@ -56,18 +57,48 @@ M.config = function()
 
   vim.api.nvim_set_hl(0, "CmpItemKindSupermaven", { fg = "#6CC644" })
 
+  local kindIcons = {
+    Text = "",
+    Method = "󰆧",
+    Function = "󰊕",
+    Constructor = "",
+    Field = "󰇽",
+    Variable = "󰂡",
+    Class = "󰠱",
+    Interface = "",
+    Module = "",
+    Property = "󰜢",
+    Unit = "",
+    Value = "󰎠",
+    Enum = "",
+    Keyword = "󰌋",
+    Snippet = "󰅱",
+    Color = "󰏘",
+    File = "󰈙",
+    Reference = "",
+    Folder = "󰉋",
+    EnumMember = "",
+    Constant = "󰏿",
+    Struct = "",
+    Event = "",
+    Operator = "󰆕",
+    TypeParameter = "󰅲",
+  }
+
   local source_mapping = {
     -- copilot = " pilot",
-    luasnip = "   snip",
-    supermaven = " 󰚩  mvn",
-    nvim_lsp = " 󰯓  lsp",
-    buffer = " 󰓩  buf",
-    nvim_lua = "   lua",
-    orgmode = "   org",
-    cmdline = "   cmd",
-    crates = "   cr8",
+    luasnip = " ",
+    supermaven = "󰚩 ",
+    buffer = "󰽙",
+    snippets = "",
+    nvim_lsp = "󰒕",
+    path = "",
+    emmet = "",
+    nvim_lua = " ",
+    orgmode = " ",
+    cmdline = " ",
+    crates = " ",
     -- nvim_lsp_signature_help = " 󰏚  sign",
-    path = " 󰙅  path",
   }
 
   local function border(hl_name)
@@ -89,6 +120,18 @@ M.config = function()
       -- completeopt = "menu,menuone,noinsert",
     }, ]]
     preselect = cmp.PreselectMode.None,
+    view = {
+      entries = { follow_cursor = true }, ---@diagnostic disable-line: missing-fields
+    },
+    performance = {
+      -- all reduced, defaults: https://github.com/hrsh7th/nvim-cmp/blob/main/lua/cmp/config/default.lua#L18-L25
+      debounce = 30,
+      throttle = 15,
+      fetching_timeout = 300,
+      confirm_resolve_timeout = 40,
+      async_budget = 0.5,
+      max_view_entries = 100,
+    },
     window = {
       completion = {
         border = border("CmpBorder"),
@@ -114,21 +157,23 @@ M.config = function()
         return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
       end
     end,
-    sorting = {
+    sorting = { ---@diagnostic disable-line: missing-fields
       priority_weight = 2,
       comparators = {
         --[[ require("cmp_tabnine.compare"), ]]
         -- require("copilot_cmp.comparators").prioritize,
+        -- defaults: https://github.com/hrsh7th/nvim-cmp/blob/main/lua/cmp/config/default.lua#L67-L78
+        -- compare functions https://github.com/hrsh7th/nvim-cmp/blob/main/lua/cmp/config/compare.lua
         compare.offset,
-        compare.exact,
+        compare.recently_used, -- higher
         compare.score,
-        require("cmp-under-comparator").under,
-        compare.recently_used,
-        compare.kind,
+        compare.kind, -- higher (prioritize snippets)
+        compare.exact, -- lower
         compare.locality,
-        compare.sort_text,
         compare.length,
         compare.order,
+        require("cmp-under-comparator").under,
+        compare.sort_text,
       },
     },
     mapping = {
@@ -152,6 +197,10 @@ M.config = function()
           luasnip.expand_or_jump()
         elseif has_words_before() then
           cmp.complete()
+        elseif luasnip.expandable() then
+          luasnip.expand()
+        elseif suggestion.has_suggestion() then
+          suggestion.on_accept_suggestion()
         else
           fallback()
         end
@@ -161,6 +210,10 @@ M.config = function()
           cmp.select_prev_item()
         elseif luasnip.jumpable(-1) then
           luasnip.jump(-1)
+        elseif luasnip.expandable() then
+          luasnip.expand()
+        elseif suggestion.has_suggestion() then
+          suggestion.on_accept_suggestion()
         else
           fallback()
         end
@@ -169,8 +222,36 @@ M.config = function()
     sources = cmp.config.sources({
       -- { name = "copilot",                group_index = 2 },
       { name = "supermaven", group_index = 2 },
-      { name = "nvim_lsp", group_index = 2 },
-      { name = "buffer", group_index = 2 },
+      {
+        name = "nvim_lsp",
+        entry_filter = function(entry, _)
+          -- using cmp-buffer for this
+          return require("cmp.types").lsp.CompletionItemKind[entry:get_kind()] ~= "Text"
+        end,
+      },
+      { name = "snippets", priority = 10 },
+      {
+        name = "buffer",
+        option = {
+          -- show completions from all buffers used within the last x minutes
+          get_bufnrs = function()
+            local mins = 15 -- CONFIG
+            local recentBufs = vim
+              .iter(vim.fn.getbufinfo({ buflisted = 1 }))
+              :filter(function(buf)
+                return os.time() - buf.lastused < mins * 60
+              end)
+              :map(function(buf)
+                return buf.bufnr
+              end)
+              :totable()
+            return recentBufs
+          end,
+          max_indexed_line_length = 100, -- no long lines (e.g. base64-encoded things)
+        },
+        keyword_length = 3,
+        max_item_count = 4, -- since searching all buffers results in many results
+      },
       { name = "nvim_lua", group_index = 2 },
       { name = "luasnip", group_index = 2 },
       { name = "path", group_index = 2 },
@@ -182,13 +263,27 @@ M.config = function()
       { name = "buffer", keyword_length = 3 },
     }),
     formatting = {
+      fields = { "abbr", "menu", "kind" }, -- order of the fields
       format = function(entry, vim_item)
+        local maxLength = 40
         lspkind.cmp_format({
           with_text = true,
           maxwidth = 50,
           -- mode = "symbol",
           -- symbol_map = { Supermaven = "" },
         })
+        if #vim_item.abbr > maxLength then
+          vim_item.abbr = (vim_item.abbr or ""):sub(1, maxLength) .. "…"
+        end
+        -- distinguish emmet snippets
+        local isEmmet = entry.source.name == "nvim_lsp"
+          and vim_item.kind == "Snippet"
+          and vim.bo[entry.context.bufnr].filetype == "css"
+        if isEmmet then
+          entry.source.name = "emmet"
+        end
+
+        vim_item.kind = entry.source.name == "nvim_lsp" and kindIcons[vim_item.kind] or ""
         vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
         vim_item.menu = source_mapping[entry.source.name]
         local maxwidth = 80
@@ -199,6 +294,17 @@ M.config = function()
     experimental = {
       ghost_text = false,
     },
+  })
+
+  -----------------------------------------------------------------------------
+
+  -- LUA: disable annoying `--#region` suggestions
+  cmp.setup.filetype("lua", {
+    enabled = function()
+      local line = vim.api.nvim_get_current_line()
+      local doubleDashLine = line:find("%s%-%-?$") or line:find("^%-%-?$")
+      return not doubleDashLine
+    end,
   })
 
   cmp.setup.cmdline(":", {
@@ -230,7 +336,7 @@ M.config = function()
   cmp.setup.cmdline({ "?", "/" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = "buffer" },
+      { name = "buffer", max_item_count = 3, keyword_length = 2 },
     },
   })
   require("luasnip").config.set_config({ history = true, updateevents = "TextChanged,TextChangedI" })
