@@ -13,6 +13,19 @@ M.dependencies = {
   "lukas-reineke/cmp-under-comparator",
 }
 
+--[[ M.expand = function(fallback)
+  local luasnip = require("luasnip")
+  local suggestion = require("supermaven-nvim.completion_preview")
+
+  if luasnip.expandable() then
+    luasnip.expand()
+  elseif suggestion.has_suggestion() then
+    suggestion.on_accept_suggestion()
+  else
+    fallback()
+  end
+end ]]
+
 M.config = function()
   -- vim.g.completeopt = "menu,menuone,noselect,noinsert"
 
@@ -35,14 +48,23 @@ M.config = function()
   local luasnip = require("luasnip")
   local compare = require("cmp.config.compare")
 
+  lspkind.init({
+    symbol_map = {
+      Supermaven = "",
+    },
+  })
+
+  vim.api.nvim_set_hl(0, "CmpItemKindSupermaven", { fg = "#6CC644" })
+
   local source_mapping = {
     -- copilot = " pilot",
     luasnip = "   snip",
+    supermaven = " 󰚩  mvn",
     nvim_lsp = " 󰯓  lsp",
     buffer = " 󰓩  buf",
     nvim_lua = "   lua",
     orgmode = "   org",
-    cmdline = "  cmd",
+    cmdline = "   cmd",
     crates = "   cr8",
     -- nvim_lsp_signature_help = " 󰏚  sign",
     path = " 󰙅  path",
@@ -146,6 +168,7 @@ M.config = function()
     },
     sources = cmp.config.sources({
       -- { name = "copilot",                group_index = 2 },
+      { name = "supermaven", group_index = 2 },
       { name = "nvim_lsp", group_index = 2 },
       { name = "buffer", group_index = 2 },
       { name = "nvim_lua", group_index = 2 },
@@ -160,7 +183,12 @@ M.config = function()
     }),
     formatting = {
       format = function(entry, vim_item)
-        lspkind.cmp_format({ with_text = true, maxwidth = 50 })
+        lspkind.cmp_format({
+          with_text = true,
+          maxwidth = 50,
+          -- mode = "symbol",
+          -- symbol_map = { Supermaven = "" },
+        })
         vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol" })
         vim_item.menu = source_mapping[entry.source.name]
         local maxwidth = 80
