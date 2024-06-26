@@ -272,12 +272,12 @@ M.config = function()
     })
   end
 
-  sec_right({
+  --[[ sec_right({
     function()
       return "﯑ " .. "%3{codeium#GetStatusString()} "
     end,
     color = { fg = colors.grey },
-  })
+  }) ]]
 
   --[[ sec_right({
     "g:mpv_title",
