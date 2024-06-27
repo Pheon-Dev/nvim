@@ -15,7 +15,6 @@ M.comment = config.comment
 M.marks = config.marks
 M.bracketed = config.bracketed
 M.animate = config.animate
-M.notify = config.notify
 M.indentscope = config.indentscope
 
 return M
