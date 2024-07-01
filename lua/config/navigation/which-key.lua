@@ -6,10 +6,10 @@ M.init = function()
 end
 
 M.config = function()
-  local ok, rt = pcall(require, "rust-tools")
+  --[[ local ok, rt = pcall(require, "rust-tools")
   if not ok then
     return
-  end
+  end ]]
   local wk = require("which-key")
 
   wk.setup({
@@ -79,17 +79,17 @@ M.config = function()
     },
   })
 
-  local oc, crates = pcall(require, "crates")
+  --[[ local oc, crates = pcall(require, "crates")
   if not oc then
     return
-  end
+  end ]]
 
   -- local dap, dapui = require("dap"), require("dapui")
 
   local mappings = {
     b = { ":Antelope buffers<cr>", "Buffers" },
     -- h = { ":lua require('harpoon').list():append()<cr>", "Harpoon Mark File" },
-    j = { ":Oil<cr>", "Oil" },
+    -- j = { ":Oil<cr>", "Oil" },
     -- j = { ":lua MiniFiles.open()<cr>", "Files" },
     -- k = { ":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<cr>", "Harpoon" },
     -- m = { ":Antelope marks<cr>", "Marks" },
@@ -103,9 +103,9 @@ M.config = function()
     q = { ":bd<cr>", "Close Buffer" },
     R = {
       name = "Rust",
-      a = { rt.code_action_group.code_action_group, "Code Action Group" },
+      -- a = { rt.code_action_group.code_action_group, "Code Action Group" },
       o = { ":RustOpenCargo<cr>", "Open Cargo" },
-      c = {
+      --[[ c = {
         name = "Crates",
         t = { crates.toggle, "Toggle" },
         r = { crates.reload, "Reload" },
@@ -141,7 +141,7 @@ M.config = function()
       j = { ":RustJoinLines<cr>", "Join Lines" },
       m = { ":RustExpandMacro<cr>", "Expand Macro" },
       p = { ":RustParentModule<cr>", "Parent Module" },
-      r = { ":RustRunnables<cr>", "Runnables" },
+      r = { ":RustRunnables<cr>", "Runnables" }, ]]
     },
     t = {
       name = "TODO | TS",

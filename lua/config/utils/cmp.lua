@@ -97,7 +97,7 @@ M.config = function()
     nvim_lua = " ",
     orgmode = " ",
     cmdline = " ",
-    crates = " ",
+    -- crates = " ",
     -- nvim_lsp_signature_help = " 󰏚  sign",
   }
 
@@ -255,7 +255,7 @@ M.config = function()
       { name = "nvim_lua", group_index = 2 },
       { name = "luasnip", group_index = 2 },
       { name = "path", group_index = 2 },
-      { name = "crates", group_index = 2 },
+      -- { name = "crates", group_index = 2 },
       { name = "orgmode", group_index = 2 },
       -- { name = "nvim_lsp_signature_help" },
       { name = "cmdline", group_index = 1 },
