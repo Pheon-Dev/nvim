@@ -113,7 +113,7 @@ end, { expr = true, silent = true, desc = "Clear Completions" }) ]]
 local keybind_opts = { silent = true, noremap = true }
 
 map("n", "<leader>s", ":FloatermNew rg<CR>", keybind_opts)
-map("n", "<leader>r", ":FloatermNew serpl<CR>", keybind_opts)
+-- map("n", "<leader>r", ":FloatermNew serpl<CR>", keybind_opts)
 map("n", "<leader>c", ":FloatermNew fzf<CR>", keybind_opts)
 map("n", "<leader>;", ":FloatermNew lf<CR>", keybind_opts)
 map("n", "<leader>l", ":FloatermNew lazygit<CR>", keybind_opts)

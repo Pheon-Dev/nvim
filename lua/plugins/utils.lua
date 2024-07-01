@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local rip = require("config.utils.rip")
 local theme = require("config.utils.theme")
 local persistence = require("config.utils.persistence")
 local lualine = require("config.utils.lualine")
@@ -103,6 +104,13 @@ local M = {
     enabled = enable.persistence,
     event = default_event,
     opts = persistence.opts,
+  },
+  {
+    "chrisgrieser/nvim-rip-substitute",
+    cmd = rip.cmd,
+    enable = enable.rip,
+    keys = rip.keys,
+    config = rip.config,
   },
 }
 

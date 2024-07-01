@@ -16,5 +16,6 @@ M.marks = config.marks
 M.bracketed = config.bracketed
 M.animate = config.animate
 M.indentscope = config.indentscope
+M.rip = config.rip
 
 return M
