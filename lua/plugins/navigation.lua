@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local oil = require("config.navigation.oil")
+local tfm = require("config.navigation.tfm")
 local tmux = require("config.navigation.tmux")
 local before = require("config.navigation.before")
 local antelope = require("config.navigation.antelope")
@@ -42,6 +43,13 @@ local M = {
     enable = enable.before,
     event = default_event,
     config = before.config,
+  },
+  {
+    "rolv-apneseth/tfm.nvim",
+    lazy = false,
+    enable = enable.tfm,
+    event = default_event,
+    config = tfm.config,
   },
 }
 
