@@ -12,10 +12,10 @@ map("i", "jj", "<esc>", { noremap = true, silent = true })
 -- Windows
 -- map("n", "<C-l>", "<C-w>p", { noremap = true, silent = true })
 -- map("n", "<A-n>", "<C-w>w", { noremap = true, silent = true })
---[[ map("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
-map("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
-map("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
-map("n", "<A-j>", "<C-w>j", { noremap = true, silent = true }) ]]
+-- map("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
+-- map("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
+-- map("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
+-- map("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
 map("n", "<A-x>", "<C-w>x", { noremap = true, silent = true })
 
 --[[ map("n", "<A-l>", "<cmd>lua require('tmux').move_right()<cr>", { noremap = true, silent = true })
