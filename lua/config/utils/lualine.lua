@@ -303,7 +303,7 @@ M.config = function()
   })
 ]]
 
-  sec_right({
+  --[[ sec_right({
     "git_prompt_string",
     trim_prompt_prefix = true, -- remove whitespace from beginning of prompt prefix
     -- git-prompt-string configuration options, see https://github.com/mikesmithgh/git-prompt-string?tab=readme-ov-file#configuration-options
@@ -322,7 +322,7 @@ M.config = function()
       color_no_upstream = { fg = colors.grey or "DarkGray" },
       color_merging = { fg = colors.blue or "DarkBlue" },
     },
-  })
+  }) ]]
 
   lualine.setup(config)
 end

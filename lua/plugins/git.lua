@@ -12,11 +12,11 @@ local M = {
     keys = git.keys,
     config = git.config,
   },
-  {
+  --[[ {
     "mikesmithgh/git-prompt-string-lualine.nvim",
     enabled = enable.git_signs,
     event = default_event,
-  },
+  }, ]]
 }
 
 return M
