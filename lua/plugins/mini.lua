@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local icons = require("config.utils.icons")
 local hipatterns = require("config.utils.hipatterns")
 local move = require("config.utils.move")
 local indentscope = require("config.utils.indentscope")
@@ -50,6 +51,13 @@ local M = {
     enabled = enable.hipatterns,
     event = default_event,
     config = hipatterns.config,
+  },
+  {
+    "echasnovski/mini.icons",
+    opts = icons.opts,
+    lazy = true,
+    specs = icons.specs,
+    init = icons.init,
   },
 }
 

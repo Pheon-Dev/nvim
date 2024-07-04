@@ -39,10 +39,6 @@ local M = {
     config = bookmarks.config,
   },
   {
-    "nvim-tree/nvim-web-devicons",
-    enabled = enable.dev_icons,
-  },
-  {
     "catppuccin/nvim",
     name = theme.name,
     lazy = theme.lazy,
