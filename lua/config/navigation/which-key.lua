@@ -88,6 +88,7 @@ M.config = function()
 
   local mappings = {
     b = { ":Antelope buffers<cr>", "Buffers" },
+    h = { ":Oil<cr>", "Oil" },
     -- h = { ":lua require('harpoon').list():append()<cr>", "Harpoon Mark File" },
     -- j = { ":Oil<cr>", "Oil" },
     -- j = { ":lua MiniFiles.open()<cr>", "Files" },
