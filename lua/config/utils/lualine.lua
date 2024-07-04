@@ -259,35 +259,11 @@ M.config = function()
   --   color = "Keyword",
   -- })
 
-  if enable.arrow then
-    sec_right({
-      function()
-        local statusline = require("arrow.statusline")
-        -- statusline.is_on_arrow_file() -- return nil if current file is not on arrow.  Return the index if it is.
-        -- statusline.text_for_statusline() -- return the text to be shown in the statusline (the index if is on arrow or "" if not)
-        -- statusline.text_for_statusline_with_icons() -- Same, but with an bow and arrow icon ;D
-        return statusline.text_for_statusline_with_icons()
-      end,
-      color = { fg = "function" },
-    })
-  end
-
   --[[ sec_right({
     function()
       return "﯑ " .. "%3{codeium#GetStatusString()} "
     end,
     color = { fg = colors.grey },
-  }) ]]
-
-  --[[ sec_right({
-    "g:mpv_title",
-    {
-      function()
-        return "  "
-      end,
-      color = "green",
-      on_click = require("mpv").toggle_player,
-    },
   }) ]]
 
   --[[ -- branch
@@ -300,28 +276,6 @@ M.config = function()
       return ""
     end,
     padding = { right = 1, left = 0 },
-  })
-]]
-
-  --[[ sec_right({
-    "git_prompt_string",
-    trim_prompt_prefix = true, -- remove whitespace from beginning of prompt prefix
-    -- git-prompt-string configuration options, see https://github.com/mikesmithgh/git-prompt-string?tab=readme-ov-file#configuration-options
-    prompt_config = {
-      prompt_prefix = nil,
-      prompt_suffix = nil,
-      ahead_format = nil,
-      behind_format = nil,
-      diverged_format = nil,
-      no_upstream_remote_format = nil,
-      color_disabled = false,
-      color_clean = { fg = colors.green or "DarkGreen" },
-      color_delta = { fg = colors.yellow or "DarkYellow" },
-      color_dirty = { fg = colors.red or "DarkRed" },
-      color_untracked = { fg = colors.magenta or "DarkMagenta" },
-      color_no_upstream = { fg = colors.grey or "DarkGray" },
-      color_merging = { fg = colors.blue or "DarkBlue" },
-    },
   }) ]]
 
   lualine.setup(config)
