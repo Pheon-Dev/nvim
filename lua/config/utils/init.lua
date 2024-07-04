@@ -3,6 +3,7 @@ local config = require("config.utils")
 local M = {}
 
 M.persistence = config.persistence
+M.hipatterns = config.hipatterns
 M.cmp = config.cmp
 M.lualine = config.lualine
 M.scroll = config.scroll

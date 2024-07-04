@@ -1,6 +1,7 @@
 local M = {}
 
 M.enable = {
+  hippatterns = true,
   lsp = true,
   rip = true,
   tfm = true,
@@ -39,7 +40,6 @@ M.enable = {
   sentiment = true,
   surround = true,
   vim_repeat = true,
-  highlight_colors = true,
   antelope = true,
   lualine = true,
   fold = true,

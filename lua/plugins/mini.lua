@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local hipatterns = require("config.utils.hipatterns")
 local move = require("config.utils.move")
 local indentscope = require("config.utils.indentscope")
 local bracketed = require("config.utils.bracketed")
@@ -43,6 +44,12 @@ local M = {
     enabled = enable.animate,
     event = default_event,
     config = animate.config,
+  },
+  {
+    "echasnovski/mini.hipatterns",
+    enabled = enable.hipatterns,
+    event = default_event,
+    config = hipatterns.config,
   },
 }
 

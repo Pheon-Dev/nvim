@@ -53,6 +53,12 @@ local M = {
     config = context.config,
   },
   {
+    "utilyre/sentiment.nvim",
+    event = default_event,
+    enabled = enable.sentiment,
+    config = true,
+  },
+  {
     "Wansmer/symbol-usage.nvim",
     event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
     config = symbol.config,
