@@ -43,6 +43,7 @@ M.config = function()
   vim.api.nvim_set_keymap("n", "<leader>j", "", {
     noremap = true,
     callback = require("tfm").open,
+    desc = "Open TFM",
   })
 end
 
