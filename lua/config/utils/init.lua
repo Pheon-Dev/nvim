@@ -4,6 +4,7 @@ local M = {}
 
 M.persistence = config.persistence
 M.hipatterns = config.hipatterns
+M.escape = config.escape
 M.icons = config.icons
 M.cmp = config.cmp
 M.lualine = config.lualine

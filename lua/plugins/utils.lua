@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local escape = require("config.utils.escape")
 local rip = require("config.utils.rip")
 local theme = require("config.utils.theme")
 local persistence = require("config.utils.persistence")
@@ -107,6 +108,12 @@ local M = {
     enable = enable.rip,
     keys = rip.keys,
     config = rip.config,
+  },
+  {
+    "max397574/better-escape.nvim",
+    enabled = enable.escape,
+    event = default_event,
+    config = escape.config,
   },
 }
 

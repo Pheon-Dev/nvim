@@ -35,6 +35,7 @@ M.enable = {
   comment = true,
   icons = true,
   bookmarks = true,
+  escape = true,
   popup = true,
   muren = true,
   sentiment = true,
