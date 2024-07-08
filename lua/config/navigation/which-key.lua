@@ -6,11 +6,17 @@ M.init = function()
 end
 
 M.config = function()
-  --[[ local ok, rt = pcall(require, "rust-tools")
+  local wk = require("which-key")
+
+  local oc, crates = pcall(require, "crates")
+  if not oc then
+    return
+  end
+
+  local ok, rt = pcall(require, "rust-tools")
   if not ok then
     return
-  end ]]
-  local wk = require("which-key")
+  end
 
   wk.setup({
     plugins = {
@@ -79,11 +85,6 @@ M.config = function()
     },
   })
 
-  --[[ local oc, crates = pcall(require, "crates")
-  if not oc then
-    return
-  end ]]
-
   -- local dap, dapui = require("dap"), require("dapui")
 
   local mappings = {
@@ -104,9 +105,9 @@ M.config = function()
     q = { ":bd<cr>", "Close Buffer" },
     R = {
       name = "Rust",
-      -- a = { rt.code_action_group.code_action_group, "Code Action Group" },
+      a = { rt.code_action_group.code_action_group, "Code Action Group" },
       o = { ":RustOpenCargo<cr>", "Open Cargo" },
-      --[[ c = {
+      c = {
         name = "Crates",
         t = { crates.toggle, "Toggle" },
         r = { crates.reload, "Reload" },
@@ -142,7 +143,7 @@ M.config = function()
       j = { ":RustJoinLines<cr>", "Join Lines" },
       m = { ":RustExpandMacro<cr>", "Expand Macro" },
       p = { ":RustParentModule<cr>", "Parent Module" },
-      r = { ":RustRunnables<cr>", "Runnables" }, ]]
+      r = { ":RustRunnables<cr>", "Runnables" },
     },
     t = {
       name = "TODO | TS",
