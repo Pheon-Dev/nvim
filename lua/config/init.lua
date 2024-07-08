@@ -1,6 +1,7 @@
 local M = {}
 
 M.enable = {
+  grapple = true,
   hippatterns = true,
   lsp = true,
   rip = true,
@@ -35,7 +36,6 @@ M.enable = {
   comment = true,
   icons = true,
   bookmarks = true,
-  escape = true,
   popup = true,
   muren = true,
   sentiment = true,
