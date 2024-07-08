@@ -278,7 +278,7 @@ M.config = function()
     padding = { right = 1, left = 0 },
   }) ]]
 
-  -- branch
+  -- grapple
   sec_right({
     "grapple",
     padding = { right = 1, left = 0 },

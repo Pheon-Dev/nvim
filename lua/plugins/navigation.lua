@@ -55,6 +55,7 @@ local M = {
   {
     "cbochs/grapple.nvim",
     opts = grapple.opts,
+    enabled = enable.grapple,
     event = default_event,
     cmd = grapple.cmd,
     keys = grapple.keys,
