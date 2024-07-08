@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local grapple = require("config.navigation.grapple")
 local oil = require("config.navigation.oil")
 local tfm = require("config.navigation.tfm")
 local tmux = require("config.navigation.tmux")
@@ -50,6 +51,13 @@ local M = {
     enable = enable.tfm,
     event = default_event,
     config = tfm.config,
+  },
+  {
+    "cbochs/grapple.nvim",
+    opts = grapple.opts,
+    event = default_event,
+    cmd = grapple.cmd,
+    keys = grapple.keys,
   },
 }
 
