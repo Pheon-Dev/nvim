@@ -14,11 +14,9 @@ local M = {
   },
   {
     "supermaven-inc/supermaven-nvim",
-    build = supermaven.build,
-    event = insert_enter_event,
+    -- event = insert_enter_event,
+    event = default_event,
     enabled = enable.supermaven,
-    keys = supermaven.keys,
-    -- opts = supermaven.opts,
     config = supermaven.config,
   },
 }

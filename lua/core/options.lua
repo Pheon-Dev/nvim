@@ -202,9 +202,9 @@ g.floaterm_rootmarkers = {
 g.floaterm_opener = "edit"
 g.floaterm_wintype = "float" -- options split, vsplit
 g.floaterm_title = "$1/$2" -- default 'floaterm: $1/$2'
-g.floaterm_autoclose = 2 -- defailt 1 options 0-2
-g.floaterm_autohide = 1 -- defailt 1 options 0-2
-g.floaterm_autoinsert = true -- defailt true
+g.floaterm_autoclose = 2
+g.floaterm_autohide = 1
+g.floaterm_autoinsert = true
 g.floaterm_titleposition = "left" -- options left, right, center
 g.floaterm_position = "center" -- wintype 'split/vsplit': 'leftabove', 'aboveleft', 'rightbelow', 'belowright', 'topleft', 'botright' default 'botright'
 
