@@ -17,8 +17,10 @@ local M = {
     "folke/which-key.nvim",
     enabled = enable.which_key,
     event = default_event,
+    -- init = which_key.init,
     config = which_key.config,
-    init = which_key.init,
+    keys = which_key.keys,
+    opts = which_key.opts,
   },
   {
     "Pheon-Dev/antelope",

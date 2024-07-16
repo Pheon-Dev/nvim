@@ -12,3 +12,4 @@ lua/core-old
 lua/options-old
 lua/plugin-old
 .vim-bookmarks
+.supermaven/config.json
