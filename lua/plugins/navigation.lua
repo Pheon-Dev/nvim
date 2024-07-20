@@ -3,7 +3,7 @@ local enable = require("config").enable
 local grapple = require("config.navigation.grapple")
 local oil = require("config.navigation.oil")
 local tfm = require("config.navigation.tfm")
-local tmux = require("config.navigation.tmux")
+local navigator = require("config.navigation.navigator")
 local before = require("config.navigation.before")
 local antelope = require("config.navigation.antelope")
 local which_key = require("config.navigation.which-key")
@@ -37,9 +37,9 @@ local M = {
   },
   {
     "numToStr/Navigator.nvim",
-    enable = enable.tmux,
+    enable = enable.navigator,
     event = lazy_event,
-    config = tmux.config,
+    config = navigator.config,
   },
   {
     "bloznelis/before.nvim",
