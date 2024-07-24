@@ -1,7 +1,6 @@
 local M = {}
 
 M.enable = {
-  grapple = true,
   hippatterns = true,
   lsp = true,
   rip = true,

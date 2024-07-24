@@ -1,6 +1,5 @@
 local enable = require("config").enable
 
-local grapple = require("config.navigation.grapple")
 local oil = require("config.navigation.oil")
 local tfm = require("config.navigation.tfm")
 local navigator = require("config.navigation.navigator")

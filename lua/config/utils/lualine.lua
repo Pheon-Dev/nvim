@@ -278,12 +278,6 @@ M.config = function()
     padding = { right = 1, left = 0 },
   }) ]]
 
-  -- grapple
-  sec_right({
-    "grapple",
-    padding = { right = 1, left = 0 },
-  })
-
   lualine.setup(config)
 end
 
