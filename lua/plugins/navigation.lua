@@ -19,7 +19,7 @@ local M = {
     -- init = which_key.init,
     config = which_key.config,
     keys = which_key.keys,
-    opts = which_key.opts,
+    -- opts = which_key.opts,
   },
   {
     "Pheon-Dev/antelope",
