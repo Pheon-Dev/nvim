@@ -1,6 +1,7 @@
 local M = {}
 
 M.enable = {
+  caps = true,
   hippatterns = true,
   lsp = true,
   rip = true,

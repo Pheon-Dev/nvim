@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local caps = require("config.utils.caps")
 local rip = require("config.utils.rip")
 local theme = require("config.utils.theme")
 local persistence = require("config.utils.persistence")
@@ -107,6 +108,14 @@ local M = {
     enable = enable.rip,
     keys = rip.keys,
     config = rip.config,
+  },
+  {
+    "dmtrKovalenko/caps-word.nvim",
+    -- lazy = true,
+    enabled = enable.caps,
+    event = default_event,
+    keys = caps.keys,
+    opts = caps.opts,
   },
 }
 

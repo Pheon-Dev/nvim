@@ -2,6 +2,7 @@ local config = require("config.utils")
 
 local M = {}
 
+M.caps = config.caps
 M.persistence = config.persistence
 M.hipatterns = config.hipatterns
 M.icons = config.icons
