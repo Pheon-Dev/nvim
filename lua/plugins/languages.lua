@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local markdown = require("config.languages.markdown")
 local rust = require("config.languages.rust")
 local go = require("config.languages.go")
 local typescript = require("config.languages.typescript")
@@ -50,6 +51,12 @@ local M = {
     -- event = cmd_enter_event,
     -- ft = go.ft,
     -- build = go.build,
+  },
+  {
+    "OXY2DEV/markview.nvim",
+    enabled = enable.markdown,
+    lazy = markdown.lazy,
+    dependencies = markdown.dependencies,
   },
 }
 

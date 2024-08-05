@@ -1,6 +1,7 @@
 local M = {}
 
 M.enable = {
+  markdown = true,
   caps = true,
   hippatterns = true,
   lsp = true,
