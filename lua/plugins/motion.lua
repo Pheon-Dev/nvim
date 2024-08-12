@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local demicolon = require("config.motion.demicolon")
 local flash = require("config.motion.flash")
 local eyeliner = require("config.motion.eyeliner")
 local tshjkl = require("config.motion.tshjkl")
@@ -40,6 +41,13 @@ local M = {
     "chaoren/vim-wordmotion",
     event = default_event,
     enabled = enable.wordmotion,
+  },
+  {
+    "mawkler/demicolon.nvim",
+    enable = enable.demicolon,
+    event = default_event,
+    dependencies = demicolon.dependencies,
+    opts = demicolon.opts,
   },
 }
 
