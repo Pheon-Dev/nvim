@@ -53,6 +53,11 @@ local M = {
     event = default_event,
     config = tfm.config,
   },
+  {
+    "OXY2DEV/helpview.nvim",
+    lazy = false, -- Recommended
+    enable = enable.helpview,
+  },
 }
 
 return M
