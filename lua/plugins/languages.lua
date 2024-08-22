@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local rest = require("config.languages.rest")
 local markdown = require("config.languages.markdown")
 local rust = require("config.languages.rust")
 local go = require("config.languages.go")
@@ -57,6 +58,12 @@ local M = {
     enabled = enable.markdown,
     lazy = markdown.lazy,
     dependencies = markdown.dependencies,
+  },
+  {
+    "mistweaverco/kulala.nvim",
+    opts = rest.opts,
+    enabled = enable.rest,
+    event = default_event,
   },
 }
 

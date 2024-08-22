@@ -7,5 +7,6 @@ M.rust = config.rust
 M.go = config.go
 M.typescript = config.typescript
 M.tsc = config.tsc
+M.rest = config.rest
 
 return M

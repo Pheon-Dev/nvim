@@ -242,3 +242,9 @@ g.bookmark_no_default_key_mappings = 0
 g.bookmark_location_list = 0
 g.bookmark_disable_ctrlp = 0
 g.bookmark_display_annotation = 0
+
+vim.filetype.add({
+  extension = {
+    ["http"] = "http",
+  },
+})

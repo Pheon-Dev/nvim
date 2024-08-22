@@ -24,7 +24,8 @@ local M = {
   {
     "Pheon-Dev/antelope",
     enabled = enable.antelope,
-    event = vim_enter_event,
+    -- event = vim_enter_event,
+    event = default_event,
     config = antelope.config,
   },
   {
