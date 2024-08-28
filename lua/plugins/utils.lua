@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local multi = require("config.utils.multi")
 local caps = require("config.utils.caps")
 local rip = require("config.utils.rip")
 local theme = require("config.utils.theme")
@@ -116,6 +117,12 @@ local M = {
     event = default_event,
     keys = caps.keys,
     opts = caps.opts,
+  },
+  {
+    "jake-stewart/multicursor.nvim",
+    enabled = enable.multi,
+    event = default_event,
+    config = multi.config,
   },
 }
 
