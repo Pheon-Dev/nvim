@@ -56,8 +56,15 @@ local M = {
   {
     "OXY2DEV/markview.nvim",
     enabled = enable.markdown,
-    lazy = markdown.lazy,
+    event = default_event,
+    -- lazy = markdown.lazy,
     dependencies = markdown.dependencies,
+  },
+  {
+    "OXY2DEV/helpview.nvim",
+    -- lazy = false, -- Recommended
+    event = default_event,
+    enable = enable.helpview,
   },
   {
     "mistweaverco/kulala.nvim",
