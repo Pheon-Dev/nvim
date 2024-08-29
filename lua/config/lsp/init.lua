@@ -8,5 +8,6 @@ M.mason = config.mason
 M.lspsaga = config.lspsaga
 M.format = config.format
 M.zero = config.zero
+M.inlay = config.inlay
 
 return M

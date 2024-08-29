@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local inlay = require("config.lsp.inlay")
 local lspsaga = require("config.lsp.lspsaga")
 local format = require("config.lsp.format")
 local lspconfig = require("config.lsp.lspconfig")
@@ -7,6 +8,7 @@ local zero = require("config.lsp.zero")
 local mason = require("config.lsp.mason")
 
 local default_event = require("config.event").default
+local attach_event = require("config.event").attach
 
 local M = {
   {
@@ -48,6 +50,12 @@ local M = {
     init = format.init,
     config = format.config,
     opts = format.opts,
+  },
+  {
+    "felpafel/inlay-hint.nvim",
+    event = attach_event,
+    enabled = enable.lsp,
+    config = inlay.config,
   },
 }
 
