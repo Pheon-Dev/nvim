@@ -107,7 +107,7 @@ M.config = function()
       show_normal_height = 10,
       max_show_width = 0.9,
       max_show_height = 0.6,
-      diagnostic_only_current = true,
+      diagnostic_only_current = false,
       keys = {
         quit = { "q", "<ESC>" },
         exec_action = "o",
@@ -122,11 +122,16 @@ M.config = function()
     Info = "",
     Hint = "󰠠",
     Question = "", ]]
-    Error = "x",
+    --[[ Error = "x",
     Warn = "!",
     Info = "i",
     Hint = "*",
-    Question = "?",
+    Question = "?", ]]
+    Error = "",
+    Warn = "󱩡",
+    Info = "",
+    Hint = "󰾡",
+    Question = "",
   }
   for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
@@ -135,25 +140,35 @@ M.config = function()
 
   vim.diagnostic.config({
     signs = true,
-    -- underline = false,
-    update_in_insert = false,
-    virtual_lines = false,
+    update_in_insert = true,
+    virtual_lines = true,
     severity_sort = true,
     -- No virtual text (distracting!), show popup window on hover.
-    -- virtual_text = { spacing = 4, prefix = "●" },
-    virtual_text = false,
-    -- virtual_text = {
-    --   severity = { min = vim.diagnostic.severity.WARN },
-    -- source = true,
-    --   prefix = vim.fn.has("nvim-0.10") > 0 and function(diagnostic) ---@param diagnostic Diagnostic
-    --     return (icons[diagnostic.severity] or "") .. " "
-    --   end,
-    -- },
+    -- virtual_text = { spacing = 4, prefix = "  " },
+    -- virtual_text = true,
+    virtual_text = {
+      -- severity = { min = vim.diagnostic.severity.WARN },
+      source = true,
+      prefix = function(diagnostic) ---@param diagnostic Diagnostic
+        if diagnostic.severity == 1 then
+          return "  "
+        end
+        if diagnostic.severity == 2 then
+          return "󱩡  "
+        end
+        if diagnostic.severity == 3 then
+          return "   "
+        end
+        if diagnostic.severity == 4 then
+          return "󰾡  "
+        end
+      end,
+    },
     underline = true,
-    -- underline = {
-    --   -- Do not underline text when severity is low (INFO or HINT).
-    --   -- severity = { min = vim.diagnostic.severity.WARN },
-    -- },
+    --[[ underline = {
+      -- Do not underline text when severity is low (INFO or HINT).
+      severity = { min = vim.diagnostic.severity.WARN },
+    }, ]]
     float = {
       source = "always",
       focusable = true,
@@ -166,13 +181,8 @@ M.config = function()
         local user_data
         user_data = diagnostic.user_data or {}
         user_data = user_data.lsp or user_data.null_ls or user_data
-        local code = (
-                    -- TODO: symbol is specific to pylint (will be removed)
-diagnostic.symbol
-          or diagnostic.code
-          or user_data.symbol
-          or user_data.code
-        )
+        -- TODO: symbol is specific to pylint (will be removed)
+        local code = (diagnostic.symbol or diagnostic.code or user_data.symbol or user_data.code)
         if code then
           return string.format("%s (%s)", diagnostic.message, code)
         else
@@ -181,6 +191,7 @@ diagnostic.symbol
       end,
     },
   })
+
   local map = vim.api.nvim_set_keymap
 
   map("n", "<leader>ia", ":Lspsaga code_action<cr>", { desc = "Code Action", silent = true })
