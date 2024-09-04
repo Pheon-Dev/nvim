@@ -1,5 +1,6 @@
 local enable = require("config").enable
 
+local barline = require("config.utils.barline")
 local multi = require("config.utils.multi")
 local caps = require("config.utils.caps")
 local rip = require("config.utils.rip")
@@ -124,6 +125,17 @@ local M = {
     event = default_event,
     config = multi.config,
   },
+  {
+    "OXY2DEV/bars-N-lines.nvim",
+    event = default_event,
+    enabled = enable.barline,
+    opts = barline.opts,
+  },
+  --[[ {
+    "OXY2DEV/foldtext.nvim",
+    enabled = enable.fold,
+    event = default_event,
+  }, ]]
 }
 
 return M
