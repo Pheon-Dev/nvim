@@ -48,7 +48,6 @@ local M = {
   },
   {
     "rolv-apneseth/tfm.nvim",
-    lazy = false,
     enable = enable.tfm,
     event = default_event,
     config = tfm.config,
