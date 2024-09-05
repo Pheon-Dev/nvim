@@ -128,10 +128,10 @@ M.config = function()
     Hint = "*",
     Question = "?", ]]
     Error = "",
-    Warn = "󱩡",
-    Info = "",
-    Hint = "󰾡",
-    Question = "",
+    Warn = "󰁨",
+    Info = "",
+    Hint = "󰟶",
+    Question = "",
   }
   for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
@@ -154,13 +154,16 @@ M.config = function()
           return "  "
         end
         if diagnostic.severity == 2 then
-          return "󱩡  "
+          return "󰁨  "
         end
         if diagnostic.severity == 3 then
-          return "   "
+          return "  "
         end
         if diagnostic.severity == 4 then
-          return "󰾡  "
+          return "󰟶  "
+        end
+        if diagnostic.severity == 5 then
+          return "  "
         end
       end,
     },
