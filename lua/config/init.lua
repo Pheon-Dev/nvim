@@ -30,6 +30,7 @@ M.enable = {
   which_key = true,
   typescript = true,
   indentscope = true,
+  satellite = true,
   move = true,
   splitjoin = true,
   dressing = true,

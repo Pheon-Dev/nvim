@@ -11,6 +11,7 @@ local cmp = require("config.utils.cmp")
 local dial = require("config.utils.dial")
 local muren = require("config.utils.muren")
 local fold = require("config.utils.fold")
+local satellite = require("config.utils.satellite")
 local bookmarks = require("config.utils.bookmarks")
 
 local default_event = require("config.event").default
@@ -130,6 +131,12 @@ local M = {
     event = default_event,
     enabled = enable.barline,
     opts = barline.opts,
+  },
+  {
+    "lewis6991/satellite.nvim",
+    enabled = enable.satellite,
+    event = default_event,
+    config = satellite.config,
   },
   --[[ {
     "OXY2DEV/foldtext.nvim",

@@ -2,6 +2,7 @@ local config = require("config.utils")
 
 local M = {}
 
+M.satellite = config.satellite
 M.barline = config.barline
 M.multi = config.multi
 M.caps = config.caps
