@@ -69,7 +69,8 @@ local M = {
   {
     "mistweaverco/kulala.nvim",
     opts = rest.opts,
-    enabled = enable.rest,
+    -- enabled = enable.rest,
+    enabled = false,
     event = default_event,
   },
 }
