@@ -1,7 +1,7 @@
 ---@type lspconfig.options
 local servers = {
   gopls = {
-    cmd = { 'gopls' },
+    cmd = { "gopls" },
     settings = {
       gopls = {
         experimentalPostfixCompletions = true,
@@ -16,13 +16,13 @@ local servers = {
           constantValues = true,
           functionTypeParameters = true,
           parameterNames = true,
-          rangeVariableTypes = true
-        }
+          rangeVariableTypes = true,
+        },
       },
     },
     init_options = {
       usePlaceholders = true,
-    }
+    },
   },
   clangd = {},
   lua_ls = {
@@ -35,16 +35,16 @@ local servers = {
         runtime = {
           -- Tell the language server which version of Lua you're using
           -- (most likely LuaJIT in the case of Neovim)
-          version = 'LuaJIT'
+          version = "LuaJIT",
         },
         -- Make the server aware of Neovim runtime files
         workspace = {
           checkThirdParty = false,
           library = {
-            vim.env.VIMRUNTIME
+            vim.env.VIMRUNTIME,
             -- "${3rd}/luv/library"
             -- "${3rd}/busted/library",
-          }
+          },
           -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
           -- library = vim.api.nvim_get_runtime_file("", true)
         },
