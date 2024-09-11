@@ -128,15 +128,13 @@ local M = {
   },
   {
     "OXY2DEV/bars-N-lines.nvim",
-    -- event = default_event,
-    enabled = false,
-    -- enabled = enable.barline,
+    event = default_event,
+    enabled = enable.barline,
     -- opts = barline.opts,
   },
   {
     "lewis6991/satellite.nvim",
-    -- enabled = enable.satellite,
-    enabled = false,
+    enabled = enable.satellite,
     event = default_event,
     config = satellite.config,
   },
