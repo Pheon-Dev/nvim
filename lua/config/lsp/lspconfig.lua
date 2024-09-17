@@ -27,7 +27,7 @@ M.config = function(plugin)
   lsp.rust_analyzer.setup(server.rust_analyzer)
   lsp.clangd.setup(server.clangd)
   lsp.gopls.setup(server.gopls)
-  lsp.tsserver.setup(server.tsserver)
+  lsp.ts_ls.setup(server.ts_ls)
   local function lspSymbol(name, icon)
     vim.fn.sign_define("DiagnosticSign" .. name, { text = icon, numhl = "DiagnosticDefault" .. name })
   end
