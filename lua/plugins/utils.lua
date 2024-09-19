@@ -108,13 +108,14 @@ local M = {
   {
     "chrisgrieser/nvim-rip-substitute",
     cmd = rip.cmd,
-    enable = enable.rip,
+    -- enabled = enable.rip,
+    enabled = false,
     keys = rip.keys,
     config = rip.config,
   },
   {
     "gbprod/substitute.nvim",
-    enabled = false,
+    enabled = true,
     opts = {
       on_substitute = nil,
       yank_substituted_text = false,

@@ -18,6 +18,12 @@ map("i", "jj", "<esc>", { noremap = true, silent = true })
 -- map("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
 map("n", "<A-x>", "<C-w>x", { noremap = true, silent = true })
 
+-- Lua
+vim.keymap.set("n", "<leader>rs", require("substitute").operator, { noremap = true })
+vim.keymap.set("n", "<leader>rss", require("substitute").line, { noremap = true })
+vim.keymap.set("n", "<leader>rS", require("substitute").eol, { noremap = true })
+vim.keymap.set("x", "<leader>rs", require("substitute").visual, { noremap = true })
+
 --[[ map("n", "<A-l>", "<cmd>lua require('tmux').move_right()<cr>", { noremap = true, silent = true })
 map("n", "<A-h>", "<cmd>lua require('tmux').move_left()<cr>", { noremap = true, silent = true })
 map("n", "<A-k>", "<cmd>lua require('tmux').move_up()<cr>", { noremap = true, silent = true })
