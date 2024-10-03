@@ -67,6 +67,12 @@ local M = {
     enable = enable.helpview,
   },
   {
+    "nvim-neorg/neorg",
+    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+    version = "*", -- Pin Neorg to the latest stable release
+    config = true,
+  },
+  {
     "mistweaverco/kulala.nvim",
     opts = rest.opts,
     -- enabled = enable.rest,
