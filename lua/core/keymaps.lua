@@ -134,11 +134,22 @@ map("n", "<leader>e", ":MurenToggle<cr>", keybind_opts)
 map("v", "<leader>e", ":MurenToggle<cr>", keybind_opts)
 -- map("n", "<leader>n", ":lua require('notify')._print_history()<cr>", keybind_opts)
 
-map("n", "<leader>v", ":MpvToggle<cr>", keybind_opts)
+--[[ -- Keyboard users
+vim.keymap.set("n", "<C-k>", function()
+  require("menu").open("default")
+end, {})
 
-vim.api.nvim_set_keymap("n", "<C-k>", ":lua require('kulala').jump_prev()<CR>", { noremap = true, silent = true })
+-- mouse users + nvimtree users!
+vim.keymap.set("n", "<RightMouse>", function()
+  vim.cmd.exec('"normal! \\<RightMouse>"')
+
+  local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+  require("menu").open(options, { mouse = true })
+end, {}) ]]
+
+--[[ vim.api.nvim_set_keymap("n", "<C-k>", ":lua require('kulala').jump_prev()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-j>", ":lua require('kulala').jump_next()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-l>", ":lua require('kulala').run()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-l>", ":lua require('kulala').run()<CR>", { noremap = true, silent = true }) ]]
 
 -- tips
 --

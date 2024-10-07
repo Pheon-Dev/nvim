@@ -174,6 +174,9 @@ local M = {
     enabled = enable.fold,
     event = default_event,
   }, ]]
+  -- { "nvchad/volt", lazy = true },
+  -- { "nvchad/menu", lazy = true },
+  -- { "nvchad/minty", lazy = true },
 }
 
 return M
