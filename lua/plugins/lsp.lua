@@ -54,7 +54,8 @@ local M = {
   {
     "felpafel/inlay-hint.nvim",
     event = attach_event,
-    enabled = enable.lsp,
+    -- enabled = enable.lsp,
+    enabled = false,
     config = inlay.config,
   },
 }

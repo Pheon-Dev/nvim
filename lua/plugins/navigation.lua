@@ -23,9 +23,21 @@ local M = {
   },
   {
     "Pheon-Dev/antelope",
-    enabled = enable.antelope,
+    -- enabled = enable.antelope,
+    enabled = false,
     -- event = vim_enter_event,
     config = antelope.config,
+  },
+  {
+    "EL-MASTOR/bufferlist.nvim",
+    lazy = true,
+    keys = { { "<Leader>b", desc = "Open bufferlist" } }, -- keymap to load the plugin, it should be the same as keymap.open_buflist
+    dependencies = "nvim-tree/nvim-web-devicons",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
   {
     "stevearc/oil.nvim",

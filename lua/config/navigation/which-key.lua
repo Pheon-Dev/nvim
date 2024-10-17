@@ -191,7 +191,7 @@ M.config = function()
       { "<leader>q", "<cmd>q<cr>", desc = "Quit" }, -- no need to specify mode since it's inherited
       -- { "<leader>w", "<cmd>w<cr>", desc = "Write" },
     },
-    { "<leader>b", "<cmd>Antelope buffers<cr>", desc = "Buffers", icon = "󱂬  " },
+    -- { "<leader>b", "<cmd>Antelope buffers<cr>", desc = "Buffers", icon = "󱂬  " },
     { "<leader>h", "<cmd>Oil<cr>", desc = "Oil", icon = "  " },
     { "<leader>M", "<cmd>Mason<cr>", desc = "Mason", icon = " " },
     { "<leader>nn", "<cmd>Noice<cr>", desc = "Noice Notifications", icon = " " },
