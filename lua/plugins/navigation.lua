@@ -31,7 +31,7 @@ local M = {
   {
     "EL-MASTOR/bufferlist.nvim",
     lazy = true,
-    keys = { { "<Leader>b", desc = "Open bufferlist" } }, -- keymap to load the plugin, it should be the same as keymap.open_buflist
+    keys = { { "<leader>b", ":BufferList<CR>", desc = "Open bufferlist" } },
     dependencies = "nvim-tree/nvim-web-devicons",
     opts = {
       -- your configuration comes here

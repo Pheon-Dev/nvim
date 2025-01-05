@@ -5,24 +5,7 @@ M.opts = {
 }
 
 M.config = function()
-  require("various-textobjs").setup({
-    lookForwardSmall = 5,
-    lookForwardBig = 15,
-    useDefaultKeymaps = true,
-    -- disabledKeymaps = { "ai", "ii", "aI", "iI" },
-    disabledKeymaps = {
-      "L", -- vu
-      "r", -- ri
-      "R", -- rp
-      "in", -- ir
-      "il",
-      -- "ai",
-      -- "ii",
-      -- "aI",
-      -- "iI",
-      "an", -- deprecated
-    },
-  })
+  require("various-textobjs").setup({})
   -- TEXT OBJECTS
   local keymap = vim.keymap.set
 

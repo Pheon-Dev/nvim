@@ -1,6 +1,7 @@
 local M = {}
 
-M.opts = {
+M.opts = {}
+M.opt = {
   -- split direction
   -- possible values: "vertical", "horizontal"
   split_direction = "vertical",
