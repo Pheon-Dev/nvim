@@ -8,5 +8,6 @@ M.go = config.go
 M.typescript = config.typescript
 M.tsc = config.tsc
 M.rest = config.rest
+M.flutter = config.flutter
 
 return M

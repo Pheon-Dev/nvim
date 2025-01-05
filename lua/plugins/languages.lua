@@ -1,6 +1,7 @@
 local enable = require("config").enable
 
 local rest = require("config.languages.rest")
+local flutter = require("config.languages.flutter")
 local markdown = require("config.languages.markdown")
 local rust = require("config.languages.rust")
 local go = require("config.languages.go")
@@ -74,10 +75,16 @@ local M = {
   }, ]]
   {
     "mistweaverco/kulala.nvim",
-    opts = rest.opts,
+    -- opts = rest.opts,
     -- enabled = enable.rest,
     enabled = false,
-    event = default_event,
+    -- event = default_event,
+  },
+  {
+    "nvim-flutter/flutter-tools.nvim",
+    lazy = false,
+    dependencies = flutter.dependencies,
+    config = flutter.config,
   },
 }
 

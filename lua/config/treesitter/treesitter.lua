@@ -18,6 +18,7 @@ M.config = function()
       "go",
       "html",
       "prisma",
+      "dart",
       -- "http",
       -- "javascript",
       "kdl",
