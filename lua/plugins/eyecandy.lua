@@ -63,6 +63,14 @@ local M = {
     event = "BufReadPre", -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
     config = symbol.config,
   },
+  {
+  'oribarilan/lensline.nvim',
+  tag = '1.1.2', -- or: branch = 'release/1.x' for latest non-breaking updates
+  event = 'LspAttach',
+  config = function()
+    require("lensline").setup()
+  end,
+}
 }
 
 return M
